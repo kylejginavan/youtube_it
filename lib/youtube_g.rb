@@ -1,6 +1,7 @@
 require 'youtube_g/client'
 require 'youtube_g/logger'
 require 'youtube_g/record'
+require 'youtube_g/api'
 require 'youtube_g/model/author'
 require 'youtube_g/model/category'
 require 'youtube_g/model/contact'

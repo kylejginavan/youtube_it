@@ -4,7 +4,7 @@ class YoutubeG
       # max_results
       attr_reader :max_result_count
 
-      # orderby
+      # orderby, ([relevance], viewCount)
       attr_reader :order
 
       # start-index
@@ -13,13 +13,13 @@ class YoutubeG
       # vq
       attr_reader :query
 
-      # alt
+      # alt, ([atom], rss, json)
       attr_reader :response_format
 
       # /-/categories_or_tags
       attr_reader :tags
 
-      # format
+      # format (1=mobile devices)
       attr_reader :video_format
       
       def base_url

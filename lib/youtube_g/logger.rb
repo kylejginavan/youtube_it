@@ -1,6 +1,12 @@
 require 'logger'
 
 class YoutubeG
+  
+  # TODO: Why is this needed? Does this happen if running standalone w/o Rails?
+  # Anyway, isn't it easier to debug w/o the really long timestamp & log level?
+  # How often do you look at the timestamp and log level? Wouldn't it be nice to
+  # see your logger output first?
+  
   # Extension of the base ruby Logger class to restore the default log
   # level and timestamp formatting which is so rudely taken forcibly
   # away from us by the Rails app's use of the ActiveSupport library

@@ -8,7 +8,6 @@ class YoutubeG
 
     def logger
       @logger = YoutubeG::Logger.new(STDOUT) if !@logger
-      @logger
     end
 
     def search_videos (request)
@@ -21,10 +20,7 @@ class YoutubeG
       logger.debug "Submitting request [url=#{url}]."
       content = open(url).read
 
-      # parse the response
-      response = parse_content(content)
-      
-      response
+      parse_content(content)
     end
 
     protected
