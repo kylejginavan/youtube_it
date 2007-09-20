@@ -10,7 +10,9 @@ class YoutubeG
       @logger = YoutubeG::Logger.new(STDOUT) if !@logger
     end
 
-    def search_videos (request)
+    def videos_by (params)
+      request = YoutubeG::Request::VideoSearch.new(params)
+
       # build the full query url
       url = (request.is_tag_search?) ?
         "#{request.base_url}/-/#{tags_to_params(request.tags)}" :
@@ -90,7 +92,8 @@ class YoutubeG
 
         media_content = media_group.elements["media:content"]
         content_url = media_content.attributes["url"]
-        format = media_content.attributes["yt:format"]
+        format_code = media_content.attributes["yt:format"].to_i
+        format = YoutubeG::Model::Video::Format.by_code(format_code)
 
         player_url = media_group.elements["media:player"].attributes["url"]
 

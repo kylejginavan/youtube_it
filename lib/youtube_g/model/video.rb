@@ -1,6 +1,39 @@
 class YoutubeG
   module Model
     class Video < YoutubeG::Record
+      # Describes the various file formats in which a Youtube video may be
+      # made available and allows looking them up by format code number.
+      #
+      class Format
+        @@formats = Hash.new
+
+        def initialize (format_code, name)
+          @format_code = format_code
+          @name = name
+
+          @@formats[format_code] = self
+        end
+
+        def self.by_code (format_code)
+          @@formats[format_code]
+        end
+
+        # Flash format on YouTube site. All videos are available in this
+        # format.
+        #
+        FLASH = YoutubeG::Model::Video::Format.new(0, :flash)
+
+        # RTSP streaming URL for mobile video playback. H.263 video (176x144)
+        # and AMR audio.
+        #
+        RTSP = YoutubeG::Model::Video::Format.new(1, :rtsp)
+
+        # HTTP URL to the embeddable player (SWF) for this video. This format
+        # is not available for a video that is not embeddable.
+        #
+        SWF = YoutubeG::Model::Video::Format.new(5, :swf)
+      end
+
       attr_reader :duration
       attr_reader :format
       attr_reader :noembed
