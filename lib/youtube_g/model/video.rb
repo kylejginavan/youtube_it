@@ -35,7 +35,6 @@ class YoutubeG
       end
 
       attr_reader :duration
-      attr_reader :format
       attr_reader :noembed
       attr_reader :position
       attr_reader :racy
@@ -49,7 +48,11 @@ class YoutubeG
       attr_reader :title
       attr_reader :html_content
       attr_reader :author
-      attr_reader :content_url
+
+      # YoutubeG::Model::Content records describing the individual media content
+      # data available for this video.  Most, but not all, videos offer this.
+      attr_reader :media_content
+
       attr_reader :player_url
       attr_reader :rating
       attr_reader :view_count
@@ -60,6 +63,10 @@ class YoutubeG
       # responses feed
       # related feed
       # comments feedLink
+      
+      def default_media_content
+        @media_content.find { |c| c.is_default? }
+      end
     end
   end
 end

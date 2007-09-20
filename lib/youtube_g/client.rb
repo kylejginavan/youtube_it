@@ -90,10 +90,10 @@ class YoutubeG
         description = media_group.elements["media:description"].text
         duration = media_group.elements["yt:duration"].attributes["seconds"].to_i
 
-        media_content = media_group.elements["media:content"]
-        content_url = media_content.attributes["url"]
-        format_code = media_content.attributes["yt:format"].to_i
-        format = YoutubeG::Model::Video::Format.by_code(format_code)
+        media_content = []
+        media_group.elements.each("media:content") do |mce|
+          media_content << parse_media_content(mce)
+        end
 
         player_url = media_group.elements["media:player"].attributes["url"]
 
@@ -131,12 +131,27 @@ class YoutubeG
           :author => author,
           :description => description,
           :duration => duration,
-          :content_url => content_url,
-          :format => format,
+          :media_content => media_content,
           :player_url => player_url,
           :thumbnails => thumbnails,
           :rating => rating,
           :view_count => view_count)
+      end
+
+      def parse_media_content (media_content_element)
+        content_url = media_content_element.attributes["url"]
+        format_code = media_content_element.attributes["yt:format"].to_i
+        format = YoutubeG::Model::Video::Format.by_code(format_code)
+        duration = media_content_element.attributes["duration"].to_i
+        mime_type = media_content_element.attributes["type"]
+        default = (media_content_element.attributes["isDefault"] == "true")
+
+        YoutubeG::Model::Content.new(
+          :url => content_url,
+          :format => format,
+          :duration => duration,
+          :mime_type => mime_type,
+          :default => default)
       end
 
       def tags_to_params (tags)

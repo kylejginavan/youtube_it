@@ -10,7 +10,7 @@ class TestVideoSearch < Test::Unit::TestCase
   end
 
   def test_should_respond_to_a_basic_query
-    response = @client.videos_by(:query => "christina ricci")
+    response = @client.videos_by(:query => "penguin")
 
     assert_equal "http://gdata.youtube.com/feeds/videos", response.feed_id
     assert_equal 25, response.max_result_count
@@ -24,8 +24,15 @@ class TestVideoSearch < Test::Unit::TestCase
   
   def test_should_get_videos_for_multiword_metasearch_query
     response = @client.videos_by(:query => 'christina ricci')
+
+    assert_equal "http://gdata.youtube.com/feeds/videos", response.feed_id
     assert_equal 25, response.max_result_count
-    # assert_equal 25, response.videos.size
+    assert_equal 25, response.videos.length
+    assert_equal 1, response.offset
+    assert (response.total_result_count > 100)
+    assert_instance_of Time, response.updated_at
+
+    response.videos.each { |v| assert_valid_video v }
   end
   
   def test_should_get_videos_for_one_tag
@@ -35,14 +42,29 @@ class TestVideoSearch < Test::Unit::TestCase
   private
 
     def assert_valid_video (video)
+      pp video
+
       # check general attributes
       assert_instance_of YoutubeG::Model::Video, video
-      # http://www.youtube.com/v/IHVaXG1thXM
-      assert_valid_url video.content_url
       assert_instance_of Fixnum, video.duration
       assert (video.duration > 0)
-      assert_instance_of YoutubeG::Model::Video::Format, video.format
       assert_match /^<div style=.*?<\/div>/m, video.html_content
+
+      # validate media content records
+      video.media_content.each do |media_content|
+        # http://www.youtube.com/v/IHVaXG1thXM
+        assert_valid_url media_content.url
+        assert (media_content.duration > 0)
+        assert_instance_of YoutubeG::Model::Video::Format, media_content.format
+        assert_instance_of String, media_content.mime_type
+        assert_match /^[^\/]+\/[^\/]+$/, media_content.mime_type
+      end
+
+      default_content = video.default_media_content
+      if default_content
+        assert_instance_of YoutubeG::Model::Content, default_content
+        assert default_content.is_default?
+      end
 
       # validate keywords
       video.keywords.each { |kw| assert_instance_of(String, kw) }
