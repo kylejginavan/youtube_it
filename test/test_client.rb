@@ -62,6 +62,11 @@ class TestClient < Test::Unit::TestCase
     response.videos.each { |v| assert_valid_video v }            
   end
   
+  def test_should_get_most_viewed_videos
+    response = @client.videos_by(:most_viewed)
+    response.videos.each { |v| assert_valid_video v }                
+  end
+  
   private
 
     def assert_valid_video (video)

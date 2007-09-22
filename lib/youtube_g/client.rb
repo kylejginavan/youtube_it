@@ -10,16 +10,18 @@ class YoutubeG
       @logger = YoutubeG::Logger.new(STDOUT) if !@logger
     end
 
-    def videos_by (params)
-      request = YoutubeG::Request::VideoSearch.new(params)
-
-      # submit the request
+    def videos_by(params)
+      if params.is_a?(Hash)
+        request = YoutubeG::Request::VideoSearch.new(params)
+      else
+        request = YoutubeG::Request::StandardSearch.new(params)
+      end
+      
       logger.debug "Submitting request [url=#{request.url}]."
       content = open(request.url).read
-
       parse_content(content)
     end
-
+    
     protected
 
       def parse_content (content)

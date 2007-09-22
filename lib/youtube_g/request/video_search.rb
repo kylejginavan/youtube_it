@@ -3,7 +3,30 @@ class YoutubeG
   # The goal of the classes in this module is to build the request URLs for each type of search
   module Request
     
-    class VideoSearch < YoutubeG::Record
+    class BaseSearch
+      def base_url
+        "http://gdata.youtube.com/feeds/"                
+      end
+    end
+    
+    class StandardSearch < BaseSearch
+      PREDEFINED_TYPES = [:most_viewed, :top_rated, :recently_featured, :watch_on_mobile, :favorites]
+      attr_reader :url
+      
+      def initialize(type, params={})
+        if PREDEFINED_TYPES.include?(type)
+          @url = base_url << type.to_s
+        else
+          raise "Invalid type"
+        end
+      end
+      
+      def base_url
+        super << "standardfeeds/"        
+      end
+    end
+    
+    class VideoSearch < BaseSearch
       attr_reader :max_result_count                # max_results
       attr_reader :order                           # orderby, ([relevance], viewCount)
       attr_reader :offset                          # start-index
@@ -15,7 +38,7 @@ class YoutubeG
       
       attr_reader :url
       
-      def initialize(params)
+      def initialize(params={})
         return if params.nil?
 
         @url = base_url
@@ -32,7 +55,7 @@ class YoutubeG
       end
       
       def base_url
-        "http://gdata.youtube.com/feeds/videos"
+        super << "videos"
       end
       
       def to_youtube_params
