@@ -13,14 +13,9 @@ class YoutubeG
     def videos_by (params)
       request = YoutubeG::Request::VideoSearch.new(params)
 
-      # build the full query url
-      url = (request.is_tag_search?) ?
-        "#{request.base_url}/-/#{tags_to_params(request.tags)}" :
-        build_url(request.base_url, request.to_youtube_params)
-
       # submit the request
-      logger.debug "Submitting request [url=#{url}]."
-      content = open(url).read
+      logger.debug "Submitting request [url=#{request.url}]."
+      content = open(request.url).read
 
       parse_content(content)
     end
@@ -152,25 +147,6 @@ class YoutubeG
           :duration => duration,
           :mime_type => mime_type,
           :default => default)
-      end
-
-      def tags_to_params (tags)
-        tags.map { |t| CGI.escape(t.to_s) }.join("/")
-      end
-
-      def build_url (base_url, params)
-        url = base_url.clone
-        url << '?'
-        item_count = 0
-        params.keys.each do |key|
-          value = params[key]
-          next if value.nil?
-
-          url << '&' if (item_count > 0)
-          url << "#{key}=#{CGI.escape(value.to_s)}"
-          item_count += 1
-        end
-        url
       end
 
   end

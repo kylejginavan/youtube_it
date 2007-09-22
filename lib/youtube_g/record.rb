@@ -1,4 +1,5 @@
 class YoutubeG
+  # TODO: Does this require it's own file? Moved to video search request.
   class Record
     def initialize (params)
       return if params.nil?

@@ -11,27 +11,27 @@ class TestVideoSearch < Test::Unit::TestCase
 
   def test_should_respond_to_a_basic_query
     response = @client.videos_by(:query => "penguin")
-
+  
     assert_equal "http://gdata.youtube.com/feeds/videos", response.feed_id
     assert_equal 25, response.max_result_count
     assert_equal 25, response.videos.length
     assert_equal 1, response.offset
     assert (response.total_result_count > 100)
     assert_instance_of Time, response.updated_at
-
+  
     response.videos.each { |v| assert_valid_video v }
   end
   
   def test_should_get_videos_for_multiword_metasearch_query
     response = @client.videos_by(:query => 'christina ricci')
-
+  
     assert_equal "http://gdata.youtube.com/feeds/videos", response.feed_id
     assert_equal 25, response.max_result_count
     assert_equal 25, response.videos.length
     assert_equal 1, response.offset
     assert (response.total_result_count > 100)
     assert_instance_of Time, response.updated_at
-
+  
     response.videos.each { |v| assert_valid_video v }
   end
   
@@ -46,7 +46,8 @@ class TestVideoSearch < Test::Unit::TestCase
   end
   
   def test_should_get_videos_for_one_category
-    
+    response = @client.videos_by(:categories => [:news])
+    response.videos.each { |v| assert_valid_video v }    
   end
   
   def test_should_get_videos_for_multiple_categories
