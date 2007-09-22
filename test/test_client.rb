@@ -57,10 +57,10 @@ class TestClient < Test::Unit::TestCase
   
   # TODO: Need to do more specific checking in these tests
   # Currently, if a URL is valid, and videos are found, the test passes regardless of search criteria
-  # def test_should_get_videos_for_categories_and_tags
-  #   response = @client.videos_by(:categories => [:news, :sports], :tags => ['soccer', 'football'])
-  #   response.videos.each { |v| assert_valid_video v }            
-  # end
+  def test_should_get_videos_for_categories_and_tags
+    response = @client.videos_by(:categories => [:news, :sports], :tags => ['soccer', 'football'])
+    response.videos.each { |v| assert_valid_video v }            
+  end
   
   private
 

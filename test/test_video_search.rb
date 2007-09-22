@@ -36,9 +36,9 @@ class TestVideoSearch < Test::Unit::TestCase
     assert_equal "http://gdata.youtube.com/feeds/videos/-/News/Sports/", request.url
   end
   
-  # def test_should_build_categories_and_tags_query_url
-  #   request = YoutubeG::Request::VideoSearch.new(:categories => [:news, :sports], :tags => ['soccer', 'football'])
-  #   assert_equal "http://gdata.youtube.com/feeds/videos/-/News/Sports/soccer/football", request.url
-  # end
+  def test_should_build_categories_and_tags_query_url
+    request = YoutubeG::Request::VideoSearch.new(:categories => [:news, :sports], :tags => ['soccer', 'football'])
+    assert_equal "http://gdata.youtube.com/feeds/videos/-/News/Sports/soccer/football", request.url
+  end
   
 end
