@@ -28,7 +28,7 @@ class YoutubeG
           instance_variable_set("@#{name}", value) if respond_to?(name)
         end
         
-        build_url(to_youtube_params) if params[:query]  
+        @url << build_url(to_youtube_params) if params[:query]  
       end
       
       def base_url
@@ -57,17 +57,17 @@ class YoutubeG
         end
 
         def build_url(params)
-          @url << '?'
+          u = '?'
           item_count = 0
           params.keys.each do |key|
             value = params[key]
             next if value.nil?
 
-            @url << '&' if (item_count > 0)
-            @url << "#{key}=#{CGI.escape(value.to_s)}"
+            u << '&' if (item_count > 0)
+            u << "#{key}=#{CGI.escape(value.to_s)}"
             item_count += 1
           end
-          @url
+          u
         end
         
     end
