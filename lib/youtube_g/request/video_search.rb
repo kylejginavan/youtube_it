@@ -20,14 +20,14 @@ class YoutubeG
 
         @url = base_url
         @url << "/-/" if (params[:categories] || params[:tags])
-        build_categories(params.delete(:categories)) if params[:categories]
+        @url << categories_to_params(params.delete(:categories)) << "/" if params[:categories]
+        @url << tags_to_params(params.delete(:tags)) if params[:tags]
 
         params.each do |key, value| 
           name = key.to_s
           instance_variable_set("@#{name}", value) if respond_to?(name)
         end
         
-        @url << "#{tags_to_params(@tags)}" if params[:tags]
         build_url(to_youtube_params) if params[:query]  
       end
       
@@ -48,10 +48,14 @@ class YoutubeG
       
       private
         # Convert category symbols into strings and build the URL. GData requires categories to be capitalized. 
-        def build_categories(categories)
-          categories.map { |sym| @url << "#{sym.to_s.capitalize}/"  }
+        def categories_to_params(categories)
+          categories.map { |c| c.to_s.capitalize }.join("/")
         end
         
+        def tags_to_params(tags)
+          tags.map { |t| CGI.escape(t.to_s) }.join("/")
+        end
+
         def build_url(params)
           @url << '?'
           item_count = 0
@@ -64,10 +68,6 @@ class YoutubeG
             item_count += 1
           end
           @url
-        end
-        
-        def tags_to_params(tags)
-          tags.map { |t| CGI.escape(t.to_s) }.join("/")
         end
         
     end
