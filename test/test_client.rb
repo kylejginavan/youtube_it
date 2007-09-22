@@ -67,6 +67,11 @@ class TestClient < Test::Unit::TestCase
     response.videos.each { |v| assert_valid_video v }                
   end
   
+  def test_should_get_top_rated_videos_for_today
+    response = @client.videos_by(:top_rated, :time => :today)
+    response.videos.each { |v| assert_valid_video v }                    
+  end
+  
   private
 
     def assert_valid_video (video)

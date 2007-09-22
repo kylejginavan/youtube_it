@@ -41,6 +41,8 @@ class TestVideoSearch < Test::Unit::TestCase
     assert_equal "http://gdata.youtube.com/feeds/videos/-/News/Sports/soccer/football", request.url
   end
   
+  # -- Standard Feeds --------------------------------------------------------------------------------
+  
   def test_should_build_url_for_most_viewed
     request = YoutubeG::Request::StandardSearch.new(:most_viewed)
     assert_equal "http://gdata.youtube.com/feeds/standardfeeds/most_viewed", request.url    
@@ -51,5 +53,9 @@ class TestVideoSearch < Test::Unit::TestCase
       request = YoutubeG::Request::StandardSearch.new(:most_viewed_yo)
     end
   end
-  
+
+  def test_should_build_url_for_top_rated_for_today
+    request = YoutubeG::Request::StandardSearch.new(:top_rated, :time => :today)
+    assert_equal "http://gdata.youtube.com/feeds/standardfeeds/top_rated?time=today", request.url    
+  end  
 end

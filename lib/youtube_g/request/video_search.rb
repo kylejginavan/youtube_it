@@ -10,12 +10,15 @@ class YoutubeG
     end
     
     class StandardSearch < BaseSearch
-      PREDEFINED_TYPES = [:most_viewed, :top_rated, :recently_featured, :watch_on_mobile, :favorites]
+      TYPES = [ :most_viewed, :top_rated, :recently_featured, :watch_on_mobile ]
+      TIMES = [ :all_time, :today, :this_week, :this_month ]
       attr_reader :url
       
-      def initialize(type, params={})
-        if PREDEFINED_TYPES.include?(type)
+      def initialize(type, options={})
+        if TYPES.include?(type)
           @url = base_url << type.to_s
+          
+          @url << "?time=#{options.delete(:time)}" if TIMES.include?(options[:time])
         else
           raise "Invalid type"
         end
