@@ -51,7 +51,8 @@ class TestVideoSearch < Test::Unit::TestCase
   end
   
   def test_should_get_videos_for_multiple_categories
-    
+    response = @client.videos_by(:categories => [:news, :sports])
+    response.videos.each { |v| assert_valid_video v }        
   end
   
   def test_should_get_videos_for_category_and_tag
