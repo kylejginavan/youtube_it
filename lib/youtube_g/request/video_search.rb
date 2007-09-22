@@ -1,29 +1,18 @@
 class YoutubeG
+  
+  # The goal of the classes in this module is to build the request URLs for each type of search
   module Request
+    
     class VideoSearch < YoutubeG::Record
-      # max_results
-      attr_reader :max_result_count
-
-      # orderby, ([relevance], viewCount)
-      attr_reader :order
-
-      # start-index
-      attr_reader :offset
-
-      # vq
-      attr_reader :query
-
-      # alt, ([atom], rss, json)
-      attr_reader :response_format
-
-      # /-/categories_or_tags
-      attr_reader :tags
-      attr_reader :categories
-
-      # format (1=mobile devices)
-      attr_reader :video_format
+      attr_reader :max_result_count                # max_results
+      attr_reader :order                           # orderby, ([relevance], viewCount)
+      attr_reader :offset                          # start-index
+      attr_reader :query                           # vq
+      attr_reader :response_format                 # alt, ([atom], rss, json)
+      attr_reader :tags                            # /-/tag1/tag2
+      attr_reader :categories                      # /-/Category1/Category2
+      attr_reader :video_format                    # format (1=mobile devices)
       
-      # TODO: Do these belong here?
       attr_reader :url
       
       def initialize(params)
