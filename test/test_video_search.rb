@@ -36,13 +36,31 @@ class TestVideoSearch < Test::Unit::TestCase
   end
   
   def test_should_get_videos_for_one_tag
-    # response = @client.videos_by(:tags => ['horse'])
+    response = @client.videos_by(:tags => ['panther'])
+    response.videos.each { |v| assert_valid_video v }
+  end
+  
+  def test_should_get_videos_for_multiple_tags
+    response = @client.videos_by(:tags => ['tiger', 'leopard'])
+    response.videos.each { |v| assert_valid_video v }    
+  end
+  
+  def test_should_get_videos_for_one_category
+    
+  end
+  
+  def test_should_get_videos_for_multiple_categories
+    
+  end
+  
+  def test_should_get_videos_for_category_and_tag
+    
   end
   
   private
 
     def assert_valid_video (video)
-      pp video
+      # pp video
 
       # check general attributes
       assert_instance_of YoutubeG::Model::Video, video
