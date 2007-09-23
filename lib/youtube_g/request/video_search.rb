@@ -9,6 +9,12 @@ class YoutubeG
       end
     end
     
+    class UsersSearch < BaseSearch
+      def base_url
+        super << "users/"
+      end
+    end
+        
     class StandardSearch < BaseSearch
       TYPES = [ :most_viewed, :top_rated, :recently_featured, :watch_on_mobile ]
       TIMES = [ :all_time, :today, :this_week, :this_month ]
@@ -17,10 +23,9 @@ class YoutubeG
       def initialize(type, options={})
         if TYPES.include?(type)
           @url = base_url << type.to_s
-          
           @url << "?time=#{options.delete(:time)}" if TIMES.include?(options[:time])
         else
-          raise "Invalid type"
+          raise "Invalid type, must be one of: #{ TYPES.each { |t| t.to_s }.join(", ") }"
         end
       end
       
