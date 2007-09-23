@@ -79,6 +79,8 @@ class YoutubeG
       
       private
         # Convert category symbols into strings and build the URL. GData requires categories to be capitalized. 
+        # Categories defined like: categories => { :include => [:news], :exclude => [:sports] }
+        # or like: categories => [:news, :sports]
         def categories_to_params(categories)
           if categories.respond_to?(:keys) and categories.respond_to?(:[])
             s = ""

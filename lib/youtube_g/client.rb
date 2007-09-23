@@ -7,7 +7,7 @@ class YoutubeG
     end
 
     def videos_by(params, options={})
-      if params.is_a?(Hash)
+      if params.respond_to?(:keys) and params.respond_to?(:[])
         request = YoutubeG::Request::VideoSearch.new(params)
       else
         request = YoutubeG::Request::StandardSearch.new(params, options)
