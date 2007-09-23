@@ -4,6 +4,8 @@ class YoutubeG
   module Request
     
     class BaseSearch
+      attr_reader :url
+
       def base_url
         "http://gdata.youtube.com/feeds/"                
       end
@@ -18,7 +20,6 @@ class YoutubeG
     class StandardSearch < BaseSearch
       TYPES = [ :most_viewed, :top_rated, :recently_featured, :watch_on_mobile ]
       TIMES = [ :all_time, :today, :this_week, :this_month ]
-      attr_reader :url
       
       def initialize(type, options={})
         if TYPES.include?(type)
@@ -43,8 +44,6 @@ class YoutubeG
       attr_reader :tags                            # /-/tag1/tag2
       attr_reader :categories                      # /-/Category1/Category2
       attr_reader :video_format                    # format (1=mobile devices)
-      
-      attr_reader :url
       
       def initialize(params={})
         return if params.nil?
