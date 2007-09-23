@@ -80,7 +80,16 @@ class YoutubeG
       private
         # Convert category symbols into strings and build the URL. GData requires categories to be capitalized. 
         def categories_to_params(categories)
-          categories.map { |c| c.to_s.capitalize }.join("/")
+          if categories.is_a?(Hash)
+            str = ""
+            str = categories[:either].map { |c| c.to_s.capitalize }.join("%7C") if categories[:either]
+            if categories[:exclude]
+              str += "/-" << categories[:exclude].map { |c| c.to_s.capitalize }.join("/-")
+            end
+            str
+          else
+            categories.map { |c| c.to_s.capitalize }.join("/")
+          end
         end
         
         def tags_to_params(tags)

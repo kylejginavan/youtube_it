@@ -58,4 +58,22 @@ class TestVideoSearch < Test::Unit::TestCase
     request = YoutubeG::Request::StandardSearch.new(:top_rated, :time => :today)
     assert_equal "http://gdata.youtube.com/feeds/standardfeeds/top_rated?time=today", request.url    
   end  
+  
+  # -- Complex Video Queries -------------------------------------------------------------------------
+  
+  def test_should_build_url_for_boolean_or_case_for_categories
+    request = YoutubeG::Request::VideoSearch.new(:categories => { :either => [:news, :sports] })
+    assert_equal "http://gdata.youtube.com/feeds/videos/-/News%7CSports/", request.url
+  end
+
+  def test_should_build_url_for_boolean_or_and_exclude_case_for_categories
+    request = YoutubeG::Request::VideoSearch.new(:categories => { :either => [:news, :sports], :exclude => [:comedy] })
+    assert_equal "http://gdata.youtube.com/feeds/videos/-/News%7CSports/-Comedy/", request.url
+  end
+
+  # def test_should_build_url_for_exclude_case_for_tags
+  #   request = YoutubeG::Request::VideoSearch.new(:categories => { :either => [:news, :sports], :exclude => [:comedy] },
+  #                                                :tags => { :include => ['football'], :exclude => ['soccer'] })
+  #   assert_equal "http://gdata.youtube.com/feeds/videos/-/News%7CSports/-Comedy/football/-soccer", request.url
+  # end
 end
