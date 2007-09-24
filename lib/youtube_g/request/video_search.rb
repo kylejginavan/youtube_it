@@ -78,7 +78,7 @@ class YoutubeG
       
       private
         # Convert category symbols into strings and build the URL. GData requires categories to be capitalized. 
-        # Categories defined like: categories => { :include => [:news], :exclude => [:sports] }
+        # Categories defined like: categories => { :include => [:news], :exclude => [:sports], :either => [..] }
         # or like: categories => [:news, :sports]
         def categories_to_params(categories)
           if categories.respond_to?(:keys) and categories.respond_to?(:[])
@@ -92,8 +92,18 @@ class YoutubeG
           end
         end
         
+        # Tags defined like: tags => { :include => [:football], :exclude => [:soccer], :either => [:polo, :tennis] }
+        # or tags => [:football, :soccer]
         def tags_to_params(tags)
-          tags.map { |t| CGI.escape(t.to_s) }.join("/")
+          if tags.respond_to?(:keys) and tags.respond_to?(:[])
+            s = ""
+            s += tags[:either].map { |t| CGI.escape(t.to_s) }.join("%7C") if tags[:either]
+            s += tags[:include].map { |t| CGI.escape(t.to_s) }.join("/") if tags[:include]            
+            s += ("/-" << tags[:exclude].map { |t| CGI.escape(t.to_s) }.join("/-")) if tags[:exclude]
+            s
+          else
+            tags.map { |t| CGI.escape(t.to_s) }.join("/")
+          end          
         end
 
         def build_url(params)

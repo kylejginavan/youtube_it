@@ -72,6 +72,18 @@ class TestClient < Test::Unit::TestCase
     response.videos.each { |v| assert_valid_video v }                    
   end
   
+  def test_should_get_videos_for_categories_and_tags_with_category_boolean_operators
+    response = @client.videos_by(:categories => { :either => [:news, :sports], :exclude => [:comedy] },
+                                 :tags => { :include => ['football'], :exclude => ['soccer'] })
+    response.videos.each { |v| assert_valid_video v }
+  end
+
+  def test_should_get_videos_for_categories_and_tags_with_tag_boolean_operators
+    response = @client.videos_by(:categories => { :either => [:news, :sports], :exclude => [:comedy] },
+                                 :tags => { :either => ['football', 'soccer', 'polo'] })
+    response.videos.each { |v| assert_valid_video v }
+  end
+  
   private
 
     def assert_valid_video (video)
