@@ -89,6 +89,12 @@ class TestClient < Test::Unit::TestCase
     response.videos.each { |v| assert_valid_video v }
   end
   
+  # HTTP 403 Error
+  # def test_should_get_favorite_videos_by_user
+  #   response = @client.videos_by(:favorites, :user => 'liz')
+  #   response.videos.each { |v| assert_valid_video v }
+  # end
+  
   private
 
     def assert_valid_video (video)

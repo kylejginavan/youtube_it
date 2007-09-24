@@ -11,8 +11,8 @@ class YoutubeG
     def videos_by(params, options={})
       if params.respond_to?(:keys) and params.respond_to?(:[])
         request = YoutubeG::Request::VideoSearch.new(params)
-      elsif params.respond_to?(:keys) and params[:user]
-        request = YoutubeG::Request::UserSearch.new(params)
+      elsif (params.respond_to?(:keys) and params[:user]) || params == :favorites
+        request = YoutubeG::Request::UserSearch.new(params, options)
       else
         request = YoutubeG::Request::StandardSearch.new(params, options)
       end

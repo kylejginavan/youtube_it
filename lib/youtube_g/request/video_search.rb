@@ -14,7 +14,9 @@ class YoutubeG
     class UserSearch < BaseSearch
       
       def initialize(params, options={})
-        @url = base_url << "#{params[:user]}/uploads" if params[:user]
+        @url = base_url
+        return @url << "#{options[:user]}/favorites" if params == :favorites
+        @url << "#{params[:user]}/uploads" if params[:user]
       end
       
       def base_url

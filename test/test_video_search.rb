@@ -89,4 +89,9 @@ class TestVideoSearch < Test::Unit::TestCase
     request = YoutubeG::Request::UserSearch.new(:user => 'liz')
     assert_equal "http://gdata.youtube.com/feeds/users/liz/uploads", request.url
   end
+  
+  def test_should_build_url_for_favorite_videos_by_user
+    request = YoutubeG::Request::UserSearch.new(:favorites, :user => 'liz')
+    assert_equal "http://gdata.youtube.com/feeds/users/liz/favorites", request.url
+  end
 end
