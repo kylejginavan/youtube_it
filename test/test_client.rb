@@ -98,7 +98,7 @@ class TestClient < Test::Unit::TestCase
   def test_should_get_videos_for_query_search_with_categories_excluded
     response = @client.videos_by(:query => 'bench press', :categories => { :exclude => [:comedy, :entertainment] },
                                  :max_results => 10)
-    # pp response.videos.first
+    assert_equal "<object width=\"425\" height=\"350\">\n  <param name=\"movie\" value=\"http://www.youtube.com/v/wOnP_oAXUMA\"></param>\n  <param name=\"wmode\" value=\"transparent\"></param>\n  <embed src=\"http://www.youtube.com/v/wOnP_oAXUMA\" type=\"application/x-shockwave-flash\" \n   wmode=\"transparent\" width=\"425\" height=\"350\"></embed>\n</object>\n", response.videos.first.embed_html
     response.videos.each { |v| assert_valid_video v }
   end
   

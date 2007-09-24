@@ -1,3 +1,5 @@
+require 'pp'
+
 class YoutubeG
   module Model
     class Video < YoutubeG::Record
@@ -7,14 +9,14 @@ class YoutubeG
       class Format
         @@formats = Hash.new
 
-        def initialize (format_code, name)
+        def initialize(format_code, name)
           @format_code = format_code
           @name = name
 
-          @@formats[format_code] = self
+          @@formats[format_code] = self          
         end
 
-        def self.by_code (format_code)
+        def self.by_code(format_code)
           @@formats[format_code]
         end
 
@@ -67,6 +69,22 @@ class YoutubeG
       def default_media_content
         @media_content.find { |c| c.is_default? }
       end
+      
+      def embed_html(width = 425, height = 350)
+        <<EDOC
+<object width="#{width}" height="#{height}">
+  <param name="movie" value="#{embed_url}"></param>
+  <param name="wmode" value="transparent"></param>
+  <embed src="#{embed_url}" type="application/x-shockwave-flash" 
+   wmode="transparent" width="#{width}" height="#{height}"></embed>
+</object>
+EDOC
+      end
+      
+      private
+        def embed_url
+          @player_url.sub('watch?', '').sub('=', '/')          
+        end
     end
   end
 end
