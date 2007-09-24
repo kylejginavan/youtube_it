@@ -84,8 +84,10 @@ class TestVideoSearch < Test::Unit::TestCase
   end
   
   def test_should_build_url_for_query_search_with_categories_excluded
-    request = YoutubeG::Request::VideoSearch.new(:query => 'bench press', :categories => { :exclude => [:comedy, :entertainment] })
-    assert_equal "http://gdata.youtube.com/feeds/videos/-/-Comedy/-Entertainment/?vq=bench+press", request.url
+    request = YoutubeG::Request::VideoSearch.new(:query => 'bench press', 
+                                                 :categories => { :exclude => [:comedy, :entertainment] },
+                                                 :max_results => 10)
+    assert_equal "http://gdata.youtube.com/feeds/videos/-/-Comedy/-Entertainment/?vq=bench+press&max-results=10", request.url
   end
   
   # -- User Queries ---------------------------------------------------------------------------------

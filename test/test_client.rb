@@ -96,7 +96,9 @@ class TestClient < Test::Unit::TestCase
   # end
   
   def test_should_get_videos_for_query_search_with_categories_excluded
-    response = @client.videos_by(:query => 'bench press', :categories => { :exclude => [:comedy, :entertainment] })
+    response = @client.videos_by(:query => 'bench press', :categories => { :exclude => [:comedy, :entertainment] },
+                                 :max_results => 10)
+    # pp response.videos.first
     response.videos.each { |v| assert_valid_video v }
   end
   

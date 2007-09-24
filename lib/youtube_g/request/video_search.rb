@@ -43,8 +43,8 @@ class YoutubeG
     end
     
     class VideoSearch < BaseSearch
-      attr_reader :max_result_count                # max_results
-      attr_reader :order                           # orderby, ([relevance], viewCount)
+      attr_reader :max_results                     # max_results
+      attr_reader :order_by                        # orderby, ([relevance], viewCount)
       attr_reader :offset                          # start-index
       attr_reader :query                           # vq
       attr_reader :response_format                 # alt, ([atom], rss, json)
@@ -74,8 +74,8 @@ class YoutubeG
       
       def to_youtube_params
         {
-          'max_results' => @max_result_count,
-          'orderby' => @order,
+          'max-results' => @max_results,
+          'orderby' => @order_by,
           'start-index' => @offset,
           'vq' => @query,
           'alt' => @response_format,
