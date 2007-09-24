@@ -102,6 +102,16 @@ class TestClient < Test::Unit::TestCase
     response.videos.each { |v| assert_valid_video v }
   end
   
+  def test_should_be_able_to_pass_in_logger
+    @client = YoutubeG::Client.new(Logger.new(STDOUT))
+    assert_not_nil @client.logger
+  end
+
+  def test_create_logger_if_not_passed_in
+    @client = YoutubeG::Client.new
+    assert_not_nil @client.logger
+  end
+  
   private
 
     def assert_valid_video (video)

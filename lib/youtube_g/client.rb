@@ -1,9 +1,11 @@
+require 'logger'
+
 class YoutubeG
   class Client
     attr_accessor :logger
-
-    def logger
-      @logger = YoutubeG::Logger.new(STDOUT) if !@logger
+    
+    def initialize(logger=Logger.new(STDOUT))
+      @logger = logger
     end
 
     # Params can be one of :most_viewed, :top_rated, :recently_featured, :watch_on_mobile
@@ -21,10 +23,6 @@ class YoutubeG
       parser = YoutubeG::Parser::VideoFeedParser.new(request.url)
       parser.parse
     end
-    
-    # def favorite_videos_for(params)
-    #   
-    # end
     
   end
 end
