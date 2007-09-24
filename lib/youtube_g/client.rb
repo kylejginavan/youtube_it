@@ -6,9 +6,13 @@ class YoutubeG
       @logger = YoutubeG::Logger.new(STDOUT) if !@logger
     end
 
+    # Params can be one of :most_viewed, :top_rated, :recently_featured, :watch_on_mobile
+    # Or :tags, :categories, :query, :user
     def videos_by(params, options={})
       if params.respond_to?(:keys) and params.respond_to?(:[])
         request = YoutubeG::Request::VideoSearch.new(params)
+      elsif params.respond_to?(:keys) and params[:user]
+        request = YoutubeG::Request::UserSearch.new(params)
       else
         request = YoutubeG::Request::StandardSearch.new(params, options)
       end

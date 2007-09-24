@@ -84,6 +84,11 @@ class TestClient < Test::Unit::TestCase
     response.videos.each { |v| assert_valid_video v }
   end
   
+  def test_should_get_videos_by_user
+    response = @client.videos_by(:user => 'liz')
+    response.videos.each { |v| assert_valid_video v }
+  end
+  
   private
 
     def assert_valid_video (video)

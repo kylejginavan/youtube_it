@@ -82,4 +82,11 @@ class TestVideoSearch < Test::Unit::TestCase
                                                  :tags => { :either => ['soccer', 'football', 'donkey'] })
     assert_equal "http://gdata.youtube.com/feeds/videos/-/News%7CSports/-Comedy/soccer%7Cfootball%7Cdonkey", request.url
   end
+  
+  # -- User Queries ---------------------------------------------------------------------------------
+  
+  def test_should_build_url_for_videos_by_user
+    request = YoutubeG::Request::UserSearch.new(:user => 'liz')
+    assert_equal "http://gdata.youtube.com/feeds/users/liz/uploads", request.url
+  end
 end

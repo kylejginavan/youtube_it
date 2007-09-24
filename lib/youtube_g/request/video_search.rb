@@ -11,7 +11,12 @@ class YoutubeG
       end
     end
     
-    class UsersSearch < BaseSearch
+    class UserSearch < BaseSearch
+      
+      def initialize(params, options={})
+        @url = base_url << "#{params[:user]}/uploads" if params[:user]
+      end
+      
       def base_url
         super << "users/"
       end
