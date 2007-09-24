@@ -57,7 +57,7 @@ class YoutubeG
 
         @url = base_url
         @url << "/-/" if (params[:categories] || params[:tags])
-        @url << categories_to_params(params.delete(:categories)) << "/" if params[:categories]
+        @url << categories_to_params(params.delete(:categories)) if params[:categories]
         @url << tags_to_params(params.delete(:tags)) if params[:tags]
 
         params.each do |key, value| 
@@ -90,12 +90,12 @@ class YoutubeG
         def categories_to_params(categories)
           if categories.respond_to?(:keys) and categories.respond_to?(:[])
             s = ""
-            s += categories[:either].map { |c| c.to_s.capitalize }.join("%7C") if categories[:either]
-            s += categories[:include].map { |c| c.to_s.capitalize }.join("/") if categories[:include]            
-            s += ("/-" << categories[:exclude].map { |c| c.to_s.capitalize }.join("/-")) if categories[:exclude]
+            s << categories[:either].map { |c| c.to_s.capitalize }.join("%7C") << '/' if categories[:either]
+            s << categories[:include].map { |c| c.to_s.capitalize }.join("/") << '/' if categories[:include]            
+            s << ("-" << categories[:exclude].map { |c| c.to_s.capitalize }.join("/-")) << '/' if categories[:exclude]
             s
           else
-            categories.map { |c| c.to_s.capitalize }.join("/")
+            categories.map { |c| c.to_s.capitalize }.join("/") << '/'
           end
         end
         
@@ -104,12 +104,12 @@ class YoutubeG
         def tags_to_params(tags)
           if tags.respond_to?(:keys) and tags.respond_to?(:[])
             s = ""
-            s += tags[:either].map { |t| CGI.escape(t.to_s) }.join("%7C") if tags[:either]
-            s += tags[:include].map { |t| CGI.escape(t.to_s) }.join("/") if tags[:include]            
-            s += ("/-" << tags[:exclude].map { |t| CGI.escape(t.to_s) }.join("/-")) if tags[:exclude]
+            s << tags[:either].map { |t| CGI.escape(t.to_s) }.join("%7C") << '/' if tags[:either]
+            s << tags[:include].map { |t| CGI.escape(t.to_s) }.join("/") << '/' if tags[:include]            
+            s << ("-" << tags[:exclude].map { |t| CGI.escape(t.to_s) }.join("/-")) << '/' if tags[:exclude]
             s
           else
-            tags.map { |t| CGI.escape(t.to_s) }.join("/")
+            tags.map { |t| CGI.escape(t.to_s) }.join("/") << '/'
           end          
         end
 

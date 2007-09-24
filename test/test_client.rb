@@ -95,6 +95,11 @@ class TestClient < Test::Unit::TestCase
   #   response.videos.each { |v| assert_valid_video v }
   # end
   
+  def test_should_get_videos_for_query_search_with_categories_excluded
+    response = @client.videos_by(:query => 'bench press', :categories => { :exclude => [:comedy, :entertainment] })
+    response.videos.each { |v| assert_valid_video v }
+  end
+  
   private
 
     def assert_valid_video (video)

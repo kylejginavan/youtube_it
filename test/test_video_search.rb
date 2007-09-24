@@ -18,12 +18,12 @@ class TestVideoSearch < Test::Unit::TestCase
   
   def test_should_build_one_tag_querl_url
     request = YoutubeG::Request::VideoSearch.new(:tags => ['panther'])
-    assert_equal "http://gdata.youtube.com/feeds/videos/-/panther", request.url
+    assert_equal "http://gdata.youtube.com/feeds/videos/-/panther/", request.url
   end
   
   def test_should_build_multiple_tags_query_url
     request = YoutubeG::Request::VideoSearch.new(:tags => ['tiger', 'leopard'])
-    assert_equal "http://gdata.youtube.com/feeds/videos/-/tiger/leopard", request.url
+    assert_equal "http://gdata.youtube.com/feeds/videos/-/tiger/leopard/", request.url
   end
   
   def test_should_build_one_category_query_url
@@ -38,7 +38,7 @@ class TestVideoSearch < Test::Unit::TestCase
   
   def test_should_build_categories_and_tags_query_url
     request = YoutubeG::Request::VideoSearch.new(:categories => [:news, :sports], :tags => ['soccer', 'football'])
-    assert_equal "http://gdata.youtube.com/feeds/videos/-/News/Sports/soccer/football", request.url
+    assert_equal "http://gdata.youtube.com/feeds/videos/-/News/Sports/soccer/football/", request.url
   end
   
   # -- Standard Feeds --------------------------------------------------------------------------------
@@ -74,13 +74,18 @@ class TestVideoSearch < Test::Unit::TestCase
   def test_should_build_url_for_exclude_case_for_tags
     request = YoutubeG::Request::VideoSearch.new(:categories => { :either => [:news, :sports], :exclude => [:comedy] },
                                                  :tags => { :include => ['football'], :exclude => ['soccer'] })
-    assert_equal "http://gdata.youtube.com/feeds/videos/-/News%7CSports/-Comedy/football/-soccer", request.url
+    assert_equal "http://gdata.youtube.com/feeds/videos/-/News%7CSports/-Comedy/football/-soccer/", request.url
   end
 
   def test_should_build_url_for_either_case_for_tags
     request = YoutubeG::Request::VideoSearch.new(:categories => { :either => [:news, :sports], :exclude => [:comedy] },
                                                  :tags => { :either => ['soccer', 'football', 'donkey'] })
-    assert_equal "http://gdata.youtube.com/feeds/videos/-/News%7CSports/-Comedy/soccer%7Cfootball%7Cdonkey", request.url
+    assert_equal "http://gdata.youtube.com/feeds/videos/-/News%7CSports/-Comedy/soccer%7Cfootball%7Cdonkey/", request.url
+  end
+  
+  def test_should_build_url_for_query_search_with_categories_excluded
+    request = YoutubeG::Request::VideoSearch.new(:query => 'bench press', :categories => { :exclude => [:comedy, :entertainment] })
+    assert_equal "http://gdata.youtube.com/feeds/videos/-/-Comedy/-Entertainment/?vq=bench+press", request.url
   end
   
   # -- User Queries ---------------------------------------------------------------------------------
