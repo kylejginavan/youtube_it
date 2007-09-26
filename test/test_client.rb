@@ -154,6 +154,9 @@ class TestClient < Test::Unit::TestCase
         assert_instance_of Fixnum, video.rating.min
         assert_instance_of Fixnum, video.rating.rater_count
       end
+      
+      # validate thumbnails
+      assert (video.thumbnails.size > 0)
 
       assert_not_nil video.title
       assert_instance_of String, video.title

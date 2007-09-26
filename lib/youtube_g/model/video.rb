@@ -55,6 +55,7 @@ class YoutubeG
       # data available for this video.  Most, but not all, videos offer this.
       attr_reader :media_content
 
+      attr_reader :thumbnails         # YoutubeG::Model::Thumbnail records
       attr_reader :player_url
       attr_reader :rating
       attr_reader :view_count
