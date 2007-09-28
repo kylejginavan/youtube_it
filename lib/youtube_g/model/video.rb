@@ -67,6 +67,13 @@ class YoutubeG
       # related feed
       # comments feedLink
       
+      # For convenience, the video_id with the URL stripped out, useful for searching for the video again
+      # without having to store it anywhere. A regular query search, with this id will return the same video.
+      # http://gdata.youtube.com/feeds/videos/ZTUVgYoeN_o
+      def unique_id
+        video_id.match(/videos\/(\w+)/).captures.first
+      end
+      
       def default_media_content
         @media_content.find { |c| c.is_default? }
       end
