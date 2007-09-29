@@ -35,6 +35,12 @@ class TestClient < Test::Unit::TestCase
     response.videos.each { |v| assert_valid_video v }
   end
   
+  # TODO: this doesn't work because the returned feed is in an unknown format
+  # def test_should_get_video_for_search_by_video_id
+  #   response = @client.videos_by(:video_id => "T7YazwP8GtY")
+  #   response.videos.each { |v| assert_valid_video v }    
+  # end
+  
   def test_should_get_videos_for_one_tag
     response = @client.videos_by(:tags => ['panther'])
     response.videos.each { |v| assert_valid_video v }

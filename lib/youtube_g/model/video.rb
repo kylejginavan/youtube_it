@@ -88,11 +88,11 @@ class YoutubeG
 </object>
 EDOC
       end
+
+      def embed_url
+        @player_url.sub('watch?', '').sub('=', '/')          
+      end
       
-      private
-        def embed_url
-          @player_url.sub('watch?', '').sub('=', '/')          
-        end
     end
   end
 end

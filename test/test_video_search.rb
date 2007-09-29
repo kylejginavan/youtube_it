@@ -16,6 +16,11 @@ class TestVideoSearch < Test::Unit::TestCase
     assert_equal "http://gdata.youtube.com/feeds/videos?vq=christina+ricci", request.url
   end
   
+  def test_should_build_video_id_url
+    request = YoutubeG::Request::VideoSearch.new(:video_id => 'T7YazwP8GtY')
+    assert_equal "http://gdata.youtube.com/feeds/videos/T7YazwP8GtY", request.url
+  end
+
   def test_should_build_one_tag_querl_url
     request = YoutubeG::Request::VideoSearch.new(:tags => ['panther'])
     assert_equal "http://gdata.youtube.com/feeds/videos/-/panther/", request.url

@@ -56,6 +56,10 @@ class YoutubeG
         return if params.nil?
 
         @url = base_url
+        
+        # http://gdata.youtube.com/feeds/videos/T7YazwP8GtY
+        return @url << "/" << params[:video_id] if params[:video_id]
+        
         @url << "/-/" if (params[:categories] || params[:tags])
         @url << categories_to_params(params.delete(:categories)) if params[:categories]
         @url << tags_to_params(params.delete(:tags)) if params[:tags]
