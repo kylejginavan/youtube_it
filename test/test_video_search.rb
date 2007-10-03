@@ -46,6 +46,11 @@ class TestVideoSearch < Test::Unit::TestCase
     assert_equal "http://gdata.youtube.com/feeds/videos/-/News/Sports/soccer/football/", request.url
   end
   
+  def test_should_build_categories_and_tags_url_with_max_results
+    request = YoutubeG::Request::VideoSearch.new(:categories => [:music], :tags => ['classic', 'rock'], :max_results => 2)
+    assert_equal "http://gdata.youtube.com/feeds/videos/-/Music/classic/rock/?max-results=2", request.url
+  end
+  
   # -- Standard Feeds --------------------------------------------------------------------------------
   
   def test_should_build_url_for_most_viewed

@@ -69,7 +69,7 @@ class YoutubeG
           instance_variable_set("@#{name}", value) if respond_to?(name)
         end
         
-        @url << build_url(to_youtube_params) if params[:query]  
+        @url << build_url(to_youtube_params) unless params.empty?
       end
       
       def base_url

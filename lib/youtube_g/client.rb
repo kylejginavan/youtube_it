@@ -11,10 +11,12 @@ class YoutubeG
     # Params can be one of :most_viewed, :top_rated, :recently_featured, :watch_on_mobile
     # Or :tags, :categories, :query, :user
     def videos_by(params, options={})
-      if params.respond_to? :to_hash
+      if params.respond_to?(:to_hash) and not params[:user]
         request = YoutubeG::Request::VideoSearch.new(params)
-      elsif (params.respond_to?(:to_hash) and params[:user]) || params == :favorites
+
+      elsif (params.respond_to?(:to_hash) && params[:user]) || (params == :favorites)
         request = YoutubeG::Request::UserSearch.new(params, options)
+
       else
         request = YoutubeG::Request::StandardSearch.new(params, options)
       end

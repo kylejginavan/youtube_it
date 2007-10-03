@@ -74,6 +74,10 @@ class YoutubeG
         video_id.match(/videos\/(\w+)/).captures.first
       end
       
+      def can_embed?
+        media_content.nil? ? true : false
+      end
+      
       def default_media_content
         @media_content.find { |c| c.is_default? }
       end
