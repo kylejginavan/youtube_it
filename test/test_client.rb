@@ -125,6 +125,11 @@ class TestClient < Test::Unit::TestCase
     assert !video.can_embed?   
   end
   
+  def test_should_retrieve_video_by_id
+    video = @client.video_by("http://gdata.youtube.com/feeds/videos/EkF4JD2rO3Q")
+    assert_valid_video video
+  end
+  
   private
 
     def assert_valid_video (video)

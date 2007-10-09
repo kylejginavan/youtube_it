@@ -22,7 +22,12 @@ class YoutubeG
       end
       
       logger.debug "Submitting request [url=#{request.url}]."
-      parser = YoutubeG::Parser::VideoFeedParser.new(request.url)
+      parser = YoutubeG::Parser::VideosFeedParser.new(request.url)
+      parser.parse
+    end
+    
+    def video_by(video_id)
+      parser = YoutubeG::Parser::VideoFeedParser.new(video_id)
       parser.parse
     end
     
