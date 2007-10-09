@@ -113,9 +113,16 @@ class TestClient < Test::Unit::TestCase
     assert_not_nil @client.logger
   end
 
-  def test_create_logger_if_not_passed_in
+  def test_should_create_logger_if_not_passed_in
     @client = YoutubeG::Client.new
     assert_not_nil @client.logger
+  end
+  
+  def test_should_determine_if_a_video_is_embeddable
+    response = @client.videos_by(:query => "avril lavigne girlfriend")
+  
+    video = response.videos.first
+    assert !video.can_embed?   
   end
   
   private

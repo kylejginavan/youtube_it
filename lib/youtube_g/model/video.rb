@@ -71,11 +71,12 @@ class YoutubeG
       # without having to store it anywhere. A regular query search, with this id will return the same video.
       # http://gdata.youtube.com/feeds/videos/ZTUVgYoeN_o
       def unique_id
+        pp "video id: #{video_id}"
         video_id.match(/videos\/(\w+)/).captures.first
       end
       
       def can_embed?
-        media_content.nil? ? true : false
+        true unless media_content.empty?
       end
       
       def default_media_content
