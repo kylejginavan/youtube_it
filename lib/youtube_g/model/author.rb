@@ -1,6 +1,6 @@
-class YoutubeG
+class YouTubeG
   module Model
-    class Author < YoutubeG::Record
+    class Author < YouTubeG::Record
       attr_reader :name
       attr_reader :uri
     end

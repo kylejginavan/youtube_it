@@ -1,32 +1,51 @@
 youtube-g
-    by FIX (your name)
-    FIX (url)
+    by Shane Vitarana and Walter Korman
+    http://rubyforge.org/projects/youtube-g/
 
 == DESCRIPTION:
   
-FIX (describe your package)
+youtube-g is a pure Ruby client for the YouTube GData API.
 
 == FEATURES/PROBLEMS:
   
-* FIX (list of features or problems)
+* Aims to be in parity with Google's YouTube GData API (it is currently not complete)
 
 == SYNOPSIS:
 
-  FIX (code sample of usage)
+	Basic queries:
+	
+  @client = YouTubeG::Client.new
+	@client.videos_by(:query => "penguin")
+	@client.videos_by(:tags => ['tiger', 'leopard'])
+	@client.videos_by(:categories => [:news, :sports])
+	@client.videos_by(:categories => [:news, :sports], :tags => ['soccer', 'football'])
+	@client.videos_by(:user => 'liz')
+	
+	Standard feeds:
+	
+	@client.videos_by(:most_viewed)
+	@client.videos_by(:top_rated, :time => :today)
+	
+	Advanced queries (with boolean operators OR (either), AND (include), NOT (exclude)):
+	
+	@client.videos_by(:categories => { :either => [:news, :sports], :exclude => [:comedy] }, 
+										:tags => { :include => ['football'], :exclude => ['soccer'] })
+
 
 == REQUIREMENTS:
 
-* FIX (list of requirements)
+* none
 
 == INSTALL:
 
-* FIX (sudo gem install, anything else)
+* sudo gem install youtube-g
 
 == LICENSE:
 
-(The MIT License)
+MIT License
 
-Copyright (c) 2007 FIX
+Copyright (c) 2007 Shane Vitarana
+Copyright (c) 2007 Walter Korman
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

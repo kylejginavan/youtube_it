@@ -1,6 +1,6 @@
-class YoutubeG
+class YouTubeG
   module Model
-    class User < YoutubeG::Record
+    class User < YouTubeG::Record
       attr_reader :age
       attr_reader :books
       attr_reader :company

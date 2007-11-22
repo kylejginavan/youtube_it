@@ -14,6 +14,6 @@ require 'youtube_g/model/video'
 require 'youtube_g/request/video_search'
 require 'youtube_g/response/video_search'
 
-class YoutubeG
-  VERSION = '1.0.0'
+class YouTubeG
+  VERSION = '0.3.0'
 end

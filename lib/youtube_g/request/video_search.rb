@@ -1,4 +1,4 @@
-class YoutubeG
+class YouTubeG
   
   # The goal of the classes in this module is to build the request URLs for each type of search
   module Request

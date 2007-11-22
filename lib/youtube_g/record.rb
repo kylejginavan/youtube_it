@@ -1,4 +1,4 @@
-class YoutubeG
+class YouTubeG
   class Record
     def initialize (params)
       return if params.nil?

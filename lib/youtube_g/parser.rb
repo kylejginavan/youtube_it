@@ -2,7 +2,7 @@ require 'cgi'
 require 'open-uri'
 require 'rexml/document'
 
-class YoutubeG
+class YouTubeG
   module Parser
     class FeedParser
       def initialize(url)
@@ -37,7 +37,7 @@ class YoutubeG
           scheme = category.attributes["scheme"]
           if (scheme =~ /\/categories\.cat$/)
             # it's a category
-            categories << YoutubeG::Model::Category.new(
+            categories << YouTubeG::Model::Category.new(
                             :term => category.attributes["term"],
                             :label => category.attributes["label"])
 
@@ -54,7 +54,7 @@ class YoutubeG
         author_element = entry.elements["author"]
         author = nil
         if author_element
-          author = YoutubeG::Model::Author.new(
+          author = YouTubeG::Model::Author.new(
                      :name => author_element.elements["name"].text,
                      :uri => author_element.elements["uri"].text)
         end
@@ -74,7 +74,7 @@ class YoutubeG
         thumbnails = []
         media_group.elements.each("media:thumbnail") do |thumb_element|
           # TODO: convert time HH:MM:ss string to seconds?
-          thumbnails << YoutubeG::Model::Thumbnail.new(
+          thumbnails << YouTubeG::Model::Thumbnail.new(
                           :url => thumb_element.attributes["url"],
                           :height => thumb_element.attributes["height"].to_i,
                           :width => thumb_element.attributes["width"].to_i,
@@ -84,7 +84,7 @@ class YoutubeG
         rating_element = entry.elements["gd:rating"]
         rating = nil
         if rating_element
-          rating = YoutubeG::Model::Rating.new(
+          rating = YouTubeG::Model::Rating.new(
                      :min => rating_element.attributes["min"].to_i,
                      :max => rating_element.attributes["max"].to_i,
                      :rater_count => rating_element.attributes["numRaters"].to_i,
@@ -93,7 +93,7 @@ class YoutubeG
 
         view_count = entry.elements["yt:statistics"].attributes["viewCount"].to_i
 
-        YoutubeG::Model::Video.new(
+        YouTubeG::Model::Video.new(
           :video_id => video_id,
           :published_at => published_at,
           :updated_at => updated_at,
@@ -114,12 +114,12 @@ class YoutubeG
       def parse_media_content (media_content_element)
         content_url = media_content_element.attributes["url"]
         format_code = media_content_element.attributes["yt:format"].to_i
-        format = YoutubeG::Model::Video::Format.by_code(format_code)
+        format = YouTubeG::Model::Video::Format.by_code(format_code)
         duration = media_content_element.attributes["duration"].to_i
         mime_type = media_content_element.attributes["type"]
         default = (media_content_element.attributes["isDefault"] == "true")
 
-        YoutubeG::Model::Content.new(
+        YouTubeG::Model::Content.new(
           :url => content_url,
           :format => format,
           :duration => duration,
@@ -146,7 +146,7 @@ class YoutubeG
           videos << parse_entry(entry)
         end
 
-        YoutubeG::Response::VideoSearch.new(
+        YouTubeG::Response::VideoSearch.new(
           :feed_id => feed_id,
           :updated_at => updated_at,
           :total_result_count => total_result_count,

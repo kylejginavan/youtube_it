@@ -6,7 +6,7 @@ require 'youtube_g'
 
 class TestClient < Test::Unit::TestCase
   def setup
-    @client = YoutubeG::Client.new
+    @client = YouTubeG::Client.new
   end
 
   def test_should_respond_to_a_basic_query
@@ -94,7 +94,7 @@ class TestClient < Test::Unit::TestCase
     response = @client.videos_by(:user => 'liz')
     response.videos.each { |v| assert_valid_video v }
   end
-  
+
   # HTTP 403 Error
   # def test_should_get_favorite_videos_by_user
   #   response = @client.videos_by(:favorites, :user => 'liz')
@@ -109,12 +109,12 @@ class TestClient < Test::Unit::TestCase
   end
   
   def test_should_be_able_to_pass_in_logger
-    @client = YoutubeG::Client.new(Logger.new(STDOUT))
+    @client = YouTubeG::Client.new(Logger.new(STDOUT))
     assert_not_nil @client.logger
   end
 
   def test_should_create_logger_if_not_passed_in
-    @client = YoutubeG::Client.new
+    @client = YouTubeG::Client.new
     assert_not_nil @client.logger
   end
   
@@ -136,7 +136,7 @@ class TestClient < Test::Unit::TestCase
       # pp video
 
       # check general attributes
-      assert_instance_of YoutubeG::Model::Video, video
+      assert_instance_of YouTubeG::Model::Video, video
       assert_instance_of Fixnum, video.duration
       assert (video.duration > 0)
       assert_match /^<div style=.*?<\/div>/m, video.html_content
@@ -146,14 +146,14 @@ class TestClient < Test::Unit::TestCase
         # http://www.youtube.com/v/IHVaXG1thXM
         assert_valid_url media_content.url
         assert (media_content.duration > 0)
-        assert_instance_of YoutubeG::Model::Video::Format, media_content.format
+        assert_instance_of YouTubeG::Model::Video::Format, media_content.format
         assert_instance_of String, media_content.mime_type
         assert_match /^[^\/]+\/[^\/]+$/, media_content.mime_type
       end
 
       default_content = video.default_media_content
       if default_content
-        assert_instance_of YoutubeG::Model::Content, default_content
+        assert_instance_of YouTubeG::Model::Content, default_content
         assert default_content.is_default?
       end
 
@@ -166,7 +166,7 @@ class TestClient < Test::Unit::TestCase
 
       # validate optionally-present rating
       if video.rating
-        assert_instance_of YoutubeG::Model::Rating, video.rating
+        assert_instance_of YouTubeG::Model::Rating, video.rating
         assert_instance_of Float, video.rating.average
         assert_instance_of Fixnum, video.rating.max
         assert_instance_of Fixnum, video.rating.min
@@ -186,14 +186,14 @@ class TestClient < Test::Unit::TestCase
       assert_instance_of Fixnum, video.view_count
 
       # validate author
-      assert_instance_of YoutubeG::Model::Author, video.author
+      assert_instance_of YouTubeG::Model::Author, video.author
       assert_instance_of String, video.author.name
       assert (video.author.name.length > 0)
       assert_valid_url video.author.uri
       
       # validate categories
       video.categories.each do |cat|
-        assert_instance_of YoutubeG::Model::Category, cat
+        assert_instance_of YouTubeG::Model::Category, cat
         assert_instance_of String, cat.label
         assert_instance_of String, cat.term
       end

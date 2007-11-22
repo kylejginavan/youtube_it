@@ -1,6 +1,6 @@
-class YoutubeG
+class YouTubeG
   module Model
-    class Playlist < YoutubeG::Record
+    class Playlist < YouTubeG::Record
       attr_reader :description
     end
   end

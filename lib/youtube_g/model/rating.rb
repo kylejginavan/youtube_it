@@ -1,6 +1,6 @@
-class YoutubeG
+class YouTubeG
   module Model
-    class Rating < YoutubeG::Record
+    class Rating < YouTubeG::Record
       attr_reader :average
       attr_reader :max
       attr_reader :min

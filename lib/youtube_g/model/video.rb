@@ -1,8 +1,8 @@
 require 'pp'
 
-class YoutubeG
+class YouTubeG
   module Model
-    class Video < YoutubeG::Record
+    class Video < YouTubeG::Record
       # Describes the various file formats in which a Youtube video may be
       # made available and allows looking them up by format code number.
       #
@@ -23,17 +23,17 @@ class YoutubeG
         # Flash format on YouTube site. All videos are available in this
         # format.
         #
-        FLASH = YoutubeG::Model::Video::Format.new(0, :flash)
+        FLASH = YouTubeG::Model::Video::Format.new(0, :flash)
 
         # RTSP streaming URL for mobile video playback. H.263 video (176x144)
         # and AMR audio.
         #
-        RTSP = YoutubeG::Model::Video::Format.new(1, :rtsp)
+        RTSP = YouTubeG::Model::Video::Format.new(1, :rtsp)
 
         # HTTP URL to the embeddable player (SWF) for this video. This format
         # is not available for a video that is not embeddable.
         #
-        SWF = YoutubeG::Model::Video::Format.new(5, :swf)
+        SWF = YouTubeG::Model::Video::Format.new(5, :swf)
       end
 
       attr_reader :duration
@@ -51,11 +51,11 @@ class YoutubeG
       attr_reader :html_content
       attr_reader :author
 
-      # YoutubeG::Model::Content records describing the individual media content
+      # YouTubeG::Model::Content records describing the individual media content
       # data available for this video.  Most, but not all, videos offer this.
       attr_reader :media_content
 
-      attr_reader :thumbnails         # YoutubeG::Model::Thumbnail records
+      attr_reader :thumbnails         # YouTubeG::Model::Thumbnail records
       attr_reader :player_url
       attr_reader :rating
       attr_reader :view_count

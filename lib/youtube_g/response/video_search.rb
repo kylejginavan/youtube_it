@@ -1,6 +1,6 @@
-class YoutubeG
+class YouTubeG
   module Response
-    class VideoSearch < YoutubeG::Record
+    class VideoSearch < YouTubeG::Record
       # the unique feed identifying url
       attr_reader :feed_id
       

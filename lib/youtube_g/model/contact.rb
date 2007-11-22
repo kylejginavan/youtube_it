@@ -1,6 +1,6 @@
-class YoutubeG
+class YouTubeG
   module Model
-    class Contact < YoutubeG::Record
+    class Contact < YouTubeG::Record
       attr_reader :status
       attr_reader :username
     end

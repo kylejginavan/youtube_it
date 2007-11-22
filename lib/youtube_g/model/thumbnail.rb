@@ -1,6 +1,6 @@
-class YoutubeG
+class YouTubeG
   module Model
-    class Thumbnail < YoutubeG::Record
+    class Thumbnail < YouTubeG::Record
       attr_reader :url
       attr_reader :height
       attr_reader :width

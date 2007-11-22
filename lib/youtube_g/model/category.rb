@@ -1,6 +1,6 @@
-class YoutubeG
+class YouTubeG
   module Model
-    class Category < YoutubeG::Record
+    class Category < YouTubeG::Record
       attr_reader :label
       attr_reader :term
     end

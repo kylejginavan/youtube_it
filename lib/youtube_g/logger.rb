@@ -1,6 +1,6 @@
 require 'logger'
 
-class YoutubeG
+class YouTubeG
   
   # TODO: Why is this needed? Does this happen if running standalone w/o Rails?
   # Anyway, isn't it easier to debug w/o the really long timestamp & log level?
