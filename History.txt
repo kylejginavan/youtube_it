@@ -1,5 +1,5 @@
 == 0.3.0 / 2007-09-17
 
-* Initial publice release
+* Initial public release
   * Birthday!
 

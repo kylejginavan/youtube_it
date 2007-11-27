@@ -31,9 +31,9 @@ class YouTubeG
       def initialize(type, options={})
         if TYPES.include?(type)
           @url = base_url << type.to_s
-          @url << "?time=#{options.delete(:time)}" if TIMES.include?(options[:time])
+          @url << "?time=#{CGI.escape(options.delete(:time).to_s)}" if TIMES.include?(options[:time])
         else
-          raise "Invalid type, must be one of: #{ TYPES.each { |t| t.to_s }.join(", ") }"
+          raise "Invalid type, must be one of: #{ TYPES.map { |t| t.to_s }.join(", ") }"
         end
       end
       
@@ -53,8 +53,19 @@ class YouTubeG
       attr_reader :video_format                    # format (1=mobile devices)
       
       def initialize(params={})
+        # XXX I think we want to delete the line below
         return if params.nil?
 
+        # initialize our various member data to avoid warnings and so we'll
+        # automatically fall back to the youtube api defaults
+        @max_results = nil
+        @order_by = nil
+        @offset = nil
+        @query = nil
+        @response_format = nil
+        @video_format = nil
+
+        # build up the url corresponding to this request
         @url = base_url
         
         # http://gdata.youtube.com/feeds/videos/T7YazwP8GtY
@@ -69,7 +80,7 @@ class YouTubeG
           instance_variable_set("@#{name}", value) if respond_to?(name)
         end
         
-        @url << build_url(to_youtube_params) unless params.empty?
+        @url << build_query_params(to_youtube_params)
       end
       
       def base_url
@@ -117,7 +128,12 @@ class YouTubeG
           end          
         end
 
-        def build_url(params)
+        def build_query_params(params)
+          # nothing to do if there are no params
+          return '' if (!params || params.empty?)
+
+          # build up the query param string, tacking on every key/value
+          # pair for which the value is non-nil
           u = '?'
           item_count = 0
           params.keys.each do |key|
@@ -125,10 +141,13 @@ class YouTubeG
             next if value.nil?
 
             u << '&' if (item_count > 0)
-            u << "#{key}=#{CGI.escape(value.to_s)}"
+            u << "#{CGI.escape(key.to_s)}=#{CGI.escape(value.to_s)}"
             item_count += 1
           end
-          u
+
+          # if we found no non-nil values, we've got no params so just
+          # return an empty string
+          (item_count == 0) ? '' : u
         end
         
     end

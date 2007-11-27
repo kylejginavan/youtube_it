@@ -16,7 +16,7 @@ class TestClient < Test::Unit::TestCase
     assert_equal 25, response.max_result_count
     assert_equal 25, response.videos.length
     assert_equal 1, response.offset
-    assert (response.total_result_count > 100)
+    assert(response.total_result_count > 100)
     assert_instance_of Time, response.updated_at
   
     response.videos.each { |v| assert_valid_video v }
@@ -29,7 +29,7 @@ class TestClient < Test::Unit::TestCase
     assert_equal 25, response.max_result_count
     assert_equal 25, response.videos.length
     assert_equal 1, response.offset
-    assert (response.total_result_count > 100)
+    assert(response.total_result_count > 100)
     assert_instance_of Time, response.updated_at
   
     response.videos.each { |v| assert_valid_video v }
@@ -122,7 +122,7 @@ class TestClient < Test::Unit::TestCase
     response = @client.videos_by(:query => "avril lavigne girlfriend")
   
     video = response.videos.first
-    assert !video.can_embed?   
+    assert !video.can_embed?
   end
   
   def test_should_retrieve_video_by_id
@@ -138,17 +138,17 @@ class TestClient < Test::Unit::TestCase
       # check general attributes
       assert_instance_of YouTubeG::Model::Video, video
       assert_instance_of Fixnum, video.duration
-      assert (video.duration > 0)
-      assert_match /^<div style=.*?<\/div>/m, video.html_content
+      assert(video.duration > 0)
+      assert_match(/^<div style=.*?<\/div>/m, video.html_content)
 
       # validate media content records
       video.media_content.each do |media_content|
         # http://www.youtube.com/v/IHVaXG1thXM
         assert_valid_url media_content.url
-        assert (media_content.duration > 0)
+        assert(media_content.duration > 0)
         assert_instance_of YouTubeG::Model::Video::Format, media_content.format
         assert_instance_of String, media_content.mime_type
-        assert_match /^[^\/]+\/[^\/]+$/, media_content.mime_type
+        assert_match(/^[^\/]+\/[^\/]+$/, media_content.mime_type)
       end
 
       default_content = video.default_media_content
@@ -174,11 +174,11 @@ class TestClient < Test::Unit::TestCase
       end
       
       # validate thumbnails
-      assert (video.thumbnails.size > 0)
+      assert(video.thumbnails.size > 0)
 
       assert_not_nil video.title
       assert_instance_of String, video.title
-      assert (video.title.length > 0)
+      assert(video.title.length > 0)
 
       assert_instance_of Time, video.updated_at
       # http://gdata.youtube.com/feeds/videos/IHVaXG1thXM
@@ -188,7 +188,7 @@ class TestClient < Test::Unit::TestCase
       # validate author
       assert_instance_of YouTubeG::Model::Author, video.author
       assert_instance_of String, video.author.name
-      assert (video.author.name.length > 0)
+      assert(video.author.name.length > 0)
       assert_valid_url video.author.uri
       
       # validate categories
