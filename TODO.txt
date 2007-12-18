@@ -1,1 +1,11 @@
-- Tests with mocked out YouTube server
+[ ] Tests with mocked out YouTube server
+[ ] Clean up tests using Shoulda to define contexts
+[ ] Consolidate requires
+[ ] Allow :category and :categories for query DSL
+
+== API Features TODO
+
+[ ] Profile feed parsing
+[ ] Playlist feeds
+[ ] User subscriptions
+[ ] Video comments

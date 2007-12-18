@@ -2,6 +2,7 @@ History.txt
 Manifest.txt
 README.txt
 Rakefile
+TODO.txt
 lib/youtube_g.rb
 lib/youtube_g/client.rb
 lib/youtube_g/logger.rb

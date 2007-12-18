@@ -1,5 +1,3 @@
-require 'pp'
-
 class YouTubeG
   module Model
     class Video < YouTubeG::Record
@@ -71,11 +69,11 @@ class YouTubeG
       # without having to store it anywhere. A regular query search, with this id will return the same video.
       # http://gdata.youtube.com/feeds/videos/ZTUVgYoeN_o
       def unique_id
-        video_id.match(/videos\/(\w+)/).captures.first
+        video_id.match(/videos\/([^<]+)/).captures.first
       end
       
       def can_embed?
-        true unless media_content.empty?
+        not @noembed
       end
       
       def default_media_content

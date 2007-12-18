@@ -7,7 +7,7 @@ class YouTubeG
       attr_reader :url
 
       def base_url
-        "http://gdata.youtube.com/feeds/"                
+        "http://gdata.youtube.com/feeds/api/"                
       end
     end
     
@@ -43,6 +43,9 @@ class YouTubeG
     end
     
     class VideoSearch < BaseSearch
+      # From here: http://code.google.com/apis/youtube/reference.html#yt_format
+      ONLY_EMBEDDABLE = 5
+
       attr_reader :max_results                     # max_results
       attr_reader :order_by                        # orderby, ([relevance], viewCount)
       attr_reader :offset                          # start-index
@@ -80,6 +83,10 @@ class YouTubeG
           instance_variable_set("@#{name}", value) if respond_to?(name)
         end
         
+        if( params[ :only_embeddable ] )
+          @video_format = ONLY_EMBEDDABLE
+        end
+
         @url << build_query_params(to_youtube_params)
       end
       

@@ -1,3 +1,10 @@
+== 0.4.0 / 2007-12-18
+
+* Fixed API projection in search URL [Pete Higgins]
+* Fixed embeddable video searching [Pete Higgins]
+* Fixed video embeddable detection [Pete Higgins]
+* Fixed unique id hyphen detection [Pete Higgins, Chris Taggart]
+
 == 0.3.0 / 2007-09-17
 
 * Initial public release
