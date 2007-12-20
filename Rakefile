@@ -7,9 +7,10 @@ Hoe.new('youtube-g', YouTubeG::VERSION) do |p|
   p.author = ["Shane Vitarana", "Walter Korman"]
   p.email = 'shanev@gmail.com'
   p.summary = 'Ruby client for the YouTube GData API'
-  p.description = 'Ruby client for the YouTube GData API'
+  p.description = p.paragraphs_of('README.txt', 2..8).join("\n\n")
   p.url = 'http://rubyforge.org/projects/youtube-g/'
   p.changes = p.paragraphs_of('History.txt', 0..1).join("\n\n")
+  p.remote_rdoc_dir = ''
 end
 
 desc 'Tag release'
