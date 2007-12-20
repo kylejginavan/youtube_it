@@ -3,38 +3,52 @@ youtube-g
     http://rubyforge.org/projects/youtube-g/
 
 == DESCRIPTION:
-  
-youtube-g is a pure Ruby client for the YouTube GData API.
+
+youtube-g is a pure Ruby client for the YouTube GData API. It provides an easy
+way to access the latest YouTube video search results from your own programs.
+In comparison with the earlier Youtube search interfaces, this new API and
+library offers much-improved flexibility around executing complex search
+queries to obtain well-targeted video search results.
+
+More detail on the underlying source Google-provided API is available at:
+
+http://code.google.com/apis/youtube/overview.html
 
 == FEATURES/PROBLEMS:
   
-* Aims to be in parity with Google's YouTube GData API (it is currently not complete)
+* Aims to be in parity with Google's YouTube GData API.  Core functionality
+  is currently present -- work is in progress to fill in the rest.
 
 == SYNOPSIS:
 
-	Basic queries:
+Create a client:
+  
+  require 'rubygems'
+  require 'youtube_g'
+  client = YouTubeG::Client.new
+  
+Basic queries:
+
+	client.videos_by(:query => "penguin")
+	client.videos_by(:tags => ['tiger', 'leopard'])
+	client.videos_by(:categories => [:news, :sports])
+	client.videos_by(:categories => [:news, :sports], :tags => ['soccer', 'football'])
+	client.videos_by(:user => 'liz')
 	
-  @client = YouTubeG::Client.new
-	@client.videos_by(:query => "penguin")
-	@client.videos_by(:tags => ['tiger', 'leopard'])
-	@client.videos_by(:categories => [:news, :sports])
-	@client.videos_by(:categories => [:news, :sports], :tags => ['soccer', 'football'])
-	@client.videos_by(:user => 'liz')
+Standard feeds:
 	
-	Standard feeds:
+	client.videos_by(:most_viewed)
+	client.videos_by(:top_rated, :time => :today)
 	
-	@client.videos_by(:most_viewed)
-	@client.videos_by(:top_rated, :time => :today)
+Advanced queries (with boolean operators OR (either), AND (include), NOT (exclude)):
 	
-	Advanced queries (with boolean operators OR (either), AND (include), NOT (exclude)):
-	
-	@client.videos_by(:categories => { :either => [:news, :sports], :exclude => [:comedy] }, 
-										:tags => { :include => ['football'], :exclude => ['soccer'] })
+	client.videos_by(:categories => { :either => [:news, :sports], :exclude => [:comedy] }, 
+									 :tags => { :include => ['football'], :exclude => ['soccer'] })
 
 
 == REQUIREMENTS:
 
-* none
+* None
 
 == INSTALL:
 
