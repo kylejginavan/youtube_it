@@ -32,6 +32,8 @@ class YouTubeG
         # is not available for a video that is not embeddable.
         #
         SWF = YouTubeG::Model::Video::Format.new(5, :swf)
+        
+        THREE_GPP = YouTubeG::Model::Video::Format.new(6, :three_gpp)
       end
 
       attr_reader :duration
