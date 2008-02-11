@@ -12,9 +12,9 @@ class TestClient < Test::Unit::TestCase
   def test_should_respond_to_a_basic_query
     response = @client.videos_by(:query => "penguin")
   
-    assert_equal "http://gdata.youtube.com/feeds/api/videos", response.feed_id
+    assert_equal "http://gdata.youtube.com/feeds/api/videos?start-index=1&max-results=25&vq=penguin", response.feed_id
     assert_equal 25, response.max_result_count
-    assert_equal 24, response.videos.length
+    assert_equal 25, response.videos.length
     assert_equal 1, response.offset
     assert(response.total_result_count > 100)
     assert_instance_of Time, response.updated_at
@@ -25,7 +25,7 @@ class TestClient < Test::Unit::TestCase
   def test_should_get_videos_for_multiword_metasearch_query
     response = @client.videos_by(:query => 'christina ricci')
   
-    assert_equal "http://gdata.youtube.com/feeds/api/videos", response.feed_id
+    assert_equal "http://gdata.youtube.com/feeds/api/videos?start-index=1&max-results=25&vq=christina+ricci", response.feed_id
     assert_equal 25, response.max_result_count
     assert_equal 25, response.videos.length
     assert_equal 1, response.offset
@@ -104,7 +104,7 @@ class TestClient < Test::Unit::TestCase
   def test_should_get_videos_for_query_search_with_categories_excluded
     response = @client.videos_by(:query => 'bench press', :categories => { :exclude => [:comedy, :entertainment] },
                                  :max_results => 10)
-    assert_equal "<object width=\"425\" height=\"350\">\n  <param name=\"movie\" value=\"http://www.youtube.com/v/wOnP_oAXUMA\"></param>\n  <param name=\"wmode\" value=\"transparent\"></param>\n  <embed src=\"http://www.youtube.com/v/wOnP_oAXUMA\" type=\"application/x-shockwave-flash\" \n   wmode=\"transparent\" width=\"425\" height=\"350\"></embed>\n</object>\n", response.videos.first.embed_html
+    assert_equal "<object width=\"425\" height=\"350\">\n  <param name=\"movie\" value=\"http://www.youtube.com/v/BlDWdfTAx8o\"></param>\n  <param name=\"wmode\" value=\"transparent\"></param>\n  <embed src=\"http://www.youtube.com/v/BlDWdfTAx8o\" type=\"application/x-shockwave-flash\" \n   wmode=\"transparent\" width=\"425\" height=\"350\"></embed>\n</object>\n", response.videos.first.embed_html
     response.videos.each { |v| assert_valid_video v }
   end
   
