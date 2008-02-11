@@ -1,3 +1,8 @@
+== 0.4.1 / 2008-02-11
+
+* Added 3GPP video format [shane]
+* Fixed tests [shane]
+
 == 0.4.0 / 2007-12-18
 
 * Fixed API projection in search URL [Pete Higgins]
