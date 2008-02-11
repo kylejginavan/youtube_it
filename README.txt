@@ -58,8 +58,7 @@ Advanced queries (with boolean operators OR (either), AND (include), NOT (exclud
 
 MIT License
 
-Copyright (c) 2007 Shane Vitarana
-Copyright (c) 2007 Walter Korman
+Copyright (c) 2007 Shane Vitarana and Walter Korman
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

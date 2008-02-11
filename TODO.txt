@@ -1,3 +1,4 @@
+[ ] stub out http request/response cycle for tests
 [ ] consider defaulting the client to no-logger, rather than outputting to STDOUT.
 [ ] allow specifying values as single items where you don't need to wrap in a list, e.g. :tags => :chickens instead of :tags => [ 'chickens' ]
 [ ] make sure symbols will work as well as tags everywhere (again, :tags => :chickens is same as :tags => 'chickens')
@@ -7,6 +8,7 @@
 [ ] Clean up tests using Shoulda to define contexts
 [ ] Consolidate requires
 [ ] Allow :category and :categories for query DSL
+[ ] Exception handling
 
 == API Features TODO
 
