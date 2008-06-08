@@ -1,0 +1,112 @@
+require 'net/https'
+require 'digest/md5'
+require 'rexml/document'
+require 'cgi'
+
+class YouTubeG
+
+  module Upload
+    class UploadError < Exception; end
+
+    # require 'youtube_g'
+    #
+    # uploader = YouTubeG::Upload::VideoUpload.new("user", "pass", "dev-key")
+    # uploader.upload File.open("test.m4v"), :title => 'test',
+    #                                        :description => 'cool vid d00d',
+    #                                        :category => 'People',
+    #                                        :keywords => %w[cool blah test]
+
+    class VideoUpload
+
+      def initialize user, pass, dev_key, client_id = 'youtube_g'
+        @user, @pass, @dev_key, @client_id = user, pass, dev_key, client_id
+      end
+
+      #
+      # Upload "data" to youtube, where data is either an IO object or
+      # raw file data.
+      # The hash keys for opts (which specify video info) are as follows:
+      #   :mime_type
+      #   :filename
+      #   :title
+      #   :description
+      #   :category
+      #   :keywords
+      #
+
+      def upload data, opts = {}
+        data = data.respond_to?(:read) ? data.read : data
+        @opts = { :mime_type => 'video/mp4',
+                  :filename => Digest::MD5.hexdigest(data),
+                  :title => '',
+                  :description => '',
+                  :category => '',
+                  :keywords => [] }.merge(opts)
+
+        uploadBody = generate_upload_body(boundary, video_xml, data)
+
+        uploadHeader = {
+          "Authorization"  => "GoogleLogin auth=#{@auth_token}",
+          "X-GData-Client" => "#{@client_id}",
+          "X-GData-Key"    => "key=#{@dev_key}",
+          "Slug"           => "#{@opts[:filename]}",
+          "Content-Type"   => "multipart/related; boundary=#{boundary}",
+          "Content-Length" => "#{uploadBody.length}"
+        }
+
+        Net::HTTP.start(base_url) do |upload|
+          response = upload.post('/feeds/api/users/' << @user << '/uploads', uploadBody, uploadHeader)
+          xml = REXML::Document.new(response)
+          return xml.elements["//id"].text[/videos\/(.+)/, 1]
+        end
+
+      end
+
+      private
+
+      def base_url
+        "uploads.gdata.youtube.com"
+      end
+
+      def boundary
+        "An43094fu"
+      end
+
+      def auth_token
+        unless @auth_token
+          http = Net::HTTP.new("www.google.com", 443)
+          http.use_ssl = true
+          body = "Email=#{CGI::escape @user}&Passwd=#{CGI::escape @pass}&service=youtube&source=#{CGI::escape @client_id}"
+          response = http.post("/youtube/accounts/ClientLogin", body, "Content-Type" => "application/x-www-form-urlencoded")
+          raise UploadError, response.body[/Error=(.+)/,1] if response.code != 200
+          @auth_token = response.body[/Auth=(.+)/, 1]
+
+        end
+        @auth_token
+      end
+
+      def video_xml
+        %[<?xml version="1.0"?>
+           <entry xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:yt="http://gdata.youtube.com/schemas/2007">
+           <media:group>
+           <media:title type="plain">#{@opts[:title]}</media:title>
+           <media:description type="plain">#{@opts[:description]}</media:description>
+           <media:category scheme="http://gdata.youtube.com/schemas/2007/categories.cat">#{@opts[:category]}</media:category>
+           <media:keywords>#{@opts[:keywords].join ","}</media:keywords>
+           </media:group></entry> ]
+      end
+
+      def generate_upload_body(boundary, video_xml, data)
+        uploadBody = ""
+        uploadBody << "--#{boundary}\r\n"
+        uploadBody << "Content-Type: application/atom+xml; charset=UTF-8\r\n\r\n"
+        uploadBody << video_xml
+        uploadBody << "\r\n--#{boundary}\r\n"
+        uploadBody << "Content-Type: #{@opts[:mime_type]}\r\nContent-Transfer-Encoding: binary\r\n\r\n"
+        uploadBody << data
+        uploadBody << "\r\n--#{boundary}--\r\n"
+      end
+
+    end
+  end
+end

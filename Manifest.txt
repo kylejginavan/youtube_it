@@ -18,6 +18,7 @@ lib/youtube_g/model/video.rb
 lib/youtube_g/parser.rb
 lib/youtube_g/record.rb
 lib/youtube_g/request/video_search.rb
+lib/youtube_g/request/video_upload.rb
 lib/youtube_g/response/video_search.rb
 test/test_client.rb
 test/test_video.rb

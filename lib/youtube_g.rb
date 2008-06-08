@@ -10,6 +10,7 @@ require File.dirname(__FILE__) + '/youtube_g/model/rating'
 require File.dirname(__FILE__) + '/youtube_g/model/thumbnail'
 require File.dirname(__FILE__) + '/youtube_g/model/user'
 require File.dirname(__FILE__) + '/youtube_g/model/video'
+require File.dirname(__FILE__) + '/youtube_g/request/video_upload'
 require File.dirname(__FILE__) + '/youtube_g/request/video_search'
 require File.dirname(__FILE__) + '/youtube_g/response/video_search'
 
