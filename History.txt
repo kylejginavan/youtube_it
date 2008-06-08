@@ -1,5 +1,6 @@
 == trunk
 
+* Added support for the "racy" parameter (choices are "include" or "exclude") [thanks Jason Arora]
 * Add missing attribute reader for description [tmm1]
 * Fix issue with missing yt:statistics and viewCount [tmm1]
 * Allow Client#video_by to take either a url or a video id [tmm1]

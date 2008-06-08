@@ -94,6 +94,7 @@ class YouTubeG
         view_count = (el = entry.elements["yt:statistics"]) ? el.attributes["viewCount"].to_i : 0
 
         noembed = entry.elements["yt:noembed"] ? true : false
+        racy = entry.elements["yt:racy"] ? true : false
 
         YouTubeG::Model::Video.new(
           :video_id => video_id,
@@ -111,7 +112,8 @@ class YouTubeG
           :thumbnails => thumbnails,
           :rating => rating,
           :view_count => view_count,
-          :noembed => noembed)
+          :noembed => noembed,
+          :racy => racy)
       end
 
       def parse_media_content (media_content_element)
