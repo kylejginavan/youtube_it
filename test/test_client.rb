@@ -35,6 +35,13 @@ class TestClient < Test::Unit::TestCase
     response.videos.each { |v| assert_valid_video v }
   end
   
+  def test_should_handle_video_not_yet_viewed
+    response = @client.videos_by(:query => "YnqHZDh_t2Q")
+
+    assert_equal 1, response.videos.length
+    response.videos.each { |v| assert_valid_video v }
+  end
+
   # TODO: this doesn't work because the returned feed is in an unknown format
   # def test_should_get_video_for_search_by_video_id
   #   response = @client.videos_by(:video_id => "T7YazwP8GtY")

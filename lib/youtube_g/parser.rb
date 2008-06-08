@@ -91,7 +91,7 @@ class YouTubeG
                      :average => rating_element.attributes["average"].to_f)
         end
 
-        view_count = entry.elements["yt:statistics"].attributes["viewCount"].to_i
+        view_count = (el = entry.elements["yt:statistics"]) ? el.attributes["viewCount"].to_i : 0
 
         noembed = entry.elements["yt:noembed"] ? true : false
 

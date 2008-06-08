@@ -1,6 +1,7 @@
 == trunk
 
-* Allow Client#video_by to take either a url or a video id
+* Fix issue with missing yt:statistics and viewCount [tmm1]
+* Allow Client#video_by to take either a url or a video id [tmm1]
 
 == 0.4.1 / 2008-02-11
 
