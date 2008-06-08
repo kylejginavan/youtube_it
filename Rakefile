@@ -4,7 +4,7 @@ require 'lib/youtube_g'
 
 Hoe.new('youtube-g', YouTubeG::VERSION) do |p|
   p.rubyforge_name = 'youtube-g'
-  p.author = ["Shane Vitarana", "Walter Korman"]
+  p.author = ["Shane Vitarana", "Walter Korman", "Aman Gupta"]
   p.email = 'shanev@gmail.com'
   p.summary = 'Ruby client for the YouTube GData API'
   p.description = p.paragraphs_of('README.txt', 2..8).join("\n\n")
