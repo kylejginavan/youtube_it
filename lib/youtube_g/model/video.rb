@@ -47,6 +47,7 @@ class YouTubeG
       attr_reader :updated_at
       attr_reader :categories
       attr_reader :keywords
+      attr_reader :description
       attr_reader :title
       attr_reader :html_content
       attr_reader :author
