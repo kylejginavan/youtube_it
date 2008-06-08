@@ -65,14 +65,17 @@ class YouTubeG
       # self atom feed
       # alternate youtube watch url
       # responses feed
-      # related feed
       # comments feedLink
+
+      def related
+        YouTubeG::Parser::VideosFeedParser.new("http://gdata.youtube.com/feeds/api/videos/#{unique_id}/related").parse
+      end
       
       # For convenience, the video_id with the URL stripped out, useful for searching for the video again
       # without having to store it anywhere. A regular query search, with this id will return the same video.
       # http://gdata.youtube.com/feeds/videos/ZTUVgYoeN_o
       def unique_id
-        video_id.match(/videos\/([^<]+)/).captures.first
+        video_id[/videos\/([^<]+)/, 1]
       end
       
       def can_embed?

@@ -1,5 +1,6 @@
 == trunk
 
+* Add basic support for related videos [tmm1]
 * Improve docs for order_by attribute [thanks Jason Arora]
 * Added support for the "racy" parameter (choices are "include" or "exclude") [thanks Jason Arora]
 * Add missing attribute reader for description [tmm1]
