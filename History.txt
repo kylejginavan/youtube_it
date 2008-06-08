@@ -1,3 +1,7 @@
+== trunk
+
+* Allow Client#video_by to take either a url or a video id
+
 == 0.4.1 / 2008-02-11
 
 * Added 3GPP video format [shane]

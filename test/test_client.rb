@@ -135,6 +135,9 @@ class TestClient < Test::Unit::TestCase
   def test_should_retrieve_video_by_id
     video = @client.video_by("http://gdata.youtube.com/feeds/videos/EkF4JD2rO3Q")
     assert_valid_video video
+
+    video = @client.video_by("EkF4JD2rO3Q")
+    assert_valid_video video
   end
   
   private

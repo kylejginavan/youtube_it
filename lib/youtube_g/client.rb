@@ -27,6 +27,7 @@ class YouTubeG
     end
     
     def video_by(video_id)
+      video_id[0,0] = 'http://gdata.youtube.com/feeds/videos/' unless video_id =~ /^http/
       parser = YouTubeG::Parser::VideoFeedParser.new(video_id)
       parser.parse
     end
