@@ -47,7 +47,7 @@ class YouTubeG
       ONLY_EMBEDDABLE = 5
 
       attr_reader :max_results                     # max_results
-      attr_reader :order_by                        # orderby, ([relevance], viewCount)
+      attr_reader :order_by                        # orderby, ([relevance], viewCount, published, rating)
       attr_reader :offset                          # start-index
       attr_reader :query                           # vq
       attr_reader :response_format                 # alt, ([atom], rss, json)
