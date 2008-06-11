@@ -55,6 +55,7 @@ class YouTubeG
       attr_reader :categories                      # /-/Category1/Category2
       attr_reader :video_format                    # format (1=mobile devices)
       attr_reader :racy                            # racy ([exclude], include)
+      attr_reader :author
       
       def initialize(params={})
         # XXX I think we want to delete the line below
@@ -69,6 +70,7 @@ class YouTubeG
         @response_format = nil
         @video_format = nil
         @racy = nil
+        @author = nil
 
         # build up the url corresponding to this request
         @url = base_url
@@ -104,7 +106,8 @@ class YouTubeG
           'vq' => @query,
           'alt' => @response_format,
           'format' => @video_format,
-          'racy' => @racy
+          'racy' => @racy,
+          'author' => @author
         }
       end
       

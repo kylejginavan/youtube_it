@@ -51,6 +51,10 @@ class TestVideoSearch < Test::Unit::TestCase
     assert_equal "http://gdata.youtube.com/feeds/api/videos/-/Music/classic/rock/?max-results=2", request.url
   end
   
+  def test_should_build_author_query_url
+    request = YouTubeG::Request::VideoSearch.new(:author => "davidguetta")
+    assert_equal "http://gdata.youtube.com/feeds/api/videos?author=davidguetta", request.url
+  end
   # -- Standard Feeds --------------------------------------------------------------------------------
   
   def test_should_build_url_for_most_viewed
