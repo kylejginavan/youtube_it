@@ -1,5 +1,6 @@
 == trunk
 
+* Authcode is now retrieved for video uploads. [FiXato]
 * Add basic support for uploading videos [thanks Joe Damato]
 * Add basic support for related videos [tmm1]
 * Improve docs for order_by attribute [thanks Jason Arora]

@@ -46,7 +46,7 @@ class YouTubeG
         uploadBody = generate_upload_body(boundary, video_xml, data)
 
         uploadHeader = {
-          "Authorization"  => "GoogleLogin auth=#{@auth_token}",
+          "Authorization"  => "GoogleLogin auth=#{auth_token}",
           "X-GData-Client" => "#{@client_id}",
           "X-GData-Key"    => "key=#{@dev_key}",
           "Slug"           => "#{@opts[:filename]}",
