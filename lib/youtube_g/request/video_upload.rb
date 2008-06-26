@@ -56,7 +56,7 @@ class YouTubeG
 
         Net::HTTP.start(base_url) do |upload|
           response = upload.post('/feeds/api/users/' << @user << '/uploads', uploadBody, uploadHeader)
-          xml = REXML::Document.new(response)
+          xml = REXML::Document.new(response.body)
           return xml.elements["//id"].text[/videos\/(.+)/, 1]
         end
 

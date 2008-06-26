@@ -1,5 +1,6 @@
 == trunk
 
+* Fix issue with REXML parsing of video upload response. [FiXato]
 * Fix issue with response code comparison. [FiXato]
 * Authcode is now retrieved for video uploads. [FiXato]
 * Add basic support for uploading videos [thanks Joe Damato]
