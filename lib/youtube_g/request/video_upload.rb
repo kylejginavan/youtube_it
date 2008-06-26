@@ -78,7 +78,7 @@ class YouTubeG
           http.use_ssl = true
           body = "Email=#{CGI::escape @user}&Passwd=#{CGI::escape @pass}&service=youtube&source=#{CGI::escape @client_id}"
           response = http.post("/youtube/accounts/ClientLogin", body, "Content-Type" => "application/x-www-form-urlencoded")
-          raise UploadError, response.body[/Error=(.+)/,1] if response.code != 200
+          raise UploadError, response.body[/Error=(.+)/,1] if response.code.to_i != 200
           @auth_token = response.body[/Auth=(.+)/, 1]
 
         end
