@@ -32,8 +32,9 @@ class YouTubeG
       #   :description
       #   :category
       #   :keywords
+      #   :private
+      # Specifying :private will make the video private, otherwise it will be public.
       #
-
       def upload data, opts = {}
         data = data.respond_to?(:read) ? data.read : data
         @opts = { :mime_type => 'video/mp4',
@@ -86,14 +87,17 @@ class YouTubeG
       end
 
       def video_xml
-        %[<?xml version="1.0"?>
-           <entry xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:yt="http://gdata.youtube.com/schemas/2007">
-           <media:group>
-           <media:title type="plain">#{@opts[:title]}</media:title>
-           <media:description type="plain">#{@opts[:description]}</media:description>
-           <media:category scheme="http://gdata.youtube.com/schemas/2007/categories.cat">#{@opts[:category]}</media:category>
-           <media:keywords>#{@opts[:keywords].join ","}</media:keywords>
-           </media:group></entry> ]
+        video_xml = ''
+        video_xml << '<?xml version="1.0"?>'
+        video_xml << '<entry xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:yt="http://gdata.youtube.com/schemas/2007">'
+        video_xml << '<media:group>'
+        video_xml << '<media:title type="plain">%s</media:title>'               % @opts[:title]
+        video_xml << '<media:description type="plain">%s</media:description>'   % @opts[:description]
+        video_xml << '<media:keywords>%s</media:keywords>'                      % @opts[:keywords].join(",")
+        video_xml << '<media:category scheme="http://gdata.youtube.com/schemas/2007/categories.cat">%s</media:category>' % @opts[:category]
+        video_xml << '<yt:private/>' if @opts[:private]
+        video_xml << '</media:group>'
+        video_xml << '</entry>'
       end
 
       def generate_upload_body(boundary, video_xml, data)
