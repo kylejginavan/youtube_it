@@ -1,5 +1,6 @@
 == trunk
 
+* Add error-handling for authentication errors from YouTube during video upload. [FiXato]
 * Add support for making videos private upon video upload. [FiXato]
 * Fix issue with REXML parsing of video upload response. [FiXato]
 * Fix issue with response code comparison. [FiXato]

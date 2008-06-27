@@ -7,6 +7,7 @@ class YouTubeG
 
   module Upload
     class UploadError < Exception; end
+    class AuthenticationError < Exception; end
 
     # require 'youtube_g'
     #
@@ -57,6 +58,7 @@ class YouTubeG
 
         Net::HTTP.start(base_url) do |upload|
           response = upload.post('/feeds/api/users/' << @user << '/uploads', uploadBody, uploadHeader)
+          raise AuthenticationError, response.body[/<TITLE>(.+)<\/TITLE>/, 1] if response.code.to_i == 403
           xml = REXML::Document.new(response.body)
           return xml.elements["//id"].text[/videos\/(.+)/, 1]
         end
