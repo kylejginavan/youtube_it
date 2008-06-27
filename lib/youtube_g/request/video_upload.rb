@@ -36,6 +36,11 @@ class YouTubeG
       #   :private
       # Specifying :private will make the video private, otherwise it will be public.
       #
+      # When one of the fields is invalid according to YouTube,
+      # an UploadError will be returned. Its message contains a list of newline separated
+      # errors, containing the key and its error code.
+      # 
+      # When the authentication credentials are incorrect, an AuthenticationError will be raised.
       def upload data, opts = {}
         data = data.respond_to?(:read) ? data.read : data
         @opts = { :mime_type => 'video/mp4',
@@ -58,7 +63,19 @@ class YouTubeG
 
         Net::HTTP.start(base_url) do |upload|
           response = upload.post('/feeds/api/users/' << @user << '/uploads', uploadBody, uploadHeader)
-          raise AuthenticationError, response.body[/<TITLE>(.+)<\/TITLE>/, 1] if response.code.to_i == 403
+          if response.code.to_i == 403
+            raise AuthenticationError, response.body[/<TITLE>(.+)<\/TITLE>/, 1]
+          elsif response.code.to_i != 201
+            upload_error = ''
+            xml = REXML::Document.new(response.body)
+            errors = xml.elements["//errors"]
+            errors.each do |error|
+              location = error.elements["location"].text[/media:group\/media:(.*)\/text\(\)/,1]
+              code = error.elements["code"].text
+              upload_error << sprintf("%s: %s\r\n", location, code)
+            end
+            raise UploadError, upload_error
+          end
           xml = REXML::Document.new(response.body)
           return xml.elements["//id"].text[/videos\/(.+)/, 1]
         end
