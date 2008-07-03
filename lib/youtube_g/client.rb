@@ -7,9 +7,21 @@ class YouTubeG
     def initialize(logger=false)
       @logger = Logger.new(STDOUT) if logger
     end
-
-    # Params can be one of :most_viewed, :top_rated, :recently_featured, :watch_on_mobile
-    # Or :tags, :categories, :query, :user
+    
+    # === Parameters
+    # If fetching videos for a standard feed:
+    #   params<Symbol>:: Accepts a symbol of :most_viewed, :top_rated, :recently_featured, and :watch_on_mobile.
+    #   options<Hash>::  Accepts the options of :time, :offset, and :max_results. (Optional)
+    #   
+    # If fetching videos by tags, categories, query:
+    #   params<Hash>:: Accepts the keys :tags, :categories, :query, :order_by, :author, :racy, :response_format, :video_format, :offset, and :max_results.
+    #   options<Hash>:: Not used. (Optional)
+    # 
+    # If fetching videos for a particular user:
+    #   params<Hash>:: Key of :user with a value of the username.
+    #   options<Hash>:: Not used. (Optional)
+    # === Returns
+    # YouTubeG::Response::VideoSearch
     def videos_by(params, options={})
       if params.respond_to?(:to_hash) and not params[:user]
         request = YouTubeG::Request::VideoSearch.new(params)
@@ -26,6 +38,11 @@ class YouTubeG
       parser.parse
     end
     
+    # === Parameters
+    #   vid<String>:: The ID or URL of the video that you'd like to retrieve.
+    # 
+    # === Returns
+    # YouTubeG::Model::Video
     def video_by(vid)
       video_id = vid =~ /^http/ ? vid : "http://gdata.youtube.com/feeds/videos/#{vid}"
       parser = YouTubeG::Parser::VideoFeedParser.new(video_id)

@@ -1,17 +1,48 @@
 class YouTubeG
   
   # The goal of the classes in this module is to build the request URLs for each type of search
-  module Request
+  module Request #:nodoc:
     
-    class BaseSearch
+    class BaseSearch #:nodoc:
       attr_reader :url
-
-      def base_url
+      
+      private
+      
+      def base_url #:nodoc:
         "http://gdata.youtube.com/feeds/api/"                
+      end
+      
+      def set_instance_variables( variables ) #:nodoc:
+        variables.each do |key, value| 
+          name = key.to_s
+          instance_variable_set("@#{name}", value) if respond_to?(name)
+        end
+      end
+      
+      def build_query_params(params) #:nodoc:
+        # nothing to do if there are no params
+        return '' if (!params || params.empty?)
+
+        # build up the query param string, tacking on every key/value
+        # pair for which the value is non-nil
+        u = '?'
+        item_count = 0
+        params.keys.each do |key|
+          value = params[key]
+          next if value.nil?
+
+          u << '&' if (item_count > 0)
+          u << "#{CGI.escape(key.to_s)}=#{CGI.escape(value.to_s)}"
+          item_count += 1
+        end
+
+        # if we found no non-nil values, we've got no params so just
+        # return an empty string
+        (item_count == 0) ? '' : u
       end
     end
     
-    class UserSearch < BaseSearch
+    class UserSearch < BaseSearch #:nodoc:
       
       def initialize(params, options={})
         @url = base_url
@@ -19,30 +50,53 @@ class YouTubeG
         @url << "#{params[:user]}/uploads" if params[:user]
       end
       
-      def base_url
+      private
+      
+      def base_url #:nodoc:
         super << "users/"
       end
     end
         
-    class StandardSearch < BaseSearch
+    class StandardSearch < BaseSearch #:nodoc:
+      attr_reader :max_results                     # max_results
+      attr_reader :order_by                        # orderby, ([relevance], viewCount, published, rating)
+      attr_reader :offset                          # start-index
+      attr_reader :time                            # time
+      
       TYPES = [ :most_viewed, :top_rated, :recently_featured, :watch_on_mobile ]
-      TIMES = [ :all_time, :today, :this_week, :this_month ]
       
       def initialize(type, options={})
         if TYPES.include?(type)
-          @url = base_url << type.to_s
-          @url << "?time=#{CGI.escape(options.delete(:time).to_s)}" if TIMES.include?(options[:time])
+          @max_results = nil
+          @order_by = nil
+          @offset = nil
+          @time = nil
+          
+          set_instance_variables(options)
+          @url = base_url + type.to_s << build_query_params(to_youtube_params)
         else
           raise "Invalid type, must be one of: #{ TYPES.map { |t| t.to_s }.join(", ") }"
         end
       end
       
-      def base_url
+      private
+      
+      def base_url #:nodoc:
         super << "standardfeeds/"        
       end
+      
+      def to_youtube_params #:nodoc:
+        { 
+          'max-results' => @max_results, 
+          'orderby' => @order_by, 
+          'start-index' => @offset, 
+          'time' => @time 
+        }
+      end
+      
     end
     
-    class VideoSearch < BaseSearch
+    class VideoSearch < BaseSearch #:nodoc:
       # From here: http://code.google.com/apis/youtube/reference.html#yt_format
       ONLY_EMBEDDABLE = 5
 
@@ -82,10 +136,7 @@ class YouTubeG
         @url << categories_to_params(params.delete(:categories)) if params[:categories]
         @url << tags_to_params(params.delete(:tags)) if params[:tags]
 
-        params.each do |key, value| 
-          name = key.to_s
-          instance_variable_set("@#{name}", value) if respond_to?(name)
-        end
+        set_instance_variables(params)
         
         if( params[ :only_embeddable ] )
           @video_format = ONLY_EMBEDDABLE
@@ -94,11 +145,13 @@ class YouTubeG
         @url << build_query_params(to_youtube_params)
       end
       
-      def base_url
+      private
+      
+      def base_url #:nodoc:
         super << "videos"
       end
       
-      def to_youtube_params
+      def to_youtube_params #:nodoc:
         {
           'max-results' => @max_results,
           'orderby' => @order_by,
@@ -115,7 +168,7 @@ class YouTubeG
         # Convert category symbols into strings and build the URL. GData requires categories to be capitalized. 
         # Categories defined like: categories => { :include => [:news], :exclude => [:sports], :either => [..] }
         # or like: categories => [:news, :sports]
-        def categories_to_params(categories)
+        def categories_to_params(categories) #:nodoc:
           if categories.respond_to?(:keys) and categories.respond_to?(:[])
             s = ""
             s << categories[:either].map { |c| c.to_s.capitalize }.join("%7C") << '/' if categories[:either]
@@ -129,7 +182,7 @@ class YouTubeG
         
         # Tags defined like: tags => { :include => [:football], :exclude => [:soccer], :either => [:polo, :tennis] }
         # or tags => [:football, :soccer]
-        def tags_to_params(tags)
+        def tags_to_params(tags) #:nodoc:
           if tags.respond_to?(:keys) and tags.respond_to?(:[])
             s = ""
             s << tags[:either].map { |t| CGI.escape(t.to_s) }.join("%7C") << '/' if tags[:either]
@@ -139,28 +192,6 @@ class YouTubeG
           else
             tags.map { |t| CGI.escape(t.to_s) }.join("/") << '/'
           end          
-        end
-
-        def build_query_params(params)
-          # nothing to do if there are no params
-          return '' if (!params || params.empty?)
-
-          # build up the query param string, tacking on every key/value
-          # pair for which the value is non-nil
-          u = '?'
-          item_count = 0
-          params.keys.each do |key|
-            value = params[key]
-            next if value.nil?
-
-            u << '&' if (item_count > 0)
-            u << "#{CGI.escape(key.to_s)}=#{CGI.escape(value.to_s)}"
-            item_count += 1
-          end
-
-          # if we found no non-nil values, we've got no params so just
-          # return an empty string
-          (item_count == 0) ? '' : u
         end
         
     end

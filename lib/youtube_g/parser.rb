@@ -3,8 +3,8 @@ require 'open-uri'
 require 'rexml/document'
 
 class YouTubeG
-  module Parser
-    class FeedParser
+  module Parser #:nodoc:
+    class FeedParser #:nodoc:
       def initialize(url)
         @url = url
       end
@@ -14,17 +14,16 @@ class YouTubeG
       end      
     end
 
-    class VideoFeedParser < FeedParser
+    class VideoFeedParser < FeedParser #:nodoc:
       
       def parse_content(content)
         doc = REXML::Document.new(content)
         entry = doc.elements["entry"]
-        
         parse_entry(entry)
       end
 
     protected
-      def parse_entry(entry)
+      def parse_entry(entry) 
         video_id = entry.elements["id"].text
         published_at = Time.parse(entry.elements["published"].text)
         updated_at = Time.parse(entry.elements["updated"].text)
@@ -116,7 +115,7 @@ class YouTubeG
           :racy => racy)
       end
 
-      def parse_media_content (media_content_element)
+      def parse_media_content (media_content_element) 
         content_url = media_content_element.attributes["url"]
         format_code = media_content_element.attributes["yt:format"].to_i
         format = YouTubeG::Model::Video::Format.by_code(format_code)
@@ -133,10 +132,10 @@ class YouTubeG
       end      
     end
 
-    class VideosFeedParser < VideoFeedParser
+    class VideosFeedParser < VideoFeedParser #:nodoc:
 
     private
-      def parse_content(content)
+      def parse_content(content) #:nodoc:
         doc = REXML::Document.new(content)
         feed = doc.elements["feed"]
 

@@ -61,17 +61,27 @@ class TestVideoSearch < Test::Unit::TestCase
     request = YouTubeG::Request::StandardSearch.new(:most_viewed)
     assert_equal "http://gdata.youtube.com/feeds/api/standardfeeds/most_viewed", request.url    
   end
+  
+  def test_should_build_url_for_top_rated_for_today
+    request = YouTubeG::Request::StandardSearch.new(:top_rated, :time => :today)
+    assert_equal "http://gdata.youtube.com/feeds/api/standardfeeds/top_rated?time=today", request.url    
+  end  
+  
+  def test_should_build_url_for_most_viewed_offset_and_max_results_without_time
+    request = YouTubeG::Request::StandardSearch.new(:top_rated, :offset => 5, :max_results => 10)
+    assert_equal "http://gdata.youtube.com/feeds/api/standardfeeds/top_rated?max-results=10&start-index=5", request.url   
+  end
+  
+  def test_should_build_url_for_most_viewed_offset_and_max_results_with_time
+    request = YouTubeG::Request::StandardSearch.new(:top_rated, :offset => 5, :max_results => 10, :time => :today)
+    assert_equal "http://gdata.youtube.com/feeds/api/standardfeeds/top_rated?time=today&max-results=10&start-index=5", request.url   
+  end
 
   def test_should_raise_exception_for_invalid_type
     assert_raise RuntimeError do
       request = YouTubeG::Request::StandardSearch.new(:most_viewed_yo)
     end
   end
-
-  def test_should_build_url_for_top_rated_for_today
-    request = YouTubeG::Request::StandardSearch.new(:top_rated, :time => :today)
-    assert_equal "http://gdata.youtube.com/feeds/api/standardfeeds/top_rated?time=today", request.url    
-  end  
   
   # -- Complex Video Queries -------------------------------------------------------------------------
   
