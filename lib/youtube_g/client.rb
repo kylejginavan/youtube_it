@@ -4,8 +4,8 @@ class YouTubeG
   class Client
     attr_accessor :logger
     
-    def initialize(logger=Logger.new(STDOUT))
-      @logger = logger
+    def initialize(logger=false)
+      @logger = Logger.new(STDOUT) if logger
     end
 
     # Params can be one of :most_viewed, :top_rated, :recently_featured, :watch_on_mobile
@@ -21,7 +21,7 @@ class YouTubeG
         request = YouTubeG::Request::StandardSearch.new(params, options)
       end
       
-      logger.debug "Submitting request [url=#{request.url}]."
+      logger.debug "Submitting request [url=#{request.url}]." if logger
       parser = YouTubeG::Parser::VideosFeedParser.new(request.url)
       parser.parse
     end

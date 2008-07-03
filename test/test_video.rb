@@ -23,7 +23,6 @@ class TestVideo < Test::Unit::TestCase
     assert_equal 25, response.max_result_count
     assert_equal 25, response.videos.length
     assert_equal 1, response.offset
-    puts response.total_result_count
     assert(response.total_result_count > 0)
     assert_instance_of Time, response.updated_at
   end
