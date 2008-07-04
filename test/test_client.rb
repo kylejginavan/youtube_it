@@ -128,14 +128,14 @@ class TestClient < Test::Unit::TestCase
     response = @client.videos_by(:query => "avril lavigne girlfriend")
   
     video = response.videos.first
-    assert !video.can_embed?
+    assert !video.embeddable?
   end
 
   def test_should_determine_if_embeddable_video_is_embeddable
     response = @client.videos_by(:query => "strongbad")
   
     video = response.videos.first
-    assert video.can_embed?
+    assert video.embeddable?
   end
   
   def test_should_retrieve_video_by_id

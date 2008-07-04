@@ -98,7 +98,7 @@ class YouTubeG
       #
       # === Returns
       #  <Boolean>:: True if the vidoe can be embedded, false if not.
-      def can_embed?
+      def embeddable?
         not @noembed
       end
       
