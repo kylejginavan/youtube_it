@@ -1,9 +1,14 @@
+# TODO
+#  * self atom feed
+#  * alternate youtube watch url
+#  * responses feed
+#  * comments feedLink
+
 class YouTubeG
   module Model
     class Video < YouTubeG::Record
       # Describes the various file formats in which a Youtube video may be
       # made available and allows looking them up by format code number.
-      #
       class Format
         @@formats = Hash.new
 
@@ -20,64 +25,79 @@ class YouTubeG
 
         # Flash format on YouTube site. All videos are available in this
         # format.
-        #
         FLASH = YouTubeG::Model::Video::Format.new(0, :flash)
 
         # RTSP streaming URL for mobile video playback. H.263 video (176x144)
         # and AMR audio.
-        #
         RTSP = YouTubeG::Model::Video::Format.new(1, :rtsp)
 
         # HTTP URL to the embeddable player (SWF) for this video. This format
         # is not available for a video that is not embeddable.
-        #
         SWF = YouTubeG::Model::Video::Format.new(5, :swf)
         
         THREE_GPP = YouTubeG::Model::Video::Format.new(6, :three_gpp)
       end
-
+      
+      # <Fixnum>:: Duration of a video in seconds.
       attr_reader :duration
+      # <Boolean>:: Specifies that a video may or may not be embedded on other websites.
       attr_reader :noembed
+      # <Fixnum>:: Specifies the order in which the video appears in a playlist.
       attr_reader :position
       attr_reader :racy
       attr_reader :statistics
-      
+      # <String>: Specifies a URI that uniquely and permanently identifies the video.
       attr_reader :video_id
+      # <Time>:: When the video was published on Youtube.
       attr_reader :published_at
+      # <Time>:: When the video's data was last updated.
       attr_reader :updated_at
+      # <Array>:: A array of YouTubeG::Model::Category objects that describe the videos categories. 
       attr_reader :categories
+      # <Array>:: An array of words associated with the video.
       attr_reader :keywords
+      # <String>:: Description of the video.
       attr_reader :description
+      # <String>:: Title for the video.
       attr_reader :title
       attr_reader :html_content
+      # <YouTubeG::Model::Author>:: Information about the YouTube user who owns a piece of video content.
       attr_reader :author
-
-      # YouTubeG::Model::Content records describing the individual media content
-      # data available for this video.  Most, but not all, videos offer this.
+      # <Array>:: An array of YouTubeG::Model::Content objects describing the individual media content data available for this video.  Most, but not all, videos offer this.
       attr_reader :media_content
-
-      attr_reader :thumbnails         # YouTubeG::Model::Thumbnail records
+      # <Array>:: An array of YouTubeG::Model::Thumbnail objects that contain information regarding the videos thumbnail images. 
+      attr_reader :thumbnails
+      # <String>:: The link to watch the URL on YouTubes website.
       attr_reader :player_url
+      # <YouTubeG::Model::Rating>:: Information about the videos rating.
       attr_reader :rating
       attr_reader :view_count
-
-      # TODO:
-      # self atom feed
-      # alternate youtube watch url
-      # responses feed
-      # comments feedLink
-
+      
+      # Videos related to the current video.
+      #
+      # === Returns
+      #   <Array>:: An array of YouTubeG::Model::Video objects.
       def related
         YouTubeG::Parser::VideosFeedParser.new("http://gdata.youtube.com/feeds/api/videos/#{unique_id}/related").parse
       end
       
-      # For convenience, the video_id with the URL stripped out, useful for searching for the video again
-      # without having to store it anywhere. A regular query search, with this id will return the same video.
-      # http://gdata.youtube.com/feeds/videos/ZTUVgYoeN_o
+      # The ID of the video, useful for searching for the video again without having to store it anywhere. 
+      # A regular query search, with this id will return the same video.
+      # 
+      # === Example
+      #   >> video.unique_id
+      #   => "ZTUVgYoeN_o"
+      #   
+      # === Returns
+      #   <String>:: The Youtube video id.
       def unique_id
         video_id[/videos\/([^<]+)/, 1]
       end
       
+      # Allows you to check whether the video can be embedded on a webpage.
+      #
+      # === Returns
+      #  <Boolean>:: True if the vidoe can be embedded, false if not.
       def can_embed?
         not @noembed
       end
@@ -86,6 +106,10 @@ class YouTubeG
         @media_content.find { |c| c.is_default? }
       end
       
+      # Gives you the HTML to embed the video on your website.
+      #
+      # === Returns
+      #   <String>:: The HTML for embedding the video on your website.
       def embed_html(width = 425, height = 350)
         <<EDOC
 <object width="#{width}" height="#{height}">
@@ -97,6 +121,10 @@ class YouTubeG
 EDOC
       end
 
+      # The URL needed for embedding the video in a page.
+      #
+      # === Returns
+      #   <String>:: Absolute URL for embedding video
       def embed_url
         @player_url.sub('watch?', '').sub('=', '/')          
       end
