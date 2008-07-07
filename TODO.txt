@@ -5,7 +5,6 @@
 [ ] restore spaces after method def names
 [ ] use a proxy for testing with static sample result xml so we have repeatable tests
 [ ] Clean up tests using Shoulda to define contexts
-[ ] Consolidate requires
 [ ] Allow :category and :categories for query DSL
 [ ] Exception handling
 
