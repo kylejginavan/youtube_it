@@ -1,7 +1,3 @@
-require 'cgi'
-require 'open-uri'
-require 'rexml/document'
-
 class YouTubeG
   module Parser #:nodoc:
     class FeedParser #:nodoc:

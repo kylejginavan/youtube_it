@@ -1,5 +1,3 @@
-require 'logger'
-
 class YouTubeG
   
   # TODO: Why is this needed? Does this happen if running standalone w/o Rails?

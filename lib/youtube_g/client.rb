@@ -1,5 +1,3 @@
-require 'logger'
-
 class YouTubeG
   class Client
     attr_accessor :logger
@@ -25,10 +23,8 @@ class YouTubeG
     def videos_by(params, options={})
       if params.respond_to?(:to_hash) and not params[:user]
         request = YouTubeG::Request::VideoSearch.new(params)
-
       elsif (params.respond_to?(:to_hash) && params[:user]) || (params == :favorites)
         request = YouTubeG::Request::UserSearch.new(params, options)
-
       else
         request = YouTubeG::Request::StandardSearch.new(params, options)
       end

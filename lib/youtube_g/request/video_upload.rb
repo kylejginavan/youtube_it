@@ -1,8 +1,3 @@
-require 'net/https'
-require 'digest/md5'
-require 'rexml/document'
-require 'cgi'
-
 class YouTubeG
 
   module Upload

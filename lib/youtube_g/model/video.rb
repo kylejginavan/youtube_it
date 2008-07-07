@@ -23,12 +23,10 @@ class YouTubeG
           @@formats[format_code]
         end
 
-        # Flash format on YouTube site. All videos are available in this
-        # format.
+        # Flash format on YouTube site. All videos are available in this format.
         FLASH = YouTubeG::Model::Video::Format.new(0, :flash)
 
-        # RTSP streaming URL for mobile video playback. H.263 video (176x144)
-        # and AMR audio.
+        # RTSP streaming URL for mobile video playback. H.263 video (176x144) and AMR audio.
         RTSP = YouTubeG::Model::Video::Format.new(1, :rtsp)
 
         # HTTP URL to the embeddable player (SWF) for this video. This format
