@@ -1,4 +1,4 @@
-youtube-g
+rakeyoutube-g
     by Shane Vitarana and Walter Korman
 
   Rubyforge: http://rubyforge.org/projects/youtube-g/
@@ -32,6 +32,7 @@ Create a client:
 Basic queries:
 
   client.videos_by(:query => "penguin")
+  client.videos_by(:query => "penguin", :page => 2, :per_page => 15)
   client.videos_by(:tags => ['tiger', 'leopard'])
   client.videos_by(:categories => [:news, :sports])
   client.videos_by(:categories => [:news, :sports], :tags => ['soccer', 'football'])
@@ -40,6 +41,7 @@ Basic queries:
 Standard feeds:
 	
   client.videos_by(:most_viewed)
+  client.videos_by(:most_linked, :page => 3)
   client.videos_by(:top_rated, :time => :today)
 	
 Advanced queries (with boolean operators OR (either), AND (include), NOT (exclude)):

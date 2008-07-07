@@ -22,6 +22,24 @@ class TestClient < Test::Unit::TestCase
     response.videos.each { |v| assert_valid_video v }
   end
   
+  def test_should_respond_to_a_basic_query_with_paging
+    response = @client.videos_by(:query => "penguin") 
+    assert_equal "http://gdata.youtube.com/feeds/api/videos", response.feed_id
+    assert_equal 25, response.max_result_count
+    assert_equal 1, response.offset
+
+    response = @client.videos_by(:query => "penguin", :page => 2) 
+    assert_equal "http://gdata.youtube.com/feeds/api/videos", response.feed_id
+    assert_equal 25, response.max_result_count
+    assert_equal 26, response.offset
+    
+    response2 = @client.videos_by(:query => "penguin", :page => 3) 
+    assert_equal "http://gdata.youtube.com/feeds/api/videos", response2.feed_id
+    assert_equal 25, response2.max_result_count
+    assert_equal 51, response2.offset
+  end
+  
+  
   def test_should_get_videos_for_multiword_metasearch_query
     response = @client.videos_by(:query => 'christina ricci')
   

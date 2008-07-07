@@ -1,4 +1,6 @@
 == trunk
+* Added :page and :per_page options, this allows easier usage of the will_paginate
+  plugin with the library. The :offset and :max_results options are no longer available. [Daniel Insley]
 * Added ability to get video responses on the instances of the YouTube::Model::Video object. [Daniel Insley]
 * Added and improved the existing documentation [Daniel Insley]
 * Fixed usage of deprecated yt:racy, now using media:rating [Daniel Insley]

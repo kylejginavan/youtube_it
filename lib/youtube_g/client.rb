@@ -17,13 +17,14 @@ class YouTubeG
     #   You can find out more specific information about what each standard feed provides
     #   by visiting: http://code.google.com/apis/youtube/reference.html#Standard_feeds                 
     #   
-    #   options<Hash>::  Accepts the options of :time, :offset, and :max_results. (Optional)
+    #   options<Hash> (optional)::  Accepts the options of :time, :page (default is 1), 
+    #                               and :per_page (default is 25).
     #   
     #  
     # If fetching videos by tags, categories, query:
     #   params<Hash>:: Accepts the keys :tags, :categories, :query, :order_by, 
-    #                  :author, :racy, :response_format, :video_format, :offset, 
-    #                  and :max_results.
+    #                  :author, :racy, :response_format, :video_format, :page (default is 1), 
+    #                  and :per_page(default is 25)
     #                  
     #   options<Hash>:: Not used. (Optional)
     # 
@@ -33,12 +34,17 @@ class YouTubeG
     # === Returns
     # YouTubeG::Response::VideoSearch
     def videos_by(params, options={})
+      request_params = params.respond_to?(:to_hash) ? params : options
+      request_params[:page] ||= 1
+      request_params[:max_results] = request_params[:per_page] || 25
+      request_params[:offset] = calculate_offset(request_params[:page], request_params[:max_results] )
+      
       if params.respond_to?(:to_hash) and not params[:user]
-        request = YouTubeG::Request::VideoSearch.new(params)
+        request = YouTubeG::Request::VideoSearch.new(request_params)
       elsif (params.respond_to?(:to_hash) && params[:user]) || (params == :favorites)
-        request = YouTubeG::Request::UserSearch.new(params, options)
+        request = YouTubeG::Request::UserSearch.new(request_params, options)
       else
-        request = YouTubeG::Request::StandardSearch.new(params, options)
+        request = YouTubeG::Request::StandardSearch.new(params, request_params)
       end
       
       logger.debug "Submitting request [url=#{request.url}]." if logger
@@ -57,6 +63,12 @@ class YouTubeG
       video_id = vid =~ /^http/ ? vid : "http://gdata.youtube.com/feeds/videos/#{vid}"
       parser = YouTubeG::Parser::VideoFeedParser.new(video_id)
       parser.parse
+    end
+    
+    private
+    
+    def calculate_offset(page, per_page)
+      page == 1 ? 1 : ((per_page * page) - per_page + 1)
     end
     
   end
