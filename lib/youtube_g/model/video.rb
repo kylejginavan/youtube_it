@@ -38,39 +38,42 @@ class YouTubeG
         THREE_GPP = YouTubeG::Model::Video::Format.new(6, :three_gpp)
       end
       
-      # <Fixnum>:: Duration of a video in seconds.
+      # *Fixnum*:: Duration of a video in seconds.
       attr_reader :duration
-      # <Boolean>:: Specifies that a video may or may not be embedded on other websites.
+      # *Boolean*:: Specifies that a video may or may not be embedded on other websites.
       attr_reader :noembed
-      # <Fixnum>:: Specifies the order in which the video appears in a playlist.
+      # *Fixnum*:: Specifies the order in which the video appears in a playlist.
       attr_reader :position
+      # *Boolean*:: Specifies that a video is flagged as adult or not.
       attr_reader :racy
       attr_reader :statistics
-      # <String>: Specifies a URI that uniquely and permanently identifies the video.
+      # *String*: Specifies a URI that uniquely and permanently identifies the video.
       attr_reader :video_id
-      # <Time>:: When the video was published on Youtube.
+      # *Time*:: When the video was published on Youtube.
       attr_reader :published_at
-      # <Time>:: When the video's data was last updated.
+      # *Time*:: When the video's data was last updated.
       attr_reader :updated_at
-      # <Array>:: A array of YouTubeG::Model::Category objects that describe the videos categories. 
+      # *Array*:: A array of YouTubeG::Model::Category objects that describe the videos categories. 
       attr_reader :categories
-      # <Array>:: An array of words associated with the video.
+      # *Array*:: An array of words associated with the video.
       attr_reader :keywords
-      # <String>:: Description of the video.
+      # *String*:: Description of the video.
       attr_reader :description
-      # <String>:: Title for the video.
+      # *String*:: Title for the video.
       attr_reader :title
+      # *String*:: Description of the video.
       attr_reader :html_content
-      # <YouTubeG::Model::Author>:: Information about the YouTube user who owns a piece of video content.
+      # YouTubeG::Model::Author:: Information about the YouTube user who owns a piece of video content.
       attr_reader :author
-      # <Array>:: An array of YouTubeG::Model::Content objects describing the individual media content data available for this video.  Most, but not all, videos offer this.
+      # *Array*:: An array of YouTubeG::Model::Content objects describing the individual media content data available for this video.  Most, but not all, videos offer this.
       attr_reader :media_content
-      # <Array>:: An array of YouTubeG::Model::Thumbnail objects that contain information regarding the videos thumbnail images. 
+      # *Array*:: An array of YouTubeG::Model::Thumbnail objects that contain information regarding the videos thumbnail images. 
       attr_reader :thumbnails
-      # <String>:: The link to watch the URL on YouTubes website.
+      # *String*:: The link to watch the URL on YouTubes website.
       attr_reader :player_url
-      # <YouTubeG::Model::Rating>:: Information about the videos rating.
+      # YouTubeG::Model::Rating:: Information about the videos rating.
       attr_reader :rating
+      # *Fixnum*:: Number of times that the video has been viewed
       attr_reader :view_count
       
       # Videos related to the current video.
@@ -102,6 +105,10 @@ class YouTubeG
         not @noembed
       end
       
+      # Provides a URL and various other types of information about a video.
+      # 
+      # === Returns
+      #   <YouTubeG::Model::Content>:: Data about the embeddable video.
       def default_media_content
         @media_content.find { |c| c.is_default? }
       end
