@@ -8,6 +8,7 @@ class YouTubeG
       # * The tag's value will be pending if the authenticated user has asked to be added to the contact's contact list, but the request has not yet been accepted or rejected.
       #
       attr_reader :status
+      
       # *String*:: The Youtube username of the contact.
       attr_reader :username
     end

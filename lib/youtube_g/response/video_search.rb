@@ -2,7 +2,7 @@ class YouTubeG
   module Response
     class VideoSearch < YouTubeG::Record
       # *String*:: Unique feed identifying url.
-      attr_reader :feed_id
+      attr_reader :feed_id 
       
       # *Fixnum*:: Number of results per page.
       attr_reader :max_result_count

@@ -6,6 +6,8 @@ class YouTubeG
       @logger = Logger.new(STDOUT) if logger
     end
     
+    # Retrieves an array of standard feed, custom query, or user videos.
+    # 
     # === Parameters
     # If fetching videos for a standard feed:
     #   params<Symbol>:: Accepts a symbol of :most_viewed, :top_rated, :recently_featured, and :watch_on_mobile.
@@ -34,6 +36,8 @@ class YouTubeG
       parser.parse
     end
     
+    # Retrieves a single YouTube video.
+    #
     # === Parameters
     #   vid<String>:: The ID or URL of the video that you'd like to retrieve.
     # 
