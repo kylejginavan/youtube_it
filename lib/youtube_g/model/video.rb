@@ -1,7 +1,6 @@
 # TODO
 #  * self atom feed
 #  * alternate youtube watch url
-#  * responses feed
 #  * comments feedLink
 
 class YouTubeG
@@ -115,9 +114,17 @@ class YouTubeG
       # Videos related to the current video.
       #
       # === Returns
-      #   Array: An array of YouTubeG::Model::Video objects.
+      #   YouTubeG::Response::VideoSearch
       def related
         YouTubeG::Parser::VideosFeedParser.new("http://gdata.youtube.com/feeds/api/videos/#{unique_id}/related").parse
+      end
+      
+      # Video responses to the current video.
+      #
+      # === Returns
+      #   YouTubeG::Response::VideoSearch   
+      def responses
+        YouTubeG::Parser::VideosFeedParser.new("http://gdata.youtube.com/feeds/api/videos/#{unique_id}/responses").parse
       end
       
       # The ID of the video, useful for searching for the video again without having to store it anywhere. 
@@ -136,7 +143,7 @@ class YouTubeG
       # Allows you to check whether the video can be embedded on a webpage.
       #
       # === Returns
-      #   Boolean: True if the vidoe can be embedded, false if not.
+      #   Boolean: True if the video can be embedded, false if not.
       def embeddable?
         not @noembed
       end

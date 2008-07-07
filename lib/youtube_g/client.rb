@@ -13,9 +13,13 @@ class YouTubeG
     #   params<Symbol>:: Accepts a symbol of :top_rated, :top_favorites, :most_viewed, 
     #                    :most_popular, :most_recent, :most_discussed, :most_linked, 
     #                    :most_responded, :recently_featured, and :watch_on_mobile.
-    #                    
+    #  
+    #   You can find out more specific information about what each standard feed provides
+    #   by visiting: http://code.google.com/apis/youtube/reference.html#Standard_feeds                 
+    #   
     #   options<Hash>::  Accepts the options of :time, :offset, and :max_results. (Optional)
     #   
+    #  
     # If fetching videos by tags, categories, query:
     #   params<Hash>:: Accepts the keys :tags, :categories, :query, :order_by, 
     #                  :author, :racy, :response_format, :video_format, :offset, 

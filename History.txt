@@ -1,5 +1,5 @@
 == trunk
-
+* Added ability to get video responses on the instances of the YouTube::Model::Video object. [Daniel Insley]
 * Added and improved the existing documentation [Daniel Insley]
 * Fixed usage of deprecated yt:racy, now using media:rating [Daniel Insley]
 * Renamed can_embed? method to embeddable? [Daniel Insley]
