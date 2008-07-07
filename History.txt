@@ -1,5 +1,9 @@
 == trunk
 
+* Added and improved the existing documentation [Daniel Insley]
+* Fixed usage of deprecated yt:racy, now using media:rating [Daniel Insley]
+* Renamed can_embed? method to embeddable? [Daniel Insley]
+* Added ability for padingation and ordering on standard feeds. [Daniel Insley]
 * Add error-handling for video upload errors. [FiXato]
 * Add error-handling for authentication errors from YouTube during video upload. [FiXato]
 * Add support for making videos private upon video upload. [FiXato]

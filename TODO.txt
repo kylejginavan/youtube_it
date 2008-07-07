@@ -1,5 +1,4 @@
 [ ] stub out http request/response cycle for tests
-[ ] consider defaulting the client to no-logger, rather than outputting to STDOUT.
 [ ] allow specifying values as single items where you don't need to wrap in a list, e.g. :tags => :chickens instead of :tags => [ 'chickens' ]
 [ ] make sure symbols will work as well as tags everywhere (again, :tags => :chickens is same as :tags => 'chickens')
 [ ] figure out better structure for class/file (either rename request/video_search.rb or split into one class per file again)
