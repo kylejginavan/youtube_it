@@ -18,3 +18,8 @@ task :tag do
   svn_root = 'svn+ssh://drummr77@rubyforge.org/var/svn/youtube-g'
   sh %(svn cp #{svn_root}/trunk #{svn_root}/tags/release-#{YouTubeG::VERSION} -m "Tag YouTubeG release #{YouTubeG::VERSION}")
 end
+
+desc 'Load the library in an IRB session'
+task :console do
+  sh %(irb -r lib/youtube_g.rb)
+end
