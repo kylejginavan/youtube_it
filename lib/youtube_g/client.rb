@@ -10,11 +10,17 @@ class YouTubeG
     # 
     # === Parameters
     # If fetching videos for a standard feed:
-    #   params<Symbol>:: Accepts a symbol of :most_viewed, :top_rated, :recently_featured, and :watch_on_mobile.
+    #   params<Symbol>:: Accepts a symbol of :top_rated, :top_favorites, :most_viewed, 
+    #                    :most_popular, :most_recent, :most_discussed, :most_linked, 
+    #                    :most_responded, :recently_featured, and :watch_on_mobile.
+    #                    
     #   options<Hash>::  Accepts the options of :time, :offset, and :max_results. (Optional)
     #   
     # If fetching videos by tags, categories, query:
-    #   params<Hash>:: Accepts the keys :tags, :categories, :query, :order_by, :author, :racy, :response_format, :video_format, :offset, and :max_results.
+    #   params<Hash>:: Accepts the keys :tags, :categories, :query, :order_by, 
+    #                  :author, :racy, :response_format, :video_format, :offset, 
+    #                  and :max_results.
+    #                  
     #   options<Hash>:: Not used. (Optional)
     # 
     # If fetching videos for a particular user:
