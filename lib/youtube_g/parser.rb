@@ -93,7 +93,7 @@ class YouTubeG
         view_count = (el = entry.elements["yt:statistics"]) ? el.attributes["viewCount"].to_i : 0
 
         noembed = entry.elements["yt:noembed"] ? true : false
-        racy = entry.elements["yt:rating"] ? true : false
+        racy = entry.elements["media:rating"] ? true : false
 
         YouTubeG::Model::Video.new(
           :video_id => video_id,
