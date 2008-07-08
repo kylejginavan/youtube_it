@@ -18,8 +18,8 @@ class YouTubeG
     #   by visiting: http://code.google.com/apis/youtube/reference.html#Standard_feeds                 
     #   
     #   options<Hash> (optional)::  Accepts the options of :time, :page (default is 1), 
-    #                               and :per_page (default is 25).
-    #   
+    #                               and :per_page (default is 25). :offset and :max_results
+    #                               can also be passed for a custom offset.
     #  
     # If fetching videos by tags, categories, query:
     #   params<Hash>:: Accepts the keys :tags, :categories, :query, :order_by, 
@@ -36,8 +36,14 @@ class YouTubeG
     def videos_by(params, options={})
       request_params = params.respond_to?(:to_hash) ? params : options
       request_params[:page] ||= 1
-      request_params[:max_results] = request_params[:per_page] || 25
-      request_params[:offset] = calculate_offset(request_params[:page], request_params[:max_results] )
+      
+      unless request_params[:max_results]
+        request_params[:max_results] = request_params[:per_page] || 25
+      end
+      
+      unless request_params[:offset]
+        request_params[:offset] = calculate_offset(request_params[:page], request_params[:max_results] )
+      end
       
       if params.respond_to?(:to_hash) and not params[:user]
         request = YouTubeG::Request::VideoSearch.new(request_params)
