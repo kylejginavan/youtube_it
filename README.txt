@@ -1,4 +1,4 @@
-rakeyoutube-g
+youtube-g
     by Shane Vitarana and Walter Korman
 
   Rubyforge: http://rubyforge.org/projects/youtube-g/
