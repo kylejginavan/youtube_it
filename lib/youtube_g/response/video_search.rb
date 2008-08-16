@@ -18,6 +18,24 @@ class YouTubeG
 
       # *Array*:: Array of YouTubeG::Model::Video records
       attr_reader :videos
+
+      def current_page
+        ((offset - 1) / max_result_count) + 1
+      end
+      
+      # current_page + 1 or nil if there is no next page
+      def next_page
+        current_page < total_pages ? (current_page + 1) : nil
+      end
+
+      # current_page - 1 or nil if there is no previous page
+      def previous_page
+        current_page > 1 ? (current_page - 1) : nil
+      end
+
+      def total_pages
+        (total_result_count / max_result_count.to_f).ceil
+      end
     end
   end
 end
