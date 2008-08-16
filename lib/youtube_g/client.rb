@@ -35,10 +35,10 @@ class YouTubeG
     # YouTubeG::Response::VideoSearch
     def videos_by(params, options={})
       request_params = params.respond_to?(:to_hash) ? params : options
-      request_params[:page] ||= 1
+      request_params[:page] = integer_or_default(request_params[:page], 1)
       
       unless request_params[:max_results]
-        request_params[:max_results] = request_params[:per_page] || 25
+        request_params[:max_results] = integer_or_default(request_params[:per_page], 25)
       end
       
       unless request_params[:offset]
@@ -77,5 +77,9 @@ class YouTubeG
       page == 1 ? 1 : ((per_page * page) - per_page + 1)
     end
     
+    def integer_or_default(value, default)
+      value = value.to_i
+      value > 0 ? value : default
+    end
   end
 end
