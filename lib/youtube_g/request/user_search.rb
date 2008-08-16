@@ -6,16 +6,17 @@ class YouTubeG
       attr_reader :offset                          # start-index
 
       def initialize(params, options={})
+        @max_results, @order_by, @offset = nil
         @url = base_url
 
         if params == :favorites
           @url << "#{options[:user]}/favorites" 
+          set_instance_variables(options)
         elsif params[:user]
           @url << "#{params[:user]}/uploads"
+          set_instance_variables(params)
         end
         
-        set_instance_variables(params)
-
         @url << build_query_params(to_youtube_params)
       end
 

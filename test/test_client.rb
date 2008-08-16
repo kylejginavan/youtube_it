@@ -52,7 +52,6 @@ class TestClient < Test::Unit::TestCase
     assert_equal 51, response2.offset
   end
   
-  
   def test_should_get_videos_for_multiword_metasearch_query
     response = @client.videos_by(:query => 'christina ricci')
   
@@ -131,6 +130,13 @@ class TestClient < Test::Unit::TestCase
   def test_should_get_videos_by_user
     response = @client.videos_by(:user => 'liz')
     response.videos.each { |v| assert_valid_video v }
+  end
+  
+  def test_should_get_videos_by_user_with_pagination_and_ordering
+    response = @client.videos_by(:user => 'liz', :page => 2, :per_page => '2', :order_by => 'published')
+    response.videos.each { |v| assert_valid_video v }
+    assert_equal 3, response.offset
+    assert_equal 2, response.max_result_count
   end
 
   # HTTP 403 Error

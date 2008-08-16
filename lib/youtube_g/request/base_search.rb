@@ -24,7 +24,7 @@ class YouTubeG
         # pair for which the value is non-nil
         u = '?'
         item_count = 0
-        params.keys.each do |key|
+        params.keys.sort.each do |key|
           value = params[key]
           next if value.nil?
 

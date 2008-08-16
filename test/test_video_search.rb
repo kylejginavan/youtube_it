@@ -74,7 +74,7 @@ class TestVideoSearch < Test::Unit::TestCase
   
   def test_should_build_url_for_most_viewed_offset_and_max_results_with_time
     request = YouTubeG::Request::StandardSearch.new(:top_rated, :offset => 5, :max_results => 10, :time => :today)
-    assert_equal "http://gdata.youtube.com/feeds/api/standardfeeds/top_rated?time=today&max-results=10&start-index=5", request.url   
+    assert_equal "http://gdata.youtube.com/feeds/api/standardfeeds/top_rated?max-results=10&start-index=5&time=today", request.url   
   end
 
   def test_should_raise_exception_for_invalid_type
@@ -111,7 +111,7 @@ class TestVideoSearch < Test::Unit::TestCase
     request = YouTubeG::Request::VideoSearch.new(:query => 'bench press', 
                                                  :categories => { :exclude => [:comedy, :entertainment] },
                                                  :max_results => 10)
-    assert_equal "http://gdata.youtube.com/feeds/api/videos/-/-Comedy/-Entertainment/?vq=bench+press&max-results=10", request.url
+    assert_equal "http://gdata.youtube.com/feeds/api/videos/-/-Comedy/-Entertainment/?max-results=10&vq=bench+press", request.url
   end
   
   # -- User Queries ---------------------------------------------------------------------------------
@@ -121,8 +121,18 @@ class TestVideoSearch < Test::Unit::TestCase
     assert_equal "http://gdata.youtube.com/feeds/api/users/liz/uploads", request.url
   end
   
+  def test_should_build_url_for_videos_by_user_paginate_and_order
+    request = YouTubeG::Request::UserSearch.new(:user => 'liz', :offset => 20, :max_results => 10, :order_by => 'published')
+    assert_equal "http://gdata.youtube.com/feeds/api/users/liz/uploads?max-results=10&orderby=published&start-index=20", request.url
+  end
+
   def test_should_build_url_for_favorite_videos_by_user
     request = YouTubeG::Request::UserSearch.new(:favorites, :user => 'liz')
     assert_equal "http://gdata.youtube.com/feeds/api/users/liz/favorites", request.url
+  end
+
+  def test_should_build_url_for_favorite_videos_by_user_paginate
+    request = YouTubeG::Request::UserSearch.new(:favorites, :user => 'liz', :offset => 20, :max_results => 10)
+    assert_equal "http://gdata.youtube.com/feeds/api/users/liz/favorites?max-results=10&start-index=20", request.url
   end
 end
