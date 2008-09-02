@@ -1,4 +1,6 @@
-== trunk
+== 0.4.9.9 / 2008-09-01
+
+* Add Geodata information (thanks Jose Galisteo)
 * Added :page and :per_page options, this allows easier usage of the will_paginate
   plugin with the library. The :offset and :max_results options are no longer available. [Daniel Insley]
 * Added ability to get video responses on the instances of the YouTube::Model::Video object. [Daniel Insley]

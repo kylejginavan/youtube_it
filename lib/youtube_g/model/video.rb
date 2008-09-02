@@ -108,6 +108,12 @@ class YouTubeG
       
       # *Fixnum*:: Number of times that the video has been viewed
       attr_reader :view_count
+
+      # Geodata
+      attr_reader :where
+      attr_reader :position
+      attr_reader :latitude
+      attr_reader :longitude
       
       attr_reader :statistics
       

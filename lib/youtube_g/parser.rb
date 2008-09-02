@@ -91,6 +91,11 @@ class YouTubeG
         noembed = entry.elements["yt:noembed"] ? true : false
         racy = entry.elements["media:rating"] ? true : false
 
+        if where = entry.elements["georss:where"]
+          position = where.elements["gml:Point"].elements["gml:pos"].text
+          latitude, longitude = position.split(" ")
+        end
+
         YouTubeG::Model::Video.new(
           :video_id => video_id,
           :published_at => published_at,
@@ -108,7 +113,11 @@ class YouTubeG
           :rating => rating,
           :view_count => view_count,
           :noembed => noembed,
-          :racy => racy)
+          :racy => racy,
+          :where => where,
+          :position => position,
+          :latitude => latitude,
+          :longitude => longitude)
       end
 
       def parse_media_content (media_content_element) 
