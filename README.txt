@@ -37,6 +37,7 @@ Basic queries:
   client.videos_by(:categories => [:news, :sports])
   client.videos_by(:categories => [:news, :sports], :tags => ['soccer', 'football'])
   client.videos_by(:user => 'liz')
+  client.videos_by(:favorites, :user => 'liz')
 	
 Standard feeds:
 	
