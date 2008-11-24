@@ -145,6 +145,12 @@ class TestClient < Test::Unit::TestCase
   #   response.videos.each { |v| assert_valid_video v }
   # end
   
+  def test_should_get_favorite_videos_by_user
+    response = @client.videos_by(:favorites, :user => 'drnicwilliams')
+    assert_equal "http://gdata.youtube.com/feeds/api/users/drnicwilliams/favorites", response.feed_id
+    response.videos.each { |v| assert_valid_video v }
+  end
+  
   def test_should_get_videos_for_query_search_with_categories_excluded
     video = @client.video_by("EkF4JD2rO3Q")
     assert_equal "<object width=\"425\" height=\"350\">\n  <param name=\"movie\" value=\"http://www.youtube.com/v/EkF4JD2rO3Q\"></param>\n  <param name=\"wmode\" value=\"transparent\"></param>\n  <embed src=\"http://www.youtube.com/v/EkF4JD2rO3Q\" type=\"application/x-shockwave-flash\" \n   wmode=\"transparent\" width=\"425\" height=\"350\"></embed>\n</object>\n", video.embed_html
