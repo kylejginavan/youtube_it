@@ -25,5 +25,5 @@ require File.dirname(__FILE__) + '/youtube_g/request/video_search'
 require File.dirname(__FILE__) + '/youtube_g/response/video_search'
 
 class YouTubeG #:nodoc:
-  VERSION = '0.4.9.9'
+  VERSION = '0.5.0'
 end
