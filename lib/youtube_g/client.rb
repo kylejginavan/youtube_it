@@ -48,7 +48,7 @@ class YouTubeG
       if params.respond_to?(:to_hash) and not params[:user]
         request = YouTubeG::Request::VideoSearch.new(request_params)
       elsif (params.respond_to?(:to_hash) && params[:user]) || (params == :favorites)
-        request = YouTubeG::Request::UserSearch.new(request_params, options)
+        request = YouTubeG::Request::UserSearch.new(params, request_params)
       else
         request = YouTubeG::Request::StandardSearch.new(params, request_params)
       end
