@@ -37,27 +37,46 @@ class YouTubeG
       # 
       # When the authentication credentials are incorrect, an AuthenticationError will be raised.
       def upload data, opts = {}
-        data = data.respond_to?(:read) ? data.read : data
+        # If data can be read, use the first 1024 bytes as filename. If data
+        # is a file, use path. If data is a string, checksum it
+        opst[:filename] ||= if data.respond_to?(:path)
+          Digest::MD5.hexdigest(data.path)
+        elsif data.respond_to?(:read)
+          chunk = data.read(1024)
+          data.rewind
+          Digest::MD5.hexdigest(chunk)
+        else
+          Digest::MD5.hexdigest(data)
+        end
+          
         @opts = { :mime_type => 'video/mp4',
-                  :filename => Digest::MD5.hexdigest(data),
                   :title => '',
                   :description => '',
                   :category => '',
                   :keywords => [] }.merge(opts)
 
-        uploadBody = generate_upload_body(boundary, video_xml, data)
+        post_body_io = generate_upload_body(boundary, video_xml, data)
 
-        uploadHeader = {
+        upload_headers = {
           "Authorization"  => "GoogleLogin auth=#{auth_token}",
           "X-GData-Client" => "#{@client_id}",
           "X-GData-Key"    => "key=#{@dev_key}",
           "Slug"           => "#{@opts[:filename]}",
           "Content-Type"   => "multipart/related; boundary=#{boundary}",
-          "Content-Length" => "#{uploadBody.length}"
+          "Content-Length" => "#{post_body_io.expected_length}",
+          "Transfer-Encoding" => "chunked" # We will stream instead of posting at once
         }
 
-        Net::HTTP.start(base_url) do |upload|
-          response = upload.post('/feeds/api/users/' << @user << '/uploads', uploadBody, uploadHeader)
+        Net::HTTP.start(base_url) do | session |
+          # Use the more convoluted request creation to use the IO as post body. Due to the
+          # fact that Net::HTTP has been written by alies from Jupiter there is no other way to do it,
+          # at least currently
+          path = '/feeds/api/users/%s/uploads' % @user
+          post = HTTP::Post.new(nil, nil, path, upload_headers)
+          post.body_stream = post_body_io
+          
+          response = session.request(post)
+          
           if response.code.to_i == 403
             raise AuthenticationError, response.body[/<TITLE>(.+)<\/TITLE>/, 1]
           elsif response.code.to_i != 201
@@ -99,30 +118,32 @@ class YouTubeG
         end
         @auth_token
       end
-
+      
       def video_xml #:nodoc:
-        video_xml = ''
-        video_xml << '<?xml version="1.0"?>'
-        video_xml << '<entry xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:yt="http://gdata.youtube.com/schemas/2007">'
-        video_xml << '<media:group>'
-        video_xml << '<media:title type="plain">%s</media:title>'               % @opts[:title]
-        video_xml << '<media:description type="plain">%s</media:description>'   % @opts[:description]
-        video_xml << '<media:keywords>%s</media:keywords>'                      % @opts[:keywords].join(",")
-        video_xml << '<media:category scheme="http://gdata.youtube.com/schemas/2007/categories.cat">%s</media:category>' % @opts[:category]
-        video_xml << '<yt:private/>' if @opts[:private]
-        video_xml << '</media:group>'
-        video_xml << '</entry>'
+        b = Builder::XML.new
+        b.instruct!
+        b.entry(:xmlns => "http://www.w3.org/2005/Atom", 'xmlns:media' => "http://search.yahoo.com/mrss/", 'xmlns:yt' => "http://gdata.youtube.com/schemas/2007") do | m |
+          m.tag!("media:group") do | mg |
+            mg.tag!("media:title", :type => "plain") { @opts[:title] }
+            mg.tag!("media:description", :type => "plain") { @opts[:description] }
+            mg.tag!("media:keywords") { @opts[:keywords].join(",") }
+            mg.tag!('media:category', :scheme => "http://gdata.youtube.com/schemas/2007/categories.cat") { @opts[:category] }
+            mg.tag!('yt:private') if @opts[:private]
+          end
+        end.to_s
       end
 
       def generate_upload_body(boundary, video_xml, data) #:nodoc:
-        uploadBody = ""
-        uploadBody << "--#{boundary}\r\n"
-        uploadBody << "Content-Type: application/atom+xml; charset=UTF-8\r\n\r\n"
-        uploadBody << video_xml
-        uploadBody << "\r\n--#{boundary}\r\n"
-        uploadBody << "Content-Type: #{@opts[:mime_type]}\r\nContent-Transfer-Encoding: binary\r\n\r\n"
-        uploadBody << data
-        uploadBody << "\r\n--#{boundary}--\r\n"
+        post_body = []
+        post_body << "--#{boundary}\r\n"
+        post_body << "Content-Type: application/atom+xml; charset=UTF-8\r\n\r\n"
+        post_body << video_xml
+        post_body << "\r\n--#{boundary}\r\n"
+        post_body << "Content-Type: #{@opts[:mime_type]}\r\nContent-Transfer-Encoding: binary\r\n\r\n"
+        post_body << data
+        post_body << "\r\n--#{boundary}--\r\n"
+        
+        YouTubeG::TapeIO.new(post_body)
       end
 
     end
