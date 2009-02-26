@@ -29,7 +29,7 @@ class YouTubeG
           next if value.nil?
 
           u << '&' if (item_count > 0)
-          u << "#{CGI.escape(key.to_s)}=#{CGI.escape(value.to_s)}"
+          u << "#{YouTubeG.esc(key.to_s)}=#{YouTubeG.esc(value.to_s)}"
           item_count += 1
         end
 

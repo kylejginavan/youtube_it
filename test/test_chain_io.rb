@@ -1,8 +1,4 @@
-require 'rubygems'
-require 'test/unit'
-require 'pp'
-
-require 'youtube_g'
+require File.dirname(__FILE__) + '/helper'
 
 class TestChainIO < Test::Unit::TestCase
   def setup
