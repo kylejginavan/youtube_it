@@ -1,8 +1,8 @@
 class YouTubeG
 
   module Upload
-    class UploadError < Exception; end
-    class AuthenticationError < Exception; end
+    class UploadError < YouTubeG::Error; end
+    class AuthenticationError < YouTubeG::Error; end
 
     # require 'youtube_g'
     #

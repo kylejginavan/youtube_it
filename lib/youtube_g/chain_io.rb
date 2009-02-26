@@ -4,7 +4,7 @@ require 'delegate'
 # file handles when they have been read completely to prevent our uploader from leaking file handles
 #
 # chain = ChainIO.new(File.open(__FILE__), File.open('/etc/passwd'), "abcd")
-class YouTubeG::ChainIO
+class YouTubeG::ChainIO #:nodoc:
   attr_accessor :autoclose
 
   def initialize(*any_ios)
@@ -54,7 +54,7 @@ end
   
 # Net::HTTP only can send chunks of 1024 bytes. This is very inefficient, so we have a spare IO that will send more when asked for 1024.
 # We use delegation because the read call is recursive.
-class YouTubeG::GreedyChainIO < DelegateClass(YouTubeG::ChainIO)
+class YouTubeG::GreedyChainIO < DelegateClass(YouTubeG::ChainIO) #:nodoc:
   BIG_CHUNK = 512 * 1024 # 500 kb
   
   def initialize(*with_ios)
