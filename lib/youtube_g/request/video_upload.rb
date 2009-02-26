@@ -97,15 +97,15 @@ class YouTubeG
 
       private
 
-      def base_url #:nodoc:
+      def base_url
         "uploads.gdata.youtube.com"
       end
 
-      def boundary #:nodoc:
+      def boundary 
         "An43094fu"
       end
 
-      def auth_token #:nodoc:
+      def auth_token
         unless @auth_token
           http = Net::HTTP.new("www.google.com", 443)
           http.use_ssl = true
@@ -118,7 +118,7 @@ class YouTubeG
         @auth_token
       end
       
-      def video_xml #:nodoc:
+      def video_xml
         b = Builder::XML.new
         b.instruct!
         b.entry(:xmlns => "http://www.w3.org/2005/Atom", 'xmlns:media' => "http://search.yahoo.com/mrss/", 'xmlns:yt' => "http://gdata.youtube.com/schemas/2007") do | m |
@@ -132,7 +132,7 @@ class YouTubeG
         end.to_s
       end
 
-      def generate_upload_body(boundary, video_xml, data) #:nodoc:
+      def generate_upload_body(boundary, video_xml, data)
         post_body = [
           "--#{boundary}\r\n",
           "Content-Type: application/atom+xml; charset=UTF-8\r\n\r\n",

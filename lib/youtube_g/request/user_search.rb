@@ -26,11 +26,11 @@ class YouTubeG
 
       private
 
-      def base_url #:nodoc:
+      def base_url
         super << "users/"
       end
 
-      def to_youtube_params #:nodoc:
+      def to_youtube_params
         {
           'max-results' => @max_results,
           'orderby' => @order_by,
