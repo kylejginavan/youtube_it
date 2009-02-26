@@ -64,15 +64,14 @@ class YouTubeG
           "Slug"           => "#{@opts[:filename]}",
           "Content-Type"   => "multipart/related; boundary=#{boundary}",
           "Content-Length" => "#{post_body_io.expected_length}",
-          "Transfer-Encoding" => "chunked" # We will stream instead of posting at once
+        #  "Transfer-Encoding" => "chunked" # We will stream instead of posting at once
         }
 
         Net::HTTP.start(base_url) do | session |
-          # Use the more convoluted request creation to use the IO as post body. Due to the
-          # fact that Net::HTTP has been written by alies from Jupiter there is no other way to do it,
-          # at least currently
           path = '/feeds/api/users/%s/uploads' % @user
-          post = HTTP::Post.new(nil, nil, path, upload_headers)
+          post = Net::HTTP::Post.new(path, upload_headers)
+          
+          # Use the chained IO as body so that Net::HTTP reads into the socket for us
           post.body_stream = post_body_io
           
           response = session.request(post)
@@ -134,16 +133,17 @@ class YouTubeG
       end
 
       def generate_upload_body(boundary, video_xml, data) #:nodoc:
-        post_body = []
-        post_body << "--#{boundary}\r\n"
-        post_body << "Content-Type: application/atom+xml; charset=UTF-8\r\n\r\n"
-        post_body << video_xml
-        post_body << "\r\n--#{boundary}\r\n"
-        post_body << "Content-Type: #{@opts[:mime_type]}\r\nContent-Transfer-Encoding: binary\r\n\r\n"
-        post_body << data
-        post_body << "\r\n--#{boundary}--\r\n"
+        post_body = [
+          "--#{boundary}\r\n",
+          "Content-Type: application/atom+xml; charset=UTF-8\r\n\r\n",
+          video_xml,
+          "\r\n--#{boundary}\r\n",
+          "Content-Type: #{@opts[:mime_type]}\r\nContent-Transfer-Encoding: binary\r\n\r\n",
+          data,
+          "\r\n--#{boundary}--\r\n",
+        ]
         
-        YouTubeG::TapeIO.new(post_body)
+        YouTubeG::GreedyChainIO.new(post_body)
       end
 
     end
