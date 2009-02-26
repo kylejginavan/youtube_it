@@ -42,11 +42,11 @@ class YouTubeG
       
       private
       
-      def base_url #:nodoc:
+      def base_url
         super << "videos"
       end
       
-      def to_youtube_params #:nodoc:
+      def to_youtube_params
         {
           'max-results' => @max_results,
           'orderby' => @order_by,
@@ -62,7 +62,7 @@ class YouTubeG
       # Convert category symbols into strings and build the URL. GData requires categories to be capitalized. 
       # Categories defined like: categories => { :include => [:news], :exclude => [:sports], :either => [..] }
       # or like: categories => [:news, :sports]
-      def categories_to_params(categories) #:nodoc:
+      def categories_to_params(categories)
         if categories.respond_to?(:keys) and categories.respond_to?(:[])
           s = ""
           s << categories[:either].map { |c| c.to_s.capitalize }.join("%7C") << '/' if categories[:either]
@@ -76,7 +76,7 @@ class YouTubeG
 
       # Tags defined like: tags => { :include => [:football], :exclude => [:soccer], :either => [:polo, :tennis] }
       # or tags => [:football, :soccer]
-      def tags_to_params(tags) #:nodoc:
+      def tags_to_params(tags)
         if tags.respond_to?(:keys) and tags.respond_to?(:[])
           s = ""
           s << tags[:either].map { |t| YouTubeG.esc(t.to_s) }.join("%7C") << '/' if tags[:either]

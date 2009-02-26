@@ -140,7 +140,7 @@ class YouTubeG
     class VideosFeedParser < VideoFeedParser #:nodoc:
 
     private
-      def parse_content(content) #:nodoc:
+      def parse_content(content)
         doc = REXML::Document.new(content)
         feed = doc.elements["feed"]
 
