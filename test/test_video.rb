@@ -1,8 +1,4 @@
-require 'rubygems'
-require 'test/unit'
-require 'pp'
-
-require 'youtube_g'
+require File.dirname(__FILE__) + '/helper'
 
 class TestVideo < Test::Unit::TestCase
   def test_should_extract_unique_id_from_video_id

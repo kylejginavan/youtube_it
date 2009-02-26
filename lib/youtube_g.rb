@@ -3,9 +3,9 @@ require 'open-uri'
 require 'net/https'
 require 'digest/md5'
 require 'rexml/document'
-require 'cgi'
 require 'builder'
 
+require File.dirname(__FILE__) + '/youtube_g/version'
 require File.dirname(__FILE__) + '/youtube_g/client'
 require File.dirname(__FILE__) + '/youtube_g/record'
 require File.dirname(__FILE__) + '/youtube_g/parser'
@@ -26,6 +26,10 @@ require File.dirname(__FILE__) + '/youtube_g/request/video_search'
 require File.dirname(__FILE__) + '/youtube_g/response/video_search'
 require File.dirname(__FILE__) + '/youtube_g/chain_io'
 
-class YouTubeG #:nodoc:
-  VERSION = '0.5.0'
+class YouTubeG
+  # URL-escape a string. Stolen from Camping (wonder how many Ruby libs in the wild can say the same)
+  def self.esc(s) #:nodoc:
+    s.to_s.gsub(/[^ \w.-]+/n){'%'+($&.unpack('H2'*$&.size)*'%').upcase}.tr(' ', '+')
+  end
 end
+    

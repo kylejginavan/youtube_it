@@ -63,8 +63,8 @@ class YouTubeG
           "X-GData-Key"    => "key=#{@dev_key}",
           "Slug"           => "#{@opts[:filename]}",
           "Content-Type"   => "multipart/related; boundary=#{boundary}",
-          "Content-Length" => "#{post_body_io.expected_length}",
-        #  "Transfer-Encoding" => "chunked" # We will stream instead of posting at once
+          "Content-Length" => "#{post_body_io.expected_length}", # required per YouTube spec
+          "Transfer-Encoding" => "chunked" # We will stream instead of posting at once
         }
 
         Net::HTTP.start(base_url) do | session |
