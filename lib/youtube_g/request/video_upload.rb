@@ -45,7 +45,7 @@ class YouTubeG
         
         @opts[:filename] ||= generate_uniq_filename_from(data)
         
-        post_body_io = generate_upload_body(video_xml, data)
+        post_body_io = generate_upload_io(video_xml, data)
         
         upload_headers = authorization_headers.merge(
             "Slug"           => "#{@opts[:filename]}",
@@ -106,8 +106,8 @@ class YouTubeG
         
         delete_url = "/feeds/api/users/#{@user}/uploads/#{video_id}"
         
-        Net::HTTP.start(base_url) do |update|
-          response = update.delete(update_url, '', delete_header)
+        Net::HTTP.start(base_url) do |session|
+          response = session.delete(delete_url, '', delete_header)
           raise_on_faulty_response(response)
           return true
         end
@@ -200,7 +200,7 @@ class YouTubeG
         ].join
       end
       
-      def generate_upload_body(video_xml, data)
+      def generate_upload_io(video_xml, data)
         post_body = [
           "--#{boundary}\r\n",
           "Content-Type: application/atom+xml; charset=UTF-8\r\n\r\n",
