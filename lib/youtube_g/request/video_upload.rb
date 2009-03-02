@@ -58,7 +58,7 @@ class YouTubeG
         
         path = '/feeds/api/users/%s/uploads' % @user
         
-        Net::HTTP.start(base_url) do | session |
+        Net::HTTP.start(uploads_url) do | session |
           
           # Use the chained IO as body so that Net::HTTP reads into the socket for us
           post = Net::HTTP::Post.new(path, upload_headers)
@@ -117,8 +117,12 @@ class YouTubeG
       
       private
       
+      def uploads_url
+        ["uploads", base_url].join('.')
+      end
+      
       def base_url
-        "uploads.gdata.youtube.com"
+        "gdata.youtube.com"
       end
       
       def boundary 
