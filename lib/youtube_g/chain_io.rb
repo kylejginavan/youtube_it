@@ -1,10 +1,12 @@
 require 'delegate'
+#:stopdoc:
+
 # Stream wrapper that reads IOs in succession. Can be fed to Net::HTTP as post body stream. We use it internally to stream file content
 # instead of reading whole video files into memory. Strings passed to the constructor will be wrapped in StringIOs. By default it will auto-close
 # file handles when they have been read completely to prevent our uploader from leaking file handles
 #
 # chain = ChainIO.new(File.open(__FILE__), File.open('/etc/passwd'), "abcd")
-class YouTubeG::ChainIO #:nodoc:
+class YouTubeG::ChainIO
   attr_accessor :autoclose
 
   def initialize(*any_ios)
@@ -54,7 +56,7 @@ end
   
 # Net::HTTP only can send chunks of 1024 bytes. This is very inefficient, so we have a spare IO that will send more when asked for 1024.
 # We use delegation because the read call is recursive.
-class YouTubeG::GreedyChainIO < DelegateClass(YouTubeG::ChainIO) #:nodoc:
+class YouTubeG::GreedyChainIO < DelegateClass(YouTubeG::ChainIO)
   BIG_CHUNK = 512 * 1024 # 500 kb
   
   def initialize(*with_ios)
@@ -65,3 +67,5 @@ class YouTubeG::GreedyChainIO < DelegateClass(YouTubeG::ChainIO) #:nodoc:
     __getobj__.read(BIG_CHUNK)
   end
 end
+
+#:startdoc:

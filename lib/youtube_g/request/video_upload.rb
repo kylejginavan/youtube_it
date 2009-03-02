@@ -3,7 +3,8 @@ class YouTubeG
   module Upload
     class UploadError < YouTubeG::Error; end
     class AuthenticationError < YouTubeG::Error; end
-
+    
+    # Implements a video upload
     # require 'youtube_g'
     #
     # uploader = YouTubeG::Upload::VideoUpload.new("user", "pass", "dev-key")
@@ -11,13 +12,12 @@ class YouTubeG
     #                                        :description => 'cool vid d00d',
     #                                        :category => 'People',
     #                                        :keywords => %w[cool blah test]
-
     class VideoUpload
-
+      
       def initialize user, pass, dev_key, client_id = 'youtube_g'
         @user, @pass, @dev_key, @client_id = user, pass, dev_key, client_id
       end
-
+      
       #
       # Upload "data" to youtube, where data is either an IO object or
       # raw file data.
@@ -37,23 +37,13 @@ class YouTubeG
       # 
       # When the authentication credentials are incorrect, an AuthenticationError will be raised.
       def upload data, opts = {}
-        # If data can be read, use the first 1024 bytes as filename. If data
-        # is a file, use path. If data is a string, checksum it
-        opst[:filename] ||= if data.respond_to?(:path)
-          Digest::MD5.hexdigest(data.path)
-        elsif data.respond_to?(:read)
-          chunk = data.read(1024)
-          data.rewind
-          Digest::MD5.hexdigest(chunk)
-        else
-          Digest::MD5.hexdigest(data)
-        end
-          
         @opts = { :mime_type => 'video/mp4',
                   :title => '',
                   :description => '',
                   :category => '',
                   :keywords => [] }.merge(opts)
+        
+        @opts[:filename] ||= generate_uniq_filename_from(data)
 
         post_body_io = generate_upload_body(boundary, video_xml, data)
 
@@ -64,7 +54,7 @@ class YouTubeG
           "Slug"           => "#{@opts[:filename]}",
           "Content-Type"   => "multipart/related; boundary=#{boundary}",
           "Content-Length" => "#{post_body_io.expected_length}", # required per YouTube spec
-          "Transfer-Encoding" => "chunked" # We will stream instead of posting at once
+        # "Transfer-Encoding" => "chunked" # We will stream instead of posting at once
         }
 
         Net::HTTP.start(base_url) do | session |
@@ -79,24 +69,16 @@ class YouTubeG
           if response.code.to_i == 403
             raise AuthenticationError, response.body[/<TITLE>(.+)<\/TITLE>/, 1]
           elsif response.code.to_i != 201
-            upload_error = ''
-            xml = REXML::Document.new(response.body)
-            errors = xml.elements["//errors"]
-            errors.each do |error|
-              location = error.elements["location"].text[/media:group\/media:(.*)\/text\(\)/,1]
-              code = error.elements["code"].text
-              upload_error << sprintf("%s: %s\r\n", location, code)
-            end
-            raise UploadError, upload_error
+            raise UploadError, parse_upload_error_from(response.body)
           end
-          xml = REXML::Document.new(response.body)
-          return xml.elements["//id"].text[/videos\/(.+)/, 1]
+          
+          return uploaded_video_id_from(response.body)
         end
 
       end
 
       private
-
+      
       def base_url
         "uploads.gdata.youtube.com"
       end
@@ -104,18 +86,43 @@ class YouTubeG
       def boundary 
         "An43094fu"
       end
-
+      
+      def parse_upload_error_from(string)
+        REXML::Document.new(string).elements["//errors"].inject('') do | all_faults, error|
+          location = error.elements["location"].text[/media:group\/media:(.*)\/text\(\)/,1]
+          code = error.elements["code"].text
+          all_faults + sprintf("%s: %s\n", location, code)
+        end
+      end
+      
+      def uploaded_video_id_from(string)
+        xml = REXML::Document.new(string)
+        xml.elements["//id"].text[/videos\/(.+)/, 1]
+      end
+      
+      # If data can be read, use the first 1024 bytes as filename. If data
+      # is a file, use path. If data is a string, checksum it
+      def generate_uniq_filename_from(data)
+        if data.respond_to?(:path)
+          Digest::MD5.hexdigest(data.path)
+        elsif data.respond_to?(:read)
+          chunk = data.read(1024)
+          data.rewind
+          Digest::MD5.hexdigest(chunk)
+        else
+          Digest::MD5.hexdigest(data)
+        end
+      end
+      
       def auth_token
-        unless @auth_token
+        @auth_token ||= begin
           http = Net::HTTP.new("www.google.com", 443)
           http.use_ssl = true
-          body = "Email=#{CGI::escape @user}&Passwd=#{CGI::escape @pass}&service=youtube&source=#{CGI::escape @client_id}"
+          body = "Email=#{YouTubeG.esc @user}&Passwd=#{YouTubeG.esc @pass}&service=youtube&source=#{YouTubeG.esc @client_id}"
           response = http.post("/youtube/accounts/ClientLogin", body, "Content-Type" => "application/x-www-form-urlencoded")
           raise UploadError, response.body[/Error=(.+)/,1] if response.code.to_i != 200
           @auth_token = response.body[/Auth=(.+)/, 1]
-
         end
-        @auth_token
       end
       
       def video_xml
@@ -143,6 +150,7 @@ class YouTubeG
           "\r\n--#{boundary}--\r\n",
         ]
         
+        # Use Greedy IO to not be limited by 1K chunks
         YouTubeG::GreedyChainIO.new(post_body)
       end
 
