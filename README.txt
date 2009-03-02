@@ -1,9 +1,6 @@
-youtube-g
-    by Shane Vitarana and Walter Korman
+= youtube-g
 
-  Rubyforge: http://rubyforge.org/projects/youtube-g/
-  RDoc: http://youtube-g.rubyforge.org/
-  Google Group: http://groups.google.com/group/ruby-youtube-library
+http://youtube-g.rubyforge.org/
 
 == DESCRIPTION:
 
@@ -17,6 +14,15 @@ More detail on the underlying source Google-provided API is available at:
 
 http://code.google.com/apis/youtube/overview.html
 
+== AUTHORS
+
+Shane Vitarana and Walter Korman
+
+== WHERE TO GET HELP
+
+http://rubyforge.org/projects/youtube-g
+http://groups.google.com/group/ruby-youtube-library
+  
 == FEATURES/PROBLEMS:
   
 * Aims to be in parity with Google's YouTube GData API.  Core functionality
