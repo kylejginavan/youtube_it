@@ -44,47 +44,91 @@ class YouTubeG
                   :keywords => [] }.merge(opts)
         
         @opts[:filename] ||= generate_uniq_filename_from(data)
-
-        post_body_io = generate_upload_body(boundary, video_xml, data)
-
-        upload_headers = {
-          "Authorization"  => "GoogleLogin auth=#{auth_token}",
-          "X-GData-Client" => "#{@client_id}",
-          "X-GData-Key"    => "key=#{@dev_key}",
-          "Slug"           => "#{@opts[:filename]}",
-          "Content-Type"   => "multipart/related; boundary=#{boundary}",
-          "Content-Length" => "#{post_body_io.expected_length}", # required per YouTube spec
-        # "Transfer-Encoding" => "chunked" # We will stream instead of posting at once
-        }
-
+        
+        post_body_io = generate_upload_body(video_xml, data)
+        
+        upload_headers = authorization_headers.merge(
+            "Slug"           => "#{@opts[:filename]}",
+            "Content-Type"   => "multipart/related; boundary=#{boundary}",
+            "Content-Length" => "#{post_body_io.expected_length}", # required per YouTube spec
+          # "Transfer-Encoding" => "chunked" # We will stream instead of posting at once
+        )
+        
+        path = '/feeds/api/users/%s/uploads' % @user
+        
         Net::HTTP.start(base_url) do | session |
-          path = '/feeds/api/users/%s/uploads' % @user
-          post = Net::HTTP::Post.new(path, upload_headers)
           
           # Use the chained IO as body so that Net::HTTP reads into the socket for us
+          post = Net::HTTP::Post.new(path, upload_headers)
           post.body_stream = post_body_io
           
           response = session.request(post)
-          
-          if response.code.to_i == 403
-            raise AuthenticationError, response.body[/<TITLE>(.+)<\/TITLE>/, 1]
-          elsif response.code.to_i != 201
-            raise UploadError, parse_upload_error_from(response.body)
-          end
+          raise_on_faulty_response(response)
           
           return uploaded_video_id_from(response.body)
         end
-
       end
-
+      
+      # Updates a video in YouTube.  Requires:
+      #   :title
+      #   :description
+      #   :category
+      #   :keywords
+      # The following are optional attributes:
+      #   :private
+      # When the authentication credentials are incorrect, an AuthenticationError will be raised.
+      def update(video_id, options)
+        @opts = options
+        
+        update_body = video_xml
+        
+        update_header = authorization_headers.merge(
+          "Content-Type"   => "application/atom+xml",
+          "Content-Length" => "#{update_body.length}",
+        )
+        
+        update_url = "/feeds/api/users/#{@user}/uploads/#{video_id}"
+        
+        Net::HTTP.start(base_url) do | session |
+          response = session.put(update_url, update_body, update_header)
+          raise_on_faulty_response(response)
+          
+          return YouTubeG::Parser::VideoFeedParser.new(response.body).parse
+        end
+      end
+      
+      # Delete a video on YouTube
+      def delete(video_id)
+        delete_header = authorization_headers.merge(
+          "Content-Type"   => "application/atom+xml",
+          "Content-Length" => "0",
+        )
+        
+        delete_url = "/feeds/api/users/#{@user}/uploads/#{video_id}"
+        
+        Net::HTTP.start(base_url) do |update|
+          response = update.delete(update_url, '', delete_header)
+          raise_on_faulty_response(response)
+          return true
+        end
+      end
+      
       private
       
       def base_url
         "uploads.gdata.youtube.com"
       end
-
+      
       def boundary 
         "An43094fu"
+      end
+      
+      def authorization_headers
+        {
+          "Authorization"  => "GoogleLogin auth=#{auth_token}",
+          "X-GData-Client" => "#{@client_id}",
+          "X-GData-Key"    => "key=#{@dev_key}"
+        }
       end
       
       def parse_upload_error_from(string)
@@ -93,6 +137,14 @@ class YouTubeG
           code = error.elements["code"].text
           all_faults + sprintf("%s: %s\n", location, code)
         end
+      end
+      
+      def raise_on_faulty_response(response)
+        if response.code.to_i == 403
+          raise AuthenticationError, response.body[/<TITLE>(.+)<\/TITLE>/, 1]
+        elsif response.code.to_i != 200
+          raise UploadError, parse_upload_error_from(response.body)
+        end 
       end
       
       def uploaded_video_id_from(string)
@@ -138,8 +190,17 @@ class YouTubeG
           end
         end.to_s
       end
-
-      def generate_upload_body(boundary, video_xml, data)
+      
+      def generate_update_body(video_xml)
+        post_body = [
+          "--#{boundary}\r\n",
+          "Content-Type: application/atom+xml; charset=UTF-8\r\n\r\n",
+          video_xml,
+          "\r\n--#{boundary}\r\n",
+        ].join
+      end
+      
+      def generate_upload_body(video_xml, data)
         post_body = [
           "--#{boundary}\r\n",
           "Content-Type: application/atom+xml; charset=UTF-8\r\n\r\n",
