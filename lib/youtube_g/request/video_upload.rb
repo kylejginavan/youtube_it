@@ -177,6 +177,7 @@ class YouTubeG
         end
       end
       
+      # TODO: isn't there a cleaner way to output top-notch XML without requiring stuff all over the place?
       def video_xml
         b = Builder::XML.new
         b.instruct!
