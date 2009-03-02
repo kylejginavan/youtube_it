@@ -153,14 +153,13 @@ class TestClient < Test::Unit::TestCase
     assert_valid_video video
   end
 
-  def test_should_disable_debug_if_debug_is_set_to_false
+  def test_should_always_return_a_logger
     @client = YouTubeG::Client.new
-    assert_nil @client.logger
+    assert_not_nil @client.logger
   end
   
-  def test_should_enable_logger_if_debug_is_true
-    @client = YouTubeG::Client.new(true)
-    assert_not_nil @client.logger
+  def test_should_not_bail_if_debug_is_true
+    assert_nothing_raised { YouTubeG::Client.new(true) }
   end
   
   def test_should_determine_if_nonembeddable_video_is_embeddable

@@ -6,7 +6,6 @@ TODO.txt
 lib/youtube_g.rb
 lib/youtube_g/chain_io.rb
 lib/youtube_g/client.rb
-lib/youtube_g/logger.rb
 lib/youtube_g/model/author.rb
 lib/youtube_g/model/category.rb
 lib/youtube_g/model/contact.rb
