@@ -17,24 +17,25 @@ class YouTubeG
   end
 end
 
-require File.dirname(__FILE__) + '/youtube_g/version'
-require File.dirname(__FILE__) + '/youtube_g/client'
-require File.dirname(__FILE__) + '/youtube_g/record'
-require File.dirname(__FILE__) + '/youtube_g/parser'
-require File.dirname(__FILE__) + '/youtube_g/model/author'
-require File.dirname(__FILE__) + '/youtube_g/model/category'
-require File.dirname(__FILE__) + '/youtube_g/model/contact'
-require File.dirname(__FILE__) + '/youtube_g/model/content'
-require File.dirname(__FILE__) + '/youtube_g/model/playlist'
-require File.dirname(__FILE__) + '/youtube_g/model/rating'
-require File.dirname(__FILE__) + '/youtube_g/model/thumbnail'
-require File.dirname(__FILE__) + '/youtube_g/model/user'
-require File.dirname(__FILE__) + '/youtube_g/model/video'
-require File.dirname(__FILE__) + '/youtube_g/request/base_search'
-require File.dirname(__FILE__) + '/youtube_g/request/user_search'
-require File.dirname(__FILE__) + '/youtube_g/request/standard_search'
-require File.dirname(__FILE__) + '/youtube_g/request/video_upload'
-require File.dirname(__FILE__) + '/youtube_g/request/video_search'
-require File.dirname(__FILE__) + '/youtube_g/response/video_search'
-require File.dirname(__FILE__) + '/youtube_g/chain_io'
-    
+%w( 
+  version
+  client
+  record
+  parser
+  model/author
+  model/category
+  model/contact
+  model/content
+  model/playlist
+  model/rating
+  model/thumbnail
+  model/user
+  model/video
+  request/base_search
+  request/user_search
+  request/standard_search
+  request/video_upload
+  request/video_search
+  response/video_search
+  chain_io
+).each{|m| require File.dirname(__FILE__) + '/youtube_g/' + m }
