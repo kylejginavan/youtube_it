@@ -4,14 +4,16 @@ class YouTubeG
     class UploadError < YouTubeG::Error; end
     class AuthenticationError < YouTubeG::Error; end
     
-    # Implements a video upload
-    # require 'youtube_g'
+    # Implements video uploads/updates/deletions
     #
-    # uploader = YouTubeG::Upload::VideoUpload.new("user", "pass", "dev-key")
-    # uploader.upload File.open("test.m4v"), :title => 'test',
+    #   require 'youtube_g'
+    #   
+    #   uploader = YouTubeG::Upload::VideoUpload.new("user", "pass", "dev-key")
+    #   uploader.upload File.open("test.m4v"), :title => 'test',
     #                                        :description => 'cool vid d00d',
     #                                        :category => 'People',
     #                                        :keywords => %w[cool blah test]
+    #
     class VideoUpload
       
       def initialize user, pass, dev_key, client_id = 'youtube_g'
@@ -32,7 +34,7 @@ class YouTubeG
       # Specifying :private will make the video private, otherwise it will be public.
       #
       # When one of the fields is invalid according to YouTube,
-      # an UploadError will be returned. Its message contains a list of newline separated
+      # an UploadError will be raised. Its message contains a list of newline separated
       # errors, containing the key and its error code.
       # 
       # When the authentication credentials are incorrect, an AuthenticationError will be raised.
