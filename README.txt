@@ -55,6 +55,13 @@ Advanced queries (with boolean operators OR (either), AND (include), NOT (exclud
 	
   client.videos_by(:categories => { :either => [:news, :sports], :exclude => [:comedy] }, :tags => { :include => ['football'], :exclude => ['soccer'] })
 
+== LOGGING
+
+YouTubeG passes all logs through the logger variable on the class itself. In Rails context, assign the Rails logger to that variable to collect the messages
+(don't forget to set the level to debug):
+
+ YouTubeG.logger = RAILS_DEFAULT_LOGGER
+ RAILS_DEFAULT_LOGGER.level = Logger::DEBUG
 
 == REQUIREMENTS:
 

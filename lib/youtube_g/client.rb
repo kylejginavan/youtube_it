@@ -1,9 +1,9 @@
 class YouTubeG
   class Client
-    attr_accessor :logger
+    include YouTubeG::Logging
     
-    def initialize(logger=false)
-      @logger = Logger.new(STDOUT) if logger
+    # Previously this was a logger instance but we now do it globally
+    def initialize(legacy_debug_flag = nil)
     end
     
     # Retrieves an array of standard feed, custom query, or user videos.
@@ -53,7 +53,7 @@ class YouTubeG
         request = YouTubeG::Request::StandardSearch.new(params, request_params)
       end
       
-      logger.debug "Submitting request [url=#{request.url}]." if logger
+      logger.debug "Submitting request [url=#{request.url}]."
       parser = YouTubeG::Parser::VideosFeedParser.new(request.url)
       parser.parse
     end

@@ -1,3 +1,4 @@
+* Removed the logger nightmare (julik)
 * Use streams for file uploads instead of in-memory strings (Julik)
 
 == 0.5.0 / 2009-01-07

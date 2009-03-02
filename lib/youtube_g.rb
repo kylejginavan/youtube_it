@@ -15,6 +15,32 @@ class YouTubeG
   def self.esc(s) #:nodoc:
     s.to_s.gsub(/[^ \w.-]+/n){'%'+($&.unpack('H2'*$&.size)*'%').upcase}.tr(' ', '+')
   end
+  
+  # Set the logger for the library
+  def self.logger=(any_logger)
+    @logger = any_logger
+  end
+
+  # Get the logger for the library (by default will log to STDOUT). TODO: this is where we grab the Rails logger too
+  def self.logger
+    @logger ||= create_default_logger
+  end
+  
+  # Gets mixed into the classes to provide the logger method
+  module Logging #:nodoc:
+    
+    # Return the base logger set for the library
+    def logger
+      YouTubeG.logger
+    end
+  end
+    
+  private
+    def self.create_default_logger
+      logger = Logger.new(STDOUT)
+      logger.level = Logger::DEBUG
+      logger
+    end
 end
 
 %w( 
