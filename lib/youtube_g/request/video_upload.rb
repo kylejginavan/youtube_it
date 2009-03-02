@@ -47,12 +47,12 @@ class YouTubeG
         
         post_body_io = generate_upload_io(video_xml, data)
         
-        upload_headers = authorization_headers.merge(
+        upload_headers = authorization_headers.merge({
             "Slug"           => "#{@opts[:filename]}",
             "Content-Type"   => "multipart/related; boundary=#{boundary}",
             "Content-Length" => "#{post_body_io.expected_length}", # required per YouTube spec
           # "Transfer-Encoding" => "chunked" # We will stream instead of posting at once
-        )
+        })
         
         path = '/feeds/api/users/%s/uploads' % @user
         
@@ -82,10 +82,10 @@ class YouTubeG
         
         update_body = video_xml
         
-        update_header = authorization_headers.merge(
+        update_header = authorization_headers.merge({
           "Content-Type"   => "application/atom+xml",
           "Content-Length" => "#{update_body.length}",
-        )
+        })
         
         update_url = "/feeds/api/users/#{@user}/uploads/#{video_id}"
         
@@ -99,10 +99,10 @@ class YouTubeG
       
       # Delete a video on YouTube
       def delete(video_id)
-        delete_header = authorization_headers.merge(
+        delete_header = authorization_headers.merge({
           "Content-Type"   => "application/atom+xml",
           "Content-Length" => "0",
-        )
+        })
         
         delete_url = "/feeds/api/users/#{@user}/uploads/#{video_id}"
         
