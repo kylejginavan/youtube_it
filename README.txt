@@ -58,7 +58,7 @@ Advanced queries (with boolean operators OR (either), AND (include), NOT (exclud
 
 == REQUIREMENTS:
 
-* None
+* builder gem
 
 == INSTALL:
 
