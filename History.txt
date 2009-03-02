@@ -1,5 +1,9 @@
-* Removed the logger nightmare (julik)
-* Use streams for file uploads instead of in-memory strings (Julik)
+* Implement video update and video delete in Upload
+* Refactor the uploader slightly
+* Use Builder to generate XML packets
+* Use a faster Camping-based URL escaper (also avoid cgi.rb)
+* Removed the logger nightmare, use YouTubeG.logger for everything whatever that may be
+* Use streams for file uploads instead of in-memory strings
 
 == 0.5.0 / 2009-01-07
 
