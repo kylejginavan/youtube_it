@@ -198,15 +198,6 @@ class YouTubeG
         end.to_s
       end
       
-      def generate_update_body(video_xml)
-        post_body = [
-          "--#{boundary}\r\n",
-          "Content-Type: application/atom+xml; charset=UTF-8\r\n\r\n",
-          video_xml,
-          "\r\n--#{boundary}\r\n",
-        ].join
-      end
-      
       def generate_upload_io(video_xml, data)
         post_body = [
           "--#{boundary}\r\n",
