@@ -109,6 +109,10 @@ class YouTubeG
       # *Fixnum*:: Number of times that the video has been viewed
       attr_reader :view_count
 
+      # *Fixnum*:: Number of times that the video has been favorited
+      attr_reader :favorite_count
+      
+      
       # Geodata
       attr_reader :where
       attr_reader :position
