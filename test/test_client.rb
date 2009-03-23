@@ -239,6 +239,7 @@ class TestClient < Test::Unit::TestCase
       # http://gdata.youtube.com/feeds/videos/IHVaXG1thXM
       assert_valid_url video.video_id
       assert_instance_of Fixnum, video.view_count
+      assert_instance_of Fixnum, video.favorite_count
 
       # validate author
       assert_instance_of YouTubeG::Model::Author, video.author

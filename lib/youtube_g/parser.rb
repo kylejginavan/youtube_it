@@ -85,8 +85,12 @@ class YouTubeG
                      :rater_count => rating_element.attributes["numRaters"].to_i,
                      :average => rating_element.attributes["average"].to_f)
         end
-
-        view_count = (el = entry.elements["yt:statistics"]) ? el.attributes["viewCount"].to_i : 0
+        
+        if (el = entry.elements["yt:statistics"])
+          view_count, favorite_count = el.attributes["viewCount"].to_i, el.attributes["favoriteCount"].to_i
+        else
+          view_count, favorite_count = 0,0
+        end
 
         noembed = entry.elements["yt:noembed"] ? true : false
         racy = entry.elements["media:rating"] ? true : false
@@ -112,6 +116,7 @@ class YouTubeG
           :thumbnails => thumbnails,
           :rating => rating,
           :view_count => view_count,
+          :favorite_count => favorite_count,
           :noembed => noembed,
           :racy => racy,
           :where => where,
