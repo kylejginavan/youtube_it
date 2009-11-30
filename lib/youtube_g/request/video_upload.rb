@@ -148,7 +148,7 @@ class YouTubeG
       def raise_on_faulty_response(response)
         if response.code.to_i == 403
           raise AuthenticationError, response.body[/<TITLE>(.+)<\/TITLE>/, 1]
-        elsif response.code.to_i != 200
+        elsif response.code.to_i / 10 != 20 # Response in 20x means success
           raise UploadError, parse_upload_error_from(response.body)
         end 
       end
@@ -185,14 +185,14 @@ class YouTubeG
       
       # TODO: isn't there a cleaner way to output top-notch XML without requiring stuff all over the place?
       def video_xml
-        b = Builder::XML.new
+        b = Builder::XmlMarkup.new
         b.instruct!
         b.entry(:xmlns => "http://www.w3.org/2005/Atom", 'xmlns:media' => "http://search.yahoo.com/mrss/", 'xmlns:yt' => "http://gdata.youtube.com/schemas/2007") do | m |
           m.tag!("media:group") do | mg |
-            mg.tag!("media:title", :type => "plain") { @opts[:title] }
-            mg.tag!("media:description", :type => "plain") { @opts[:description] }
-            mg.tag!("media:keywords") { @opts[:keywords].join(",") }
-            mg.tag!('media:category', :scheme => "http://gdata.youtube.com/schemas/2007/categories.cat") { @opts[:category] }
+            mg.tag!("media:title", @opts[:title], :type => "plain")
+            mg.tag!("media:description", @opts[:description], :type => "plain")
+            mg.tag!("media:keywords", @opts[:keywords].join(","))
+            mg.tag!('media:category', @opts[:category], :scheme => "http://gdata.youtube.com/schemas/2007/categories.cat")
             mg.tag!('yt:private') if @opts[:private]
           end
         end.to_s
