@@ -109,7 +109,7 @@ class YouTubeG
         delete_url = "/feeds/api/users/#{@user}/uploads/#{video_id}"
         
         Net::HTTP.start(base_url) do |session|
-          response = session.delete(delete_url, '', delete_header)
+          response = session.delete(delete_url, delete_header)
           raise_on_faulty_response(response)
           return true
         end
