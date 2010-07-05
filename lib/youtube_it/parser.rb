@@ -2,16 +2,16 @@ class YouTubeIt
   module Parser #:nodoc:
     class FeedParser #:nodoc:
       def initialize(url)
-        @url = url
+        @url = open(url).read rescue url
       end
-      
+
       def parse
-        parse_content open(@url).read
-      end      
+        parse_content @url
+      end
     end
 
     class VideoFeedParser < FeedParser #:nodoc:
-      
+
       def parse_content(content)
         doc = REXML::Document.new(content)
         entry = doc.elements["entry"]
@@ -19,7 +19,7 @@ class YouTubeIt
       end
 
     protected
-      def parse_entry(entry) 
+      def parse_entry(entry)
         video_id = entry.elements["id"].text
         published_at = Time.parse(entry.elements["published"].text)
         updated_at = Time.parse(entry.elements["updated"].text)
@@ -53,7 +53,7 @@ class YouTubeIt
                      :name => author_element.elements["name"].text,
                      :uri => author_element.elements["uri"].text)
         end
-      
+
         media_group = entry.elements["media:group"]
         description = media_group.elements["media:description"].text
         duration = media_group.elements["yt:duration"].attributes["seconds"].to_i
@@ -85,7 +85,7 @@ class YouTubeIt
                      :rater_count => rating_element.attributes["numRaters"].to_i,
                      :average => rating_element.attributes["average"].to_f)
         end
-        
+
         if (el = entry.elements["yt:statistics"])
           view_count, favorite_count = el.attributes["viewCount"].to_i, el.attributes["favoriteCount"].to_i
         else
@@ -125,7 +125,7 @@ class YouTubeIt
           :longitude => longitude)
       end
 
-      def parse_media_content (media_content_element) 
+      def parse_media_content (media_content_element)
         content_url = media_content_element.attributes["url"]
         format_code = media_content_element.attributes["yt:format"].to_i
         format = YouTubeIt::Model::Video::Format.by_code(format_code)
@@ -139,7 +139,7 @@ class YouTubeIt
           :duration => duration,
           :mime_type => mime_type,
           :default => default)
-      end      
+      end
     end
 
     class VideosFeedParser < VideoFeedParser #:nodoc:
@@ -169,6 +169,7 @@ class YouTubeIt
           :videos => videos)
       end
     end
-    
-  end 
+
+  end
 end
+
