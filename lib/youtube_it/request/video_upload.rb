@@ -3,11 +3,11 @@ class YouTubeIt
   module Upload
     class UploadError < YouTubeIt::Error; end
     class AuthenticationError < YouTubeIt::Error; end
-    
+
     # Implements video uploads/updates/deletions
     #
     #   require 'youtube_it'
-    #   
+    #
     #   uploader = YouTubeIt::Upload::VideoUpload.new("user", "pass", "dev-key")
     #   uploader.upload File.open("test.m4v"), :title => 'test',
     #                                        :description => 'cool vid d00d',
@@ -15,11 +15,11 @@ class YouTubeIt
     #                                        :keywords => %w[cool blah test]
     #
     class VideoUpload
-      
+
       def initialize user, pass, dev_key, client_id = 'youtube_it'
         @user, @pass, @dev_key, @client_id = user, pass, dev_key, client_id
       end
-      
+
       #
       # Upload "data" to youtube, where data is either an IO object or
       # raw file data.
@@ -36,7 +36,7 @@ class YouTubeIt
       # When one of the fields is invalid according to YouTube,
       # an UploadError will be raised. Its message contains a list of newline separated
       # errors, containing the key and its error code.
-      # 
+      #
       # When the authentication credentials are incorrect, an AuthenticationError will be raised.
       def upload data, opts = {}
         @opts = { :mime_type => 'video/mp4',
@@ -44,33 +44,33 @@ class YouTubeIt
                   :description => '',
                   :category => '',
                   :keywords => [] }.merge(opts)
-        
+
         @opts[:filename] ||= generate_uniq_filename_from(data)
-        
+
         post_body_io = generate_upload_io(video_xml, data)
-        
+
         upload_headers = authorization_headers.merge({
             "Slug"           => "#{@opts[:filename]}",
             "Content-Type"   => "multipart/related; boundary=#{boundary}",
             "Content-Length" => "#{post_body_io.expected_length}", # required per YouTube spec
           # "Transfer-Encoding" => "chunked" # We will stream instead of posting at once
         })
-        
+
         path = '/feeds/api/users/%s/uploads' % @user
-        
+
         Net::HTTP.start(uploads_url) do | session |
-          
+
           # Use the chained IO as body so that Net::HTTP reads into the socket for us
           post = Net::HTTP::Post.new(path, upload_headers)
           post.body_stream = post_body_io
-          
+
           response = session.request(post)
           raise_on_faulty_response(response)
-          
+
           return uploaded_video_id_from(response.body)
         end
       end
-      
+
       # Updates a video in YouTube.  Requires:
       #   :title
       #   :description
@@ -81,54 +81,74 @@ class YouTubeIt
       # When the authentication credentials are incorrect, an AuthenticationError will be raised.
       def update(video_id, options)
         @opts = options
-        
+
         update_body = video_xml
-        
+
         update_header = authorization_headers.merge({
           "Content-Type"   => "application/atom+xml",
           "Content-Length" => "#{update_body.length}",
         })
-        
+
         update_url = "/feeds/api/users/#{@user}/uploads/#{video_id}"
-        
+
         Net::HTTP.start(base_url) do | session |
           response = session.put(update_url, update_body, update_header)
           raise_on_faulty_response(response)
-          
+
           return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse
         end
       end
-      
+
       # Delete a video on YouTube
       def delete(video_id)
         delete_header = authorization_headers.merge({
-          "Content-Type"   => "application/atom+xml",
+          "Content-Type"   => "application/atom+xml; charset=UTF-8",
           "Content-Length" => "0",
         })
-        
+
         delete_url = "/feeds/api/users/#{@user}/uploads/#{video_id}"
-        
+
         Net::HTTP.start(base_url) do |session|
           response = session.delete(delete_url, delete_header)
           raise_on_faulty_response(response)
           return true
         end
       end
-      
+
+
+      def get_upload_token(options, nexturl = "http://www.youtube.com/my_videos")
+        @opts = options
+
+        token_body    = video_xml
+        token_header  = authorization_headers.merge({
+          "Content-Type"   => "application/atom+xml; charset=UTF-8",
+          "Content-Length" => "#{token_body.length}",
+        })
+        token_url = "/action/GetUploadToken"
+
+        Net::HTTP.start(base_url) do | session |
+          response = session.post(token_url, token_body, token_header)
+          raise_on_faulty_response(response)
+          return {:url    => "#{response.body[/<url>(.+)<\/url>/, 1]}?nexturl=#{nexturl}",
+                  :token  => response.body[/<token>(.+)<\/token>/, 1]}
+        end
+      end
+
+
       private
-      
+
       def uploads_url
         ["uploads", base_url].join('.')
       end
-      
+
       def base_url
         "gdata.youtube.com"
       end
-      
-      def boundary 
+
+      def boundary
         "An43094fu"
       end
-      
+
       def authorization_headers
         {
           "Authorization"  => "GoogleLogin auth=#{auth_token}",
@@ -136,7 +156,7 @@ class YouTubeIt
           "X-GData-Key"    => "key=#{@dev_key}"
         }
       end
-      
+
       def parse_upload_error_from(string)
         REXML::Document.new(string).elements["//errors"].inject('') do | all_faults, error|
           location = error.elements["location"].text[/media:group\/media:(.*)\/text\(\)/,1]
@@ -144,20 +164,20 @@ class YouTubeIt
           all_faults + sprintf("%s: %s\n", location, code)
         end
       end
-      
+
       def raise_on_faulty_response(response)
         if response.code.to_i == 403
           raise AuthenticationError, response.body[/<TITLE>(.+)<\/TITLE>/, 1]
         elsif response.code.to_i / 10 != 20 # Response in 20x means success
           raise UploadError, parse_upload_error_from(response.body)
-        end 
+        end
       end
-      
+
       def uploaded_video_id_from(string)
         xml = REXML::Document.new(string)
         xml.elements["//id"].text[/videos\/(.+)/, 1]
       end
-      
+
       # If data can be read, use the first 1024 bytes as filename. If data
       # is a file, use path. If data is a string, checksum it
       def generate_uniq_filename_from(data)
@@ -171,7 +191,7 @@ class YouTubeIt
           Digest::MD5.hexdigest(data)
         end
       end
-      
+
       def auth_token
         @auth_token ||= begin
           http = Net::HTTP.new("www.google.com", 443)
@@ -182,7 +202,7 @@ class YouTubeIt
           @auth_token = response.body[/Auth=(.+)/, 1]
         end
       end
-      
+
       # TODO: isn't there a cleaner way to output top-notch XML without requiring stuff all over the place?
       def video_xml
         b = Builder::XmlMarkup.new
@@ -197,7 +217,7 @@ class YouTubeIt
           end
         end.to_s
       end
-      
+
       def generate_upload_io(video_xml, data)
         post_body = [
           "--#{boundary}\r\n",
@@ -208,7 +228,7 @@ class YouTubeIt
           data,
           "\r\n--#{boundary}--\r\n",
         ]
-        
+
         # Use Greedy IO to not be limited by 1K chunks
         YouTubeIt::GreedyChainIO.new(post_body)
       end
@@ -216,3 +236,4 @@ class YouTubeIt
     end
   end
 end
+
