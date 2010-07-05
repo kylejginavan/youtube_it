@@ -1,6 +1,6 @@
-class YouTubeG
+class YouTubeIt
   module Model
-    class Category < YouTubeG::Record
+    class Category < YouTubeIt::Record
       # *String*:: Name of the YouTube category
       attr_reader :label 
       

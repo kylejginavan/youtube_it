@@ -1,14 +1,14 @@
-class YouTubeG
+class YouTubeIt
 
   module Upload
-    class UploadError < YouTubeG::Error; end
-    class AuthenticationError < YouTubeG::Error; end
+    class UploadError < YouTubeIt::Error; end
+    class AuthenticationError < YouTubeIt::Error; end
     
     # Implements video uploads/updates/deletions
     #
-    #   require 'youtube_g'
+    #   require 'youtube_it'
     #   
-    #   uploader = YouTubeG::Upload::VideoUpload.new("user", "pass", "dev-key")
+    #   uploader = YouTubeIt::Upload::VideoUpload.new("user", "pass", "dev-key")
     #   uploader.upload File.open("test.m4v"), :title => 'test',
     #                                        :description => 'cool vid d00d',
     #                                        :category => 'People',
@@ -16,7 +16,7 @@ class YouTubeG
     #
     class VideoUpload
       
-      def initialize user, pass, dev_key, client_id = 'youtube_g'
+      def initialize user, pass, dev_key, client_id = 'youtube_it'
         @user, @pass, @dev_key, @client_id = user, pass, dev_key, client_id
       end
       
@@ -95,7 +95,7 @@ class YouTubeG
           response = session.put(update_url, update_body, update_header)
           raise_on_faulty_response(response)
           
-          return YouTubeG::Parser::VideoFeedParser.new(response.body).parse
+          return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse
         end
       end
       
@@ -176,7 +176,7 @@ class YouTubeG
         @auth_token ||= begin
           http = Net::HTTP.new("www.google.com", 443)
           http.use_ssl = true
-          body = "Email=#{YouTubeG.esc @user}&Passwd=#{YouTubeG.esc @pass}&service=youtube&source=#{YouTubeG.esc @client_id}"
+          body = "Email=#{YouTubeIt.esc @user}&Passwd=#{YouTubeIt.esc @pass}&service=youtube&source=#{YouTubeIt.esc @client_id}"
           response = http.post("/youtube/accounts/ClientLogin", body, "Content-Type" => "application/x-www-form-urlencoded")
           raise UploadError, response.body[/Error=(.+)/,1] if response.code.to_i != 200
           @auth_token = response.body[/Auth=(.+)/, 1]
@@ -210,7 +210,7 @@ class YouTubeG
         ]
         
         # Use Greedy IO to not be limited by 1K chunks
-        YouTubeG::GreedyChainIO.new(post_body)
+        YouTubeIt::GreedyChainIO.new(post_body)
       end
 
     end

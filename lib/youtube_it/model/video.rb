@@ -3,9 +3,9 @@
 #  * alternate youtube watch url
 #  * comments feedLink
 
-class YouTubeG
+class YouTubeIt
   module Model
-    class Video < YouTubeG::Record
+    class Video < YouTubeIt::Record
       # Describes the various file formats in which a Youtube video may be
       # made available and allows looking them up by format code number.
       class Format
@@ -18,7 +18,7 @@ class YouTubeG
         #   :name<Symbol>:: The name of the format
         #   
         # == Returns
-        #   YouTubeG::Model::Video::Format: Video format object
+        #   YouTubeIt::Model::Video::Format: Video format object
         def initialize(format_code, name)
           @format_code = format_code
           @name = name
@@ -36,23 +36,23 @@ class YouTubeG
         #   :format_code<Fixnum>:: The Youtube Format code of the object. 
         #   
         # == Returns
-        #   YouTubeG::Model::Video::Format: Video format object
+        #   YouTubeIt::Model::Video::Format: Video format object
         def self.by_code(format_code)
           @@formats[format_code]
         end
 
         # Flash format on YouTube site. All videos are available in this format.
-        FLASH = YouTubeG::Model::Video::Format.new(0, :flash)
+        FLASH = YouTubeIt::Model::Video::Format.new(0, :flash)
 
         # RTSP streaming URL for mobile video playback. H.263 video (176x144) and AMR audio.
-        RTSP = YouTubeG::Model::Video::Format.new(1, :rtsp)
+        RTSP = YouTubeIt::Model::Video::Format.new(1, :rtsp)
 
         # HTTP URL to the embeddable player (SWF) for this video. This format
         # is not available for a video that is not embeddable.
-        SWF = YouTubeG::Model::Video::Format.new(5, :swf)
+        SWF = YouTubeIt::Model::Video::Format.new(5, :swf)
         
         # RTSP streaming URL for mobile video playback. MPEG-4 SP video (up to 176x144) and AAC audio.
-        THREE_GPP = YouTubeG::Model::Video::Format.new(6, :three_gpp)
+        THREE_GPP = YouTubeIt::Model::Video::Format.new(6, :three_gpp)
       end
       
       # *Fixnum*:: Duration of a video in seconds.
@@ -76,7 +76,7 @@ class YouTubeG
       # *Time*:: When the video's data was last updated.
       attr_reader :updated_at
       
-      # *Array*:: A array of YouTubeG::Model::Category objects that describe the videos categories. 
+      # *Array*:: A array of YouTubeIt::Model::Category objects that describe the videos categories. 
       attr_reader :categories
       
       # *Array*:: An array of words associated with the video.
@@ -91,19 +91,19 @@ class YouTubeG
       # *String*:: Description of the video.
       attr_reader :html_content
       
-      # YouTubeG::Model::Author:: Information about the YouTube user who owns a piece of video content.
+      # YouTubeIt::Model::Author:: Information about the YouTube user who owns a piece of video content.
       attr_reader :author
       
-      # *Array*:: An array of YouTubeG::Model::Content objects describing the individual media content data available for this video.  Most, but not all, videos offer this.
+      # *Array*:: An array of YouTubeIt::Model::Content objects describing the individual media content data available for this video.  Most, but not all, videos offer this.
       attr_reader :media_content
       
-      # *Array*:: An array of YouTubeG::Model::Thumbnail objects that contain information regarding the videos thumbnail images. 
+      # *Array*:: An array of YouTubeIt::Model::Thumbnail objects that contain information regarding the videos thumbnail images. 
       attr_reader :thumbnails
       
       # *String*:: The link to watch the URL on YouTubes website.
       attr_reader :player_url
       
-      # YouTubeG::Model::Rating:: Information about the videos rating.
+      # YouTubeIt::Model::Rating:: Information about the videos rating.
       attr_reader :rating
       
       # *Fixnum*:: Number of times that the video has been viewed
@@ -124,17 +124,17 @@ class YouTubeG
       # Videos related to the current video.
       #
       # === Returns
-      #   YouTubeG::Response::VideoSearch
+      #   YouTubeIt::Response::VideoSearch
       def related
-        YouTubeG::Parser::VideosFeedParser.new("http://gdata.youtube.com/feeds/api/videos/#{unique_id}/related").parse
+        YouTubeIt::Parser::VideosFeedParser.new("http://gdata.youtube.com/feeds/api/videos/#{unique_id}/related").parse
       end
       
       # Video responses to the current video.
       #
       # === Returns
-      #   YouTubeG::Response::VideoSearch   
+      #   YouTubeIt::Response::VideoSearch   
       def responses
-        YouTubeG::Parser::VideosFeedParser.new("http://gdata.youtube.com/feeds/api/videos/#{unique_id}/responses").parse
+        YouTubeIt::Parser::VideosFeedParser.new("http://gdata.youtube.com/feeds/api/videos/#{unique_id}/responses").parse
       end
       
       # The ID of the video, useful for searching for the video again without having to store it anywhere. 
@@ -161,7 +161,7 @@ class YouTubeG
       # Provides a URL and various other types of information about a video.
       # 
       # === Returns
-      #   YouTubeG::Model::Content: Data about the embeddable video.
+      #   YouTubeIt::Model::Content: Data about the embeddable video.
       def default_media_content
         @media_content.find { |c| c.is_default? }
       end

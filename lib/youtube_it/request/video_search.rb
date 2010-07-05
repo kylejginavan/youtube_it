@@ -1,4 +1,4 @@
-class YouTubeG
+class YouTubeIt
   module Request #:nodoc:    
     class VideoSearch < BaseSearch #:nodoc:
       # From here: http://code.google.com/apis/youtube/reference.html#yt_format
@@ -79,12 +79,12 @@ class YouTubeG
       def tags_to_params(tags)
         if tags.respond_to?(:keys) and tags.respond_to?(:[])
           s = ""
-          s << tags[:either].map { |t| YouTubeG.esc(t.to_s) }.join("%7C") << '/' if tags[:either]
-          s << tags[:include].map { |t| YouTubeG.esc(t.to_s) }.join("/") << '/' if tags[:include]            
-          s << ("-" << tags[:exclude].map { |t| YouTubeG.esc(t.to_s) }.join("/-")) << '/' if tags[:exclude]
+          s << tags[:either].map { |t| YouTubeIt.esc(t.to_s) }.join("%7C") << '/' if tags[:either]
+          s << tags[:include].map { |t| YouTubeIt.esc(t.to_s) }.join("/") << '/' if tags[:include]            
+          s << ("-" << tags[:exclude].map { |t| YouTubeIt.esc(t.to_s) }.join("/-")) << '/' if tags[:exclude]
           s
         else
-          tags.map { |t| YouTubeG.esc(t.to_s) }.join("/") << '/'
+          tags.map { |t| YouTubeIt.esc(t.to_s) }.join("/") << '/'
         end          
       end
         

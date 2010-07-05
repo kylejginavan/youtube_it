@@ -1,6 +1,6 @@
-class YouTubeG
+class YouTubeIt
   module Model
-    class Contact < YouTubeG::Record
+    class Contact < YouTubeIt::Record
       # *String*:: Identifies the status of a contact.
       #
       # * The tag's value will be accepted if the authenticated user and the contact have marked each other as friends.

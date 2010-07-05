@@ -2,7 +2,7 @@ require File.dirname(__FILE__) + '/helper'
 
 class TestClient < Test::Unit::TestCase
   def setup
-    @client = YouTubeG::Client.new
+    @client = YouTubeIt::Client.new
   end
 
   def test_should_respond_to_a_basic_query
@@ -154,12 +154,12 @@ class TestClient < Test::Unit::TestCase
   end
 
   def test_should_always_return_a_logger
-    @client = YouTubeG::Client.new
+    @client = YouTubeIt::Client.new
     assert_not_nil @client.logger
   end
   
   def test_should_not_bail_if_debug_is_true
-    assert_nothing_raised { YouTubeG::Client.new(true) }
+    assert_nothing_raised { YouTubeIt::Client.new(true) }
   end
   
   def test_should_determine_if_nonembeddable_video_is_embeddable
@@ -190,7 +190,7 @@ class TestClient < Test::Unit::TestCase
       # pp video
 
       # check general attributes
-      assert_instance_of YouTubeG::Model::Video, video
+      assert_instance_of YouTubeIt::Model::Video, video
       assert_instance_of Fixnum, video.duration
       assert(video.duration > 0)
       #assert_match(/^<div style=.*?<\/div>/m, video.html_content)
@@ -201,14 +201,14 @@ class TestClient < Test::Unit::TestCase
         # http://www.youtube.com/v/IHVaXG1thXM
         assert_valid_url media_content.url
         assert(media_content.duration > 0)
-        assert_instance_of YouTubeG::Model::Video::Format, media_content.format
+        assert_instance_of YouTubeIt::Model::Video::Format, media_content.format
         assert_instance_of String, media_content.mime_type
         assert_match(/^[^\/]+\/[^\/]+$/, media_content.mime_type)
       end
 
       default_content = video.default_media_content
       if default_content
-        assert_instance_of YouTubeG::Model::Content, default_content
+        assert_instance_of YouTubeIt::Model::Content, default_content
         assert default_content.is_default?
       end
 
@@ -221,7 +221,7 @@ class TestClient < Test::Unit::TestCase
 
       # validate optionally-present rating
       if video.rating
-        assert_instance_of YouTubeG::Model::Rating, video.rating
+        assert_instance_of YouTubeIt::Model::Rating, video.rating
         assert_instance_of Float, video.rating.average
         assert_instance_of Fixnum, video.rating.max
         assert_instance_of Fixnum, video.rating.min
@@ -242,14 +242,14 @@ class TestClient < Test::Unit::TestCase
       assert_instance_of Fixnum, video.favorite_count
 
       # validate author
-      assert_instance_of YouTubeG::Model::Author, video.author
+      assert_instance_of YouTubeIt::Model::Author, video.author
       assert_instance_of String, video.author.name
       assert(video.author.name.length > 0)
       assert_valid_url video.author.uri
       
       # validate categories
       video.categories.each do |cat|
-        assert_instance_of YouTubeG::Model::Category, cat
+        assert_instance_of YouTubeIt::Model::Category, cat
         assert_instance_of String, cat.label
         assert_instance_of String, cat.term
       end

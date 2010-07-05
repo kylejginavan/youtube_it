@@ -1,6 +1,6 @@
-class YouTubeG
+class YouTubeIt
   class Client
-    include YouTubeG::Logging
+    include YouTubeIt::Logging
     
     # Previously this was a logger instance but we now do it globally
     def initialize(legacy_debug_flag = nil)
@@ -32,7 +32,7 @@ class YouTubeG
     #   params<Hash>:: Key of :user with a value of the username.
     #   options<Hash>:: Not used. (Optional)
     # === Returns
-    # YouTubeG::Response::VideoSearch
+    # YouTubeIt::Response::VideoSearch
     def videos_by(params, options={})
       request_params = params.respond_to?(:to_hash) ? params : options
       request_params[:page] = integer_or_default(request_params[:page], 1)
@@ -46,15 +46,15 @@ class YouTubeG
       end
       
       if params.respond_to?(:to_hash) and not params[:user]
-        request = YouTubeG::Request::VideoSearch.new(request_params)
+        request = YouTubeIt::Request::VideoSearch.new(request_params)
       elsif (params.respond_to?(:to_hash) && params[:user]) || (params == :favorites)
-        request = YouTubeG::Request::UserSearch.new(params, request_params)
+        request = YouTubeIt::Request::UserSearch.new(params, request_params)
       else
-        request = YouTubeG::Request::StandardSearch.new(params, request_params)
+        request = YouTubeIt::Request::StandardSearch.new(params, request_params)
       end
       
       logger.debug "Submitting request [url=#{request.url}]."
-      parser = YouTubeG::Parser::VideosFeedParser.new(request.url)
+      parser = YouTubeIt::Parser::VideosFeedParser.new(request.url)
       parser.parse
     end
     
@@ -64,10 +64,10 @@ class YouTubeG
     #   vid<String>:: The ID or URL of the video that you'd like to retrieve.
     # 
     # === Returns
-    # YouTubeG::Model::Video
+    # YouTubeIt::Model::Video
     def video_by(vid)
       video_id = vid =~ /^http/ ? vid : "http://gdata.youtube.com/feeds/videos/#{vid}"
-      parser = YouTubeG::Parser::VideoFeedParser.new(video_id)
+      parser = YouTubeIt::Parser::VideoFeedParser.new(video_id)
       parser.parse
     end
     

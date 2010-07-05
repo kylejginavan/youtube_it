@@ -5,7 +5,7 @@ require 'digest/md5'
 require 'rexml/document'
 require 'builder'
 
-class YouTubeG
+class YouTubeIt
   
   # Base error class for the extension
   class Error < RuntimeError
@@ -31,7 +31,7 @@ class YouTubeG
     
     # Return the base logger set for the library
     def logger
-      YouTubeG.logger
+      YouTubeIt.logger
     end
   end
     
@@ -64,4 +64,4 @@ end
   request/video_search
   response/video_search
   chain_io
-).each{|m| require File.dirname(__FILE__) + '/youtube_g/' + m }
+).each{|m| require File.dirname(__FILE__) + '/youtube_it/' + m }

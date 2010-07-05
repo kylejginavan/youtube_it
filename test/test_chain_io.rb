@@ -2,7 +2,7 @@ require File.dirname(__FILE__) + '/helper'
 
 class TestChainIO < Test::Unit::TestCase
   def setup
-    @klass = YouTubeG::ChainIO # save typing
+    @klass = YouTubeIt::ChainIO # save typing
   end
   
   def test_should_support_read_from_one_io
@@ -56,7 +56,7 @@ class TestChainIO < Test::Unit::TestCase
   end
   
   def test_greedy
-    io = YouTubeG::GreedyChainIO.new("a" * (1024 * 513))
+    io = YouTubeIt::GreedyChainIO.new("a" * (1024 * 513))
     chunk = io.read(123)
     assert_equal 1024 * 512, chunk.length, "Should have read the first 512 KB chunk at once instead"
   end

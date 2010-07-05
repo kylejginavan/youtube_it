@@ -1,6 +1,6 @@
-class YouTubeG
+class YouTubeIt
   module Model
-    class Author < YouTubeG::Record
+    class Author < YouTubeIt::Record
       # *String*: Author's YouTube username.
       attr_reader :name
       

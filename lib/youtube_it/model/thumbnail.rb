@@ -1,6 +1,6 @@
-class YouTubeG
+class YouTubeIt
   module Model
-    class Thumbnail < YouTubeG::Record
+    class Thumbnail < YouTubeIt::Record
       # *String*:: URL for the thumbnail image.
       attr_reader :url
       

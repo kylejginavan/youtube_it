@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'test/unit'
 require 'pp'
-require File.dirname(__FILE__) + '/../lib/youtube_g'
+require File.dirname(__FILE__) + '/../lib/youtube_it'
 
-YouTubeG.logger.level = Logger::ERROR
+YouTubeIt.logger.level = Logger::ERROR
