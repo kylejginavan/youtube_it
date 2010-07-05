@@ -1,6 +1,6 @@
-class YouTubeG
+class YouTubeIt
   module Response
-    class VideoSearch < YouTubeG::Record
+    class VideoSearch < YouTubeIt::Record
       # *String*:: Unique feed identifying url.
       attr_reader :feed_id 
       
@@ -16,7 +16,7 @@ class YouTubeG
       # *Time*:: Date and time at which the feed was last updated
       attr_reader :updated_at
 
-      # *Array*:: Array of YouTubeG::Model::Video records
+      # *Array*:: Array of YouTubeIt::Model::Video records
       attr_reader :videos
 
       def current_page

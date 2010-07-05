@@ -1,4 +1,4 @@
-class YouTubeG
+class YouTubeIt
   module Request #:nodoc: 
     class BaseSearch #:nodoc:
       attr_reader :url
@@ -17,7 +17,7 @@ class YouTubeG
       end
       
       def build_query_params(params)
-        qs = params.to_a.map { | k, v | v.nil? ? nil : "#{YouTubeG.esc(k)}=#{YouTubeG.esc(v)}" }.compact.sort.join('&')
+        qs = params.to_a.map { | k, v | v.nil? ? nil : "#{YouTubeIt.esc(k)}=#{YouTubeIt.esc(v)}" }.compact.sort.join('&')
         qs.empty? ? '' : "?#{qs}"
       end
     end

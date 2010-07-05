@@ -1,4 +1,4 @@
-class YouTubeG
+class YouTubeIt
   module Request #:nodoc:  
     class UserSearch < BaseSearch #:nodoc:      
       attr_reader :max_results                     # max_results

@@ -1,4 +1,4 @@
-class YouTubeG
+class YouTubeIt
   class Record #:nodoc:
     def initialize (params)
       return if params.nil?

@@ -1,6 +1,6 @@
-class YouTubeG
+class YouTubeIt
   module Model
-    class Playlist < YouTubeG::Record
+    class Playlist < YouTubeIt::Record
       # *String*:: User entered description for the playlist.
       attr_reader :description
     end

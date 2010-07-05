@@ -1,6 +1,6 @@
-class YouTubeG
+class YouTubeIt
   module Model
-    class Rating < YouTubeG::Record
+    class Rating < YouTubeIt::Record
       # *Float*:: Average rating given to the video
       attr_reader :average
       
