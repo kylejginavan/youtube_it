@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
      "README.txt",
      "Rakefile",
      "TODO.txt",
+     "VERSION",
      "lib/youtube_it.rb",
      "lib/youtube_it/chain_io.rb",
      "lib/youtube_it/client.rb",
@@ -42,12 +43,14 @@ Gem::Specification.new do |s|
      "lib/youtube_it/request/video_upload.rb",
      "lib/youtube_it/response/video_search.rb",
      "lib/youtube_it/version.rb",
+     "pkg/youtube_it-0.0.1.gem",
      "test/helper.rb",
      "test/test.mov",
      "test/test_chain_io.rb",
      "test/test_client.rb",
      "test/test_video.rb",
-     "test/test_video_search.rb"
+     "test/test_video_search.rb",
+     "youtube_it.gemspec"
   ]
   s.homepage = %q{http://github.com/kylejginavan/youtube_it}
   s.rdoc_options = ["--charset=UTF-8"]
