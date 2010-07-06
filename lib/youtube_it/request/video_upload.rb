@@ -115,8 +115,7 @@ class YouTubeIt
         end
       end
 
-
-      def get_upload_token(options, nexturl = "http://www.youtube.com/my_videos")
+      def get_upload_token(options, nexturl)
         @opts = options
 
         token_body    = video_xml
@@ -133,7 +132,6 @@ class YouTubeIt
                   :token  => response.body[/<token>(.+)<\/token>/, 1]}
         end
       end
-
 
       private
 

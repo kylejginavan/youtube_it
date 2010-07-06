@@ -1,10 +1,11 @@
 class YouTubeIt
   class Client
     include YouTubeIt::Logging
-
     # Previously this was a logger instance but we now do it globally
-    def initialize(legacy_debug_flag = nil)
+    def initialize user = nil, pass = nil, dev_key = nil, client_id = 'youtube_it', legacy_debug_flag = nil
+      @user, @pass, @dev_key, @client_id = user, pass, dev_key, client_id
     end
+
 
     # Retrieves an array of standard feed, custom query, or user videos.
     #
@@ -78,7 +79,27 @@ class YouTubeIt
       parser.parse
     end
 
+    def video_upload(data, opts = {})
+      client.upload(data, opts)
+    end
+
+    def video_update(video_id, opts = {})
+      client.update(video_id, opts)
+    end
+
+    def video_delete(video_id)
+      client.delete(video_id)
+    end
+
+    def upload_token(options, nexturl = "http://www.youtube.com/my_videos")
+      client.get_upload_token(options, nexturl)
+    end
+
     private
+
+    def client
+      @client ||= YouTubeIt::Upload::VideoUpload.new(@user, @pass, @dev_key)
+    end
 
     def calculate_offset(page, per_page)
       page == 1 ? 1 : ((per_page * page) - per_page + 1)
