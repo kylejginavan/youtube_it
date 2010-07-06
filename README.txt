@@ -6,10 +6,6 @@ In comparison with the earlier Youtube search interfaces, this new API and
 library offers much-improved flexibility around executing complex search
 queries to obtain well-targeted video search results.
 
-== AUTHORS
-
-Shane Vitarana and Walter Korman
-
 == SYNOPSIS:
 
 Create a client:
@@ -26,6 +22,8 @@ Basic queries:
   client.videos_by(:categories => [:news, :sports], :tags => ['soccer', 'football'])
   client.videos_by(:user => 'liz')
   client.videos_by(:favorites, :user => 'liz')
+  client.video_by("FQK1URcxmb4")
+  client.video_by("chebyte","FQK1URcxmb4")
 
 Standard feeds:
 
@@ -36,6 +34,52 @@ Standard feeds:
 Advanced queries (with boolean operators OR (either), AND (include), NOT (exclude)):
 
   client.videos_by(:categories => { :either => [:news, :sports], :exclude => [:comedy] }, :tags => { :include => ['football'], :exclude => ['soccer'] })
+
+
+Upload videos:
+  You need on youtube account and developer key
+  You can get these keys at the http://code.google.com/apis/youtube/dashboard/
+
+  client = YouTubeIt::Client.new("youtube_username", "youtube_passwd", "developer_key")
+
+* upload video
+
+  client.video_upload(File.open("test.mov"), :title => "test",:description => 'some description', :category => 'People',:keywords => %w[cool blah test])
+
+* update video
+
+  client.video_update("FQK1URcxmb4", :title => "new test",:description => 'new description', :category => 'People',:keywords => %w[cool blah test])
+
+* delete video
+
+  client.video_delete("FQK1URcxmb4")
+
+
+== Upload videos from browser:
+
+ For upload a video from browser you need make a form upload with the followings params
+
+    upload_token(params, nexturl)
+
+    params  => params like :title => "title", :description => "description", :category => "People", :tags => ["test"]
+    nexturl => redirect to this url after upload
+
+   Example
+
+   Controller:
+
+    def upload
+      @upload_info = YouTubeIt::Client.new.upload_token(params, videos_url)
+    end
+
+   Views: upload.html.erb
+
+    <% form_tag @upload_info[:url], :multipart => true do %>
+      <%= hidden_field_tag :token, @upload_info[:token] %>
+      <%= label_tag :file %>
+      <%= file_field_tag :file %>
+      <%= submit_tag "Upload video" %>
+    <% end %>
 
 == LOGGING
 
