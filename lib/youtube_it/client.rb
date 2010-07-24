@@ -95,6 +95,10 @@ class YouTubeIt
       client.get_upload_token(options, nexturl)
     end
 
+    def enable_http_debugging
+      client.enable_http_debugging
+    end
+
     private
 
     def client
