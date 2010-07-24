@@ -15,9 +15,14 @@ class YouTubeIt
     #                                        :keywords => %w[cool blah test]
     #
     class VideoUpload
-
+      include YouTubeIt::Logging
       def initialize user, pass, dev_key, client_id = 'youtube_it'
         @user, @pass, @dev_key, @client_id = user, pass, dev_key, client_id
+        @http_debugging = false
+      end
+
+      def enable_http_debugging
+        @http_debugging = true
       end
 
       #
@@ -31,6 +36,14 @@ class YouTubeIt
       #   :category
       #   :keywords
       #   :private
+      # New V2 api hash keys for accessControl:
+      #   :rate
+      #   :comment
+      #   :commentVote
+      #   :videoRespond
+      #   :list
+      #   :embed
+      #   :syndicate
       # Specifying :private will make the video private, otherwise it will be public.
       #
       # When one of the fields is invalid according to YouTube,
@@ -58,7 +71,9 @@ class YouTubeIt
 
         path = '/feeds/api/users/%s/uploads' % @user
 
-        Net::HTTP.start(uploads_url) do | session |
+        http = Net::HTTP.new(uploads_url)
+        http.set_debug_output(logger) if @http_debugging
+        http.start do | session |
 
           # Use the chained IO as body so that Net::HTTP reads into the socket for us
           post = Net::HTTP::Post.new(path, upload_headers)
@@ -85,13 +100,16 @@ class YouTubeIt
         update_body = video_xml
 
         update_header = authorization_headers.merge({
+          "GData-Version" => "2",
           "Content-Type"   => "application/atom+xml",
           "Content-Length" => "#{update_body.length}",
         })
 
         update_url = "/feeds/api/users/#{@user}/uploads/#{video_id}"
 
-        Net::HTTP.start(base_url) do | session |
+        http = Net::HTTP.new(base_url)
+        http.set_debug_output(logger) if @http_debugging
+        http.start do | session |
           response = session.put(update_url, update_body, update_header)
           raise_on_faulty_response(response)
 
@@ -213,6 +231,13 @@ class YouTubeIt
             mg.tag!('media:category', @opts[:category], :scheme => "http://gdata.youtube.com/schemas/2007/categories.cat")
             mg.tag!('yt:private') if @opts[:private]
           end
+          m.tag!("yt:accessControl", :action => "rate", :permission => @opts[:rate]) if @opts[:rate]
+          m.tag!("yt:accessControl", :action => "comment", :permission => @opts[:comment]) if @opts[:comment]
+          m.tag!("yt:accessControl", :action => "commentVote", :permission => @opts[:commentVote]) if @opts[:commentVote]
+          m.tag!("yt:accessControl", :action => "videoRespond", :permission => @opts[:videoRespond]) if @opts[:videoRespond]
+          m.tag!("yt:accessControl", :action => "list", :permission => @opts[:list]) if @opts[:list]
+          m.tag!("yt:accessControl", :action => "embed", :permission => @opts[:embed]) if @opts[:embed]
+          m.tag!("yt:accessControl", :action => "syndicate", :permission => @opts[:syndicate]) if @opts[:syndicate]
         end.to_s
       end
 
