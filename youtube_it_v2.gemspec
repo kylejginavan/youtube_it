@@ -4,13 +4,13 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{youtube_it}
+  s.name = %q{youtube_it_v2}
   s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mauro Torres & Kyle Ginavan", "HeresTomWithTheWeather"]
   s.date = %q{2010-07-25}
-  s.description = %q{the one stop shop for working with youtube apis}
+  s.description = %q{the one stop shop for working with youtube apis (experimental: v2 api)}
   s.email = %q{herestomwiththeweather@gmail.com}
   s.extra_rdoc_files = [
     "README.txt"
@@ -57,7 +57,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
-  s.summary = %q{the one stop shop for working with youtube apis}
+  s.summary = %q{the one stop shop for working with youtube apis (experimental: v2 api)}
   s.test_files = [
     "test/test_video_search.rb",
      "test/test_chain_io.rb",
