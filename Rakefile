@@ -4,9 +4,9 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "youtube_it"
-    gem.summary = %Q{the one stop shop for working with youtube apis}
-    gem.description = %Q{the one stop shop for working with youtube apis}
+    gem.name = "youtube_it_v2"
+    gem.summary = %Q{the one stop shop for working with youtube apis (experimental: v2 api)}
+    gem.description = %Q{the one stop shop for working with youtube apis (experimental: v2 api)}
     gem.email = "herestomwiththeweather@gmail.com"
     gem.homepage = "http://github.com/herestomwiththeweather/youtube_it"
     gem.authors = ["Mauro Torres & Kyle Ginavan","HeresTomWithTheWeather"]
