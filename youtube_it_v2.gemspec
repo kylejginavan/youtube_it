@@ -43,15 +43,15 @@ Gem::Specification.new do |s|
      "lib/youtube_it/request/video_upload.rb",
      "lib/youtube_it/response/video_search.rb",
      "lib/youtube_it/version.rb",
-     "pkg/youtube_it-0.0.1.gem",
+     "pkg/youtube_it_v2-0.0.2.gem",
      "test/helper.rb",
      "test/test.mov",
      "test/test_chain_io.rb",
      "test/test_client.rb",
      "test/test_video.rb",
      "test/test_video_search.rb",
-     "youtube_it.gemspec",
-     "youtube_it.tmproj"
+     "youtube_it.tmproj",
+     "youtube_it_v2.gemspec"
   ]
   s.homepage = %q{http://github.com/herestomwiththeweather/youtube_it}
   s.rdoc_options = ["--charset=UTF-8"]
