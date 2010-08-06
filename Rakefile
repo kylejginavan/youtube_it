@@ -7,9 +7,9 @@ begin
     gem.name = "youtube_it"
     gem.summary = %Q{the one stop shop for working with youtube apis}
     gem.description = %Q{the one stop shop for working with youtube apis}
-    gem.email = "herestomwiththeweather@gmail.com"
-    gem.homepage = "http://github.com/herestomwiththeweather/youtube_it"
-    gem.authors = ["Mauro Torres & Kyle Ginavan","HeresTomWithTheWeather"]
+    gem.email = "kylejginavan@gmail.com"
+    gem.homepage = "http://github.com/kylejginavan/youtube_it"
+    gem.authors = ["Mauro Torres & Kyle Ginavan"]
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
