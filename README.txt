@@ -23,7 +23,7 @@ Basic queries:
   client.videos_by(:user => 'liz')
   client.videos_by(:favorites, :user => 'liz')
   client.video_by("FQK1URcxmb4")
-  client.video_by("chebyte","FQK1URcxmb4")
+  client.video_by_user("chebyte","FQK1URcxmb4")
 
 Standard feeds:
 
@@ -53,6 +53,23 @@ Upload videos:
 * delete video
 
   client.video_delete("FQK1URcxmb4")
+
+
+Access Control List
+
+  You can give permissions in your videos, for example denied comments, rate, etc...
+  you can read more there http://code.google.com/apis/youtube/2.0/reference.html#youtube_data_api_tag_yt:accessControl
+  you have available the followings options:
+
+* :rate, :comment, :commentVote, :videoRespond, :list, :embed, :syndicate
+
+  Example
+
+  client = YouTubeIt::Client.new("youtube_username", "youtube_passwd", "developer_key")
+
+* upload video with denied comments
+
+  client.video_upload(File.open("test.mov"), :title => "test",:description => 'some description', :category => 'People',:keywords => %w[cool blah test], :comment => "denied")
 
 
 == Upload videos from browser:
