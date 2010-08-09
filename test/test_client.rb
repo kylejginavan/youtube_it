@@ -6,7 +6,7 @@ class TestClient < Test::Unit::TestCase
              :description => "test description",
              :category => 'People',
              :keywords => %w[test]}
-  ACCOUNT = {:user => "stringshub", :passwd => "Gindogg6275", :dev_key => "AI39si411VBmO4Im9l0rfRsORXDI6F5AX5NlTIA4uHSWqa-Cgf-jUQG-6osUBB3PTLawLHlkKXPLr3B0pNcGU9wkNd11gIgdPg" }
+  ACCOUNT = {:user => "tubeit20101", :passwd => "youtube_it", :dev_key => "AI39si411VBmO4Im9l0rfRsORXDI6F5AX5NlTIA4uHSWqa-Cgf-jUQG-6osUBB3PTLawLHlkKXPLr3B0pNcGU9wkNd11gIgdPg" }
   RAILS_ENV = "test"
 
   def setup
@@ -75,12 +75,6 @@ class TestClient < Test::Unit::TestCase
     assert_equal 1, response.videos.length
     response.videos.each { |v| assert_valid_video v }
   end
-
-  # TODO: this doesn't work because the returned feed is in an unknown format
-  # def test_should_get_video_for_search_by_video_id
-  #   response = @client.videos_by(:video_id => "T7YazwP8GtY")
-  #   response.videos.each { |v| assert_valid_video v }
-  # end
 
   def test_should_get_videos_for_one_tag
     response = @client.videos_by(:tags => ['panther'])
@@ -204,12 +198,11 @@ class TestClient < Test::Unit::TestCase
 
   def test_should_update_a_video
     OPTIONS[:title] = "title changed"
-    video_id  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
-    sleep(5)
-    @client.video_update(video_id, OPTIONS)
-    video     = @client.video_by_user(ACCOUNT[:user], video_id)
+    @client.video_update("BhTw20Lr4v8", OPTIONS)
+    video  = @client.video_by("BhTw20Lr4v8")
     assert video.title == "title changed"
-    @client.video_delete(video_id)
+    OPTIONS[:title] = "maddie"
+    @client.video_update("BhTw20Lr4v8", OPTIONS)
   end
 
   def test_should_delete_video
@@ -249,6 +242,12 @@ class TestClient < Test::Unit::TestCase
     @client.add_comment(video_id, "test comment")
     comment = @client.comments(video_id)[:body]
     assert comment.match(/test comment/)
+  end
+
+  def test_shoul_add_and_del_video_to_favorite
+    video_id ="H1TrfM3xbgc"
+    assert @client.add_favorite(video_id)
+    assert @client.del_favorite(video_id)
   end
 
   private
