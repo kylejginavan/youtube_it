@@ -69,6 +69,24 @@ Comments
 
   client.add_comment(video_id, "test comment!")
 
+Favorites
+
+  You can add, del or list your favorites videos:
+
+  client = YouTubeIt::Client.new("youtube_username", "youtube_passwd", "developer_key")
+
+*  get all favorites:
+
+  client.favorites
+
+*  add a new favorite:
+
+  client.add_favorite(video_id)
+
+*  del favorite:
+
+  client.del_favorite(video_id)
+
 Access Control List
 
   You can give permissions in your videos, for example denied comments, rate, etc...
