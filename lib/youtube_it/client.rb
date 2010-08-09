@@ -103,6 +103,18 @@ class YouTubeIt
       client.comments(video_id)
     end
 
+    def add_favorite(video_id)
+      client.add_favorite(video_id)
+    end
+
+    def del_favorite(video_id)
+      client.del_favorite(video_id)
+    end
+
+    def favorites
+      client.favorites
+    end
+
     def enable_http_debugging
       client.enable_http_debugging
     end

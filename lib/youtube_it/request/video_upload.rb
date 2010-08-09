@@ -152,7 +152,7 @@ class YouTubeIt
       end
 
       def add_comment(video_id, comment)
-        comment_body   = video_xml_for_comment(comment)
+        comment_body   = video_xml_for(:comment => comment)
         comment_header = authorization_headers.merge({
           "GData-Version" => "2",
           "Content-Type"   => "application/atom+xml",
@@ -178,6 +178,53 @@ class YouTubeIt
           response = session.get(comment_url)
           raise_on_faulty_response(response)
           response = {:code => response.code, :body => response.body}
+        end
+      end
+
+      def add_favorite(video_id)
+        favorite_body   = video_xml_for(:favorite => video_id)
+        favorite_header = authorization_headers.merge({
+          "GData-Version" => "2",
+          "Content-Type"   => "application/atom+xml",
+          "Content-Length" => "#{favorite_body.length}",
+        })
+
+        favorite_url = "/feeds/api/users/#{@user}/favorites"
+
+        http = Net::HTTP.new(base_url)
+        http.set_debug_output(logger) if @http_debugging
+        http.start do | session |
+          response = session.post(favorite_url, favorite_body, favorite_header)
+          raise_on_faulty_response(response)
+          return true
+        end
+      end
+
+      def del_favorite(video_id)
+        favorite_header = authorization_headers.merge({
+          "Content-Type"   => "application/atom+xml; charset=UTF-8",
+          "Content-Length" => "0",
+        })
+
+        favorite_url = "/feeds/api/users/#{@user}/favorites/#{video_id}"
+
+        http = Net::HTTP.new(base_url)
+        http.set_debug_output(logger) if @http_debugging
+        http.start do | session |
+          response = session.delete(favorite_url, favorite_header)
+          raise_on_faulty_response(response)
+          return true
+        end
+      end
+
+      def favorites
+        favorite_url = "/feeds/api/users/#{@user}/favorites"
+        http = Net::HTTP.new(base_url)
+        http.set_debug_output(logger) if @http_debugging
+        http.start do | session |
+          response = session.get(favorite_url)
+          raise_on_faulty_response(response)
+          return response.body
         end
       end
 
@@ -271,11 +318,20 @@ class YouTubeIt
         end.to_s
       end
 
-      def video_xml_for_comment(comment)
+      def video_xml_for(data)
         b = Builder::XmlMarkup.new
         b.instruct!
         b.entry(:xmlns => "http://www.w3.org/2005/Atom", 'xmlns:yt' => "http://gdata.youtube.com/schemas/2007") do | m |
-          m.content(comment)
+          m.content(data[:comment]) if data[:comment]
+          m.id(data[:favorite]) if data[:favorite]
+        end.to_s
+      end
+
+      def video_xml_for_favorite(video_id)
+        b = Builder::XmlMarkup.new
+        b.instruct!
+        b.entry(:xmlns => "http://www.w3.org/2005/Atom", 'xmlns:yt' => "http://gdata.youtube.com/schemas/2007") do | m |
+          m.id(video_id)
         end.to_s
       end
 

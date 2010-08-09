@@ -43,7 +43,6 @@ Gem::Specification.new do |s|
      "lib/youtube_it/request/video_upload.rb",
      "lib/youtube_it/response/video_search.rb",
      "lib/youtube_it/version.rb",
-     "pkg/youtube_it-0.0.1.gem",
      "test/helper.rb",
      "test/test.mov",
      "test/test_chain_io.rb",
