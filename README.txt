@@ -55,6 +55,20 @@ Upload videos:
   client.video_delete("FQK1URcxmb4")
 
 
+Comments
+
+  You can add or list comments with the following way:
+
+  client = YouTubeIt::Client.new("youtube_username", "youtube_passwd", "developer_key")
+
+*  get all comments:
+
+  client.comments(video_id)
+
+*  add a new comment:
+
+  client.add_comment(video_id, "test comment!")
+
 Access Control List
 
   You can give permissions in your videos, for example denied comments, rate, etc...
