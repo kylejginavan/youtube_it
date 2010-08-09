@@ -151,6 +151,36 @@ class YouTubeIt
         end
       end
 
+      def add_comment(video_id, comment)
+        comment_body   = video_xml_for_comment(comment)
+        comment_header = authorization_headers.merge({
+          "GData-Version" => "2",
+          "Content-Type"   => "application/atom+xml",
+          "Content-Length" => "#{comment_body.length}",
+        })
+
+        comment_url = "/feeds/api/videos/#{video_id}/comments"
+
+        http = Net::HTTP.new(base_url)
+        http.set_debug_output(logger) if @http_debugging
+        http.start do | session |
+          response = session.post(comment_url, comment_body, comment_header)
+          raise_on_faulty_response(response)
+          response = {:code => response.code, :body => response.body}
+        end
+      end
+
+      def comments(video_id)
+        comment_url = "/feeds/api/videos/#{video_id}/comments"
+        http = Net::HTTP.new(base_url)
+        http.set_debug_output(logger) if @http_debugging
+        http.start do | session |
+          response = session.get(comment_url)
+          raise_on_faulty_response(response)
+          response = {:code => response.code, :body => response.body}
+        end
+      end
+
       private
 
       def uploads_url
@@ -238,6 +268,14 @@ class YouTubeIt
           m.tag!("yt:accessControl", :action => "list", :permission => @opts[:list]) if @opts[:list]
           m.tag!("yt:accessControl", :action => "embed", :permission => @opts[:embed]) if @opts[:embed]
           m.tag!("yt:accessControl", :action => "syndicate", :permission => @opts[:syndicate]) if @opts[:syndicate]
+        end.to_s
+      end
+
+      def video_xml_for_comment(comment)
+        b = Builder::XmlMarkup.new
+        b.instruct!
+        b.entry(:xmlns => "http://www.w3.org/2005/Atom", 'xmlns:yt' => "http://gdata.youtube.com/schemas/2007") do | m |
+          m.content(comment)
         end.to_s
       end
 

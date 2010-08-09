@@ -95,6 +95,14 @@ class YouTubeIt
       client.get_upload_token(options, nexturl)
     end
 
+    def add_comment(video_id, comment)
+      client.add_comment(video_id, comment)
+    end
+
+    def comments(video_id)
+      client.comments(video_id)
+    end
+
     def enable_http_debugging
       client.enable_http_debugging
     end
