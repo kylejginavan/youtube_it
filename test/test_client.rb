@@ -6,7 +6,7 @@ class TestClient < Test::Unit::TestCase
              :description => "test description",
              :category => 'People',
              :keywords => %w[test]}
-  ACCOUNT = {:user => "tubeit20101", :passwd => "youtube_it", :dev_key => "AI39si411VBmO4Im9l0rfRsORXDI6F5AX5NlTIA4uHSWqa-Cgf-jUQG-6osUBB3PTLawLHlkKXPLr3B0pNcGU9wkNd11gIgdPg" }
+  ACCOUNT = {:user => "stringshub", :passwd => "Gindogg6275", :dev_key => "AI39si411VBmO4Im9l0rfRsORXDI6F5AX5NlTIA4uHSWqa-Cgf-jUQG-6osUBB3PTLawLHlkKXPLr3B0pNcGU9wkNd11gIgdPg" }
   RAILS_ENV = "test"
 
   def setup
@@ -171,13 +171,6 @@ class TestClient < Test::Unit::TestCase
     assert_nothing_raised { YouTubeIt::Client.new(true) }
   end
 
-  def test_should_determine_if_nonembeddable_video_is_embeddable
-    response = @client.videos_by(:query => "avril lavigne girlfriend")
-
-    video = response.videos.first
-    assert !video.embeddable?
-  end
-
   def test_should_determine_if_embeddable_video_is_embeddable
     response = @client.videos_by(:query => "strongbad")
 
@@ -212,9 +205,9 @@ class TestClient < Test::Unit::TestCase
   def test_should_update_a_video
     OPTIONS[:title] = "title changed"
     video_id  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
+    sleep(5)
     @client.video_update(video_id, OPTIONS)
     video     = @client.video_by_user(ACCOUNT[:user], video_id)
-    assert_valid_video video
     assert video.title == "title changed"
     @client.video_delete(video_id)
   end
@@ -224,6 +217,38 @@ class TestClient < Test::Unit::TestCase
     video     = @client.video_by_user(ACCOUNT[:user], video_id)
     assert_valid_video video
     assert @client.video_delete(video_id)
+  end
+
+  def test_should_denied_comments
+    video_id  = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:comment => "denied"))
+    video     = @client.video_by_user(ACCOUNT[:user], video_id)
+    assert_valid_video video
+    doc = Nokogiri::HTML(open("http://www.youtube.com/watch?v=#{video_id}"))
+    doc.css('.comments-disabled').each{|tag| assert (tag.content.strip == "Adding comments has been disabled for this video.")}
+    @client.video_delete(video_id)
+  end
+
+  def test_should_denied_rate
+    video_id  = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:rate => "denied"))
+    video     = @client.video_by_user(ACCOUNT[:user], video_id)
+    assert_valid_video video
+    doc = Nokogiri::HTML(open("http://www.youtube.com/watch?v=#{video_id}"))
+    doc.css('#watch-like').each{|tag|; assert (tag.attributes["title"].to_s == "Ratings have been disabled for this video.")}
+    @client.video_delete(video_id)
+  end
+
+  def test_should_denied_embed
+    video_id  = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:embed => "denied"))
+    video     = @client.video_by_user(ACCOUNT[:user], video_id)
+    assert    video.noembed
+    @client.video_delete(video_id)
+  end
+
+  def test_should_add_new_comment
+    video_id ="H1TrfM3xbgc"
+    @client.add_comment(video_id, "test comment")
+    comment = @client.comments(video_id)[:body]
+    assert comment.match(/test comment/)
   end
 
   private
