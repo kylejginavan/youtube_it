@@ -1,6 +1,6 @@
 * Initial fork
 
-== 0.1.0 / 2010-07-05
+== 0.0.1 / 2010-07-05
 
 * Enhanced youtube-g to support:
   ~> direct uploads to youtube
@@ -8,8 +8,8 @@
   ~> comment on youtube video
   ~> delete youtube video
   
-== 0.2.0 / 2010-07-07
+== 0.0.2 / 2010-07-07
 
 * ACL support
 
-== 0.3.0 / 2010-08-12
+== 0.0.3 / 2010-08-12
