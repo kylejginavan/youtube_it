@@ -1,52 +1,15 @@
-* Implement video update and video delete in Upload
-* Refactor the uploader slightly
-* Use Builder to generate XML packets
-* Use a faster Camping-based URL escaper (also avoid cgi.rb)
-* Removed the logger nightmare, use YouTubeIt.logger for everything whatever that may be
-* Use streams for file uploads instead of in-memory strings
+* Initial fork
 
-== 0.5.0 / 2009-01-07
+== 0.1.0 / 2010-07-05
 
-* Fixed bug in user favorites (thanks Pius Uzamere)
+* Enhanced youtube-g to support:
+  ~> direct uploads to youtube
+  ~> update video on youtube
+  ~> comment on youtube video
+  ~> delete youtube video
+  
+== 0.2.0 / 2010-07-07
 
-== 0.4.9.9 / 2008-09-01
+* ACL support
 
-* Add Geodata information (thanks Jose Galisteo)
-* Added :page and :per_page options, this allows easier usage of the will_paginate
-  plugin with the library. The :offset and :max_results options are no longer available. [Daniel Insley]
-* Added ability to get video responses on the instances of the YouTube::Model::Video object. [Daniel Insley]
-* Added and improved the existing documentation [Daniel Insley]
-* Fixed usage of deprecated yt:racy, now using media:rating [Daniel Insley]
-* Renamed can_embed? method to embeddable? [Daniel Insley]
-* Added ability for padingation and ordering on standard feeds. [Daniel Insley]
-* Add error-handling for video upload errors. [FiXato]
-* Add error-handling for authentication errors from YouTube during video upload. [FiXato]
-* Add support for making videos private upon video upload. [FiXato]
-* Fix issue with REXML parsing of video upload response. [FiXato]
-* Fix issue with response code comparison. [FiXato]
-* Authcode is now retrieved for video uploads. [FiXato]
-* Add basic support for uploading videos [thanks Joe Damato]
-* Add basic support for related videos [tmm1]
-* Improve docs for order_by attribute [thanks Jason Arora]
-* Added support for the "racy" parameter (choices are "include" or "exclude") [thanks Jason Arora]
-* Add missing attribute reader for description [tmm1]
-* Fix issue with missing yt:statistics and viewCount [tmm1]
-* Allow Client#video_by to take either a url or a video id [tmm1]
-
-== 0.4.1 / 2008-02-11
-
-* Added 3GPP video format [shane]
-* Fixed tests [shane]
-
-== 0.4.0 / 2007-12-18
-
-* Fixed API projection in search URL [Pete Higgins]
-* Fixed embeddable video searching [Pete Higgins]
-* Fixed video embeddable detection [Pete Higgins]
-* Fixed unique id hyphen detection [Pete Higgins, Chris Taggart]
-
-== 0.3.0 / 2007-09-17
-
-* Initial public release
-  * Birthday!
-
+== 0.3.0 / 2010-08-12

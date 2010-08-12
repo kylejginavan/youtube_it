@@ -1,6 +1,6 @@
 == DESCRIPTION:
 
-youtube_it is a pure Ruby client for the YouTube GData API. It provides an easy
+youtube_it is the most complete Ruby client for the YouTube GData API. It provides an easy
 way to access the latest YouTube video search results from your own programs.
 In comparison with the earlier Youtube search interfaces, this new API and
 library offers much-improved flexibility around executing complex search
@@ -145,11 +145,12 @@ YouTubeIt passes all logs through the logger variable on the class itself. In Ra
 == INSTALL:
 
 * sudo gem install youtube_it
+
 == LICENSE:
 
 MIT License
 
-Copyright (c) 2007 Shane Vitarana and Walter Korman
+Copyright (c) 2010 Kyle J. Ginavan
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
