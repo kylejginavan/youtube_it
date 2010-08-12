@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "youtube_it"
-    gem.summary = %Q{the one stop shop for working with youtube apis}
-    gem.description = %Q{the one stop shop for working with youtube apis}
+    gem.summary = %Q{The most complete Ruby wrapper for youtube api's}
+    gem.description = %Q{Upload, delete, update, comment on youtube videos all from one gem.}
     gem.email = "kylejginavan@gmail.com"
     gem.homepage = "http://github.com/kylejginavan/youtube_it"
     gem.authors = ["Mauro Torres & Kyle Ginavan"]
