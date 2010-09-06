@@ -6,7 +6,6 @@ class YouTubeIt
       @user, @pass, @dev_key, @client_id = user, pass, dev_key, client_id
     end
 
-
     # Retrieves an array of standard feed, custom query, or user videos.
     #
     # === Parameters
@@ -95,6 +94,7 @@ class YouTubeIt
       client.get_upload_token(options, nexturl)
     end
 
+<<<<<<< HEAD
     def add_comment(video_id, comment)
       client.add_comment(video_id, comment)
     end
@@ -115,6 +115,8 @@ class YouTubeIt
       client.favorites
     end
 
+=======
+>>>>>>> herestomwiththeweather/master
     def enable_http_debugging
       client.enable_http_debugging
     end
@@ -133,6 +135,46 @@ class YouTubeIt
       value = value.to_i
       value > 0 ? value : default
     end
+  end
+
+  class OAuthClient < Client
+    def initialize ctoken = nil, csecret = nil, user = nil, dev_key = nil, client_id = 'youtube_it', legacy_debug_flag = nil
+      @consumer_key, @consumer_secret, @user, @dev_key, @client_id = ctoken, csecret, user, dev_key, client_id
+    end
+
+    def consumer
+      @consumer ||= OAuth::Consumer.new(@consumer_key,@consumer_secret,{
+        :site=>"https://www.google.com",
+        :request_token_path=>"/accounts/OAuthGetRequestToken",
+        :authorize_path=>"/accounts/OAuthAuthorizeToken",
+        :access_token_path=>"/accounts/OAuthGetAccessToken"})
+    end
+
+    def request_token(callback)
+      @request_token = consumer.get_request_token({:oauth_callback => callback},{:scope => "http://gdata.youtube.com"})
+    end
+
+    def access_token
+      @access_token = OAuth::AccessToken.new(consumer, @atoken, @asecret)
+    end
+
+    def authorize_from_request(rtoken,rsecret,verifier)
+      request_token = OAuth::RequestToken.new(consumer,rtoken,rsecret)
+      access_token = request_token.get_access_token({:oauth_verifier => verifier})
+      @atoken,@asecret = access_token.token, access_token.secret
+    end
+
+    def authorize_from_access(atoken,asecret)
+      @atoken,@asecret = atoken, asecret
+    end
+
+    private
+
+    def client
+      # IMPORTANT: make sure authorize_from_access is called before client is fetched
+      @client ||= YouTubeIt::Upload::VideoUpload.new(@user, "", @dev_key, "youtube_it", access_token)
+    end
+
   end
 end
 
