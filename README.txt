@@ -42,6 +42,11 @@ Upload videos:
 
   client = YouTubeIt::Client.new("youtube_username", "youtube_passwd", "developer_key")
 
+  Or better yet, you can use OAuth
+
+  client = YouTubeIt::OAuthClient.new("consumer_key", "consumer_secret", "youtube_username", "developer_key")
+  client.authorize_from_access("access_token", "access_secret")
+
 * upload video
 
   client.video_upload(File.open("test.mov"), :title => "test",:description => 'some description', :category => 'People',:keywords => %w[cool blah test])
