@@ -236,6 +236,83 @@ class YouTubeIt
         end
       end
 
+      def playlist(playlist_id)
+        playlist_url = "/feeds/api/users/#{@user}/playlist/#{playlist_id}"
+        http = Net::HTTP.new(base_url)
+        http.set_debug_output(logger) if @http_debugging
+        http.start do | session |
+          response = session.get(playlist_url)
+          raise_on_faulty_response(response)
+          return response.body
+        end
+      end
+
+      def playlists
+        playlist_url = "/feeds/api/users/#{@user}/playlists?v=2"
+        http = Net::HTTP.new(base_url)
+        http.set_debug_output(logger) if @http_debugging
+        http.start do | session |
+          response = session.get(playlist_url)
+          raise_on_faulty_response(response)
+          return response.body
+        end
+      end
+      
+      def add_playlist(options)
+        playlist_body   = video_xml_for_playlist(options)
+        playlist_header = authorization_headers.merge({
+          "GData-Version" => "2",
+          "Content-Type"   => "application/atom+xml",
+          "Content-Length" => "#{playlist_body.length}",
+        })
+
+        playlist_url = "/feeds/api/users/#{@user}/playlists"
+
+        http = Net::HTTP.new(base_url)
+        http.set_debug_output(logger) if @http_debugging
+        http.start do | session |
+          response = session.post(playlist_url, playlist_body, playlist_header)
+          raise_on_faulty_response(response)
+          response = {:code => response.code, :body => response.body}
+        end
+      end
+      
+      def add_video_to_playlist(playlist_id, video_id)
+        playlist_body   = video_xml_for_video_to_playlist(video_id)
+        playlist_header = authorization_headers.merge({
+          "GData-Version" => "2",
+          "Content-Type"   => "application/atom+xml",
+          "Content-Length" => "#{playlist_body.length}",
+        })
+
+        playlist_url = "/feeds/api/playlists/#{playlist_id}"
+
+        http = Net::HTTP.new(base_url)
+        http.set_debug_output(logger) if @http_debugging
+        http.start do | session |
+          response = session.post(playlist_url, playlist_body, playlist_header)
+          raise_on_faulty_response(response)
+          response = {:code => response.code, :body => response.body}
+        end
+      end
+
+      def del_playlist(playlist_id)
+        favorite_header = authorization_headers.merge({
+          "Content-Type"   => "application/atom+xml; charset=UTF-8",
+          "GData-Version" => "2"
+        })
+
+        favorite_url = "/feeds/api/users/#{@user}/playlists/#{playlist_id}"
+
+        http = Net::HTTP.new(base_url)
+        http.set_debug_output(logger) if @http_debugging
+        http.start do | session |
+          response = session.delete(favorite_url, favorite_header)
+          raise_on_faulty_response(response)
+          return true
+        end
+      end
+
       def favorites
         favorite_url = "/feeds/api/users/#{@user}/favorites"
         http = Net::HTTP.new(base_url)
@@ -341,6 +418,24 @@ class YouTubeIt
         b.entry(:xmlns => "http://www.w3.org/2005/Atom", 'xmlns:yt' => "http://gdata.youtube.com/schemas/2007") do | m |
           m.content(data[:comment]) if data[:comment]
           m.id(data[:favorite]) if data[:favorite]
+        end.to_s
+      end
+      
+      def video_xml_for_playlist(data)
+        b = Builder::XmlMarkup.new
+        b.instruct!
+        b.entry(:xmlns => "http://www.w3.org/2005/Atom", 'xmlns:yt' => "http://gdata.youtube.com/schemas/2007") do | m |
+          m.title(data[:title]) if data[:title]
+          m.summary(data[:description] || data[:summary]) if data[:description] || data[:summary]
+          m.tag!('yt:private') if data[:private]
+        end.to_s
+      end
+      
+      def video_xml_for_video_to_playlist(video_id)
+        b = Builder::XmlMarkup.new
+        b.instruct!
+        b.entry(:xmlns => "http://www.w3.org/2005/Atom", 'xmlns:yt' => "http://gdata.youtube.com/schemas/2007") do | m |
+          m.id(video_id)
         end.to_s
       end
 
