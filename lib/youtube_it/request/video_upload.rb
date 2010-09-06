@@ -16,13 +16,8 @@ class YouTubeIt
     #
     class VideoUpload
       include YouTubeIt::Logging
-<<<<<<< HEAD
-      def initialize user, pass, dev_key, client_id = 'youtube_it'
-        @user, @pass, @dev_key, @client_id = user, pass, dev_key, client_id
-=======
       def initialize user, pass, dev_key, client_id = 'youtube_it', access_token = nil
         @user, @pass, @dev_key, @client_id, @access_token = user, pass, dev_key, client_id, access_token
->>>>>>> herestomwiththeweather/master
         @http_debugging = false
       end
 
@@ -62,33 +57,19 @@ class YouTubeIt
                   :description => '',
                   :category => '',
                   :keywords => [] }.merge(opts)
-
+      
         @opts[:filename] ||= generate_uniq_filename_from(data)
-
+      
         post_body_io = generate_upload_io(video_xml, data)
-
+      
         upload_headers = {
             "X-GData-Key"    => "key=#{@dev_key}",
             "Slug"           => "#{@opts[:filename]}",
             "Content-Type"   => "multipart/related; boundary=#{boundary}",
             "Content-Length" => "#{post_body_io.expected_length}", # required per YouTube spec
           # "Transfer-Encoding" => "chunked" # We will stream instead of posting at once
-<<<<<<< HEAD
-        })
-
-        path = '/feeds/api/users/%s/uploads' % @user
-
-        http = Net::HTTP.new(uploads_url)
-        http.set_debug_output(logger) if @http_debugging
-        http.start do | session |
-
-          # Use the chained IO as body so that Net::HTTP reads into the socket for us
-          post = Net::HTTP::Post.new(path, upload_headers)
-          post.body_stream = post_body_io
-=======
         }
->>>>>>> herestomwiththeweather/master
-
+      
         if @access_token.nil?
           upload_headers.merge!(authorization_headers)
           http = Net::HTTP.new(uploads_url)
@@ -106,7 +87,7 @@ class YouTubeIt
           response = @access_token.post(url, post_body_io, upload_headers)
           raise_on_faulty_response(response)
         end
-
+      
         return uploaded_video_id_from(response.body)
       end
 
@@ -120,28 +101,18 @@ class YouTubeIt
       # When the authentication credentials are incorrect, an AuthenticationError will be raised.
       def update(video_id, options)
         @opts = options
-
+      
         update_body = video_xml
-
-<<<<<<< HEAD
-        update_header = authorization_headers.merge({
-=======
+      
         update_header = {
           "X-GData-Key"    => "key=#{@dev_key}",
->>>>>>> herestomwiththeweather/master
           "GData-Version" => "2",
           "Content-Type"   => "application/atom+xml",
           "Content-Length" => "#{update_body.length}",
         }
-
+      
         update_url = "/feeds/api/users/#{@user}/uploads/#{video_id}"
-
-<<<<<<< HEAD
-        http = Net::HTTP.new(base_url)
-        http.set_debug_output(logger) if @http_debugging
-        http.start do | session |
-          response = session.put(update_url, update_body, update_header)
-=======
+      
         if @access_token.nil?
           update_header.merge!(authorization_headers)
           http = Net::HTTP.new(base_url)
@@ -150,10 +121,9 @@ class YouTubeIt
           raise_on_faulty_response(response)
         else
           response = @access_token.put("http://"+base_url+update_url, update_body, update_header)
->>>>>>> herestomwiththeweather/master
           raise_on_faulty_response(response)
         end
-
+      
         return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse
       end
 
@@ -362,7 +332,6 @@ class YouTubeIt
           m.tag!("yt:accessControl", :action => "list", :permission => @opts[:list]) if @opts[:list]
           m.tag!("yt:accessControl", :action => "embed", :permission => @opts[:embed]) if @opts[:embed]
           m.tag!("yt:accessControl", :action => "syndicate", :permission => @opts[:syndicate]) if @opts[:syndicate]
-<<<<<<< HEAD
         end.to_s
       end
 
@@ -380,8 +349,6 @@ class YouTubeIt
         b.instruct!
         b.entry(:xmlns => "http://www.w3.org/2005/Atom", 'xmlns:yt' => "http://gdata.youtube.com/schemas/2007") do | m |
           m.id(video_id)
-=======
->>>>>>> herestomwiththeweather/master
         end.to_s
       end
 
