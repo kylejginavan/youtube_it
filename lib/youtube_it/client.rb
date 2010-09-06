@@ -94,7 +94,6 @@ class YouTubeIt
       client.get_upload_token(options, nexturl)
     end
 
-<<<<<<< HEAD
     def add_comment(video_id, comment)
       client.add_comment(video_id, comment)
     end
@@ -115,8 +114,6 @@ class YouTubeIt
       client.favorites
     end
 
-=======
->>>>>>> herestomwiththeweather/master
     def enable_http_debugging
       client.enable_http_debugging
     end

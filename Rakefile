@@ -4,21 +4,12 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-<<<<<<< HEAD
     gem.name = "youtube_it"
     gem.summary = %Q{The most complete Ruby wrapper for youtube api's}
     gem.description = %Q{Upload, delete, update, comment on youtube videos all from one gem.}
     gem.email = "kylejginavan@gmail.com"
     gem.homepage = "http://github.com/kylejginavan/youtube_it"
-    gem.authors = ["Mauro Torres & Kyle Ginavan"]
-=======
-    gem.name = "youtube_it_v2"
-    gem.summary = %Q{the one stop shop for working with youtube apis (experimental: v2 api)}
-    gem.description = %Q{the one stop shop for working with youtube apis (experimental: v2 api)}
-    gem.email = "herestomwiththeweather@gmail.com"
-    gem.homepage = "http://github.com/herestomwiththeweather/youtube_it"
-    gem.authors = ["Mauro Torres & Kyle Ginavan","HeresTomWithTheWeather"]
->>>>>>> herestomwiththeweather/master
+    gem.authors = ["chebyte","kylejginavan"]
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
