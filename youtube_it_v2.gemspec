@@ -4,6 +4,7 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
+<<<<<<< HEAD
 <<<<<<< HEAD:youtube_it.gemspec
   s.name = %q{youtube_it}
   s.version = "0.0.3"
@@ -18,11 +19,20 @@ Gem::Specification.new do |s|
   s.version = "0.0.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
+=======
+  s.name = %q{youtube_it_v2}
+  s.version = "0.0.5"
+
+  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
+>>>>>>> herestomwiththeweather/master
   s.authors = ["Mauro Torres & Kyle Ginavan", "HeresTomWithTheWeather"]
   s.date = %q{2010-09-02}
   s.description = %q{the one stop shop for working with youtube apis (experimental: v2 api)}
   s.email = %q{herestomwiththeweather@gmail.com}
+<<<<<<< HEAD
 >>>>>>> herestomwiththeweather/master:youtube_it_v2.gemspec
+=======
+>>>>>>> herestomwiththeweather/master
   s.extra_rdoc_files = [
     "README.txt"
   ]
@@ -54,18 +64,22 @@ Gem::Specification.new do |s|
      "lib/youtube_it/request/video_upload.rb",
      "lib/youtube_it/response/video_search.rb",
      "lib/youtube_it/version.rb",
+<<<<<<< HEAD
 <<<<<<< HEAD:youtube_it.gemspec
      "pkg/youtube_it-0.0.1.gem",
      "pkg/youtube_it-0.0.2.gem",
      "pkg/youtube_it-0.0.3.gem",
 =======
 >>>>>>> herestomwiththeweather/master:youtube_it_v2.gemspec
+=======
+>>>>>>> herestomwiththeweather/master
      "test/helper.rb",
      "test/test.mov",
      "test/test_chain_io.rb",
      "test/test_client.rb",
      "test/test_video.rb",
      "test/test_video_search.rb",
+<<<<<<< HEAD
 <<<<<<< HEAD:youtube_it.gemspec
      "youtube_it.gemspec",
      "youtube_it.tmproj"
@@ -73,6 +87,10 @@ Gem::Specification.new do |s|
      "youtube_it.tmproj",
      "youtube_it_v2.gemspec"
 >>>>>>> herestomwiththeweather/master:youtube_it_v2.gemspec
+=======
+     "youtube_it.tmproj",
+     "youtube_it_v2.gemspec"
+>>>>>>> herestomwiththeweather/master
   ]
   s.homepage = %q{http://github.com/herestomwiththeweather/youtube_it}
   s.rdoc_options = ["--charset=UTF-8"]
