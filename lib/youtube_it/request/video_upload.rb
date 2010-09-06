@@ -72,9 +72,6 @@ class YouTubeIt
 
         if @access_token.nil?
           upload_headers.merge!(authorization_headers)
-        end
-
-        if @access_token.nil?
           http = Net::HTTP.new(uploads_url)
           http.set_debug_output(logger) if @http_debugging
           path = '/feeds/api/users/%s/uploads' % @user
@@ -83,13 +80,14 @@ class YouTubeIt
             post = Net::HTTP::Post.new(path, upload_headers)
             post.body_stream = post_body_io
             response = session.request(post)
+            raise_on_faulty_response(response)
           end
         else
           url = 'http://%s/feeds/api/users/%s/uploads' % [uploads_url, @user]
           response = @access_token.post(url, post_body_io, upload_headers)
+          raise_on_faulty_response(response)
         end
 
-        raise_on_faulty_response(response)
         return uploaded_video_id_from(response.body)
       end
 
@@ -113,39 +111,44 @@ class YouTubeIt
           "Content-Length" => "#{update_body.length}",
         }
 
-        if @access_token.nil?
-          update_header.merge!(authorization_headers)
-        end
-
         update_url = "/feeds/api/users/#{@user}/uploads/#{video_id}"
 
         if @access_token.nil?
+          update_header.merge!(authorization_headers)
           http = Net::HTTP.new(base_url)
           http.set_debug_output(logger) if @http_debugging
           response = http.put(update_url, update_body, update_header)
+          raise_on_faulty_response(response)
         else
           response = @access_token.put("http://"+base_url+update_url, update_body, update_header)
+          raise_on_faulty_response(response)
         end
 
-        raise_on_faulty_response(response)
         return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse
       end
 
       # Delete a video on YouTube
       def delete(video_id)
-        delete_header = authorization_headers.merge({
+        delete_header = {
           "X-GData-Key"    => "key=#{@dev_key}",
           "Content-Type"   => "application/atom+xml; charset=UTF-8",
           "Content-Length" => "0",
-        })
+        }
 
         delete_url = "/feeds/api/users/#{@user}/uploads/#{video_id}"
 
-        Net::HTTP.start(base_url) do |session|
-          response = session.delete(delete_url, delete_header)
+        if @access_token.nil?
+          delete_header.merge!(authorization_headers)
+          Net::HTTP.start(base_url) do |session|
+            response = session.delete(delete_url, delete_header)
+            raise_on_faulty_response(response)
+          end
+        else
+          response = @access_token.delete("http://"+base_url+delete_url, delete_header)
           raise_on_faulty_response(response)
-          return true
         end
+
+        return true
       end
 
       def get_upload_token(options, nexturl)
