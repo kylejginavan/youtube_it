@@ -45,7 +45,7 @@ class TestClient < Test::Unit::TestCase
     assert_equal 25, response.max_result_count
     assert_equal 1, response.offset
 
-    response = @client.videos_by(:query => "penguin", :page => 2)
+      response = @client.videos_by(:query => "penguin", :page => 2)
     assert_equal "http://gdata.youtube.com/feeds/api/videos", response.feed_id
     assert_equal 25, response.max_result_count
     assert_equal 26, response.offset
@@ -145,13 +145,13 @@ class TestClient < Test::Unit::TestCase
 
   def test_should_get_videos_for_query_search_with_categories_excluded
     video = @client.video_by("EkF4JD2rO3Q")
-    assert_equal "<object width=\"425\" height=\"350\">\n  <param name=\"movie\" value=\"http://www.youtube.com/v/EkF4JD2rO3Q&feature=youtube_gdata\"></param>\n  <param name=\"wmode\" value=\"transparent\"></param>\n  <embed src=\"http://www.youtube.com/v/EkF4JD2rO3Q&feature=youtube_gdata\" type=\"application/x-shockwave-flash\" \n   wmode=\"transparent\" width=\"425\" height=\"350\"></embed>\n</object>\n", video.embed_html
+    assert_equal "<object width=\"425\" height=\"350\">\n  <param name=\"movie\" value=\"http://www.youtube.com/v/EkF4JD2rO3Q&feature=youtube_gdata_player\"></param>\n  <param name=\"wmode\" value=\"transparent\"></param>\n  <embed src=\"http://www.youtube.com/v/EkF4JD2rO3Q&feature=youtube_gdata_player\" type=\"application/x-shockwave-flash\" \n   wmode=\"transparent\" width=\"425\" height=\"350\"></embed>\n</object>\n", video.embed_html
     assert_valid_video video
   end
 
   def test_should_get_video_from_user
     video = @client.video_by_user("chebyte","FQK1URcxmb4")
-    assert_equal "<object width=\"425\" height=\"350\">\n  <param name=\"movie\" value=\"http://www.youtube.com/v/FQK1URcxmb4&feature=youtube_gdata\"></param>\n  <param name=\"wmode\" value=\"transparent\"></param>\n  <embed src=\"http://www.youtube.com/v/FQK1URcxmb4&feature=youtube_gdata\" type=\"application/x-shockwave-flash\" \n   wmode=\"transparent\" width=\"425\" height=\"350\"></embed>\n</object>\n", video.embed_html
+    assert_equal "<object width=\"425\" height=\"350\">\n  <param name=\"movie\" value=\"http://www.youtube.com/v/FQK1URcxmb4&feature=youtube_gdata_player\"></param>\n  <param name=\"wmode\" value=\"transparent\"></param>\n  <embed src=\"http://www.youtube.com/v/FQK1URcxmb4&feature=youtube_gdata_player\" type=\"application/x-shockwave-flash\" \n   wmode=\"transparent\" width=\"425\" height=\"350\"></embed>\n</object>\n", video.embed_html
     assert_valid_video video
   end
 
@@ -198,11 +198,11 @@ class TestClient < Test::Unit::TestCase
 
   def test_should_update_a_video
     OPTIONS[:title] = "title changed"
-    @client.video_update("BhTw20Lr4v8", OPTIONS)
-    video  = @client.video_by("BhTw20Lr4v8")
+    @client.video_update("iKqJ8z1DPrQ", OPTIONS)
+    video  = @client.video_by("iKqJ8z1DPrQ")
     assert video.title == "title changed"
-    OPTIONS[:title] = "maddie"
-    @client.video_update("BhTw20Lr4v8", OPTIONS)
+    OPTIONS[:title] = "test rails"
+    @client.video_update("iKqJ8z1DPrQ", OPTIONS)
   end
 
   def test_should_delete_video
@@ -247,6 +247,7 @@ class TestClient < Test::Unit::TestCase
   def test_shoul_add_and_del_video_to_favorite
     video_id ="H1TrfM3xbgc"
     assert @client.add_favorite(video_id)
+    sleep 4
     assert @client.del_favorite(video_id)
   end
 
