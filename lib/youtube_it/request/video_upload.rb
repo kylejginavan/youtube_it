@@ -52,24 +52,24 @@ class YouTubeIt
       #
       # When the authentication credentials are incorrect, an AuthenticationError will be raised.
       def upload data, opts = {}
+        response = ""
         @opts = { :mime_type => 'video/mp4',
                   :title => '',
                   :description => '',
                   :category => '',
                   :keywords => [] }.merge(opts)
-      
+
         @opts[:filename] ||= generate_uniq_filename_from(data)
-      
+
         post_body_io = generate_upload_io(video_xml, data)
-      
+
         upload_headers = {
-            "X-GData-Key"    => "key=#{@dev_key}",
             "Slug"           => "#{@opts[:filename]}",
             "Content-Type"   => "multipart/related; boundary=#{boundary}",
             "Content-Length" => "#{post_body_io.expected_length}", # required per YouTube spec
           # "Transfer-Encoding" => "chunked" # We will stream instead of posting at once
         }
-      
+
         if @access_token.nil?
           upload_headers.merge!(authorization_headers)
           http = Net::HTTP.new(uploads_url)
@@ -80,14 +80,13 @@ class YouTubeIt
             post = Net::HTTP::Post.new(path, upload_headers)
             post.body_stream = post_body_io
             response = session.request(post)
-            raise_on_faulty_response(response)
           end
         else
+          upload_headers.merge!(authorization_headers_for_soap)
           url = 'http://%s/feeds/api/users/%s/uploads' % [uploads_url, @user]
           response = @access_token.post(url, post_body_io, upload_headers)
-          raise_on_faulty_response(response)
         end
-      
+        raise_on_faulty_response(response)
         return uploaded_video_id_from(response.body)
       end
 
@@ -100,37 +99,36 @@ class YouTubeIt
       #   :private
       # When the authentication credentials are incorrect, an AuthenticationError will be raised.
       def update(video_id, options)
+        response = ""
         @opts = options
-      
+
         update_body = video_xml
-      
+
         update_header = {
-          "X-GData-Key"    => "key=#{@dev_key}",
           "GData-Version" => "2",
           "Content-Type"   => "application/atom+xml",
           "Content-Length" => "#{update_body.length}",
         }
-      
+
         update_url = "/feeds/api/users/#{@user}/uploads/#{video_id}"
-      
+
         if @access_token.nil?
           update_header.merge!(authorization_headers)
           http = Net::HTTP.new(base_url)
           http.set_debug_output(logger) if @http_debugging
           response = http.put(update_url, update_body, update_header)
-          raise_on_faulty_response(response)
         else
+          upload_headers.merge!(authorization_headers_for_soap)
           response = @access_token.put("http://"+base_url+update_url, update_body, update_header)
-          raise_on_faulty_response(response)
         end
-      
+
+        raise_on_faulty_response(response)
         return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse
       end
 
       # Delete a video on YouTube
       def delete(video_id)
         delete_header = {
-          "X-GData-Key"    => "key=#{@dev_key}",
           "Content-Type"   => "application/atom+xml; charset=UTF-8",
           "Content-Length" => "0",
         }
@@ -144,6 +142,7 @@ class YouTubeIt
             raise_on_faulty_response(response)
           end
         else
+          upload_headers.merge!(authorization_headers_for_soap)
           response = @access_token.delete("http://"+base_url+delete_url, delete_header)
           raise_on_faulty_response(response)
         end
@@ -156,7 +155,6 @@ class YouTubeIt
 
         token_body    = video_xml
         token_header  = authorization_headers.merge({
-          "X-GData-Key"    => "key=#{@dev_key}",
           "Content-Type"   => "application/atom+xml; charset=UTF-8",
           "Content-Length" => "#{token_body.length}",
         })
@@ -257,7 +255,7 @@ class YouTubeIt
           return response.body
         end
       end
-      
+
       def add_playlist(options)
         playlist_body   = video_xml_for_playlist(options)
         playlist_header = authorization_headers.merge({
@@ -276,7 +274,7 @@ class YouTubeIt
           response = {:code => response.code, :body => response.body}
         end
       end
-      
+
       def add_video_to_playlist(playlist_id, video_id)
         playlist_body   = video_xml_for_video_to_playlist(video_id)
         playlist_header = authorization_headers.merge({
@@ -338,17 +336,33 @@ class YouTubeIt
         "An43094fu"
       end
 
+      def authorization_headers_for_soap
+        {
+          "X-GData-Key"    => "key=#{@dev_key}"
+        }
+      end
+
       def authorization_headers
         {
-          "Authorization"  => "GoogleLogin auth=#{auth_token}"
+          "Authorization"  => "GoogleLogin auth=#{auth_token}",
+          "X-GData-Client" => "#{@client_id}",
+          "X-GData-Key"    => "key=#{@dev_key}"
         }
       end
 
       def parse_upload_error_from(string)
-        REXML::Document.new(string).elements["//errors"].inject('') do | all_faults, error|
-          location = error.elements["location"].text[/media:group\/media:(.*)\/text\(\)/,1]
-          code = error.elements["code"].text
-          all_faults + sprintf("%s: %s\n", location, code)
+        begin
+          REXML::Document.new(string).elements["//errors"].inject('') do | all_faults, error|
+            if error.elements["internalReason"]
+              msg_error = error.elements["internalReason"].text
+            elsif error.elements["location"]
+              msg_error = error.elements["location"].text[/media:group\/media:(.*)\/text\(\)/,1]
+            end
+            code = error.elements["code"].text if error.elements["code"]
+            all_faults + sprintf("%s: %s\n", msg_error, code)
+          end
+        rescue
+          string
         end
       end
 
@@ -356,7 +370,7 @@ class YouTubeIt
         if response.code.to_i == 403
           raise AuthenticationError, response.body[/<TITLE>(.+)<\/TITLE>/, 1]
         elsif response.code.to_i / 10 != 20 # Response in 20x means success
-          raise UploadError, parse_upload_error_from(response.body)
+          raise UploadError, parse_upload_error_from(response.body.gsub(/\n/,''))
         end
       end
 
@@ -420,7 +434,7 @@ class YouTubeIt
           m.id(data[:favorite]) if data[:favorite]
         end.to_s
       end
-      
+
       def video_xml_for_playlist(data)
         b = Builder::XmlMarkup.new
         b.instruct!
@@ -430,7 +444,7 @@ class YouTubeIt
           m.tag!('yt:private') if data[:private]
         end.to_s
       end
-      
+
       def video_xml_for_video_to_playlist(video_id)
         b = Builder::XmlMarkup.new
         b.instruct!

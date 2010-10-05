@@ -113,19 +113,19 @@ class YouTubeIt
     def favorites
       client.favorites
     end
-    
+
     def playlists
       client.playlists
     end
-    
+
     def add_playlist(options)
       client.add_playlist(options)
     end
-    
+
     def add_video_to_playlist(playlist_id, video_id)
       client.add_video_to_playlist(playlist_id, video_id)
     end
-    
+
     def del_playlist(playlist_id)
       client.del_playlist(playlist_id)
     end
