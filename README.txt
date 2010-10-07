@@ -76,7 +76,7 @@ Comments
 
 Favorites
 
-  You can add, del or list your favorites videos:
+  You can add, delete or list your favorites videos:
 
   client = YouTubeIt::Client.new("youtube_username", "youtube_passwd", "developer_key")
 
@@ -88,9 +88,46 @@ Favorites
 
   client.add_favorite(video_id)
 
-*  del favorite:
+*  delete favorite:
 
-  client.del_favorite(video_id)
+  client.delete_favorite(video_id)
+
+Playlist
+
+  You can add, delete or list your playlists:
+
+  client = YouTubeIt::Client.new("youtube_username", "youtube_passwd", "developer_key")
+
+*  get all playlists:
+
+  client.playlists
+
+*  select your playlist:
+
+  client.playlist(playlist_id)
+
+*  get all videos from your playlist:
+
+  my_playlist = client.playlist(playlist_id)
+
+  my_playlist.videos
+
+*  create new playlist:
+
+  my_playlist = client.add_playlist(:title => "new playlist", :description => "playlist description")
+
+*  delete a playlist:
+
+  client.delete_playlist(playlist_id)
+
+*  add video to playlist:
+
+  client.add_video_to_playlist(playlist_id, video_id)
+
+*  remove video from playlist:
+
+  client.remove_video_from_playlist(playlist_id, playlist_entry_id)
+
 
 Access Control List
 
