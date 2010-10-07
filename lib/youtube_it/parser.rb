@@ -1,12 +1,12 @@
 class YouTubeIt
   module Parser #:nodoc:
     class FeedParser #:nodoc:
-      def initialize(url)
-        @url = open(url).read rescue url
+      def initialize(content)
+        @content = open(content).read rescue content
       end
 
       def parse
-        parse_content @url
+        parse_content @content
       end
     end
 
@@ -16,6 +16,16 @@ class YouTubeIt
         doc = REXML::Document.new(content)
         entry = doc.elements["entry"]
         parse_entry(entry)
+      end
+
+      def parse_playlist
+        xml = REXML::Document.new(@content)
+        entry = xml.elements["entry"]
+        YouTubeIt::Model::Playlist.new(
+          :title       => entry.elements["title"].text,
+          :summary     => entry.elements["summary"].text,
+          :playlist_id => entry.elements["id"].text[/playlist([^<]+)/, 1].sub(':',''),
+          :published   => entry.elements["published"].text)
       end
 
     protected

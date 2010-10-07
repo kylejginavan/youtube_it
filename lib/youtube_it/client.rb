@@ -106,12 +106,16 @@ class YouTubeIt
       client.add_favorite(video_id)
     end
 
-    def del_favorite(video_id)
-      client.del_favorite(video_id)
+    def delete_favorite(video_id)
+      client.delete_favorite(video_id)
     end
 
     def favorites
       client.favorites
+    end
+
+    def playlist(playlist_id)
+      client.playlist playlist_id
     end
 
     def playlists
@@ -126,8 +130,12 @@ class YouTubeIt
       client.add_video_to_playlist(playlist_id, video_id)
     end
 
-    def del_playlist(playlist_id)
-      client.del_playlist(playlist_id)
+    def delete_video_from_playlist(playlist_id, playlist_entry_id)
+      client.delete_video_from_playlist(playlist_id, playlist_entry_id)
+    end
+
+    def delete_playlist(playlist_id)
+      client.delete_playlist(playlist_id)
     end
 
     def enable_http_debugging
