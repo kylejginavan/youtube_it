@@ -248,16 +248,23 @@ class TestClient < Test::Unit::TestCase
 
   def test_should_add_and_del_video_from_playlist
     playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
-    video = @client.add_video_to_playlist(playlist[:playlist_id],"iKqJ8z1DPrQ")
+    video = @client.add_video_to_playlist(playlist.playlist_id,"iKqJ8z1DPrQ")
     assert_equal video[:code].to_i, 201
-    assert @client.delete_video_from_playlist(playlist[:playlist_id], video[:playlist_entry_id])
-    assert @client.delete_playlist(playlist[:playlist_id])
+    assert @client.delete_video_from_playlist(playlist.playlist_id, video[:playlist_entry_id])
+    assert @client.delete_playlist(playlist.playlist_id)
   end
 
   def test_should_add_and_del_new_playlist
     result = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
-    assert result[:body].match(/youtube_it test/)
-    assert @client.delete_playlist(result[:playlist_id])
+    assert result.title, "youtube_it test!"
+    assert @client.delete_playlist(result.playlist_id)
+  end
+
+  def test_should_update_playlist
+    playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
+    playlist_updated = @client.update_playlist(playlist.playlist_id, :title => "title changed")
+    assert_equal playlist_updated.title, "title changed"
+    assert @client.delete_playlist(playlist.playlist_id)
   end
 
   private

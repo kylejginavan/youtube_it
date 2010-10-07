@@ -231,7 +231,7 @@ class YouTubeIt
         http_connection do |session|
           response = session.get(playlist_url)
           raise_on_faulty_response(response)
-          return response.body
+          return YouTubeIt::Parser::PlaylistFeedParser.new(response).parse
         end
       end
 
@@ -257,7 +257,7 @@ class YouTubeIt
         http_connection do |session|
           response = session.post(playlist_url, playlist_body, playlist_header)
           raise_on_faulty_response(response)
-          {:code => response.code, :body => response.body, :playlist_id => playlist_id_from(response.body)}
+          return YouTubeIt::Parser::PlaylistFeedParser.new(response).parse
         end
       end
 
@@ -278,20 +278,19 @@ class YouTubeIt
         end
       end
 
-      def update_playlist(playlist_id, video_id)
+      def update_playlist(playlist_id, options)
         playlist_body   = video_xml_for_playlist(options)
         playlist_header = authorization_headers.merge({
           "GData-Version" => "2",
           "Content-Type"   => "application/atom+xml",
           "Content-Length" => "#{playlist_body.length}",
         })
-
-        playlist_url = "/feeds/api/users/#{@user}/playlists"
+        playlist_url = "/feeds/api/users/#{@user}/playlists/#{playlist_id}"
 
         http_connection do |session|
-          response = session.post(playlist_url, playlist_body, playlist_header)
+          response = session.put(playlist_url, playlist_body, playlist_header)
           raise_on_faulty_response(response)
-          {:code => response.code, :body => response.body, :playlist_id => playlist_id_from(response.body)}
+          return YouTubeIt::Parser::PlaylistFeedParser.new(response).parse
         end
       end
 
@@ -305,10 +304,6 @@ class YouTubeIt
         }
 
         playlist_url = "/feeds/api/playlists/#{playlist_id}/#{playlist_entry_id}"
-
-
-        http = Net::HTTP.new(base_url)
-        http.set_debug_output(logger) if @http_debugging
 
         http_connection do |session|
           response = session.delete(playlist_url, playlist_header)

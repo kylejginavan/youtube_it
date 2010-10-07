@@ -22,17 +22,18 @@ class TestVideo < Test::Unit::TestCase
     assert(response.total_result_count > 0)
     assert_instance_of Time, response.updated_at
   end
-  
+
   def test_should_have_response_videos
     video = YouTubeIt::Model::Video.new(:video_id => "http://gdata.youtube.com/feeds/videos/BDqs-OZWw9o")
     response = video.responses
 
     assert_equal "http://gdata.youtube.com/feeds/api/videos/BDqs-OZWw9o/responses", response.feed_id
     assert_equal 25, response.max_result_count
-    assert_equal 25, response.videos.length
+    assert_equal 24, response.videos.length
     assert_equal 1, response.offset
     assert(response.total_result_count > 0)
     assert_instance_of Time, response.updated_at
   end
-  
+
 end
+

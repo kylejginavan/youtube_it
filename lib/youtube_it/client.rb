@@ -126,6 +126,10 @@ class YouTubeIt
       client.add_playlist(options)
     end
 
+    def update_playlist(playlist_id, options)
+      client.update_playlist(playlist_id, options)
+    end
+
     def add_video_to_playlist(playlist_id, video_id)
       client.add_video_to_playlist(playlist_id, video_id)
     end

@@ -18,16 +18,16 @@ end
 
 require 'rake/testtask'
 Rake::TestTask.new(:test) do |test|
-  test.libs << 'spec'
-  test.pattern = 'spec/**/*_spec.rb'
+  test.libs << 'test'
+  test.pattern = 'test/**/test_*.rb'
   test.verbose = true
 end
 
 begin
   require 'rcov/rcovtask'
   Rcov::RcovTask.new do |test|
-    test.libs << 'spec'
-    test.pattern = 'spec/**/*_spec.rb'
+    test.libs << 'test'
+    test.pattern = 'test/**/test_*.rb'
     test.verbose = true
   end
 rescue LoadError
@@ -48,12 +48,5 @@ Rake::RDocTask.new do |rdoc|
   rdoc.title = "constantations #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
-end
-
-require 'spec/rake/spectask'
-desc "Run all specs"
-Spec::Rake::SpecTask.new('spec') do |t|
-  t.spec_opts = ['--colour --format progress --loadby mtime --reverse']
-  t.spec_files = FileList['spec/**/*_spec.rb']
 end
 

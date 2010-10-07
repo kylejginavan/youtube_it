@@ -8,6 +8,31 @@ class YouTubeIt
       def parse
         parse_content @content
       end
+
+      def parse_videos
+        doc = REXML::Document.new(@content)
+        videos = []
+        doc.elements.each("*/entry") do |video|
+          videos << parse_entry(video)
+        end
+        videos
+      end
+    end
+
+    class PlaylistFeedParser < FeedParser #:nodoc:
+
+      def parse_content(content)
+        xml = REXML::Document.new(content.body)
+        entry = xml.elements["entry"] || xml.elements["feed"]
+        YouTubeIt::Model::Playlist.new(
+          :title         => entry.elements["title"].text,
+          :summary       => (entry.elements["summary"] || entry.elements["media:group"].elements["media:description"]).text,
+          :description   => (entry.elements["summary"] || entry.elements["media:group"].elements["media:description"]).text,
+          :playlist_id   => entry.elements["id"].text[/playlist([^<]+)/, 1].sub(':',''),
+          :published     => entry.elements["published"] ? entry.elements["published"].text : nil,
+          :response_code => content.code,
+          :xml           => content.body)
+      end
     end
 
     class VideoFeedParser < FeedParser #:nodoc:
@@ -18,21 +43,11 @@ class YouTubeIt
         parse_entry(entry)
       end
 
-      def parse_playlist
-        xml = REXML::Document.new(@content)
-        entry = xml.elements["entry"]
-        YouTubeIt::Model::Playlist.new(
-          :title       => entry.elements["title"].text,
-          :summary     => entry.elements["summary"].text,
-          :playlist_id => entry.elements["id"].text[/playlist([^<]+)/, 1].sub(':',''),
-          :published   => entry.elements["published"].text)
-      end
-
     protected
       def parse_entry(entry)
         video_id = entry.elements["id"].text
-        published_at = Time.parse(entry.elements["published"].text)
-        updated_at = Time.parse(entry.elements["updated"].text)
+        published_at  = entry.elements["published"] ? Time.parse(entry.elements["published"].text) : nil
+        updated_at    = entry.elements["updated"] ? Time.parse(entry.elements["updated"].text) : nil
 
         # parse the category and keyword lists
         categories = []
@@ -53,7 +68,7 @@ class YouTubeIt
         end
 
         title = entry.elements["title"].text
-        html_content = entry.elements["content"].text
+        html_content = entry.elements["content"] ? entry.elements["content"].text : nil
 
         # parse the author
         author_element = entry.elements["author"]
