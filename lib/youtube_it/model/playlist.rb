@@ -1,8 +1,11 @@
 class YouTubeIt
   module Model
     class Playlist < YouTubeIt::Record
-      # *String*:: User entered description for the playlist.
-      attr_reader :description
+      attr_reader :title, :description, :summary, :playlist_id, :xml, :published, :response_code
+      def videos
+        YouTubeIt::Parser::VideosFeedParser.new("http://gdata.youtube.com/feeds/api/playlists/#{playlist_id}?v=2").parse_videos
+      end
     end
   end
 end
+
