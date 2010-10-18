@@ -45,7 +45,7 @@ class TestClient < Test::Unit::TestCase
     assert_equal 25, response.max_result_count
     assert_equal 1, response.offset
 
-    response = @client.videos_by(:query => "penguin", :page => 2)
+      response = @client.videos_by(:query => "penguin", :page => 2)
     assert_equal "http://gdata.youtube.com/feeds/api/videos", response.feed_id
     assert_equal 25, response.max_result_count
     assert_equal 26, response.offset
@@ -145,13 +145,13 @@ class TestClient < Test::Unit::TestCase
 
   def test_should_get_videos_for_query_search_with_categories_excluded
     video = @client.video_by("EkF4JD2rO3Q")
-    assert_equal "<object width=\"425\" height=\"350\">\n  <param name=\"movie\" value=\"http://www.youtube.com/v/EkF4JD2rO3Q&feature=youtube_gdata\"></param>\n  <param name=\"wmode\" value=\"transparent\"></param>\n  <embed src=\"http://www.youtube.com/v/EkF4JD2rO3Q&feature=youtube_gdata\" type=\"application/x-shockwave-flash\" \n   wmode=\"transparent\" width=\"425\" height=\"350\"></embed>\n</object>\n", video.embed_html
+    assert_equal "<object width=\"425\" height=\"350\">\n  <param name=\"movie\" value=\"http://www.youtube.com/v/EkF4JD2rO3Q&feature=youtube_gdata_player\"></param>\n  <param name=\"wmode\" value=\"transparent\"></param>\n  <embed src=\"http://www.youtube.com/v/EkF4JD2rO3Q&feature=youtube_gdata_player\" type=\"application/x-shockwave-flash\" \n   wmode=\"transparent\" width=\"425\" height=\"350\"></embed>\n</object>\n", video.embed_html
     assert_valid_video video
   end
 
   def test_should_get_video_from_user
     video = @client.video_by_user("chebyte","FQK1URcxmb4")
-    assert_equal "<object width=\"425\" height=\"350\">\n  <param name=\"movie\" value=\"http://www.youtube.com/v/FQK1URcxmb4&feature=youtube_gdata\"></param>\n  <param name=\"wmode\" value=\"transparent\"></param>\n  <embed src=\"http://www.youtube.com/v/FQK1URcxmb4&feature=youtube_gdata\" type=\"application/x-shockwave-flash\" \n   wmode=\"transparent\" width=\"425\" height=\"350\"></embed>\n</object>\n", video.embed_html
+    assert_equal "<object width=\"425\" height=\"350\">\n  <param name=\"movie\" value=\"http://www.youtube.com/v/FQK1URcxmb4&feature=youtube_gdata_player\"></param>\n  <param name=\"wmode\" value=\"transparent\"></param>\n  <embed src=\"http://www.youtube.com/v/FQK1URcxmb4&feature=youtube_gdata_player\" type=\"application/x-shockwave-flash\" \n   wmode=\"transparent\" width=\"425\" height=\"350\"></embed>\n</object>\n", video.embed_html
     assert_valid_video video
   end
 
@@ -190,51 +190,45 @@ class TestClient < Test::Unit::TestCase
   end
 
   def test_should_upload_a_video
-    video_id  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
-    video     = @client.video_by_user(ACCOUNT[:user], video_id)
+    video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
     assert_valid_video video
-    @client.video_delete(video_id)
+    @client.video_delete(video.unique_id)
   end
 
   def test_should_update_a_video
     OPTIONS[:title] = "title changed"
-    @client.video_update("BhTw20Lr4v8", OPTIONS)
-    video  = @client.video_by("BhTw20Lr4v8")
+    video  = @client.video_update("iKqJ8z1DPrQ", OPTIONS)
     assert video.title == "title changed"
-    OPTIONS[:title] = "maddie"
-    @client.video_update("BhTw20Lr4v8", OPTIONS)
+    OPTIONS[:title] = "test rails"
+    @client.video_update("iKqJ8z1DPrQ", OPTIONS)
   end
 
   def test_should_delete_video
-    video_id  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
-    video     = @client.video_by_user(ACCOUNT[:user], video_id)
+    video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
     assert_valid_video video
-    assert @client.video_delete(video_id)
+    assert @client.video_delete(video.unique_id)
   end
 
   def test_should_denied_comments
-    video_id  = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:comment => "denied"))
-    video     = @client.video_by_user(ACCOUNT[:user], video_id)
+    video     = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:comment => "denied"))
     assert_valid_video video
-    doc = Nokogiri::HTML(open("http://www.youtube.com/watch?v=#{video_id}"))
+    doc = Nokogiri::HTML(open("http://www.youtube.com/watch?v=#{video.unique_id}"))
     doc.css('.comments-disabled').each{|tag| assert (tag.content.strip == "Adding comments has been disabled for this video.")}
-    @client.video_delete(video_id)
+    @client.video_delete(video.unique_id)
   end
 
   def test_should_denied_rate
-    video_id  = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:rate => "denied"))
-    video     = @client.video_by_user(ACCOUNT[:user], video_id)
+    video  = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:rate => "denied"))
     assert_valid_video video
-    doc = Nokogiri::HTML(open("http://www.youtube.com/watch?v=#{video_id}"))
+    doc = Nokogiri::HTML(open("http://www.youtube.com/watch?v=#{video.unique_id}"))
     doc.css('#watch-like').each{|tag|; assert (tag.attributes["title"].to_s == "Ratings have been disabled for this video.")}
-    @client.video_delete(video_id)
+    @client.video_delete(video.unique_id)
   end
 
   def test_should_denied_embed
-    video_id  = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:embed => "denied"))
-    video     = @client.video_by_user(ACCOUNT[:user], video_id)
+    video  = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:embed => "denied"))
     assert    video.noembed
-    @client.video_delete(video_id)
+    @client.video_delete(video.unique_id)
   end
 
   def test_should_add_new_comment
@@ -244,10 +238,33 @@ class TestClient < Test::Unit::TestCase
     assert comment.match(/test comment/)
   end
 
-  def test_shoul_add_and_del_video_to_favorite
+  def test_shoul_add_and_delete_video_to_favorite
     video_id ="H1TrfM3xbgc"
-    assert @client.add_favorite(video_id)
-    assert @client.del_favorite(video_id)
+    result = @client.add_favorite(video_id)
+    assert result[:code], 201
+    sleep 4
+    assert @client.delete_favorite(video_id)
+  end
+
+  def test_should_add_and_del_video_from_playlist
+    playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
+    video = @client.add_video_to_playlist(playlist.playlist_id,"iKqJ8z1DPrQ")
+    assert_equal video[:code].to_i, 201
+    assert @client.delete_video_from_playlist(playlist.playlist_id, video[:playlist_entry_id])
+    assert @client.delete_playlist(playlist.playlist_id)
+  end
+
+  def test_should_add_and_del_new_playlist
+    result = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
+    assert result.title, "youtube_it test!"
+    assert @client.delete_playlist(result.playlist_id)
+  end
+
+  def test_should_update_playlist
+    playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
+    playlist_updated = @client.update_playlist(playlist.playlist_id, :title => "title changed")
+    assert_equal playlist_updated.title, "title changed"
+    assert @client.delete_playlist(playlist.playlist_id)
   end
 
   private
@@ -297,7 +314,7 @@ class TestClient < Test::Unit::TestCase
 
       assert_instance_of Time, video.updated_at
       # http://gdata.youtube.com/feeds/videos/IHVaXG1thXM
-      assert_valid_url video.video_id
+      assert_valid_url video.unique_id
       assert_instance_of Fixnum, video.view_count
       assert_instance_of Fixnum, video.favorite_count
 
