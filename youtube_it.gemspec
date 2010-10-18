@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{youtube_it}
-  s.version = "0.0.6"
+  s.version = "0.0.7"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["chebyte", "kylejginavan"]
-  s.date = %q{2010-10-07}
+  s.date = %q{2010-10-18}
   s.description = %q{Upload, delete, update, comment on youtube videos all from one gem.}
   s.email = %q{kylejginavan@gmail.com}
   s.extra_rdoc_files = [
@@ -49,8 +49,7 @@ Gem::Specification.new do |s|
      "test/test_client.rb",
      "test/test_video.rb",
      "test/test_video_search.rb",
-     "youtube_it.gemspec",
-     "youtube_it.tmproj"
+     "youtube_it.gemspec"
   ]
   s.homepage = %q{http://github.com/kylejginavan/youtube_it}
   s.rdoc_options = ["--charset=UTF-8"]
@@ -58,10 +57,10 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.6}
   s.summary = %q{The most complete Ruby wrapper for youtube api's}
   s.test_files = [
-    "test/test_client.rb",
+    "test/helper.rb",
      "test/test_chain_io.rb",
+     "test/test_client.rb",
      "test/test_video.rb",
-     "test/helper.rb",
      "test/test_video_search.rb"
   ]
 
