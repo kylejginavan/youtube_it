@@ -83,6 +83,10 @@ class YouTubeIt
         description = media_group.elements["media:description"].text
         duration = media_group.elements["yt:duration"].attributes["seconds"].to_i
 
+        unless media_group.elements["yt:aspectRatio"].nil?
+          widescreen = media_group.elements["yt:aspectRatio"].text == 'widescreen' ? true : false
+        end
+
         media_content = []
         media_group.elements.each("media:content") do |mce|
           media_content << parse_media_content(mce)
@@ -142,6 +146,7 @@ class YouTubeIt
           :rating => rating,
           :view_count => view_count,
           :favorite_count => favorite_count,
+          :widescreen => widescreen,
           :noembed => noembed,
           :racy => racy,
           :where => where,
