@@ -267,6 +267,13 @@ class TestClient < Test::Unit::TestCase
     assert @client.delete_playlist(playlist.playlist_id)
   end
 
+  def test_should_determine_if_widescreen_video_is_widescreen
+    widescreen_id = 'QqQVll-MP3I'
+
+    video = @client.video_by(widescreen_id)
+    assert video.widescreen?
+  end
+
   private
 
     def assert_valid_video (video)

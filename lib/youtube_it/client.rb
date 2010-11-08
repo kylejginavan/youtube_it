@@ -67,7 +67,8 @@ class YouTubeIt
     # === Returns
     # YouTubeIt::Model::Video
     def video_by(vid)
-      video_id = vid =~ /^http/ ? vid : "http://gdata.youtube.com/feeds/videos/#{vid}"
+#     video_id = vid =~ /^http/ ? vid : "http://gdata.youtube.com/feeds/videos/#{vid}"
+      video_id = vid =~ /^http/ ? vid : "http://gdata.youtube.com/feeds/api/videos/#{vid}?v=2"
       parser = YouTubeIt::Parser::VideoFeedParser.new(video_id)
       parser.parse
     end
