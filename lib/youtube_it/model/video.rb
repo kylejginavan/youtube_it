@@ -196,7 +196,7 @@ EDOC
       #
       # === Returns
       # String: The HTML for embedding the video on your website.
-      def embed_html_with_width(width)
+      def embed_html_with_width(width = 1280)
         height = (widescreen? ? width * 9/16 : width * 3/4) + 25
 
         <<EDOC

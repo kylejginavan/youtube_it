@@ -137,6 +137,9 @@ Access Control List
 
 * :rate, :comment, :commentVote, :videoRespond, :list, :embed, :syndicate
 
+  with two values:
+*    allowed, denied
+
   Example
 
   client = YouTubeIt::Client.new("youtube_username", "youtube_passwd", "developer_key")
@@ -171,6 +174,14 @@ Access Control List
       <%= file_field_tag :file %>
       <%= submit_tag "Upload video" %>
     <% end %>
+
+== WideScreen Videos
+
+  if the videos has support for widescreen, you can show them with this way
+
+    video.embed_html_with_width(1280)
+
+  you can specify width or just use the default (1280)
 
 == LOGGING
 
