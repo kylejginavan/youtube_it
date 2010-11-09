@@ -145,16 +145,15 @@ class TestClient < Test::Unit::TestCase
 
   def test_should_get_videos_for_query_search_with_categories_excluded
     video = @client.video_by("EkF4JD2rO3Q")
-    assert_equal "<object width=\"425\" height=\"350\">\n  <param name=\"movie\" value=\"http://www.youtube.com/v/EkF4JD2rO3Q&feature=youtube_gdata_player\"></param>\n  <param name=\"wmode\" value=\"transparent\"></param>\n  <embed src=\"http://www.youtube.com/v/EkF4JD2rO3Q&feature=youtube_gdata_player\" type=\"application/x-shockwave-flash\" \n   wmode=\"transparent\" width=\"425\" height=\"350\"></embed>\n</object>\n", video.embed_html
+    assert_equal "<object width=\"425\" height=\"350\">\n  <param name=\"movie\" value=\"http://www.youtube.com/v/EkF4JD2rO3Q&feature=youtube_gdata_player\"></param>\n  <param name=\"wmode\" value=\"transparent\"></param>\n  <embed src=\"http://www.youtube.com/v/EkF4JD2rO3Q&feature=youtube_gdata_player\" type=\"application/x-shockwave-flash\"\n   wmode=\"transparent\" width=\"425\" height=\"350\"></embed>\n</object>\n", video.embed_html
     assert_valid_video video
   end
 
   def test_should_get_video_from_user
     video = @client.video_by_user("chebyte","FQK1URcxmb4")
-    assert_equal "<object width=\"425\" height=\"350\">\n  <param name=\"movie\" value=\"http://www.youtube.com/v/FQK1URcxmb4&feature=youtube_gdata_player\"></param>\n  <param name=\"wmode\" value=\"transparent\"></param>\n  <embed src=\"http://www.youtube.com/v/FQK1URcxmb4&feature=youtube_gdata_player\" type=\"application/x-shockwave-flash\" \n   wmode=\"transparent\" width=\"425\" height=\"350\"></embed>\n</object>\n", video.embed_html
+    assert_equal "<object width=\"425\" height=\"350\">\n  <param name=\"movie\" value=\"http://www.youtube.com/v/FQK1URcxmb4&feature=youtube_gdata_player\"></param>\n  <param name=\"wmode\" value=\"transparent\"></param>\n  <embed src=\"http://www.youtube.com/v/FQK1URcxmb4&feature=youtube_gdata_player\" type=\"application/x-shockwave-flash\"\n   wmode=\"transparent\" width=\"425\" height=\"350\"></embed>\n</object>\n", video.embed_html
     assert_valid_video video
   end
-
 
   def test_should_always_return_a_logger
     @client = YouTubeIt::Client.new
@@ -213,7 +212,7 @@ class TestClient < Test::Unit::TestCase
     video     = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:comment => "denied"))
     assert_valid_video video
     doc = Nokogiri::HTML(open("http://www.youtube.com/watch?v=#{video.unique_id}"))
-    doc.css('.comments-disabled').each{|tag| assert (tag.content.strip == "Adding comments has been disabled for this video.")}
+    doc.css('.comments-disabled').each{|tag| assert (tag.content.strip == "All Comments\n        \n           Adding comments has been disabled for this video.")}
     @client.video_delete(video.unique_id)
   end
 

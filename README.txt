@@ -137,8 +137,8 @@ Access Control List
 
 * :rate, :comment, :commentVote, :videoRespond, :list, :embed, :syndicate
 
-  with two values:
-*    allowed, denied
+  with just two values:
+*    allowed or denied
 
   Example
 
