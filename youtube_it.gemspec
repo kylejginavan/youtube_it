@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{youtube_it}
-  s.version = "0.0.7"
+  s.version = "0.0.8"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["chebyte", "kylejginavan"]
@@ -16,7 +16,8 @@ Gem::Specification.new do |s|
     "README.txt"
   ]
   s.files = [
-    "History.txt",
+    ".gitignore",
+     "History.txt",
      "Manifest.txt",
      "README.txt",
      "Rakefile",
@@ -57,10 +58,10 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.6}
   s.summary = %q{The most complete Ruby wrapper for youtube api's}
   s.test_files = [
-    "test/test_client.rb",
+    "test/helper.rb",
      "test/test_chain_io.rb",
+     "test/test_client.rb",
      "test/test_video.rb",
-     "test/helper.rb",
      "test/test_video_search.rb"
   ]
 
