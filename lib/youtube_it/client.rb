@@ -2,8 +2,23 @@ class YouTubeIt
   class Client
     include YouTubeIt::Logging
     # Previously this was a logger instance but we now do it globally
-    def initialize user = nil, pass = nil, dev_key = nil, client_id = 'youtube_it', legacy_debug_flag = nil
-      @user, @pass, @dev_key, @client_id = user, pass, dev_key, client_id
+
+    def initialize *params
+      if params.first.is_a?(Hash)
+        hash_options = params.first
+        @user                  = hash_options[:username]
+        @pass                  = hash_options[:password]
+        @dev_key               = hash_options[:dev_key]
+        @client_id             = hash_options[:client_id] || "youtube_it"
+        @legacy_debug_flag     = hash_options[:debug]
+      else
+        puts "* warning: the method YouTubeIt::Client.new(user, passwd, dev_key) is depricated, use YouTubeIt::Client.new(:username => 'user', :password => 'passwd', :dev_key => 'dev_key')"
+        @user               = params.shift
+        @pass               = params.shift
+        @dev_key            = params.shift
+        @client_id          = params.shift || "youtube_it"
+        @legacy_debug_flag  = params.shift
+      end
     end
 
     # Retrieves an array of standard feed, custom query, or user videos.
@@ -37,6 +52,8 @@ class YouTubeIt
       request_params = params.respond_to?(:to_hash) ? params : options
       request_params[:page] = integer_or_default(request_params[:page], 1)
 
+      request_params[:dev_key] = @dev_key if @dev_key
+
       unless request_params[:max_results]
         request_params[:max_results] = integer_or_default(request_params[:per_page], 25)
       end
@@ -67,14 +84,13 @@ class YouTubeIt
     # === Returns
     # YouTubeIt::Model::Video
     def video_by(vid)
-#     video_id = vid =~ /^http/ ? vid : "http://gdata.youtube.com/feeds/videos/#{vid}"
-      video_id = vid =~ /^http/ ? vid : "http://gdata.youtube.com/feeds/api/videos/#{vid}?v=2"
+      video_id = vid =~ /^http/ ? vid : "http://gdata.youtube.com/feeds/api/videos/#{vid}?v=2#{@dev_key ? '&key='+@dev_key : ''}"
       parser = YouTubeIt::Parser::VideoFeedParser.new(video_id)
       parser.parse
     end
 
     def video_by_user(user, vid)
-      video_id = "http://gdata.youtube.com/feeds/api/users/#{user}/uploads/#{vid}"
+      video_id = "http://gdata.youtube.com/feeds/api/users/#{user}/uploads/#{vid}?v=2#{@dev_key ? '&key='+@dev_key : ''}"
       parser = YouTubeIt::Parser::VideoFeedParser.new(video_id)
       parser.parse
     end
