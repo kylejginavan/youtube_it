@@ -1,5 +1,5 @@
 class YouTubeIt
-  module Request #:nodoc:  
+  module Request #:nodoc:
     class StandardSearch < BaseSearch #:nodoc:
       attr_reader :max_results                     # max_results
       attr_reader :order_by                        # orderby, ([relevance], viewCount, published, rating)
@@ -11,6 +11,7 @@ class YouTubeIt
                 :recently_featured, :watch_on_mobile ]
 
       def initialize(type, options={})
+        @dev_key = options[:dev_key] if options[:dev_key]
         if TYPES.include?(type)
           @max_results, @order_by, @offset, @time = nil
           set_instance_variables(options)
@@ -23,18 +24,19 @@ class YouTubeIt
       private
 
       def base_url
-        super << "standardfeeds/"        
+        super << "standardfeeds/"
       end
 
       def to_youtube_params
-        { 
-          'max-results' => @max_results, 
-          'orderby' => @order_by, 
-          'start-index' => @offset, 
-          'time' => @time 
+        {
+          'max-results' => @max_results,
+          'orderby' => @order_by,
+          'start-index' => @offset,
+          'time' => @time
         }
-      end   
+      end
     end
-    
+
   end
 end
+

@@ -214,7 +214,6 @@ EDOC
       # === Returns
       #   String: Absolute URL for embedding video
       def embed_url
-        #@player_url.sub('watch?', '').sub('=', '/')
         @player_url.sub('watch?', '').sub('=', '/').sub('feature/', 'feature=')
       end
 

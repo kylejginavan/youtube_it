@@ -10,7 +10,7 @@ class TestClient < Test::Unit::TestCase
   RAILS_ENV = "test"
 
   def setup
-    @client = YouTubeIt::Client.new(ACCOUNT[:user], ACCOUNT[:passwd] , ACCOUNT[:dev_key])
+    @client = YouTubeIt::Client.new(:username => ACCOUNT[:user], :password => ACCOUNT[:passwd] , :dev_key => ACCOUNT[:dev_key])
   end
 
   def test_should_respond_to_a_basic_query
@@ -161,7 +161,7 @@ class TestClient < Test::Unit::TestCase
   end
 
   def test_should_not_bail_if_debug_is_true
-    assert_nothing_raised { YouTubeIt::Client.new(true) }
+    assert_nothing_raised { YouTubeIt::Client.new(:debug => true) }
   end
 
   def test_should_determine_if_embeddable_video_is_embeddable
@@ -196,10 +196,10 @@ class TestClient < Test::Unit::TestCase
 
   def test_should_update_a_video
     OPTIONS[:title] = "title changed"
-    video  = @client.video_update("iKqJ8z1DPrQ", OPTIONS)
-    assert video.title == "title changed"
-    OPTIONS[:title] = "test rails"
-    @client.video_update("iKqJ8z1DPrQ", OPTIONS)
+    video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
+    updated_video  = @client.video_update(video.unique_id, OPTIONS)
+    assert updated_video.title == "title changed"
+    @client.video_delete(video.unique_id)
   end
 
   def test_should_delete_video

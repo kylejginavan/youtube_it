@@ -13,6 +13,10 @@ Create a client:
   require 'youtube_it'
   client = YouTubeIt::Client.new
 
+  if you need use your dev_key for search you can make
+
+  client = YouTubeIt::Client.new(:dev_key => 'your dev key')
+
 Basic queries:
 
   client.videos_by(:query => "penguin")
@@ -40,7 +44,7 @@ Upload videos:
   You need on youtube account and developer key
   You can get these keys at the http://code.google.com/apis/youtube/dashboard/
 
-  client = YouTubeIt::Client.new("youtube_username", "youtube_passwd", "developer_key")
+  client = YouTubeIt::Client.new(:username => "youtube_username", :password =>  "youtube_passwd", :dev_key => "developer_key")
 
   Or better yet, you can use OAuth
 
@@ -64,7 +68,7 @@ Comments
 
   You can add or list comments with the following way:
 
-  client = YouTubeIt::Client.new("youtube_username", "youtube_passwd", "developer_key")
+  client = YouTubeIt::Client.new(:username => "youtube_username", :password =>  "youtube_passwd", :dev_key => "developer_key")
 
 *  get all comments:
 
@@ -78,7 +82,7 @@ Favorites
 
   You can add, delete or list your favorites videos:
 
-  client = YouTubeIt::Client.new("youtube_username", "youtube_passwd", "developer_key")
+  client = YouTubeIt::Client.new(:username => "youtube_username", :password =>  "youtube_passwd", :dev_key => "developer_key")
 
 *  get all favorites:
 
@@ -96,7 +100,7 @@ Playlist
 
   You can add, delete or list your playlists:
 
-  client = YouTubeIt::Client.new("youtube_username", "youtube_passwd", "developer_key")
+  client = YouTubeIt::Client.new(:username => "youtube_username", :password =>  "youtube_passwd", :dev_key => "developer_key")
 
 *  get all playlists:
 
@@ -142,7 +146,7 @@ Access Control List
 
   Example
 
-  client = YouTubeIt::Client.new("youtube_username", "youtube_passwd", "developer_key")
+  client = YouTubeIt::Client.new(:username => "youtube_username", :password =>  "youtube_passwd", :dev_key => "developer_key")
 
 * upload video with denied comments
 

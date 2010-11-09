@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["chebyte", "kylejginavan"]
-  s.date = %q{2010-10-18}
+  s.date = %q{2010-11-09}
   s.description = %q{Upload, delete, update, comment on youtube videos all from one gem.}
   s.email = %q{kylejginavan@gmail.com}
   s.extra_rdoc_files = [
@@ -57,10 +57,10 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.6}
   s.summary = %q{The most complete Ruby wrapper for youtube api's}
   s.test_files = [
-    "test/helper.rb",
+    "test/test_client.rb",
      "test/test_chain_io.rb",
-     "test/test_client.rb",
      "test/test_video.rb",
+     "test/helper.rb",
      "test/test_video_search.rb"
   ]
 
