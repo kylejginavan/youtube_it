@@ -14,6 +14,8 @@ class YouTubeIt
       attr_reader :video_format                    # format (1=mobile devices)
       attr_reader :racy                            # racy ([exclude], include)
       attr_reader :author
+      attr_reader :lang                            # lt
+
 
       def initialize(params={})
         # Initialize our various member data to avoid warnings and so we'll
@@ -21,7 +23,7 @@ class YouTubeIt
         @max_results, @order_by,
         @offset, @query,
         @response_format, @video_format,
-        @racy, @author = nil
+        @racy, @author, @lang = nil
         @url = base_url
         @dev_key = params[:dev_key] if params[:dev_key]
 
@@ -56,7 +58,8 @@ class YouTubeIt
           'alt' => @response_format,
           'format' => @video_format,
           'racy' => @racy,
-          'author' => @author
+          'author' => @author,
+          'lr' => @lang
         }
       end
 
