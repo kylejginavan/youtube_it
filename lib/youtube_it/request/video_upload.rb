@@ -118,7 +118,7 @@ class YouTubeIt
             response = session.put(update_url, update_body, update_header)
           end
         else
-          upload_headers.merge!(authorization_headers_for_soap)
+          update_header.merge!(authorization_headers_for_soap)
           response = @access_token.put("http://"+base_url+update_url, update_body, update_header)
         end
 
@@ -152,20 +152,28 @@ class YouTubeIt
 
       def get_upload_token(options, nexturl)
         @opts = options
-
         token_body    = video_xml
-        token_header  = authorization_headers.merge({
+
+        token_header = {
           "Content-Type"   => "application/atom+xml; charset=UTF-8",
           "Content-Length" => "#{token_body.length}",
-        })
+        }
         token_url = "/action/GetUploadToken"
+        
+        if @access_token.nil?
+          token_header.merge!(authorization_headers)
 
-        http_connection do |session|
-          response = session.post(token_url, token_body, token_header)
-          raise_on_faulty_response(response)
-          return {:url    => "#{response.body[/<url>(.+)<\/url>/, 1]}?nexturl=#{nexturl}",
-                  :token  => response.body[/<token>(.+)<\/token>/, 1]}
+          http_connection do |session|
+            response = session.post(token_url, token_body, token_header)
+          end
+        else
+          token_header.merge!(authorization_headers_for_soap)
+          response = @access_token.post(token_url, token_body, token_header)
         end
+        raise_on_faulty_response(response)
+        return {:url    => "#{response.body[/<url>(.+)<\/url>/, 1]}?nexturl=#{nexturl}",
+                :token  => response.body[/<token>(.+)<\/token>/, 1]}
+        
       end
 
       def add_comment(video_id, comment)
@@ -496,4 +504,3 @@ class YouTubeIt
     end
   end
 end
-
