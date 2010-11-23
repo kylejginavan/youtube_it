@@ -185,7 +185,7 @@ class YouTubeIt
     end
 
     def consumer
-      @consumer ||= OAuth::Consumer.new(@consumer_key,@consumer_secret,{
+      @consumer ||= ::OAuth::Consumer.new(@consumer_key,@consumer_secret,{
         :site=>"https://www.google.com",
         :request_token_path=>"/accounts/OAuthGetRequestToken",
         :authorize_path=>"/accounts/OAuthAuthorizeToken",
@@ -197,11 +197,11 @@ class YouTubeIt
     end
 
     def access_token
-      @access_token = OAuth::AccessToken.new(consumer, @atoken, @asecret)
+      @access_token = ::OAuth::AccessToken.new(consumer, @atoken, @asecret)
     end
 
     def authorize_from_request(rtoken,rsecret,verifier)
-      request_token = OAuth::RequestToken.new(consumer,rtoken,rsecret)
+      request_token = ::OAuth::RequestToken.new(consumer,rtoken,rsecret)
       access_token = request_token.get_access_token({:oauth_verifier => verifier})
       @atoken,@asecret = access_token.token, access_token.secret
     end
