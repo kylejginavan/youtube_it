@@ -9,6 +9,7 @@ begin
     gem.description = %Q{Upload, delete, update, comment on youtube videos all from one gem.}
     gem.email = "kylejginavan@gmail.com"
     gem.homepage = "http://github.com/kylejginavan/youtube_it"
+    gem.add_dependency('oauth','>=0.4.4')
     gem.authors = ["chebyte","kylejginavan"]
   end
   Jeweler::GemcutterTasks.new

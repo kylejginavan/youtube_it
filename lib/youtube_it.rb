@@ -4,6 +4,7 @@ require 'net/https'
 require 'digest/md5'
 require 'rexml/document'
 require 'builder'
+require 'oauth'
 
 class YouTubeIt
   
