@@ -82,7 +82,7 @@ class YouTubeIt
             response = session.request(post)
           end
         else
-          upload_headers.merge!(authorization_headers_for_soap)
+          upload_headers.merge!(authorization_headers_for_oauth)
           url = 'http://%s/feeds/api/users/%s/uploads' % [uploads_url, @user]
           response = @access_token.post(url, post_body_io, upload_headers)
         end
@@ -118,7 +118,7 @@ class YouTubeIt
             response = session.put(update_url, update_body, update_header)
           end
         else
-          update_header.merge!(authorization_headers_for_soap)
+          update_header.merge!(authorization_headers_for_oauth)
           response = @access_token.put("http://"+base_url+update_url, update_body, update_header)
         end
 
@@ -142,7 +142,7 @@ class YouTubeIt
             raise_on_faulty_response(response)
           end
         else
-          upload_headers.merge!(authorization_headers_for_soap)
+          upload_headers.merge!(authorization_headers_for_oauth)
           response = @access_token.delete("http://"+base_url+delete_url, delete_header)
           raise_on_faulty_response(response)
         end
@@ -162,13 +162,12 @@ class YouTubeIt
         
         if @access_token.nil?
           token_header.merge!(authorization_headers)
-
           http_connection do |session|
             response = session.post(token_url, token_body, token_header)
           end
         else
-          token_header.merge!(authorization_headers_for_soap)
-          response = @access_token.post(token_url, token_body, token_header)
+          token_header.merge!(authorization_headers_for_oauth)
+          response = @access_token.post("http://"+base_url+token_url, token_body, token_header)
         end
         raise_on_faulty_response(response)
         return {:url    => "#{response.body[/<url>(.+)<\/url>/, 1]}?nexturl=#{nexturl}",
@@ -357,7 +356,7 @@ class YouTubeIt
         "An43094fu"
       end
 
-      def authorization_headers_for_soap
+      def authorization_headers_for_oauth
         {
           "X-GData-Key"    => "key=#{@dev_key}"
         }
