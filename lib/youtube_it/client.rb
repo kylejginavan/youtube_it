@@ -180,8 +180,24 @@ class YouTubeIt
   end
 
   class OAuthClient < Client
-    def initialize ctoken = nil, csecret = nil, user = nil, dev_key = nil, client_id = 'youtube_it', legacy_debug_flag = nil
-      @consumer_key, @consumer_secret, @user, @dev_key, @client_id = ctoken, csecret, user, dev_key, client_id
+    def initialize *params
+      if params.first.is_a?(Hash)
+        hash_options = params.first
+        @consumer_key                  = hash_options[:consumer_key]
+        @consumer_secret               = hash_options[:consumer_secret]
+        @user                          = hash_options[:username]
+        @dev_key                       = hash_options[:dev_key]
+        @client_id                     = hash_options[:client_id] || "youtube_it"
+        @legacy_debug_flag             = hash_options[:debug]
+      else
+        puts "* warning: the method YouTubeIt::OAuthClient.new(consumer_key, consumer_secrect, dev_key) is depricated, use YouTubeIt::OAuthClient.new(:consumer_key => 'consumer key', :consumer_secret => 'consumer secret', :dev_key => 'dev_key')"
+        @consumer_key               = params.shift
+        @consumer_secret            = params.shift
+        @dev_key                    = params.shift
+        @user                       = params.shift
+        @client_id                  = params.shift || "youtube_it"
+        @legacy_debug_flag          = params.shift
+      end
     end
 
     def consumer
