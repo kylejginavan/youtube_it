@@ -99,18 +99,15 @@ class YouTubeIt
       #   :private
       # When the authentication credentials are incorrect, an AuthenticationError will be raised.
       def update(video_id, options)
-        response = ""
+        response = nil
         @opts = options
-
         update_body = video_xml
-
         update_header = {
           "GData-Version" => "2",
           "Content-Type"   => "application/atom+xml",
           "Content-Length" => "#{update_body.length}",
         }
-
-        update_url = "/feeds/api/users/#{@user}/uploads/#{video_id}"
+        update_url = "/feeds/api/users/default/uploads/#{video_id}"
 
         if @access_token.nil?
           update_header.merge!(authorization_headers)
@@ -128,12 +125,12 @@ class YouTubeIt
 
       # Delete a video on YouTube
       def delete(video_id)
+        response = nil
         delete_header = {
           "Content-Type"   => "application/atom+xml; charset=UTF-8",
           "Content-Length" => "0",
         }
-
-        delete_url = "/feeds/api/users/#{@user}/uploads/#{video_id}"
+        delete_url = "/feeds/api/users/default/uploads/#{video_id}"
 
         if @access_token.nil?
           delete_header.merge!(authorization_headers)
@@ -146,14 +143,12 @@ class YouTubeIt
           response = @access_token.delete("http://"+base_url+delete_url, delete_header)
           raise_on_faulty_response(response)
         end
-
         return true
       end
 
       def get_upload_token(options, nexturl)
         @opts = options
         token_body    = video_xml
-
         token_header = {
           "Content-Type"   => "application/atom+xml; charset=UTF-8",
           "Content-Length" => "#{token_body.length}",
