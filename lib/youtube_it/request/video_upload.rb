@@ -16,10 +16,31 @@ class YouTubeIt
     #
     class VideoUpload
       include YouTubeIt::Logging
-      def initialize user, pass, dev_key, client_id = 'youtube_it', access_token = nil
-        @user, @pass, @dev_key, @client_id, @access_token = user, pass, dev_key, client_id, access_token
+      def initialize user, pass, dev_key, access_token = nil, authsub_token = nil, client_id = 'youtube_it'
+        @user, @password, @dev_key, @access_token, @authsub_token, @client_id  = user, pass, dev_key, access_token, authsub_token, client_id
         @http_debugging = false
       end
+
+      def initialize *params
+        if params.first.is_a?(Hash)
+          hash_options = params.first
+          @user                          = hash_options[:username]
+          @password                      = hash_options[:password]
+          @dev_key                       = hash_options[:dev_key]
+          @access_token                  = hash_options[:access_token]
+          @authsub_token                 = hash_options[:authsub_token]
+          @client_id                     = hash_options[:client_id] || "youtube_it"
+        else
+          puts "* warning: the method YouTubeIt::Upload::VideoUpload.new(username, password, dev_key) is depricated, use YouTubeIt::Upload::VideoUpload.new(:username => 'user', :password => 'passwd', :dev_key => 'dev_key')"
+          @user                          = params.shift
+          @password                      = params.shift
+          @dev_key                       = params.shift
+          @access_token                  = params.shift
+          @authsub_token                 = params.shift
+          @client_id                     = params.shift || "youtube_it"
+        end
+      end
+
 
       def enable_http_debugging
         @http_debugging = true
@@ -396,12 +417,17 @@ class YouTubeIt
       end
 
       def authorization_headers
-        {
-          "Authorization"  => "GoogleLogin auth=#{auth_token}",
-          "X-GData-Client" => "#{@client_id}",
-          "X-GData-Key"    => "key=#{@dev_key}",
-          "GData-Version" => "2",
-        }
+        header = {
+                  "X-GData-Client" => "#{@client_id}",
+                  "X-GData-Key"    => "key=#{@dev_key}",
+                  "GData-Version" => "2",
+                }
+        if @authsub_token
+          header.merge!("Authorization"  => "AuthSub token=#{@authsub_token}")
+        else
+          header.merge!("Authorization"  => "GoogleLogin auth=#{auth_token}")
+        end
+        header
       end
 
       def parse_upload_error_from(string)
@@ -457,7 +483,7 @@ class YouTubeIt
         @auth_token ||= begin
           http = Net::HTTP.new("www.google.com", 443)
           http.use_ssl = true
-          body = "Email=#{YouTubeIt.esc @user}&Passwd=#{YouTubeIt.esc @pass}&service=youtube&source=#{YouTubeIt.esc @client_id}"
+          body = "Email=#{YouTubeIt.esc @user}&Passwd=#{YouTubeIt.esc @password}&service=youtube&source=#{YouTubeIt.esc @client_id}"
           response = http.post("/youtube/accounts/ClientLogin", body, "Content-Type" => "application/x-www-form-urlencoded")
           raise UploadError, response.body[/Error=(.+)/,1] if response.code.to_i != 200
           @auth_token = response.body[/Auth=(.+)/, 1]
