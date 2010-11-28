@@ -166,7 +166,7 @@ class YouTubeIt
     private
 
     def client
-      @client ||= YouTubeIt::Upload::VideoUpload.new(@user, @pass, @dev_key)
+      @client ||= YouTubeIt::Upload::VideoUpload.new(:username => @user, :password => @pass, :dev_key => @dev_key)
     end
 
     def calculate_offset(page, per_page)
@@ -177,6 +177,74 @@ class YouTubeIt
       value = value.to_i
       value > 0 ? value : default
     end
+  end
+
+  class AuthSubClient < Client
+    def initialize *params
+      if params.first.is_a?(Hash)
+        hash_options = params.first
+        @authsub_token                 = hash_options[:token]
+        @dev_key                       = hash_options[:dev_key]
+        @client_id                     = hash_options[:client_id] || "youtube_it"
+        @legacy_debug_flag             = hash_options[:debug]
+      else
+        puts "* warning: the method YouTubeIt::AuthSubClient.new(token, dev_key) is depricated, use YouTubeIt::AuthSubClient.new(:token => 'token', :dev_key => 'dev_key')"
+        @authsub_token              = params.shift
+        @dev_key                    = params.shift
+        @client_id                  = params.shift || "youtube_it"
+        @legacy_debug_flag          = params.shift
+      end
+    end
+
+    def create_session_token
+      response = nil
+      session_token_url = "/accounts/AuthSubSessionToken"
+
+      http_connection do |session|
+        response = session.get2('https://%s' % session_token_url,session_token_header).body
+      end
+      @authsub_token = response.sub('Token=','')
+    end
+
+    def revoke_session_token
+      response = nil
+      session_token_url = "/accounts/AuthSubRevokeToken"
+
+      http_connection do |session|
+        response = session.get2('https://%s' % session_token_url,session_token_header).code
+      end
+      response.to_s == '200' ? true : false
+    end
+
+    def session_token_info
+      response = nil
+      session_token_url = "/accounts/AuthSubTokenInfo"
+
+      http_connection do |session|
+        response = session.get2('https://%s' % session_token_url,session_token_header)
+      end
+      {:code => response.code, :body => response.body }
+    end
+    
+    private
+      def client
+        @client ||= YouTubeIt::Upload::VideoUpload.new(:dev_key => @dev_key, :authsub_token => @authsub_token)
+      end
+      
+      def session_token_header
+        {
+          "Content-Type"   => "application/x-www-form-urlencoded",
+          "Authorization"  => "AuthSub token=#{@authsub_token}"
+        }        
+      end
+      
+      def http_connection
+        http = Net::HTTP.new("www.google.com")
+        http.set_debug_output(logger) if @http_debugging
+        http.start do |session|
+          yield(session)
+        end
+      end
   end
 
   class OAuthClient < Client
@@ -191,12 +259,12 @@ class YouTubeIt
         @legacy_debug_flag             = hash_options[:debug]
       else
         puts "* warning: the method YouTubeIt::OAuthClient.new(consumer_key, consumer_secrect, dev_key) is depricated, use YouTubeIt::OAuthClient.new(:consumer_key => 'consumer key', :consumer_secret => 'consumer secret', :dev_key => 'dev_key')"
-        @consumer_key               = params.shift
-        @consumer_secret            = params.shift
-        @dev_key                    = params.shift
-        @user                       = params.shift
-        @client_id                  = params.shift || "youtube_it"
-        @legacy_debug_flag          = params.shift
+        @consumer_key                  = params.shift
+        @consumer_secret               = params.shift
+        @dev_key                       = params.shift
+        @user                          = params.shift
+        @client_id                     = params.shift || "youtube_it"
+        @legacy_debug_flag             = params.shift
       end
     end
 
@@ -231,11 +299,12 @@ class YouTubeIt
       REXML::Document.new(body).elements["entry"].elements['author'].elements['name'].text
     end
 
+
     private
 
     def client
       # IMPORTANT: make sure authorize_from_access is called before client is fetched
-      @client ||= YouTubeIt::Upload::VideoUpload.new(@user, "", @dev_key, "youtube_it", access_token)
+      @client ||= YouTubeIt::Upload::VideoUpload.new(:username => current_user, :dev_key => @dev_key, :acces_token => access_token)
     end
 
   end
