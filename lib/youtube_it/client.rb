@@ -304,7 +304,7 @@ class YouTubeIt
 
     def client
       # IMPORTANT: make sure authorize_from_access is called before client is fetched
-      @client ||= YouTubeIt::Upload::VideoUpload.new(:username => current_user, :dev_key => @dev_key, :acces_token => access_token)
+      @client ||= YouTubeIt::Upload::VideoUpload.new(:username => current_user, :dev_key => @dev_key, :access_token => access_token)
     end
 
   end
