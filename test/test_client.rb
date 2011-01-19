@@ -266,6 +266,12 @@ class TestClient < Test::Unit::TestCase
     assert_equal playlist_updated.title, "title changed"
     assert @client.delete_playlist(playlist.playlist_id)
   end
+
+  def test_should_list_playlist_for_user
+    result = @client.playlists_for('chebyte')
+    assert result.last.title, "rock"
+  end
+
   
   def test_should_determine_if_widescreen_video_is_widescreen
     widescreen_id = 'QqQVll-MP3I'
