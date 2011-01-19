@@ -132,7 +132,10 @@ Playlist
 
   client.remove_video_from_playlist(playlist_id, playlist_entry_id)
 
-
+* get all playlists from some user
+  
+  client.playlists_for(user) #return array with the playlists
+  
 Access Control List
 
   You can give permissions in your videos, for example denied comments, rate, etc...
