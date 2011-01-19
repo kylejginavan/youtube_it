@@ -35,6 +35,34 @@ class YouTubeIt
       end
     end
 
+    class PlaylistsFeedParser < FeedParser #:nodoc:
+
+      # return array of playlist objects
+      def parse_content(content)
+        doc = REXML::Document.new(content.body)
+        feed = doc.elements["feed"]
+        
+        playlists = []
+        feed.elements.each("entry") do |entry|
+          playlists << parse_entry(entry)
+        end
+        return playlists
+      end
+      
+      protected
+      
+      def parse_entry(entry)
+        YouTubeIt::Model::Playlist.new(
+          :title         => entry.elements["title"].text,
+          :summary       => (entry.elements["summary"] || entry.elements["media:group"].elements["media:description"]).text,
+          :description   => (entry.elements["summary"] || entry.elements["media:group"].elements["media:description"]).text,
+          :playlist_id   => entry.elements["id"].text[/playlist([^<]+)/, 1].sub(':',''),
+          :published     => entry.elements["published"] ? entry.elements["published"].text : nil,
+          :response_code => nil,
+          :xml           => nil)
+      end
+    end
+
     class VideoFeedParser < FeedParser #:nodoc:
 
       def parse_content(content)

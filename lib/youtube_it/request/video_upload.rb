@@ -278,6 +278,15 @@ class YouTubeIt
           return response.body
         end
       end
+      
+      def playlists_for(user)
+        playlist_url = "/feeds/api/users/#{user}/playlists?v=2"
+        http_connection do |session|
+          response = session.get(playlist_url)
+          raise_on_faulty_response(response)
+          return YouTubeIt::Parser::PlaylistsFeedParser.new(response).parse #return response.body
+        end
+      end
 
       def add_playlist(options)
         response        = nil
