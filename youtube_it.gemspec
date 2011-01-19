@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{youtube_it}
-  s.version = "1.2.0"
+  s.version = "1.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["chebyte", "kylejginavan"]
-  s.date = %q{2010-11-28}
+  s.date = %q{2011-01-19}
   s.description = %q{Upload, delete, update, comment on youtube videos all from one gem.}
   s.email = %q{kylejginavan@gmail.com}
   s.extra_rdoc_files = [
@@ -47,6 +47,7 @@ Gem::Specification.new do |s|
      "pkg/youtube_it-0.0.8.gem",
      "pkg/youtube_it-1.0.0.gem",
      "pkg/youtube_it-1.1.0.gem",
+     "pkg/youtube_it-1.2.0.gem",
      "test/helper.rb",
      "test/test.mov",
      "test/test_chain_io.rb",
