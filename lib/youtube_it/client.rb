@@ -138,6 +138,10 @@ class YouTubeIt
     def playlists
       client.playlists
     end
+    
+    def playlists_for(user)
+     client.playlists_for(user)
+    end
 
     def add_playlist(options)
       client.add_playlist(options)
