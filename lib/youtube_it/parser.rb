@@ -19,6 +19,36 @@ class YouTubeIt
       end
     end
 
+    class CommentsFeedParser < FeedParser #:nodoc:
+      # return array of comments
+      def parse_content(content)
+        doc = REXML::Document.new(content.body)
+        feed = doc.elements["feed"]
+
+        comments = []
+        feed.elements.each("entry") do |entry|
+          comments << parse_entry(entry)
+        end
+        return comments
+      end
+
+      protected
+        def parse_entry(entry)
+          author = YouTubeIt::Model::Author.new(
+            :name => entry.elements["author"].elements["name"].text,
+            :uri => entry.elements["author"].elements["uri"].text
+          )
+          YouTubeIt::Model::Comment.new(
+            :author => author,
+            :content => entry.elements["content"].text,
+            :published => entry.elements["published"].text,
+            :title => entry.elements["title"].text,
+            :updated => entry.elements["updated "].text,
+            :url => entry.elements["id"].text
+          )
+        end
+    end
+
     class PlaylistFeedParser < FeedParser #:nodoc:
 
       def parse_content(content)

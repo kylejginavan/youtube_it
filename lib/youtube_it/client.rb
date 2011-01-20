@@ -115,8 +115,11 @@ class YouTubeIt
       client.add_comment(video_id, comment)
     end
 
-    def comments(video_id)
-      client.comments(video_id)
+    # opts is converted to get params and appended to comments gdata api url
+    # eg opts = { 'max-results' => 10, 'start-index' => 20 }
+    # hash does _not_ play nice with symbols
+    def comments(video_id, opts = {})
+      client.comments(video_id, opts)
     end
 
     def add_favorite(video_id)
