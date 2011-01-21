@@ -134,6 +134,10 @@ class YouTubeIt
       client.favorites
     end
 
+    def profile(user_id)
+      client.profile(user_id)
+    end
+
     def playlist(playlist_id)
       client.playlist playlist_id
     end
