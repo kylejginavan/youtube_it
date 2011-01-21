@@ -263,6 +263,15 @@ class YouTubeIt
         return true
       end
 
+      def profile(user_id)
+        profile_url = "/feeds/api/users/%s?v=2" % user_id
+        http_connection do |session|
+          response = session.get(profile_url)
+          raise_on_faulty_response(response)
+          return YouTubeIt::Parser::ProfileFeedParser.new(response).parse
+        end
+      end
+
       def playlist(playlist_id)
         playlist_url = "/feeds/api/playlists/%s?v=2" % playlist_id
         http_connection do |session|

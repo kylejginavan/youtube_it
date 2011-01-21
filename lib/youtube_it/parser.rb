@@ -93,6 +93,32 @@ class YouTubeIt
       end
     end
 
+    class ProfileFeedParser < FeedParser #:nodoc:
+      def parse_content(content)
+        xml = REXML::Document.new(content.body)
+        entry = xml.elements["entry"] || xml.elements["feed"]
+        YouTubeIt::Model::User.new(
+          :age         => entry.elements["yt:age"] ? entry.elements["yt:age"].text : nil,
+          :company         => entry.elements["yt:company"] ? entry.elements["yt:company"].text : nil,
+          :gender         => entry.elements["yt:gender"] ? entry.elements["yt:gender"].text : nil,
+          :hobbies         => entry.elements["yt:hobbies"] ? entry.elements["yt:hobbies"].text : nil,
+          :hometown         => entry.elements["yt:hometown"] ? entry.elements["yt:hometown"].text : nil,
+          :location         => entry.elements["yt:location"] ? entry.elements["yt:location"].text : nil,
+          :last_login         => entry.elements["yt:statistics"].attributes["lastWebAccess"],
+          :join_date         => entry.elements["published"] ? entry.elements["published"].text : nil,
+          :movies         => entry.elements["yt:movies"] ? entry.elements["yt:movies"].text : nil,
+          :music         => entry.elements["yt:music"] ? entry.elements["yt:music"].text : nil,
+          :occupation         => entry.elements["yt:occupation"] ? entry.elements["yt:occupation"].text : nil,
+          :relationship         => entry.elements["yt:relationship"] ? entry.elements["yt:relationship"].text : nil,
+          :school         => entry.elements["yt:school"] ? entry.elements["yt:school"].text : nil,
+          :subscribers         => entry.elements["yt:statistics"].attributes["subscriberCount"],
+          :videos_watched         => entry.elements["yt:statistics"].attributes["videoWatchCount"],
+          :view_count         => entry.elements["yt:statistics"].attributes["viewCount"],
+          :upload_views         => entry.elements["yt:statistics"].attributes["totalUploadViews"]
+        )
+      end
+    end
+
     class VideoFeedParser < FeedParser #:nodoc:
 
       def parse_content(content)
