@@ -510,6 +510,7 @@ class YouTubeIt
             mg.tag!("media:keywords", @opts[:keywords].join(","))
             mg.tag!('media:category', @opts[:category], :scheme => "http://gdata.youtube.com/schemas/2007/categories.cat")
             mg.tag!('yt:private') if @opts[:private]
+            mg.tag!('media:category', @opts[:dev_tag], :scheme => "http://gdata.youtube.com/schemas/2007/developertags.cat") if @opts[:dev_tag]
           end
           m.tag!("yt:accessControl", :action => "rate", :permission => @opts[:rate]) if @opts[:rate]
           m.tag!("yt:accessControl", :action => "comment", :permission => @opts[:comment]) if @opts[:comment]
