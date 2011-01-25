@@ -55,6 +55,11 @@ Upload videos:
 
   client.video_upload(File.open("test.mov"), :title => "test",:description => 'some description', :category => 'People',:keywords => %w[cool blah test])
 
+* you can upload video with developer tag
+
+  client.video_upload(File.open("test.mov"), :title => "test",:description => 'some description', :category => 'People',:keywords => %w[cool blah test], :dev_tag => 'tagdev')
+
+
 * update video
 
   client.video_update("FQK1URcxmb4", :title => "new test",:description => 'new description', :category => 'People',:keywords => %w[cool blah test])
@@ -62,6 +67,7 @@ Upload videos:
 * delete video
 
   client.video_delete("FQK1URcxmb4")
+
 
 
 Comments
