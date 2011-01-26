@@ -167,6 +167,10 @@ class YouTubeIt
       client.enable_http_debugging
     end
 
+    def current_user
+      client.get_current_user
+    end
+
     private
 
     def client
@@ -229,7 +233,7 @@ class YouTubeIt
       end
       {:code => response.code, :body => response.body }
     end
-    
+
     private
       def client
         @client ||= YouTubeIt::Upload::VideoUpload.new(:dev_key => @dev_key, :authsub_token => @authsub_token)
@@ -302,7 +306,6 @@ class YouTubeIt
       body = access_token.get("http://gdata.youtube.com/feeds/api/users/default").body
       REXML::Document.new(body).elements["entry"].elements['author'].elements['name'].text
     end
-
 
     private
 

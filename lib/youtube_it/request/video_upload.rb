@@ -403,6 +403,19 @@ class YouTubeIt
         end
       end
 
+      def get_current_user
+        current_user_url = "/feeds/api/users/default"
+        body = ''
+        if @access_token.nil?
+          http_connection do |session|
+            body = session.get2(current_user_url, authorization_headers).body
+          end
+        else
+          body = @access_token.get("http://gdata.youtube.com/feeds/api/users/default").body
+        end
+        REXML::Document.new(body).elements["entry"].elements['author'].elements['name'].text
+      end
+
       private
 
       def uploads_url
