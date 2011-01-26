@@ -10,6 +10,7 @@ begin
     gem.email = "kylejginavan@gmail.com"
     gem.homepage = "http://github.com/kylejginavan/youtube_it"
     gem.add_dependency('oauth','>=0.4.4')
+    gem.add_dependency('builder')
     gem.authors = ["chebyte","kylejginavan"]
   end
   Jeweler::GemcutterTasks.new
