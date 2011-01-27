@@ -280,6 +280,10 @@ class TestClient < Test::Unit::TestCase
     assert video.widescreen?
   end
   
+  def test_get_current_user
+    assert @client.current_user, 'tubeit20101'
+  end
+  
   private
   
     def assert_valid_video (video)

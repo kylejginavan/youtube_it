@@ -405,15 +405,16 @@ class YouTubeIt
 
       def get_current_user
         current_user_url = "/feeds/api/users/default"
-        body = ''
+        response = ''
         if @access_token.nil?
           http_connection do |session|
-            body = session.get2(current_user_url, authorization_headers).body
+            response = session.get2(current_user_url, authorization_headers)
           end
         else
-          body = @access_token.get("http://gdata.youtube.com/feeds/api/users/default").body
+          response = @access_token.get("http://gdata.youtube.com/feeds/api/users/default")
         end
-        REXML::Document.new(body).elements["entry"].elements['author'].elements['name'].text
+        raise_on_faulty_response(response)
+        REXML::Document.new(response.body).elements["entry"].elements['author'].elements['name'].text
       end
 
       private

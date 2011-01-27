@@ -302,6 +302,11 @@ class YouTubeIt
       @atoken,@asecret = atoken, asecret
     end
 
+    def current_user
+      body = access_token.get("http://gdata.youtube.com/feeds/api/users/default").body
+      REXML::Document.new(body).elements["entry"].elements['author'].elements['name'].text
+    end
+
     private
 
     def client
