@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{youtube_it}
-  s.version = "1.2.7"
+  s.version = "1.2.8"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["chebyte", "kylejginavan"]
@@ -43,15 +43,7 @@ Gem::Specification.new do |s|
     "lib/youtube_it/request/video_upload.rb",
     "lib/youtube_it/response/video_search.rb",
     "lib/youtube_it/version.rb",
-    "pkg/youtube_it-0.0.8.gem",
-    "pkg/youtube_it-1.0.0.gem",
-    "pkg/youtube_it-1.1.0.gem",
-    "pkg/youtube_it-1.2.0.gem",
-    "pkg/youtube_it-1.2.1.gem",
-    "pkg/youtube_it-1.2.3.gem",
-    "pkg/youtube_it-1.2.4.gem",
-    "pkg/youtube_it-1.2.5.gem",
-    "pkg/youtube_it-1.2.6.gem",
+    "pkg/youtube_it-1.2.7.gem",
     "test/helper.rb",
     "test/test.mov",
     "test/test_chain_io.rb",
