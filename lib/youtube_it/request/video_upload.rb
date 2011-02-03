@@ -474,7 +474,8 @@ puts "========= response body #{response.to_yaml}"
 
       def raise_on_faulty_response(response)
         response_code = response.code.to_i
-        if response_code == 403 || response_code == 401
+        #if response_code == 403 || response_code == 401
+        if response_code / 10 == 40
           raise AuthenticationError, response.body[/<TITLE>(.+)<\/TITLE>/, 1]
         elsif response_code / 10 != 20 # Response in 20x means success
           raise UploadError, parse_upload_error_from(response.body.gsub(/\n/,''))
