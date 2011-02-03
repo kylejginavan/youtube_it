@@ -413,6 +413,9 @@ class YouTubeIt
         else
           response = @access_token.get("http://gdata.youtube.com/feeds/api/users/default")
         end
+
+puts response.body
+puts response.inspect
         raise_on_faulty_response(response)
         REXML::Document.new(response.body).elements["entry"].elements['author'].elements['name'].text
       end
@@ -470,9 +473,10 @@ class YouTubeIt
       end
 
       def raise_on_faulty_response(response)
-        if response.code.to_i == 403
+        response_code = response.code.to_i
+        if response_code == 403 || response_code == 401
           raise AuthenticationError, response.body[/<TITLE>(.+)<\/TITLE>/, 1]
-        elsif response.code.to_i / 10 != 20 # Response in 20x means success
+        elsif response_code / 10 != 20 # Response in 20x means success
           raise UploadError, parse_upload_error_from(response.body.gsub(/\n/,''))
         end
       end
