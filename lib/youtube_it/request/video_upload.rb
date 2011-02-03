@@ -414,8 +414,8 @@ class YouTubeIt
           response = @access_token.get("http://gdata.youtube.com/feeds/api/users/default")
         end
 
-puts response.body
-puts response.inspect
+puts "========= response body #{response.body}"
+puts "========= response body #{response.to_yaml}"
         raise_on_faulty_response(response)
         REXML::Document.new(response.body).elements["entry"].elements['author'].elements['name'].text
       end
