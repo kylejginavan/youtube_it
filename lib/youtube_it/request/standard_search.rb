@@ -32,7 +32,8 @@ class YouTubeIt
           'max-results' => @max_results,
           'orderby' => @order_by,
           'start-index' => @offset,
-          'time' => @time
+          'time' => @time,
+          'v' => 2
         }
       end
     end

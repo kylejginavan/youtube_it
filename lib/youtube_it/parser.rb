@@ -106,10 +106,25 @@ class YouTubeIt
                      :name => author_element.elements["name"].text,
                      :uri => author_element.elements["uri"].text)
         end
-
         media_group = entry.elements["media:group"]
-        description = media_group.elements["media:description"].text
-        duration = media_group.elements["yt:duration"].attributes["seconds"].to_i
+
+        # if content is not available on certain region, there is no media:description, media:player or yt:duration
+        description = ""
+        unless media_group.elements["media:description"].nil?
+          description = media_group.elements["media:description"].text
+        end
+
+        # if content is not available on certain region, there is no media:description, media:player or yt:duration
+        duration = 0
+        unless media_group.elements["yt:duration"].nil?
+          duration = media_group.elements["yt:duration"].attributes["seconds"].to_i
+        end
+
+        # if content is not available on certain region, there is no media:description, media:player or yt:duration
+        player_url = ""
+        unless media_group.elements["media:player"].nil?
+          player_url = media_group.elements["media:player"].attributes["url"]
+        end
 
         unless media_group.elements["yt:aspectRatio"].nil?
           widescreen = media_group.elements["yt:aspectRatio"].text == 'widescreen' ? true : false
@@ -119,8 +134,6 @@ class YouTubeIt
         media_group.elements.each("media:content") do |mce|
           media_content << parse_media_content(mce)
         end
-
-        player_url = media_group.elements["media:player"].attributes["url"]
 
         # parse thumbnails
         thumbnails = []
@@ -134,13 +147,23 @@ class YouTubeIt
         end
 
         rating_element = entry.elements["gd:rating"]
+        extended_rating_element = entry.elements["yt:rating"]
+
         rating = nil
         if rating_element
-          rating = YouTubeIt::Model::Rating.new(
-                     :min => rating_element.attributes["min"].to_i,
-                     :max => rating_element.attributes["max"].to_i,
-                     :rater_count => rating_element.attributes["numRaters"].to_i,
-                     :average => rating_element.attributes["average"].to_f)
+          rating_values = {
+            :min => rating_element.attributes["min"].to_i,
+            :max => rating_element.attributes["max"].to_i,
+            :rater_count => rating_element.attributes["numRaters"].to_i,
+            :average => rating_element.attributes["average"].to_f
+          }
+
+          if extended_rating_element
+            rating_values[:likes] = extended_rating_element.attributes["numLikes"].to_i,
+            rating_values[:dislikes] = extended_rating_element.attributes["numDislikes"].to_i
+          end
+
+          rating = YouTubeIt::Model::Rating.new(rating_values)
         end
 
         if (el = entry.elements["yt:statistics"])
