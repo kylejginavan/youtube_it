@@ -12,7 +12,7 @@ class YouTubeIt
         @client_id             = hash_options[:client_id] || "youtube_it"
         @legacy_debug_flag     = hash_options[:debug]
       else
-        puts "* warning: the method YouTubeIt::Client.new(user, passwd, dev_key) is depricated, use YouTubeIt::Client.new(:username => 'user', :password => 'passwd', :dev_key => 'dev_key')"
+        puts "* warning: the method YouTubeIt::Client.new(user, passwd, dev_key) is deprecated, use YouTubeIt::Client.new(:username => 'user', :password => 'passwd', :dev_key => 'dev_key')"
         @user               = params.shift
         @pass               = params.shift
         @dev_key            = params.shift
