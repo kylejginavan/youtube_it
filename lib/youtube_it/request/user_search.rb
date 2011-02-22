@@ -34,7 +34,8 @@ class YouTubeIt
         {
           'max-results' => @max_results,
           'orderby' => @order_by,
-          'start-index' => @offset
+          'start-index' => @offset,
+          'v' => 2
         }
       end
     end

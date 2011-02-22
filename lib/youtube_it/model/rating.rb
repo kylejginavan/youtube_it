@@ -12,6 +12,12 @@ class YouTubeIt
       
       # *Fixnum*:: Indicates how many people have rated the video
       attr_reader :rater_count
+
+      # *Fixnum*:: Indicates how many people likes this video
+      attr_reader :likes
+
+      # *Fixnum*:: Indicates how many people dislikes this video
+      attr_reader :dislikes
     end
   end
 end
