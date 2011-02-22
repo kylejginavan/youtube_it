@@ -16,7 +16,7 @@ class TestClient < Test::Unit::TestCase
   def test_should_respond_to_a_basic_query
     response = @client.videos_by(:query => "penguin")
   
-    assert_equal "http://gdata.youtube.com/feeds/api/videos", response.feed_id
+    assert_equal "tag:youtube.com,2008:videos", response.feed_id
     assert_equal 25, response.max_result_count
     assert_equal 25, response.videos.length
     assert_equal 1, response.offset
@@ -29,7 +29,7 @@ class TestClient < Test::Unit::TestCase
     def test_should_respond_to_a_basic_query_with_offset_and_max_results
     response = @client.videos_by(:query => "penguin", :offset => 15, :max_results => 30)
   
-    assert_equal "http://gdata.youtube.com/feeds/api/videos", response.feed_id
+    assert_equal "tag:youtube.com,2008:videos", response.feed_id
     assert_equal 30, response.max_result_count
     assert_equal 30, response.videos.length
     assert_equal 15, response.offset
@@ -41,17 +41,17 @@ class TestClient < Test::Unit::TestCase
   
   def test_should_respond_to_a_basic_query_with_paging
     response = @client.videos_by(:query => "penguin")
-    assert_equal "http://gdata.youtube.com/feeds/api/videos", response.feed_id
+    assert_equal "tag:youtube.com,2008:videos", response.feed_id
     assert_equal 25, response.max_result_count
     assert_equal 1, response.offset
   
       response = @client.videos_by(:query => "penguin", :page => 2)
-    assert_equal "http://gdata.youtube.com/feeds/api/videos", response.feed_id
+    assert_equal "tag:youtube.com,2008:videos", response.feed_id
     assert_equal 25, response.max_result_count
     assert_equal 26, response.offset
   
     response2 = @client.videos_by(:query => "penguin", :page => 3)
-    assert_equal "http://gdata.youtube.com/feeds/api/videos", response2.feed_id
+    assert_equal "tag:youtube.com,2008:videos", response2.feed_id
     assert_equal 25, response2.max_result_count
     assert_equal 51, response2.offset
   end
@@ -59,7 +59,7 @@ class TestClient < Test::Unit::TestCase
   def test_should_get_videos_for_multiword_metasearch_query
     response = @client.videos_by(:query => 'christina ricci')
   
-    assert_equal "http://gdata.youtube.com/feeds/api/videos", response.feed_id
+    assert_equal "tag:youtube.com,2008:videos", response.feed_id
     assert_equal 25, response.max_result_count
     assert_equal 25, response.videos.length
     assert_equal 1, response.offset
@@ -139,7 +139,7 @@ class TestClient < Test::Unit::TestCase
   
   def test_should_get_favorite_videos_by_user
     response = @client.videos_by(:favorites, :user => 'drnicwilliams')
-    assert_equal "http://gdata.youtube.com/feeds/api/users/drnicwilliams/favorites", response.feed_id
+    assert_equal "tag:youtube.com,2008:user:drnicwilliams:favorites", response.feed_id
     response.videos.each { |v| assert_valid_video v }
   end
   
