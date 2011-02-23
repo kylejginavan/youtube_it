@@ -159,7 +159,7 @@ class YouTubeIt
           }
 
           if extended_rating_element
-            rating_values[:likes] = extended_rating_element.attributes["numLikes"].to_i,
+            rating_values[:likes] = extended_rating_element.attributes["numLikes"].to_i
             rating_values[:dislikes] = extended_rating_element.attributes["numDislikes"].to_i
           end
 
