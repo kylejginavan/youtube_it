@@ -19,6 +19,36 @@ class YouTubeIt
       end
     end
 
+    class CommentsFeedParser < FeedParser #:nodoc:
+      # return array of comments
+      def parse_content(content)
+        doc = REXML::Document.new(content.body)
+        feed = doc.elements["feed"]
+
+        comments = []
+        feed.elements.each("entry") do |entry|
+          comments << parse_entry(entry)
+        end
+        return comments
+      end
+
+      protected
+        def parse_entry(entry)
+          author = YouTubeIt::Model::Author.new(
+            :name => entry.elements["author"].elements["name"].text,
+            :uri => entry.elements["author"].elements["uri"].text
+          )
+          YouTubeIt::Model::Comment.new(
+            :author => author,
+            :content => entry.elements["content"].text,
+            :published => entry.elements["published"].text,
+            :title => entry.elements["title"].text,
+            :updated => entry.elements["updated "].text,
+            :url => entry.elements["id"].text
+          )
+        end
+    end
+
     class PlaylistFeedParser < FeedParser #:nodoc:
 
       def parse_content(content)
@@ -60,6 +90,32 @@ class YouTubeIt
           :published     => entry.elements["published"] ? entry.elements["published"].text : nil,
           :response_code => nil,
           :xml           => nil)
+      end
+    end
+
+    class ProfileFeedParser < FeedParser #:nodoc:
+      def parse_content(content)
+        xml = REXML::Document.new(content.body)
+        entry = xml.elements["entry"] || xml.elements["feed"]
+        YouTubeIt::Model::User.new(
+          :age         => entry.elements["yt:age"] ? entry.elements["yt:age"].text : nil,
+          :company         => entry.elements["yt:company"] ? entry.elements["yt:company"].text : nil,
+          :gender         => entry.elements["yt:gender"] ? entry.elements["yt:gender"].text : nil,
+          :hobbies         => entry.elements["yt:hobbies"] ? entry.elements["yt:hobbies"].text : nil,
+          :hometown         => entry.elements["yt:hometown"] ? entry.elements["yt:hometown"].text : nil,
+          :location         => entry.elements["yt:location"] ? entry.elements["yt:location"].text : nil,
+          :last_login         => entry.elements["yt:statistics"].attributes["lastWebAccess"],
+          :join_date         => entry.elements["published"] ? entry.elements["published"].text : nil,
+          :movies         => entry.elements["yt:movies"] ? entry.elements["yt:movies"].text : nil,
+          :music         => entry.elements["yt:music"] ? entry.elements["yt:music"].text : nil,
+          :occupation         => entry.elements["yt:occupation"] ? entry.elements["yt:occupation"].text : nil,
+          :relationship         => entry.elements["yt:relationship"] ? entry.elements["yt:relationship"].text : nil,
+          :school         => entry.elements["yt:school"] ? entry.elements["yt:school"].text : nil,
+          :subscribers         => entry.elements["yt:statistics"].attributes["subscriberCount"],
+          :videos_watched         => entry.elements["yt:statistics"].attributes["videoWatchCount"],
+          :view_count         => entry.elements["yt:statistics"].attributes["viewCount"],
+          :upload_views         => entry.elements["yt:statistics"].attributes["totalUploadViews"]
+        )
       end
     end
 

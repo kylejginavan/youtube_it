@@ -209,12 +209,14 @@ class YouTubeIt
         {:code => response.code, :body => response.body}
       end
 
-      def comments(video_id)
-        comment_url = "/feeds/api/videos/%s/comments" % video_id
+      def comments(video_id, opts = {})
+        comment_url = "/feeds/api/videos/%s/comments?" % video_id
+        comment_url << opts.collect { |k,p| [k,p].join '=' }.join('&')
         http_connection do |session|
           response = session.get(comment_url)
           raise_on_faulty_response(response)
           {:code => response.code, :body => response.body}
+          return YouTubeIt::Parser::CommentsFeedParser.new(response).parse
         end
       end
 
@@ -259,6 +261,15 @@ class YouTubeIt
         end
         raise_on_faulty_response(response)
         return true
+      end
+
+      def profile(user_id)
+        profile_url = "/feeds/api/users/%s?v=2" % user_id
+        http_connection do |session|
+          response = session.get(profile_url)
+          raise_on_faulty_response(response)
+          return YouTubeIt::Parser::ProfileFeedParser.new(response).parse
+        end
       end
 
       def playlist(playlist_id)
