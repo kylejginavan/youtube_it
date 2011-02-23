@@ -233,7 +233,7 @@ class TestClient < Test::Unit::TestCase
   def test_should_add_new_comment
     video_id ="H1TrfM3xbgc"
     @client.add_comment(video_id, "test comment")
-    comment = @client.comments(video_id)[:body]
+    comment = @client.comments(video_id).first.content
     assert comment.match(/test comment/)
   end
   
