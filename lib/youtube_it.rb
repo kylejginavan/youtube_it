@@ -51,6 +51,7 @@ end
   parser
   model/author
   model/category
+  model/comment
   model/contact
   model/content
   model/playlist
