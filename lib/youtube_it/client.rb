@@ -70,7 +70,7 @@ class YouTubeIt
         request = YouTubeIt::Request::StandardSearch.new(params, request_params)
       end
 
-      #logger.debug "Submitting request [url=#{request.url}]."
+      logger.debug "Submitting request [url=#{request.url}]."
       parser = YouTubeIt::Parser::VideosFeedParser.new(request.url)
       parser.parse
     end
