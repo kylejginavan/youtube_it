@@ -122,8 +122,6 @@ class YouTubeIt
       attr_reader :latitude
       attr_reader :longitude
 
-      attr_reader :statistics
-
       # Videos related to the current video.
       #
       # === Returns
@@ -150,7 +148,7 @@ class YouTubeIt
       # === Returns
       #   String: The Youtube video id.
       def unique_id
-        video_id[/videos\/([^<]+)/, 1]
+        video_id[/videos\/([^<]+)/, 1] || video_id[/video\:([^<]+)/, 1]
       end
 
       # Allows you to check whether the video can be embedded on a webpage.
