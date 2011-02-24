@@ -9,11 +9,9 @@
   comments.
   
 == INSTALLATION & SETUP:
-1. Create a youtube account.
-2. Create a developer key. http://code.google.com/apis/youtube/dashboard/
-
-Then
-  $ sudo gem install youtube_it
+  * Create a youtube account.
+  * Create a developer key here http://code.google.com/apis/youtube/dashboard.
+  * sudo gem install youtube_it
 
 == ESTABLISHING A CLIENT
 
@@ -137,9 +135,8 @@ Select Playlists From User:
 
 When uploading a video from your browser you need make a form upload with the followings params:
   $ upload_token(params, nexturl)
-  
-  $ params  => params like :title => "title", :description => "description", :category => "People", :tags => ["test"]
-  $ nexturl => redirect to this url after upload
+params  => params like :title => "title", :description => "description", :category => "People", :tags => ["test"]
+nexturl => redirect to this url after upload
 
 
 Controller
@@ -147,7 +144,7 @@ Controller
     @upload_info = YouTubeIt::Client.new.upload_token(params, videos_url)
   end
 
-View: upload.html.erb
+View (upload.html.erb)
   <% form_tag @upload_info[:url], :multipart => true do %>
     <%= hidden_field_tag :token, @upload_info[:token] %>
     <%= label_tag :file %>
