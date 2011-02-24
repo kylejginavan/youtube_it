@@ -10,23 +10,19 @@
 
 == ESTABLISH A CLIENT
 
-  Creating a client:
-  
-    $ require 'youtube_it'
-    $ client = YouTubeIt::Client.new
+Creating a client:
+  $ require 'youtube_it'
+  $ client = YouTubeIt::Client.new
 
-  Client with developer key(http://code.google.com/apis/youtube/dashboard/):
-  
-    $ client = YouTubeIt::Client.new(:dev_key => "developer_key")
+Client with developer key(http://code.google.com/apis/youtube/dashboard/):
+  $ client = YouTubeIt::Client.new(:dev_key => "developer_key")
     
-  Client with youtube account and developer key:
-  
-    $ client = YouTubeIt::Client.new(:username => "youtube_username", :password =>  "youtube_passwd", :dev_key => "developer_key")
+Client with youtube account and developer key:
+  $ client = YouTubeIt::Client.new(:username => "youtube_username", :password =>  "youtube_passwd", :dev_key => "developer_key")
 
-  Client with OAuth:
-  
-    $ client = YouTubeIt::OAuthClient.new("consumer_key", "consumer_secret", "youtube_username", "developer_key")
-    $ client.authorize_from_access("access_token", "access_secret")
+Client with OAuth:
+  $ client = YouTubeIt::OAuthClient.new("consumer_key", "consumer_secret", "youtube_username", "developer_key")
+  $ client.authorize_from_access("access_token", "access_secret")
 
 == QUERY
 
