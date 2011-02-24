@@ -5,20 +5,20 @@
 
 Gem::Specification.new do |s|
   s.name = %q{youtube_it}
-  s.version = "1.4.0"
+  s.version = "1.4.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["chebyte", "kylejginavan"]
-  s.date = %q{2011-02-23}
+  s.authors = ["kylejginavan", "chebyte", "mseppae"]
+  s.date = %q{2011-02-24}
   s.description = %q{Upload, delete, update, comment on youtube videos all from one gem.}
   s.email = %q{kylejginavan@gmail.com}
   s.extra_rdoc_files = [
-    "README.txt"
+    "README.rdoc"
   ]
   s.files = [
     "History.txt",
     "Manifest.txt",
-    "README.txt",
+    "README.rdoc",
     "Rakefile",
     "TODO.txt",
     "VERSION",
@@ -44,7 +44,6 @@ Gem::Specification.new do |s|
     "lib/youtube_it/request/video_upload.rb",
     "lib/youtube_it/response/video_search.rb",
     "lib/youtube_it/version.rb",
-    "pkg/youtube_it-1.3.1.gem",
     "test/files/youtube_video_response.xml",
     "test/helper.rb",
     "test/test.mov",
