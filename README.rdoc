@@ -1,151 +1,110 @@
-== DESCRIPTION:
+== DESCRIPTION
 
-youtube_it is the most complete Ruby client for the YouTube GData API. It provides an easy
-way to access the latest YouTube video search results from your own programs.
-In comparison with the earlier Youtube search interfaces, this new API and
-library offers much-improved flexibility around executing complex search
-queries to obtain well-targeted video search results.
+  youtube_it is the most complete Ruby client for the YouTube GData API. It provides an easy
+  way to access the latest and most complete access to YouTube's video API.
+  In comparison with the earlier Youtube interfaces, this new API and
+  library offers much-improved flexibility around executing complex search
+  queries to obtain well-targeted video search results.  In addition, standard video management 
+  including but not limited to uploading, deleting, updating, like, dislike, ratings and
+  comments.
 
-== SYNOPSIS:
+== ESTABLISH A CLIENT
 
-Create a client:
+  Creating a client:
+    $ require 'youtube_it'
+    $ client = YouTubeIt::Client.new
 
-  $ require 'youtube_it'
-  $ client = YouTubeIt::Client.new
+  Client with developer key(http://code.google.com/apis/youtube/dashboard/):
+    $ client = YouTubeIt::Client.new(:dev_key => "developer_key")
+    
+  Client with youtube account and developer key:
+    $ client = YouTubeIt::Client.new(:username => "youtube_username", :password =>  "youtube_passwd", :dev_key => "developer_key")
 
-  if you need use your dev_key for search you can make
+  Client with OAuth:
+    $ client = YouTubeIt::OAuthClient.new("consumer_key", "consumer_secret", "youtube_username", "developer_key")
+    $ client.authorize_from_access("access_token", "access_secret")
 
-  $ client = YouTubeIt::Client.new(:dev_key => 'your dev key')
+== QUERY
 
-Basic queries:
+  Each type of client enables searching capabilities.
 
-  $ client.videos_by(:query => "penguin")
-  $ client.videos_by(:query => "penguin", :page => 2, :per_page => 15)
-  $ client.videos_by(:tags => ['tiger', 'leopard'])
-  $ client.videos_by(:categories => [:news, :sports])
-  $ client.videos_by(:categories => [:news, :sports], :tags => ['soccer', 'football'])
-  $ client.videos_by(:user => 'liz')
-  $ client.videos_by(:favorites, :user => 'liz')
-  $ client.video_by("FQK1URcxmb4")
-  $ client.video_by_user("chebyte","FQK1URcxmb4")
+  Basic Queries:
+    $ client.videos_by(:query => "penguin")
+    $ client.videos_by(:query => "penguin", :page => 2, :per_page => 15)
+    $ client.videos_by(:tags => ['tiger', 'leopard'])
+    $ client.videos_by(:categories => [:news, :sports])
+    $ client.videos_by(:categories => [:news, :sports], :tags => ['soccer', 'football'])
+    $ client.videos_by(:user => 'liz')
+    $ client.videos_by(:favorites, :user => 'liz')
+    $ client.video_by("FQK1URcxmb4")
+    $ client.video_by_user("chebyte","FQK1URcxmb4")
 
-Standard feeds:
+  Standard Queries:
+    $ client.videos_by(:most_viewed)
+    $ client.videos_by(:most_linked, :page => 3)
+    $ client.videos_by(:top_rated, :time => :today)
 
-  $ client.videos_by(:most_viewed)
-  $ client.videos_by(:most_linked, :page => 3)
-  $ client.videos_by(:top_rated, :time => :today)
+  Advanced Queries (with boolean operators OR (either), AND (include), NOT (exclude)):
+    $ client.videos_by(:categories => { :either => [:news, :sports], :exclude => [:comedy] }, :tags => { :include => ['football'], :exclude => ['soccer'] })
 
-Advanced queries (with boolean operators OR (either), AND (include), NOT (exclude)):
+== VIDEO MANAGEMENT
 
-  $ client.videos_by(:categories => { :either => [:news, :sports], :exclude => [:comedy] }, :tags => { :include => ['football'], :exclude => ['soccer'] })
+  YouTube account or OAuth enables video management.
 
+  Upload Video:
+    $ client.video_upload(File.open("test.mov"), :title => "test",:description => 'some description', :category => 'People',:keywords => %w[cool blah test])
 
-Upload videos:
-  You need on youtube account and developer key
-  You can get these keys at the http://code.google.com/apis/youtube/dashboard/
+  Upload Video With A Developer Tag (Note the tags are not immediately available):
+    $ client.video_upload(File.open("test.mov"), :title => "test",:description => 'some description', :category => 'People',:keywords => %w[cool blah test], :dev_tag => 'tagdev')
 
-  $ client = YouTubeIt::Client.new(:username => "youtube_username", :password =>  "youtube_passwd", :dev_key => "developer_key")
+  Update Video:
+    $ client.video_update("FQK1URcxmb4", :title => "new test",:description => 'new description', :category => 'People',:keywords => %w[cool blah test])
 
-  Or better yet, you can use OAuth
+  Delete Video:
+    $ client.video_delete("FQK1URcxmb4")
 
-  $ client = YouTubeIt::OAuthClient.new("consumer_key", "consumer_secret", "youtube_username", "developer_key")
-  $ client.authorize_from_access("access_token", "access_secret")
+  Profile Details:
+    $ client.profile(user_id)
 
-  * upload video
+  List Comments:
+    $ client.comments(video_id)
 
-  $ client.video_upload(File.open("test.mov"), :title => "test",:description => 'some description', :category => 'People',:keywords => %w[cool blah test])
+  Add A Comment:
+    $ client.add_comment(video_id, "test comment!")
 
-  * you can upload video with developer tag
+  List Favorites:
+    $ client.favorites
 
-  $ client.video_upload(File.open("test.mov"), :title => "test",:description => 'some description', :category => 'People',:keywords => %w[cool blah test], :dev_tag => 'tagdev')
+  Add Favorite:
+    $ client.add_favorite(video_id)
 
+  Delete Favorite:
+    $ client.delete_favorite(video_id)
 
-  * update video
+  List Playlists:
+    $ client.playlists
 
-  $ client.video_update("FQK1URcxmb4", :title => "new test",:description => 'new description', :category => 'People',:keywords => %w[cool blah test])
+  Select Playlist:
+    $ client.playlist(playlist_id)
 
-  * delete video
+  Select All Videos From A Playlist:
+    $ playlist = client.playlist(playlist_id)
+    $ playlist.videos
 
-  $ client.video_delete("FQK1URcxmb4")
+  Create Playlist:
+    $ playlist = client.add_playlist(:title => "new playlist", :description => "playlist description")
 
-Profiles
+  Delete Playlist:
+    $ client.delete_playlist(playlist_id)
 
-  You can get a users profile:
+  Add Video To Playlist:
+    $ client.add_video_to_playlist(playlist_id, video_id)
 
-  $ client.profile(user_id)
+  Remove Video From Playlist:
+    $ client.remove_video_from_playlist(playlist_id, playlist_entry_id)
 
-
-Comments
-
-  You can add or list comments with the following way:
-
-  $ client = YouTubeIt::Client.new(:username => "youtube_username", :password =>  "youtube_passwd", :dev_key => "developer_key")
-
-  * get all comments:
-
-  $ client.comments(video_id)
-
-  * add a new comment:
-
-  $ client.add_comment(video_id, "test comment!")
-
-Favorites
-
-  You can add, delete or list your favorites videos:
-
-  $ client = YouTubeIt::Client.new(:username => "youtube_username", :password =>  "youtube_passwd", :dev_key => "developer_key")
-
-  * get all favorites:
-
-  $ client.favorites
-
-  * add a new favorite:
-
-  $ client.add_favorite(video_id)
-
-  * delete favorite:
-
-  $ client.delete_favorite(video_id)
-
-Playlist
-
-  You can add, delete or list your playlists:
-
-  client = YouTubeIt::Client.new(:username => "youtube_username", :password =>  "youtube_passwd", :dev_key => "developer_key")
-
-*  get all playlists:
-
-  client.playlists
-
-*  select your playlist:
-
-  client.playlist(playlist_id)
-
-*  get all videos from your playlist:
-
-  my_playlist = client.playlist(playlist_id)
-
-  my_playlist.videos
-
-*  create new playlist:
-
-  my_playlist = client.add_playlist(:title => "new playlist", :description => "playlist description")
-
-*  delete a playlist:
-
-  client.delete_playlist(playlist_id)
-
-*  add video to playlist:
-
-  client.add_video_to_playlist(playlist_id, video_id)
-
-*  remove video from playlist:
-
-  client.remove_video_from_playlist(playlist_id, playlist_entry_id)
-
-* get all playlists from some user
-  
-  client.playlists_for(user) #return array with the playlists
+  Select Playlists From User:
+    $ client.playlists_for(user)
   
 Access Control List
 
