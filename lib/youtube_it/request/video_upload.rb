@@ -228,7 +228,7 @@ class YouTubeIt
           "Content-Length" => "#{favorite_body.length}",
         }
         favorite_url = "/feeds/api/users/default/favorites"
-        
+
         if @access_token.nil?
           favorite_header.merge!(authorization_headers)
           http_connection do |session|
@@ -264,12 +264,24 @@ class YouTubeIt
       end
 
       def profile(user_id)
-        profile_url = "/feeds/api/users/%s?v=2" % user_id
-        http_connection do |session|
-          response = session.get(profile_url)
-          raise_on_faulty_response(response)
-          return YouTubeIt::Parser::ProfileFeedParser.new(response).parse
+        profile_url = "http://gdata.youtube.com/feeds/api/users/%s?v=2" % (user_id ? user_id : "default")
+
+        response        = nil
+        header = {
+          "Content-Type"   => "application/atom+xml; charset=UTF-8"
+        }
+
+        if @access_token.nil?
+          http_connection do |session|
+            response = session.get(profile_url)
+          end
+        else
+          header.merge!(authorization_headers_for_oauth)
+          response = @access_token.get(profile_url, header)
         end
+
+        raise_on_faulty_response(response)
+        YouTubeIt::Parser::ProfileFeedParser.new(response).parse
       end
 
       def playlist(playlist_id)
