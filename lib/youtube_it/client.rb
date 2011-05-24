@@ -170,6 +170,14 @@ class YouTubeIt
       client.delete_playlist(playlist_id)
     end
 
+    def like_video(video_id)
+      client.rate_video(video_id, 'like')
+    end
+
+    def dislike_video(video_id)
+      client.rate_video(video_id, 'dislike')
+    end
+
     def enable_http_debugging
       client.enable_http_debugging
     end
