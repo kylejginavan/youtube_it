@@ -134,7 +134,7 @@ class YouTubeIt
       client.favorites
     end
 
-    def profile(user_id)
+    def profile(user_id = nil)
       client.profile(user_id)
     end
 
