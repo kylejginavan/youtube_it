@@ -417,6 +417,28 @@ class YouTubeIt
         return true
       end
 
+      def rate_video(video_id, rating)
+        response        = nil
+        rating_body   = video_xml_for(:rating => rating)
+        rating_header = {
+          "Content-Type"   => "application/atom+xml",
+          "Content-Length" => "#{rating_body.length}",
+        }
+        rating_url = "/feeds/api/videos/#{video_id}/ratings"
+
+        if @access_token.nil?
+          rating_header.merge!(authorization_headers)
+          http_connection do |session|
+            response = session.post(rating_url, rating_body, rating_header)
+          end
+        else
+          rating_header.merge!(authorization_headers_for_oauth)
+          response = @access_token.post("http://%s%s" % [base_url, rating_url], rating_body, rating_header)
+        end
+        raise_on_faulty_response(response)
+        {:code => response.code, :body => response.body}
+      end
+
       def favorites
         favorite_url = "/feeds/api/users/default/favorites"
         http_connection do |session|
@@ -572,6 +594,7 @@ class YouTubeIt
         b.entry(:xmlns => "http://www.w3.org/2005/Atom", 'xmlns:yt' => "http://gdata.youtube.com/schemas/2007") do | m |
           m.content(data[:comment]) if data[:comment]
           m.id(data[:favorite] || data[:playlist]) if data[:favorite] || data[:playlist]
+          m.tag!("yt:rating", :value => data[:rating]) if data[:rating]
         end.to_s
       end
 
