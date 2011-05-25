@@ -438,7 +438,29 @@ class YouTubeIt
         raise_on_faulty_response(response)
         {:code => response.code, :body => response.body}
       end
+      
+      def subscribe_channel(channel_name)
+        response        = nil
+        subscribe_body   = video_xml_for(:subscribe => channel_name)
+        subscribe_header = {
+          "Content-Type"   => "application/atom+xml",
+          "Content-Length" => "#{subscribe_body.length}",
+        }
+        subscribe_url = "/feeds/api/users/default/subscriptions"
 
+        if @access_token.nil?
+          subscribe_header.merge!(authorization_headers)
+          http_connection do |session|
+            response = session.post(subscribe_url, subscribe_body, subscribe_header)
+          end
+        else
+          subscribe_header.merge!(authorization_headers_for_oauth)
+          response = @access_token.post("http://%s%s" % [base_url, subscribe_url], subscribe_body, subscribe_header)
+        end
+        raise_on_faulty_response(response)
+        {:code => response.code, :body => response.body}
+      end
+      
       def favorites
         favorite_url = "/feeds/api/users/default/favorites"
         http_connection do |session|
@@ -595,6 +617,10 @@ class YouTubeIt
           m.content(data[:comment]) if data[:comment]
           m.id(data[:favorite] || data[:playlist]) if data[:favorite] || data[:playlist]
           m.tag!("yt:rating", :value => data[:rating]) if data[:rating]
+          if(data[:subscribe])
+            m.category(:scheme => "http://gdata.youtube.com/schemas/2007/subscriptiontypes.cat", :term => "channel")
+            m.tag!("yt:username", data[:subscribe])
+          end
         end.to_s
       end
 

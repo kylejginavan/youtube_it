@@ -177,6 +177,10 @@ class YouTubeIt
     def dislike_video(video_id)
       client.rate_video(video_id, 'dislike')
     end
+    
+    def subscribe_channel(channel_name)
+      client.subscribe_channel(channel_name)
+    end
 
     def enable_http_debugging
       client.enable_http_debugging
