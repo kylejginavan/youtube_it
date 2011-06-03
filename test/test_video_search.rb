@@ -137,4 +137,19 @@ class TestVideoSearch < Test::Unit::TestCase
     request = YouTubeIt::Request::UserSearch.new(:favorites, :user => 'liz', :offset => 20, :max_results => 10)
     assert_equal "http://gdata.youtube.com/feeds/api/users/liz/favorites?max-results=10&start-index=20&v=2", request.url
   end
+
+  #-- Recorded Queries --------------------------------------------------------------------------------
+  
+  def test_should_search_for_range_of_recoreded_on_dates
+    starts_at = Date.today - 4
+    ends_at = Date.today
+    request = YouTubeIt::Request::VideoSearch.new(:fields => {:recorded => (starts_at..ends_at)})
+    assert_equal "http://gdata.youtube.com/feeds/api/videos?v=2&fields=entry[xs:date(yt:recorded) > xs:date('#{starts_at.strftime('%Y-%m-%d')}') and xs:date(yt:recorded) < xs:date('#{ends_at.strftime('%Y-%m-%d')}')]", request.url
+  end
+
+ def test_should_search_for_range_of_recoreded_on_dates
+    recorded_at = Date.today
+    request = YouTubeIt::Request::VideoSearch.new(:fields => {:recorded => recorded_at})
+    assert_equal "http://gdata.youtube.com/feeds/api/videos?v=2&fields=entry[xs:date(yt:recorded) = xs:date('#{recorded_at.strftime('%Y-%m-%d')}')]", request.url
+  end
 end
