@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/helper'
+require File.expand_path(File.dirname(__FILE__) + '/helper')
 
 class TestVideo < Test::Unit::TestCase
   def test_should_extract_unique_id_from_video_id
@@ -29,7 +29,7 @@ class TestVideo < Test::Unit::TestCase
 
     assert_equal "http://gdata.youtube.com/feeds/api/videos/BDqs-OZWw9o/responses", response.feed_id
     assert_equal 25, response.max_result_count
-    assert_equal 24, response.videos.length
+    assert_equal 25, response.videos.length
     assert_equal 1, response.offset
     assert(response.total_result_count > 0)
     assert_instance_of Time, response.updated_at
