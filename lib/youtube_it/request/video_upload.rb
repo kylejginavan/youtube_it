@@ -180,7 +180,7 @@ class YouTubeIt
           "Content-Length" => "#{token_body.length}",
         }
         token_url = "/action/GetUploadToken"
-        
+
         if @access_token.nil?
           token_header.merge!(authorization_headers)
           http_connection do |session|
@@ -257,7 +257,7 @@ class YouTubeIt
           "Content-Length" => "0",
         }
         favorite_url    = "/feeds/api/users/default/favorites/%s" % video_id
-        
+
         if @access_token.nil?
           favorite_header.merge!(authorization_headers).delete("GData-Version")
           http_connection do |session|
@@ -309,7 +309,7 @@ class YouTubeIt
           return response.body
         end
       end
-      
+
       def playlists_for(user)
         playlist_url = "/feeds/api/users/#{user}/playlists?v=2"
         http_connection do |session|
@@ -469,13 +469,17 @@ class YouTubeIt
         {:code => response.code, :body => response.body}
       end
       
-      def favorites
-        favorite_url = "/feeds/api/users/default/favorites"
-        http_connection do |session|
-          response = session.get(favorite_url)
-          raise_on_faulty_response(response)
-          return response.body
+      def favorites(opts = {})
+        favorite_url = "/feeds/api/users/default/favorites?#{opts.to_param}"
+        if @access_token.nil?
+          http_connection do |session|
+            response = session.get(favorite_url)
+          end
+        else
+          response = @access_token.get("http://%s%s" % [base_url, favorite_url])
         end
+        raise_on_faulty_response(response)
+        return YouTubeIt::Parser::VideosFeedParser.new(response.body).parse
       end
 
       def get_current_user
@@ -543,7 +547,7 @@ class YouTubeIt
             all_faults + sprintf("%s: %s\n", msg_error, code)
           end
         rescue
-          string[/<TITLE>(.+)<\/TITLE>/, 1] || string 
+          string[/<TITLE>(.+)<\/TITLE>/, 1] || string
         end
       end
 
