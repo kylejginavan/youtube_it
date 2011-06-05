@@ -99,6 +99,7 @@ class YouTubeIt
         entry = xml.elements["entry"] || xml.elements["feed"]
         YouTubeIt::Model::User.new(
           :age         => entry.elements["yt:age"] ? entry.elements["yt:age"].text : nil,
+          :username         => entry.elements["yt:username"] ? entry.elements["yt:username"].text : nil,
           :company         => entry.elements["yt:company"] ? entry.elements["yt:company"].text : nil,
           :gender         => entry.elements["yt:gender"] ? entry.elements["yt:gender"].text : nil,
           :hobbies         => entry.elements["yt:hobbies"] ? entry.elements["yt:hobbies"].text : nil,
