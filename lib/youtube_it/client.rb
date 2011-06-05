@@ -130,8 +130,8 @@ class YouTubeIt
       client.delete_favorite(video_id)
     end
 
-    def favorites
-      client.favorites
+    def favorites(opts = {})
+      client.favorites(opts)
     end
 
     def profile(user_id = nil)
@@ -145,7 +145,7 @@ class YouTubeIt
     def playlists
       client.playlists
     end
-    
+
     def playlists_for(user)
      client.playlists_for(user)
     end
@@ -257,14 +257,14 @@ class YouTubeIt
       def client
         @client ||= YouTubeIt::Upload::VideoUpload.new(:dev_key => @dev_key, :authsub_token => @authsub_token)
       end
-      
+
       def session_token_header
         {
           "Content-Type"   => "application/x-www-form-urlencoded",
           "Authorization"  => "AuthSub token=#{@authsub_token}"
-        }        
+        }
       end
-      
+
       def http_connection
         http = Net::HTTP.new("www.google.com")
         http.set_debug_output(logger) if @http_debugging
