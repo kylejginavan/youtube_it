@@ -134,7 +134,7 @@ class YouTubeIt
       client.favorites(opts)
     end
 
-    def profile(user_id)
+    def profile(user_id = nil)
       client.profile(user_id)
     end
 
@@ -168,6 +168,18 @@ class YouTubeIt
 
     def delete_playlist(playlist_id)
       client.delete_playlist(playlist_id)
+    end
+
+    def like_video(video_id)
+      client.rate_video(video_id, 'like')
+    end
+
+    def dislike_video(video_id)
+      client.rate_video(video_id, 'dislike')
+    end
+    
+    def subscribe_channel(channel_name)
+      client.subscribe_channel(channel_name)
     end
 
     def enable_http_debugging
