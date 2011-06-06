@@ -1,6 +1,7 @@
 class YouTubeIt
   module Request #:nodoc:
     class UserSearch < BaseSearch #:nodoc:
+      include FieldSearch
       attr_reader :max_results                     # max_results
       attr_reader :order_by                        # orderby, ([relevance], viewCount, published, rating)
       attr_reader :offset                          # start-index
@@ -22,6 +23,7 @@ class YouTubeIt
         end
 
         @url << build_query_params(to_youtube_params)
+        @url << fields_to_params(params.delete(:fields))
       end
 
       private

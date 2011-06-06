@@ -2,7 +2,8 @@ class YouTubeIt
   module Parser #:nodoc:
     class FeedParser #:nodoc:
       def initialize(content)
-        @content = open(content).read rescue content
+        p content
+        @content = open(content).read #rescue content
       end
 
       def parse
