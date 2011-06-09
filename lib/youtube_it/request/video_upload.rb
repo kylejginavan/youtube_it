@@ -149,6 +149,56 @@ class YouTubeIt
         return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse
       end
 
+      # Fetches the data of a video, which may be private. The video must be owned by this user.
+      # When the authentication credentials are incorrect, an AuthenticationError will be raised.
+      def get_my_video(video_id)
+        response = nil
+        get_header = {
+          "Content-Type"   => "application/atom+xml",
+          "Content-Length" => "0",
+        }
+        get_url = "/feeds/api/users/default/uploads/%s" % video_id
+
+        if @access_token.nil?
+          get_header.merge!(authorization_headers)
+          http_connection do |session|
+            response = session.get(get_url, get_header)
+          end
+        else
+          get_header.merge!(authorization_headers_for_oauth)
+          response = @access_token.put("http://%s%s" % [base_url,get_url], get_header)
+        end
+
+        raise_on_faulty_response(response)
+        return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse
+      end
+
+      # Fetches the data of the videos of the current user, which may be private. 
+      # When the authentication credentials are incorrect, an AuthenticationError will be raised.
+      def get_my_videos(opts)
+        max_results = opts[:per_page] || 50
+        start_index = ((opts[:page] || 1) -1) * max_results +1
+        response = nil
+        get_header = {
+          "Content-Type"   => "application/atom+xml",
+          "Content-Length" => "0",
+        }
+        get_url = "/feeds/api/users/default/uploads?max-results=#{max_results}&start-index=#{start_index}"
+
+        if @access_token.nil?
+          get_header.merge!(authorization_headers)
+          http_connection do |session|
+            response = session.get(get_url, get_header)
+          end
+        else
+          get_header.merge!(authorization_headers_for_oauth)
+          response = @access_token.put("http://%s%s" % [base_url,get_url], get_header)
+        end
+
+        raise_on_faulty_response(response)
+        return YouTubeIt::Parser::VideosFeedParser.new(response.body).parse
+      end
+
       # Delete a video on YouTube
       def delete(video_id)
         response      = nil

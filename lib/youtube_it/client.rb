@@ -189,6 +189,16 @@ class YouTubeIt
     def current_user
       client.get_current_user
     end
+    
+    # Gets the authenticated users video with the given ID. It may be private.
+    def my_video(video_id)
+      client.get_my_video(video_id)
+    end
+
+    # Gets all videos 
+    def my_videos(opts)
+      client.get_my_videos(opts)
+    end
 
     private
 
