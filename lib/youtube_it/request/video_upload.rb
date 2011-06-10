@@ -10,7 +10,13 @@ class YouTubeIt
       end
     end
 
-    class AuthenticationError < YouTubeIt::Error; end
+    class AuthenticationError < YouTubeIt::Error
+      attr_reader :code
+      def initialize(msg, code = 0)
+        super(msg)
+        @code = code
+      end
+    end
 
     # Implements video uploads/updates/deletions
     #
@@ -557,7 +563,7 @@ class YouTubeIt
 
         if response_code == 403 || response_code == 401
         #if response_code / 10 == 40
-          raise AuthenticationError, msg
+          raise AuthenticationError.new(msg, response_code)
         elsif response_code / 10 != 20 # Response in 20x means success
           raise UploadError.new(msg, response_code)
         end

@@ -322,8 +322,16 @@ class YouTubeIt
     end
 
     def current_user
-      body = access_token.get("http://gdata.youtube.com/feeds/api/users/default").body
-      REXML::Document.new(body).elements["entry"].elements['author'].elements['name'].text
+      profile = access_token.get("http://gdata.youtube.com/feeds/api/users/default")
+      response_code = profile.code.to_i
+
+      if response_code/10 == 20 # success
+        REXML::Document.new(profile.body).elements["entry"].elements['author'].elements['name'].text
+      elsif response_code == 403 || response_code == 401 # auth failure
+        raise YouTubeIt::Upload::AuthenticationError.new(profile.inspect, response_code)
+      else
+        raise YouTubeIt::Upload::UploadError.new(profile.inspect, response_code)
+      end
     end
 
     private
