@@ -2,21 +2,9 @@ class YouTubeIt
 
   module Upload
 
-    class UploadError < YouTubeIt::Error
-      attr_reader :code
-      def initialize(msg, code = 0)
-        super(msg)
-        @code = code
-      end
-    end
+    class UploadError < YouTubeIt::Error; end
 
-    class AuthenticationError < YouTubeIt::Error
-      attr_reader :code
-      def initialize(msg, code = 0)
-        super(msg)
-        @code = code
-      end
-    end
+    class AuthenticationError < YouTubeIt::Error; end
 
     # Implements video uploads/updates/deletions
     #
