@@ -14,3 +14,7 @@
 [ ] Playlist feeds
 [ ] User subscriptions
 [ ] Video comments
+
+== BUG TODO
+
+[ ] video_upload.rb line 546 mg.tag!("media:keywords", @opts[:keywords].join(",")) fails when no keywords passed
