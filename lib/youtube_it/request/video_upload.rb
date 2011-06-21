@@ -302,12 +302,18 @@ class YouTubeIt
       end
 
       def playlists
+        response = nil
         playlist_url = "/feeds/api/users/default/playlists?v=2"
-        http_connection do |session|
-          response = session.get(playlist_url)
-          raise_on_faulty_response(response)
-          return response.body
+
+        if @access_token.nil?
+          http_connection do |session|
+            response = session.get(playlist_url)
+          end
+        else
+          response = @access_token.get("http://%s%s" % [base_url, playlist_url], authorization_headers_for_oauth)
         end
+        raise_on_faulty_response(response)
+        return YouTubeIt::Parser::PlaylistsFeedParser.new(response).parse
       end
 
       def playlists_for(user)
