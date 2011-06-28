@@ -196,7 +196,7 @@ class YouTubeIt
     end
 
     # Gets all videos 
-    def my_videos(opts)
+    def my_videos(opts = {})
       client.get_my_videos(opts)
     end
 
