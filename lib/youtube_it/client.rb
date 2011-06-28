@@ -11,7 +11,7 @@ class YouTubeIt
         @dev_key               = hash_options[:dev_key]
         @client_id             = hash_options[:client_id] || "youtube_it"
         @legacy_debug_flag     = hash_options[:debug]
-      else
+      elsif params.first
         puts "* warning: the method YouTubeIt::Client.new(user, passwd, dev_key) is deprecated, use YouTubeIt::Client.new(:username => 'user', :password => 'passwd', :dev_key => 'dev_key')"
         @user               = params.shift
         @pass               = params.shift
@@ -188,6 +188,16 @@ class YouTubeIt
 
     def current_user
       client.get_current_user
+    end
+    
+    # Gets the authenticated users video with the given ID. It may be private.
+    def my_video(video_id)
+      client.get_my_video(video_id)
+    end
+
+    # Gets all videos 
+    def my_videos(opts)
+      client.get_my_videos(opts)
     end
 
     private

@@ -2,7 +2,8 @@ class YouTubeIt
   module Parser #:nodoc:
     class FeedParser #:nodoc:
       def initialize(content)
-        @content = open(content).read rescue content
+        p content
+        @content = open(content).read #rescue content
       end
 
       def parse
@@ -236,6 +237,18 @@ class YouTubeIt
           position = where.elements["gml:Point"].elements["gml:pos"].text
           latitude, longitude = position.split(" ")
         end
+        
+        control = entry.elements["app:control"]
+        state = { :name => "published" }
+        if control
+          state = {
+            :name => control.elements["yt:state"].attributes["name"],
+            :reason_code => control.elements["yt:state"].attributes["reasonCode"],
+            :help_url => control.elements["yt:state"].attributes["helpUrl"],
+            :copy => control.elements["yt:state"].text
+          }
+          
+        end
 
         YouTubeIt::Model::Video.new(
           :video_id => video_id,
@@ -260,7 +273,8 @@ class YouTubeIt
           :where => where,
           :position => position,
           :latitude => latitude,
-          :longitude => longitude)
+          :longitude => longitude,
+          :state => state)
       end
 
       def parse_media_content (media_content_element)

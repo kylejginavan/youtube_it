@@ -11,6 +11,7 @@ class YouTubeIt
                 :recently_featured, :watch_on_mobile ]
 
       def initialize(type, options={})
+        puts "I'm a standard search"
         @dev_key = options[:dev_key] if options[:dev_key]
         if TYPES.include?(type)
           @max_results, @order_by, @offset, @time = nil

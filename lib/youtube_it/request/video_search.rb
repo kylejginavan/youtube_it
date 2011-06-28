@@ -1,6 +1,8 @@
 class YouTubeIt
   module Request #:nodoc:
     class VideoSearch < BaseSearch #:nodoc:
+      include FieldSearch
+
       # From here: http://code.google.com/apis/youtube/reference.html#yt_format
       ONLY_EMBEDDABLE = 5
 
@@ -15,7 +17,6 @@ class YouTubeIt
       attr_reader :racy                            # racy ([exclude], include)
       attr_reader :author
       attr_reader :lang                            # lt
-
 
       def initialize(params={})
         # Initialize our various member data to avoid warnings and so we'll
@@ -65,17 +66,6 @@ class YouTubeIt
         }
       end
 
-      def fields_to_params(fields)
-        return "" unless fields
-
-        if fields[:recorded]
-          if fields[:recorded].is_a? Range
-            "&fields=entry[xs:date(yt:recorded) > xs:date('#{formatted_date(fields[:recorded].first)}') and xs:date(yt:recorded) < xs:date('#{formatted_date(fields[:recorded].last)}')]"
-          else
-            "&fields=entry[xs:date(yt:recorded) = xs:date('#{formatted_date(fields[:recorded])}')]"
-          end
-        end
-      end
 
       # Convert category symbols into strings and build the URL. GData requires categories to be capitalized.
       # Categories defined like: categories => { :include => [:news], :exclude => [:sports], :either => [..] }
@@ -106,15 +96,6 @@ class YouTubeIt
         end
       end
 
-      #youtube taked dates that look like 'YYYY-MM-DD'
-      def formatted_date(date)
-        return date if date.is_a? String
-        if date.respond_to? :strftime
-          date.strftime("%Y-%m-%d")
-        else
-          ""
-        end
-      end
     end
   end
 end
