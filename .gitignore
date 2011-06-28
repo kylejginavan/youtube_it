@@ -14,4 +14,4 @@ db/sphinx/
 sphinx/**/*
 public/packages/*
 .gitconfig
-pkg/**/*
+pkg/
