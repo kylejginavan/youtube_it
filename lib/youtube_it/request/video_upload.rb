@@ -331,7 +331,8 @@ class YouTubeIt
 
         if @access_token.nil?
           http_connection do |session|
-            response = session.get(profile_url)
+            header.merge!(authorization_headers)
+            response = session.get(profile_url, authorization_headers)
           end
         else
           header.merge!(authorization_headers_for_oauth)
