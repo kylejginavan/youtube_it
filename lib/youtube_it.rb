@@ -56,6 +56,7 @@ end
   model/content
   model/playlist
   model/rating
+  model/subscription
   model/thumbnail
   model/user
   model/video

@@ -2,8 +2,7 @@ class YouTubeIt
   module Parser #:nodoc:
     class FeedParser #:nodoc:
       def initialize(content)
-        p content
-        @content = open(content).read #rescue content
+        @content = open(content).read rescue content
       end
 
       def parse
@@ -120,6 +119,31 @@ class YouTubeIt
         )
       end
     end
+    
+    class SubscriptionFeedParser < FeedParser #:nodoc:
+
+      def parse_content(content)
+        doc = REXML::Document.new(content.body)
+        feed = doc.elements["feed"]
+        
+        subscriptions = []
+        feed.elements.each("entry") do |entry|
+          subscriptions << parse_entry(entry)
+        end
+        return subscriptions
+      end
+      
+      protected
+      
+      def parse_entry(entry)
+        YouTubeIt::Model::Subscription.new(
+          :title        => entry.elements["title"].text,
+          :id           => entry.elements["id"].text[/subscription([^<]+)/, 1].sub(':',''),
+          :published    => entry.elements["published"] ? entry.elements["published"].text : nil
+        )
+      end
+    end
+    
 
     class VideoFeedParser < FeedParser #:nodoc:
 

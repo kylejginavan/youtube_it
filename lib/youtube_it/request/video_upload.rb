@@ -503,6 +503,28 @@ class YouTubeIt
         {:code => response.code, :body => response.body}
       end
       
+      def subscriptions(user_id)
+        subscription_url = "https://gdata.youtube.com/feeds/api/users/%s/subscriptions?v=2" % (user_id ? user_id : "default")
+
+        response        = nil
+        header = {
+          "Content-Type"   => "application/atom+xml; charset=UTF-8"
+        }
+
+        if @access_token.nil?
+          header.merge!(authorization_headers)
+          http_connection do |session|
+            response = session.get(subscription_url, header)
+          end
+        else
+          header.merge!(authorization_headers_for_oauth)
+          response = @access_token.get(subscription_url, header)
+        end
+
+        raise_on_faulty_response(response)
+        return YouTubeIt::Parser::SubscriptionFeedParser.new(response).parse
+      end
+            
       def subscribe_channel(channel_name)
         response        = nil
         subscribe_body   = video_xml_for(:subscribe => channel_name)
@@ -524,6 +546,27 @@ class YouTubeIt
         raise_on_faulty_response(response)
         {:code => response.code, :body => response.body}
       end
+      
+      def unsubscribe_channel(subscription_id)
+        response           = nil
+        unsubscribe_header = {
+          "Content-Type"   => "application/atom+xml"
+        }
+        unsubscribe_url = "/feeds/api/users/default/subscriptions/%s" % subscription_id
+
+        if @access_token.nil?
+          unsubscribe_header.merge!(authorization_headers)
+          http_connection do |session|
+            response = session.delete(unsubscribe_url, unsubscribe_header)
+          end
+        else
+          unsubscribe_header.merge!(authorization_headers_for_oauth)
+          response = @access_token.post("http://%s%s" % [base_url, unsubscribe_url], unsubscribe_header)
+        end
+        raise_on_faulty_response(response)
+        {:code => response.code, :body => response.body}
+      end
+      
       
       def favorites(opts = {})
         favorite_url = "/feeds/api/users/default/favorites?#{opts.to_param}"
