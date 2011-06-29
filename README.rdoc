@@ -13,6 +13,8 @@
   * Create a developer key here http://code.google.com/apis/youtube/dashboard.
   * sudo gem install youtube_it
 
+Note: youtube_it supports ClientLogin(YouTube account), OAuth or AuthSub authentication methods.
+
 == ESTABLISHING A CLIENT
 
 Creating a client:
@@ -52,9 +54,20 @@ Standard Queries:
 Advanced Queries (with boolean operators OR (either), AND (include), NOT (exclude)):
   $ client.videos_by(:categories => { :either => [:news, :sports], :exclude => [:comedy] }, :tags => { :include => ['football'], :exclude => ['soccer'] })
 
+
+Fields Parameter(experimental features):
+  Return videos more than 1000 views
+  $ client.videos_by(:fields => {:view_count => "1000"})
+  Filter by date
+  $ client.videos_by(:fields => {:published  => ((Date.today)})
+  $ client.videos_by(:fields => {:recorded   => ((Date.today)})  
+  Filter by date with range
+  $ client.videos_by(:fields => {:published  => ((Date.today - 30)..(Date.today))})
+  $ client.videos_by(:fields => {:recorded   => ((Date.today - 30)..(Date.today))})  
+  
 == VIDEO MANAGEMENT
 
-Note: YouTube account or OAuth enables video management.
+Note: YouTube account, OAuth or AuthSub enables video management.
 
 Upload Video:
   $ client.video_upload(File.open("test.mov"), :title => "test",:description => 'some description', :category => 'People',:keywords => %w[cool blah test])
@@ -68,6 +81,12 @@ Update Video:
 Delete Video:
   $ client.video_delete("FQK1URcxmb4")
 
+My Videos:
+  $ client.my_videos
+
+My Video:
+  $ client.my_video(video_id)
+  
 Profile Details:
   $ client.profile(user_id)
 
@@ -92,8 +111,14 @@ Like A Video:
 Dislike A Video:
   $ client.dislike_video(video_id)
 
+List Subscriptions:
+  $ client.subscriptions(user) #default: current user
+
 Subscribe To A Channel:
   $ client.subscribe_channel(channel_name)
+
+Unsubscribe To A Channel:
+  $ client.unsubscribe_channel(subscription_id)
 
 List Playlists:
   $ client.playlists
