@@ -1,4 +1,5 @@
-require File.dirname(__FILE__) + '/helper'
+require File.expand_path(File.dirname(__FILE__) + '/helper')
+
 class YouTubeIt
   module Request
     class TestSearch < BaseSearch
@@ -15,7 +16,7 @@ class TestFieldSearch < Test::Unit::TestCase
   include YouTubeIt::Request
 
   def default_fields
-    "id,published,yt:released,updated,openSearch:totalResults,openSearch:startIndex,openSearch:itemsPerPage"
+    "id,updated,openSearch:totalResults,openSearch:startIndex,openSearch:itemsPerPage"
   end
 
   def test_should_search_for_range_of_recoreded_on_dates

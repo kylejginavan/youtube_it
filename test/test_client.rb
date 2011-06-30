@@ -70,7 +70,7 @@ class TestClient < Test::Unit::TestCase
   end
   
   def test_should_handle_video_not_yet_viewed
-    response = @client.videos_by(:query => "aDlw5j28X3U")
+    response = @client.videos_by(:query => "CE62FSEoY28")
   
     assert_equal 1, response.videos.length
     response.videos.each { |v| assert_valid_video v }
@@ -189,102 +189,150 @@ class TestClient < Test::Unit::TestCase
     end
   end
   
-    def test_should_upload_a_video
-      video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
-      assert_valid_video video
-      @client.video_delete(video.unique_id)
-    end
+  def test_should_upload_a_video
+    video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
+    assert_valid_video video
+    @client.video_delete(video.unique_id)
+  end
+  
+  def test_should_update_a_video
+    OPTIONS[:title] = "title changed"
+    video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
+    updated_video  = @client.video_update(video.unique_id, OPTIONS)
+    assert updated_video.title == "title changed"
+    @client.video_delete(video.unique_id)
+  end
+  
+  def test_should_delete_video
+    video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
+    assert_valid_video video
+    assert @client.video_delete(video.unique_id)
+  end
+  
+  def test_should_denied_comments
+    video     = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:comment => "denied"))
+    assert_valid_video video
+    doc = Nokogiri::HTML(open("http://www.youtube.com/watch?v=#{video.unique_id}"))
+    doc.css('.comments-disabled-message').each{|tag| assert (tag.content.strip == "Adding comments has been disabled for this video.")}
+    @client.video_delete(video.unique_id)
+  end
+  
+  def test_should_denied_rate
+    video  = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:rate => "denied"))
+    assert_valid_video video
+    doc = Nokogiri::HTML(open("http://www.youtube.com/watch?v=#{video.unique_id}"))
+    doc.css('#watch-like').each{|tag|; assert (tag.attributes["title"].to_s == "Ratings have been disabled for this video.")}
+    @client.video_delete(video.unique_id)
+  end
+  
+  def test_should_denied_embed
+    video  = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:embed => "denied"))
+    assert    video.noembed
+    @client.video_delete(video.unique_id)
+  end
+  
+  def test_should_add_new_comment
+    video_id ="aDlw5j28X3U"
+    @client.add_comment(video_id, "test comment")
+    comment = @client.comments(video_id).first.content
+    assert comment.match(/test comment/)
+  end
+  
+  def test_should_add_and_delete_video_to_favorite
+    video_id ="aDlw5j28X3U"
+    result = @client.add_favorite(video_id)
+    assert_equal result[:code], 201
+    sleep 4
+    assert @client.delete_favorite(video_id)
+  end
+  
+  def test_should_add_and_delete_video_from_playlist
+    playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
+    video = @client.add_video_to_playlist(playlist.playlist_id,"iKqJ8z1DPrQ")
+    assert_equal video[:code].to_i, 201
+    assert @client.delete_video_from_playlist(playlist.playlist_id, video[:playlist_entry_id])
+    assert @client.delete_playlist(playlist.playlist_id)
+  end
+  
+  def test_should_add_and_delete_new_playlist
+    result = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
+    assert result.title, "youtube_it test!"
+    sleep 4
+    assert @client.delete_playlist(result.playlist_id)
+  end
+  
+  def test_should_update_playlist
+    playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
+    playlist_updated = @client.update_playlist(playlist.playlist_id, :title => "title changed")
+    assert_equal playlist_updated.title, "title changed"
+    assert @client.delete_playlist(playlist.playlist_id)
+  end
     
-    def test_should_update_a_video
-      OPTIONS[:title] = "title changed"
-      video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
-      updated_video  = @client.video_update(video.unique_id, OPTIONS)
-      assert updated_video.title == "title changed"
-      @client.video_delete(video.unique_id)
-    end
+  def test_should_list_playlist_for_user
+    result = @client.playlists('chebyte')
+    assert result.last.title, "rock"
+  end
+  
     
-    def test_should_delete_video
-      video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
-      assert_valid_video video
-      assert @client.video_delete(video.unique_id)
-    end
-    
-    def test_should_denied_comments
-      video     = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:comment => "denied"))
-      assert_valid_video video
-      doc = Nokogiri::HTML(open("http://www.youtube.com/watch?v=#{video.unique_id}"))
-      doc.css('.comments-disabled').each{|tag| assert (tag.content.strip == "All Comments\n        \n           Adding comments has been disabled for this video.")}
-      @client.video_delete(video.unique_id)
-    end
-    
-    def test_should_denied_rate
-      video  = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:rate => "denied"))
-      assert_valid_video video
-      doc = Nokogiri::HTML(open("http://www.youtube.com/watch?v=#{video.unique_id}"))
-      doc.css('#watch-like').each{|tag|; assert (tag.attributes["title"].to_s == "Ratings have been disabled for this video.")}
-      @client.video_delete(video.unique_id)
-    end
-    
-    def test_should_denied_embed
-      video  = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:embed => "denied"))
-      assert    video.noembed
-      @client.video_delete(video.unique_id)
-    end
-    
-    def test_should_add_new_comment
-      video_id ="aDlw5j28X3U"
-      @client.add_comment(video_id, "test comment")
-      comment = @client.comments(video_id).first.content
-      assert comment.match(/test comment/)
-    end
-    
-    def test_should_add_and_delete_video_to_favorite
-      video_id ="aDlw5j28X3U"
-      result = @client.add_favorite(video_id)
-      assert_equal result[:code], "201"
-      sleep 4
-      assert @client.delete_favorite(video_id)
-    end
-    
-    def test_should_add_and_del_video_from_playlist
-      playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
-      video = @client.add_video_to_playlist(playlist.playlist_id,"iKqJ8z1DPrQ")
-      assert_equal video[:code].to_i, 201
-      assert @client.delete_video_from_playlist(playlist.playlist_id, video[:playlist_entry_id])
-      assert @client.delete_playlist(playlist.playlist_id)
-    end
-    
-    def test_should_add_and_del_new_playlist
-      result = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
-      assert result.title, "youtube_it test!"
-      sleep 4
-      assert @client.delete_playlist(result.playlist_id)
-    end
-    
-    def test_should_update_playlist
-      playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
-      playlist_updated = @client.update_playlist(playlist.playlist_id, :title => "title changed")
-      assert_equal playlist_updated.title, "title changed"
-      assert @client.delete_playlist(playlist.playlist_id)
-    end
-    
-    def test_should_list_playlist_for_user
-      result = @client.playlists_for('chebyte')
-      assert result.last.title, "rock"
-    end
-    
-    
-    def test_should_determine_if_widescreen_video_is_widescreen
-      widescreen_id = 'QqQVll-MP3I'
-    
-      video = @client.video_by(widescreen_id)
-      assert video.widescreen?
-    end
-    
-    def test_get_current_user
-      assert @client.current_user, 'tubeit20101'
-    end
-    
+   def test_should_determine_if_widescreen_video_is_widescreen
+     widescreen_id = 'QqQVll-MP3I'
+   
+     video = @client.video_by(widescreen_id)
+     assert video.widescreen?
+   end
+   
+   def test_get_current_user
+     assert @client.current_user, 'tubeit20101'
+   end
+   
+   def test_should_get_my_videos
+     video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
+     assert_valid_video video
+     result = @client.my_videos
+     assert_equal result.videos.first.unique_id, video.unique_id
+     @client.video_delete(video.unique_id)
+   end
+   
+   def test_should_get_my_video
+     video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
+     assert_valid_video video
+     result = @client.my_video(video.unique_id)
+     assert_equal result.unique_id, video.unique_id
+     @client.video_delete(video.unique_id)
+   end
+   
+   def test_should_add_like_to_video
+     r = @client.like_video("CE62FSEoY28")
+     assert_equal r[:code], 201
+     @client.dislike_video("CE62FSEoY28")
+   end
+   
+   def test_should_dislike_to_video
+     @client.like_video("CE62FSEoY28")
+     r = @client.dislike_video("CE62FSEoY28")
+     assert_equal r[:code], 201
+   end
+   
+   def test_should_subscribe_to_channel
+     r = @client.subscribe_channel("TheWoWArthas")
+     assert_equal r[:code], 201
+     assert_equal @client.subscriptions.first.title, "Videos published by : TheWoWArthas"
+     @client.unsubscribe_channel(@client.subscriptions.first.id)
+   end
+   
+   def test_should_unsubscribe_to_channel
+     @client.subscribe_channel("TheWoWArthas")
+     r = @client.unsubscribe_channel(@client.subscriptions.first.id)
+     assert_equal r[:code], 200
+   end
+   
+   def test_should_list_subscriptions
+     @client.subscribe_channel("TheWoWArthas")
+     assert @client.subscriptions.count == 1
+     assert_equal @client.subscriptions.first.title, "Videos published by : TheWoWArthas"
+     @client.unsubscribe_channel(@client.subscriptions.first.id)
+   end
+     
   private
   
     def assert_valid_video (video)
