@@ -130,24 +130,20 @@ class YouTubeIt
       client.delete_favorite(video_id)
     end
 
-    def favorites(opts = {})
-      client.favorites(opts)
+    def favorites(user = nil, opts = {})
+      client.favorites(user, opts)
     end
 
-    def profile(user_id = nil)
-      client.profile(user_id)
+    def profile(user = nil)
+      client.profile(user)
     end
 
     def playlist(playlist_id)
       client.playlist playlist_id
     end
 
-    def playlists
-      client.playlists
-    end
-
-    def playlists_for(user)
-     client.playlists_for(user)
+    def playlists(user = nil)
+      client.playlists(user)
     end
 
     def add_playlist(options)
@@ -329,6 +325,15 @@ class YouTubeIt
       @access_token = ::OAuth::AccessToken.new(consumer, @atoken, @asecret)
     end
 
+    def config_token
+      {
+        :consumer_key => @consumer_key,
+        :consumer_secret => @consumer_secret,
+        :token => @atoken,
+        :token_secret => @asecret
+       }
+    end
+
     def authorize_from_request(rtoken,rsecret,verifier)
       request_token = ::OAuth::RequestToken.new(consumer,rtoken,rsecret)
       access_token = request_token.get_access_token({:oauth_verifier => verifier})
@@ -348,7 +353,7 @@ class YouTubeIt
 
     def client
       # IMPORTANT: make sure authorize_from_access is called before client is fetched
-      @client ||= YouTubeIt::Upload::VideoUpload.new(:username => current_user, :dev_key => @dev_key, :access_token => access_token)
+      @client ||= YouTubeIt::Upload::VideoUpload.new(:username => current_user, :dev_key => @dev_key, :access_token => access_token, :config_token => config_token)
     end
 
   end

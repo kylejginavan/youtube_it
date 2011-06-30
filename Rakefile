@@ -10,6 +10,8 @@ begin
     gem.email = "kylejginavan@gmail.com"
     gem.homepage = "http://github.com/kylejginavan/youtube_it"
     gem.add_dependency('oauth','>=0.4.4')
+    gem.add_dependency('simple_oauth', '>=0.1.5')    
+    gem.add_dependency('faraday','>=0.7.3')    
     gem.add_dependency('builder')
     gem.authors = ["kylejginavan","chebyte", "mseppae"]
   end

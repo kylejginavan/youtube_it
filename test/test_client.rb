@@ -10,7 +10,10 @@ class TestClient < Test::Unit::TestCase
   RAILS_ENV = "test"
 
   def setup
+    #clientlogin
     @client = YouTubeIt::Client.new(:username => ACCOUNT[:user], :password => ACCOUNT[:passwd] , :dev_key => ACCOUNT[:dev_key])
+    #authsub
+    #@client  = YouTubeIt::AuthSubClient.new(:token => "1/vqYlJytmn4eWRjJnORHT94mENNfZzZsLutMOrvvygB4" , :dev_key => ACCOUNT[:dev_key])
   end
 
   def test_should_respond_to_a_basic_query
@@ -237,15 +240,7 @@ class TestClient < Test::Unit::TestCase
     comment = @client.comments(video_id).first.content
     assert comment.match(/test comment/)
   end
-  
-  def test_should_add_and_delete_video_to_favorite
-    video_id ="aDlw5j28X3U"
-    result = @client.add_favorite(video_id)
-    assert_equal result[:code], 201
-    sleep 4
-    assert @client.delete_favorite(video_id)
-  end
-  
+    
   def test_should_add_and_delete_video_from_playlist
     playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
     video = @client.add_video_to_playlist(playlist.playlist_id,"iKqJ8z1DPrQ")
@@ -255,7 +250,7 @@ class TestClient < Test::Unit::TestCase
   end
   
   def test_should_add_and_delete_new_playlist
-    result = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
+    result = @client.add_playlist(:title => "youtube_it test4!", :description => "test playlist")
     assert result.title, "youtube_it test!"
     sleep 4
     assert @client.delete_playlist(result.playlist_id)
@@ -272,67 +267,71 @@ class TestClient < Test::Unit::TestCase
     result = @client.playlists('chebyte')
     assert result.last.title, "rock"
   end
-  
     
-   def test_should_determine_if_widescreen_video_is_widescreen
-     widescreen_id = 'QqQVll-MP3I'
-   
-     video = @client.video_by(widescreen_id)
-     assert video.widescreen?
-   end
-   
-   def test_get_current_user
-     assert @client.current_user, 'tubeit20101'
-   end
-   
-   def test_should_get_my_videos
-     video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
-     assert_valid_video video
-     result = @client.my_videos
-     assert_equal result.videos.first.unique_id, video.unique_id
-     @client.video_delete(video.unique_id)
-   end
-   
-   def test_should_get_my_video
-     video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
-     assert_valid_video video
-     result = @client.my_video(video.unique_id)
-     assert_equal result.unique_id, video.unique_id
-     @client.video_delete(video.unique_id)
-   end
-   
-   def test_should_add_like_to_video
-     r = @client.like_video("CE62FSEoY28")
-     assert_equal r[:code], 201
-     @client.dislike_video("CE62FSEoY28")
-   end
-   
-   def test_should_dislike_to_video
-     @client.like_video("CE62FSEoY28")
-     r = @client.dislike_video("CE62FSEoY28")
-     assert_equal r[:code], 201
-   end
-   
-   def test_should_subscribe_to_channel
-     r = @client.subscribe_channel("TheWoWArthas")
-     assert_equal r[:code], 201
-     assert_equal @client.subscriptions.first.title, "Videos published by : TheWoWArthas"
-     @client.unsubscribe_channel(@client.subscriptions.first.id)
-   end
-   
-   def test_should_unsubscribe_to_channel
-     @client.subscribe_channel("TheWoWArthas")
-     r = @client.unsubscribe_channel(@client.subscriptions.first.id)
-     assert_equal r[:code], 200
-   end
-   
-   def test_should_list_subscriptions
-     @client.subscribe_channel("TheWoWArthas")
-     assert @client.subscriptions.count == 1
-     assert_equal @client.subscriptions.first.title, "Videos published by : TheWoWArthas"
-     @client.unsubscribe_channel(@client.subscriptions.first.id)
-   end
+  def test_should_determine_if_widescreen_video_is_widescreen
+   widescreen_id = 'QqQVll-MP3I'
+
+   video = @client.video_by(widescreen_id)
+   assert video.widescreen?
+  end
+
+  def test_get_current_user
+   assert_equal @client.current_user, 'tubeit20101'
+  end
+
+  def test_should_get_my_videos
+   video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
+   assert_valid_video video
+   result = @client.my_videos
+   assert_equal result.videos.first.unique_id, video.unique_id
+   @client.video_delete(video.unique_id)
+  end
+
+  def test_should_get_my_video
+   video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
+   assert_valid_video video
+   result = @client.my_video(video.unique_id)
+   assert_equal result.unique_id, video.unique_id
+   @client.video_delete(video.unique_id)
+  end
+
+  def test_should_add_like_to_video
+   r = @client.like_video("CE62FSEoY28")
+   assert_equal r[:code], 201
+   @client.dislike_video("CE62FSEoY28")
+  end
+
+  def test_should_dislike_to_video
+   @client.like_video("CE62FSEoY28")
+   r = @client.dislike_video("CE62FSEoY28")
+   assert_equal r[:code], 201
+  end
+
+
+  def test_should_subscribe_to_channel
+   r = @client.subscribe_channel("TheWoWArthas")
+   assert_equal r[:code], 201
+   assert_equal @client.subscriptions.first.title, "Videos published by : TheWoWArthas"
+   @client.unsubscribe_channel(@client.subscriptions.first.id)
+  end
+
+  def test_should_unsubscribe_to_channel
+   @client.subscribe_channel("TheWoWArthas")
+   r = @client.unsubscribe_channel(@client.subscriptions.first.id)
+   assert_equal r[:code], 200
+  end
+
+  def test_should_list_subscriptions
+   @client.subscribe_channel("TheWoWArthas")
+   assert @client.subscriptions.count == 1
+   assert_equal @client.subscriptions.first.title, "Videos published by : TheWoWArthas"
+   @client.unsubscribe_channel(@client.subscriptions.first.id)
+  end
      
+  def test_should_get_profile
+    profile = @client.profile
+    assert_equal profile.username, "tubeit20101" 
+  end
   private
   
     def assert_valid_video (video)

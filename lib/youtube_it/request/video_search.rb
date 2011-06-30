@@ -42,7 +42,7 @@ class YouTubeIt
         end
 
         @url << build_query_params(to_youtube_params)
-        @url << fields_to_params(params.delete(:fields))
+        @url << fields_to_params(params.delete(:fields)) if params[:fields]
       end
 
       private

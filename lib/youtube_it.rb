@@ -5,6 +5,7 @@ require 'digest/md5'
 require 'rexml/document'
 require 'builder'
 require 'oauth'
+require 'faraday'
 
 class YouTubeIt
   
@@ -61,10 +62,14 @@ end
   model/user
   model/video
   request/base_search
+  request/error
   request/user_search
   request/standard_search
   request/video_upload
   request/video_search
   response/video_search
+  middleware/faraday_authheader.rb  
+  middleware/faraday_oauth.rb  
+  middleware/faraday_youtubeit.rb
   chain_io
 ).each{|m| require File.dirname(__FILE__) + '/youtube_it/' + m }

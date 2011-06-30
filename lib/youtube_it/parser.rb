@@ -36,15 +36,15 @@ class YouTubeIt
         def parse_entry(entry)
           author = YouTubeIt::Model::Author.new(
             :name => entry.elements["author"].elements["name"].text,
-            :uri => entry.elements["author"].elements["uri"].text
+            :uri  => entry.elements["author"].elements["uri"].text
           )
           YouTubeIt::Model::Comment.new(
-            :author => author,
-            :content => entry.elements["content"].text,
+            :author    => author,
+            :content   => entry.elements["content"].text,
             :published => entry.elements["published"].text,
-            :title => entry.elements["title"].text,
-            :updated => entry.elements["updated "].text,
-            :url => entry.elements["id"].text
+            :title     => entry.elements["title"].text,
+            :updated   => entry.elements["updated "].text,
+            :url       => entry.elements["id"].text
           )
         end
     end
@@ -60,7 +60,7 @@ class YouTubeIt
           :description   => (entry.elements["summary"] || entry.elements["media:group"].elements["media:description"]).text,
           :playlist_id   => entry.elements["id"].text[/playlist([^<]+)/, 1].sub(':',''),
           :published     => entry.elements["published"] ? entry.elements["published"].text : nil,
-          :response_code => content.code,
+          :response_code => content.status,
           :xml           => content.body)
       end
     end
@@ -98,24 +98,24 @@ class YouTubeIt
         xml = REXML::Document.new(content.body)
         entry = xml.elements["entry"] || xml.elements["feed"]
         YouTubeIt::Model::User.new(
-          :age         => entry.elements["yt:age"] ? entry.elements["yt:age"].text : nil,
-          :username         => entry.elements["yt:username"] ? entry.elements["yt:username"].text : nil,
-          :company         => entry.elements["yt:company"] ? entry.elements["yt:company"].text : nil,
+          :age            => entry.elements["yt:age"] ? entry.elements["yt:age"].text : nil,
+          :username       => entry.elements["yt:username"] ? entry.elements["yt:username"].text : nil,
+          :company        => entry.elements["yt:company"] ? entry.elements["yt:company"].text : nil,
           :gender         => entry.elements["yt:gender"] ? entry.elements["yt:gender"].text : nil,
-          :hobbies         => entry.elements["yt:hobbies"] ? entry.elements["yt:hobbies"].text : nil,
-          :hometown         => entry.elements["yt:hometown"] ? entry.elements["yt:hometown"].text : nil,
-          :location         => entry.elements["yt:location"] ? entry.elements["yt:location"].text : nil,
-          :last_login         => entry.elements["yt:statistics"].attributes["lastWebAccess"],
-          :join_date         => entry.elements["published"] ? entry.elements["published"].text : nil,
+          :hobbies        => entry.elements["yt:hobbies"] ? entry.elements["yt:hobbies"].text : nil,
+          :hometown       => entry.elements["yt:hometown"] ? entry.elements["yt:hometown"].text : nil,
+          :location       => entry.elements["yt:location"] ? entry.elements["yt:location"].text : nil,
+          :last_login     => entry.elements["yt:statistics"].attributes["lastWebAccess"],
+          :join_date      => entry.elements["published"] ? entry.elements["published"].text : nil,
           :movies         => entry.elements["yt:movies"] ? entry.elements["yt:movies"].text : nil,
-          :music         => entry.elements["yt:music"] ? entry.elements["yt:music"].text : nil,
-          :occupation         => entry.elements["yt:occupation"] ? entry.elements["yt:occupation"].text : nil,
-          :relationship         => entry.elements["yt:relationship"] ? entry.elements["yt:relationship"].text : nil,
+          :music          => entry.elements["yt:music"] ? entry.elements["yt:music"].text : nil,
+          :occupation     => entry.elements["yt:occupation"] ? entry.elements["yt:occupation"].text : nil,
+          :relationship   => entry.elements["yt:relationship"] ? entry.elements["yt:relationship"].text : nil,
           :school         => entry.elements["yt:school"] ? entry.elements["yt:school"].text : nil,
-          :subscribers         => entry.elements["yt:statistics"].attributes["subscriberCount"],
-          :videos_watched         => entry.elements["yt:statistics"].attributes["videoWatchCount"],
-          :view_count         => entry.elements["yt:statistics"].attributes["viewCount"],
-          :upload_views         => entry.elements["yt:statistics"].attributes["totalUploadViews"]
+          :subscribers    => entry.elements["yt:statistics"].attributes["subscriberCount"],
+          :videos_watched => entry.elements["yt:statistics"].attributes["videoWatchCount"],
+          :view_count     => entry.elements["yt:statistics"].attributes["viewCount"],
+          :upload_views   => entry.elements["yt:statistics"].attributes["totalUploadViews"]
         )
       end
     end
@@ -222,10 +222,10 @@ class YouTubeIt
         media_group.elements.each("media:thumbnail") do |thumb_element|
           # TODO: convert time HH:MM:ss string to seconds?
           thumbnails << YouTubeIt::Model::Thumbnail.new(
-                          :url => thumb_element.attributes["url"],
+                          :url    => thumb_element.attributes["url"],
                           :height => thumb_element.attributes["height"].to_i,
-                          :width => thumb_element.attributes["width"].to_i,
-                          :time => thumb_element.attributes["time"])
+                          :width  => thumb_element.attributes["width"].to_i,
+                          :time   => thumb_element.attributes["time"])
         end
 
         rating_element = entry.elements["gd:rating"]
@@ -234,10 +234,10 @@ class YouTubeIt
         rating = nil
         if rating_element
           rating_values = {
-            :min => rating_element.attributes["min"].to_i,
-            :max => rating_element.attributes["max"].to_i,
+            :min         => rating_element.attributes["min"].to_i,
+            :max         => rating_element.attributes["max"].to_i,
             :rater_count => rating_element.attributes["numRaters"].to_i,
-            :average => rating_element.attributes["average"].to_f
+            :average     => rating_element.attributes["average"].to_f
           }
 
           if extended_rating_element
@@ -264,41 +264,41 @@ class YouTubeIt
         
         control = entry.elements["app:control"]
         state = { :name => "published" }
-        if control
+        if control && control.elements["yt:state"]
           state = {
-            :name => control.elements["yt:state"].attributes["name"],
+            :name        => control.elements["yt:state"].attributes["name"],
             :reason_code => control.elements["yt:state"].attributes["reasonCode"],
-            :help_url => control.elements["yt:state"].attributes["helpUrl"],
-            :copy => control.elements["yt:state"].text
+            :help_url    => control.elements["yt:state"].attributes["helpUrl"],
+            :copy        => control.elements["yt:state"].text
           }
           
         end
 
         YouTubeIt::Model::Video.new(
-          :video_id => video_id,
-          :published_at => published_at,
-          :updated_at => updated_at,
-          :categories => categories,
-          :keywords => keywords,
-          :title => title,
-          :html_content => html_content,
-          :author => author,
-          :description => description,
-          :duration => duration,
-          :media_content => media_content,
-          :player_url => player_url,
-          :thumbnails => thumbnails,
-          :rating => rating,
-          :view_count => view_count,
+          :video_id       => video_id,
+          :published_at   => published_at,
+          :updated_at     => updated_at,
+          :categories     => categories,
+          :keywords       => keywords,
+          :title          => title,
+          :html_content   => html_content,
+          :author         => author,
+          :description    => description,
+          :duration       => duration,
+          :media_content  => media_content,
+          :player_url     => player_url,
+          :thumbnails     => thumbnails,
+          :rating         => rating,
+          :view_count     => view_count,
           :favorite_count => favorite_count,
-          :widescreen => widescreen,
-          :noembed => noembed,
-          :racy => racy,
-          :where => where,
-          :position => position,
-          :latitude => latitude,
-          :longitude => longitude,
-          :state => state)
+          :widescreen     => widescreen,
+          :noembed        => noembed,
+          :racy           => racy,
+          :where          => where,
+          :position       => position,
+          :latitude       => latitude,
+          :longitude      => longitude,
+          :state          => state)
       end
 
       def parse_media_content (media_content_element)
@@ -310,11 +310,11 @@ class YouTubeIt
         default = (media_content_element.attributes["isDefault"] == "true")
 
         YouTubeIt::Model::Content.new(
-          :url => content_url,
-          :format => format,
-          :duration => duration,
+          :url       => content_url,
+          :format    => format,
+          :duration  => duration,
           :mime_type => mime_type,
-          :default => default)
+          :default   => default)
       end
     end
 
@@ -337,12 +337,12 @@ class YouTubeIt
           end
         end
         YouTubeIt::Response::VideoSearch.new(
-          :feed_id => feed_id || nil,
-          :updated_at => updated_at || nil,
+          :feed_id            => feed_id || nil,
+          :updated_at         => updated_at || nil,
           :total_result_count => total_result_count || nil,
-          :offset => offset || nil,
-          :max_result_count => max_result_count || nil,
-          :videos => videos)
+          :offset             => offset || nil,
+          :max_result_count   => max_result_count || nil,
+          :videos             => videos)
       end
     end
   end

@@ -97,7 +97,7 @@ Add A Comment:
   $ client.add_comment(video_id, "test comment!")
 
 List Favorites:
-  $ client.favorites
+  $ client.favorites(user) # current user by default
 
 Add Favorite:
   $ client.add_favorite(video_id)
@@ -121,7 +121,7 @@ Unsubscribe To A Channel:
   $ client.unsubscribe_channel(subscription_id)
 
 List Playlists:
-  $ client.playlists
+  $ client.playlists(user) # current user by default
 
 Select Playlist:
   $ client.playlist(playlist_id)
@@ -141,9 +141,6 @@ Add Video To Playlist:
 
 Remove Video From Playlist:
   $ client.remove_video_from_playlist(playlist_id, playlist_entry_id)
-
-Select Playlists From User:
-  $ client.playlists_for(user)
   
 == ACCESS CONTROL LIST
 
