@@ -234,11 +234,13 @@ class TestClient < Test::Unit::TestCase
     @client.video_delete(video.unique_id)
   end
   
+
   def test_should_add_new_comment
-    video_id ="aDlw5j28X3U"
-    @client.add_comment(video_id, "test comment")
-    comment = @client.comments(video_id).first.content
+    video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
+    @client.add_comment(video.unique_id, "test comment")
+    comment = @client.comments(video.unique_id).first.content
     assert comment.match(/test comment/)
+    @client.video_delete(video.unique_id)
   end
     
   def test_should_add_and_delete_video_from_playlist
@@ -332,6 +334,15 @@ class TestClient < Test::Unit::TestCase
     profile = @client.profile
     assert_equal profile.username, "tubeit20101" 
   end
+
+  def test_should_add_and_delete_video_to_favorite
+    video_id ="j5raG94IGCc"
+    result = @client.add_favorite(video_id)
+    assert_equal result[:code], 201
+    sleep 4
+    assert @client.delete_favorite(video_id)
+  end
+
   private
   
     def assert_valid_video (video)

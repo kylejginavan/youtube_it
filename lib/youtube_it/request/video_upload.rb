@@ -191,6 +191,7 @@ class YouTubeIt
         favorite_header = {
           "Content-Type"   => "application/atom+xml; charset=UTF-8",
           "Content-Length" => "0",
+          "GData-Version"  => "1",
         }
         favorite_url    = "/feeds/api/users/default/favorites/%s" % video_id
         response = yt_session.delete(favorite_url, favorite_header)
@@ -353,7 +354,6 @@ class YouTubeIt
         header = {
                   "X-GData-Client" => "#{@client_id}",
                   "X-GData-Key"    => "key=#{@dev_key}",
-                  "GData-Version" => "2",
                 }
         if @authsub_token
           header.merge!("Authorization"  => "AuthSub token=#{@authsub_token}")

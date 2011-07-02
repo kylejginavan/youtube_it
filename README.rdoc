@@ -27,6 +27,9 @@ Client with developer key:
 Client with youtube account and developer key:
   $ client = YouTubeIt::Client.new(:username => "youtube_username", :password =>  "youtube_passwd", :dev_key => "developer_key")
 
+Client with AuthSub:
+    $ client = YouTubeIt::AuthSubClient.new(:token => "token" , :dev_key => "developer_key")
+
 Client with OAuth:
   $ client = YouTubeIt::OAuthClient.new("consumer_key", "consumer_secret", "youtube_username", "developer_key")
   $ client.authorize_from_access("access_token", "access_secret")
@@ -58,9 +61,11 @@ Advanced Queries (with boolean operators OR (either), AND (include), NOT (exclud
 Fields Parameter(experimental features):
   Return videos more than 1000 views
   $ client.videos_by(:fields => {:view_count => "1000"})
+
   Filter by date
   $ client.videos_by(:fields => {:published  => ((Date.today)})
   $ client.videos_by(:fields => {:recorded   => ((Date.today)})  
+
   Filter by date with range
   $ client.videos_by(:fields => {:published  => ((Date.today - 30)..(Date.today))})
   $ client.videos_by(:fields => {:recorded   => ((Date.today - 30)..(Date.today))})  
@@ -88,7 +93,7 @@ My Video:
   $ client.my_video(video_id)
   
 Profile Details:
-  $ client.profile(user_id)
+  $ client.profile(user) #default: current user
 
 List Comments:
   $ client.comments(video_id)
@@ -97,7 +102,7 @@ Add A Comment:
   $ client.add_comment(video_id, "test comment!")
 
 List Favorites:
-  $ client.favorites(user) # current user by default
+  $ client.favorites(user) # default: current user
 
 Add Favorite:
   $ client.add_favorite(video_id)
@@ -112,7 +117,7 @@ Dislike A Video:
   $ client.dislike_video(video_id)
 
 List Subscriptions:
-  $ client.subscriptions(user) #default: current user
+  $ client.subscriptions(user) # default: current user
 
 Subscribe To A Channel:
   $ client.subscribe_channel(channel_name)
@@ -121,7 +126,7 @@ Unsubscribe To A Channel:
   $ client.unsubscribe_channel(subscription_id)
 
 List Playlists:
-  $ client.playlists(user) # current user by default
+  $ client.playlists(user) # default: current user
 
 Select Playlist:
   $ client.playlist(playlist_id)
