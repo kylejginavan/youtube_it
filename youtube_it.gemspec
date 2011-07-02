@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{youtube_it}
-  s.version = "1.4.3"
+  s.version = "2.0.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["kylejginavan", "chebyte", "mseppae"]
-  s.date = %q{2011-07-01}
+  s.date = %q{2011-07-02}
   s.description = %q{Upload, delete, update, comment on youtube videos all from one gem.}
   s.email = %q{kylejginavan@gmail.com}
   s.extra_rdoc_files = [
@@ -63,6 +63,15 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.5.2}
   s.summary = %q{The most complete Ruby wrapper for youtube api's}
+  s.test_files = [
+    "test/helper.rb",
+    "test/test_chain_io.rb",
+    "test/test_client.rb",
+    "test/test_field_search.rb",
+    "test/test_video.rb",
+    "test/test_video_feed_parser.rb",
+    "test/test_video_search.rb"
+  ]
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
