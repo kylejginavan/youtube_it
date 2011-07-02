@@ -1,33 +1,7 @@
 class YouTubeIt
-
   module Upload
-
-    class UploadError < YouTubeIt::Error
-      attr_reader :code
-      def initialize(msg, code = 0)
-        super(msg)
-        @code = code
-      end
-    end
-
-    class AuthenticationError < YouTubeIt::Error; end
-
-    # Implements video uploads/updates/deletions
-    #
-    #   require 'youtube_it'
-    #
-    #   uploader = YouTubeIt::Upload::VideoUpload.new("user", "pass", "dev-key")
-    #   uploader.upload File.open("test.m4v"), :title => 'test',
-    #                                        :description => 'cool vid d00d',
-    #                                        :category => 'People',
-    #                                        :keywords => %w[cool blah test]
-    #
     class VideoUpload
       include YouTubeIt::Logging
-      def initialize user, pass, dev_key, access_token = nil, authsub_token = nil, client_id = 'youtube_it'
-        @user, @password, @dev_key, @access_token, @authsub_token, @client_id  = user, pass, dev_key, access_token, authsub_token, client_id
-        @http_debugging = false
-      end
 
       def initialize *params
         if params.first.is_a?(Hash)
@@ -38,6 +12,7 @@ class YouTubeIt
           @access_token                  = hash_options[:access_token]
           @authsub_token                 = hash_options[:authsub_token]
           @client_id                     = hash_options[:client_id] || "youtube_it"
+          @config_token                  = hash_options[:config_token]
         else
           puts "* warning: the method YouTubeIt::Upload::VideoUpload.new(username, password, dev_key) is depricated, use YouTubeIt::Upload::VideoUpload.new(:username => 'user', :password => 'passwd', :dev_key => 'dev_key')"
           @user                          = params.shift
@@ -46,6 +21,7 @@ class YouTubeIt
           @access_token                  = params.shift
           @authsub_token                 = params.shift
           @client_id                     = params.shift || "youtube_it"
+          @config_token                  = params.shift
         end
       end
 
@@ -81,7 +57,6 @@ class YouTubeIt
       #
       # When the authentication credentials are incorrect, an AuthenticationError will be raised.
       def upload(data, opts = {})
-        response = nil
         @opts    = { :mime_type => 'video/mp4',
                      :title => '',
                      :description => '',
@@ -98,22 +73,9 @@ class YouTubeIt
             "Content-Length" => "#{post_body_io.expected_length}",
         }
 
-        if @access_token.nil?
-          upload_header.merge!(authorization_headers).delete("GData-Version")
-          http = Net::HTTP.new(uploads_url)
-          http.set_debug_output(logger) if @http_debugging
-          path = '/feeds/api/users/default/uploads'
-          http.start do | session |
-            post = Net::HTTP::Post.new(path, upload_header)
-            post.body_stream = post_body_io
-            response = session.request(post)
-          end
-        else
-          upload_header.merge!(authorization_headers_for_oauth).delete("GData-Version")
-          url = 'http://%s/feeds/api/users/default/uploads' % uploads_url
-          response = @access_token.post(url, post_body_io, upload_header)
-        end
-        raise_on_faulty_response(response)
+        upload_url = "/feeds/api/users/default/uploads"
+        response = yt_session(uploads_url).post(upload_url, post_body_io, upload_header)
+
         return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse
       end
 
@@ -126,50 +88,28 @@ class YouTubeIt
       #   :private
       # When the authentication credentials are incorrect, an AuthenticationError will be raised.
       def update(video_id, options)
-        response = nil
-        @opts = options
-        update_body = video_xml
+        @opts         = options
+        update_body   = video_xml
         update_header = {
           "Content-Type"   => "application/atom+xml",
           "Content-Length" => "#{update_body.length}",
         }
         update_url = "/feeds/api/users/default/uploads/%s" % video_id
-
-        if @access_token.nil?
-          update_header.merge!(authorization_headers)
-          http_connection do |session|
-            response = session.put(update_url, update_body, update_header)
-          end
-        else
-          update_header.merge!(authorization_headers_for_oauth)
-          response = @access_token.put("http://%s%s" % [base_url,update_url], update_body, update_header)
-        end
-
-        raise_on_faulty_response(response)
+        response   = yt_session.put(update_url, update_body, update_header)
+        
         return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse
       end
 
       # Fetches the data of a video, which may be private. The video must be owned by this user.
       # When the authentication credentials are incorrect, an AuthenticationError will be raised.
       def get_my_video(video_id)
-        response = nil
         get_header = {
-          "Content-Type"   => "application/atom+xml",
-          "Content-Length" => "0",
-        }
-        get_url = "/feeds/api/users/default/uploads/%s" % video_id
-
-        if @access_token.nil?
-          get_header.merge!(authorization_headers)
-          http_connection do |session|
-            response = session.get(get_url, get_header)
-          end
-        else
-          get_header.merge!(authorization_headers_for_oauth)
-          response = @access_token.put("http://%s%s" % [base_url,get_url], get_header)
-        end
-
-        raise_on_faulty_response(response)
+                 "Content-Type"   => "application/atom+xml",
+                 "Content-Length" => "0",
+                 }
+        get_url  = "/feeds/api/users/default/uploads/%s" % video_id
+        response = yt_session.get(get_url, get_header)
+        
         return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse
       end
 
@@ -178,51 +118,29 @@ class YouTubeIt
       def get_my_videos(opts)
         max_results = opts[:per_page] || 50
         start_index = ((opts[:page] || 1) -1) * max_results +1
-        response = nil
-        get_header = {
-          "Content-Type"   => "application/atom+xml",
-          "Content-Length" => "0",
-        }
-        get_url = "/feeds/api/users/default/uploads?max-results=#{max_results}&start-index=#{start_index}"
+        get_header  = {
+                 "Content-Type"   => "application/atom+xml",
+                 "Content-Length" => "0",
+                 }
+        get_url  = "/feeds/api/users/default/uploads?max-results=#{max_results}&start-index=#{start_index}"
+        response = yt_session.get(get_url, get_header)
 
-        if @access_token.nil?
-          get_header.merge!(authorization_headers)
-          http_connection do |session|
-            response = session.get(get_url, get_header)
-          end
-        else
-          get_header.merge!(authorization_headers_for_oauth)
-          response = @access_token.put("http://%s%s" % [base_url,get_url], get_header)
-        end
-
-        raise_on_faulty_response(response)
         return YouTubeIt::Parser::VideosFeedParser.new(response.body).parse
       end
 
       # Delete a video on YouTube
       def delete(video_id)
-        response      = nil
         delete_header = {
           "Content-Type"   => "application/atom+xml; charset=UTF-8",
           "Content-Length" => "0",
         }
         delete_url = "/feeds/api/users/default/uploads/%s" % video_id
+        response = yt_session.delete(delete_url, delete_header)
 
-        if @access_token.nil?
-          delete_header.merge!(authorization_headers)
-          http_connection do |session|
-            response = session.delete(delete_url, delete_header)
-          end
-        else
-          delete_header.merge!(authorization_headers_for_oauth)
-          response = @access_token.delete("http://%s%s" % [base_url,delete_url], delete_header)
-        end
-        raise_on_faulty_response(response)
         return true
       end
 
       def get_upload_token(options, nexturl)
-        response      = nil
         @opts         = options
         token_body    = video_xml
         token_header  = {
@@ -230,23 +148,13 @@ class YouTubeIt
           "Content-Length" => "#{token_body.length}",
         }
         token_url = "/action/GetUploadToken"
-
-        if @access_token.nil?
-          token_header.merge!(authorization_headers)
-          http_connection do |session|
-            response = session.post(token_url, token_body, token_header)
-          end
-        else
-          token_header.merge!(authorization_headers_for_oauth)
-          response = @access_token.post("http://%s%s" % [base_url, token_url], token_body, token_header)
-        end
-        raise_on_faulty_response(response)
+        response = yt_session.post(token_url, token_body, token_header)
+        
         return {:url    => "#{response.body[/<url>(.+)<\/url>/, 1]}?nexturl=#{nexturl}",
                 :token  => response.body[/<token>(.+)<\/token>/, 1]}
       end
 
       def add_comment(video_id, comment)
-        response        = nil
         comment_body    = video_xml_for(:comment => comment)
         comment_header  = {
           "Content-Type"   => "application/atom+xml",
@@ -254,325 +162,191 @@ class YouTubeIt
         }
         comment_url = "/feeds/api/videos/%s/comments" % video_id
 
-        if @access_token.nil?
-          comment_header.merge!(authorization_headers)
-          http_connection do |session|
-            response = session.post(comment_url, comment_body, comment_header)
-          end
-        else
-          comment_header.merge!(authorization_headers_for_oauth)
-          response = @access_token.post("http://%s%s" % [base_url, comment_url], comment_body, comment_header)
-        end
-        raise_on_faulty_response(response)
-        {:code => response.code, :body => response.body}
+        response = yt_session.post(comment_url, comment_body, comment_header)
+        
+        return {:code => response.status, :body => response.body}
       end
 
       def comments(video_id, opts = {})
         comment_url = "/feeds/api/videos/%s/comments?" % video_id
         comment_url << opts.collect { |k,p| [k,p].join '=' }.join('&')
-        http_connection do |session|
-          response = session.get(comment_url)
-          raise_on_faulty_response(response)
-          {:code => response.code, :body => response.body}
-          return YouTubeIt::Parser::CommentsFeedParser.new(response).parse
-        end
+        response = yt_session.get(comment_url)
+        
+        return YouTubeIt::Parser::CommentsFeedParser.new(response).parse
       end
 
       def add_favorite(video_id)
-        response        = nil
         favorite_body   = video_xml_for(:favorite => video_id)
         favorite_header = {
           "Content-Type"   => "application/atom+xml",
           "Content-Length" => "#{favorite_body.length}",
         }
         favorite_url = "/feeds/api/users/default/favorites"
-
-        if @access_token.nil?
-          favorite_header.merge!(authorization_headers)
-          http_connection do |session|
-            response = session.post(favorite_url, favorite_body, favorite_header)
-          end
-        else
-          favorite_header.merge!(authorization_headers_for_oauth)
-          response = @access_token.post("http://%s%s" % [base_url, favorite_url], favorite_body, favorite_header)
-        end
-        raise_on_faulty_response(response)
-        {:code => response.code, :body => response.body}
+        response     = yt_session.post(favorite_url, favorite_body, favorite_header)
+        
+        return {:code => response.status, :body => response.body}
       end
 
       def delete_favorite(video_id)
-        response        = nil
         favorite_header = {
           "Content-Type"   => "application/atom+xml; charset=UTF-8",
           "Content-Length" => "0",
         }
         favorite_url    = "/feeds/api/users/default/favorites/%s" % video_id
-
-        if @access_token.nil?
-          favorite_header.merge!(authorization_headers).delete("GData-Version")
-          http_connection do |session|
-            response = session.delete(favorite_url, favorite_header)
-          end
-        else
-          favorite_header.merge!(authorization_headers_for_oauth).delete("GData-Version")
-          response = @access_token.delete("http://%s%s" % [base_url, favorite_url], favorite_header)
-        end
-        raise_on_faulty_response(response)
+        response = yt_session.delete(favorite_url, favorite_header)
+        
         return true
       end
 
-      def profile(user_id)
-        profile_url = "http://gdata.youtube.com/feeds/api/users/%s?v=2" % (user_id ? user_id : "default")
-
-        response        = nil
-        header = {
+      def profile(user)
+        profile_url    = "/feeds/api/users/%s?v=2" % (user ? user : "default")
+        profile_header = {
           "Content-Type"   => "application/atom+xml; charset=UTF-8"
         }
+        response = yt_session.get(profile_url, profile_header)
 
-        if @access_token.nil?
-          http_connection do |session|
-            response = session.get(profile_url)
-          end
-        else
-          header.merge!(authorization_headers_for_oauth)
-          response = @access_token.get(profile_url, header)
-        end
-
-        raise_on_faulty_response(response)
-        YouTubeIt::Parser::ProfileFeedParser.new(response).parse
+        return YouTubeIt::Parser::ProfileFeedParser.new(response).parse
       end
 
       def playlist(playlist_id)
         playlist_url = "/feeds/api/playlists/%s?v=2" % playlist_id
-        http_connection do |session|
-          response = session.get(playlist_url)
-          raise_on_faulty_response(response)
-          return YouTubeIt::Parser::PlaylistFeedParser.new(response).parse
-        end
+        response     = yt_session.get(playlist_url)
+        
+        return YouTubeIt::Parser::PlaylistFeedParser.new(response).parse
       end
 
-      def playlists
-        response = nil
-        playlist_url = "/feeds/api/users/default/playlists?v=2"
-
-        if @access_token.nil?
-          http_connection do |session|
-            response = session.get(playlist_url)
-          end
-        else
-          response = @access_token.get("http://%s%s" % [base_url, playlist_url], authorization_headers_for_oauth)
-        end
-        raise_on_faulty_response(response)
+      def playlists(user)
+        playlist_url = "/feeds/api/users/%s/playlists?v=2" % (user ? user : "default")
+        response     = yt_session.get(playlist_url)
+        
         return YouTubeIt::Parser::PlaylistsFeedParser.new(response).parse
       end
-
-      def playlists_for(user)
-        playlist_url = "/feeds/api/users/#{user}/playlists?v=2"
-        http_connection do |session|
-          response = session.get(playlist_url)
-          raise_on_faulty_response(response)
-          return YouTubeIt::Parser::PlaylistsFeedParser.new(response).parse #return response.body
-        end
-      end
-
+      
       def add_playlist(options)
-        response        = nil
         playlist_body   = video_xml_for_playlist(options)
         playlist_header = {
           "Content-Type"   => "application/atom+xml",
           "Content-Length" => "#{playlist_body.length}",
         }
         playlist_url = "/feeds/api/users/default/playlists"
-
-        if @access_token.nil?
-          playlist_header.merge!(authorization_headers)
-          http_connection do |session|
-            response = session.post(playlist_url, playlist_body, playlist_header)
-          end
-        else
-          playlist_header.merge!(authorization_headers_for_oauth)
-          response = @access_token.post("http://%s%s" % [base_url, playlist_url], playlist_body, playlist_header)
-        end
-        raise_on_faulty_response(response)
+        response = yt_session.post(playlist_url, playlist_body, playlist_header)
+        
         return YouTubeIt::Parser::PlaylistFeedParser.new(response).parse
       end
 
       def add_video_to_playlist(playlist_id, video_id)
-        response        = nil
         playlist_body   = video_xml_for(:playlist => video_id)
         playlist_header = {
           "Content-Type"   => "application/atom+xml",
           "Content-Length" => "#{playlist_body.length}",
         }
         playlist_url = "/feeds/api/playlists/%s" % playlist_id
-
-        if @access_token.nil?
-          playlist_header.merge!(authorization_headers)
-          http_connection do |session|
-            response = session.post(playlist_url, playlist_body, playlist_header)
-          end
-        else
-          playlist_header.merge!(authorization_headers_for_oauth)
-          response = @access_token.post("http://%s%s" % [base_url, playlist_url], playlist_body, playlist_header)
-        end
-        raise_on_faulty_response(response)
-        {:code => response.code, :body => response.body, :playlist_entry_id => playlist_entry_id_from_playlist(response.body)}
+        response = yt_session.post(playlist_url, playlist_body, playlist_header)
+        
+        return {:code => response.status, :body => response.body, :playlist_entry_id => playlist_entry_id_from_playlist(response.body)}
       end
 
       def update_playlist(playlist_id, options)
-        response        = nil
         playlist_body   = video_xml_for_playlist(options)
         playlist_header = {
           "Content-Type"   => "application/atom+xml",
           "Content-Length" => "#{playlist_body.length}",
         }
         playlist_url = "/feeds/api/users/default/playlists/%s" % playlist_id
-
-        if @access_token.nil?
-          playlist_header.merge!(authorization_headers)
-          http_connection do |session|
-            response = session.put(playlist_url, playlist_body, playlist_header)
-          end
-        else
-          playlist_header.merge!(authorization_headers_for_oauth)
-          response = @access_token.put("http://%s%s" % [base_url, playlist_url], playlist_body, playlist_header)
-        end
-        raise_on_faulty_response(response)
+        response = yt_session.put(playlist_url, playlist_body, playlist_header)
+        
         return YouTubeIt::Parser::PlaylistFeedParser.new(response).parse
       end
 
       def delete_video_from_playlist(playlist_id, playlist_entry_id)
-        response        = nil
         playlist_header = {
           "Content-Type"   => "application/atom+xml",
         }
         playlist_url = "/feeds/api/playlists/%s/%s" % [playlist_id, playlist_entry_id]
-
-        if @access_token.nil?
-          playlist_header.merge!(authorization_headers)
-          http_connection do |session|
-            response = session.delete(playlist_url, playlist_header)
-          end
-        else
-          playlist_header.merge!(authorization_headers_for_oauth)
-          response = @access_token.delete("http://%s%s" % [base_url, playlist_url], playlist_header)
-        end
-        raise_on_faulty_response(response)
+        response = yt_session.delete(playlist_url, playlist_header)
+        
         return true
       end
 
       def delete_playlist(playlist_id)
-        response        = nil
-        playlist_header = {
-          "Content-Type"   => "application/atom+xml; charset=UTF-8",
+        playlist_header  = {
+          "Content-Type" => "application/atom+xml; charset=UTF-8",
         }
-        playlist_url = "/feeds/api/users/default/playlists/%s" % playlist_id
-
-        if @access_token.nil?
-          playlist_header.merge!(authorization_headers)
-          http_connection do |session|
-            response = session.delete(playlist_url, playlist_header)
-          end
-        else
-          playlist_header.merge!(authorization_headers_for_oauth)
-          response = @access_token.delete("http://%s%s" % [base_url, playlist_url], playlist_header)
-        end
-        raise_on_faulty_response(response)
+        playlist_url     = "/feeds/api/users/default/playlists/%s" % playlist_id
+        response = yt_session.delete(playlist_url, playlist_header)
+        
         return true
       end
 
       def rate_video(video_id, rating)
-        response        = nil
         rating_body   = video_xml_for(:rating => rating)
         rating_header = {
           "Content-Type"   => "application/atom+xml",
           "Content-Length" => "#{rating_body.length}",
         }
         rating_url = "/feeds/api/videos/#{video_id}/ratings"
-
-        if @access_token.nil?
-          rating_header.merge!(authorization_headers)
-          http_connection do |session|
-            response = session.post(rating_url, rating_body, rating_header)
-          end
-        else
-          rating_header.merge!(authorization_headers_for_oauth)
-          response = @access_token.post("http://%s%s" % [base_url, rating_url], rating_body, rating_header)
-        end
-        raise_on_faulty_response(response)
-        {:code => response.code, :body => response.body}
+        response = yt_session.post(rating_url, rating_body, rating_header)
+        
+        return {:code => response.status, :body => response.body}
       end
       
+      def subscriptions(user)
+        subscription_url    = "/feeds/api/users/%s/subscriptions?v=2" % (user ? user : "default")
+        subscription_header = {
+          "Content-Type"   => "application/atom+xml",
+        }
+        response = yt_session.get(subscription_url, subscription_header)
+        
+        return YouTubeIt::Parser::SubscriptionFeedParser.new(response).parse
+      end
+            
       def subscribe_channel(channel_name)
-        response        = nil
         subscribe_body   = video_xml_for(:subscribe => channel_name)
         subscribe_header = {
           "Content-Type"   => "application/atom+xml",
           "Content-Length" => "#{subscribe_body.length}",
         }
         subscribe_url = "/feeds/api/users/default/subscriptions"
-
-        if @access_token.nil?
-          subscribe_header.merge!(authorization_headers)
-          http_connection do |session|
-            response = session.post(subscribe_url, subscribe_body, subscribe_header)
-          end
-        else
-          subscribe_header.merge!(authorization_headers_for_oauth)
-          response = @access_token.post("http://%s%s" % [base_url, subscribe_url], subscribe_body, subscribe_header)
-        end
-        raise_on_faulty_response(response)
-        {:code => response.code, :body => response.body}
+        response = yt_session.post(subscribe_url, subscribe_body, subscribe_header)
+         
+        return {:code => response.status, :body => response.body}
       end
       
-      def favorites(opts = {})
-        favorite_url = "/feeds/api/users/default/favorites?#{opts.to_param}"
-        if @access_token.nil?
-          http_connection do |session|
-            response = session.get(favorite_url)
-          end
-        else
-          response = @access_token.get("http://%s%s" % [base_url, favorite_url])
-        end
-        raise_on_faulty_response(response)
+      def unsubscribe_channel(subscription_id)
+        unsubscribe_header = {
+          "Content-Type"   => "application/atom+xml"
+        }
+        unsubscribe_url = "/feeds/api/users/default/subscriptions/%s" % subscription_id
+        response = yt_session.delete(unsubscribe_url, unsubscribe_header)
+           
+        return {:code => response.status, :body => response.body}
+      end
+      
+      def favorites(user, opts = {})
+        favorite_url = "/feeds/api/users/%s/favorites#{opts.empty? ? '' : '?#{opts.to_param}'}" % (user ? user : "default")
+        response     = yt_session.get(favorite_url)
         return YouTubeIt::Parser::VideosFeedParser.new(response.body).parse
       end
 
       def get_current_user
         current_user_url = "/feeds/api/users/default"
-        response = ''
-        if @access_token.nil?
-          http_connection do |session|
-            response = session.get2(current_user_url, authorization_headers)
-          end
-        else
-          response = @access_token.get("http://gdata.youtube.com/feeds/api/users/default")
-        end
+        response         = yt_session.get(current_user_url, authorization_headers)
 
-        raise_on_faulty_response(response)
-        REXML::Document.new(response.body).elements["entry"].elements['author'].elements['name'].text
+        return REXML::Document.new(response.body).elements["entry"].elements['author'].elements['name'].text
       end
 
       private
 
       def uploads_url
-        ["uploads", base_url].join('.')
+        ["http://uploads", base_url.sub("http://","")].join('.')
       end
 
       def base_url
-        "gdata.youtube.com"
+        "http://gdata.youtube.com"
       end
 
       def boundary
         "An43094fu"
-      end
-
-      def authorization_headers_for_oauth
-        {
-          "X-GData-Client" => "#{@client_id}",
-          "X-GData-Key"    => "key=#{@dev_key}",
-          "GData-Version"  => "2",
-        }
       end
 
       def authorization_headers
@@ -583,40 +357,10 @@ class YouTubeIt
                 }
         if @authsub_token
           header.merge!("Authorization"  => "AuthSub token=#{@authsub_token}")
-        else
+        elsif @access_token.nil? && @authsub_token.nil?
           header.merge!("Authorization"  => "GoogleLogin auth=#{auth_token}")
         end
         header
-      end
-
-      def parse_upload_error_from(string)
-        begin
-          REXML::Document.new(string).elements["//errors"].inject('') do | all_faults, error|
-            if error.elements["internalReason"]
-              msg_error = error.elements["internalReason"].text
-            elsif error.elements["location"]
-              msg_error = error.elements["location"].text[/media:group\/media:(.*)\/text\(\)/,1]
-            else
-              msg_error = "Unspecified error"
-            end
-            code = error.elements["code"].text if error.elements["code"]
-            all_faults + sprintf("%s: %s\n", msg_error, code)
-          end
-        rescue
-          string[/<TITLE>(.+)<\/TITLE>/, 1] || string
-        end
-      end
-
-      def raise_on_faulty_response(response)
-        response_code = response.code.to_i
-        msg = parse_upload_error_from(response.body.gsub(/\n/, ''))
-
-        if response_code == 403 || response_code == 401
-        #if response_code / 10 == 40
-          raise AuthenticationError, msg
-        elsif response_code / 10 != 20 # Response in 20x means success
-          raise UploadError.new(msg, response_code)
-        end
       end
 
       def uploaded_video_id_from(string)
@@ -646,11 +390,10 @@ class YouTubeIt
 
       def auth_token
         @auth_token ||= begin
-          http = Net::HTTP.new("www.google.com", 443)
-          http.use_ssl = true
+          http  = Faraday.new("https://www.google.com")
           body = "Email=#{YouTubeIt.esc @user}&Passwd=#{YouTubeIt.esc @password}&service=youtube&source=#{YouTubeIt.esc @client_id}"
           response = http.post("/youtube/accounts/ClientLogin", body, "Content-Type" => "application/x-www-form-urlencoded")
-          raise UploadError.new(response.body[/Error=(.+)/,1], response.code.to_i) if response.code.to_i != 200
+          raise ::AuthenticationError.new(response.body[/Error=(.+)/,1], response.status.to_i) if response.status.to_i != 200
           @auth_token = response.body[/Auth=(.+)/, 1]
         end
       end
@@ -724,11 +467,12 @@ class YouTubeIt
         end
       end
 
-      def http_connection
-        http = Net::HTTP.new(base_url)
-        http.set_debug_output(logger) if @http_debugging
-        http.start do |session|
-          yield(session)
+      def yt_session(url = nil)
+        Faraday.new(:url => url ? url : base_url) do |builder|
+          builder.use Faraday::Request::OAuth, @config_token if @config_token
+          builder.use Faraday::Request::AuthHeader, authorization_headers
+          builder.use Faraday::Response::YouTubeIt 
+          builder.adapter Faraday.default_adapter          
         end
       end
     end

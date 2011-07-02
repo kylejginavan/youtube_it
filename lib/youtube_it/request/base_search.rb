@@ -49,6 +49,11 @@ class YouTubeIt
           end
         end
 
+        if fields[:view_count]
+          fields_param << "entry[yt:statistics/@viewCount > #{fields[:view_count]}]"
+        end
+
+
         return "&fields=#{URI.escape(fields_param.join(","))}"
       end
 

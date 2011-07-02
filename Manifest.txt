@@ -18,11 +18,15 @@ lib/youtube_it/model/video.rb
 lib/youtube_it/parser.rb
 lib/youtube_it/record.rb
 lib/youtube_it/request/base_search.rb
+lib/youtube_it/request/error.rb
 lib/youtube_it/request/standard_search.rb
 lib/youtube_it/request/user_search.rb
 lib/youtube_it/request/video_search.rb
 lib/youtube_it/request/video_upload.rb
 lib/youtube_it/response/video_search.rb
+lib/youtube_it/middleware/faraday_authheader.rb
+lib/youtube_it/middleware/faraday_oauth.rb
+lib/youtube_it/middleware/faraday_youtubeit.rb
 lib/youtube_it/version.rb
 test/helper.rb
 test/test_chain_io.rb
