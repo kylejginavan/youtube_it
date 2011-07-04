@@ -88,14 +88,10 @@ class YouTubeIt
       #   :private
       # When the authentication credentials are incorrect, an AuthenticationError will be raised.
       def update(video_id, options)
-        @opts         = options
-        update_body   = video_xml
-        update_header = {
-          "Content-Type"   => "application/atom+xml",
-          "Content-Length" => "#{update_body.length}",
-        }
-        update_url = "/feeds/api/users/default/uploads/%s" % video_id
-        response   = yt_session.put(update_url, update_body, update_header)
+        @opts       = options
+        update_body = video_xml
+        update_url  = "/feeds/api/users/default/uploads/%s" % video_id
+        response    = yt_session.put(update_url, update_body)
         
         return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse
       end
@@ -103,12 +99,8 @@ class YouTubeIt
       # Fetches the data of a video, which may be private. The video must be owned by this user.
       # When the authentication credentials are incorrect, an AuthenticationError will be raised.
       def get_my_video(video_id)
-        get_header = {
-                 "Content-Type"   => "application/atom+xml",
-                 "Content-Length" => "0",
-                 }
         get_url  = "/feeds/api/users/default/uploads/%s" % video_id
-        response = yt_session.get(get_url, get_header)
+        response = yt_session.get(get_url)
         
         return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse
       end
@@ -118,51 +110,34 @@ class YouTubeIt
       def get_my_videos(opts)
         max_results = opts[:per_page] || 50
         start_index = ((opts[:page] || 1) -1) * max_results +1
-        get_header  = {
-                 "Content-Type"   => "application/atom+xml",
-                 "Content-Length" => "0",
-                 }
-        get_url  = "/feeds/api/users/default/uploads?max-results=#{max_results}&start-index=#{start_index}"
-        response = yt_session.get(get_url, get_header)
+        get_url     = "/feeds/api/users/default/uploads?max-results=#{max_results}&start-index=#{start_index}"
+        response    = yt_session.get(get_url)
 
         return YouTubeIt::Parser::VideosFeedParser.new(response.body).parse
       end
 
       # Delete a video on YouTube
       def delete(video_id)
-        delete_header = {
-          "Content-Type"   => "application/atom+xml; charset=UTF-8",
-          "Content-Length" => "0",
-        }
         delete_url = "/feeds/api/users/default/uploads/%s" % video_id
-        response = yt_session.delete(delete_url, delete_header)
+        response   = yt_session.delete(delete_url)
 
         return true
       end
 
       def get_upload_token(options, nexturl)
-        @opts         = options
-        token_body    = video_xml
-        token_header  = {
-          "Content-Type"   => "application/atom+xml; charset=UTF-8",
-          "Content-Length" => "#{token_body.length}",
-        }
-        token_url = "/action/GetUploadToken"
-        response = yt_session.post(token_url, token_body, token_header)
+        @opts      = options
+        token_body = video_xml
+        token_url  = "/action/GetUploadToken"
+        response   = yt_session.post(token_url, token_body)
         
         return {:url    => "#{response.body[/<url>(.+)<\/url>/, 1]}?nexturl=#{nexturl}",
                 :token  => response.body[/<token>(.+)<\/token>/, 1]}
       end
 
       def add_comment(video_id, comment)
-        comment_body    = video_xml_for(:comment => comment)
-        comment_header  = {
-          "Content-Type"   => "application/atom+xml",
-          "Content-Length" => "#{comment_body.length}",
-        }
-        comment_url = "/feeds/api/videos/%s/comments" % video_id
-
-        response = yt_session.post(comment_url, comment_body, comment_header)
+        comment_body = video_xml_for(:comment => comment)
+        comment_url  = "/feeds/api/videos/%s/comments" % video_id
+        response     = yt_session.post(comment_url, comment_body)
         
         return {:code => response.status, :body => response.body}
       end
@@ -170,41 +145,32 @@ class YouTubeIt
       def comments(video_id, opts = {})
         comment_url = "/feeds/api/videos/%s/comments?" % video_id
         comment_url << opts.collect { |k,p| [k,p].join '=' }.join('&')
-        response = yt_session.get(comment_url)
+        response    = yt_session.get(comment_url)
         
         return YouTubeIt::Parser::CommentsFeedParser.new(response).parse
       end
 
       def add_favorite(video_id)
-        favorite_body   = video_xml_for(:favorite => video_id)
-        favorite_header = {
-          "Content-Type"   => "application/atom+xml",
-          "Content-Length" => "#{favorite_body.length}",
-        }
-        favorite_url = "/feeds/api/users/default/favorites"
-        response     = yt_session.post(favorite_url, favorite_body, favorite_header)
+        favorite_body = video_xml_for(:favorite => video_id)
+        favorite_url  = "/feeds/api/users/default/favorites"
+        response      = yt_session.post(favorite_url, favorite_body)
         
         return {:code => response.status, :body => response.body}
       end
 
       def delete_favorite(video_id)
         favorite_header = {
-          "Content-Type"   => "application/atom+xml; charset=UTF-8",
-          "Content-Length" => "0",
           "GData-Version"  => "1",
         }
-        favorite_url    = "/feeds/api/users/default/favorites/%s" % video_id
-        response = yt_session.delete(favorite_url, favorite_header)
+        favorite_url = "/feeds/api/users/default/favorites/%s" % video_id
+        response     = yt_session.delete(favorite_url, favorite_header)
         
         return true
       end
 
       def profile(user)
-        profile_url    = "/feeds/api/users/%s?v=2" % (user ? user : "default")
-        profile_header = {
-          "Content-Type"   => "application/atom+xml; charset=UTF-8"
-        }
-        response = yt_session.get(profile_url, profile_header)
+        profile_url = "/feeds/api/users/%s?v=2" % (user ? user : "default")
+        response    = yt_session.get(profile_url)
 
         return YouTubeIt::Parser::ProfileFeedParser.new(response).parse
       end
@@ -224,101 +190,69 @@ class YouTubeIt
       end
       
       def add_playlist(options)
-        playlist_body   = video_xml_for_playlist(options)
-        playlist_header = {
-          "Content-Type"   => "application/atom+xml",
-          "Content-Length" => "#{playlist_body.length}",
-        }
-        playlist_url = "/feeds/api/users/default/playlists"
-        response = yt_session.post(playlist_url, playlist_body, playlist_header)
+        playlist_body = video_xml_for_playlist(options)
+        playlist_url  = "/feeds/api/users/default/playlists"
+        response      = yt_session.post(playlist_url, playlist_body)
         
         return YouTubeIt::Parser::PlaylistFeedParser.new(response).parse
       end
 
       def add_video_to_playlist(playlist_id, video_id)
-        playlist_body   = video_xml_for(:playlist => video_id)
-        playlist_header = {
-          "Content-Type"   => "application/atom+xml",
-          "Content-Length" => "#{playlist_body.length}",
-        }
-        playlist_url = "/feeds/api/playlists/%s" % playlist_id
-        response = yt_session.post(playlist_url, playlist_body, playlist_header)
+        playlist_body = video_xml_for(:playlist => video_id)
+        playlist_url  = "/feeds/api/playlists/%s" % playlist_id
+        response      = yt_session.post(playlist_url, playlist_body)
         
         return {:code => response.status, :body => response.body, :playlist_entry_id => playlist_entry_id_from_playlist(response.body)}
       end
 
       def update_playlist(playlist_id, options)
-        playlist_body   = video_xml_for_playlist(options)
-        playlist_header = {
-          "Content-Type"   => "application/atom+xml",
-          "Content-Length" => "#{playlist_body.length}",
-        }
-        playlist_url = "/feeds/api/users/default/playlists/%s" % playlist_id
-        response = yt_session.put(playlist_url, playlist_body, playlist_header)
+        playlist_body = video_xml_for_playlist(options)
+        playlist_url  = "/feeds/api/users/default/playlists/%s" % playlist_id
+        response      = yt_session.put(playlist_url, playlist_body)
         
         return YouTubeIt::Parser::PlaylistFeedParser.new(response).parse
       end
 
       def delete_video_from_playlist(playlist_id, playlist_entry_id)
-        playlist_header = {
-          "Content-Type"   => "application/atom+xml",
-        }
         playlist_url = "/feeds/api/playlists/%s/%s" % [playlist_id, playlist_entry_id]
-        response = yt_session.delete(playlist_url, playlist_header)
+        response     = yt_session.delete(playlist_url)
         
         return true
       end
 
       def delete_playlist(playlist_id)
-        playlist_header  = {
-          "Content-Type" => "application/atom+xml; charset=UTF-8",
-        }
-        playlist_url     = "/feeds/api/users/default/playlists/%s" % playlist_id
-        response = yt_session.delete(playlist_url, playlist_header)
+        playlist_url = "/feeds/api/users/default/playlists/%s" % playlist_id
+        response     = yt_session.delete(playlist_url)
         
         return true
       end
 
       def rate_video(video_id, rating)
-        rating_body   = video_xml_for(:rating => rating)
-        rating_header = {
-          "Content-Type"   => "application/atom+xml",
-          "Content-Length" => "#{rating_body.length}",
-        }
-        rating_url = "/feeds/api/videos/#{video_id}/ratings"
-        response = yt_session.post(rating_url, rating_body, rating_header)
+        rating_body = video_xml_for(:rating => rating)
+        rating_url  = "/feeds/api/videos/#{video_id}/ratings"
+        response    = yt_session.post(rating_url, rating_body)
         
         return {:code => response.status, :body => response.body}
       end
       
       def subscriptions(user)
-        subscription_url    = "/feeds/api/users/%s/subscriptions?v=2" % (user ? user : "default")
-        subscription_header = {
-          "Content-Type"   => "application/atom+xml",
-        }
-        response = yt_session.get(subscription_url, subscription_header)
+        subscription_url = "/feeds/api/users/%s/subscriptions?v=2" % (user ? user : "default")
+        response         = yt_session.get(subscription_url)
         
         return YouTubeIt::Parser::SubscriptionFeedParser.new(response).parse
       end
             
       def subscribe_channel(channel_name)
-        subscribe_body   = video_xml_for(:subscribe => channel_name)
-        subscribe_header = {
-          "Content-Type"   => "application/atom+xml",
-          "Content-Length" => "#{subscribe_body.length}",
-        }
-        subscribe_url = "/feeds/api/users/default/subscriptions"
-        response = yt_session.post(subscribe_url, subscribe_body, subscribe_header)
+        subscribe_body = video_xml_for(:subscribe => channel_name)
+        subscribe_url  = "/feeds/api/users/default/subscriptions"
+        response       = yt_session.post(subscribe_url, subscribe_body)
          
         return {:code => response.status, :body => response.body}
       end
       
       def unsubscribe_channel(subscription_id)
-        unsubscribe_header = {
-          "Content-Type"   => "application/atom+xml"
-        }
         unsubscribe_url = "/feeds/api/users/default/subscriptions/%s" % subscription_id
-        response = yt_session.delete(unsubscribe_url, unsubscribe_header)
+        response        = yt_session.delete(unsubscribe_url)
            
         return {:code => response.status, :body => response.body}
       end
@@ -326,6 +260,7 @@ class YouTubeIt
       def favorites(user, opts = {})
         favorite_url = "/feeds/api/users/%s/favorites#{opts.empty? ? '' : '?#{opts.to_param}'}" % (user ? user : "default")
         response     = yt_session.get(favorite_url)
+
         return YouTubeIt::Parser::VideosFeedParser.new(response.body).parse
       end
 
