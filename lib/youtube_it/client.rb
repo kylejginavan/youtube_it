@@ -345,7 +345,13 @@ class YouTubeIt
     end
 
     def current_user
-      body = access_token.get("http://gdata.youtube.com/feeds/api/users/default").body
+      yt_session = Faraday.new(:url => "http://gdata.youtube.com") do |builder|
+        builder.use Faraday::Response::YouTubeIt 
+        builder.use Faraday::Request::OAuth, config_token
+        builder.adapter Faraday.default_adapter          
+      end
+      
+      body = yt_session.get("/feeds/api/users/default").body
       REXML::Document.new(body).elements["entry"].elements['author'].elements['name'].text
     end
 
