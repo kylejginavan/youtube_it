@@ -6,6 +6,8 @@ class YouTubeIt
       
       # *String*: Feed URL of the author.
       attr_reader :uri
+      
+      attr_reader :thumbnail_url
     end
   end
 end
