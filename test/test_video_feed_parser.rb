@@ -2,6 +2,14 @@ require File.expand_path(File.dirname(__FILE__) + '/helper')
 
 class TestVideoFeedParser < Test::Unit::TestCase
 
+  def test_should_raise_bad_request_exception_when_id_not_found
+    bad_url = "http://gdata.youtube.com/feeds/api/videos/abc?v=2"
+  
+    assert_raise(OpenURI::HTTPError) do
+      parser = YouTubeIt::Parser::VideoFeedParser.new bad_url
+    end
+  end
+
   # VIDEO ATTRIBUTES AFFECTED BY PARSING
 
   def test_should_display_unique_id_correctly_after_parsing
@@ -259,4 +267,5 @@ class TestVideoFeedParser < Test::Unit::TestCase
       yield parser
     end
   end
+    
 end
