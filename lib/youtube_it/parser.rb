@@ -2,7 +2,13 @@ class YouTubeIt
   module Parser #:nodoc:
     class FeedParser #:nodoc:
       def initialize(content)
-        @content = open(content).read rescue content
+        @content = open(content).read
+        
+      rescue OpenURI::HTTPError => e
+        raise OpenURI::HTTPError.new(e.io.status[0],e)
+      rescue
+        @content = content
+
       end
 
       def parse
