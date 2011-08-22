@@ -137,6 +137,11 @@ class YouTubeIt
     def profile(user = nil)
       client.profile(user)
     end
+    
+    # Fetches a user's activity feed.
+    def activity(user = nil, opts = {})
+      client.get_activity(user, opts)
+    end
 
     def playlist(playlist_id)
       client.playlist playlist_id
@@ -202,6 +207,11 @@ class YouTubeIt
     # Gets all videos 
     def my_videos(opts = {})
       client.get_my_videos(opts)
+    end
+    
+    # Get's all of the user's contacts/friends. 
+    def my_contacts(opts = {})
+      client.get_my_contacts(opts)
     end
 
     private
