@@ -11,6 +11,9 @@ class YouTubeIt
       
       # *String*:: The Youtube username of the contact.
       attr_reader :username
+      
+      # *String*:: The Youtube title of the contact.
+      attr_reader :title
     end
   end
 end
