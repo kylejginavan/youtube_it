@@ -61,6 +61,7 @@ end
   model/thumbnail
   model/user
   model/video
+  model/activity
   request/base_search
   request/error
   request/user_search
