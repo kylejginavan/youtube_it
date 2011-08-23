@@ -21,6 +21,7 @@ class YouTubeIt
       attr_reader :username
       attr_reader :videos_watched
       attr_reader :view_count
+      attr_reader :avatar
     end
   end
 end
