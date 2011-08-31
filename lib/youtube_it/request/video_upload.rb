@@ -285,7 +285,7 @@ class YouTubeIt
 
       def get_current_user
         current_user_url = "/feeds/api/users/default"
-        response         = yt_session.get(current_user_url, authorization_headers)
+        response         = yt_session.get(current_user_url)
 
         return REXML::Document.new(response.body).elements["entry"].elements['author'].elements['name'].text
       end
@@ -305,13 +305,11 @@ class YouTubeIt
       end
 
       def authorization_headers
-        header = {
-                  "X-GData-Client" => "#{@client_id}",
-                  "X-GData-Key"    => "key=#{@dev_key}",
-                }
+        header = {"X-GData-Client"  => "#{@client_id}"}
+        header.merge!("X-GData-Key" => "key=#{@dev_key}") if @dev_key
         if @authsub_token
           header.merge!("Authorization"  => "AuthSub token=#{@authsub_token}")
-        elsif @access_token.nil? && @authsub_token.nil?
+        elsif @access_token.nil? && @authsub_token.nil? && @user
           header.merge!("Authorization"  => "GoogleLogin auth=#{auth_token}")
         end
         header

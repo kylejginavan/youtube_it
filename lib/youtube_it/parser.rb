@@ -42,8 +42,7 @@ class YouTubeIt
         def parse_entry(entry)
           author = YouTubeIt::Model::Author.new(
             :name => entry.elements["author"].elements["name"].text,
-            :uri  => entry.elements["author"].elements["uri"].text,
-            :thumbnail_url => entry.elements["media:thumbnail"].attributes["url"]
+            :uri  => entry.elements["author"].elements["uri"].text
           )
           YouTubeIt::Model::Comment.new(
             :author    => author,
