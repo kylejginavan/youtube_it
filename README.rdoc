@@ -205,13 +205,20 @@ You can specify these options
 or just use with default options
   $ video.embed_html5 #default: width: 425, height: 350, frameborder: 0
 
-
 == LOGGING
 
 YouTubeIt passes all logs through the logger variable on the class itself. In Rails context, assign the Rails logger to that variable to collect the messages
 (don't forget to set the level to debug):
   $ YouTubeIt.logger = RAILS_DEFAULT_LOGGER
   $ RAILS_DEFAULT_LOGGER.level = Logger::DEBUG
+
+== Example Rails 3 App
+
+You can get an example how you can use youtube_it with Rails 3 here: http://github.com/chebyte/youtube_it_rails_app_example
+
+== DEMO
+
+You can see to youtube_it in action here: http://youtube-it.heroku.com
 
 == CONTRIBUTORS:
 
