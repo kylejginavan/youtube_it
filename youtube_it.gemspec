@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{youtube_it}
-  s.version = "2.0.0"
+  s.version = "2.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["kylejginavan", "chebyte", "mseppae"]
-  s.date = %q{2011-07-02}
+  s.authors = [%q{kylejginavan}, %q{chebyte}, %q{mseppae}]
+  s.date = %q{2011-09-02}
   s.description = %q{Upload, delete, update, comment on youtube videos all from one gem.}
   s.email = %q{kylejginavan@gmail.com}
   s.extra_rdoc_files = [
@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
     "lib/youtube_it/middleware/faraday_authheader.rb",
     "lib/youtube_it/middleware/faraday_oauth.rb",
     "lib/youtube_it/middleware/faraday_youtubeit.rb",
+    "lib/youtube_it/model/activity.rb",
     "lib/youtube_it/model/author.rb",
     "lib/youtube_it/model/category.rb",
     "lib/youtube_it/model/comment.rb",
@@ -60,8 +61,8 @@ Gem::Specification.new do |s|
     "youtube_it.gemspec"
   ]
   s.homepage = %q{http://github.com/kylejginavan/youtube_it}
-  s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.5.2}
+  s.require_paths = [%q{lib}]
+  s.rubygems_version = %q{1.8.8}
   s.summary = %q{The most complete Ruby wrapper for youtube api's}
   s.test_files = [
     "test/helper.rb",
@@ -79,7 +80,7 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<oauth>, [">= 0.4.4"])
       s.add_runtime_dependency(%q<simple_oauth>, [">= 0.1.5"])
-      s.add_runtime_dependency(%q<faraday>, ["~> 0.6"])
+      s.add_runtime_dependency(%q<faraday>, [">= 0.7.3"])
       s.add_runtime_dependency(%q<builder>, [">= 0"])
     else
       s.add_dependency(%q<oauth>, [">= 0.4.4"])
