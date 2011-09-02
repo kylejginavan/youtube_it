@@ -42,8 +42,7 @@ class YouTubeIt
         def parse_entry(entry)
           author = YouTubeIt::Model::Author.new(
             :name => entry.elements["author"].elements["name"].text,
-            :uri  => entry.elements["author"].elements["uri"].text,
-            :thumbnail_url => entry.elements["media:thumbnail"].attributes["url"]
+            :uri  => entry.elements["author"].elements["uri"].text
           )
           YouTubeIt::Model::Comment.new(
             :author    => author,
@@ -99,6 +98,155 @@ class YouTubeIt
           :xml           => nil)
       end
     end
+    
+    # Returns an array of the user's activity
+    class ActivityParser < FeedParser
+      def parse_content(content)
+        doc = REXML::Document.new(content.body)
+        feed = doc.elements["feed"]
+        
+        activity = []
+        feed.elements.each("entry") do |entry|
+          parsed_activity = parse_activity(entry)
+          if parsed_activity
+            activity << parsed_activity
+          end
+        end
+        
+        return activity
+      end
+      
+      protected
+      
+      # Parses the user's activity feed.
+      def parse_activity(entry)
+        # Figure out what kind of activity we have
+        video_type = nil
+        parsed_activity = nil
+        entry.elements.each("category") do |category_tag|
+          if category_tag.attributes["scheme"]=="http://gdata.youtube.com/schemas/2007/userevents.cat"
+            video_type = category_tag.attributes["term"]
+          end
+        end
+        
+        if video_type
+          case video_type
+          when "video_rated"
+            parsed_activity = YouTubeIt::Model::Activity.new(
+              :type => "video_rated",
+              :time => entry.elements["updated"] ? entry.elements["updated"].text : nil,
+              :author => entry.elements["author"].elements["name"] ? entry.elements["author"].elements["name"].text : nil,
+              :videos => parse_activity_videos(entry),
+              :video_id => entry.elements["yt:videoid"] ? entry.elements["yt:videoid"].text : nil
+            )
+          when "video_shared"
+            parsed_activity = YouTubeIt::Model::Activity.new(
+              :type => "video_shared",
+              :time => entry.elements["updated"] ? entry.elements["updated"].text : nil,
+              :author => entry.elements["author"].elements["name"] ? entry.elements["author"].elements["name"].text : nil,
+              :videos => parse_activity_videos(entry),
+              :video_id => entry.elements["yt:videoid"] ? entry.elements["yt:videoid"].text : nil
+            )
+          when "video_favorited"
+            parsed_activity = YouTubeIt::Model::Activity.new(
+              :type => "video_favorited",
+              :time => entry.elements["updated"] ? entry.elements["updated"].text : nil,
+              :author => entry.elements["author"].elements["name"] ? entry.elements["author"].elements["name"].text : nil,
+              :videos => parse_activity_videos(entry),
+              :video_id => entry.elements["yt:videoid"] ? entry.elements["yt:videoid"].text : nil
+            )
+          when "video_commented"
+            # Load the comment and video URL
+            comment_thread_url = nil
+            video_url = nil
+            entry.elements.each("link") do |link_tag|
+              case link_tag.attributes["rel"]
+              when "http://gdata.youtube.com/schemas/2007#comments"
+                comment_thread_url = link_tag.attributes["href"]
+              when "http://gdata.youtube.com/schemas/2007#video"
+                video_url = link_tag.attributes["href"]
+              else
+                # Invalid rel type, do nothing
+              end
+            end
+          
+            parsed_activity = YouTubeIt::Model::Activity.new(
+              :type => "video_commented",
+              :time => entry.elements["updated"] ? entry.elements["updated"].text : nil,
+              :author => entry.elements["author"].elements["name"] ? entry.elements["author"].elements["name"].text : nil,
+              :videos => parse_activity_videos(entry),
+              :video_id => entry.elements["yt:videoid"] ? entry.elements["yt:videoid"].text : nil,
+              :comment_thread_url => comment_thread_url,
+              :video_url => video_url
+            )
+          when "video_uploaded"
+            parsed_activity = YouTubeIt::Model::Activity.new(
+              :type => "video_uploaded",
+              :time => entry.elements["updated"] ? entry.elements["updated"].text : nil,
+              :author => entry.elements["author"].elements["name"] ? entry.elements["author"].elements["name"].text : nil,
+              :videos => parse_activity_videos(entry),
+              :video_id => entry.elements["yt:videoid"] ? entry.elements["yt:videoid"].text : nil
+            )
+          when "friend_added"
+            parsed_activity = YouTubeIt::Model::Activity.new(
+              :type => "friend_added",
+              :time => entry.elements["updated"] ? entry.elements["updated"].text : nil,
+              :author => entry.elements["author"].elements["name"] ? entry.elements["author"].elements["name"].text : nil,
+              :username => entry.elements["yt:username"] ? entry.elements["yt:username"].text : nil
+            )
+          when "user_subscription_added"
+            parsed_activity = YouTubeIt::Model::Activity.new(
+              :type => "user_subscription_added",
+              :time => entry.elements["updated"] ? entry.elements["updated"].text : nil,
+              :author => entry.elements["author"].elements["name"] ? entry.elements["author"].elements["name"].text : nil,
+              :username => entry.elements["yt:username"] ? entry.elements["yt:username"].text : nil
+            )
+          else
+            # Invalid activity type, just let it return nil
+          end
+        end
+        
+        return parsed_activity
+      end
+      
+      # If a user enabled inline attribute videos may be included in results.
+      def parse_activity_videos(entry)
+        videos = []
+      
+        entry.elements.each("link") do |link_tag|
+          if link_tag.attributes["rel"]=="http://gdata.youtube.com/schemas/2007#video"
+            videos << YouTubeIt::Parser::VideoFeedParser.new(link_tag).parse
+          end
+        end
+        
+        if videos.size <= 0
+          videos = nil
+        end
+        
+        return videos
+      end
+    end
+    
+    # Returns an array of the user's contacts
+    class ContactsParser < FeedParser
+      def parse_content(content)
+        doc = REXML::Document.new(content.body)
+        feed = doc.elements["feed"]
+        
+        contacts = []
+        feed.elements.each("entry") do |entry|
+          temp_contact = YouTubeIt::Model::Contact.new(
+            :title    => entry.elements["title"] ? entry.elements["title"].text : nil,
+            :username => entry.elements["yt:username"] ? entry.elements["yt:username"].text : nil,
+            :status   => entry.elements["yt:status"] ? entry.elements["yt:status"].text : nil
+          )
+          
+          contacts << temp_contact
+        end
+        
+        return contacts
+      end
+    end
 
     class ProfileFeedParser < FeedParser #:nodoc:
       def parse_content(content)
@@ -119,6 +267,7 @@ class YouTubeIt
           :occupation     => entry.elements["yt:occupation"] ? entry.elements["yt:occupation"].text : nil,
           :relationship   => entry.elements["yt:relationship"] ? entry.elements["yt:relationship"].text : nil,
           :school         => entry.elements["yt:school"] ? entry.elements["yt:school"].text : nil,
+          :avatar         => entry.elements["media:thumbnail"] ? entry.elements["media:thumbnail"].attributes["url"] : nil,
           :subscribers    => entry.elements["yt:statistics"].attributes["subscriberCount"],
           :videos_watched => entry.elements["yt:statistics"].attributes["videoWatchCount"],
           :view_count     => entry.elements["yt:statistics"].attributes["viewCount"],
@@ -155,12 +304,13 @@ class YouTubeIt
     class VideoFeedParser < FeedParser #:nodoc:
 
       def parse_content(content)
-        doc = REXML::Document.new(content)
+        doc = (content.is_a?(REXML::Element)) ? content : REXML::Document.new(content)
+        
         entry = doc.elements["entry"]
         parse_entry(entry)
       end
 
-    protected
+      protected
       def parse_entry(entry)
         video_id = entry.elements["id"].text
         published_at  = entry.elements["published"] ? Time.parse(entry.elements["published"].text) : nil

@@ -95,6 +95,16 @@ class YouTubeIt
         
         return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse
       end
+      
+      # Fetches the currently authenticated user's contacts (i.e. friends).
+      # When the authentication credentials are incorrect, an AuthenticationError will be raised.
+      def get_my_contacts(opts)
+        contacts_url = "/feeds/api/users/default/contacts?v=2"
+        contacts_url << opts.collect { |k,p| [k,p].join '=' }.join('&')
+        response = yt_session.get(contacts_url)
+        
+        return YouTubeIt::Parser::ContactsParser.new(response).parse
+      end
 
       # Fetches the data of a video, which may be private. The video must be owned by this user.
       # When the authentication credentials are incorrect, an AuthenticationError will be raised.
@@ -173,6 +183,15 @@ class YouTubeIt
         response    = yt_session.get(profile_url)
 
         return YouTubeIt::Parser::ProfileFeedParser.new(response).parse
+      end
+      
+      # Return's a user's activity feed.
+      def get_activity(user, opts)
+        activity_url = "/feeds/api/events?author=%s&v=2&" % (user ? user : "default")
+        activity_url << opts.collect { |k,p| [k,p].join '=' }.join('&')
+        response = yt_session.get(activity_url)
+        
+        return YouTubeIt::Parser::ActivityParser.new(response).parse
       end
 
       def playlist(playlist_id)
@@ -266,7 +285,7 @@ class YouTubeIt
 
       def get_current_user
         current_user_url = "/feeds/api/users/default"
-        response         = yt_session.get(current_user_url, authorization_headers)
+        response         = yt_session.get(current_user_url)
 
         return REXML::Document.new(response.body).elements["entry"].elements['author'].elements['name'].text
       end
@@ -286,13 +305,11 @@ class YouTubeIt
       end
 
       def authorization_headers
-        header = {
-                  "X-GData-Client" => "#{@client_id}",
-                  "X-GData-Key"    => "key=#{@dev_key}",
-                }
+        header = {"X-GData-Client"  => "#{@client_id}"}
+        header.merge!("X-GData-Key" => "key=#{@dev_key}") if @dev_key
         if @authsub_token
           header.merge!("Authorization"  => "AuthSub token=#{@authsub_token}")
-        elsif @access_token.nil? && @authsub_token.nil?
+        elsif @access_token.nil? && @authsub_token.nil? && @user
           header.merge!("Authorization"  => "GoogleLogin auth=#{auth_token}")
         end
         header

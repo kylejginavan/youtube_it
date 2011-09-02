@@ -193,6 +193,22 @@ class YouTubeIt
 EDOC
       end
 
+            # Gives you the HTML 5 to embed the video on your website.
+            # Usefull for mobile that not support flash but has html5 browser
+            # === Returns
+            #   String: The HTML for embedding the video on your website.
+            def embed_html5(params = {})
+              opts = {:class  => params[:class]  || "",
+                      :id     => params[:id]     || "",
+                      :width  => params[:width]  || "425",
+                      :height => params[:height] || "350",
+                      :frameborder => params[:frameborder] || "0"
+                      }
+              <<EDOC
+<iframe class="#{opts[:class]}" id="#{opts[:id]}" type="text/html" width="#{opts[:width]}" height="#{opts[:height]}" src="http://www.youtube.com/embed/#{unique_id}" frameborder="#{opts[:frameborder]}">
+EDOC
+            end
+
       # Gives you the HTML to embed the video on your website.
       #
       # === Returns
