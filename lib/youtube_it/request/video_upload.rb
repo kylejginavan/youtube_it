@@ -342,7 +342,7 @@ class YouTubeIt
 
       def auth_token
         @auth_token ||= begin
-          http  = Faraday.new("https://www.google.com")
+          http  = Faraday.new("https://www.google.com", :ssl => {:verify => false})
           body = "Email=#{YouTubeIt.esc @user}&Passwd=#{YouTubeIt.esc @password}&service=youtube&source=#{YouTubeIt.esc @client_id}"
           response = http.post("/youtube/accounts/ClientLogin", body, "Content-Type" => "application/x-www-form-urlencoded")
           raise ::AuthenticationError.new(response.body[/Error=(.+)/,1], response.status.to_i) if response.status.to_i != 200
@@ -420,11 +420,12 @@ class YouTubeIt
       end
 
       def yt_session(url = nil)
-        Faraday.new(:url => url ? url : base_url) do |builder|
+        Faraday.new(:url => (url ? url : base_url), :ssl => {:verify => false}) do |builder|
           builder.use Faraday::Request::OAuth, @config_token if @config_token
           builder.use Faraday::Request::AuthHeader, authorization_headers
           builder.use Faraday::Response::YouTubeIt 
-          builder.adapter Faraday.default_adapter          
+          builder.adapter Faraday.default_adapter 
+          
         end
       end
     end
