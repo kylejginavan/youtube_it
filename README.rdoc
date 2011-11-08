@@ -225,6 +225,8 @@ YouTubeIt passes all logs through the logger variable on the class itself. In Ra
 * Kyle J. Ginavan.
 * Mauro Torres - http://github.com/chebyte
 * Marko Seppa  - https://github.com/mseppae
+* Walter Korman - https://github.com/shaper
+* Shane Vitarana - https://github.com/shanev
 
 == LICENSE:
 
