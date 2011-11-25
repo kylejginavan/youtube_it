@@ -10,9 +10,12 @@ class TestVideo < Test::Unit::TestCase
     @client = YouTubeIt::Client.new
   end
 
-  def test_unicode
+  def test_esc
     result = YouTubeIt.esc("спят усталые игрушки")
     assert result == "спят+усталые+игрушки"
+  end
+
+  def test_unicode_query
     @client.videos_by(:query => 'спят усталые игрушки')
   end
 end
