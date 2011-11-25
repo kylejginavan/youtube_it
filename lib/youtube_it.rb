@@ -8,16 +8,16 @@ require 'oauth'
 require 'faraday'
 
 class YouTubeIt
-  
+
   # Base error class for the extension
   class Error < RuntimeError
   end
-  
+
   # URL-escape a string. Stolen from Camping (wonder how many Ruby libs in the wild can say the same)
   def self.esc(s) #:nodoc:
-    s.to_s.gsub(/[^ \w.-]+/n){'%'+($&.unpack('H2'*$&.size)*'%').upcase}.tr(' ', '+')
+    s.to_s.gsub(/[^ [[:word:]].-]+/u){'%'+($&.unpack('H2'*$&.size)*'%').upcase}.tr(' ', '+')
   end
-  
+
   # Set the logger for the library
   def self.logger=(any_logger)
     @logger = any_logger
@@ -27,16 +27,16 @@ class YouTubeIt
   def self.logger
     @logger ||= create_default_logger
   end
-  
+
   # Gets mixed into the classes to provide the logger method
   module Logging #:nodoc:
-    
+
     # Return the base logger set for the library
     def logger
       YouTubeIt.logger
     end
   end
-    
+
   private
     def self.create_default_logger
       logger = Logger.new(STDOUT)
@@ -45,7 +45,7 @@ class YouTubeIt
     end
 end
 
-%w( 
+%w(
   version
   client
   record
@@ -69,8 +69,8 @@ end
   request/video_upload
   request/video_search
   response/video_search
-  middleware/faraday_authheader.rb  
-  middleware/faraday_oauth.rb  
+  middleware/faraday_authheader.rb
+  middleware/faraday_oauth.rb
   middleware/faraday_youtubeit.rb
   chain_io
 ).each{|m| require File.dirname(__FILE__) + '/youtube_it/' + m }
