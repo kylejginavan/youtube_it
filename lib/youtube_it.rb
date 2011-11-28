@@ -13,9 +13,9 @@ class YouTubeIt
   class Error < RuntimeError
   end
 
-  # URL-escape a string. Stolen from Camping (wonder how many Ruby libs in the wild can say the same)
   def self.esc(s) #:nodoc:
-    s.to_s.gsub(/[^ [[:word:]].-]+/u){'%'+($&.unpack('H2'*$&.size)*'%').upcase}.tr(' ', '+')
+    # URI encodes correctly Unicode characters
+    URI.encode(s.to_s.tr(' ','+'))
   end
 
   # Set the logger for the library
