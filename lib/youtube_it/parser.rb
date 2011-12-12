@@ -41,8 +41,8 @@ class YouTubeIt
       protected
         def parse_entry(entry)
           author = YouTubeIt::Model::Author.new(
-            :name => entry.elements["author"].elements["name"].text,
-            :uri  => entry.elements["author"].elements["uri"].text
+            :name => (entry.elements["author"].elements["name"].text rescue nil),
+            :uri  => (entry.elements["author"].elements["uri"].text rescue nil)
           )
           YouTubeIt::Model::Comment.new(
             :author    => author,
