@@ -11,6 +11,11 @@ class YouTubeIt
 
   # Base error class for the extension
   class Error < RuntimeError
+    attr_reader :code
+    def initialize(msg, code = 0)
+      super(msg)
+      @code = code
+    end
   end
 
   def self.esc(s) #:nodoc:
