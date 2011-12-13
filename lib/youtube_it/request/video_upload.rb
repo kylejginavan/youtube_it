@@ -1,5 +1,20 @@
 class YouTubeIt
   module Upload
+
+    class UploadError < YouTubeIt::Error; end
+
+    class AuthenticationError < YouTubeIt::Error; end
+
+    # Implements video uploads/updates/deletions
+    #
+    #   require 'youtube_it'
+    #
+    #   uploader = YouTubeIt::Upload::VideoUpload.new("user", "pass", "dev-key")
+    #   uploader.upload File.open("test.m4v"), :title => 'test',
+    #                                        :description => 'cool vid d00d',
+    #                                        :category => 'People',
+    #                                        :keywords => %w[cool blah test]
+    #
     class VideoUpload
       include YouTubeIt::Logging
 
@@ -313,6 +328,36 @@ class YouTubeIt
           header.merge!("Authorization"  => "GoogleLogin auth=#{auth_token}")
         end
         header
+      end
+
+      def parse_upload_error_from(string)
+        begin
+          REXML::Document.new(string).elements["//errors"].inject('') do | all_faults, error|
+            if error.elements["internalReason"]
+              msg_error = error.elements["internalReason"].text
+            elsif error.elements["location"]
+              msg_error = error.elements["location"].text[/media:group\/media:(.*)\/text\(\)/,1]
+            else
+              msg_error = "Unspecified error"
+            end
+            code = error.elements["code"].text if error.elements["code"]
+            all_faults + sprintf("%s: %s\n", msg_error, code)
+          end
+        rescue
+          string[/<TITLE>(.+)<\/TITLE>/, 1] || string
+        end
+      end
+
+      def raise_on_faulty_response(response)
+        response_code = response.code.to_i
+        msg = parse_upload_error_from(response.body.gsub(/\n/, ''))
+
+        if response_code == 403 || response_code == 401
+        #if response_code / 10 == 40
+          raise AuthenticationError.new(msg, response_code)
+        elsif response_code / 10 != 20 # Response in 20x means success
+          raise UploadError.new(msg, response_code)
+        end
       end
 
       def uploaded_video_id_from(string)
