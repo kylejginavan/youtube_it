@@ -83,8 +83,15 @@ class YouTubeIt
     #
     # === Returns
     # YouTubeIt::Model::Video
-    def video_by(vid)
-      video_id = vid =~ /^http/ ? vid : "http://gdata.youtube.com/feeds/api/videos/#{vid}?v=2#{@dev_key ? '&key='+@dev_key : ''}"
+    def video_by(video)
+      vid = nil
+      vid_regex = /(?:youtube.com|youtu.be).*(?:\/|v=)(\w+)/
+      if video =~ vid_regex
+        vid = $1
+      else
+        vid = video
+      end
+      video_id ="http://gdata.youtube.com/feeds/api/videos/#{vid}?v=2#{@dev_key ? '&key='+@dev_key : ''}"
       parser = YouTubeIt::Parser::VideoFeedParser.new(video_id)
       parser.parse
     end
@@ -193,6 +200,14 @@ class YouTubeIt
 
     def enable_http_debugging
       client.enable_http_debugging
+    end
+    
+    def add_response(original_video_id, response_video_id)
+      client.add_response(original_video_id, response_video_id)
+    end
+
+    def delete_response(original_video_id, response_video_id)
+      client.delete_response(original_video_id, response_video_id)
     end
 
     def current_user
