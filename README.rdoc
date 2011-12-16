@@ -55,6 +55,7 @@ Basic Queries:
   $ client.videos_by(:user => 'liz')
   $ client.videos_by(:favorites, :user => 'liz')
   $ client.video_by("FQK1URcxmb4")
+  $ client.video_by("https://www.youtube.com/watch?v=QsbmrCtiEUU")  
   $ client.video_by_user("chebyte","FQK1URcxmb4")
 
 Standard Queries:
@@ -154,6 +155,21 @@ Add Video To Playlist:
 
 Remove Video From Playlist:
   $ client.remove_video_from_playlist(playlist_id, playlist_entry_id)
+
+List Related Videos
+  $ video = client.video_by("https://www.youtube.com/watch?v=QsbmrCtiEUU&feature=player_embedded")
+  $ video.related.videos
+
+Add Response Video
+  $ video.add_response(original_video_id, response_video_id)
+
+Delete Response Video
+  $ video.delete_response(original_video_id, response_video_id)
+
+List Response Videos
+  $ video = client.video_by("https://www.youtube.com/watch?v=QsbmrCtiEUU&feature=player_embedded")
+  $ video.responses.videos
+
   
 == ACCESS CONTROL LIST
 

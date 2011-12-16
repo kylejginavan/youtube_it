@@ -130,17 +130,15 @@ class YouTubeIt
       # === Returns
       #   YouTubeIt::Response::VideoSearch
       def related
-        YouTubeIt::Parser::VideosFeedParser.new("http://gdata.youtube.com/feeds/api/videos/#{unique_id}/related").parse
+        YouTubeIt::Parser::VideosFeedParser.new("http://gdata.youtube.com/feeds/api/videos/#{unique_id}/related?v=2").parse
       end
-
       # Video responses to the current video.
       #
       # === Returns
       #   YouTubeIt::Response::VideoSearch
       def responses
-        YouTubeIt::Parser::VideosFeedParser.new("http://gdata.youtube.com/feeds/api/videos/#{unique_id}/responses").parse
+        YouTubeIt::Parser::VideosFeedParser.new("http://gdata.youtube.com/feeds/api/videos/#{unique_id}/responses?v=2").parse
       end
-
       # The ID of the video, useful for searching for the video again without having to store it anywhere.
       # A regular query search, with this id will return the same video.
       #

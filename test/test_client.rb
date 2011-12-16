@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 require File.expand_path(File.dirname(__FILE__) + '/helper')
 
 class TestClient < Test::Unit::TestCase
@@ -233,13 +235,13 @@ class TestClient < Test::Unit::TestCase
     assert    video.noembed
     @client.video_delete(video.unique_id)
   end
-  
+    
   
   def test_should_add_new_comment
     video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
     @client.add_comment(video.unique_id, "test comment")
     comment = @client.comments(video.unique_id).first.content
-    assert comment.match(/test comment/)
+    assert comment, "test comment"
     @client.video_delete(video.unique_id)
   end
        
@@ -341,6 +343,21 @@ class TestClient < Test::Unit::TestCase
     assert_equal result[:code], 201
     sleep 4
     assert @client.delete_favorite(video_id)
+  end
+  
+  def test_esc
+    result = YouTubeIt.esc("спят усталые игрушки")
+    assert result, "спят+усталые+игрушки"
+  end
+  
+  def test_unicode_query
+    videos = @client.videos_by(:query => 'спят усталые игрушки').videos
+    assert videos.map(&:unique_id).include?("w-7BT2CFYNU")
+  end
+  
+  def test_return_video_by_url
+    video = @client.video_by("https://www.youtube.com/watch?v=EkF4JD2rO3Q")
+    assert_valid_video video
   end
 
   private

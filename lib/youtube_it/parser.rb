@@ -2,7 +2,7 @@ class YouTubeIt
   module Parser #:nodoc:
     class FeedParser #:nodoc:
       def initialize(content)
-        @content = open(content).read
+        @content = (content =~ URI::regexp(%w(http https)) ? open(content).read : content)
         
       rescue OpenURI::HTTPError => e
         raise OpenURI::HTTPError.new(e.io.status[0],e)

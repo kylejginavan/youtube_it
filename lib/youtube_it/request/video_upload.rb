@@ -75,7 +75,7 @@ class YouTubeIt
         @opts    = { :mime_type => 'video/mp4',
                      :title => '',
                      :description => '',
-                     :category => '',
+                     :category => 'People',
                      :keywords => [] }.merge(opts)
 
         @opts[:filename] ||= generate_uniq_filename_from(data)
@@ -103,7 +103,11 @@ class YouTubeIt
       #   :private
       # When the authentication credentials are incorrect, an AuthenticationError will be raised.
       def update(video_id, options)
-        @opts       = options
+        @opts = { :title => '',
+                  :description => '',
+                  :category => 'People',
+                  :keywords => [] }.merge(options)
+        
         update_body = video_xml
         update_url  = "/feeds/api/users/default/uploads/%s" % video_id
         response    = yt_session.put(update_url, update_body)
@@ -171,7 +175,6 @@ class YouTubeIt
         comment_url = "/feeds/api/videos/%s/comments?" % video_id
         comment_url << opts.collect { |k,p| [k,p].join '=' }.join('&')
         response    = yt_session.get(comment_url)
-        
         return YouTubeIt::Parser::CommentsFeedParser.new(response).parse
       end
 
@@ -304,6 +307,22 @@ class YouTubeIt
 
         return REXML::Document.new(response.body).elements["entry"].elements['author'].elements['name'].text
       end
+      
+      def add_response(original_video_id, response_video_id)
+        response_body   = video_xml_for(:response => response_video_id)
+        response_url    = "/feeds/api/videos/%s/responses" % original_video_id
+        response        = yt_session.post(response_url, response_body)
+         
+        return {:code => response.status, :body => response.body}
+      end
+
+      def delete_response(original_video_id, response_video_id)
+        response_url    = "/feeds/api/videos/%s/responses/%s" % [original_video_id, response_video_id]
+        response        = yt_session.delete(response_url)
+         
+        return {:code => response.status, :body => response.body}
+      end
+
 
       private
 
@@ -423,7 +442,7 @@ class YouTubeIt
         b.instruct!
         b.entry(:xmlns => "http://www.w3.org/2005/Atom", 'xmlns:yt' => "http://gdata.youtube.com/schemas/2007") do | m |
           m.content(data[:comment]) if data[:comment]
-          m.id(data[:favorite] || data[:playlist]) if data[:favorite] || data[:playlist]
+          m.id(data[:favorite] || data[:playlist] || data[:response]) if data[:favorite] || data[:playlist] || data[:response]
           m.tag!("yt:rating", :value => data[:rating]) if data[:rating]
           if(data[:subscribe])
             m.category(:scheme => "http://gdata.youtube.com/schemas/2007/subscriptiontypes.cat", :term => "channel")
