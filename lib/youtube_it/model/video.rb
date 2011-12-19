@@ -203,7 +203,7 @@ EDOC
                       :frameborder => params[:frameborder] || "0"
                       }
               <<EDOC
-<iframe class="#{opts[:class]}" id="#{opts[:id]}" type="text/html" width="#{opts[:width]}" height="#{opts[:height]}" src="http://www.youtube.com/embed/#{unique_id}" frameborder="#{opts[:frameborder]}">
+<iframe class="#{opts[:class]}" id="#{opts[:id]}" type="text/html" width="#{opts[:width]}" height="#{opts[:height]}" src="http://www.youtube.com/embed/#{unique_id}" frameborder="#{opts[:frameborder]}"></iframe>
 EDOC
             end
 
