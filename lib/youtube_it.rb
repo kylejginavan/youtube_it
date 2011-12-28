@@ -60,6 +60,7 @@ end
   model/comment
   model/contact
   model/content
+  model/message
   model/playlist
   model/rating
   model/subscription
