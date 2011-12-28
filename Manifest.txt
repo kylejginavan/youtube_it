@@ -10,6 +10,7 @@ lib/youtube_it/model/author.rb
 lib/youtube_it/model/category.rb
 lib/youtube_it/model/contact.rb
 lib/youtube_it/model/content.rb
+lib/youtube_it/model/message.rb
 lib/youtube_it/model/playlist.rb
 lib/youtube_it/model/rating.rb
 lib/youtube_it/model/thumbnail.rb
