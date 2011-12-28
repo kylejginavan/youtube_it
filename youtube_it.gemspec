@@ -33,6 +33,7 @@ Gem::Specification.new do |s|
     "lib/youtube_it/model/category.rb",
     "lib/youtube_it/model/comment.rb",
     "lib/youtube_it/model/contact.rb",
+    "lib/youtube_it/model/message.rb",
     "lib/youtube_it/model/content.rb",
     "lib/youtube_it/model/playlist.rb",
     "lib/youtube_it/model/rating.rb",

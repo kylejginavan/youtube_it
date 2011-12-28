@@ -113,6 +113,10 @@ class YouTubeIt
     def video_delete(video_id)
       client.delete(video_id)
     end
+    
+    def message_delete(message_id)
+      client.delete_message(message_id)
+    end
 
     def upload_token(options, nexturl = "http://www.youtube.com/my_videos")
       client.get_upload_token(options, nexturl)
@@ -227,6 +231,16 @@ class YouTubeIt
     # Get's all of the user's contacts/friends. 
     def my_contacts(opts = {})
       client.get_my_contacts(opts)
+    end
+    
+    # Send vedio message
+    def send_message(opts = {})
+      client.send_message(opts)
+    end
+    
+    # Get's all of the user's messages/inbox. 
+    def my_messages(opts = {})
+      client.get_my_messages(opts)
     end
 
     private
