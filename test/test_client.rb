@@ -50,7 +50,7 @@ class TestClient < Test::Unit::TestCase
     assert_equal 25, response.max_result_count
     assert_equal 1, response.offset
   
-      response = @client.videos_by(:query => "penguin", :page => 2)
+    response = @client.videos_by(:query => "penguin", :page => 2)
     assert_equal "tag:youtube.com,2008:videos", response.feed_id
     assert_equal 25, response.max_result_count
     assert_equal 26, response.offset
@@ -217,16 +217,16 @@ class TestClient < Test::Unit::TestCase
   def test_should_denied_comments
     video     = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:comment => "denied"))
     assert_valid_video video
-    doc = Nokogiri::HTML(open("http://www.youtube.com/watch?v=#{video.unique_id}"))
-    doc.css('.comments-disabled-message').each{|tag| assert (tag.content.strip == "Adding comments has been disabled for this video.")}
+    doc = open("http://www.youtube.com/watch?v=#{video.unique_id}").read
+    assert "Adding comments has been disabled for this video.", doc.match("Adding comments has been disabled for this video.")[0]
     @client.video_delete(video.unique_id)
   end
   
   def test_should_denied_rate
     video  = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:rate => "denied"))
     assert_valid_video video
-    doc = Nokogiri::HTML(open("http://www.youtube.com/watch?v=#{video.unique_id}"))
-    doc.css('#watch-like').each{|tag|; assert (tag.attributes["title"].to_s == "Ratings have been disabled for this video.")}
+    doc = open("http://www.youtube.com/watch?v=#{video.unique_id}").read
+    assert "Ratings have been disabled for this video.", doc.match("Ratings have been disabled for this video.")[0]
     @client.video_delete(video.unique_id)
   end
   

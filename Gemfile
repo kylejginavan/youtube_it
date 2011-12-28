@@ -2,9 +2,8 @@ source 'http://rubygems.org'
 
 gem 'oauth'
 gem 'simple_oauth'
-gem 'builder'
 gem 'faraday'
-gem 'nokogiri'
+gem 'builder'
 
 group :test do
   gem 'webmock'
