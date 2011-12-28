@@ -247,6 +247,33 @@ class YouTubeIt
         return contacts
       end
     end
+    
+    # Returns an array of the user's messages
+    class MessagesParser < FeedParser
+      def parse_content(content)
+        doc = REXML::Document.new(content.body)
+        puts content.body
+        puts "doc..."
+        puts doc.inspect
+        feed = doc.elements["feed"]
+        
+        messages = []
+        feed.elements.each("entry") do |entry|
+          author = entry.elements["author"]
+          temp_message = YouTubeIt::Model::Message.new(
+            :id  => entry.elements["id"] ? entry.elements["id"].text.gsub(/.+:inbox:/, "") : nil, 
+            :title    => entry.elements["title"] ? entry.elements["title"].text : nil,
+            :name => author && author.elements["name"] ? author.elements["name"].text : nil,
+            :summary   => entry.elements["summary"] ? entry.elements["summary"].text : nil,
+            :published   => entry.elements["published"] ? entry.elements["published"].text : nil
+          )
+          
+          messages << temp_message
+        end
+        
+        return messages
+      end
+    end
 
     class ProfileFeedParser < FeedParser #:nodoc:
       def parse_content(content)

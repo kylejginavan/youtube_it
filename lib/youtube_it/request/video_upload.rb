@@ -124,6 +124,24 @@ class YouTubeIt
         
         return YouTubeIt::Parser::ContactsParser.new(response).parse
       end
+      
+      def send_message(opts)
+        message_body = message_xml_for(opts)
+        message_url  = "/feeds/api/users/%s/inbox" % opts[:recipient_id]
+        response     = yt_session.post(message_url, message_body)
+        
+        return {:code => response.status, :body => response.body}
+      end
+      
+      # Fetches the currently authenticated user's messages (i.e. inbox).
+      # When the authentication credentials are incorrect, an AuthenticationError will be raised.
+      def get_my_messages(opts)
+        messages_url = "/feeds/api/users/default/inbox"
+        messages_url << opts.collect { |k,p| [k,p].join '=' }.join('&')
+        response = yt_session.get(messages_url)
+        
+        return YouTubeIt::Parser::MessagesParser.new(response).parse
+      end
 
       # Fetches the data of a video, which may be private. The video must be owned by this user.
       # When the authentication credentials are incorrect, an AuthenticationError will be raised.
@@ -148,6 +166,14 @@ class YouTubeIt
       # Delete a video on YouTube
       def delete(video_id)
         delete_url = "/feeds/api/users/default/uploads/%s" % video_id
+        response   = yt_session.delete(delete_url)
+
+        return true
+      end
+      
+      # Delete a video message
+      def delete_message(message_id)
+        delete_url = "/feeds/api/users/default/inbox/%s" % message_id
         response   = yt_session.delete(delete_url)
 
         return true
@@ -448,6 +474,16 @@ class YouTubeIt
             m.category(:scheme => "http://gdata.youtube.com/schemas/2007/subscriptiontypes.cat", :term => "channel")
             m.tag!("yt:username", data[:subscribe])
           end
+        end.to_s
+      end
+      
+      def message_xml_for(data)
+        b = Builder::XmlMarkup.new
+        b.instruct!
+        b.entry(:xmlns => "http://www.w3.org/2005/Atom", 'xmlns:yt' => "http://gdata.youtube.com/schemas/2007") do | m |
+          m.id(data[:vedio_id]) #if data[:vedio_id]
+          m.title(data[:title]) if data[:title]
+          m.summary(data[:message])
         end.to_s
       end
 
