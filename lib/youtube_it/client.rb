@@ -85,7 +85,7 @@ class YouTubeIt
     # YouTubeIt::Model::Video
     def video_by(video)
       vid = nil
-      vid_regex = /(?:youtube.com|youtu.be).*(?:\/|v=)(\w+)/
+      vid_regex = /(?:youtube.com|youtu.be).*(?:\/|v=)([\w-]+)/
       if video =~ vid_regex
         vid = $1
       else
