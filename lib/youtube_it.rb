@@ -33,6 +33,14 @@ class YouTubeIt
     @logger ||= create_default_logger
   end
 
+  def self.adapter=(faraday_adapter)
+    @adapter = faraday_adapter
+  end
+  
+  def self.adapter
+    @adapter ||= Faraday.default_adapter
+  end
+  
   # Gets mixed into the classes to provide the logger method
   module Logging #:nodoc:
 

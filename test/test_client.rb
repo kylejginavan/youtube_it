@@ -359,7 +359,13 @@ class TestClient < Test::Unit::TestCase
     video = @client.video_by("https://www.youtube.com/watch?v=EkF4JD2rO3Q")
     assert_valid_video video
   end
-
+  
+  def test_configure_faraday_adapter
+    assert YouTubeIt.adapter == Faraday.default_adapter
+    YouTubeIt.adapter = :net_http
+    assert YouTubeIt.adapter == :net_http
+  end
+  
   private
   
     def assert_valid_video (video)
