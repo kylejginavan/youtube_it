@@ -17,7 +17,9 @@ class YouTubeIt
       attr_reader :racy                            # racy ([exclude], include)
       attr_reader :author
       attr_reader :lang                            # lt
-
+      attr_reader :restriction
+      
+      
       def initialize(params={})
         # Initialize our various member data to avoid warnings and so we'll
         # automatically fall back to the youtube api defaults
@@ -62,6 +64,7 @@ class YouTubeIt
           'format' => @video_format,
           'racy' => @racy,
           'author' => @author,
+          'restriction' => @restriction,
           'lr' => @lang
         }
       end
