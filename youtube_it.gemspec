@@ -4,14 +4,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{youtube_it}
+  s.name = "youtube_it"
   s.version = "2.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["kylejginavan", "chebyte", "mseppae"]
-  s.date = %q{2011-12-19}
-  s.description = %q{Upload, delete, update, comment on youtube videos all from one gem.}
-  s.email = %q{kylejginavan@gmail.com}
+  s.date = "2012-02-03"
+  s.description = "Upload, delete, update, comment on youtube videos all from one gem."
+  s.email = "kylejginavan@gmail.com"
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
@@ -25,16 +25,20 @@ Gem::Specification.new do |s|
     "lib/youtube_it.rb",
     "lib/youtube_it/chain_io.rb",
     "lib/youtube_it/client.rb",
+    "lib/youtube_it/client/authsub.rb",
+    "lib/youtube_it/client/oauth.rb",
+    "lib/youtube_it/client/oauth2.rb",
     "lib/youtube_it/middleware/faraday_authheader.rb",
     "lib/youtube_it/middleware/faraday_oauth.rb",
+    "lib/youtube_it/middleware/faraday_oauth2.rb",
     "lib/youtube_it/middleware/faraday_youtubeit.rb",
     "lib/youtube_it/model/activity.rb",
     "lib/youtube_it/model/author.rb",
     "lib/youtube_it/model/category.rb",
     "lib/youtube_it/model/comment.rb",
     "lib/youtube_it/model/contact.rb",
-    "lib/youtube_it/model/message.rb",
     "lib/youtube_it/model/content.rb",
+    "lib/youtube_it/model/message.rb",
     "lib/youtube_it/model/playlist.rb",
     "lib/youtube_it/model/rating.rb",
     "lib/youtube_it/model/subscription.rb",
@@ -63,43 +67,28 @@ Gem::Specification.new do |s|
     "test/test_video_search.rb",
     "youtube_it.gemspec"
   ]
-  s.homepage = %q{http://github.com/kylejginavan/youtube_it}
+  s.homepage = "http://github.com/kylejginavan/youtube_it"
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.5.2}
-  s.summary = %q{The most complete Ruby wrapper for youtube api's}
+  s.rubygems_version = "1.8.11"
+  s.summary = "The most complete Ruby wrapper for youtube api's"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<oauth>, [">= 0"])
-      s.add_runtime_dependency(%q<simple_oauth>, [">= 0"])
-      s.add_runtime_dependency(%q<builder>, [">= 0"])
       s.add_runtime_dependency(%q<faraday>, [">= 0"])
-      s.add_runtime_dependency(%q<nokogiri>, [">= 0"])
-      s.add_runtime_dependency(%q<oauth>, [">= 0.4.4"])
-      s.add_runtime_dependency(%q<simple_oauth>, [">= 0.1.5"])
+      s.add_runtime_dependency(%q<builder>, [">= 0"])
       s.add_runtime_dependency(%q<faraday>, [">= 0.7.3"])
       s.add_runtime_dependency(%q<builder>, [">= 0"])
     else
-      s.add_dependency(%q<oauth>, [">= 0"])
-      s.add_dependency(%q<simple_oauth>, [">= 0"])
-      s.add_dependency(%q<builder>, [">= 0"])
       s.add_dependency(%q<faraday>, [">= 0"])
-      s.add_dependency(%q<nokogiri>, [">= 0"])
-      s.add_dependency(%q<oauth>, [">= 0.4.4"])
-      s.add_dependency(%q<simple_oauth>, [">= 0.1.5"])
+      s.add_dependency(%q<builder>, [">= 0"])
       s.add_dependency(%q<faraday>, [">= 0.7.3"])
       s.add_dependency(%q<builder>, [">= 0"])
     end
   else
-    s.add_dependency(%q<oauth>, [">= 0"])
-    s.add_dependency(%q<simple_oauth>, [">= 0"])
-    s.add_dependency(%q<builder>, [">= 0"])
     s.add_dependency(%q<faraday>, [">= 0"])
-    s.add_dependency(%q<nokogiri>, [">= 0"])
-    s.add_dependency(%q<oauth>, [">= 0.4.4"])
-    s.add_dependency(%q<simple_oauth>, [">= 0.1.5"])
+    s.add_dependency(%q<builder>, [">= 0"])
     s.add_dependency(%q<faraday>, [">= 0.7.3"])
     s.add_dependency(%q<builder>, [">= 0"])
   end

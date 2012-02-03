@@ -35,14 +35,23 @@ Client with developer key:
 Client with youtube account and developer key:
   $ client = YouTubeIt::Client.new(:username => "youtube_username", :password =>  "youtube_passwd", :dev_key => "developer_key")
 
+Youtube_it provides clients for the different authentication methods provided by Youtube. It is recommended to use the latest method (OAuth 2) but you can still use the older methods : OAuth and AuthSub.
+Depending on the method you want to use you'll have to require the client and other required gems (for OAuth and OAuth 2).
+
 Client with AuthSub:
+    $ require "youtube_it/client/authsub"
+    
     $ client = YouTubeIt::AuthSubClient.new(:token => "token" , :dev_key => "developer_key")
 
 Client with OAuth:
+  $ require "youtube_it/client/oauth" # be sure to also have oauth and simple_oauth gems installed or in your Gemfile if using Bundler.
+  
   $ client = YouTubeIt::OAuthClient.new("consumer_key", "consumer_secret", "youtube_username", "developer_key")
   $ client.authorize_from_access("access_token", "access_secret")
 
 Client with OAuth2:
+  $ require "youtube_it/client/oauth2" # be sure to also have oauth2 gem installed or in your Gemfile if using Bundler.
+
   $ client = YouTubeIt::OAuth2Client.new(client_access_token: "access_token", client_refresh_token: "refresh_token", client_id: "client_id", client_secret: "client_secret", dev_key: "dev_key")
 
 If your access token is still valid (be careful, access tokens may only be valid for about 1 hour), you can use the client directly. If you want to refresh the access token using the refresh token just do:
