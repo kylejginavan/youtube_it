@@ -42,6 +42,13 @@ Client with OAuth:
   $ client = YouTubeIt::OAuthClient.new("consumer_key", "consumer_secret", "youtube_username", "developer_key")
   $ client.authorize_from_access("access_token", "access_secret")
 
+Client with OAuth2:
+  $ client = YouTubeIt::OAuth2Client.new(client_access_token: "access_token", client_refresh_token: "refresh_token", client_id: "client_id", client_secret: "client_secret", dev_key: "dev_key")
+
+If your access token is still valid (be careful, access tokens may only be valid for about 1 hour), you can use the client directly. If you want to refresh the access token using the refresh token just do:
+
+  $ client.refresh_access_token!
+
 == VIDEO QUERIES
 
 Note:  Each type of client enables searching capabilities.
