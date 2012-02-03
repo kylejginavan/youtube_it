@@ -137,5 +137,11 @@ class TestVideoSearch < Test::Unit::TestCase
     request = YouTubeIt::Request::UserSearch.new(:favorites, :user => 'liz', :offset => 20, :max_results => 10)
     assert_equal "http://gdata.youtube.com/feeds/api/users/liz/favorites?max-results=10&start-index=20&v=2", request.url
   end
-
+  
+  # -- Queries with restrictions ---------------------------------------------------------------------------------
+  
+  def test_should_build_basic_query_url_with_restriction
+    request = YouTubeIt::Request::VideoSearch.new(:query => "penguin", :restriction => "DE")
+    assert_equal "http://gdata.youtube.com/feeds/api/videos?q=penguin&restriction=DE&v=2", request.url
+  end
 end
