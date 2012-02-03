@@ -529,8 +529,9 @@ class YouTubeIt
             end
           end
           builder.use Faraday::Request::AuthHeader, authorization_headers
-          builder.use Faraday::Response::YouTubeIt
-          builder.adapter Faraday.default_adapter
+          builder.use Faraday::Response::YouTubeIt 
+          builder.adapter YouTubeIt.adapter
+          
         end
       end
     end
