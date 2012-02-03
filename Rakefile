@@ -1,4 +1,5 @@
 require 'rubygems'
+gem 'rake', '0.8.7'
 require 'rake'
 
 begin
@@ -10,6 +11,7 @@ begin
     gem.email = "kylejginavan@gmail.com"
     gem.homepage = "http://github.com/kylejginavan/youtube_it"
     gem.add_dependency('oauth','>=0.4.4')
+    gem.add_dependency('oauth2','>=0.5.2')
     gem.add_dependency('simple_oauth', '>=0.1.5')    
     gem.add_dependency('faraday','>=0.7.3')    
     gem.add_dependency('builder')

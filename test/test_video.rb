@@ -17,7 +17,7 @@ class TestVideo < Test::Unit::TestCase
 
     assert_equal "tag:youtube.com,2008:video:BDqs-OZWw9o:related", response.feed_id
     assert_equal 25, response.max_result_count
-    assert_equal 23, response.videos.length
+    assert_equal 20, response.videos.length
     assert_equal 1, response.offset
     assert(response.total_result_count > 0)
     assert_instance_of Time, response.updated_at
