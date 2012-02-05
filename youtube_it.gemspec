@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{youtube_it}
-  s.version = "2.1.1"
+  s.version = "2.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["kylejginavan", "chebyte", "mseppae"]
-  s.date = %q{2011-12-19}
+  s.date = %q{2012-02-05}
   s.description = %q{Upload, delete, update, comment on youtube videos all from one gem.}
   s.email = %q{kylejginavan@gmail.com}
   s.extra_rdoc_files = [
@@ -27,14 +27,15 @@ Gem::Specification.new do |s|
     "lib/youtube_it/client.rb",
     "lib/youtube_it/middleware/faraday_authheader.rb",
     "lib/youtube_it/middleware/faraday_oauth.rb",
+    "lib/youtube_it/middleware/faraday_oauth2.rb",
     "lib/youtube_it/middleware/faraday_youtubeit.rb",
     "lib/youtube_it/model/activity.rb",
     "lib/youtube_it/model/author.rb",
     "lib/youtube_it/model/category.rb",
     "lib/youtube_it/model/comment.rb",
     "lib/youtube_it/model/contact.rb",
-    "lib/youtube_it/model/message.rb",
     "lib/youtube_it/model/content.rb",
+    "lib/youtube_it/model/message.rb",
     "lib/youtube_it/model/playlist.rb",
     "lib/youtube_it/model/rating.rb",
     "lib/youtube_it/model/subscription.rb",
@@ -72,33 +73,39 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<oauth>, [">= 0"])
-      s.add_runtime_dependency(%q<simple_oauth>, [">= 0"])
+      s.add_runtime_dependency(%q<rake>, ["= 0.8.7"])
+      s.add_runtime_dependency(%q<oauth>, ["= 0.4.4"])
+      s.add_runtime_dependency(%q<oauth2>, ["= 0.5.2"])
+      s.add_runtime_dependency(%q<simple_oauth>, ["= 0.1.5"])
+      s.add_runtime_dependency(%q<faraday>, ["= 0.7.3"])
       s.add_runtime_dependency(%q<builder>, [">= 0"])
-      s.add_runtime_dependency(%q<faraday>, [">= 0"])
-      s.add_runtime_dependency(%q<nokogiri>, [">= 0"])
       s.add_runtime_dependency(%q<oauth>, [">= 0.4.4"])
+      s.add_runtime_dependency(%q<oauth2>, [">= 0.5.2"])
       s.add_runtime_dependency(%q<simple_oauth>, [">= 0.1.5"])
       s.add_runtime_dependency(%q<faraday>, [">= 0.7.3"])
       s.add_runtime_dependency(%q<builder>, [">= 0"])
     else
-      s.add_dependency(%q<oauth>, [">= 0"])
-      s.add_dependency(%q<simple_oauth>, [">= 0"])
+      s.add_dependency(%q<rake>, ["= 0.8.7"])
+      s.add_dependency(%q<oauth>, ["= 0.4.4"])
+      s.add_dependency(%q<oauth2>, ["= 0.5.2"])
+      s.add_dependency(%q<simple_oauth>, ["= 0.1.5"])
+      s.add_dependency(%q<faraday>, ["= 0.7.3"])
       s.add_dependency(%q<builder>, [">= 0"])
-      s.add_dependency(%q<faraday>, [">= 0"])
-      s.add_dependency(%q<nokogiri>, [">= 0"])
       s.add_dependency(%q<oauth>, [">= 0.4.4"])
+      s.add_dependency(%q<oauth2>, [">= 0.5.2"])
       s.add_dependency(%q<simple_oauth>, [">= 0.1.5"])
       s.add_dependency(%q<faraday>, [">= 0.7.3"])
       s.add_dependency(%q<builder>, [">= 0"])
     end
   else
-    s.add_dependency(%q<oauth>, [">= 0"])
-    s.add_dependency(%q<simple_oauth>, [">= 0"])
+    s.add_dependency(%q<rake>, ["= 0.8.7"])
+    s.add_dependency(%q<oauth>, ["= 0.4.4"])
+    s.add_dependency(%q<oauth2>, ["= 0.5.2"])
+    s.add_dependency(%q<simple_oauth>, ["= 0.1.5"])
+    s.add_dependency(%q<faraday>, ["= 0.7.3"])
     s.add_dependency(%q<builder>, [">= 0"])
-    s.add_dependency(%q<faraday>, [">= 0"])
-    s.add_dependency(%q<nokogiri>, [">= 0"])
     s.add_dependency(%q<oauth>, [">= 0.4.4"])
+    s.add_dependency(%q<oauth2>, [">= 0.5.2"])
     s.add_dependency(%q<simple_oauth>, [">= 0.1.5"])
     s.add_dependency(%q<faraday>, [">= 0.7.3"])
     s.add_dependency(%q<builder>, [">= 0"])
