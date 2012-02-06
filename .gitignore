@@ -1,17 +1,4 @@
 .DS_Store
 .idea
-config/database.yml
-log/*.log
-public/flash/*.swf
-tmp/**/*
 *.tmproj
-public/stylesheets/packaged/*.css
-public/javascripts/packaged/*.js
-tmp
-log
-config/*.sphinx.conf
-db/sphinx/
-sphinx/**/*
-public/packages/*
-.gitconfig
 pkg/

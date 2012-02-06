@@ -1,5 +1,5 @@
 require 'rubygems'
-gem 'rake', '0.9.2.2'
+gem 'rake', '0.8.7'
 require 'rake'
 
 begin
