@@ -10,16 +10,11 @@ begin
     gem.description = %Q{Upload, delete, update, comment on youtube videos all from one gem.}
     gem.email = "kylejginavan@gmail.com"
     gem.homepage = "http://github.com/kylejginavan/youtube_it"
-    gem.add_dependency('oauth','>=0.4.4')
-    gem.add_dependency('oauth2','>=0.5.2')
-    gem.add_dependency('simple_oauth', '>=0.1.5')    
-    gem.add_dependency('faraday','>=0.7.3')    
-    gem.add_dependency('builder')
     gem.authors = ["kylejginavan","chebyte", "mseppae"]
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
-  puts "youtube_it (or a dependency) not available. Install it with: gem install youtube_it"
+  puts "jeweler (or a dependency) is not available. Install it with: gem install jeweler"
 end
 
 require 'rake/testtask'
