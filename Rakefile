@@ -1,26 +1,28 @@
+# encoding: utf-8
+
 require 'rubygems'
-gem 'rake', '0.8.7'
+require 'bundler'
+begin
+  Bundler.setup(:default, :test)
+rescue Bundler::BundlerError => e
+  $stderr.puts e.message
+  $stderr.puts "Run `bundle install` to install missing gems"
+  exit e.status_code
+end
 require 'rake'
 
-begin
-  require 'jeweler'
-  Jeweler::Tasks.new do |gem|
-    gem.name = "youtube_it"
-    gem.summary = %Q{The most complete Ruby wrapper for youtube api's}
-    gem.description = %Q{Upload, delete, update, comment on youtube videos all from one gem.}
-    gem.email = "kylejginavan@gmail.com"
-    gem.homepage = "http://github.com/kylejginavan/youtube_it"
-    gem.add_dependency('oauth','>=0.4.4')
-    gem.add_dependency('oauth2','>=0.5.2')
-    gem.add_dependency('simple_oauth', '>=0.1.5')    
-    gem.add_dependency('faraday','>=0.7.3')    
-    gem.add_dependency('builder')
-    gem.authors = ["kylejginavan","chebyte", "mseppae"]
-  end
-  Jeweler::GemcutterTasks.new
-rescue LoadError
-  puts "youtube_it (or a dependency) not available. Install it with: gem install youtube_it"
+require 'jeweler'
+Jeweler::Tasks.new do |gem|
+  # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
+  gem.name = "youtube_it"
+  gem.summary = %Q{The most complete Ruby wrapper for youtube api's}
+  gem.description = %Q{Upload, delete, update, comment on youtube videos all from one gem.}
+  gem.email = "kylejginavan@gmail.com"
+  gem.homepage = "http://github.com/kylejginavan/youtube_it"
+  gem.authors = ["kylejginavan","chebyte", "mseppae"]
+  # dependencies defined in Gemfile
 end
+Jeweler::RubygemsDotOrgTasks.new
 
 require 'rake/testtask'
 Rake::TestTask.new(:test) do |test|

@@ -8,6 +8,13 @@ GEM
       addressable (~> 2.2.6)
       multipart-post (~> 1.1.0)
       rack (>= 1.1.0, < 2)
+    git (1.2.5)
+    jeweler (1.8.3)
+      bundler (~> 1.0)
+      git (>= 1.2.5)
+      rake
+      rdoc
+    json (1.6.5)
     multi_json (1.0.4)
     multipart-post (1.1.4)
     oauth (0.4.4)
@@ -16,6 +23,8 @@ GEM
       multi_json (~> 1.0)
     rack (1.4.1)
     rake (0.8.7)
+    rdoc (3.12)
+      json (~> 1.4)
     simple_oauth (0.1.5)
     webmock (1.7.10)
       addressable (~> 2.2, > 2.2.5)
@@ -26,9 +35,9 @@ PLATFORMS
 
 DEPENDENCIES
   builder
-  faraday (= 0.7.3)
-  oauth (= 0.4.4)
-  oauth2 (= 0.5.2)
-  rake (= 0.8.7)
-  simple_oauth (= 0.1.5)
-  webmock
+  faraday (~> 0.7.3)
+  jeweler (~> 1.8.3)
+  oauth (~> 0.4.4)
+  oauth2 (~> 0.5.2)
+  simple_oauth (~> 0.1.5)
+  webmock (~> 1.7.10)
