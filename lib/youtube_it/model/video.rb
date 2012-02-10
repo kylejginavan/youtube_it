@@ -149,7 +149,7 @@ class YouTubeIt
       # === Returns
       #   String: The Youtube video id.
       def unique_id
-        video_id[/videos\/([^<]+)/, 1] || video_id[/video\:([^<]+)/, 1]
+        @unique_id || video_id[/videos\/([^<]+)/, 1] || video_id[/video\:([^<]+)/, 1]
       end
 
       # Allows you to check whether the video can be embedded on a webpage.
