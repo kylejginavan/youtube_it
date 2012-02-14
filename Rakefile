@@ -1,6 +1,4 @@
 require 'rubygems'
-gem 'rake', '0.8.7'
-require 'rake'
 
 begin
   require 'jeweler'
