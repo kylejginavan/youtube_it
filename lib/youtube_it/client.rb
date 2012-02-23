@@ -407,12 +407,12 @@ class YouTubeIt
 
   class OAuth2Client < YouTubeIt::Client
     def initialize(options)
-      @client_id            = options[:client_id]
-      @client_secret        = options[:client_secret]
-      @client_access_token  = options[:client_access_token]
-      @client_refresh_token = options[:client_refresh_token]
+      @client_id               = options[:client_id]
+      @client_secret           = options[:client_secret]
+      @client_access_token     = options[:client_access_token]
+      @client_refresh_token    = options[:client_refresh_token]
       @client_token_expires_at = options[:client_token_expires_at]
-      @dev_key              = options[:dev_key]
+      @dev_key                 = options[:dev_key]
     end
 
     def oauth_client
