@@ -252,6 +252,16 @@ class TestClient < Test::Unit::TestCase
     assert @client.delete_video_from_playlist(playlist.playlist_id, video[:playlist_entry_id])
     assert @client.delete_playlist(playlist.playlist_id)
   end
+
+  def test_should_return_unique_id_from_playlist
+    playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
+    video = @client.add_video_to_playlist(playlist.playlist_id,"CE62FSEoY28")
+
+    assert_equal "CE62FSEoY28", playlist.videos.last.unique_id
+
+    assert @client.delete_video_from_playlist(playlist.playlist_id, video[:playlist_entry_id])
+    assert @client.delete_playlist(playlist.playlist_id)
+  end
   
   def test_should_add_and_delete_new_playlist
     result = @client.add_playlist(:title => "youtube_it test4!", :description => "test playlist")

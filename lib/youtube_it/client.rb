@@ -411,6 +411,7 @@ class YouTubeIt
       @client_secret        = options[:client_secret]
       @client_access_token  = options[:client_access_token]
       @client_refresh_token = options[:client_refresh_token]
+      @client_token_expires_at = options[:client_token_expires_at]
       @dev_key              = options[:dev_key]
     end
 
@@ -422,7 +423,7 @@ class YouTubeIt
     end
     
     def access_token
-      @access_token ||= ::OAuth2::AccessToken.new(oauth_client, @client_access_token, :refresh_token => @client_refresh_token)
+      @access_token ||= ::OAuth2::AccessToken.new(oauth_client, @client_access_token, :refresh_token => @client_refresh_token, :expires_at => @client_token_expires_at)
     end
 
     def refresh_access_token!
