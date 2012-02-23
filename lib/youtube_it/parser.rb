@@ -374,6 +374,11 @@ class YouTubeIt
         end
         media_group = entry.elements["media:group"]
 
+        ytid = nil
+        unless media_group.elements["yt:videoid"].nil?
+          ytid = media_group.elements["yt:videoid"].text
+        end        
+
         # if content is not available on certain region, there is no media:description, media:player or yt:duration
         description = ""
         unless media_group.elements["media:description"].nil?
@@ -482,7 +487,8 @@ class YouTubeIt
           :position       => position,
           :latitude       => latitude,
           :longitude      => longitude,
-          :state          => state)
+          :state          => state,
+          :unique_id      => ytid)
       end
 
       def parse_media_content (media_content_element)
