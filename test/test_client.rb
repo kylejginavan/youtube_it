@@ -252,13 +252,13 @@ class TestClient < Test::Unit::TestCase
     assert @client.delete_video_from_playlist(playlist.playlist_id, video[:playlist_entry_id])
     assert @client.delete_playlist(playlist.playlist_id)
   end
-
+  
   def test_should_return_unique_id_from_playlist
     playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
     video = @client.add_video_to_playlist(playlist.playlist_id,"CE62FSEoY28")
-
+  
     assert_equal "CE62FSEoY28", playlist.videos.last.unique_id
-
+  
     assert @client.delete_video_from_playlist(playlist.playlist_id, video[:playlist_entry_id])
     assert @client.delete_playlist(playlist.playlist_id)
   end
@@ -324,21 +324,24 @@ class TestClient < Test::Unit::TestCase
   
   def test_should_subscribe_to_channel
    r = @client.subscribe_channel("TheWoWArthas")
+   sleep(4)
    assert_equal r[:code], 201
-   assert_equal @client.subscriptions.first.title, "Videos published by : TheWoWArthas"
+   assert_equal @client.subscriptions.first.title, "Videos published by: TheWoWArthas"
    @client.unsubscribe_channel(@client.subscriptions.first.id)
   end
   
   def test_should_unsubscribe_to_channel
    @client.subscribe_channel("TheWoWArthas")
+   sleep(4)
    r = @client.unsubscribe_channel(@client.subscriptions.first.id)
    assert_equal r[:code], 200
   end
   
   def test_should_list_subscriptions
    @client.subscribe_channel("TheWoWArthas")
+   sleep(4)
    assert @client.subscriptions.count == 1
-   assert_equal @client.subscriptions.first.title, "Videos published by : TheWoWArthas"
+   assert_equal @client.subscriptions.first.title, "Videos published by: TheWoWArthas"
    @client.unsubscribe_channel(@client.subscriptions.first.id)
   end
      
