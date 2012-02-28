@@ -118,6 +118,9 @@ class YouTubeIt
       # *String*:: State of the video (processing, restricted, deleted, rejected and failed)
       attr_reader :state
 
+      # *String*:: URI for insight for this video, if present; nil otherwise
+      attr_reader :insight_uri
+
 
       # Geodata
       attr_reader :where

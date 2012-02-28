@@ -298,7 +298,8 @@ class YouTubeIt
           :subscribers    => entry.elements["yt:statistics"].attributes["subscriberCount"],
           :videos_watched => entry.elements["yt:statistics"].attributes["videoWatchCount"],
           :view_count     => entry.elements["yt:statistics"].attributes["viewCount"],
-          :upload_views   => entry.elements["yt:statistics"].attributes["totalUploadViews"]
+          :upload_views   => entry.elements["yt:statistics"].attributes["totalUploadViews"],
+          :insight_uri    => (entry.elements['link[attribute::rel="http://gdata.youtube.com/schemas/2007#insight.views"]'].attributes['href'] rescue nil)
         )
       end
     end
@@ -463,6 +464,8 @@ class YouTubeIt
           
         end
 
+        insight_uri = (entry.elements['link[attribute::rel="http://gdata.youtube.com/schemas/2007#insight.views"]'].attributes['href'] rescue nil)
+
         YouTubeIt::Model::Video.new(
           :video_id       => video_id,
           :published_at   => published_at,
@@ -488,6 +491,7 @@ class YouTubeIt
           :latitude       => latitude,
           :longitude      => longitude,
           :state          => state,
+          :insight_uri    => insight_uri,
           :unique_id      => ytid)
       end
 

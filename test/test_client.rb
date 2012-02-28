@@ -298,6 +298,8 @@ class TestClient < Test::Unit::TestCase
    assert_valid_video video
    result = @client.my_videos
    assert_equal result.videos.first.unique_id, video.unique_id
+   assert_not_nil result.videos.first.insight_uri, 'insight data not present'
+  ensure
    @client.video_delete(video.unique_id)
   end
   
@@ -347,7 +349,8 @@ class TestClient < Test::Unit::TestCase
      
   def test_should_get_profile
     profile = @client.profile
-    assert_equal profile.username, "tubeit20101" 
+    assert_equal profile.username, "tubeit20101"
+    assert_not_nil profile.insight_uri, 'user insight_uri nil'
   end
   
   def test_should_add_and_delete_video_to_favorite
