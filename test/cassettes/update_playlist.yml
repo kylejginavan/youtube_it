@@ -1,0 +1,215 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: https://www.google.com:443/youtube/accounts/ClientLogin
+    body: Email=tubeit20101&Passwd=youtube_it&service=youtube&source=youtube_it
+    headers:
+      content-type:
+      - application/x-www-form-urlencoded
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      x-gdata-user-country:
+      - US
+      content-type:
+      - text/plain
+      content-length:
+      - '276'
+      date:
+      - Thu, 01 Mar 2012 15:21:17 GMT
+      expires:
+      - Thu, 01 Mar 2012 15:21:17 GMT
+      cache-control:
+      - private, max-age=0
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      server:
+      - GSE
+    body: ! 'Auth=DQAAAK4AAAB4pZyeSL4puB9auNpLzMXc8gg_DZdiNZC6GSc354eKQ5rwrGsirxzQlUBCFZ_7pXicbGW0CCb895QcyREiCwJLTOvHKeJMc7GeAjbtYts3ntqqycO1_gsKyR_65KoKIYnff6innUdYOHGjmsLt1OEhCsfMyjeOLhCOndIaMh26TOSgqTSKOEWKMB1TFRnKoQuLk0CTPqIzdw2NY4N47argwASsdbHmLj3mP4rZTfHBrA
+
+      YouTubeUser=tubeit20101
+
+'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: http://gdata.youtube.com:80/feeds/api/users/default/playlists
+    body: <?xml version="1.0" encoding="UTF-8"?><entry xmlns="http://www.w3.org/2005/Atom"
+      xmlns:yt="http://gdata.youtube.com/schemas/2007"><title>youtube_it test!</title><summary>test
+      playlist</summary></entry>
+    headers:
+      x-gdata-client:
+      - youtube_it
+      x-gdata-key:
+      - key=AI39si411VBmO4Im9l0rfRsORXDI6F5AX5NlTIA4uHSWqa-Cgf-jUQG-6osUBB3PTLawLHlkKXPLr3B0pNcGU9wkNd11gIgdPg
+      authorization:
+      - GoogleLogin auth=DQAAAK4AAAB4pZyeSL4puB9auNpLzMXc8gg_DZdiNZC6GSc354eKQ5rwrGsirxzQlUBCFZ_7pXicbGW0CCb895QcyREiCwJLTOvHKeJMc7GeAjbtYts3ntqqycO1_gsKyR_65KoKIYnff6innUdYOHGjmsLt1OEhCsfMyjeOLhCOndIaMh26TOSgqTSKOEWKMB1TFRnKoQuLk0CTPqIzdw2NY4N47argwASsdbHmLj3mP4rZTfHBrA
+      gdata-version:
+      - '2'
+      content-type:
+      - application/atom+xml; charset=UTF-8
+      content-length:
+      - '201'
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 201
+      message: Created
+    headers:
+      x-gdata-user-country:
+      - US
+      content-type:
+      - application/atom+xml; charset=UTF-8; type=entry
+      expires:
+      - Thu, 01 Mar 2012 15:21:17 GMT
+      date:
+      - Thu, 01 Mar 2012 15:21:17 GMT
+      cache-control:
+      - private, max-age=0, must-revalidate, no-transform
+      vary:
+      - Accept, X-GData-Authorization, GData-Version
+      gdata-version:
+      - '2.1'
+      etag:
+      - W/"D0UDRn47eCp7I2A9WhVTFkw."
+      location:
+      - http://gdata.youtube.com/feeds/api/users/tubeit20101/playlists/31564D66A77376EE?client=youtube_it
+      content-location:
+      - http://gdata.youtube.com/feeds/api/users/tubeit20101/playlists/31564D66A77376EE?client=youtube_it
+      transfer-encoding:
+      - chunked
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      server:
+      - GSE
+    body: <?xml version='1.0' encoding='UTF-8'?><entry xmlns='http://www.w3.org/2005/Atom'
+      xmlns:app='http://www.w3.org/2007/app' xmlns:media='http://search.yahoo.com/mrss/'
+      xmlns:gd='http://schemas.google.com/g/2005' xmlns:yt='http://gdata.youtube.com/schemas/2007'
+      gd:etag='W/&quot;D0UDRn47eCp7I2A9WhVTFkw.&quot;'><id>tag:youtube.com,2008:user:tubeit20101:playlist:31564D66A77376EE</id><published>2012-03-01T15:21:17.000Z</published><updated>2012-03-01T15:21:17.000Z</updated><app:edited>2012-03-01T15:21:17.000Z</app:edited><category
+      scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#playlistLink'/><title>youtube_it
+      test!</title><summary>test playlist</summary><content type='application/atom+xml;type=feed'
+      src='http://gdata.youtube.com/feeds/api/playlists/31564D66A77376EE'/><link rel='related'
+      type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/tubeit20101?client=youtube_it'/><link
+      rel='alternate' type='text/html' href='http://www.youtube.com/view_play_list?p=31564D66A77376EE'/><link
+      rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/playlists/31564D66A77376EE?client=youtube_it'/><link
+      rel='edit' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/playlists/31564D66A77376EE?client=youtube_it'/><author><name>tubeit20101</name><uri>http://gdata.youtube.com/feeds/api/users/tubeit20101</uri></author><yt:countHint>0</yt:countHint><media:group><yt:duration
+      seconds='0'/></media:group><yt:playlistId>31564D66A77376EE</yt:playlistId></entry>
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :put
+    uri: http://gdata.youtube.com:80/feeds/api/users/default/playlists/31564D66A77376EE
+    body: <?xml version="1.0" encoding="UTF-8"?><entry xmlns="http://www.w3.org/2005/Atom"
+      xmlns:yt="http://gdata.youtube.com/schemas/2007"><title>title changed</title></entry>
+    headers:
+      x-gdata-client:
+      - youtube_it
+      x-gdata-key:
+      - key=AI39si411VBmO4Im9l0rfRsORXDI6F5AX5NlTIA4uHSWqa-Cgf-jUQG-6osUBB3PTLawLHlkKXPLr3B0pNcGU9wkNd11gIgdPg
+      authorization:
+      - GoogleLogin auth=DQAAAK4AAAB4pZyeSL4puB9auNpLzMXc8gg_DZdiNZC6GSc354eKQ5rwrGsirxzQlUBCFZ_7pXicbGW0CCb895QcyREiCwJLTOvHKeJMc7GeAjbtYts3ntqqycO1_gsKyR_65KoKIYnff6innUdYOHGjmsLt1OEhCsfMyjeOLhCOndIaMh26TOSgqTSKOEWKMB1TFRnKoQuLk0CTPqIzdw2NY4N47argwASsdbHmLj3mP4rZTfHBrA
+      gdata-version:
+      - '2'
+      content-type:
+      - application/atom+xml; charset=UTF-8
+      content-length:
+      - '166'
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      x-gdata-user-country:
+      - US
+      content-type:
+      - application/atom+xml; charset=UTF-8; type=entry
+      gdata-version:
+      - '2.1'
+      etag:
+      - W/"D0QESX47eCp7I2A9WhVTFkw."
+      transfer-encoding:
+      - chunked
+      date:
+      - Thu, 01 Mar 2012 15:21:48 GMT
+      expires:
+      - Thu, 01 Mar 2012 15:21:48 GMT
+      cache-control:
+      - private, max-age=0
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      server:
+      - GSE
+    body: <?xml version='1.0' encoding='UTF-8'?><entry xmlns='http://www.w3.org/2005/Atom'
+      xmlns:app='http://www.w3.org/2007/app' xmlns:media='http://search.yahoo.com/mrss/'
+      xmlns:gd='http://schemas.google.com/g/2005' xmlns:yt='http://gdata.youtube.com/schemas/2007'
+      gd:etag='W/&quot;D0QESX47eCp7I2A9WhVTFkw.&quot;'><id>tag:youtube.com,2008:user:tubeit20101:playlist:31564D66A77376EE</id><published>2012-03-01T15:21:17.000Z</published><updated>2012-03-01T15:21:48.000Z</updated><app:edited>2012-03-01T15:21:48.000Z</app:edited><category
+      scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#playlistLink'/><title>title
+      changed</title><summary/><content type='application/atom+xml;type=feed' src='http://gdata.youtube.com/feeds/api/playlists/31564D66A77376EE'/><link
+      rel='related' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/tubeit20101?client=youtube_it'/><link
+      rel='alternate' type='text/html' href='http://www.youtube.com/view_play_list?p=31564D66A77376EE'/><link
+      rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/playlists/31564D66A77376EE?client=youtube_it'/><link
+      rel='edit' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/playlists/31564D66A77376EE?client=youtube_it'/><author><name>tubeit20101</name><uri>http://gdata.youtube.com/feeds/api/users/tubeit20101</uri></author><yt:countHint>0</yt:countHint><media:group><yt:duration
+      seconds='0'/></media:group><yt:playlistId>31564D66A77376EE</yt:playlistId></entry>
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :delete
+    uri: http://gdata.youtube.com:80/feeds/api/users/default/playlists/31564D66A77376EE
+    body: 
+    headers:
+      x-gdata-client:
+      - youtube_it
+      x-gdata-key:
+      - key=AI39si411VBmO4Im9l0rfRsORXDI6F5AX5NlTIA4uHSWqa-Cgf-jUQG-6osUBB3PTLawLHlkKXPLr3B0pNcGU9wkNd11gIgdPg
+      authorization:
+      - GoogleLogin auth=DQAAAK4AAAB4pZyeSL4puB9auNpLzMXc8gg_DZdiNZC6GSc354eKQ5rwrGsirxzQlUBCFZ_7pXicbGW0CCb895QcyREiCwJLTOvHKeJMc7GeAjbtYts3ntqqycO1_gsKyR_65KoKIYnff6innUdYOHGjmsLt1OEhCsfMyjeOLhCOndIaMh26TOSgqTSKOEWKMB1TFRnKoQuLk0CTPqIzdw2NY4N47argwASsdbHmLj3mP4rZTfHBrA
+      gdata-version:
+      - '2'
+      content-type:
+      - application/atom+xml; charset=UTF-8
+      content-length:
+      - '0'
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      x-gdata-user-country:
+      - US
+      gdata-version:
+      - '2.1'
+      date:
+      - Thu, 01 Mar 2012 15:21:48 GMT
+      expires:
+      - Thu, 01 Mar 2012 15:21:48 GMT
+      cache-control:
+      - private, max-age=0
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '0'
+      server:
+      - GSE
+      content-type:
+      - text/html
+    body: 
+    http_version: '1.1'

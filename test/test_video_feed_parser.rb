@@ -3,10 +3,12 @@ require File.expand_path(File.dirname(__FILE__) + '/helper')
 class TestVideoFeedParser < Test::Unit::TestCase
 
   def test_should_raise_bad_request_exception_when_id_not_found
-    bad_url = "http://gdata.youtube.com/feeds/api/videos/abc?v=2"
+    VCR.use_cassette("bad_request") do
+      bad_url = "http://gdata.youtube.com/feeds/api/videos/abc?v=2"
   
-    assert_raise(OpenURI::HTTPError) do
-      parser = YouTubeIt::Parser::VideoFeedParser.new bad_url
+      assert_raise(OpenURI::HTTPError) do
+        parser = YouTubeIt::Parser::VideoFeedParser.new bad_url
+      end
     end
   end
 

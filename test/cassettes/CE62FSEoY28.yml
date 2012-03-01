@@ -1,0 +1,42 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://gdata.youtube.com:80/feeds/api/videos?key=AI39si411VBmO4Im9l0rfRsORXDI6F5AX5NlTIA4uHSWqa-Cgf-jUQG-6osUBB3PTLawLHlkKXPLr3B0pNcGU9wkNd11gIgdPg&max-results=25&q=CE62FSEoY28&start-index=1&v=2
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      transfer-encoding: 
+      - chunked
+      x-frame-options: 
+      - SAMEORIGIN
+      content-type: 
+      - application/atom+xml; charset=UTF-8; type=feed
+      vary: 
+      - "*"
+      x-content-type-options: 
+      - nosniff
+      date: 
+      - Tue, 14 Feb 2012 21:12:56 GMT
+      etag: 
+      - W/"CU4DR3o5eSp7I2A9WhRaEkg."
+      last-modified: 
+      - Tue, 14 Feb 2012 21:12:56 GMT
+      x-xss-protection: 
+      - 1; mode=block
+      expires: 
+      - Tue, 14 Feb 2012 21:12:56 GMT
+      cache-control: 
+      - private, max-age=300, no-transform
+      x-gdata-user-country: 
+      - US
+      server: 
+      - GSE
+      gdata-version: 
+      - "2.1"
+    body: "<?xml version='1.0' encoding='UTF-8'?><feed xmlns='http://www.w3.org/2005/Atom' xmlns:media='http://search.yahoo.com/mrss/' xmlns:openSearch='http://a9.com/-/spec/opensearch/1.1/' xmlns:gd='http://schemas.google.com/g/2005' xmlns:yt='http://gdata.youtube.com/schemas/2007' gd:etag='W/&quot;CU4DR3o5eSp7I2A9WhRaEkg.&quot;'><id>tag:youtube.com,2008:videos</id><updated>2012-02-14T21:12:56.421Z</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#video'/><title>YouTube Videos matching query: CE62FSEoY28</title><logo>http://www.youtube.com/img/pic_youtubelogo_123x63.gif</logo><link rel='alternate' type='text/html' href='http://www.youtube.com'/><link rel='http://schemas.google.com/g/2005#feed' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos?v=2'/><link rel='http://schemas.google.com/g/2005#batch' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/batch?v=2'/><link rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos?q=CE62FSEoY28&amp;start-index=1&amp;max-results=25&amp;v=2'/><link rel='service' type='application/atomsvc+xml' href='http://gdata.youtube.com/feeds/api/videos?alt=atom-service&amp;v=2'/><author><name>YouTube</name><uri>http://www.youtube.com/</uri></author><generator version='2.1' uri='http://gdata.youtube.com'>YouTube data API</generator><openSearch:totalResults>1</openSearch:totalResults><openSearch:startIndex>1</openSearch:startIndex><openSearch:itemsPerPage>25</openSearch:itemsPerPage><entry gd:etag='W/&quot;DkYGSX47eCp7I2A9WhRbGE4.&quot;'><id>tag:youtube.com,2008:video:CE62FSEoY28</id><published>2009-10-18T23:02:02.000Z</published><updated>2012-02-10T00:35:28.000Z</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#video'/><category scheme='http://gdata.youtube.com/schemas/2007/categories.cat' term='People' label='People &amp; Blogs'/><category scheme='http://gdata.youtube.com/schemas/2007/keywords.cat' term='stringshub'/><title>Tuquito ClassmatePC 3 - Touch Screen</title><content type='application/x-shockwave-flash' src='http://www.youtube.com/v/CE62FSEoY28?version=3&amp;f=videos&amp;d=AS7Qxt7jHWCNTkXMPW-oJOUO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata'/><link rel='alternate' type='text/html' href='http://www.youtube.com/watch?v=CE62FSEoY28&amp;feature=youtube_gdata'/><link rel='http://gdata.youtube.com/schemas/2007#video.responses' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/CE62FSEoY28/responses?v=2'/><link rel='http://gdata.youtube.com/schemas/2007#video.ratings' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/CE62FSEoY28/ratings?v=2'/><link rel='http://gdata.youtube.com/schemas/2007#video.complaints' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/CE62FSEoY28/complaints?v=2'/><link rel='http://gdata.youtube.com/schemas/2007#video.related' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/CE62FSEoY28/related?v=2'/><link rel='http://gdata.youtube.com/schemas/2007#mobile' type='text/html' href='http://m.youtube.com/details?v=CE62FSEoY28'/><link rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/CE62FSEoY28?v=2'/><author><name>chebyte</name><uri>http://gdata.youtube.com/feeds/api/users/chebyte</uri></author><yt:accessControl action='comment' permission='allowed'/><yt:accessControl action='commentVote' permission='allowed'/><yt:accessControl action='videoRespond' permission='moderated'/><yt:accessControl action='rate' permission='allowed'/><yt:accessControl action='embed' permission='allowed'/><yt:accessControl action='list' permission='allowed'/><yt:accessControl action='autoPlay' permission='allowed'/><yt:accessControl action='syndicate' permission='allowed'/><gd:comments><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#comments' href='http://gdata.youtube.com/feeds/api/videos/CE62FSEoY28/comments?v=2' countHint='8'/></gd:comments><media:group><media:category label='People &amp; Blogs' scheme='http://gdata.youtube.com/schemas/2007/categories.cat'>People</media:category><media:content url='http://www.youtube.com/v/CE62FSEoY28?version=3&amp;f=videos&amp;d=AS7Qxt7jHWCNTkXMPW-oJOUO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata' type='application/x-shockwave-flash' medium='video' isDefault='true' expression='full' duration='331' yt:format='5'/><media:content url='rtsp://v2.cache4.c.youtube.com/CkULENy73wIaPAlvYyghFbZOCBMYDSANFEgGUgZ2aWRlb3NyIQEu0Mbe4x1gjU5FzD1vqCTlDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp' type='video/3gpp' medium='video' expression='full' duration='331' yt:format='1'/><media:content url='rtsp://v1.cache6.c.youtube.com/CkULENy73wIaPAlvYyghFbZOCBMYESARFEgGUgZ2aWRlb3NyIQEu0Mbe4x1gjU5FzD1vqCTlDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp' type='video/3gpp' medium='video' expression='full' duration='331' yt:format='6'/><media:credit role='uploader' scheme='urn:youtube' yt:display='chebyte'>chebyte</media:credit><media:description type='plain'>videocast de Tuquito ClassmatePC 3 TOUCH SCREEN</media:description><media:keywords>stringshub</media:keywords><media:license type='text/html' href='http://www.youtube.com/t/terms'>youtube</media:license><media:player url='http://www.youtube.com/watch?v=CE62FSEoY28&amp;feature=youtube_gdata_player'/><media:thumbnail url='http://i.ytimg.com/vi/CE62FSEoY28/default.jpg' height='90' width='120' time='00:02:45.500' yt:name='default'/><media:thumbnail url='http://i.ytimg.com/vi/CE62FSEoY28/hqdefault.jpg' height='360' width='480' yt:name='hqdefault'/><media:thumbnail url='http://i.ytimg.com/vi/CE62FSEoY28/1.jpg' height='90' width='120' time='00:01:22.750' yt:name='start'/><media:thumbnail url='http://i.ytimg.com/vi/CE62FSEoY28/2.jpg' height='90' width='120' time='00:02:45.500' yt:name='middle'/><media:thumbnail url='http://i.ytimg.com/vi/CE62FSEoY28/3.jpg' height='90' width='120' time='00:04:08.250' yt:name='end'/><media:title type='plain'>Tuquito ClassmatePC 3 - Touch Screen</media:title><yt:duration seconds='331'/><yt:uploaded>2009-10-18T23:02:02.000Z</yt:uploaded><yt:videoid>CE62FSEoY28</yt:videoid></media:group><gd:rating average='4.3333335' max='5' min='1' numRaters='6' rel='http://schemas.google.com/g/2005#overall'/><yt:statistics favoriteCount='0' viewCount='1844'/><yt:rating numDislikes='1' numLikes='5'/></entry></feed>"
+    http_version: "1.1"

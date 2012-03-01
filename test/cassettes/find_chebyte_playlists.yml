@@ -1,0 +1,92 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://www.google.com:443/youtube/accounts/ClientLogin
+    body: Email=tubeit20101&Passwd=youtube_it&service=youtube&source=youtube_it
+    headers: 
+      content-type: 
+      - application/x-www-form-urlencoded
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-frame-options: 
+      - SAMEORIGIN
+      content-type: 
+      - text/plain
+      x-content-type-options: 
+      - nosniff
+      date: 
+      - Tue, 14 Feb 2012 21:12:56 GMT
+      x-xss-protection: 
+      - 1; mode=block
+      content-length: 
+      - "276"
+      expires: 
+      - Tue, 14 Feb 2012 21:12:56 GMT
+      cache-control: 
+      - private, max-age=0
+      x-gdata-user-country: 
+      - US
+      server: 
+      - GSE
+    body: |
+      Auth=DQAAAKoAAABus85kH8YI-AxQnsWP5PahR3fKJGmDX5RDsoQK8Vf-4-KTNjrzpG-Bk9xVoMxO3S7dVyyzXKmpp5br4ArHIO-y5f_rMMKihMnV2eo49cUFCfdIMXjX0yaSr1c_zV9UfYYqWQbPbWGdaatPRtvEqSDRL6LhG86VrDy8DK4x3RQYkcqA0xtQxFpDk9qvavlo4NagzmRiK9_blP3buf72OtBumDUpVuplegHDjxBw-8Ktlg
+      YouTubeUser=tubeit20101
+
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://gdata.youtube.com:80/feeds/api/users/chebyte/playlists?v=2
+    body: 
+    headers: 
+      content-type: 
+      - application/atom+xml; charset=UTF-8
+      x-gdata-key: 
+      - key=AI39si411VBmO4Im9l0rfRsORXDI6F5AX5NlTIA4uHSWqa-Cgf-jUQG-6osUBB3PTLawLHlkKXPLr3B0pNcGU9wkNd11gIgdPg
+      content-length: 
+      - "0"
+      authorization: 
+      - GoogleLogin auth=DQAAAKoAAABus85kH8YI-AxQnsWP5PahR3fKJGmDX5RDsoQK8Vf-4-KTNjrzpG-Bk9xVoMxO3S7dVyyzXKmpp5br4ArHIO-y5f_rMMKihMnV2eo49cUFCfdIMXjX0yaSr1c_zV9UfYYqWQbPbWGdaatPRtvEqSDRL6LhG86VrDy8DK4x3RQYkcqA0xtQxFpDk9qvavlo4NagzmRiK9_blP3buf72OtBumDUpVuplegHDjxBw-8Ktlg
+      x-gdata-client: 
+      - youtube_it
+      gdata-version: 
+      - "2"
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      transfer-encoding: 
+      - chunked
+      x-frame-options: 
+      - SAMEORIGIN
+      content-type: 
+      - application/atom+xml; charset=UTF-8; type=feed
+      vary: 
+      - Accept, X-GData-Authorization, GData-Version
+      x-content-type-options: 
+      - nosniff
+      date: 
+      - Tue, 14 Feb 2012 21:12:57 GMT
+      etag: 
+      - W/"CU4DRn8zfSp7I2A9WhRaEkg."
+      last-modified: 
+      - Tue, 14 Feb 2012 21:12:57 GMT
+      x-xss-protection: 
+      - 1; mode=block
+      expires: 
+      - Tue, 14 Feb 2012 21:12:57 GMT
+      cache-control: 
+      - private, max-age=300, no-transform
+      x-gdata-user-country: 
+      - US
+      server: 
+      - GSE
+      gdata-version: 
+      - "2.1"
+    body: <?xml version='1.0' encoding='UTF-8'?><feed xmlns='http://www.w3.org/2005/Atom' xmlns:media='http://search.yahoo.com/mrss/' xmlns:openSearch='http://a9.com/-/spec/opensearch/1.1/' xmlns:gd='http://schemas.google.com/g/2005' xmlns:yt='http://gdata.youtube.com/schemas/2007' gd:etag='W/&quot;CU4DRn8zfSp7I2A9WhRaEkg.&quot;'><id>tag:youtube.com,2008:user:chebyte:playlists</id><updated>2012-02-14T21:12:57.185Z</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#playlistLink'/><title>Playlists of chebyte</title><logo>http://www.youtube.com/img/pic_youtubelogo_123x63.gif</logo><link rel='related' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/chebyte?client=youtube_it'/><link rel='alternate' type='text/html' href='http://www.youtube.com/profile?user=chebyte#p/p'/><link rel='http://schemas.google.com/g/2005#feed' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/chebyte/playlists?client=youtube_it'/><link rel='http://schemas.google.com/g/2005#batch' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/chebyte/playlists/batch?client=youtube_it'/><link rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/chebyte/playlists?start-index=1&amp;max-results=25&amp;client=youtube_it'/><link rel='service' type='application/atomsvc+xml' href='http://gdata.youtube.com/feeds/api/users/chebyte/playlists?alt=atom-service'/><author><name>chebyte</name><uri>http://gdata.youtube.com/feeds/api/users/chebyte</uri></author><generator version='2.1' uri='http://gdata.youtube.com'>YouTube data API</generator><openSearch:totalResults>9</openSearch:totalResults><openSearch:startIndex>1</openSearch:startIndex><openSearch:itemsPerPage>25</openSearch:itemsPerPage><entry gd:etag='W/&quot;DU8GQH47eCp7I2A9WhZaFUk.&quot;'><id>tag:youtube.com,2008:user:chebyte:playlist:FBF1727FCD901B8D</id><published>2011-06-30T19:22:56.000Z</published><updated>2011-07-01T19:17:01.000Z</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#playlistLink'/><title>youtube_it test4!</title><summary>test playlist</summary><content type='application/atom+xml;type=feed' src='http://gdata.youtube.com/feeds/api/playlists/FBF1727FCD901B8D'/><link rel='related' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/chebyte?client=youtube_it'/><link rel='alternate' type='text/html' href='http://www.youtube.com/view_play_list?p=FBF1727FCD901B8D'/><link rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/chebyte/playlists/FBF1727FCD901B8D?client=youtube_it'/><author><name>chebyte</name><uri>http://gdata.youtube.com/feeds/api/users/chebyte</uri></author><yt:countHint>0</yt:countHint><media:group><yt:duration seconds='0'/></media:group><yt:playlistId>FBF1727FCD901B8D</yt:playlistId></entry><entry gd:etag='W/&quot;DUMNQn47eCp7I2A9WhZaFEg.&quot;'><id>tag:youtube.com,2008:user:chebyte:playlist:02C402665F8B3BFE</id><published>2011-06-30T18:10:04.000Z</published><updated>2011-06-30T18:11:33.000Z</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#playlistLink'/><title>youtube_it test3!</title><summary>test playlist</summary><content type='application/atom+xml;type=feed' src='http://gdata.youtube.com/feeds/api/playlists/02C402665F8B3BFE'/><link rel='related' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/chebyte?client=youtube_it'/><link rel='alternate' type='text/html' href='http://www.youtube.com/view_play_list?p=02C402665F8B3BFE'/><link rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/chebyte/playlists/02C402665F8B3BFE?client=youtube_it'/><author><name>chebyte</name><uri>http://gdata.youtube.com/feeds/api/users/chebyte</uri></author><yt:countHint>0</yt:countHint><media:group><yt:duration seconds='0'/></media:group><yt:playlistId>02C402665F8B3BFE</yt:playlistId></entry><entry gd:etag='W/&quot;DUQDQn47eCp7I2A9WhZaFEg.&quot;'><id>tag:youtube.com,2008:user:chebyte:playlist:B41F3193E0A46A16</id><published>2011-06-30T18:09:33.000Z</published><updated>2011-06-30T18:09:33.000Z</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#playlistLink'/><title>youtube_it test2!</title><summary>test playlist</summary><content type='application/atom+xml;type=feed' src='http://gdata.youtube.com/feeds/api/playlists/B41F3193E0A46A16'/><link rel='related' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/chebyte?client=youtube_it'/><link rel='alternate' type='text/html' href='http://www.youtube.com/view_play_list?p=B41F3193E0A46A16'/><link rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/chebyte/playlists/B41F3193E0A46A16?client=youtube_it'/><author><name>chebyte</name><uri>http://gdata.youtube.com/feeds/api/users/chebyte</uri></author><yt:countHint>0</yt:countHint><media:group><yt:duration seconds='0'/></media:group><yt:playlistId>B41F3193E0A46A16</yt:playlistId></entry><entry gd:etag='W/&quot;A0cMRH47eCp7I2A9WhZaFEk.&quot;'><id>tag:youtube.com,2008:user:chebyte:playlist:F1CB78BD77E3CAE4</id><published>2011-06-30T15:49:20.000Z</published><updated>2011-06-30T15:51:25.000Z</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#playlistLink'/><title>youtube_it test!2</title><summary>test playlist</summary><content type='application/atom+xml;type=feed' src='http://gdata.youtube.com/feeds/api/playlists/F1CB78BD77E3CAE4'/><link rel='related' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/chebyte?client=youtube_it'/><link rel='alternate' type='text/html' href='http://www.youtube.com/view_play_list?p=F1CB78BD77E3CAE4'/><link rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/chebyte/playlists/F1CB78BD77E3CAE4?client=youtube_it'/><author><name>chebyte</name><uri>http://gdata.youtube.com/feeds/api/users/chebyte</uri></author><yt:countHint>0</yt:countHint><media:group><yt:duration seconds='0'/></media:group><yt:playlistId>F1CB78BD77E3CAE4</yt:playlistId></entry><entry gd:etag='W/&quot;Ak8NRH47eCp7I2A9WhZaFEk.&quot;'><id>tag:youtube.com,2008:user:chebyte:playlist:C3F63C79F9FF9057</id><published>2011-06-30T15:44:49.000Z</published><updated>2011-06-30T15:48:15.000Z</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#playlistLink'/><title>youtube_it test!</title><summary>test playlist</summary><content type='application/atom+xml;type=feed' src='http://gdata.youtube.com/feeds/api/playlists/C3F63C79F9FF9057'/><link rel='related' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/chebyte?client=youtube_it'/><link rel='alternate' type='text/html' href='http://www.youtube.com/view_play_list?p=C3F63C79F9FF9057'/><link rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/chebyte/playlists/C3F63C79F9FF9057?client=youtube_it'/><author><name>chebyte</name><uri>http://gdata.youtube.com/feeds/api/users/chebyte</uri></author><yt:countHint>0</yt:countHint><media:group><yt:duration seconds='0'/></media:group><yt:playlistId>C3F63C79F9FF9057</yt:playlistId></entry><entry gd:etag='W/&quot;A0IHRH47eCp7I2A9WhZRFE0.&quot;'><id>tag:youtube.com,2008:user:chebyte:playlist:0FD153AE77D7C7EE</id><published>2011-04-10T04:24:17.000Z</published><updated>2011-04-10T04:25:35.000Z</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#playlistLink'/><title>loca</title><summary/><content type='application/atom+xml;type=feed' src='http://gdata.youtube.com/feeds/api/playlists/0FD153AE77D7C7EE'/><link rel='related' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/chebyte?client=youtube_it'/><link rel='alternate' type='text/html' href='http://www.youtube.com/view_play_list?p=0FD153AE77D7C7EE'/><link rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/chebyte/playlists/0FD153AE77D7C7EE?client=youtube_it'/><author><name>chebyte</name><uri>http://gdata.youtube.com/feeds/api/users/chebyte</uri></author><yt:countHint>4</yt:countHint><media:group><media:thumbnail url='http://i.ytimg.com/vi/x93XeqWskn0/default.jpg' height='90' width='120' yt:name='default'/><media:thumbnail url='http://i.ytimg.com/vi/x93XeqWskn0/hqdefault.jpg' height='360' width='480' yt:name='hqdefault'/><yt:duration seconds='1015'/></media:group><yt:playlistId>0FD153AE77D7C7EE</yt:playlistId></entry><entry gd:etag='W/&quot;C0IMQ347eCp7I2A9WhdSGUQ.&quot;'><id>tag:youtube.com,2008:user:chebyte:playlist:E9E71C8F8FA52AE5</id><published>2011-03-12T00:32:18.000Z</published><updated>2011-07-30T02:06:22.000Z</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#playlistLink'/><title>pripri</title><summary/><content type='application/atom+xml;type=feed' src='http://gdata.youtube.com/feeds/api/playlists/E9E71C8F8FA52AE5'/><link rel='related' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/chebyte?client=youtube_it'/><link rel='alternate' type='text/html' href='http://www.youtube.com/view_play_list?p=E9E71C8F8FA52AE5'/><link rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/chebyte/playlists/E9E71C8F8FA52AE5?client=youtube_it'/><author><name>chebyte</name><uri>http://gdata.youtube.com/feeds/api/users/chebyte</uri></author><yt:countHint>33</yt:countHint><media:group><media:thumbnail url='http://i.ytimg.com/vi/WmDaQZlIUck/default.jpg' height='90' width='120' yt:name='default'/><media:thumbnail url='http://i.ytimg.com/vi/WmDaQZlIUck/hqdefault.jpg' height='360' width='480' yt:name='hqdefault'/><yt:duration seconds='7972'/></media:group><yt:playlistId>E9E71C8F8FA52AE5</yt:playlistId></entry><entry gd:etag='W/&quot;CkcHRH47eCp7I2A9Wx9aGEQ.&quot;'><id>tag:youtube.com,2008:user:chebyte:playlist:A378A75B910DF334</id><published>2010-02-15T13:01:25.000Z</published><updated>2011-03-12T00:33:55.000Z</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#playlistLink'/><title>reiki</title><summary/><content type='application/atom+xml;type=feed' src='http://gdata.youtube.com/feeds/api/playlists/A378A75B910DF334'/><link rel='related' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/chebyte?client=youtube_it'/><link rel='alternate' type='text/html' href='http://www.youtube.com/view_play_list?p=A378A75B910DF334'/><link rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/chebyte/playlists/A378A75B910DF334?client=youtube_it'/><author><name>chebyte</name><uri>http://gdata.youtube.com/feeds/api/users/chebyte</uri></author><yt:countHint>12</yt:countHint><media:group><media:thumbnail url='http://i.ytimg.com/vi/r_8TAkJ6ZAg/default.jpg' height='90' width='120' yt:name='default'/><media:thumbnail url='http://i.ytimg.com/vi/r_8TAkJ6ZAg/hqdefault.jpg' height='360' width='480' yt:name='hqdefault'/><yt:duration seconds='4212'/></media:group><yt:playlistId>A378A75B910DF334</yt:playlistId></entry><entry gd:etag='W/&quot;C0AER347eCp7I2A9Wx9QEk8.&quot;'><id>tag:youtube.com,2008:user:chebyte:playlist:6E1E1B1D196973D8</id><published>2009-11-28T21:27:01.000Z</published><updated>2010-12-24T20:15:06.000Z</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#playlistLink'/><title>rock</title><summary/><content type='application/atom+xml;type=feed' src='http://gdata.youtube.com/feeds/api/playlists/6E1E1B1D196973D8'/><link rel='related' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/chebyte?client=youtube_it'/><link rel='alternate' type='text/html' href='http://www.youtube.com/view_play_list?p=6E1E1B1D196973D8'/><link rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/chebyte/playlists/6E1E1B1D196973D8?client=youtube_it'/><author><name>chebyte</name><uri>http://gdata.youtube.com/feeds/api/users/chebyte</uri></author><yt:countHint>57</yt:countHint><media:group><media:thumbnail url='http://i.ytimg.com/vi/mcbbEvA98Zc/default.jpg' height='90' width='120' yt:name='default'/><media:thumbnail url='http://i.ytimg.com/vi/mcbbEvA98Zc/hqdefault.jpg' height='360' width='480' yt:name='hqdefault'/><yt:duration seconds='13508'/></media:group><yt:playlistId>6E1E1B1D196973D8</yt:playlistId></entry></feed>
+    http_version: "1.1"

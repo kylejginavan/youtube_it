@@ -1,0 +1,92 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://www.google.com:443/youtube/accounts/ClientLogin
+    body: Email=tubeit20101&Passwd=youtube_it&service=youtube&source=youtube_it
+    headers: 
+      content-type: 
+      - application/x-www-form-urlencoded
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-frame-options: 
+      - SAMEORIGIN
+      content-type: 
+      - text/plain
+      x-content-type-options: 
+      - nosniff
+      date: 
+      - Tue, 14 Feb 2012 21:12:01 GMT
+      x-xss-protection: 
+      - 1; mode=block
+      content-length: 
+      - "276"
+      expires: 
+      - Tue, 14 Feb 2012 21:12:01 GMT
+      cache-control: 
+      - private, max-age=0
+      x-gdata-user-country: 
+      - US
+      server: 
+      - GSE
+    body: |
+      Auth=DQAAAKsAAAAAq21pjjM0sViMvd3bZ-v3dvrb2cF8Ekp_2bZICajIn6zUEtzb6E6_7RIUrQvJUR1SYzwWT0htSYKg2NMcYwO8UI5VT1pQooalgXfQ1Tm-9Gf2tQykLz1FQjXM1k0fTHzme2edLYBjuQiufCqyCRzrF4W5R6qsA2JkpoFO1C5ZHFQY9uRzkjoR1ZIZA_93puAUpNA7MmKL0d_WUhFtkQcFaMORfxwcblilwiMita0gOg
+      YouTubeUser=tubeit20101
+
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://gdata.youtube.com:80/feeds/api/users/default
+    body: 
+    headers: 
+      content-type: 
+      - application/atom+xml; charset=UTF-8
+      x-gdata-key: 
+      - key=AI39si411VBmO4Im9l0rfRsORXDI6F5AX5NlTIA4uHSWqa-Cgf-jUQG-6osUBB3PTLawLHlkKXPLr3B0pNcGU9wkNd11gIgdPg
+      content-length: 
+      - "0"
+      authorization: 
+      - GoogleLogin auth=DQAAAKsAAAAAq21pjjM0sViMvd3bZ-v3dvrb2cF8Ekp_2bZICajIn6zUEtzb6E6_7RIUrQvJUR1SYzwWT0htSYKg2NMcYwO8UI5VT1pQooalgXfQ1Tm-9Gf2tQykLz1FQjXM1k0fTHzme2edLYBjuQiufCqyCRzrF4W5R6qsA2JkpoFO1C5ZHFQY9uRzkjoR1ZIZA_93puAUpNA7MmKL0d_WUhFtkQcFaMORfxwcblilwiMita0gOg
+      x-gdata-client: 
+      - youtube_it
+      gdata-version: 
+      - "2"
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      transfer-encoding: 
+      - chunked
+      x-frame-options: 
+      - SAMEORIGIN
+      content-type: 
+      - application/atom+xml; charset=UTF-8; type=entry
+      vary: 
+      - Accept, X-GData-Authorization, GData-Version
+      x-content-type-options: 
+      - nosniff
+      date: 
+      - Tue, 14 Feb 2012 21:12:02 GMT
+      etag: 
+      - W/"CEEFQ347eCp7I2A9WhRaEkg."
+      last-modified: 
+      - Tue, 14 Feb 2012 20:50:12 GMT
+      x-xss-protection: 
+      - 1; mode=block
+      expires: 
+      - Tue, 14 Feb 2012 21:12:02 GMT
+      cache-control: 
+      - private, max-age=0, must-revalidate, no-transform
+      x-gdata-user-country: 
+      - US
+      server: 
+      - GSE
+      gdata-version: 
+      - "2.1"
+    body: <?xml version='1.0' encoding='UTF-8'?><entry xmlns='http://www.w3.org/2005/Atom' xmlns:app='http://www.w3.org/2007/app' xmlns:media='http://search.yahoo.com/mrss/' xmlns:gd='http://schemas.google.com/g/2005' xmlns:yt='http://gdata.youtube.com/schemas/2007' gd:etag='W/&quot;CEEFQ347eCp7I2A9WhRaEkg.&quot;'><id>tag:youtube.com,2008:user:tubeit20101</id><published>2010-07-06T07:59:05.000-07:00</published><updated>2012-02-14T12:50:12.000-08:00</updated><app:edited>2012-02-14T12:50:12.000-08:00</app:edited><category scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#userProfile'/><category scheme='http://gdata.youtube.com/schemas/2007/channeltypes.cat' term='Standard'/><title>tubeit20101</title><link rel='alternate' type='text/html' href='http://www.youtube.com/profile?user=tubeit20101'/><link rel='http://gdata.youtube.com/schemas/2007#insight.views' type='text/html' href='http://insight.youtube.com/video-analytics/csvreports?query=tubeit20101&amp;type=c&amp;starttime=1235865600000&amp;endtime=1329091200000&amp;user_starttime=1328486400000&amp;user_endtime=1329091200000&amp;region=world&amp;token=1g1dwzpz0o7BlLXs8-RZOQ9lWlZ8MTMyOTI1NTcyMkAxMzI5MjUzOTIy&amp;hl=en_US'/><link rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/tubeit20101?client=youtube_it'/><link rel='edit' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/tubeit20101?client=youtube_it'/><author><name>tubeit20101</name><uri>http://gdata.youtube.com/feeds/api/users/tubeit20101</uri></author><yt:age>29</yt:age><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.watchhistory' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/watch_history?client=youtube_it'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.favorites' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/favorites?client=youtube_it' countHint='0'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.contacts' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/contacts?client=youtube_it' countHint='0'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.inbox' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/inbox?client=youtube_it' countHint='0'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.playlists' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/playlists?client=youtube_it'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.watchlater' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/watch_later?client=youtube_it' countHint='1'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.subscriptions' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/subscriptions?client=youtube_it' countHint='0'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.uploads' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/uploads?client=youtube_it' countHint='0'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.newsubscriptionvideos' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/newsubscriptionvideos?client=youtube_it'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.recentactivity' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/events?client=youtube_it'/><yt:gender>m</yt:gender><yt:location>AR</yt:location><yt:maxUploadDuration seconds='930'/><yt:statistics lastWebAccess='2012-02-14T13:12:01.000-08:00' subscriberCount='0' videoWatchCount='0' viewCount='32' totalUploadViews='44'/><media:thumbnail url='http://s.ytimg.com/yt/img/no_videos_140-vfl1fDI7-.png'/><yt:username yt:display='tubeit20101'>tubeit20101</yt:username></entry>
+    http_version: "1.1"

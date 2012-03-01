@@ -1,0 +1,84 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://www.google.com:443/youtube/accounts/ClientLogin
+    body: Email=tubeit20101&Passwd=youtube_it&service=youtube&source=youtube_it
+    headers: 
+      content-type: 
+      - application/x-www-form-urlencoded
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-xss-protection: 
+      - 1; mode=block
+      content-type: 
+      - text/plain
+      server: 
+      - GSE
+      x-content-type-options: 
+      - nosniff
+      x-gdata-user-country: 
+      - US
+      expires: 
+      - Tue, 14 Feb 2012 19:58:59 GMT
+      content-length: 
+      - "276"
+      date: 
+      - Tue, 14 Feb 2012 19:58:59 GMT
+      cache-control: 
+      - private, max-age=0
+      x-frame-options: 
+      - SAMEORIGIN
+    body: |
+      Auth=DQAAAKoAAADwFzjOctSjhJ2uf0_loDOI01l3Ka_u4RRrH6cIaOd2v5FuUZ7UNq5ugiiCKa9r6eShQP21x827cei6C606aEtHOgNukYEFaf4Skfe57rSE-LPHta-HJBIqUFRaeITNsnIXHWa5v-zCYrlAI9fjGVBYYJUFbI1IuqhfKJZU3GcK1Cb4nIsXuFmpEKJcStenZ5Sch1Tjk_VHPOTTvecnNAUQrY7egtpunv1_LauTvgi7Ug
+      YouTubeUser=tubeit20101
+
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: http://gdata.youtube.com:80/feeds/api/users/default/subscriptions
+    body: <?xml version="1.0" encoding="UTF-8"?><entry xmlns:yt="http://gdata.youtube.com/schemas/2007" xmlns="http://www.w3.org/2005/Atom"><category scheme="http://gdata.youtube.com/schemas/2007/subscriptiontypes.cat" term="channel"/><yt:username>TheWoWArthas</yt:username></entry>
+    headers: 
+      authorization: 
+      - GoogleLogin auth=DQAAAKoAAADwFzjOctSjhJ2uf0_loDOI01l3Ka_u4RRrH6cIaOd2v5FuUZ7UNq5ugiiCKa9r6eShQP21x827cei6C606aEtHOgNukYEFaf4Skfe57rSE-LPHta-HJBIqUFRaeITNsnIXHWa5v-zCYrlAI9fjGVBYYJUFbI1IuqhfKJZU3GcK1Cb4nIsXuFmpEKJcStenZ5Sch1Tjk_VHPOTTvecnNAUQrY7egtpunv1_LauTvgi7Ug
+      x-gdata-client: 
+      - youtube_it
+      content-type: 
+      - application/atom+xml; charset=UTF-8
+      x-gdata-key: 
+      - key=AI39si411VBmO4Im9l0rfRsORXDI6F5AX5NlTIA4uHSWqa-Cgf-jUQG-6osUBB3PTLawLHlkKXPLr3B0pNcGU9wkNd11gIgdPg
+      gdata-version: 
+      - "2"
+      content-length: 
+      - "272"
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 400
+      message: Bad Request
+    headers: 
+      x-xss-protection: 
+      - 1; mode=block
+      content-type: 
+      - application/vnd.google.gdata.error+xml
+      server: 
+      - GSE
+      x-content-type-options: 
+      - nosniff
+      x-gdata-user-country: 
+      - US
+      expires: 
+      - Tue, 14 Feb 2012 19:59:00 GMT
+      transfer-encoding: 
+      - chunked
+      date: 
+      - Tue, 14 Feb 2012 19:59:00 GMT
+      cache-control: 
+      - private, max-age=0
+      x-frame-options: 
+      - SAMEORIGIN
+    body: <errors xmlns='http://schemas.google.com/g/2005'><error><domain>GData</domain><code>InvalidEntryException</code><internalReason>Subscription already exists.</internalReason></error></errors>
+    http_version: "1.1"
