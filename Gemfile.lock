@@ -26,6 +26,7 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     simple_oauth (0.1.5)
+    vcr (1.11.3)
     webmock (1.7.10)
       addressable (~> 2.2, > 2.2.5)
       crack (>= 0.1.7)
@@ -40,4 +41,5 @@ DEPENDENCIES
   oauth (~> 0.4.4)
   oauth2 (~> 0.5.2)
   simple_oauth (~> 0.1.5)
+  vcr (~> 1.0)
   webmock (~> 1.7.10)

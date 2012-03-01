@@ -8,5 +8,6 @@ gem 'jeweler', '~> 1.8.3'
 gem 'builder'
 
 group :test do
+  gem 'vcr', '~> 1.0'
   gem 'webmock', '~> 1.7.10'
 end
