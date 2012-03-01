@@ -1,0 +1,42 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://gdata.youtube.com:80/feeds/api/videos/EkF4JD2rO3Q?key=AI39si411VBmO4Im9l0rfRsORXDI6F5AX5NlTIA4uHSWqa-Cgf-jUQG-6osUBB3PTLawLHlkKXPLr3B0pNcGU9wkNd11gIgdPg&v=2
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      transfer-encoding: 
+      - chunked
+      x-frame-options: 
+      - SAMEORIGIN
+      content-type: 
+      - application/atom+xml; charset=UTF-8; type=entry
+      vary: 
+      - "*"
+      x-content-type-options: 
+      - nosniff
+      date: 
+      - Tue, 14 Feb 2012 21:12:03 GMT
+      etag: 
+      - W/"CEECQH47eCp7I2A9WhRaEkg."
+      last-modified: 
+      - Tue, 14 Feb 2012 20:51:01 GMT
+      x-xss-protection: 
+      - 1; mode=block
+      expires: 
+      - Tue, 14 Feb 2012 21:12:03 GMT
+      cache-control: 
+      - private, max-age=300, no-transform
+      x-gdata-user-country: 
+      - US
+      server: 
+      - GSE
+      gdata-version: 
+      - "2.1"
+    body: "<?xml version='1.0' encoding='UTF-8'?><entry xmlns='http://www.w3.org/2005/Atom' xmlns:app='http://www.w3.org/2007/app' xmlns:media='http://search.yahoo.com/mrss/' xmlns:gd='http://schemas.google.com/g/2005' xmlns:yt='http://gdata.youtube.com/schemas/2007' gd:etag='W/&quot;CEECQH47eCp7I2A9WhRaEkg.&quot;'><id>tag:youtube.com,2008:video:EkF4JD2rO3Q</id><published>2007-05-10T13:25:53.000Z</published><updated>2012-02-14T20:51:01.000Z</updated><app:control><yt:state name='restricted' reasonCode='limitedSyndication'>Syndication of this video was restricted by its owner.</yt:state></app:control><category scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#video'/><category scheme='http://gdata.youtube.com/schemas/2007/categories.cat' term='Music' label='Music'/><category scheme='http://gdata.youtube.com/schemas/2007/keywords.cat' term='dream theater'/><category scheme='http://gdata.youtube.com/schemas/2007/keywords.cat' term='the dark eternal night'/><category scheme='http://gdata.youtube.com/schemas/2007/keywords.cat' term='in studio'/><category scheme='http://gdata.youtube.com/schemas/2007/keywords.cat' term='systematic chaos'/><category scheme='http://gdata.youtube.com/schemas/2007/keywords.cat' term='mike portnoy'/><category scheme='http://gdata.youtube.com/schemas/2007/keywords.cat' term='instrumental'/><category scheme='http://gdata.youtube.com/schemas/2007/keywords.cat' term='heavy metal'/><title>Dream Theater - The Dark Eternal Night In-Studio</title><content type='application/x-shockwave-flash' src='http://www.youtube.com/v/EkF4JD2rO3Q?version=3&amp;f=videos&amp;d=AS7Qxt7jHWCNTkXMPW-oJOUO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata'/><link rel='alternate' type='text/html' href='http://www.youtube.com/watch?v=EkF4JD2rO3Q&amp;feature=youtube_gdata'/><link rel='http://gdata.youtube.com/schemas/2007#video.responses' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/EkF4JD2rO3Q/responses?v=2'/><link rel='http://gdata.youtube.com/schemas/2007#video.ratings' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/EkF4JD2rO3Q/ratings?v=2'/><link rel='http://gdata.youtube.com/schemas/2007#video.complaints' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/EkF4JD2rO3Q/complaints?v=2'/><link rel='http://gdata.youtube.com/schemas/2007#video.related' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/EkF4JD2rO3Q/related?v=2'/><link rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/EkF4JD2rO3Q?v=2'/><author><name>RoadrunnerRecords</name><uri>http://gdata.youtube.com/feeds/api/users/RoadrunnerRecords</uri></author><yt:accessControl action='comment' permission='denied'/><yt:accessControl action='commentVote' permission='allowed'/><yt:accessControl action='videoRespond' permission='moderated'/><yt:accessControl action='rate' permission='allowed'/><yt:accessControl action='embed' permission='allowed'/><yt:accessControl action='list' permission='allowed'/><yt:accessControl action='autoPlay' permission='allowed'/><yt:accessControl action='syndicate' permission='denied'/><media:group><media:category label='Music' scheme='http://gdata.youtube.com/schemas/2007/categories.cat'>Music</media:category><media:content url='http://www.youtube.com/v/EkF4JD2rO3Q?version=3&amp;f=videos&amp;d=AS7Qxt7jHWCNTkXMPW-oJOUO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata' type='application/x-shockwave-flash' medium='video' isDefault='true' expression='full' duration='541' yt:format='5'/><media:credit role='uploader' scheme='urn:youtube' yt:display='RoadrunnerRecords'>roadrunnerrecords</media:credit><media:description type='plain'>\xC2\xA9 2007 WMG Purchase Systematic Chaos from iTunes: http://bit.ly/946h2R</media:description><media:keywords>dream theater, the dark eternal night, in studio, systematic chaos, mike portnoy, instrumental, heavy metal</media:keywords><media:license type='text/html' href='http://www.youtube.com/t/terms'>youtube</media:license><media:player url='http://www.youtube.com/watch?v=EkF4JD2rO3Q&amp;feature=youtube_gdata_player'/><media:thumbnail url='http://i.ytimg.com/vi/EkF4JD2rO3Q/default.jpg' height='90' width='120' time='00:04:30.500' yt:name='default'/><media:thumbnail url='http://i.ytimg.com/vi/EkF4JD2rO3Q/hqdefault.jpg' height='360' width='480' yt:name='hqdefault'/><media:thumbnail url='http://i.ytimg.com/vi/EkF4JD2rO3Q/1.jpg' height='90' width='120' time='00:02:15.250' yt:name='start'/><media:thumbnail url='http://i.ytimg.com/vi/EkF4JD2rO3Q/2.jpg' height='90' width='120' time='00:04:30.500' yt:name='middle'/><media:thumbnail url='http://i.ytimg.com/vi/EkF4JD2rO3Q/3.jpg' height='90' width='120' time='00:06:45.750' yt:name='end'/><media:title type='plain'>Dream Theater - The Dark Eternal Night In-Studio</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration seconds='541'/><yt:uploaded>2007-05-10T13:25:53.000Z</yt:uploaded><yt:videoid>EkF4JD2rO3Q</yt:videoid></media:group><gd:rating average='4.867296' max='5' min='1' numRaters='32825' rel='http://schemas.google.com/g/2005#overall'/><yt:statistics favoriteCount='36158' viewCount='9594961'/><yt:rating numDislikes='1089' numLikes='31736'/></entry>"
+    http_version: "1.1"

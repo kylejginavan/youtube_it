@@ -1,0 +1,141 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://www.google.com:443/youtube/accounts/ClientLogin
+    body: Email=tubeit20101&Passwd=youtube_it&service=youtube&source=youtube_it
+    headers: 
+      content-type: 
+      - application/x-www-form-urlencoded
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-frame-options: 
+      - SAMEORIGIN
+      content-type: 
+      - text/plain
+      x-content-type-options: 
+      - nosniff
+      date: 
+      - Tue, 14 Feb 2012 21:12:10 GMT
+      x-xss-protection: 
+      - 1; mode=block
+      content-length: 
+      - "276"
+      expires: 
+      - Tue, 14 Feb 2012 21:12:10 GMT
+      cache-control: 
+      - private, max-age=0
+      x-gdata-user-country: 
+      - US
+      server: 
+      - GSE
+    body: |
+      Auth=DQAAAKoAAAAe188aCLLEWZxcw87rh8_3VvPFg6lUefpB-c4avWCzrhCXwuzvrKfMdGD9XvNhfo_xgfQBNlxu92Zq7wZu4vwLUZU1nCZ24lG7xtjhZ3e3BqJI2c3--S7qm4jGi6AW2m7Vmvre3vXn0ruZX4DzBLXHYw80FYfowK0aSdvWD1c1gMFVa_jylye4p5p7IxuOAMdsqMsxB9HxAGg0LDu3tJHWLfxti1lasrRl2vSZD0ziRQ
+      YouTubeUser=tubeit20101
+
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: http://gdata.youtube.com:80/feeds/api/users/default/favorites
+    body: <?xml version="1.0" encoding="UTF-8"?><entry xmlns="http://www.w3.org/2005/Atom" xmlns:yt="http://gdata.youtube.com/schemas/2007"><id>j5raG94IGCc</id></entry>
+    headers: 
+      content-type: 
+      - application/atom+xml; charset=UTF-8
+      x-gdata-key: 
+      - key=AI39si411VBmO4Im9l0rfRsORXDI6F5AX5NlTIA4uHSWqa-Cgf-jUQG-6osUBB3PTLawLHlkKXPLr3B0pNcGU9wkNd11gIgdPg
+      content-length: 
+      - "158"
+      authorization: 
+      - GoogleLogin auth=DQAAAKoAAAAe188aCLLEWZxcw87rh8_3VvPFg6lUefpB-c4avWCzrhCXwuzvrKfMdGD9XvNhfo_xgfQBNlxu92Zq7wZu4vwLUZU1nCZ24lG7xtjhZ3e3BqJI2c3--S7qm4jGi6AW2m7Vmvre3vXn0ruZX4DzBLXHYw80FYfowK0aSdvWD1c1gMFVa_jylye4p5p7IxuOAMdsqMsxB9HxAGg0LDu3tJHWLfxti1lasrRl2vSZD0ziRQ
+      x-gdata-client: 
+      - youtube_it
+      gdata-version: 
+      - "2"
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 201
+      message: Created
+    headers: 
+      transfer-encoding: 
+      - chunked
+      x-frame-options: 
+      - SAMEORIGIN
+      content-type: 
+      - application/atom+xml; charset=UTF-8; type=entry
+      vary: 
+      - Accept, X-GData-Authorization, GData-Version
+      x-content-type-options: 
+      - nosniff
+      date: 
+      - Tue, 14 Feb 2012 21:12:11 GMT
+      etag: 
+      - W/"CU4HQX47eCp7I2A9WhRaEkg."
+      x-xss-protection: 
+      - 1; mode=block
+      expires: 
+      - Tue, 14 Feb 2012 21:12:11 GMT
+      cache-control: 
+      - private, max-age=0, must-revalidate, no-transform
+      location: 
+      - http://gdata.youtube.com/feeds/api/users/tubeit20101/favorites/vjVQa1PpcFPT5l-0nfwUwzbe49x1suDQVTKjueT9JS0?client=youtube_it
+      x-gdata-user-country: 
+      - US
+      server: 
+      - GSE
+      content-location: 
+      - http://gdata.youtube.com/feeds/api/users/tubeit20101/favorites/vjVQa1PpcFPT5l-0nfwUwzbe49x1suDQVTKjueT9JS0?client=youtube_it
+      gdata-version: 
+      - "2.1"
+    body: <?xml version='1.0' encoding='UTF-8'?><entry xmlns='http://www.w3.org/2005/Atom' xmlns:app='http://www.w3.org/2007/app' xmlns:media='http://search.yahoo.com/mrss/' xmlns:gd='http://schemas.google.com/g/2005' xmlns:yt='http://gdata.youtube.com/schemas/2007' gd:etag='W/&quot;CU4HQX47eCp7I2A9WhRaEkg.&quot;'><id>tag:youtube.com,2008:favorite:vjVQa1PpcFPT5l-0nfwUwzbe49x1suDQVTKjueT9JS0</id><published>2012-02-14T21:12:10.000Z</published><updated>2012-02-14T21:12:10.000Z</updated><app:edited>2012-02-14T21:12:10.000Z</app:edited><category scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#favorite'/><category scheme='http://gdata.youtube.com/schemas/2007/categories.cat' term='People' label='People &amp; Blogs'/><category scheme='http://gdata.youtube.com/schemas/2007/keywords.cat' term='stringshub'/><title>OLPC CON TUQUITO XFCE4</title><link rel='alternate' type='text/html' href='http://www.youtube.com/watch?v=j5raG94IGCc&amp;feature=youtube_gdata'/><link rel='http://gdata.youtube.com/schemas/2007#video.responses' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/j5raG94IGCc/responses?client=youtube_it'/><link rel='http://gdata.youtube.com/schemas/2007#video.ratings' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/j5raG94IGCc/ratings?client=youtube_it'/><link rel='http://gdata.youtube.com/schemas/2007#video.complaints' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/j5raG94IGCc/complaints?client=youtube_it'/><link rel='http://gdata.youtube.com/schemas/2007#video.related' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/j5raG94IGCc/related?client=youtube_it'/><link rel='related' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/j5raG94IGCc?client=youtube_it'/><link rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/favorites/vjVQa1PpcFPT5l-0nfwUwzbe49x1suDQVTKjueT9JS0?client=youtube_it'/><link rel='edit' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/favorites/vjVQa1PpcFPT5l-0nfwUwzbe49x1suDQVTKjueT9JS0?client=youtube_it'/><author><name>tubeit20101</name><uri>http://gdata.youtube.com/feeds/api/users/tubeit20101</uri></author><yt:accessControl action='comment' permission='allowed'/><yt:accessControl action='commentVote' permission='allowed'/><yt:accessControl action='videoRespond' permission='moderated'/><yt:accessControl action='rate' permission='allowed'/><yt:accessControl action='embed' permission='allowed'/><yt:accessControl action='list' permission='allowed'/><yt:accessControl action='autoPlay' permission='allowed'/><yt:accessControl action='syndicate' permission='allowed'/><gd:comments><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#comments' href='http://gdata.youtube.com/feeds/api/videos/j5raG94IGCc/comments?client=youtube_it' countHint='5'/></gd:comments><media:group><media:category label='People &amp; Blogs' scheme='http://gdata.youtube.com/schemas/2007/categories.cat'>People</media:category><media:content url='http://www.youtube.com/v/j5raG94IGCc?version=3&amp;f=user_favorites&amp;c=youtube_it&amp;d=AS7Qxt7jHWCNTkXMPW-oJOUO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata' type='application/x-shockwave-flash' medium='video' isDefault='true' expression='full' duration='527' yt:format='5'/><media:content url='rtsp://v1.cache3.c.youtube.com/ClkLENy73wIaUAknGAjeG9qajxMYDSANFEIKeW91dHViZV9pdEgGUg51c2VyX2Zhdm9yaXRlc3IhAS7Qxt7jHWCNTkXMPW-oJOUO88HsQjpE1a8d1GxQnGDmDA==/0/0/0/video.3gp' type='video/3gpp' medium='video' expression='full' duration='527' yt:format='1'/><media:content url='rtsp://v8.cache5.c.youtube.com/ClkLENy73wIaUAknGAjeG9qajxMYESARFEIKeW91dHViZV9pdEgGUg51c2VyX2Zhdm9yaXRlc3IhAS7Qxt7jHWCNTkXMPW-oJOUO88HsQjpE1a8d1GxQnGDmDA==/0/0/0/video.3gp' type='video/3gpp' medium='video' expression='full' duration='527' yt:format='6'/><media:credit role='uploader' scheme='urn:youtube' yt:display='chebyte'>chebyte</media:credit><media:description type='plain'>interesante video de una OLPC (one laptop per child) corriendo con una version especial de Tuquito Linux. Se muestran aplicaciones como firefox, mplayer, etc..</media:description><media:keywords>stringshub</media:keywords><media:license type='text/html' href='http://www.youtube.com/t/terms'>youtube</media:license><media:player url='http://www.youtube.com/watch?v=j5raG94IGCc&amp;feature=youtube_gdata_player'/><media:thumbnail url='http://i.ytimg.com/vi/j5raG94IGCc/default.jpg' height='90' width='120' time='00:04:23.500' yt:name='default'/><media:thumbnail url='http://i.ytimg.com/vi/j5raG94IGCc/hqdefault.jpg' height='360' width='480' yt:name='hqdefault'/><media:thumbnail url='http://i.ytimg.com/vi/j5raG94IGCc/1.jpg' height='90' width='120' time='00:02:11.750' yt:name='start'/><media:thumbnail url='http://i.ytimg.com/vi/j5raG94IGCc/2.jpg' height='90' width='120' time='00:04:23.500' yt:name='middle'/><media:thumbnail url='http://i.ytimg.com/vi/j5raG94IGCc/3.jpg' height='90' width='120' time='00:06:35.250' yt:name='end'/><media:title type='plain'>OLPC CON TUQUITO XFCE4</media:title><yt:duration seconds='527'/><yt:uploaded>2008-09-23T17:56:13.000Z</yt:uploaded><yt:videoid>j5raG94IGCc</yt:videoid></media:group><gd:rating average='5.0' max='5' min='1' numRaters='7' rel='http://schemas.google.com/g/2005#overall'/><yt:statistics favoriteCount='2' viewCount='1724'/><yt:rating numDislikes='0' numLikes='7'/><yt:favoriteId>vjVQa1PpcFPT5l-0nfwUwzbe49x1suDQVTKjueT9JS0</yt:favoriteId></entry>
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :delete
+    uri: http://gdata.youtube.com:80/feeds/api/users/default/favorites/j5raG94IGCc
+    body: 
+    headers: 
+      content-type: 
+      - application/atom+xml; charset=UTF-8
+      x-gdata-key: 
+      - key=AI39si411VBmO4Im9l0rfRsORXDI6F5AX5NlTIA4uHSWqa-Cgf-jUQG-6osUBB3PTLawLHlkKXPLr3B0pNcGU9wkNd11gIgdPg
+      content-length: 
+      - "0"
+      authorization: 
+      - GoogleLogin auth=DQAAAKoAAAAe188aCLLEWZxcw87rh8_3VvPFg6lUefpB-c4avWCzrhCXwuzvrKfMdGD9XvNhfo_xgfQBNlxu92Zq7wZu4vwLUZU1nCZ24lG7xtjhZ3e3BqJI2c3--S7qm4jGi6AW2m7Vmvre3vXn0ruZX4DzBLXHYw80FYfowK0aSdvWD1c1gMFVa_jylye4p5p7IxuOAMdsqMsxB9HxAGg0LDu3tJHWLfxti1lasrRl2vSZD0ziRQ
+      x-gdata-client: 
+      - youtube_it
+      gdata-version: 
+      - "1"
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-frame-options: 
+      - SAMEORIGIN
+      content-type: 
+      - text/html
+      x-content-type-options: 
+      - nosniff
+      date: 
+      - Tue, 14 Feb 2012 21:12:15 GMT
+      x-xss-protection: 
+      - 1; mode=block
+      content-length: 
+      - "0"
+      expires: 
+      - Tue, 14 Feb 2012 21:12:15 GMT
+      cache-control: 
+      - private, max-age=0
+      x-gdata-user-country: 
+      - US
+      server: 
+      - GSE
+      gdata-version: 
+      - "1.0"
+    body: 
+    http_version: "1.1"

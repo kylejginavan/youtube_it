@@ -1,0 +1,44 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://gdata.youtube.com:80/feeds/api/users/liz/uploads?key=AI39si411VBmO4Im9l0rfRsORXDI6F5AX5NlTIA4uHSWqa-Cgf-jUQG-6osUBB3PTLawLHlkKXPLr3B0pNcGU9wkNd11gIgdPg&max-results=25&start-index=1&v=2
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      transfer-encoding: 
+      - chunked
+      x-frame-options: 
+      - SAMEORIGIN
+      content-type: 
+      - application/atom+xml; charset=UTF-8; type=feed
+      vary: 
+      - "*"
+      x-content-type-options: 
+      - nosniff
+      date: 
+      - Tue, 14 Feb 2012 21:12:44 GMT
+      etag: 
+      - W/"CU4CRXg-eip7I2A9WhRaEkg."
+      last-modified: 
+      - Tue, 14 Feb 2012 21:12:44 GMT
+      x-xss-protection: 
+      - 1; mode=block
+      expires: 
+      - Tue, 14 Feb 2012 21:12:44 GMT
+      cache-control: 
+      - private, max-age=300, no-transform
+      x-gdata-user-country: 
+      - US
+      server: 
+      - GSE
+      gdata-version: 
+      - "2.1"
+    body: |-
+      <?xml version='1.0' encoding='UTF-8'?><feed xmlns='http://www.w3.org/2005/Atom' xmlns:openSearch='http://a9.com/-/spec/opensearch/1.1/' xmlns:gd='http://schemas.google.com/g/2005' gd:etag='W/&quot;CU4CRXg-eip7I2A9WhRaEkg.&quot;'><id>tag:youtube.com,2008:user:liz:uploads</id><updated>2012-02-14T21:12:44.652Z</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#video'/><title>Uploads by username: "liz"
+      </title><logo>http://www.youtube.com/img/pic_youtubelogo_123x63.gif</logo><link rel='related' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/liz?v=2'/><link rel='alternate' type='text/html' href='http://www.youtube.com/profile?user=liz#p/u'/><link rel='hub' href='http://pubsubhubbub.appspot.com'/><link rel='http://schemas.google.com/g/2005#feed' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/liz/uploads?v=2'/><link rel='http://schemas.google.com/g/2005#batch' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/liz/uploads/batch?v=2'/><link rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/liz/uploads?start-index=1&amp;max-results=25&amp;v=2'/><link rel='service' type='application/atomsvc+xml' href='http://gdata.youtube.com/feeds/api/users/liz/uploads?alt=atom-service&amp;v=2'/><author><name>liz</name><uri>http://gdata.youtube.com/feeds/api/users/liz</uri></author><generator version='2.1' uri='http://gdata.youtube.com'>YouTube data API</generator><openSearch:totalResults>0</openSearch:totalResults><openSearch:startIndex>1</openSearch:startIndex><openSearch:itemsPerPage>25</openSearch:itemsPerPage></feed>
+    http_version: "1.1"

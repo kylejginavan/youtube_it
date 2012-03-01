@@ -1,0 +1,84 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://www.google.com:443/youtube/accounts/ClientLogin
+    body: Email=tubeit20101&Passwd=youtube_it&service=youtube&source=youtube_it
+    headers: 
+      content-type: 
+      - application/x-www-form-urlencoded
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-frame-options: 
+      - SAMEORIGIN
+      content-type: 
+      - text/plain
+      x-content-type-options: 
+      - nosniff
+      date: 
+      - Tue, 14 Feb 2012 21:12:03 GMT
+      x-xss-protection: 
+      - 1; mode=block
+      content-length: 
+      - "276"
+      expires: 
+      - Tue, 14 Feb 2012 21:12:03 GMT
+      cache-control: 
+      - private, max-age=0
+      x-gdata-user-country: 
+      - US
+      server: 
+      - GSE
+    body: |
+      Auth=DQAAAKoAAACSEtjrgfcCDc9DQYl89vPcq1CeIq1dMbqn_-zqrKf22MT8DjtCoSWkDrcEUeULktSe4Rzw8QlZviHWGsfC6mON8Y8dWDCG8JJvdCwmxfaKY-cYJJo_J6OcThj3JrUQUQBAnTiswZSDYLnngqkQAeObbp_afPJKwWF5iJWImvu8qDM13s08CQlBwNKbXddKlQPmRHCdXzcRFiJqnNRUKK-PLtYKX5om5m17SBvM0h3-2w
+      YouTubeUser=tubeit20101
+
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: http://gdata.youtube.com:80/action/GetUploadToken
+    body: <?xml version="1.0" encoding="UTF-8"?><entry xmlns:media="http://search.yahoo.com/mrss/" xmlns="http://www.w3.org/2005/Atom" xmlns:yt="http://gdata.youtube.com/schemas/2007"><media:group><media:title type="plain">test title</media:title><media:description type="plain">test description</media:description><media:keywords>test</media:keywords><media:category scheme="http://gdata.youtube.com/schemas/2007/categories.cat">People</media:category></media:group></entry>
+    headers: 
+      content-type: 
+      - application/atom+xml; charset=UTF-8
+      x-gdata-key: 
+      - key=AI39si411VBmO4Im9l0rfRsORXDI6F5AX5NlTIA4uHSWqa-Cgf-jUQG-6osUBB3PTLawLHlkKXPLr3B0pNcGU9wkNd11gIgdPg
+      content-length: 
+      - "465"
+      authorization: 
+      - GoogleLogin auth=DQAAAKoAAACSEtjrgfcCDc9DQYl89vPcq1CeIq1dMbqn_-zqrKf22MT8DjtCoSWkDrcEUeULktSe4Rzw8QlZviHWGsfC6mON8Y8dWDCG8JJvdCwmxfaKY-cYJJo_J6OcThj3JrUQUQBAnTiswZSDYLnngqkQAeObbp_afPJKwWF5iJWImvu8qDM13s08CQlBwNKbXddKlQPmRHCdXzcRFiJqnNRUKK-PLtYKX5om5m17SBvM0h3-2w
+      x-gdata-client: 
+      - youtube_it
+      gdata-version: 
+      - "2"
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      transfer-encoding: 
+      - chunked
+      x-frame-options: 
+      - SAMEORIGIN
+      content-type: 
+      - text/xml; charset=UTF-8
+      x-content-type-options: 
+      - nosniff
+      date: 
+      - Tue, 14 Feb 2012 21:12:03 GMT
+      x-xss-protection: 
+      - 1; mode=block
+      expires: 
+      - Tue, 14 Feb 2012 21:12:03 GMT
+      cache-control: 
+      - private, max-age=0
+      x-gdata-user-country: 
+      - US
+      server: 
+      - GSE
+    body: <?xml version='1.0' encoding='UTF-8'?><response><url>http://uploads.gdata.youtube.com/action/FormDataUpload/AIwbFAT_47j1c-mgREwM6CpWDELZJlHRUuGGFVi-yI11ATBDG1SwDq3L2BDCw42duFUd8Q45tKG2H2grhM_KcW4UGnDMAFTH7w</url><token>AIwbFATrtxt839yGWLDuZ9RkXxTeNTg_IIY86cLPfjWAraICBTJwoXdxN72hyaY8Hdkjmg9Lp61Tlbuo6AJ6belTSdT0AVaF2b88EGY7wRooQ_a2y7Z3Ma8OQwIDBSqikFlJ_fYpP71hevbYskHr-LWqvlYBqRCIxEQa_hLonFBshWbJObVCyOR2PYArMhhmXSJDsUlCdmgdA8DS6lsB3dUcbHmqSGoaPE4BrbJ-2rXLPkV6dMTo3y-QrQOIePgiK20RchGd6XHKUUl-Fki51AI711Z_WxGGKFlubQUFEce7-w7OIj5o6i87IiE8q95-AlOPn1jemDDg</token></response>
+    http_version: "1.1"

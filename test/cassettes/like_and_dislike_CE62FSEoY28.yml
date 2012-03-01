@@ -1,0 +1,149 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://www.google.com:443/youtube/accounts/ClientLogin
+    body: Email=tubeit20101&Passwd=youtube_it&service=youtube&source=youtube_it
+    headers: 
+      content-type: 
+      - application/x-www-form-urlencoded
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-frame-options: 
+      - SAMEORIGIN
+      content-type: 
+      - text/plain
+      x-content-type-options: 
+      - nosniff
+      date: 
+      - Tue, 14 Feb 2012 21:12:16 GMT
+      x-xss-protection: 
+      - 1; mode=block
+      content-length: 
+      - "276"
+      expires: 
+      - Tue, 14 Feb 2012 21:12:16 GMT
+      cache-control: 
+      - private, max-age=0
+      x-gdata-user-country: 
+      - US
+      server: 
+      - GSE
+    body: |
+      Auth=DQAAAKoAAABbqppADgpBPhQfRkCyXoXKUAlwyR6iAzxUqGFCEhf0MOdlaQSnR1Ot9IU1878Wezg3eaac4FWT4fCcO6NOtYqvarexMb9X6MWKKYvEPC-9GCT1YDvZ4Da8euO-iq899fgqn1ApZ54Ysokni2Aq64XdhJqw4f_TpOwz5S2HjIut75Gq3ZrGoQGR5c6zr1uRQmvuUHw3Pc3E6YXuO5hJ-rpu8azwv6Z37YGZ72tc4xFIAA
+      YouTubeUser=tubeit20101
+
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: http://gdata.youtube.com:80/feeds/api/videos/CE62FSEoY28/ratings
+    body: <?xml version="1.0" encoding="UTF-8"?><entry xmlns="http://www.w3.org/2005/Atom" xmlns:yt="http://gdata.youtube.com/schemas/2007"><yt:rating value="like"/></entry>
+    headers: 
+      content-type: 
+      - application/atom+xml; charset=UTF-8
+      x-gdata-key: 
+      - key=AI39si411VBmO4Im9l0rfRsORXDI6F5AX5NlTIA4uHSWqa-Cgf-jUQG-6osUBB3PTLawLHlkKXPLr3B0pNcGU9wkNd11gIgdPg
+      content-length: 
+      - "163"
+      authorization: 
+      - GoogleLogin auth=DQAAAKoAAABbqppADgpBPhQfRkCyXoXKUAlwyR6iAzxUqGFCEhf0MOdlaQSnR1Ot9IU1878Wezg3eaac4FWT4fCcO6NOtYqvarexMb9X6MWKKYvEPC-9GCT1YDvZ4Da8euO-iq899fgqn1ApZ54Ysokni2Aq64XdhJqw4f_TpOwz5S2HjIut75Gq3ZrGoQGR5c6zr1uRQmvuUHw3Pc3E6YXuO5hJ-rpu8azwv6Z37YGZ72tc4xFIAA
+      x-gdata-client: 
+      - youtube_it
+      gdata-version: 
+      - "2"
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 201
+      message: Created
+    headers: 
+      transfer-encoding: 
+      - chunked
+      x-frame-options: 
+      - SAMEORIGIN
+      content-type: 
+      - application/atom+xml; charset=UTF-8; type=entry
+      vary: 
+      - Accept, X-GData-Authorization, GData-Version
+      x-content-type-options: 
+      - nosniff
+      date: 
+      - Tue, 14 Feb 2012 21:12:16 GMT
+      etag: 
+      - W/"CU4HR3c9fip7I2A9WhRaEkg."
+      x-xss-protection: 
+      - 1; mode=block
+      expires: 
+      - Tue, 14 Feb 2012 21:12:16 GMT
+      cache-control: 
+      - private, max-age=0, must-revalidate, no-transform
+      location: 
+      - http://gdata.youtube.com/feeds/api/videos/CE62FSEoY28/ratings/6nfMTbM76roKlECJYQ1ujjv%2FdaQ%3D?client=youtube_it
+      x-gdata-user-country: 
+      - US
+      server: 
+      - GSE
+      content-location: 
+      - http://gdata.youtube.com/feeds/api/videos/CE62FSEoY28/ratings/6nfMTbM76roKlECJYQ1ujjv%2FdaQ%3D?client=youtube_it
+      gdata-version: 
+      - "2.1"
+    body: <?xml version='1.0' encoding='UTF-8'?><entry xmlns='http://www.w3.org/2005/Atom' xmlns:gd='http://schemas.google.com/g/2005' xmlns:yt='http://gdata.youtube.com/schemas/2007' gd:etag='W/&quot;CU4HR3c9fip7I2A9WhRaEkg.&quot;'><id>tag:youtube.com,2008:video:CE62FSEoY28:rating:6nfMTbM76roKlECJYQ1ujjv%2FdaQ%3D</id><published>2012-02-14T21:12:16.966Z</published><updated>2012-02-14T21:12:16.966Z</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#rating'/><title>Tuquito ClassmatePC 3 - Touch Screen has been rated.</title><link rel='alternate' type='text/html' href='http://www.youtube.com/watch?v=CE62FSEoY28'/><link rel='related' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/CE62FSEoY28?client=youtube_it'/><link rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/CE62FSEoY28/ratings/6nfMTbM76roKlECJYQ1ujjv%2FdaQ%3D?client=youtube_it'/><author><name>WWmLvppy3j64IGmA2dpCyw</name><uri>http://gdata.youtube.com/feeds/api/users/WWmLvppy3j64IGmA2dpCyw</uri></author><gd:rating max='5' min='1' value='5'/><yt:rating value='like'/></entry>
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: http://gdata.youtube.com:80/feeds/api/videos/CE62FSEoY28/ratings
+    body: <?xml version="1.0" encoding="UTF-8"?><entry xmlns="http://www.w3.org/2005/Atom" xmlns:yt="http://gdata.youtube.com/schemas/2007"><yt:rating value="dislike"/></entry>
+    headers: 
+      content-type: 
+      - application/atom+xml; charset=UTF-8
+      x-gdata-key: 
+      - key=AI39si411VBmO4Im9l0rfRsORXDI6F5AX5NlTIA4uHSWqa-Cgf-jUQG-6osUBB3PTLawLHlkKXPLr3B0pNcGU9wkNd11gIgdPg
+      content-length: 
+      - "166"
+      authorization: 
+      - GoogleLogin auth=DQAAAKoAAABbqppADgpBPhQfRkCyXoXKUAlwyR6iAzxUqGFCEhf0MOdlaQSnR1Ot9IU1878Wezg3eaac4FWT4fCcO6NOtYqvarexMb9X6MWKKYvEPC-9GCT1YDvZ4Da8euO-iq899fgqn1ApZ54Ysokni2Aq64XdhJqw4f_TpOwz5S2HjIut75Gq3ZrGoQGR5c6zr1uRQmvuUHw3Pc3E6YXuO5hJ-rpu8azwv6Z37YGZ72tc4xFIAA
+      x-gdata-client: 
+      - youtube_it
+      gdata-version: 
+      - "2"
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 201
+      message: Created
+    headers: 
+      transfer-encoding: 
+      - chunked
+      x-frame-options: 
+      - SAMEORIGIN
+      content-type: 
+      - application/atom+xml; charset=UTF-8; type=entry
+      vary: 
+      - Accept, X-GData-Authorization, GData-Version
+      x-content-type-options: 
+      - nosniff
+      date: 
+      - Tue, 14 Feb 2012 21:12:17 GMT
+      etag: 
+      - W/"CU4HRno4fip7I2A9WhRaEkg."
+      x-xss-protection: 
+      - 1; mode=block
+      expires: 
+      - Tue, 14 Feb 2012 21:12:17 GMT
+      cache-control: 
+      - private, max-age=0, must-revalidate, no-transform
+      location: 
+      - http://gdata.youtube.com/feeds/api/videos/CE62FSEoY28/ratings/irlx4EqTaSNQOb4PGMPxL1DjEYc%3D?client=youtube_it
+      x-gdata-user-country: 
+      - US
+      server: 
+      - GSE
+      content-location: 
+      - http://gdata.youtube.com/feeds/api/videos/CE62FSEoY28/ratings/irlx4EqTaSNQOb4PGMPxL1DjEYc%3D?client=youtube_it
+      gdata-version: 
+      - "2.1"
+    body: <?xml version='1.0' encoding='UTF-8'?><entry xmlns='http://www.w3.org/2005/Atom' xmlns:gd='http://schemas.google.com/g/2005' xmlns:yt='http://gdata.youtube.com/schemas/2007' gd:etag='W/&quot;CU4HRno4fip7I2A9WhRaEkg.&quot;'><id>tag:youtube.com,2008:video:CE62FSEoY28:rating:irlx4EqTaSNQOb4PGMPxL1DjEYc%3D</id><published>2012-02-14T21:12:17.436Z</published><updated>2012-02-14T21:12:17.436Z</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#rating'/><title>Tuquito ClassmatePC 3 - Touch Screen has been rated.</title><link rel='alternate' type='text/html' href='http://www.youtube.com/watch?v=CE62FSEoY28'/><link rel='related' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/CE62FSEoY28?client=youtube_it'/><link rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/CE62FSEoY28/ratings/irlx4EqTaSNQOb4PGMPxL1DjEYc%3D?client=youtube_it'/><author><name>WWmLvppy3j64IGmA2dpCyw</name><uri>http://gdata.youtube.com/feeds/api/users/WWmLvppy3j64IGmA2dpCyw</uri></author><gd:rating max='5' min='1' value='1'/><yt:rating value='dislike'/></entry>
+    http_version: "1.1"
