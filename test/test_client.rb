@@ -290,7 +290,7 @@ class TestClient < Test::Unit::TestCase
   end
   
   def test_get_current_user
-   assert_equal @client.current_user, 'tubeit20101'
+   assert_equal 'tubeit20101', @client.current_user
   end
   
   def test_should_get_my_videos
@@ -347,7 +347,7 @@ class TestClient < Test::Unit::TestCase
      
   def test_should_get_profile
     profile = @client.profile
-    assert_equal profile.username, "tubeit20101" 
+    assert_equal "tubeit20101", profile.username
   end
   
   def test_should_add_and_delete_video_to_favorite
