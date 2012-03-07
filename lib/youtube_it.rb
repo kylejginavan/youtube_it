@@ -19,8 +19,7 @@ class YouTubeIt
   end
 
   def self.esc(s) #:nodoc:
-    # URI encodes correctly Unicode characters
-    URI.encode(s.to_s.tr(' ','+'))
+    CGI.escape(s.to_s)
   end
 
   # Set the logger for the library
