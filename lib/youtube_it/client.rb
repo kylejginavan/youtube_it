@@ -202,7 +202,7 @@ class YouTubeIt
       client.subscriptions(user_id)
     end
     
-    def new_subscription_videos(user_id = nil)
+    def tommethod(user_id = nil)
       client.new_subscription_videos(user_id)
     end
 
