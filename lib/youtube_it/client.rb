@@ -242,6 +242,11 @@ class YouTubeIt
     def my_messages(opts = {})
       client.get_my_messages(opts)
     end
+    
+    # Gets the user's watch history
+    def watch_history
+      client.get_watch_history
+    end
 
     private
 
