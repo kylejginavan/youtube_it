@@ -413,6 +413,7 @@ class YouTubeIt
       @client_refresh_token    = options[:client_refresh_token]
       @client_token_expires_at = options[:client_token_expires_at]
       @dev_key                 = options[:dev_key]
+      @legacy_debug_flag       = options[:debug]
     end
 
     def oauth_client
