@@ -304,6 +304,13 @@ class YouTubeIt
         
         return YouTubeIt::Parser::SubscriptionFeedParser.new(response).parse
       end
+      
+      def new_subscription_videos(user)
+        subscription_url = "/feeds/api/users/%s/newsubscriptionvideos?v=2" % (user ? user : "default")
+        response         = yt_session.get(subscription_url)
+        
+        return YouTubeIt::Parser::SubscriptionFeedParser.new(response).parse
+      end
             
       def subscribe_channel(channel_name)
         subscribe_body = video_xml_for(:subscribe => channel_name)

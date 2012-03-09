@@ -201,6 +201,10 @@ class YouTubeIt
     def subscriptions(user_id = nil)
       client.subscriptions(user_id)
     end
+    
+    def new_subscription_videos(user_id = nil)
+      client.new_subscription_videos(user_id)
+    end
 
     def enable_http_debugging
       client.enable_http_debugging
