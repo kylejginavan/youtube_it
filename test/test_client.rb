@@ -279,7 +279,7 @@ class TestClient < Test::Unit::TestCase
     
   def test_should_list_playlist_for_user
     result = @client.playlists('chebyte')
-    assert result.last.title, "rock"
+    assert_equal "rock", result.last.title
   end
     
   def test_should_determine_if_widescreen_video_is_widescreen
@@ -290,7 +290,7 @@ class TestClient < Test::Unit::TestCase
   end
   
   def test_get_current_user
-   assert_equal @client.current_user, 'tubeit20101'
+   assert_equal 'tubeit20101', @client.current_user
   end
   
   def test_should_get_my_videos
@@ -347,7 +347,7 @@ class TestClient < Test::Unit::TestCase
      
   def test_should_get_profile
     profile = @client.profile
-    assert_equal profile.username, "tubeit20101" 
+    assert_equal "tubeit20101", profile.username
   end
   
   def test_should_add_and_delete_video_to_favorite
@@ -360,7 +360,12 @@ class TestClient < Test::Unit::TestCase
   
   def test_esc
     result = YouTubeIt.esc("спят усталые игрушки")
-    assert result, "спят+усталые+игрушки"
+    assert_equal "%D1%81%D0%BF%D1%8F%D1%82+%D1%83%D1%81%D1%82%D0%B0%D0%BB%D1%8B%D0%B5+%D0%B8%D0%B3%D1%80%D1%83%D1%88%D0%BA%D0%B8", result
+  end
+  
+  def test_should_encode_ampersand
+    result = YouTubeIt.esc("such & such")
+    assert_equal "such+%26+such", result
   end
   
   def test_unicode_query
