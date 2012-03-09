@@ -228,17 +228,17 @@ class YouTubeIt
       client.get_my_videos(opts)
     end
     
-    # Get's all of the user's contacts/friends. 
+    # Gets all of the user's contacts/friends. 
     def my_contacts(opts = {})
       client.get_my_contacts(opts)
     end
     
-    # Send vedio message
+    # Send video message
     def send_message(opts = {})
       client.send_message(opts)
     end
     
-    # Get's all of the user's messages/inbox. 
+    # Gets all of the user's messages/inbox. 
     def my_messages(opts = {})
       client.get_my_messages(opts)
     end
