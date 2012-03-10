@@ -203,7 +203,8 @@ class YouTubeIt
     end
     
     def new_subscription_videos(user_id = nil)
-      client.new_subscription_videos(user_id)
+      #client.new_subscription_videos(user_id)
+      return "Client.rb string"
     end
 
     def enable_http_debugging
