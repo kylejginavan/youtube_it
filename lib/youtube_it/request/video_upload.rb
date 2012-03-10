@@ -309,7 +309,7 @@ class YouTubeIt
         subscription_url = "/feeds/api/users/%s/newsubscriptionvideos?v=2" % (user ? user : "default")
         response         = yt_session.get(subscription_url)
         
-        return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse
+        return YouTubeIt::Parser::VideosFeedParser.new(response.body).parse
       end
             
       def subscribe_channel(channel_name)
