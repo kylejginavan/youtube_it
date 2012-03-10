@@ -202,8 +202,8 @@ class YouTubeIt
       client.subscriptions(user_id)
     end
     
-    def tommethod(user_id = nil)
-      client.tommethod(user_id)
+    def new_subscription_videos(user_id = nil)
+      client.new_subscription_videos(user_id)
     end
 
     def enable_http_debugging
