@@ -306,11 +306,11 @@ class YouTubeIt
       end
       
       def new_subscription_videos(user)
-        #subscription_url = "/feeds/api/users/%s/newsubscriptionvideos?v=2" % (user ? user : "default")
-        #response         = yt_session.get(subscription_url)
+        subscription_url = "/feeds/api/users/%s/newsubscriptionvideos?v=2" % (user ? user : "default")
+        response         = yt_session.get(subscription_url)
         
         #return YouTubeIt::Parser::SubscriptionFeedParser.new(response).parse
-        return "video_upload.rb string"
+        return response
       end
             
       def subscribe_channel(channel_name)
