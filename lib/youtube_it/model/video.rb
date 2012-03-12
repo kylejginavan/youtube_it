@@ -202,10 +202,11 @@ EDOC
                       :id     => params[:id]     || "",
                       :width  => params[:width]  || "425",
                       :height => params[:height] || "350",
-                      :frameborder => params[:frameborder] || "0"
+                      :frameborder => params[:frameborder] || "0",
+                      :url_params => params[:url_params] || {}
                       }
               <<EDOC
-<iframe class="#{opts[:class]}" id="#{opts[:id]}" type="text/html" width="#{opts[:width]}" height="#{opts[:height]}" src="http://www.youtube.com/embed/#{unique_id}" frameborder="#{opts[:frameborder]}"></iframe>
+<iframe class="#{opts[:class]}" id="#{opts[:id]}" type="text/html" width="#{opts[:width]}" height="#{opts[:height]}" src="http://www.youtube.com/embed/#{unique_id}?#{Rack::Utils::build_query(opts[:url_params])}" frameborder="#{opts[:frameborder]}"></iframe>
 EDOC
             end
 
