@@ -483,7 +483,6 @@ class YouTubeIt
           :widescreen     => widescreen,
           :noembed        => noembed,
           :racy           => racy,
-          :where          => where,
           :position       => position,
           :latitude       => latitude,
           :longitude      => longitude,
