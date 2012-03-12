@@ -123,7 +123,6 @@ class YouTubeIt
 
 
       # Geodata
-      attr_reader :where
       attr_reader :position
       attr_reader :latitude
       attr_reader :longitude

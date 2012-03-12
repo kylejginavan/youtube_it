@@ -348,6 +348,13 @@ class YouTubeIt
          
         return {:code => response.status, :body => response.body}
       end
+      
+      def get_watch_history
+        watch_history_url = "/feeds/api/users/default/watch_history?v=2"
+        response = yt_session.get(watch_history_url)
+        
+        return YouTubeIt::Parser::VideosFeedParser.new(response.body).parse
+      end
 
 
       private
