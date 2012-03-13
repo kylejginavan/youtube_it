@@ -5,6 +5,7 @@ require 'digest/md5'
 require 'rexml/document'
 require 'builder'
 require 'oauth'
+require 'oauth2'
 require 'faraday'
 
 class YouTubeIt
