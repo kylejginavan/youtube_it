@@ -151,6 +151,9 @@ Subscribe To A Channel:
 Unsubscribe To A Channel:
   $ client.unsubscribe_channel(subscription_id)
 
+List New Subscription Videos:
+  $ client.new_subscription_videos(user) # default: current user
+  
 List Playlists:
   $ client.playlists(user) # default: current user
 
@@ -241,7 +244,7 @@ Note: you can specify width or just use the default of 1280.
 Now you can embed videos without use flash using html5, usefull for mobiles that not support flash but has html5 browser
 
 You can specify these options
-  $ video.embed_html5({:class => 'video-player', :id => 'my-video', :width => '425', :height => '350', :frameborder => '1'})
+  $ video.embed_html5({:class => 'video-player', :id => 'my-video', :width => '425', :height => '350', :frameborder => '1', :url_params => {:option_one => "value", :option_two => "value"}})
 
 or just use with default options
   $ video.embed_html5 #default: width: 425, height: 350, frameborder: 0
