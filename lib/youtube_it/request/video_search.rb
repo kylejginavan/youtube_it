@@ -14,7 +14,7 @@ class YouTubeIt
       attr_reader :tags                            # /-/tag1/tag2
       attr_reader :categories                      # /-/Category1/Category2
       attr_reader :video_format                    # format (1=mobile devices)
-      attr_reader :racy                            # racy ([exclude], include)
+      attr_reader :safe_search                     # safeSearch (none, [moderate], strict)
       attr_reader :author
       attr_reader :lang                            # lt
       attr_reader :restriction
@@ -26,7 +26,7 @@ class YouTubeIt
         @max_results, @order_by,
         @offset, @query,
         @response_format, @video_format,
-        @racy, @author, @lang = nil
+        @safe_search, @author, @lang = nil
         @url = base_url
         @dev_key = params[:dev_key] if params[:dev_key]
 
@@ -62,7 +62,7 @@ class YouTubeIt
           'q' => @query,
           'alt' => @response_format,
           'format' => @video_format,
-          'racy' => @racy,
+          'safeSearch' => @safe_search,
           'author' => @author,
           'restriction' => @restriction,
           'lr' => @lang

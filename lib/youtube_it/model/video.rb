@@ -68,7 +68,7 @@ class YouTubeIt
       attr_reader :position
 
       # *Boolean*:: Specifies that a video is flagged as adult or not.
-      attr_reader :racy
+      attr_reader :safe_search
 
       # *String*: Specifies a URI that uniquely and permanently identifies the video.
       attr_reader :video_id
@@ -205,8 +205,9 @@ EDOC
                       :frameborder => params[:frameborder] || "0",
                       :url_params => params[:url_params] || {}
                       }
+              url_opts = opts[:url_params].empty? ? "" : "?#{Rack::Utils::build_query(opts[:url_params])}"
               <<EDOC
-<iframe class="#{opts[:class]}" id="#{opts[:id]}" type="text/html" width="#{opts[:width]}" height="#{opts[:height]}" src="http://www.youtube.com/embed/#{unique_id}?#{Rack::Utils::build_query(opts[:url_params])}" frameborder="#{opts[:frameborder]}"></iframe>
+<iframe class="#{opts[:class]}" id="#{opts[:id]}" type="text/html" width="#{opts[:width]}" height="#{opts[:height]}" src="http://www.youtube.com/embed/#{unique_id}#{url_opts}" frameborder="#{opts[:frameborder]}"></iframe>
 EDOC
             end
 

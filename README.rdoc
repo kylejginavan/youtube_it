@@ -84,6 +84,12 @@ Advanced Queries (with boolean operators OR (either), AND (include), NOT (exclud
   $ client.videos_by(:categories => { :either => [:news, :sports], :exclude => [:comedy] }, :tags => { :include => ['football'], :exclude => ['soccer'] })
 
 
+Queries for safeSearch
+  The safe_search parameter indicates whether the search results should include restricted content as well as standard content. 
+  The following values are valid for this parameter: none, moderate(default), strict
+  
+  $ client.videos_by(:query => "penguin", :safe-search => "strict")
+
 Fields Parameter(experimental features):
   Return videos more than 1000 views
   $ client.videos_by(:fields => {:view_count => "1000"})

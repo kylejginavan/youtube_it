@@ -444,8 +444,8 @@ class YouTubeIt
           view_count, favorite_count = 0,0
         end
 
-        noembed = entry.elements["yt:noembed"] ? true : false
-        racy = entry.elements["media:rating"] ? true : false
+        noembed     = entry.elements["yt:noembed"] ? true : false
+        safe_search = entry.elements["media:rating"] ? true : false
 
         if where = entry.elements["georss:where"]
           position = where.elements["gml:Point"].elements["gml:pos"].text
@@ -485,7 +485,7 @@ class YouTubeIt
           :favorite_count => favorite_count,
           :widescreen     => widescreen,
           :noembed        => noembed,
-          :racy           => racy,
+          :safe_search    => safe_search,
           :position       => position,
           :latitude       => latitude,
           :longitude      => longitude,

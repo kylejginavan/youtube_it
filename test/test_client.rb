@@ -392,7 +392,14 @@ class TestClient < Test::Unit::TestCase
     YouTubeIt.adapter = :net_http
     assert YouTubeIt.adapter == :net_http
   end
-    
+
+  def test_safe_search_params
+    @videos = @client.videos_by(:query => "porno", :safe_search => 'none').videos
+    assert_equal @videos.count, 25
+    @videos = @client.videos_by(:query => "porno", :safe_search => 'strict').videos
+    assert_equal @videos.count, 0
+  end
+  
   private
   
     def assert_valid_video (video)

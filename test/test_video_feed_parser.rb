@@ -41,10 +41,10 @@ class TestVideoFeedParser < Test::Unit::TestCase
     end
   end
 
-  def test_should_parse_racy_correctly
+  def test_should_parse_safe_search_correctly
     with_video_response do |parser|
       video = parser.parse
-      assert_equal false, video.racy
+      assert_equal false, video.safe_search
     end
   end
 
@@ -183,13 +183,6 @@ class TestVideoFeedParser < Test::Unit::TestCase
   
   # TOD: GEODATA
 
-  def test_should_parse_where_geodata_correctly
-    with_video_response do |parser|
-      video = parser.parse
-      assert_equal nil, video.where
-    end
-  end
-  
   def test_should_parse_position_geodata_correctly
     with_video_response do |parser|
       video = parser.parse

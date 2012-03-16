@@ -38,7 +38,7 @@ class YouTubeIt
     #
     # If fetching videos by tags, categories, query:
     #   params<Hash>:: Accepts the keys :tags, :categories, :query, :order_by,
-    #                  :author, :racy, :response_format, :video_format, :page (default is 1),
+    #                  :author, :safe_search, :response_format, :video_format, :page (default is 1),
     #                  and :per_page(default is 25)
     #
     #   options<Hash>:: Not used. (Optional)
