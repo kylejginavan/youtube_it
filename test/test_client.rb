@@ -19,8 +19,7 @@ class TestClient < Test::Unit::TestCase
   end
 
   def test_should_respond_to_a_basic_query
-    response = @client.videos_by(:query => "penguin")
-  
+    response = @client.videos_by(:query => "penguin")  
     assert_equal "tag:youtube.com,2008:videos", response.feed_id
     assert_equal 25, response.max_result_count
     assert_equal 25, response.videos.length
@@ -160,6 +159,13 @@ class TestClient < Test::Unit::TestCase
     assert_equal "<object width=\"425\" height=\"350\">\n  <param name=\"movie\" value=\"http://www.youtube.com/v/FQK1URcxmb4&feature=youtube_gdata_player\"></param>\n  <param name=\"wmode\" value=\"transparent\"></param>\n  <embed src=\"http://www.youtube.com/v/FQK1URcxmb4&feature=youtube_gdata_player\" type=\"application/x-shockwave-flash\"\n   wmode=\"transparent\" width=\"425\" height=\"350\"></embed>\n</object>\n", video.embed_html
     assert_valid_video video
   end
+  
+  def test_should_get_embed_video_for_html5
+    video = @client.video_by_user("chebyte","FQK1URcxmb4")
+    embed_html5 = video.embed_html5({:class => 'video-player', :id => 'my-video', :width => '425', :height => '350', :frameborder => '1', :url_params => {:option => "value"}})
+    assert_equal "<iframe class=\"video-player\" id=\"my-video\" type=\"text/html\" width=\"425\" height=\"350\" src=\"http://www.youtube.com/embed/FQK1URcxmb4?option=value\" frameborder=\"1\"></iframe>\n", embed_html5
+  end
+  
   
   def test_should_always_return_a_logger
     @client = YouTubeIt::Client.new
@@ -386,7 +392,7 @@ class TestClient < Test::Unit::TestCase
     YouTubeIt.adapter = :net_http
     assert YouTubeIt.adapter == :net_http
   end
-  
+    
   private
   
     def assert_valid_video (video)
@@ -459,4 +465,3 @@ class TestClient < Test::Unit::TestCase
       return false
     end
 end
-

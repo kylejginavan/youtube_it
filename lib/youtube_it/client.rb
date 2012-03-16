@@ -247,6 +247,11 @@ class YouTubeIt
     def watch_history
       client.get_watch_history
     end
+    
+    # Gets new subscription videos
+    def new_subscription_videos(user_id = nil)
+      client.new_subscription_videos(user_id)
+    end
 
     private
 
