@@ -438,7 +438,13 @@ class YouTubeIt
     end
 
     def refresh_access_token!
-      @access_token = access_token.refresh!
+      new_access_token = access_token.refresh!
+      require 'thread' unless Thread.respond_to?(:exclusive)
+      Thread.exclusive do
+        @access_token = new_access_token
+        @client = nil
+      end
+      @access_token
     end
 
     def current_user
