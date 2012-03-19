@@ -11,11 +11,21 @@ class TestClient < Test::Unit::TestCase
   ACCOUNT = {:user => "tubeit20101", :passwd => "youtube_it", :dev_key => "AI39si411VBmO4Im9l0rfRsORXDI6F5AX5NlTIA4uHSWqa-Cgf-jUQG-6osUBB3PTLawLHlkKXPLr3B0pNcGU9wkNd11gIgdPg" }
   RAILS_ENV = "test"
 
+  #oauth
+  KEY     = "youtube-it.heroku.com"
+  SECRET  = "6dghuose3hl-oC_04BKPXCej"
+
   def setup
     #clientlogin
-    @client = YouTubeIt::Client.new(:username => ACCOUNT[:user], :password => ACCOUNT[:passwd] , :dev_key => ACCOUNT[:dev_key])
+      #@client = YouTubeIt::Client.new(:username => ACCOUNT[:user], :password => ACCOUNT[:passwd] , :dev_key => ACCOUNT[:dev_key])
     #authsub
-    #@client  = YouTubeIt::AuthSubClient.new(:token => "1/vqYlJytmn4eWRjJnORHT94mENNfZzZsLutMOrvvygB4" , :dev_key => ACCOUNT[:dev_key])
+      #@client  = YouTubeIt::AuthSubClient.new(:token => "1/vqYlJytmn4eWRjJnORHT94mENNfZzZsLutMOrvvygB4" , :dev_key => ACCOUNT[:dev_key])
+    #oauth
+      # @client = YouTubeIt::OAuthClient.new(:consumer_key => KEY, :consumer_secret => SECRET, :dev_key => "AI39si7WuZZxAkYebKSyrlJR7hIFktt6OoPycEOeOT_yHkZgr6QsGbZgmhKvbS4bsSAv0utgrfhNfXQBITu1wX_z3VsZE02giQ")
+      # @client.authorize_from_access("1/cLF_PRBYpyEY5KBhlsECv-g_wfC2MjHluPMi1c12ChI","DCyZxb1hHPd5jQCZUUZ6WHcz")
+    #oauth2
+      @client = YouTubeIt::OAuth2Client.new(:client_access_token => "ya29.AHES6ZScTtSAYx3xMRpF0DdKO6sJU2tnJBYa58P-FG-IhIpjloowYw", :client_id => "68330730158.apps.googleusercontent.com", :client_secret => "Npj4rmtme7q6INPPQjpQFuCZ", :client_refresh_token => "1/HzXbuoUO9iK-9kwJc7pAk54nxOCQiuCWre95YgLi1Dc", :dev_key => ACCOUNT[:dev_key])
+      @client.refresh_access_token!    
   end
 
   def test_should_respond_to_a_basic_query
@@ -252,7 +262,12 @@ class TestClient < Test::Unit::TestCase
   end
        
   def test_should_add_and_delete_video_from_playlist
-    playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
+    begin
+      playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
+    rescue
+      @client.playlists.each{|p| @client.delete_playlist(p.playlist_id)}
+      playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
+    end
     video = @client.add_video_to_playlist(playlist.playlist_id,"CE62FSEoY28")
     assert_equal video[:code].to_i, 201
     assert @client.delete_video_from_playlist(playlist.playlist_id, video[:playlist_entry_id])
@@ -260,7 +275,12 @@ class TestClient < Test::Unit::TestCase
   end
   
   def test_should_return_unique_id_from_playlist
-    playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
+    begin
+      playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
+    rescue
+      @client.playlists.each{|p| @client.delete_playlist(p.playlist_id)}
+      playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
+    end
     video = @client.add_video_to_playlist(playlist.playlist_id,"CE62FSEoY28")
   
     assert_equal "CE62FSEoY28", playlist.videos.last.unique_id
@@ -277,7 +297,12 @@ class TestClient < Test::Unit::TestCase
   end
   
   def test_should_update_playlist
-    playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
+    begin
+      playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
+    rescue
+      @client.playlists.each{|p| @client.delete_playlist(p.playlist_id)}
+      playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
+    end
     playlist_updated = @client.update_playlist(playlist.playlist_id, :title => "title changed")
     assert_equal playlist_updated.title, "title changed"
     assert @client.delete_playlist(playlist.playlist_id)
@@ -361,7 +386,12 @@ class TestClient < Test::Unit::TestCase
   
   def test_should_add_and_delete_video_to_favorite
     video_id ="j5raG94IGCc"
-    result = @client.add_favorite(video_id)
+    begin
+      result = @client.add_favorite(video_id)
+    rescue
+      @client.delete_favorite(video_id)
+      result = @client.add_favorite(video_id)
+    end
     assert_equal result[:code], 201
     sleep 4
     assert @client.delete_favorite(video_id)
@@ -392,7 +422,7 @@ class TestClient < Test::Unit::TestCase
     YouTubeIt.adapter = :net_http
     assert YouTubeIt.adapter == :net_http
   end
-
+  
   def test_safe_search_params
     @videos = @client.videos_by(:query => "porno", :safe_search => 'none').videos
     assert_equal @videos.count, 25
