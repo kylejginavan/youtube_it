@@ -382,6 +382,13 @@ class TestClient < Test::Unit::TestCase
     profile = @client.profile
     assert_equal profile.username, "tubeit20101"
     assert_not_nil profile.insight_uri, 'user insight_uri nil'
+    
+    assert_not_nil profile.username_display
+    assert_not_nil profile.max_upload_duration
+    assert_not_nil profile.user_id
+    assert_nothing_raised{ profile.last_name }
+    assert_nothing_raised{ profile.first_name }
+    assert_not_nil profile.upload_count
   end
   
   def test_should_add_and_delete_video_to_favorite
