@@ -279,6 +279,9 @@ class YouTubeIt
       def parse_content(content)
         xml = REXML::Document.new(content.body)
         entry = xml.elements["entry"] || xml.elements["feed"]
+        parse_entry( entry )
+      end
+      def parse_entry(entry)
         YouTubeIt::Model::User.new(
           :age            => entry.elements["yt:age"] ? entry.elements["yt:age"].text : nil,
           :username       => entry.elements["yt:username"] ? entry.elements["yt:username"].text : nil,
@@ -301,6 +304,21 @@ class YouTubeIt
           :upload_views   => entry.elements["yt:statistics"].attributes["totalUploadViews"],
           :insight_uri    => (entry.elements['link[attribute::rel="http://gdata.youtube.com/schemas/2007#insight.views"]'].attributes['href'] rescue nil)
         )
+      end
+    end
+
+    class BatchProfileFeedParser < ProfileFeedParser
+      def parse_content(content)
+        doc = REXML::Document.new(content.body).elements.to_a("*/entry").map do |entry|
+          username = entry.get_text('./batch:id').to_s
+          result = catch(:result) do
+            case entry.elements['./batch:status'].attribute('code').to_s.to_i
+            when 200...300 then parse_entry( entry )
+            else nil
+            end
+          end
+          { username => result }
+        end.reduce({},:merge)
       end
     end
     

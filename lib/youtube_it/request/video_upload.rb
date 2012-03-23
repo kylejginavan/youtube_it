@@ -222,11 +222,44 @@ class YouTubeIt
         return true
       end
 
-      def profile(user)
-        profile_url = "/feeds/api/users/%s?v=2" % (user ? user : "default")
-        response    = yt_session.get(profile_url)
+      def profile(user=nil)
+        response    = yt_session.get(profile_url(user))
 
         return YouTubeIt::Parser::ProfileFeedParser.new(response).parse
+      end
+
+      def profiles(usernames_to_fetch)
+        usernames_to_fetch.each_slice(50).map do |usernames|
+          post = REXML::Document.new <<-BATCH
+              <?xml version="1.0" encoding="UTF-8"?>
+              <feed xmlns='http://www.w3.org/2005/Atom'
+                    xmlns:media='http://search.yahoo.com/mrss/'
+                    xmlns:batch='http://schemas.google.com/gdata/batch'
+                    xmlns:yt='http://gdata.youtube.com/schemas/2007'>
+                <batch:operation type="query" />
+              </feed>
+            BATCH
+          usernames.each do |username|
+            entry_doc = REXML::Document.new <<-ENTRY
+              <entry xmlns:batch='http://schemas.google.com/gdata/batch'>
+                <id>#{profile_url(username)}</id>
+                <batch:id>#{username}</batch:id>
+              </entry>
+            ENTRY
+            post.elements['feed'].add_element entry_doc.root
+          end
+
+          post_body = ''
+          post.write( post_body, 2 )
+          post_body_io = StringIO.new(post_body)
+
+          response = yt_session.post('feeds/api/users/batch', post_body_io )
+          YouTubeIt::Parser::BatchProfileFeedParser.new(response).parse
+        end.reduce({},:merge)
+      end
+
+      def profile_url(user=nil)
+        "/feeds/api/users/%s?v=2" % (user || "default")
       end
       
       # Return's a user's activity feed.
