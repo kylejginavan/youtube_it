@@ -444,6 +444,12 @@ class YouTubeIt
           view_count, favorite_count = 0,0
         end
 
+        comment_count = ( entry.elements['./gd:comments/gd:feedLink[attribute::rel="http://gdata.youtube.com/schemas/2007#comments"]'].attributes['countHint'] rescue nil).to_i
+
+        access_control = entry.elements.to_a('yt:accessControl').map do |e|
+          { e.attributes['action'] => e.attributes['permission'] }
+        end.compact.reduce({},:merge)
+
         noembed     = entry.elements["yt:noembed"] ? true : false
         safe_search = entry.elements["media:rating"] ? true : false
 
@@ -483,6 +489,8 @@ class YouTubeIt
           :rating         => rating,
           :view_count     => view_count,
           :favorite_count => favorite_count,
+          :comment_count  => comment_count,
+          :access_control => access_control,
           :widescreen     => widescreen,
           :noembed        => noembed,
           :safe_search    => safe_search,

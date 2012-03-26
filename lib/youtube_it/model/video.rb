@@ -100,6 +100,9 @@ class YouTubeIt
       # *Array*:: An array of YouTubeIt::Model::Content objects describing the individual media content data available for this video.  Most, but not all, videos offer this.
       attr_reader :media_content
 
+      # *Hash*:: string-keyed, string-valued permissions e.g., {'comment'=>'allowed','videoRespond'=>'moderated'}
+      attr_reader :access_control
+
       # *Array*:: An array of YouTubeIt::Model::Thumbnail objects that contain information regarding the videos thumbnail images.
       attr_reader :thumbnails
 
@@ -114,6 +117,9 @@ class YouTubeIt
 
       # *Fixnum*:: Number of times that the video has been favorited
       attr_reader :favorite_count
+
+      # *Fixnum*:: Number of comments for this video
+      attr_reader :comment_count
       
       # *String*:: State of the video (processing, restricted, deleted, rejected and failed)
       attr_reader :state
