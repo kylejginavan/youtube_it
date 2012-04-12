@@ -121,6 +121,11 @@ class YouTubeIt
       # *String*:: URI for insight for this video, if present; nil otherwise
       attr_reader :insight_uri
 
+      # *Boolean*:: Whether or not a video is private. Non-standard name to avoid collision with Rubys own 'private' stuff.
+      attr_reader :perm_private
+ 
+      # *Hash*:: List of access controls
+      attr_reader :accessControls
 
       # Geodata
       attr_reader :position
