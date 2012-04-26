@@ -55,7 +55,7 @@ class YouTubeIt
         end
     end
 
-	class WatchLaterFeedParser < FeedParser #:nodoc:
+    class WatchLaterFeedParser < FeedParser #:nodoc:
 
       def parse_content(content)
         xml = REXML::Document.new(content.body)
@@ -64,7 +64,7 @@ class YouTubeIt
           :title         => entry.elements["title"].text,
           :summary       => (entry.elements["summary"] || entry.elements["media:group"].elements["media:description"]).text,
           :description   => (entry.elements["summary"] || entry.elements["media:group"].elements["media:description"]).text,
-#          :playlist_id   => entry.elements["id"].text[/playlist([^<]+)/, 1].sub(':',''),
+          :playlist_id   => nil,
           :published     => entry.elements["published"] ? entry.elements["published"].text : nil,
           :response_code => content.status,
           :xml           => content.body)
