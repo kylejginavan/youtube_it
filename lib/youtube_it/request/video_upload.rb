@@ -238,6 +238,12 @@ class YouTubeIt
         return YouTubeIt::Parser::ActivityParser.new(response).parse
       end
 
+      def watchlater(user)
+        watchlater_url = "/feeds/api/users/%s/watch_later?v=2" % (user ? user : "default")
+        response     = yt_session.get(watchlater_url)
+        return YouTubeIt::Parser::WatchLaterFeedParser.new(response).parse
+      end
+
       def playlist(playlist_id)
         playlist_url = "/feeds/api/playlists/%s?v=2" % playlist_id
         response     = yt_session.get(playlist_url)
