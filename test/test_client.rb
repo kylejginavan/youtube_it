@@ -520,6 +520,15 @@ class TestClient < Test::Unit::TestCase
         assert_instance_of String, cat.label
         assert_instance_of String, cat.term
       end
+
+      # validate comment & view counts
+      assert_instance_of Fixnum, video.comment_count
+      assert_instance_of Fixnum, video.view_count
+
+      # validate access_control
+      assert_instance_of Hash, video.access_control
+      assert_operator video.access_control, :has_key?, 'comment'
+      assert_operator ['allowed','moderated','denied'], :include?, video.access_control['comment']
     end
   
     def assert_valid_url (url)
