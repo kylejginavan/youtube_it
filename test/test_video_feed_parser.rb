@@ -61,6 +61,13 @@ class TestVideoFeedParser < Test::Unit::TestCase
       assert_equal Time.parse("Wed Dec 29 13:57:49 UTC 2010"), video.published_at
     end
   end
+  
+  def test_should_parse_uploaded_as_published_at_correctly
+    with_video_response("/files/youtube_video_response_without_published.xml") do |parser|
+      video = parser.parse
+      assert_equal Time.parse("Wed Dec 29 13:57:49 UTC 2010"), video.published_at
+    end
+  end
 
   def test_should_parse_updated_at_correctly
     with_video_response do |parser|
@@ -254,8 +261,8 @@ class TestVideoFeedParser < Test::Unit::TestCase
     end
   end
 
-  def with_video_response &block
-    File.open(File.dirname(__FILE__) + '/files/youtube_video_response.xml') do |xml|
+  def with_video_response(file = "/files/youtube_video_response.xml", &block)
+    File.open(File.dirname(__FILE__) + file) do |xml|
       parser = YouTubeIt::Parser::VideoFeedParser.new xml.read
       yield parser
     end
