@@ -344,7 +344,9 @@ class YouTubeIt
       protected
       def parse_entry(entry)
         video_id = entry.elements["id"].text
-        published_at  = entry.elements["published"] ? Time.parse(entry.elements["published"].text) : nil
+        published_at  = entry.elements["published"] ? Time.parse(entry.elements["published"].text) :
+          entry.elements["media:group"].elements["yt:uploaded"] ? Time.parse(entry.elements["media:group"].elements["yt:uploaded"].text) :
+          nil
         updated_at    = entry.elements["updated"] ? Time.parse(entry.elements["updated"].text) : nil
 
         # parse the category and keyword lists
