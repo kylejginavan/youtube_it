@@ -501,6 +501,13 @@ class YouTubeIt
 
         insight_uri = (entry.elements['link[attribute::rel="http://gdata.youtube.com/schemas/2007#insight.views"]'].attributes['href'] rescue nil)
 
+        perm_private = media_group.elements["yt:private"] ? true : false
+
+        accessControls = {}
+        accessControl = entry.elements.each("yt:accessControl") do |accessControl|
+          accessControls[accessControl.attributes["action"]] = accessControl.attributes["permission"]
+        end
+
         YouTubeIt::Model::Video.new(
           :video_id       => video_id,
           :published_at   => published_at,
@@ -528,7 +535,9 @@ class YouTubeIt
           :longitude      => longitude,
           :state          => state,
           :insight_uri    => insight_uri,
-          :unique_id      => ytid)
+          :unique_id      => ytid,
+          :perm_private   => perm_private,
+          :accessControls => accessControls)
       end
 
       def parse_media_content (media_content_element)
