@@ -383,6 +383,26 @@ class TestClient < Test::Unit::TestCase
     assert_equal profile.username, "tubeit20101"
     assert_not_nil profile.insight_uri, 'user insight_uri nil'
   end
+
+  def test_should_get_another_profile
+    profile = @client.profile('honda')
+    assert_equal profile.username, "honda"
+    assert_nil profile.insight_uri, 'DANGER: user insight_uri not nil for unauthed user; leaking private data?'
+  end
+
+  def test_should_get_multi_profiles
+    profiles = @client.profiles ['tubeit20101', 'honda','some_non-existing_username'] 
+    assert_operator profiles, :has_key?, 'tubeit20101'
+    assert_equal profiles['tubeit20101'].username, "tubeit20101"
+    assert_not_nil profiles['tubeit20101'].insight_uri, 'user insight_uri nil for authed user'
+    
+    assert_operator profiles, :has_key?, 'honda'
+    assert_equal profiles['honda'].username, "honda"
+    assert_nil profiles['honda'].insight_uri, 'DANGER: user insight_uri not nil for unauthed user; leaking private data?'
+
+    assert_operator profiles, :has_key?, 'some_non-existing_username'
+    assert_nil profiles['some_non-existing_username']
+  end
   
   def test_should_add_and_delete_video_to_favorite
     video_id ="j5raG94IGCc"
