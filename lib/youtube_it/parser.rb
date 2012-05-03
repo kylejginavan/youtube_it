@@ -60,10 +60,13 @@ class YouTubeIt
       def parse_content(content)
         xml = REXML::Document.new(content.body)
         entry = xml.elements["entry"] || xml.elements["feed"]
+
+        description = (entry.elements["summary"] || entry.elements["media:group"].elements["media:description"]).text rescue nil
+
         YouTubeIt::Model::Playlist.new(
-          :title         => entry.elements["title"].text,
-          :summary       => (entry.elements["summary"] || entry.elements["media:group"].elements["media:description"]).text,
-          :description   => (entry.elements["summary"] || entry.elements["media:group"].elements["media:description"]).text,
+          :title         => entry.elements["title"] && entry.elements["title"].text,
+          :summary       => description,
+          :description   => description,
           :playlist_id   => entry.elements["id"].text[/playlist([^<]+)/, 1].sub(':',''),
           :published     => entry.elements["published"] ? entry.elements["published"].text : nil,
           :response_code => content.status,
