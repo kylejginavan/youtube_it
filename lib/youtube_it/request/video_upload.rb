@@ -271,8 +271,8 @@ class YouTubeIt
         return YouTubeIt::Parser::ActivityParser.new(response).parse
       end
 
-      def playlist(playlist_id)
-        playlist_url = "/feeds/api/playlists/%s?v=2" % playlist_id
+      def playlist(playlist_id, order_by = :position)
+        playlist_url = "/feeds/api/playlists/%s?v=2&orderby=%s" % [playlist_id, order_by]
         response     = yt_session.get(playlist_url)
         
         return YouTubeIt::Parser::PlaylistFeedParser.new(response).parse
