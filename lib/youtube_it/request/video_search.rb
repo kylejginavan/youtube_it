@@ -18,6 +18,13 @@ class YouTubeIt
       attr_reader :author
       attr_reader :lang                            # lt
       attr_reader :restriction
+      attr_reader :duration
+      attr_reader :time
+      attr_reader :hd
+      attr_reader :caption
+      attr_reader :uploader
+      attr_reader :region
+      attr_reader :paid_content
       
       
       def initialize(params={})
@@ -26,7 +33,9 @@ class YouTubeIt
         @max_results, @order_by,
         @offset, @query,
         @response_format, @video_format,
-        @safe_search, @author, @lang = nil
+        @safe_search, @author, @lang,
+        @duration, @time, @hd, @caption,
+        @uploader, @region, @paid_content = nil
         @url = base_url
         @dev_key = params[:dev_key] if params[:dev_key]
 
@@ -65,7 +74,13 @@ class YouTubeIt
           'safeSearch' => @safe_search,
           'author' => @author,
           'restriction' => @restriction,
-          'lr' => @lang
+          'lr' => @lang,
+          'duration' => @duration,
+          'time' => @time,
+          'hd' => @hd,
+          'caption' => @caption,
+          'region' => @region,
+          'paid-content' => @paid_content
         }
       end
 
