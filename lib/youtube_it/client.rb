@@ -162,8 +162,8 @@ class YouTubeIt
       client.watchlater user
     end
 
-    def playlist(playlist_id)
-      client.playlist playlist_id
+    def playlist(playlist_id, order_by = :position)
+      client.playlist(playlist_id, order_by)
     end
 
     def playlists(user = nil)
