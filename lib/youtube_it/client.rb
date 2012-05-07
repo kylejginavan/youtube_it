@@ -158,6 +158,10 @@ class YouTubeIt
       client.get_activity(user, opts)
     end
 
+    def watchlater(user = nil)
+      client.watchlater user
+    end
+
     def playlist(playlist_id)
       client.playlist playlist_id
     end
