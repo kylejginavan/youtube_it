@@ -58,7 +58,7 @@ If your access token is still valid (be careful, access tokens may only be valid
 
   $ client.refresh_access_token!
 
-== Profiles
+== PROFILES
   you can use multiple profiles in the same account like that
 
   $ profiles = client.profiles(['username1','username2']) 
