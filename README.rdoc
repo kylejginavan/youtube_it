@@ -144,7 +144,7 @@ Add Favorite:
   $ client.add_favorite(video_id)
 
 Delete Favorite:
-  $ client.delete_favorite(video_id)
+  $ client.delete_favorite(favorite_entry_id)
 
 Like A Video:
   $ client.like_video(video_id)

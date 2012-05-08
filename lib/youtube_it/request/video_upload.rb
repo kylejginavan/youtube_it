@@ -208,16 +208,13 @@ class YouTubeIt
         favorite_body = video_xml_for(:favorite => video_id)
         favorite_url  = "/feeds/api/users/default/favorites"
         response      = yt_session.post(favorite_url, favorite_body)
-        
-        return {:code => response.status, :body => response.body}
+
+        return {:code => response.status, :body => response.body, :favorite_entry_id => get_entry_id(response.body)}
       end
 
       def delete_favorite(video_id)
-        favorite_header = {
-          "GData-Version"  => "1",
-        }
         favorite_url = "/feeds/api/users/default/favorites/%s" % video_id
-        response     = yt_session.delete(favorite_url, favorite_header)
+        response     = yt_session.delete(favorite_url)
         
         return true
       end
@@ -283,7 +280,7 @@ class YouTubeIt
         playlist_url  = "/feeds/api/users/default/watch_later"
         response      = yt_session.post(playlist_url, playlist_body)
         
-        return {:code => response.status, :body => response.body, :watchlater_entry_id => playlist_entry_id_from_playlist(response.body)}
+        return {:code => response.status, :body => response.body, :watchlater_entry_id => get_entry_id(response.body)}
       end
 
       def delete_video_from_watchlater(video_id)
@@ -320,7 +317,7 @@ class YouTubeIt
         playlist_url  = "/feeds/api/playlists/%s" % playlist_id
         response      = yt_session.post(playlist_url, playlist_body)
         
-        return {:code => response.status, :body => response.body, :playlist_entry_id => playlist_entry_id_from_playlist(response.body)}
+        return {:code => response.status, :body => response.body, :playlist_entry_id => get_entry_id(response.body)}
       end
 
       def update_playlist(playlist_id, options)
@@ -580,7 +577,7 @@ class YouTubeIt
         YouTubeIt::GreedyChainIO.new(post_body)
       end
 
-      def playlist_entry_id_from_playlist(string)
+      def get_entry_id(string)
         playlist_xml = REXML::Document.new(string)
         playlist_xml.elements.each("/entry") do |item|
           return item.elements["id"].text[/^.*:([^:]+)$/,1]

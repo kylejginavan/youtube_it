@@ -433,16 +433,17 @@ class TestClient < Test::Unit::TestCase
   end
   
   def test_should_add_and_delete_video_to_favorite
-    video_id ="j5raG94IGCc"
+    video_id ="fFAnoEYFUQw"
     begin
       result = @client.add_favorite(video_id)
     rescue
-      @client.delete_favorite(video_id)
+      @client.delete_favorite(result[:favorite_entry_id])
+      sleep 4
       result = @client.add_favorite(video_id)
     end
     assert_equal result[:code], 201
     sleep 4
-    assert @client.delete_favorite(video_id)
+    assert @client.delete_favorite(result[:favorite_entry_id])
   end
   
   def test_esc
@@ -493,7 +494,7 @@ class TestClient < Test::Unit::TestCase
     assert @client.delete_video_from_playlist(playlist.playlist_id, video_two[:playlist_entry_id])
     assert @client.delete_playlist(playlist.playlist_id)
   end
-
+  
   def test_should_add_and_delete_video_from_playlist
     video = @client.add_video_to_watchlater("fFAnoEYFUQw")
     playlist = @client.watchlater
