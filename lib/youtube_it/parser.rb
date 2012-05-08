@@ -501,11 +501,6 @@ class YouTubeIt
 
         perm_private = media_group.elements["yt:private"] ? true : false
 
-        accessControls = {}
-        accessControl = entry.elements.each("yt:accessControl") do |accessControl|
-          accessControls[accessControl.attributes["action"]] = accessControl.attributes["permission"]
-        end
-
         YouTubeIt::Model::Video.new(
           :video_id       => video_id,
           :published_at   => published_at,
@@ -534,8 +529,7 @@ class YouTubeIt
           :state          => state,
           :insight_uri    => insight_uri,
           :unique_id      => ytid,
-          :perm_private   => perm_private,
-          :accessControls => accessControls)
+          :perm_private   => perm_private)
       end
 
       def parse_media_content (media_content_element)

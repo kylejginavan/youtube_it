@@ -504,6 +504,13 @@ class TestClient < Test::Unit::TestCase
     assert playlist.videos.empty?
   end
 
+  def test_should_upload_private_video
+    video  = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge!(:private => "true"))
+    assert_valid_video video
+    assert_equal video.perm_private, true
+    assert_equal video.access_control, {"comment"=>"allowed", "commentVote"=>"allowed", "videoRespond"=>"moderated", "rate"=>"allowed", "embed"=>"allowed", "list"=>"allowed", "autoPlay"=>"allowed", "syndicate"=>"allowed"}
+    @client.video_delete(video.unique_id)
+  end
   
   private
   

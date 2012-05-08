@@ -130,9 +130,6 @@ class YouTubeIt
       # *Boolean*:: Whether or not a video is private. Non-standard name to avoid collision with Rubys own 'private' stuff.
       attr_reader :perm_private
  
-      # *Hash*:: List of access controls
-      attr_reader :accessControls
-
       # Geodata
       attr_reader :position
       attr_reader :latitude

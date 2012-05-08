@@ -578,8 +578,8 @@ class YouTubeIt
       end
 
       def get_entry_id(string)
-        playlist_xml = REXML::Document.new(string)
-        playlist_xml.elements.each("/entry") do |item|
+        entry_xml = REXML::Document.new(string)
+        entry_xml.elements.each("/entry") do |item|
           return item.elements["id"].text[/^.*:([^:]+)$/,1]
         end
       end
