@@ -283,6 +283,10 @@ class TestClient < Test::Unit::TestCase
     end
     video = @client.add_video_to_playlist(playlist.playlist_id,"CE62FSEoY28")
   
+    playlist = @client.playlist(playlist.playlist_id)
+
+    sleep(2)
+
     assert_equal "CE62FSEoY28", playlist.videos.last.unique_id
   
     assert @client.delete_video_from_playlist(playlist.playlist_id, video[:playlist_entry_id])
@@ -353,30 +357,47 @@ class TestClient < Test::Unit::TestCase
    r = @client.dislike_video("CE62FSEoY28")
    assert_equal r[:code], 201
   end
-  
-  
+
   def test_should_subscribe_to_channel
-   r = @client.subscribe_channel("TheWoWArthas")
-   sleep(4)
-   assert_equal r[:code], 201
-   assert_equal @client.subscriptions.first.title, "Videos published by: TheWoWArthas"
-   @client.unsubscribe_channel(@client.subscriptions.first.id)
+    begin
+      subscribe = @client.subscribe_channel("TheWoWArthas")
+    rescue
+      @client.unsubscribe_channel(@client.subscriptions.first.id)
+      sleep(6)
+      subscribe = @client.subscribe_channel("TheWoWArthas")
+    end
+    sleep(6)
+    assert_equal subscribe[:code], 201
+    assert_equal @client.subscriptions.first.title, "Videos published by: TheWoWArthas"
+    @client.unsubscribe_channel(@client.subscriptions.first.id)
   end
   
   def test_should_unsubscribe_to_channel
-   @client.subscribe_channel("TheWoWArthas")
-   sleep(4)
-   r = @client.unsubscribe_channel(@client.subscriptions.first.id)
-   assert_equal r[:code], 200
+    @client.subscribe_channel("TheWoWArthas") rescue ""
+    sleep(6)
+    begin
+      subscribe = @client.unsubscribe_channel(@client.subscriptions.first.id)
+    rescue
+      sleep(6)
+      subscribe = @client.unsubscribe_channel(@client.subscriptions.first.id)
+    end
+    assert_equal subscribe[:code], 200
   end
   
   def test_should_list_subscriptions
-   @client.subscribe_channel("TheWoWArthas")
-   sleep(4)
-   assert @client.subscriptions.count == 1
-   assert_equal @client.subscriptions.first.title, "Videos published by: TheWoWArthas"
-   @client.unsubscribe_channel(@client.subscriptions.first.id)
+    begin
+      subscribe = @client.subscribe_channel("TheWoWArthas")
+    rescue
+      @client.unsubscribe_channel(@client.subscriptions.first.id)
+      sleep(6)
+      subscribe = @client.subscribe_channel("TheWoWArthas")
+    end
+    sleep(6)
+    assert @client.subscriptions.count == 1
+    assert_equal @client.subscriptions.first.title, "Videos published by: TheWoWArthas"
+    @client.unsubscribe_channel(@client.subscriptions.first.id)
   end
+
      
   def test_should_get_profile
     profile = @client.profile
@@ -456,6 +477,24 @@ class TestClient < Test::Unit::TestCase
     @videos = @client.videos_by(:query => "porno", :safe_search => 'strict').videos
     assert_equal @videos.count, 0
   end
+
+  def test_playlists_order
+    begin
+      playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
+    rescue
+      @client.playlists.each{|p| @client.delete_playlist(p.playlist_id)}
+      playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
+    end
+    video_one = @client.add_video_to_playlist(playlist.playlist_id,"fFAnoEYFUQw")
+    video_two = @client.add_video_to_playlist(playlist.playlist_id,"QsbmrCtiEUU")
+    sleep(2)
+    assert_equal @client.playlist(playlist.playlist_id, 'title').videos.map(&:unique_id), ["fFAnoEYFUQw", "QsbmrCtiEUU"]
+    assert @client.delete_video_from_playlist(playlist.playlist_id, video_one[:playlist_entry_id])
+    assert @client.delete_video_from_playlist(playlist.playlist_id, video_two[:playlist_entry_id])
+    assert @client.delete_playlist(playlist.playlist_id)
+  end
+
+
   
   private
   

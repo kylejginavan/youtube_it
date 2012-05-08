@@ -84,11 +84,15 @@ Advanced Queries (with boolean operators OR (either), AND (include), NOT (exclud
   $ client.videos_by(:categories => { :either => [:news, :sports], :exclude => [:comedy] }, :tags => { :include => ['football'], :exclude => ['soccer'] })
 
 
-Queries for safeSearch
-  The safe_search parameter indicates whether the search results should include restricted content as well as standard content. 
-  The following values are valid for this parameter: none, moderate(default), strict
-  
-  $ client.videos_by(:query => "penguin", :safe-search => "strict")
+Custom Query Params
+ You can use custom query params like that:
+
+   $ client.videos_by(:query => "penguin", :safe_search => "strict")
+   $ client.videos_by(:query => "penguin", :duration => "long")
+   $ client.videos_by(:query => "penguin", :hd => "true")
+   $ client.videos_by(:query => "penguin", :region => "AR")
+
+ you can see more options here https://developers.google.com/youtube/2.0/reference#yt_format
 
 Fields Parameter(experimental features):
   Return videos more than 1000 views
@@ -161,7 +165,13 @@ List New Subscription Videos:
   $ client.new_subscription_videos(user) # default: current user
   
 List Playlists:
-  $ client.playlists(user) # default: current user
+  $ client.playlists(user, order_by) # default: current user, position
+
+  for example you can get the videos of your playlist ordered by title
+
+  $ client.playlists(user, "title")
+
+  you can see more about options for order_by here: https://developers.google.com/youtube/2.0/reference#orderbysp
 
 Select Playlist:
   $ client.playlist(playlist_id)

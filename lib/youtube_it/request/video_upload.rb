@@ -356,7 +356,7 @@ class YouTubeIt
       def unsubscribe_channel(subscription_id)
         unsubscribe_url = "/feeds/api/users/default/subscriptions/%s" % subscription_id
         response        = yt_session.delete(unsubscribe_url)
-           
+
         return {:code => response.status, :body => response.body}
       end
       

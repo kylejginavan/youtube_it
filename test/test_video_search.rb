@@ -1,7 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/helper')
 
 class TestVideoSearch < Test::Unit::TestCase
-
   def test_should_build_basic_query_url
     request = YouTubeIt::Request::VideoSearch.new(:query => "penguin")
     assert_equal "http://gdata.youtube.com/feeds/api/videos?q=penguin&v=2", request.url
@@ -143,5 +142,36 @@ class TestVideoSearch < Test::Unit::TestCase
   def test_should_build_basic_query_url_with_restriction
     request = YouTubeIt::Request::VideoSearch.new(:query => "penguin", :restriction => "DE")
     assert_equal "http://gdata.youtube.com/feeds/api/videos?q=penguin&restriction=DE&v=2", request.url
+  end
+
+  # -- Params ---------------------------------------------------------------------------------
+  def test_should_build_basic_query_url_with_duration
+    request = YouTubeIt::Request::VideoSearch.new(:query => "penguin", :duration => "short")
+    assert_equal "http://gdata.youtube.com/feeds/api/videos?duration=short&q=penguin&v=2", request.url
+  end
+
+  def test_should_build_basic_query_url_with_time
+    request = YouTubeIt::Request::VideoSearch.new(:query => "penguin", :time => "today")
+    assert_equal "http://gdata.youtube.com/feeds/api/videos?q=penguin&time=today&v=2", request.url
+  end
+
+  def test_should_build_basic_query_url_for_return_videos_with_caption
+    request = YouTubeIt::Request::VideoSearch.new(:query => "penguin", :caption => "true")
+    assert_equal "http://gdata.youtube.com/feeds/api/videos?caption=true&q=penguin&v=2", request.url
+  end
+
+  def test_should_build_basic_query_url_for_return_hd_videos
+    request = YouTubeIt::Request::VideoSearch.new(:query => "penguin", :hd => "true")
+    assert_equal "http://gdata.youtube.com/feeds/api/videos?hd=true&q=penguin&v=2", request.url
+  end
+
+  def test_should_build_basic_query_url_for_return_videos_partner
+    request = YouTubeIt::Request::VideoSearch.new(:query => "penguin", :uploader => "partner")
+    assert_equal "http://gdata.youtube.com/feeds/api/videos?q=penguin&uploader=partner&v=2", request.url
+  end
+
+  def test_should_build_basic_query_url_for_return_videos_by_region
+    request = YouTubeIt::Request::VideoSearch.new(:query => "penguin", :region => "AR")
+    assert_equal "http://gdata.youtube.com/feeds/api/videos?q=penguin&region=AR&v=2", request.url
   end
 end

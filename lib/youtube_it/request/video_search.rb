@@ -80,7 +80,8 @@ class YouTubeIt
           'hd' => @hd,
           'caption' => @caption,
           'region' => @region,
-          'paid-content' => @paid_content
+          'paid-content' => @paid_content,
+          'uploader' => @uploader
         }
       end
 
