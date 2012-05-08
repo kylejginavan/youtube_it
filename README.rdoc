@@ -192,6 +192,17 @@ Add Video To Playlist:
 Remove Video From Playlist:
   $ client.remove_video_from_playlist(playlist_id, playlist_entry_id)
 
+Select All Videos From your Watch Later Playlist:
+  $ watcher_later = client.watcherlater(user) #default: current user
+  $ watcher_later.videos
+
+Add Video To Watcher Later Playlist:
+  $ client.add_video_to_watchlater(video_id)
+
+Remove Video From Watch Later Playlist:
+  $ client.remove_video_from_watchlater(watchlater_entry_id)
+
+
 List Related Videos
   $ video = client.video_by("https://www.youtube.com/watch?v=QsbmrCtiEUU&feature=player_embedded")
   $ video.related.videos

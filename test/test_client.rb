@@ -17,15 +17,15 @@ class TestClient < Test::Unit::TestCase
 
   def setup
     #clientlogin
-      #@client = YouTubeIt::Client.new(:username => ACCOUNT[:user], :password => ACCOUNT[:passwd] , :dev_key => ACCOUNT[:dev_key])
+      @client = YouTubeIt::Client.new(:username => ACCOUNT[:user], :password => ACCOUNT[:passwd] , :dev_key => ACCOUNT[:dev_key])
     #authsub
       #@client  = YouTubeIt::AuthSubClient.new(:token => "1/vqYlJytmn4eWRjJnORHT94mENNfZzZsLutMOrvvygB4" , :dev_key => ACCOUNT[:dev_key])
     #oauth
       # @client = YouTubeIt::OAuthClient.new(:consumer_key => KEY, :consumer_secret => SECRET, :dev_key => "AI39si7WuZZxAkYebKSyrlJR7hIFktt6OoPycEOeOT_yHkZgr6QsGbZgmhKvbS4bsSAv0utgrfhNfXQBITu1wX_z3VsZE02giQ")
       # @client.authorize_from_access("1/cLF_PRBYpyEY5KBhlsECv-g_wfC2MjHluPMi1c12ChI","DCyZxb1hHPd5jQCZUUZ6WHcz")
     #oauth2
-      @client = YouTubeIt::OAuth2Client.new(:client_access_token => "ya29.AHES6ZScTtSAYx3xMRpF0DdKO6sJU2tnJBYa58P-FG-IhIpjloowYw", :client_id => "68330730158.apps.googleusercontent.com", :client_secret => "Npj4rmtme7q6INPPQjpQFuCZ", :client_refresh_token => "1/HzXbuoUO9iK-9kwJc7pAk54nxOCQiuCWre95YgLi1Dc", :dev_key => ACCOUNT[:dev_key])
-      @client.refresh_access_token!    
+      # @client = YouTubeIt::OAuth2Client.new(:client_access_token => "ya29.AHES6ZScTtSAYx3xMRpF0DdKO6sJU2tnJBYa58P-FG-IhIpjloowYw", :client_id => "68330730158.apps.googleusercontent.com", :client_secret => "Npj4rmtme7q6INPPQjpQFuCZ", :client_refresh_token => "1/HzXbuoUO9iK-9kwJc7pAk54nxOCQiuCWre95YgLi1Dc", :dev_key => ACCOUNT[:dev_key])
+      # @client.refresh_access_token!    
   end
 
   def test_should_respond_to_a_basic_query
@@ -284,9 +284,9 @@ class TestClient < Test::Unit::TestCase
     video = @client.add_video_to_playlist(playlist.playlist_id,"CE62FSEoY28")
   
     playlist = @client.playlist(playlist.playlist_id)
-
+  
     sleep(2)
-
+  
     assert_equal "CE62FSEoY28", playlist.videos.last.unique_id
   
     assert @client.delete_video_from_playlist(playlist.playlist_id, video[:playlist_entry_id])
@@ -357,7 +357,7 @@ class TestClient < Test::Unit::TestCase
    r = @client.dislike_video("CE62FSEoY28")
    assert_equal r[:code], 201
   end
-
+  
   def test_should_subscribe_to_channel
     begin
       subscribe = @client.subscribe_channel("TheWoWArthas")
@@ -397,7 +397,7 @@ class TestClient < Test::Unit::TestCase
     assert_equal @client.subscriptions.first.title, "Videos published by: TheWoWArthas"
     @client.unsubscribe_channel(@client.subscriptions.first.id)
   end
-
+  
      
   def test_should_get_profile
     profile = @client.profile
@@ -411,13 +411,13 @@ class TestClient < Test::Unit::TestCase
     assert_nothing_raised{ profile.first_name }
     assert_not_nil profile.upload_count
   end
-
+  
   def test_should_get_another_profile
     profile = @client.profile('honda')
     assert_equal profile.username, "honda"
     assert_nil profile.insight_uri, 'DANGER: user insight_uri not nil for unauthed user; leaking private data?'
   end
-
+  
   def test_should_get_multi_profiles
     profiles = @client.profiles ['tubeit20101', 'honda','some_non-existing_username'] 
     assert_operator profiles, :has_key?, 'tubeit20101'
@@ -427,7 +427,7 @@ class TestClient < Test::Unit::TestCase
     assert_operator profiles, :has_key?, 'honda'
     assert_equal profiles['honda'].username, "honda"
     assert_nil profiles['honda'].insight_uri, 'DANGER: user insight_uri not nil for unauthed user; leaking private data?'
-
+  
     assert_operator profiles, :has_key?, 'some_non-existing_username'
     assert_nil profiles['some_non-existing_username']
   end
@@ -477,7 +477,7 @@ class TestClient < Test::Unit::TestCase
     @videos = @client.videos_by(:query => "porno", :safe_search => 'strict').videos
     assert_equal @videos.count, 0
   end
-
+  
   def test_playlists_order
     begin
       playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
@@ -494,6 +494,14 @@ class TestClient < Test::Unit::TestCase
     assert @client.delete_playlist(playlist.playlist_id)
   end
 
+  def test_should_add_and_delete_video_from_playlist
+    video = @client.add_video_to_watchlater("fFAnoEYFUQw")
+    playlist = @client.watchlater
+    assert_equal playlist.videos.first.unique_id, "fFAnoEYFUQw"
+    @client.delete_video_from_watchlater(video[:watchlater_entry_id])
+    playlist = @client.watchlater
+    assert playlist.videos.empty?
+  end
 
   
   private

@@ -275,8 +275,23 @@ class YouTubeIt
         watchlater_url = "/feeds/api/users/%s/watch_later?v=2" % (user ? user : "default")
         response = yt_session.get(watchlater_url)
         
-        return YouTubeIt::Parser::WatchLaterFeedParser.new(response).parse
+        return YouTubeIt::Parser::PlaylistFeedParser.new(response).parse
       end
+      
+      def add_video_to_watchlater(video_id)
+        playlist_body = video_xml_for(:playlist => video_id)
+        playlist_url  = "/feeds/api/users/default/watch_later"
+        response      = yt_session.post(playlist_url, playlist_body)
+        
+        return {:code => response.status, :body => response.body, :watchlater_entry_id => playlist_entry_id_from_playlist(response.body)}
+      end
+
+      def delete_video_from_watchlater(video_id)
+        playlist_url = "/feeds/api/users/default/watch_later/%s" % video_id
+        response     = yt_session.delete(playlist_url)
+
+        return true
+      end      
 
       def playlist(playlist_id, order_by = :position)
         playlist_url = "/feeds/api/playlists/%s?v=2&orderby=%s" % [playlist_id, order_by]

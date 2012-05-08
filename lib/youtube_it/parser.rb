@@ -55,23 +55,6 @@ class YouTubeIt
         end
     end
 
-    class WatchLaterFeedParser < FeedParser #:nodoc:
-
-      def parse_content(content)
-        xml = REXML::Document.new(content.body)
-        entry = xml.elements["entry"] || xml.elements["feed"]
-        YouTubeIt::Model::Playlist.new(
-          :title         => entry.elements["title"].text,
-          :summary       => (entry.elements["summary"] || entry.elements["media:group"].elements["media:description"]).text,
-          :description   => (entry.elements["summary"] || entry.elements["media:group"].elements["media:description"]).text,
-          :playlist_id   => nil,
-          :published     => entry.elements["published"] ? entry.elements["published"].text : nil,
-          :response_code => content.status,
-          :xml           => content.body)
-      end
-    end
-
-
     class PlaylistFeedParser < FeedParser #:nodoc:
 
       def parse_content(content)
@@ -82,7 +65,7 @@ class YouTubeIt
           :title         => entry.elements["title"] && entry.elements["title"].text,
           :summary       => ((entry.elements["summary"] || entry.elements["media:group"].elements["media:description"]).text rescue nil),
           :description   => ((entry.elements["summary"] || entry.elements["media:group"].elements["media:description"]).text rescue nil),
-          :playlist_id   => entry.elements["id"].text[/playlist([^<]+)/, 1].sub(':',''),
+          :playlist_id   => (entry.elements["id"].text[/playlist([^<]+)/, 1].sub(':','') rescue nil),
           :published     => entry.elements["published"] ? entry.elements["published"].text : nil,
           :response_code => content.status,
           :xml           => content.body)

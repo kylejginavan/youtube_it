@@ -159,7 +159,15 @@ class YouTubeIt
     end
 
     def watchlater(user = nil)
-      client.watchlater user
+      client.watchlater(user)
+    end
+    
+    def add_video_to_watchlater(video_id)
+      client.add_video_to_watchlater(video_id)
+    end
+
+    def delete_video_from_watchlater(video_id)
+      client.delete_video_from_watchlater(video_id)
     end
 
     def playlist(playlist_id, order_by = :position)
