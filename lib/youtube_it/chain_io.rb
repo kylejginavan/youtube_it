@@ -63,7 +63,7 @@ class YouTubeIt::GreedyChainIO < DelegateClass(YouTubeIt::ChainIO)
     __setobj__(YouTubeIt::ChainIO.new(with_ios))
   end
   
-  def read(any_buffer_size)
+  def read(any_buffer_size = nil)
     __getobj__.read(BIG_CHUNK)
   end
 
