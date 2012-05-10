@@ -1,3 +1,5 @@
+== BUILD STATUS {<img src="https://secure.travis-ci.org/kylejginavan/youtube_it.png"/>}[http://travis-ci.org/kylejginavan/youtube_it]
+
 == DONATION
 
   YOUTUBE_IT is developed by many contributors who are passioned about opensource projects 
