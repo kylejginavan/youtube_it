@@ -1,4 +1,4 @@
-== YOUTUBE_IT {<img src="https://secure.travis-ci.org/kylejginavan/youtube_it.png"/>}[http://travis-ci.org/kylejginavan/youtube_it]
+== YOUTUBE_IT
 
 == DONATION
 
