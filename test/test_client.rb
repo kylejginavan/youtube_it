@@ -280,12 +280,13 @@ class TestClient < Test::Unit::TestCase
     rescue
       @client.playlists.each{|p| @client.delete_playlist(p.playlist_id)}
       playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
+      sleep(4)
     end
     video = @client.add_video_to_playlist(playlist.playlist_id,"CE62FSEoY28")
   
     playlist = @client.playlist(playlist.playlist_id)
   
-    sleep(2)
+    sleep(4)
   
     assert_equal "CE62FSEoY28", playlist.videos.last.unique_id
   
