@@ -511,8 +511,7 @@ class TestClient < Test::Unit::TestCase
     assert_equal video.access_control, {"comment"=>"allowed", "commentVote"=>"allowed", "videoRespond"=>"moderated", "rate"=>"allowed", "embed"=>"allowed", "list"=>"allowed", "autoPlay"=>"allowed", "syndicate"=>"allowed"}
     @client.video_delete(video.unique_id)
   end
-  
-    
+
   private
   
     def assert_valid_video (video)

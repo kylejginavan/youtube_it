@@ -247,7 +247,11 @@ List Response Videos
 
   client.video_upload(File.open("test.mov"), :title => "test",:description => 'some description', :category => 'People',:keywords => %w[cool blah test], :comment => "denied")
 
-
+== User Activity
+ You can get user activity with the followings params:
+ 
+ $ client.activity(user) #default current user
+ 
 == Video Upload From Browser:
 
 When uploading a video from your browser you need make a form upload with the followings params:
