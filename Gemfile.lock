@@ -26,6 +26,7 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.4)
     rack (1.4.1)
+    rake (0.9.2.2)
     simple_oauth (0.1.7)
     webmock (1.7.10)
       addressable (~> 2.2, > 2.2.5)
@@ -35,5 +36,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  rake
   webmock (~> 1.7.10)
   youtube_it!

@@ -233,16 +233,16 @@ class TestClient < Test::Unit::TestCase
   def test_should_denied_comments
     video     = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:comment => "denied"))
     assert_valid_video video
-    doc = open("http://www.youtube.com/watch?v=#{video.unique_id}").read
-    assert "Adding comments has been disabled for this video.", doc.match("Adding comments has been disabled for this video.")[0]
+    doc = open("http://www.youtube.com/watch?hl=en&v=#{video.unique_id}").read
+    assert !doc.match("<div id=\"comments-view\" class=\"comments-disabled\">").nil?, 'comments are not disabled'
     @client.video_delete(video.unique_id)
   end
   
   def test_should_denied_rate
     video  = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:rate => "denied"))
     assert_valid_video video
-    doc = open("http://www.youtube.com/watch?v=#{video.unique_id}").read
-    assert "Ratings have been disabled for this video.", doc.match("Ratings have been disabled for this video.")[0]
+    doc = open("http://www.youtube.com/watch?hl=en&v=#{video.unique_id}").read
+    assert !doc.match("Ratings have been disabled for this video.").nil?, 'rating is not disabled'
     @client.video_delete(video.unique_id)
   end
   
