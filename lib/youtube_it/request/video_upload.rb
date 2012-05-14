@@ -189,11 +189,13 @@ class YouTubeIt
                 :token  => response.body[/<token>(.+)<\/token>/, 1]}
       end
 
-      def add_comment(video_id, comment)
-        comment_body = video_xml_for(:comment => comment)
+      def add_comment(video_id, comment, opts = {})
+        reply_to = opts.delete :reply_to
+        reply_to = reply_to.unique_id if reply_to.is_a? YouTubeIt::Model::Comment
+        comment_body = comment_xml_for(:comment => comment, :reply_to => reply_to_url(video_id, reply_to))
         comment_url  = "/feeds/api/videos/%s/comments" % video_id
         response     = yt_session.post(comment_url, comment_body)
-        
+
         return {:code => response.status, :body => response.body}
       end
 
@@ -532,7 +534,6 @@ class YouTubeIt
         b = Builder::XmlMarkup.new
         b.instruct!
         b.entry(:xmlns => "http://www.w3.org/2005/Atom", 'xmlns:yt' => "http://gdata.youtube.com/schemas/2007") do | m |
-          m.content(data[:comment]) if data[:comment]
           m.id(data[:favorite] || data[:playlist] || data[:response]) if data[:favorite] || data[:playlist] || data[:response]
           m.tag!("yt:rating", :value => data[:rating]) if data[:rating]
           if(data[:subscribe])
@@ -541,7 +542,20 @@ class YouTubeIt
           end
         end.to_s
       end
-      
+
+      def reply_to_url video_id, reply_to
+        'https://gdata.youtube.com/feeds/api/videos/%s/comments/%s' % [video_id, reply_to] if reply_to
+      end
+
+      def comment_xml_for(data)
+        b = Builder::XmlMarkup.new
+        b.instruct!
+        b.entry(:xmlns => "http://www.w3.org/2005/Atom", 'xmlns:yt' => "http://gdata.youtube.com/schemas/2007") do | m |
+          m.link(:rel => 'http://gdata.youtube.com/schemas/2007#in-reply-to', :type => 'application/atom+xml', :href => data[:reply_to]) if data[:reply_to]
+          m.content(data[:comment]) if data[:comment]
+        end.to_s
+      end
+
       def message_xml_for(data)
         b = Builder::XmlMarkup.new
         b.instruct!

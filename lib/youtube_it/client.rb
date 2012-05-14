@@ -122,8 +122,8 @@ class YouTubeIt
       client.get_upload_token(options, nexturl)
     end
 
-    def add_comment(video_id, comment)
-      client.add_comment(video_id, comment)
+    def add_comment(video_id, comment, opts = {})
+      client.add_comment(video_id, comment, opts)
     end
 
     # opts is converted to get params and appended to comments gdata api url

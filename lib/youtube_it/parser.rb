@@ -23,6 +23,10 @@ class YouTubeIt
         end
         videos
       end
+
+      def remove_bom str
+        str.gsub "\357\273\277", ''
+      end
     end
 
     class CommentsFeedParser < FeedParser #:nodoc:
@@ -46,12 +50,19 @@ class YouTubeIt
           )
           YouTubeIt::Model::Comment.new(
             :author    => author,
-            :content   => entry.elements["content"].text,
+            :content   => remove_bom(entry.elements["content"].text),
             :published => entry.elements["published"].text,
-            :title     => entry.elements["title"].text,
+            :title     => remove_bom(entry.elements["title"].text),
             :updated   => entry.elements["updated "].text,
-            :url       => entry.elements["id"].text
+            :url       => entry.elements["id"].text,
+            :reply_to  => parse_reply(entry)
           )
+        end
+
+        def parse_reply(entry)
+          if link = entry.elements["link[@rel='http://gdata.youtube.com/schemas/2007#in-reply-to']"]
+            link.attributes["href"].split('/').last
+          end
         end
     end
 

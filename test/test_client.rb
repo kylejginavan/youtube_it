@@ -213,6 +213,7 @@ class TestClient < Test::Unit::TestCase
   def test_should_upload_a_video
     video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
     assert_valid_video video
+  ensure
     @client.video_delete(video.unique_id)
   end
   
@@ -221,12 +222,14 @@ class TestClient < Test::Unit::TestCase
     video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
     updated_video  = @client.video_update(video.unique_id, OPTIONS)
     assert updated_video.title == "title changed"
+  ensure
     @client.video_delete(video.unique_id)
   end
   
   def test_should_delete_video
     video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
     assert_valid_video video
+  ensure
     assert @client.video_delete(video.unique_id)
   end
   
@@ -235,6 +238,7 @@ class TestClient < Test::Unit::TestCase
     assert_valid_video video
     doc = open("http://www.youtube.com/watch?hl=en&v=#{video.unique_id}").read
     assert !doc.match("<div id=\"comments-view\" class=\"comments-disabled\">").nil?, 'comments are not disabled'
+  ensure
     @client.video_delete(video.unique_id)
   end
   
@@ -243,12 +247,14 @@ class TestClient < Test::Unit::TestCase
     assert_valid_video video
     doc = open("http://www.youtube.com/watch?hl=en&v=#{video.unique_id}").read
     assert !doc.match("Ratings have been disabled for this video.").nil?, 'rating is not disabled'
+  ensure
     @client.video_delete(video.unique_id)
   end
   
   def test_should_denied_embed
     video  = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:embed => "denied"))
     assert    video.noembed
+  ensure
     @client.video_delete(video.unique_id)
   end
     
@@ -258,6 +264,19 @@ class TestClient < Test::Unit::TestCase
     @client.add_comment(video.unique_id, "test comment")
     comment = @client.comments(video.unique_id).first.content
     assert comment, "test comment"
+  ensure
+    @client.video_delete(video.unique_id)
+  end
+
+  def test_should_add_reply_comment
+    video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
+    @client.add_comment(video.unique_id, "test comment")
+    comment = @client.comments(video.unique_id).first
+    @client.add_comment(video.unique_id, "reply comment", :reply_to => comment)
+    sleep 0.5
+    comment = @client.comments(video.unique_id).find {|c| puts c.content; c.content =~ /reply/}
+    assert_equal "reply comment", comment.content
+  ensure
     @client.video_delete(video.unique_id)
   end
        
@@ -344,6 +363,7 @@ class TestClient < Test::Unit::TestCase
    assert_valid_video video
    result = @client.my_video(video.unique_id)
    assert_equal result.unique_id, video.unique_id
+  ensure
    @client.video_delete(video.unique_id)
   end
   
@@ -510,6 +530,7 @@ class TestClient < Test::Unit::TestCase
     assert_valid_video video
     assert_equal video.perm_private, true
     assert_equal video.access_control, {"comment"=>"allowed", "commentVote"=>"allowed", "videoRespond"=>"moderated", "rate"=>"allowed", "embed"=>"allowed", "list"=>"allowed", "autoPlay"=>"allowed", "syndicate"=>"allowed"}
+  ensure
     @client.video_delete(video.unique_id)
   end
 
