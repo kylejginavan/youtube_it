@@ -210,25 +210,11 @@ class TestClient < Test::Unit::TestCase
     end
   end
   
-  def test_should_upload_a_video
+  def test_should_upload_and_update_a_video
     video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
     assert_valid_video video
-  ensure
-    @client.video_delete(video.unique_id)
-  end
-  
-  def test_should_update_a_video
-    OPTIONS[:title] = "title changed"
-    video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
-    updated_video  = @client.video_update(video.unique_id, OPTIONS)
-    assert updated_video.title == "title changed"
-  ensure
-    @client.video_delete(video.unique_id)
-  end
-  
-  def test_should_delete_video
-    video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
-    assert_valid_video video
+    updated_video  = @client.video_update(video.unique_id, OPTIONS.merge(:title => "title changed"))
+    assert_equal "title changed", updated_video.title
   ensure
     assert @client.video_delete(video.unique_id)
   end
@@ -253,26 +239,17 @@ class TestClient < Test::Unit::TestCase
   
   def test_should_denied_embed
     video  = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:embed => "denied"))
-    assert    video.noembed
-  ensure
-    @client.video_delete(video.unique_id)
-  end
-    
-  
-  def test_should_add_new_comment
-    video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
-    @client.add_comment(video.unique_id, "test comment")
-    comment = @client.comments(video.unique_id).first.content
-    assert comment, "test comment"
+    assert video.noembed
   ensure
     @client.video_delete(video.unique_id)
   end
 
-  def test_should_add_reply_comment
+  def test_should_add_comment_and_reply
     video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
     @client.add_comment(video.unique_id, "test comment")
     sleep 2
     comment1 = @client.comments(video.unique_id).first
+    assert_equal "test comment", comment1.content
     assert_nil comment1.reply_to
     @client.add_comment(video.unique_id, "reply comment", :reply_to => comment1)
     sleep 2
@@ -282,14 +259,10 @@ class TestClient < Test::Unit::TestCase
   ensure
     @client.video_delete(video.unique_id)
   end
-       
+
   def test_should_add_and_delete_video_from_playlist
-    begin
-      playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
-    rescue
-      @client.playlists.each{|p| @client.delete_playlist(p.playlist_id)}
-      playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
-    end
+    @client.playlists.each{|p| @client.delete_playlist(p.playlist_id)}
+    playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
     video = @client.add_video_to_playlist(playlist.playlist_id,"CE62FSEoY28")
     assert_equal video[:code].to_i, 201
     assert @client.delete_video_from_playlist(playlist.playlist_id, video[:playlist_entry_id])
@@ -305,13 +278,9 @@ class TestClient < Test::Unit::TestCase
       sleep(4)
     end
     video = @client.add_video_to_playlist(playlist.playlist_id,"CE62FSEoY28")
-  
     playlist = @client.playlist(playlist.playlist_id)
-  
     sleep(4)
-  
     assert_equal "CE62FSEoY28", playlist.videos.last.unique_id
-  
     assert @client.delete_video_from_playlist(playlist.playlist_id, video[:playlist_entry_id])
     assert @client.delete_playlist(playlist.playlist_id)
   end
@@ -354,8 +323,9 @@ class TestClient < Test::Unit::TestCase
   def test_should_get_my_videos
    video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
    assert_valid_video video
+   sleep 2
    result = @client.my_videos
-   assert_equal result.videos.first.unique_id, video.unique_id
+   assert_equal video.unique_id, result.videos.first.unique_id
    assert_not_nil result.videos.first.insight_uri, 'insight data not present'
   ensure
    @client.video_delete(video.unique_id)
@@ -364,6 +334,7 @@ class TestClient < Test::Unit::TestCase
   def test_should_get_my_video
    video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
    assert_valid_video video
+   sleep 2
    result = @client.my_video(video.unique_id)
    assert_equal result.unique_id, video.unique_id
   ensure
