@@ -61,7 +61,7 @@ class YouTubeIt
 
         def parse_reply(entry)
           if link = entry.elements["link[@rel='http://gdata.youtube.com/schemas/2007#in-reply-to']"]
-            link.attributes["href"].split('/').last
+            link.attributes["href"].split('/').last.gsub(/\?client.*/, '')
           end
         end
     end

@@ -271,11 +271,14 @@ class TestClient < Test::Unit::TestCase
   def test_should_add_reply_comment
     video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
     @client.add_comment(video.unique_id, "test comment")
-    comment = @client.comments(video.unique_id).first
-    @client.add_comment(video.unique_id, "reply comment", :reply_to => comment)
-    sleep 0.5
-    comment = @client.comments(video.unique_id).find {|c| puts c.content; c.content =~ /reply/}
-    assert_equal "reply comment", comment.content
+    sleep 2
+    comment1 = @client.comments(video.unique_id).first
+    assert_nil comment1.reply_to
+    @client.add_comment(video.unique_id, "reply comment", :reply_to => comment1)
+    sleep 2
+    comment2 = @client.comments(video.unique_id).find {|c| c.content =~ /reply/}
+    assert_equal "reply comment", comment2.content
+    assert_equal comment1.unique_id, comment2.reply_to
   ensure
     @client.video_delete(video.unique_id)
   end

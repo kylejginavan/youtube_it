@@ -149,6 +149,9 @@ List Comments:
 Add A Comment:
   $ client.add_comment(video_id, "test comment!")
 
+Add A Reply Comment:
+  $ client.add_comment(video_id, "test reply!", :reply_to => another_comment)
+
 List Favorites:
   $ client.favorites(user) # default: current user
 
