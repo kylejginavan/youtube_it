@@ -270,16 +270,11 @@ class TestClient < Test::Unit::TestCase
   end
   
   def test_should_return_unique_id_from_playlist
-    begin
-      playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
-    rescue
-      @client.playlists.each{|p| @client.delete_playlist(p.playlist_id)}
-      playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
-      sleep(4)
-    end
+    @client.playlists.each{|p| @client.delete_playlist(p.playlist_id)}
+    playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
     video = @client.add_video_to_playlist(playlist.playlist_id,"CE62FSEoY28")
+    sleep 2
     playlist = @client.playlist(playlist.playlist_id)
-    sleep(4)
     assert_equal "CE62FSEoY28", playlist.videos.last.unique_id
     assert @client.delete_video_from_playlist(playlist.playlist_id, video[:playlist_entry_id])
     assert @client.delete_playlist(playlist.playlist_id)
@@ -288,17 +283,14 @@ class TestClient < Test::Unit::TestCase
   def test_should_add_and_delete_new_playlist
     result = @client.add_playlist(:title => "youtube_it test4!", :description => "test playlist")
     assert result.title, "youtube_it test!"
-    sleep 4
+    sleep 2
     assert @client.delete_playlist(result.playlist_id)
   end
   
   def test_should_update_playlist
-    begin
-      playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
-    rescue
-      @client.playlists.each{|p| @client.delete_playlist(p.playlist_id)}
-      playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
-    end
+    @client.playlists.each{|p| @client.delete_playlist(p.playlist_id)}
+    playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
+    sleep 2
     playlist_updated = @client.update_playlist(playlist.playlist_id, :title => "title changed")
     assert_equal playlist_updated.title, "title changed"
     assert @client.delete_playlist(playlist.playlist_id)
@@ -308,92 +300,58 @@ class TestClient < Test::Unit::TestCase
     result = @client.playlists('chebyte')
     assert_equal "rock", result.last.title
   end
-    
+
   def test_should_determine_if_widescreen_video_is_widescreen
-   widescreen_id = 'QqQVll-MP3I'
-  
-   video = @client.video_by(widescreen_id)
-   assert video.widescreen?
+    widescreen_id = 'QqQVll-MP3I'
+
+    video = @client.video_by(widescreen_id)
+    assert video.widescreen?
   end
   
   def test_get_current_user
-   assert_equal 'tubeit20101', @client.current_user
+    assert_equal 'tubeit20101', @client.current_user
   end
   
   def test_should_get_my_videos
-   video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
-   assert_valid_video video
-   sleep 2
-   result = @client.my_videos
-   assert_equal video.unique_id, result.videos.first.unique_id
-   assert_not_nil result.videos.first.insight_uri, 'insight data not present'
+    video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
+    assert_valid_video video
+    sleep 2
+    result = @client.my_videos
+    assert_equal video.unique_id, result.videos.first.unique_id
+    assert_not_nil result.videos.first.insight_uri, 'insight data not present'
+    result = @client.my_video(video.unique_id)
+    assert_equal video.unique_id, result.unique_id
   ensure
-   @client.video_delete(video.unique_id)
-  end
-  
-  def test_should_get_my_video
-   video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
-   assert_valid_video video
-   sleep 2
-   result = @client.my_video(video.unique_id)
-   assert_equal result.unique_id, video.unique_id
-  ensure
-   @client.video_delete(video.unique_id)
+    @client.video_delete(video.unique_id)
   end
   
   def test_should_add_like_to_video
-   r = @client.like_video("CE62FSEoY28")
-   assert_equal r[:code], 201
-   @client.dislike_video("CE62FSEoY28")
+    r = @client.like_video("CE62FSEoY28")
+    assert_equal r[:code], 201
+    @client.dislike_video("CE62FSEoY28")
   end
   
   def test_should_dislike_to_video
-   @client.like_video("CE62FSEoY28")
-   r = @client.dislike_video("CE62FSEoY28")
-   assert_equal r[:code], 201
+    @client.like_video("CE62FSEoY28")
+    r = @client.dislike_video("CE62FSEoY28")
+    assert_equal r[:code], 201
   end
   
-  def test_should_subscribe_to_channel
-    begin
-      subscribe = @client.subscribe_channel("TheWoWArthas")
-    rescue
-      @client.unsubscribe_channel(@client.subscriptions.first.id)
-      sleep(6)
-      subscribe = @client.subscribe_channel("TheWoWArthas")
-    end
-    sleep(6)
+  def test_should_subscribe_list_and_unsubscribe_to_channel
+    @client.subscriptions.each {|s| @client.unsubscribe_channel(s.id) }
+    sleep 2
+    subscribe = @client.subscribe_channel("TheWoWArthas")
+    sleep 2
     assert_equal subscribe[:code], 201
+    assert_equal 1, @client.subscriptions.count
     assert_equal @client.subscriptions.first.title, "Videos published by: TheWoWArthas"
-    @client.unsubscribe_channel(@client.subscriptions.first.id)
-  end
-  
-  def test_should_unsubscribe_to_channel
-    @client.subscribe_channel("TheWoWArthas") rescue ""
-    sleep(6)
-    begin
-      subscribe = @client.unsubscribe_channel(@client.subscriptions.first.id)
-    rescue
-      sleep(6)
-      subscribe = @client.unsubscribe_channel(@client.subscriptions.first.id)
-    end
+    assert_not_nil @client.subscriptions.first.id
+    subscribe = @client.unsubscribe_channel(@client.subscriptions.first.id)
     assert_equal subscribe[:code], 200
+  ensure
+    @client.subscriptions.each {|s| @client.unsubscribe_channel(s.id) }
   end
-  
-  def test_should_list_subscriptions
-    begin
-      subscribe = @client.subscribe_channel("TheWoWArthas")
-    rescue
-      @client.unsubscribe_channel(@client.subscriptions.first.id)
-      sleep(6)
-      subscribe = @client.subscribe_channel("TheWoWArthas")
-    end
-    sleep(6)
-    assert @client.subscriptions.count == 1
-    assert_equal @client.subscriptions.first.title, "Videos published by: TheWoWArthas"
-    @client.unsubscribe_channel(@client.subscriptions.first.id)
-  end
-  
-     
+
   def test_should_get_profile
     profile = @client.profile
     assert_equal profile.username, "tubeit20101"
@@ -433,22 +391,12 @@ class TestClient < Test::Unit::TestCase
       result = @client.add_favorite(video_id)
     rescue
       @client.delete_favorite(result[:favorite_entry_id])
-      sleep 4
+      sleep 2
       result = @client.add_favorite(video_id)
     end
-    assert_equal result[:code], 201
-    sleep 4
+    assert_equal 201, result[:code]
+    sleep 2
     assert @client.delete_favorite(result[:favorite_entry_id])
-  end
-  
-  def test_esc
-    result = YouTubeIt.esc("спят усталые игрушки")
-    assert_equal "%D1%81%D0%BF%D1%8F%D1%82+%D1%83%D1%81%D1%82%D0%B0%D0%BB%D1%8B%D0%B5+%D0%B8%D0%B3%D1%80%D1%83%D1%88%D0%BA%D0%B8", result
-  end
-  
-  def test_should_encode_ampersand
-    result = YouTubeIt.esc("such & such")
-    assert_equal "such+%26+such", result
   end
   
   def test_unicode_query
@@ -461,12 +409,6 @@ class TestClient < Test::Unit::TestCase
     assert_valid_video video
   end
   
-  def test_configure_faraday_adapter
-    assert YouTubeIt.adapter == Faraday.default_adapter
-    YouTubeIt.adapter = :net_http
-    assert YouTubeIt.adapter == :net_http
-  end
-  
   def test_safe_search_params
     @videos = @client.videos_by(:query => "porno", :safe_search => 'none').videos
     assert_equal @videos.count, 25
@@ -475,16 +417,13 @@ class TestClient < Test::Unit::TestCase
   end
   
   def test_playlists_order
-    begin
-      playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
-    rescue
-      @client.playlists.each{|p| @client.delete_playlist(p.playlist_id)}
-      playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
-    end
+    @client.playlists.each{|p| @client.delete_playlist(p.playlist_id)}
+    playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
+
     video_one = @client.add_video_to_playlist(playlist.playlist_id,"fFAnoEYFUQw")
     video_two = @client.add_video_to_playlist(playlist.playlist_id,"QsbmrCtiEUU")
-    sleep(2)
-    assert_equal @client.playlist(playlist.playlist_id, 'title').videos.map(&:unique_id), ["fFAnoEYFUQw", "QsbmrCtiEUU"]
+    sleep 2
+    assert_equal ["fFAnoEYFUQw", "QsbmrCtiEUU"], @client.playlist(playlist.playlist_id, 'title').videos.map(&:unique_id)
     assert @client.delete_video_from_playlist(playlist.playlist_id, video_one[:playlist_entry_id])
     assert @client.delete_video_from_playlist(playlist.playlist_id, video_two[:playlist_entry_id])
     assert @client.delete_playlist(playlist.playlist_id)
