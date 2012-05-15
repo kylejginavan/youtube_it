@@ -334,7 +334,7 @@ class TestClient < Test::Unit::TestCase
   def test_should_subscribe_list_and_unsubscribe_to_channel
     @client.subscriptions.each {|s| @client.unsubscribe_channel(s.id) }
     subscribe = nil
-    wait_until { subscribe = @client.subscribe_channel("TheWoWArthas") rescue nil }
+    wait_until { subscribe = @client.subscribe_channel("TheWoWArthas") }
     assert_equal subscribe[:code], 201
     subs = nil
     wait_until { subs = @client.subscriptions; subs.count == 1 }
@@ -522,10 +522,16 @@ class TestClient < Test::Unit::TestCase
     end
 
     def wait_until &block
+      err = nil
       5.times do |t|
+        print '_' if t > 0
         sleep t
-        return true if yield
+        begin
+          return true if yield
+        rescue => e
+          err = e
+        end
       end
-      assert false, "wait_until condition (#{block.to_s}) not met"
+      assert false, "wait_until condition (#{block.to_s}) not met #{err}"
     end
 end
