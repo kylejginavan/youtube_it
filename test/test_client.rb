@@ -215,7 +215,6 @@ class TestClient < Test::Unit::TestCase
     assert_valid_video video
     updated_video  = @client.video_update(video.unique_id, OPTIONS.merge(:title => "title changed"))
     assert_equal "title changed", updated_video.title
-  ensure
     assert @client.video_delete(video.unique_id)
   end
   
@@ -224,7 +223,6 @@ class TestClient < Test::Unit::TestCase
     assert_valid_video video
     doc = open("http://www.youtube.com/watch?hl=en&v=#{video.unique_id}").read
     assert !doc.match("<div id=\"comments-view\" class=\"comments-disabled\">").nil?, 'comments are not disabled'
-  ensure
     @client.video_delete(video.unique_id)
   end
   
@@ -233,30 +231,27 @@ class TestClient < Test::Unit::TestCase
     assert_valid_video video
     doc = open("http://www.youtube.com/watch?hl=en&v=#{video.unique_id}").read
     assert !doc.match("Ratings have been disabled for this video.").nil?, 'rating is not disabled'
-  ensure
     @client.video_delete(video.unique_id)
   end
   
   def test_should_denied_embed
     video  = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:embed => "denied"))
     assert video.noembed
-  ensure
     @client.video_delete(video.unique_id)
   end
 
   def test_should_add_comment_and_reply
     video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
     @client.add_comment(video.unique_id, "test comment")
-    sleep 2
+    wait_until { @client.comments(video.unique_id).size == 1 }
     comment1 = @client.comments(video.unique_id).first
     assert_equal "test comment", comment1.content
     assert_nil comment1.reply_to
     @client.add_comment(video.unique_id, "reply comment", :reply_to => comment1)
-    sleep 2
+    wait_until { @client.comments(video.unique_id).size == 2 }
     comment2 = @client.comments(video.unique_id).find {|c| c.content =~ /reply/}
     assert_equal "reply comment", comment2.content
     assert_equal comment1.unique_id, comment2.reply_to
-  ensure
     @client.video_delete(video.unique_id)
   end
 
@@ -273,24 +268,24 @@ class TestClient < Test::Unit::TestCase
     @client.playlists.each{|p| @client.delete_playlist(p.playlist_id)}
     playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
     video = @client.add_video_to_playlist(playlist.playlist_id,"CE62FSEoY28")
-    sleep 2
-    playlist = @client.playlist(playlist.playlist_id)
+    wait_until { playlist = @client.playlist(playlist.playlist_id) }
     assert_equal "CE62FSEoY28", playlist.videos.last.unique_id
     assert @client.delete_video_from_playlist(playlist.playlist_id, video[:playlist_entry_id])
     assert @client.delete_playlist(playlist.playlist_id)
   end
   
   def test_should_add_and_delete_new_playlist
+    @client.playlists.each{|p| @client.delete_playlist(p.playlist_id)}
     result = @client.add_playlist(:title => "youtube_it test4!", :description => "test playlist")
     assert result.title, "youtube_it test!"
-    sleep 2
+    wait_until { playlist = @client.playlist(result.playlist_id) }
     assert @client.delete_playlist(result.playlist_id)
   end
   
   def test_should_update_playlist
     @client.playlists.each{|p| @client.delete_playlist(p.playlist_id)}
     playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
-    sleep 2
+    wait_until { playlist = @client.playlist(playlist.playlist_id) }
     playlist_updated = @client.update_playlist(playlist.playlist_id, :title => "title changed")
     assert_equal playlist_updated.title, "title changed"
     assert @client.delete_playlist(playlist.playlist_id)
@@ -315,13 +310,12 @@ class TestClient < Test::Unit::TestCase
   def test_should_get_my_videos
     video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
     assert_valid_video video
-    sleep 2
+    wait_until { @client.my_videos.videos.first.unique_id == video.unique_id }
     result = @client.my_videos
     assert_equal video.unique_id, result.videos.first.unique_id
     assert_not_nil result.videos.first.insight_uri, 'insight data not present'
     result = @client.my_video(video.unique_id)
     assert_equal video.unique_id, result.unique_id
-  ensure
     @client.video_delete(video.unique_id)
   end
   
@@ -339,17 +333,15 @@ class TestClient < Test::Unit::TestCase
   
   def test_should_subscribe_list_and_unsubscribe_to_channel
     @client.subscriptions.each {|s| @client.unsubscribe_channel(s.id) }
-    sleep 2
-    subscribe = @client.subscribe_channel("TheWoWArthas")
-    sleep 2
+    subscribe = nil
+    wait_until { subscribe = @client.subscribe_channel("TheWoWArthas") rescue nil }
     assert_equal subscribe[:code], 201
-    assert_equal 1, @client.subscriptions.count
-    assert_equal @client.subscriptions.first.title, "Videos published by: TheWoWArthas"
-    assert_not_nil @client.subscriptions.first.id
-    subscribe = @client.unsubscribe_channel(@client.subscriptions.first.id)
-    assert_equal subscribe[:code], 200
-  ensure
-    @client.subscriptions.each {|s| @client.unsubscribe_channel(s.id) }
+    subs = nil
+    wait_until { subs = @client.subscriptions; subs.count == 1 }
+    assert_equal subs.first.title, "Videos published by: TheWoWArthas"
+    assert_not_nil subs.first.id
+    unsubscribe = @client.unsubscribe_channel(subs.first.id)
+    assert_equal unsubscribe[:code], 200
   end
 
   def test_should_get_profile
@@ -391,11 +383,9 @@ class TestClient < Test::Unit::TestCase
       result = @client.add_favorite(video_id)
     rescue
       @client.delete_favorite(result[:favorite_entry_id])
-      sleep 2
-      result = @client.add_favorite(video_id)
+      wait_until { result = @client.add_favorite(video_id) }
     end
     assert_equal 201, result[:code]
-    sleep 2
     assert @client.delete_favorite(result[:favorite_entry_id])
   end
   
@@ -422,7 +412,7 @@ class TestClient < Test::Unit::TestCase
 
     video_one = @client.add_video_to_playlist(playlist.playlist_id,"fFAnoEYFUQw")
     video_two = @client.add_video_to_playlist(playlist.playlist_id,"QsbmrCtiEUU")
-    sleep 2
+    wait_until { @client.playlist(playlist.playlist_id, 'title').videos.size == 2 }
     assert_equal ["fFAnoEYFUQw", "QsbmrCtiEUU"], @client.playlist(playlist.playlist_id, 'title').videos.map(&:unique_id)
     assert @client.delete_video_from_playlist(playlist.playlist_id, video_one[:playlist_entry_id])
     assert @client.delete_video_from_playlist(playlist.playlist_id, video_two[:playlist_entry_id])
@@ -433,14 +423,13 @@ class TestClient < Test::Unit::TestCase
     # Clear list
     @client.watchlater.videos.each {|v| @client.delete_video_from_watchlater(v.watch_later_id)}
     video = @client.add_video_to_watchlater("fFAnoEYFUQw")
-    sleep 2
-    playlist = @client.watchlater
+    playlist = nil
+    wait_until { playlist = @client.watchlater; playlist.videos.size == 1 }
+    assert playlist
     assert_equal 1, playlist.videos.size
     assert_equal playlist.videos.first.unique_id, "fFAnoEYFUQw"
     @client.delete_video_from_watchlater(video[:watchlater_entry_id])
-    sleep 2
-    playlist = @client.watchlater
-    assert playlist.videos.empty?
+    wait_until { @client.watchlater.videos.empty? }
   end
   
   def test_should_upload_private_video
@@ -448,7 +437,6 @@ class TestClient < Test::Unit::TestCase
     assert_valid_video video
     assert_equal video.perm_private, true
     assert_equal video.access_control, {"comment"=>"allowed", "commentVote"=>"allowed", "videoRespond"=>"moderated", "rate"=>"allowed", "embed"=>"allowed", "list"=>"allowed", "autoPlay"=>"allowed", "syndicate"=>"allowed"}
-  ensure
     @client.video_delete(video.unique_id)
   end
 
@@ -531,5 +519,13 @@ class TestClient < Test::Unit::TestCase
       return true
     rescue
       return false
+    end
+
+    def wait_until &block
+      5.times do |t|
+        sleep t
+        return true if yield
+      end
+      assert false, "wait_until condition (#{block.to_s}) not met"
     end
 end
