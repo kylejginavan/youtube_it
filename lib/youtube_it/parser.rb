@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 class YouTubeIt
   module Parser #:nodoc:
     class FeedParser #:nodoc:

@@ -490,11 +490,16 @@ class TestClient < Test::Unit::TestCase
     assert @client.delete_playlist(playlist.playlist_id)
   end
   
-  def test_should_add_and_delete_video_from_playlist
+  def test_should_add_and_delete_video_from_watchlater
+    # Clear list
+    @client.watchlater.videos.each {|v| @client.delete_video_from_watchlater(v.watch_later_id)}
     video = @client.add_video_to_watchlater("fFAnoEYFUQw")
+    sleep 2
     playlist = @client.watchlater
+    assert_equal 1, playlist.videos.size
     assert_equal playlist.videos.first.unique_id, "fFAnoEYFUQw"
     @client.delete_video_from_watchlater(video[:watchlater_entry_id])
+    sleep 2
     playlist = @client.watchlater
     assert playlist.videos.empty?
   end
