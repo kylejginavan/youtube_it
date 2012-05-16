@@ -1,9 +1,11 @@
+# encoding: UTF-8
+
 class YouTubeIt
   module Parser #:nodoc:
     class FeedParser #:nodoc:
       def initialize(content)
         @content = (content =~ URI::regexp(%w(http https)) ? open(content).read : content)
-        
+
       rescue OpenURI::HTTPError => e
         raise OpenURI::HTTPError.new(e.io.status[0],e)
       rescue
@@ -22,6 +24,10 @@ class YouTubeIt
           videos << parse_entry(video)
         end
         videos
+      end
+
+      def remove_bom str
+        str.gsub /\xEF\xBB\xBF|ï»¿/, ''
       end
     end
 
@@ -46,12 +52,19 @@ class YouTubeIt
           )
           YouTubeIt::Model::Comment.new(
             :author    => author,
-            :content   => entry.elements["content"].text,
+            :content   => remove_bom(entry.elements["content"].text),
             :published => entry.elements["published"].text,
-            :title     => entry.elements["title"].text,
+            :title     => remove_bom(entry.elements["title"].text),
             :updated   => entry.elements["updated "].text,
-            :url       => entry.elements["id"].text
+            :url       => entry.elements["id"].text,
+            :reply_to  => parse_reply(entry)
           )
+        end
+
+        def parse_reply(entry)
+          if link = entry.elements["link[@rel='http://gdata.youtube.com/schemas/2007#in-reply-to']"]
+            link.attributes["href"].split('/').last.gsub(/\?client.*/, '')
+          end
         end
     end
 
@@ -78,16 +91,16 @@ class YouTubeIt
       def parse_content(content)
         doc = REXML::Document.new(content.body)
         feed = doc.elements["feed"]
-        
+
         playlists = []
         feed.elements.each("entry") do |entry|
           playlists << parse_entry(entry)
         end
         return playlists
       end
-      
+
       protected
-      
+
       def parse_entry(entry)
         YouTubeIt::Model::Playlist.new(
           :title         => entry.elements["title"].text,
@@ -99,13 +112,13 @@ class YouTubeIt
           :xml           => nil)
       end
     end
-    
+
     # Returns an array of the user's activity
     class ActivityParser < FeedParser
       def parse_content(content)
         doc = REXML::Document.new(content.body)
         feed = doc.elements["feed"]
-        
+
         activity = []
         feed.elements.each("entry") do |entry|
           parsed_activity = parse_activity(entry)
@@ -113,12 +126,12 @@ class YouTubeIt
             activity << parsed_activity
           end
         end
-        
+
         return activity
       end
-      
+
       protected
-      
+
       # Parses the user's activity feed.
       def parse_activity(entry)
         # Figure out what kind of activity we have
@@ -129,7 +142,7 @@ class YouTubeIt
             video_type = category_tag.attributes["term"]
           end
         end
-        
+
         if video_type
           case video_type
           when "video_rated"
@@ -170,7 +183,7 @@ class YouTubeIt
                 # Invalid rel type, do nothing
               end
             end
-          
+
             parsed_activity = YouTubeIt::Model::Activity.new(
               :type => "video_commented",
               :time => entry.elements["updated"] ? entry.elements["updated"].text : nil,
@@ -206,32 +219,32 @@ class YouTubeIt
             # Invalid activity type, just let it return nil
           end
         end
-        
+
         return parsed_activity
       end
-      
+
       # If a user enabled inline attribute videos may be included in results.
       def parse_activity_videos(entry)
         videos = []
-      
+
         entry.elements.each("link") do |link_tag|
           videos << YouTubeIt::Parser::VideoFeedParser.new(link_tag).parse if link_tag.elements["entry"]
         end
-        
+
         if videos.size <= 0
           videos = nil
         end
-        
+
         return videos
       end
     end
-    
+
     # Returns an array of the user's contacts
     class ContactsParser < FeedParser
       def parse_content(content)
         doc = REXML::Document.new(content.body)
         feed = doc.elements["feed"]
-        
+
         contacts = []
         feed.elements.each("entry") do |entry|
           temp_contact = YouTubeIt::Model::Contact.new(
@@ -239,14 +252,14 @@ class YouTubeIt
             :username => entry.elements["yt:username"] ? entry.elements["yt:username"].text : nil,
             :status   => entry.elements["yt:status"] ? entry.elements["yt:status"].text : nil
           )
-          
+
           contacts << temp_contact
         end
-        
+
         return contacts
       end
     end
-    
+
     # Returns an array of the user's messages
     class MessagesParser < FeedParser
       def parse_content(content)
@@ -255,21 +268,21 @@ class YouTubeIt
         puts "doc..."
         puts doc.inspect
         feed = doc.elements["feed"]
-        
+
         messages = []
         feed.elements.each("entry") do |entry|
           author = entry.elements["author"]
           temp_message = YouTubeIt::Model::Message.new(
-            :id  => entry.elements["id"] ? entry.elements["id"].text.gsub(/.+:inbox:/, "") : nil, 
+            :id  => entry.elements["id"] ? entry.elements["id"].text.gsub(/.+:inbox:/, "") : nil,
             :title    => entry.elements["title"] ? entry.elements["title"].text : nil,
             :name => author && author.elements["name"] ? author.elements["name"].text : nil,
             :summary   => entry.elements["summary"] ? entry.elements["summary"].text : nil,
             :published   => entry.elements["published"] ? entry.elements["published"].text : nil
           )
-          
+
           messages << temp_message
         end
-        
+
         return messages
       end
     end
@@ -326,22 +339,22 @@ class YouTubeIt
         end.reduce({},:merge)
       end
     end
-    
+
     class SubscriptionFeedParser < FeedParser #:nodoc:
 
       def parse_content(content)
         doc = REXML::Document.new(content.body)
         feed = doc.elements["feed"]
-        
+
         subscriptions = []
         feed.elements.each("entry") do |entry|
           subscriptions << parse_entry(entry)
         end
         return subscriptions
       end
-      
+
       protected
-      
+
       def parse_entry(entry)
         YouTubeIt::Model::Subscription.new(
           :title        => entry.elements["title"].text,
@@ -350,13 +363,13 @@ class YouTubeIt
         )
       end
     end
-    
+
 
     class VideoFeedParser < FeedParser #:nodoc:
 
       def parse_content(content)
         doc = (content.is_a?(REXML::Element)) ? content : REXML::Document.new(content)
-        
+
         entry = doc.elements["entry"]
         parse_entry(entry)
       end
@@ -403,7 +416,7 @@ class YouTubeIt
         ytid = nil
         unless media_group.elements["yt:videoid"].nil?
           ytid = media_group.elements["yt:videoid"].text
-        end        
+        end
 
         # if content is not available on certain region, there is no media:description, media:player or yt:duration
         description = ""
@@ -482,7 +495,7 @@ class YouTubeIt
           position = where.elements["gml:Point"].elements["gml:pos"].text
           latitude, longitude = position.split(" ")
         end
-        
+
         control = entry.elements["app:control"]
         state = { :name => "published" }
         if control && control.elements["yt:state"]
@@ -492,7 +505,7 @@ class YouTubeIt
             :help_url    => control.elements["yt:state"].attributes["helpUrl"],
             :copy        => control.elements["yt:state"].text
           }
-          
+
         end
 
         insight_uri = (entry.elements['link[attribute::rel="http://gdata.youtube.com/schemas/2007#insight.views"]'].attributes['href'] rescue nil)

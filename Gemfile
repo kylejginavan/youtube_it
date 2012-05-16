@@ -2,4 +2,8 @@ source 'http://rubygems.org'
 
 gemspec
 
-gem 'webmock', '~> 1.7.10', :group => :test
+group :test do
+  gem 'vcr', '~> 2.1.1'
+  gem 'webmock'
+  gem 'rake'
+end

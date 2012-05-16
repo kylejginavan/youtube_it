@@ -11,7 +11,7 @@ PATH
 GEM
   remote: http://rubygems.org/
   specs:
-    addressable (2.2.7)
+    addressable (2.2.8)
     builder (3.0.0)
     crack (0.3.1)
     faraday (0.8.0)
@@ -26,14 +26,18 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.4)
     rack (1.4.1)
+    rake (0.9.2.2)
     simple_oauth (0.1.7)
-    webmock (1.7.10)
-      addressable (~> 2.2, > 2.2.5)
+    vcr (2.1.1)
+    webmock (1.8.7)
+      addressable (>= 2.2.7)
       crack (>= 0.1.7)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  webmock (~> 1.7.10)
+  rake
+  vcr (~> 2.1.1)
+  webmock
   youtube_it!
