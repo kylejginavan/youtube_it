@@ -4,5 +4,6 @@ notifications:
 
 rvm:
   - 1.9.3
+  - ree
 
 script: rake test

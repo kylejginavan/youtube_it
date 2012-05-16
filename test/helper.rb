@@ -15,7 +15,8 @@ end
 module VCRHelpers
   # Should be called from the setup method
   def use_vcr
-    cassette = VCR.insert_cassette method_name.gsub(/test_(should_)?/, '')
+    name = respond_to?(:method_name) ? method_name : __name__
+    cassette = VCR.insert_cassette name.gsub(/test_(should_)?/, '')
     @wait = true if not File.file?(cassette.file)
   end
 
