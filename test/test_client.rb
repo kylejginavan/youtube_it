@@ -242,16 +242,22 @@ class TestClient < Test::Unit::TestCase
 
   def test_should_add_comment_and_reply
     video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
+    # Add comment
     @client.add_comment(video.unique_id, "test comment")
     wait_until { @client.comments(video.unique_id).size == 1 }
     comment1 = @client.comments(video.unique_id).first
     assert_equal "test comment", comment1.content
     assert_nil comment1.reply_to
+    # Add reply
     @client.add_comment(video.unique_id, "reply comment", :reply_to => comment1)
     wait_until { @client.comments(video.unique_id).size == 2 }
     comment2 = @client.comments(video.unique_id).find {|c| c.content =~ /reply/}
     assert_equal "reply comment", comment2.content
     assert_equal comment1.unique_id, comment2.reply_to
+    # Delete comment
+    assert @client.delete_comment(video.unique_id, comment2)
+    assert @client.delete_comment(video.unique_id, comment1.unique_id)
+    wait_until { @client.comments(video.unique_id).size == 0 }
     @client.video_delete(video.unique_id)
   end
 

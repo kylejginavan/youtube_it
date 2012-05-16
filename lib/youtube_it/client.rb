@@ -126,6 +126,10 @@ class YouTubeIt
       client.add_comment(video_id, comment, opts)
     end
 
+    def delete_comment(video_id, comment_id)
+      client.delete_comment(video_id, comment_id)
+    end
+
     # opts is converted to get params and appended to comments gdata api url
     # eg opts = { 'max-results' => 10, 'start-index' => 20 }
     # hash does _not_ play nice with symbols

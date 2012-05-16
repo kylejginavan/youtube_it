@@ -199,6 +199,14 @@ class YouTubeIt
         return {:code => response.status, :body => response.body}
       end
 
+      def delete_comment(video_id, comment_id)
+        comment_id = comment_id.unique_id if comment_id.is_a? YouTubeIt::Model::Comment
+        url  = "/feeds/api/videos/%s/comments/%s" % [video_id, comment_id]
+        response     = yt_session.delete(url)
+
+        return response.status == 200
+      end
+
       def comments(video_id, opts = {})
         comment_url = "/feeds/api/videos/%s/comments?" % video_id
         comment_url << opts.collect { |k,p| [k,p].join '=' }.join('&')
