@@ -1,0 +1,94 @@
+--- 
+recorded_with: VCR 2.1.1
+http_interactions: 
+- request: 
+    method: post
+    uri: https://www.google.com/youtube/accounts/ClientLogin
+    body: 
+      string: Email=tubeit20101&Passwd=youtube_it&service=youtube&source=youtube_it
+    headers: 
+      Content-Type: 
+      - application/x-www-form-urlencoded
+      Accept: 
+      - "*/*"
+  response: 
+    status: 
+      code: 200
+      message: OK
+    headers: 
+      X-Frame-Options: 
+      - SAMEORIGIN
+      Content-Type: 
+      - text/plain
+      Date: 
+      - Wed, 16 May 2012 13:45:35 GMT
+      X-Xss-Protection: 
+      - 1; mode=block
+      X-Gdata-User-Country: 
+      - FR
+      Content-Length: 
+      - "297"
+      Server: 
+      - GSE
+      X-Content-Type-Options: 
+      - nosniff
+      Expires: 
+      - Wed, 16 May 2012 13:45:35 GMT
+      Cache-Control: 
+      - private, max-age=0
+    body: 
+      string: |
+        Auth=DQAAALYAAABLv6Kdf_cuHzcQHZ9YkayjKXDBLf5P8YzBmA_JnIU3vzCujj9l-D5l4rpWYzZ6T_colNiVfQcNwHUyOH4Bm9JZoOGMHzl6ilIWH7oOIui0CQ_RG6U-zc6dAp0UQw78qJz13s3z2mgn4S0fzv2_A3UNHq04WoinHyrQUWryMD09yP7kulfz_U2jAOqJMo9CugbqciejLwN_q9Ncxj-dNxirl0DGgR8lkmO5Ogr903sd5ThQA4qWm996toLBOzK0kNk
+        YouTubeUser=tubeit20101
+
+    http_version: 
+  recorded_at: Wed, 16 May 2012 13:45:35 GMT
+- request: 
+    method: post
+    uri: http://gdata.youtube.com/action/GetUploadToken
+    body: 
+      string: <?xml version="1.0" encoding="UTF-8"?><entry xmlns="http://www.w3.org/2005/Atom" xmlns:yt="http://gdata.youtube.com/schemas/2007" xmlns:media="http://search.yahoo.com/mrss/"><media:group><media:title type="plain">test title</media:title><media:description type="plain">test description</media:description><media:keywords>test</media:keywords><media:category scheme="http://gdata.youtube.com/schemas/2007/categories.cat">People</media:category></media:group></entry>
+    headers: 
+      Authorization: 
+      - GoogleLogin auth=DQAAALYAAABLv6Kdf_cuHzcQHZ9YkayjKXDBLf5P8YzBmA_JnIU3vzCujj9l-D5l4rpWYzZ6T_colNiVfQcNwHUyOH4Bm9JZoOGMHzl6ilIWH7oOIui0CQ_RG6U-zc6dAp0UQw78qJz13s3z2mgn4S0fzv2_A3UNHq04WoinHyrQUWryMD09yP7kulfz_U2jAOqJMo9CugbqciejLwN_q9Ncxj-dNxirl0DGgR8lkmO5Ogr903sd5ThQA4qWm996toLBOzK0kNk
+      Content-Type: 
+      - application/atom+xml; charset=UTF-8
+      Content-Length: 
+      - "465"
+      X-Gdata-Client: 
+      - youtube_it
+      X-Gdata-Key: 
+      - key=AI39si411VBmO4Im9l0rfRsORXDI6F5AX5NlTIA4uHSWqa-Cgf-jUQG-6osUBB3PTLawLHlkKXPLr3B0pNcGU9wkNd11gIgdPg
+      Accept: 
+      - "*/*"
+      Gdata-Version: 
+      - "2"
+  response: 
+    status: 
+      code: 200
+      message: OK
+    headers: 
+      X-Frame-Options: 
+      - SAMEORIGIN
+      Transfer-Encoding: 
+      - chunked
+      Content-Type: 
+      - text/xml; charset=UTF-8
+      Date: 
+      - Wed, 16 May 2012 13:45:36 GMT
+      X-Xss-Protection: 
+      - 1; mode=block
+      X-Gdata-User-Country: 
+      - FR
+      Server: 
+      - GSE
+      X-Content-Type-Options: 
+      - nosniff
+      Expires: 
+      - Wed, 16 May 2012 13:45:36 GMT
+      Cache-Control: 
+      - private, max-age=0
+    body: 
+      string: <?xml version='1.0' encoding='UTF-8'?><response><url>http://uploads.gdata.youtube.com/action/FormDataUpload/AIwbFASZWXM8o1BvfGTM7Hef_Xv1jn8Hz6v6qDCVq3-bmMQegJwdCjkilwqHyyEnGeiFE-atRu2wnSdT9CBXCR_-u8rgjSjgsQ</url><token>AIwbFAQdny3lJPO3zLOwY2qVUY-pExj6k9jj16JCMcKm0lENmhyuQwS-7Y6lUupFnX586pMRk5X-jBEPU38PAnHI2Djm8ddpyu2L4ynGTH_8MLrcHfeuLCT5Kjil4cEpFNyd8oP5Em-8QI4F8XAA9N0tWz5tOdHqnX0zxcFwdsOp2ZM6qQdZZay209Fu6jGQWnr4e6QWmFA0sqlw30XAKiWt16VNcdhXy5KCc5pSc3Du_Ei99bEYF8vVn3awfDlaT2wmCt-BxajstlD8UTVOio58we7yZbpXN_LsgUzNyiZbAMBal_8ih_Ukv4b8sQMfJa52tlYIcR2k</token></response>
+    http_version: 
+  recorded_at: Wed, 16 May 2012 13:45:36 GMT

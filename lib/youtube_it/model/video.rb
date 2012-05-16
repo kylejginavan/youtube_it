@@ -162,6 +162,16 @@ class YouTubeIt
         @unique_id || video_id[/videos\/([^<]+)/, 1] || video_id[/video\:([^<]+)/, 1]
       end
 
+      # ID of this video in the watch later list (work only if you are listing watch later videos)
+      # Can be use to modify or remove the entry from the watch later list
+      #
+      # === Example
+      #   >> @client.watchlater.videos.first.watch_later_id
+      #   => "PL78jdHcOatSF7DGMd4O9K6Mbo0cNlxm_j"
+      def watch_later_id
+        video_id[/watch_later\:([^:]+)/, 1]
+      end
+
       # Allows you to check whether the video can be embedded on a webpage.
       #
       # === Returns

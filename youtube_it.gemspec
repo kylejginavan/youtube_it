@@ -3,7 +3,7 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "youtube_it/version"
+require File.dirname(__FILE__) + "/lib/youtube_it/version"
 
 Gem::Specification.new do |s|
   s.name        = "youtube_it"

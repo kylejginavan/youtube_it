@@ -139,7 +139,7 @@ My Videos:
 
 My Video:
   $ client.my_video(video_id)
-  
+
 Profile Details:
   $ client.profile(user) #default: current user
 
@@ -148,6 +148,12 @@ List Comments:
 
 Add A Comment:
   $ client.add_comment(video_id, "test comment!")
+
+Add A Reply Comment:
+  $ client.add_comment(video_id, "test reply!", :reply_to => another_comment)
+
+Delete A Comment:
+  $ client.delete_comment(video_id, comment_id)
 
 List Favorites:
   $ client.favorites(user) # default: current user

@@ -1,10 +1,17 @@
 require File.expand_path(File.dirname(__FILE__) + '/helper')
 
 class TestVideoFeedParser < Test::Unit::TestCase
+  def setup
+    use_vcr
+  end
+
+  def teardown
+    stop_vcr
+  end
 
   def test_should_raise_bad_request_exception_when_id_not_found
     bad_url = "http://gdata.youtube.com/feeds/api/videos/abc?v=2"
-  
+
     assert_raise(OpenURI::HTTPError) do
       parser = YouTubeIt::Parser::VideoFeedParser.new bad_url
     end
@@ -61,7 +68,7 @@ class TestVideoFeedParser < Test::Unit::TestCase
       assert_equal Time.parse("Wed Dec 29 13:57:49 UTC 2010"), video.published_at
     end
   end
-  
+
   def test_should_parse_uploaded_as_published_at_correctly
     with_video_response("/files/youtube_video_response_without_published.xml") do |parser|
       video = parser.parse
@@ -75,7 +82,7 @@ class TestVideoFeedParser < Test::Unit::TestCase
       assert_equal Time.parse("Wed Feb 23 13:54:16 UTC 2011"), video.updated_at
     end
   end
-  
+
   def test_should_parse_categories_correctly
     with_video_response do |parser|
       video = parser.parse
@@ -187,7 +194,7 @@ class TestVideoFeedParser < Test::Unit::TestCase
       assert_equal 350, video.rating.dislikes
     end
   end
-  
+
   # TOD: GEODATA
 
   def test_should_parse_position_geodata_correctly
@@ -196,14 +203,14 @@ class TestVideoFeedParser < Test::Unit::TestCase
       assert_equal nil, video.position
     end
   end
-  
+
   def test_should_parse_latitude_geodata_correctly
     with_video_response do |parser|
       video = parser.parse
       assert_equal nil, video.latitude
     end
   end
-  
+
   def test_should_parse_longitude_geodata_correctly
     with_video_response do |parser|
       video = parser.parse
@@ -244,7 +251,7 @@ class TestVideoFeedParser < Test::Unit::TestCase
       assert_equal 356, content.duration
     end
   end
-  
+
   def test_should_parse_mime_type_of_media_content_correctly
     with_video_response do |parser|
       video = parser.parse
@@ -267,5 +274,5 @@ class TestVideoFeedParser < Test::Unit::TestCase
       yield parser
     end
   end
-    
+
 end
