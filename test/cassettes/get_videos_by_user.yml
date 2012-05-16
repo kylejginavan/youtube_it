@@ -1,0 +1,48 @@
+--- 
+recorded_with: VCR 2.1.1
+http_interactions: 
+- request: 
+    method: get
+    uri: http://gdata.youtube.com/feeds/api/users/liz/uploads?key=AI39si411VBmO4Im9l0rfRsORXDI6F5AX5NlTIA4uHSWqa-Cgf-jUQG-6osUBB3PTLawLHlkKXPLr3B0pNcGU9wkNd11gIgdPg&max-results=25&start-index=1&v=2
+    body: 
+      string: ""
+    headers: 
+      Accept: 
+      - "*/*"
+  response: 
+    status: 
+      code: 200
+      message: OK
+    headers: 
+      Vary: 
+      - "*"
+      X-Frame-Options: 
+      - SAMEORIGIN
+      Last-Modified: 
+      - Wed, 16 May 2012 13:45:00 GMT
+      Etag: 
+      - W/"D04EQXk6eip7I2A9WhVUEUo."
+      Transfer-Encoding: 
+      - chunked
+      Content-Type: 
+      - application/atom+xml; charset=UTF-8; type=feed
+      Date: 
+      - Wed, 16 May 2012 13:45:00 GMT
+      X-Xss-Protection: 
+      - 1; mode=block
+      X-Gdata-User-Country: 
+      - FR
+      Server: 
+      - GSE
+      X-Content-Type-Options: 
+      - nosniff
+      Expires: 
+      - Wed, 16 May 2012 13:45:00 GMT
+      Cache-Control: 
+      - private, max-age=300, no-transform
+      Gdata-Version: 
+      - "2.1"
+    body: 
+      string: <?xml version='1.0' encoding='UTF-8'?><feed xmlns='http://www.w3.org/2005/Atom' xmlns:openSearch='http://a9.com/-/spec/opensearch/1.1/' xmlns:gd='http://schemas.google.com/g/2005' gd:etag='W/&quot;D04EQXk6eip7I2A9WhVUEUo.&quot;'><id>tag:youtube.com,2008:user:liz:uploads</id><updated>2012-05-16T13:45:00.712Z</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#video'/><title>Uploads by liz</title><logo>http://www.youtube.com/img/pic_youtubelogo_123x63.gif</logo><link rel='related' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/liz?v=2'/><link rel='alternate' type='text/html' href='http://www.youtube.com/user/liz/videos'/><link rel='hub' href='http://pubsubhubbub.appspot.com'/><link rel='http://schemas.google.com/g/2005#feed' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/liz/uploads?v=2'/><link rel='http://schemas.google.com/g/2005#batch' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/liz/uploads/batch?v=2'/><link rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/liz/uploads?start-index=1&amp;max-results=25&amp;v=2'/><link rel='service' type='application/atomsvc+xml' href='http://gdata.youtube.com/feeds/api/users/liz/uploads?alt=atom-service&amp;v=2'/><author><name>liz</name><uri>http://gdata.youtube.com/feeds/api/users/liz</uri></author><generator version='2.1' uri='http://gdata.youtube.com'>YouTube data API</generator><openSearch:totalResults>0</openSearch:totalResults><openSearch:startIndex>1</openSearch:startIndex><openSearch:itemsPerPage>25</openSearch:itemsPerPage></feed>
+    http_version: 
+  recorded_at: Wed, 16 May 2012 13:45:00 GMT

@@ -1,0 +1,124 @@
+--- 
+recorded_with: VCR 2.1.1
+http_interactions: 
+- request: 
+    method: post
+    uri: https://www.google.com/youtube/accounts/ClientLogin
+    body: 
+      string: Email=tubeit20101&Passwd=youtube_it&service=youtube&source=youtube_it
+    headers: 
+      Content-Type: 
+      - application/x-www-form-urlencoded
+      Accept: 
+      - "*/*"
+  response: 
+    status: 
+      code: 200
+      message: OK
+    headers: 
+      X-Frame-Options: 
+      - SAMEORIGIN
+      Content-Type: 
+      - text/plain
+      Date: 
+      - Wed, 16 May 2012 13:44:52 GMT
+      X-Xss-Protection: 
+      - 1; mode=block
+      X-Gdata-User-Country: 
+      - FR
+      Content-Length: 
+      - "297"
+      Server: 
+      - GSE
+      X-Content-Type-Options: 
+      - nosniff
+      Expires: 
+      - Wed, 16 May 2012 13:44:52 GMT
+      Cache-Control: 
+      - private, max-age=0
+    body: 
+      string: |
+        Auth=DQAAALcAAABDTjA06eWNqGKWqd4uCx7OJTt0MBjsKdmJ5MAVS8Pu-8ISX67BZf_2T20gD79L0IxHs1m1EJ6x6Xcc8_s1HPdYF-oNnd_tPptAO8f8cf9XwpGb_q8v2lOWlF28t1CE_Z7S6RTnEq6i17kqA2yxc_IgYEQ8TdWxatrIBJ7stTi12EP9P24TJ-VfG3q2KCUSGi8fLPCBUwHw3idnMeiP-QFdRkb83pWErvRvvB-lS_CcFSpiQfmpqd_LZzepNdNkOJk
+        YouTubeUser=tubeit20101
+
+    http_version: 
+  recorded_at: Wed, 16 May 2012 13:44:52 GMT
+- request: 
+    method: post
+    uri: http://gdata.youtube.com/feeds/api/users/batch
+    body: 
+      string: |-
+        <?xml version='1.0' encoding='UTF-8'?> 
+        <feed xmlns:yt='http://gdata.youtube.com/schemas/2007' xmlns:media='http://search.yahoo.com/mrss/' xmlns:batch='http://schemas.google.com/gdata/batch' xmlns='http://www.w3.org/2005/Atom'>
+          <batch:operation type='query'/>
+          <entry xmlns:batch='http://schemas.google.com/gdata/batch'>
+            <id>
+              /feeds/api/users/tubeit20101?v=2
+            </id>
+            <batch:id>
+              tubeit20101
+            </batch:id>
+          </entry>
+          <entry xmlns:batch='http://schemas.google.com/gdata/batch'>
+            <id>
+              /feeds/api/users/honda?v=2
+            </id>
+            <batch:id>
+              honda
+            </batch:id>
+          </entry>
+          <entry xmlns:batch='http://schemas.google.com/gdata/batch'>
+            <id>
+              /feeds/api/users/some_non-existing_username?v=2
+            </id>
+            <batch:id>
+              some_non-existing_username
+            </batch:id>
+          </entry>
+        </feed>
+    headers: 
+      Authorization: 
+      - GoogleLogin auth=DQAAALcAAABDTjA06eWNqGKWqd4uCx7OJTt0MBjsKdmJ5MAVS8Pu-8ISX67BZf_2T20gD79L0IxHs1m1EJ6x6Xcc8_s1HPdYF-oNnd_tPptAO8f8cf9XwpGb_q8v2lOWlF28t1CE_Z7S6RTnEq6i17kqA2yxc_IgYEQ8TdWxatrIBJ7stTi12EP9P24TJ-VfG3q2KCUSGi8fLPCBUwHw3idnMeiP-QFdRkb83pWErvRvvB-lS_CcFSpiQfmpqd_LZzepNdNkOJk
+      Content-Type: 
+      - application/atom+xml; charset=UTF-8
+      Content-Length: 
+      - "827"
+      X-Gdata-Client: 
+      - youtube_it
+      X-Gdata-Key: 
+      - key=AI39si411VBmO4Im9l0rfRsORXDI6F5AX5NlTIA4uHSWqa-Cgf-jUQG-6osUBB3PTLawLHlkKXPLr3B0pNcGU9wkNd11gIgdPg
+      Accept: 
+      - "*/*"
+      Gdata-Version: 
+      - "2"
+  response: 
+    status: 
+      code: 200
+      message: OK
+    headers: 
+      X-Frame-Options: 
+      - SAMEORIGIN
+      Content-Type: 
+      - application/atom+xml; charset=UTF-8; type=feed
+      Date: 
+      - Wed, 16 May 2012 13:44:53 GMT
+      X-Xss-Protection: 
+      - 1; mode=block
+      X-Gdata-User-Country: 
+      - FR
+      Content-Length: 
+      - "7772"
+      Server: 
+      - GSE
+      X-Content-Type-Options: 
+      - nosniff
+      Expires: 
+      - Wed, 16 May 2012 13:44:53 GMT
+      Cache-Control: 
+      - private, max-age=0
+      Gdata-Version: 
+      - "2.1"
+    body: 
+      string: "<?xml version='1.0' encoding='UTF-8'?><feed xmlns='http://www.w3.org/2005/Atom'><id>http://gdata.youtube.com/feeds/api/users/batch/1337175893381</id><updated>2012-05-16T13:44:53.622Z</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#userProfile'/><title>Batch Feed</title><entry xmlns:batch='http://schemas.google.com/gdata/batch' xmlns:app='http://www.w3.org/2007/app' xmlns:media='http://search.yahoo.com/mrss/' xmlns:gd='http://schemas.google.com/g/2005' xmlns:yt='http://gdata.youtube.com/schemas/2007' gd:etag='W/&quot;D0ACSX47eCp7I2A9WhVUEUo.&quot;'><id>tag:youtube.com,2008:user:WWmLvppy3j64IGmA2dpCyw</id><published>2010-07-06T14:59:05.000Z</published><updated>2012-05-16T13:42:48.000Z</updated><app:edited>2012-05-16T13:42:48.000Z</app:edited><category scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#userProfile'/><title>tubeit20101</title><summary/><link rel='alternate' type='text/html' href='http://www.youtube.com/channel/UCWWmLvppy3j64IGmA2dpCyw'/><link rel='http://gdata.youtube.com/schemas/2007#insight.views' type='text/html' href='http://insight.youtube.com/video-analytics/csvreports?query=WWmLvppy3j64IGmA2dpCyw&amp;type=u&amp;starttime=1235865600000&amp;endtime=1337040000000&amp;user_starttime=1336435200000&amp;user_endtime=1337040000000&amp;region=world&amp;token=QHwS63-6V6OVYwE4-zsFVkn2Hkx8MTMzNzE3NzY5M0AxMzM3MTc1ODkz&amp;hl=en_US'/><link rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/WWmLvppy3j64IGmA2dpCyw?client=youtube_it'/><link rel='edit' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/WWmLvppy3j64IGmA2dpCyw?client=youtube_it'/><author><name>tubeit20101</name><uri>http://gdata.youtube.com/feeds/api/users/tubeit20101</uri><yt:userId>WWmLvppy3j64IGmA2dpCyw</yt:userId></author><yt:age>30</yt:age><batch:id>tubeit20101</batch:id><batch:operation type='query'/><batch:status code='200' reason='Success'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.watchhistory' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/watch_history?client=youtube_it'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.liveevent' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/live/events?client=youtube_it' countHint='0'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.favorites' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/favorites?client=youtube_it' countHint='0'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.contacts' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/contacts?client=youtube_it' countHint='0'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.inbox' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/inbox?client=youtube_it' countHint='0'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.playlists' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/playlists?client=youtube_it'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.watchlater' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/watch_later?client=youtube_it' countHint='1'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.subscriptions' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/subscriptions?client=youtube_it' countHint='0'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.uploads' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/uploads?client=youtube_it' countHint='1'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.newsubscriptionvideos' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/newsubscriptionvideos?client=youtube_it'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.recentactivity' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/events?client=youtube_it'/><yt:gender>m</yt:gender><yt:location>AR</yt:location><yt:maxUploadDuration seconds='930'/><yt:statistics lastWebAccess='2012-05-16T13:42:28.000Z' subscriberCount='0' videoWatchCount='0' viewCount='56' totalUploadViews='44'/><media:thumbnail url='http://s.ytimg.com/yt/img/no_videos_140-vfl1fDI7-.png'/><yt:userId>WWmLvppy3j64IGmA2dpCyw</yt:userId><yt:username display='tubeit20101'>tubeit20101</yt:username></entry><entry xmlns:batch='http://schemas.google.com/gdata/batch' xmlns:media='http://search.yahoo.com/mrss/' xmlns:gd='http://schemas.google.com/g/2005' xmlns:yt='http://gdata.youtube.com/schemas/2007' gd:etag='W/&quot;DkEDQH47eCp7I2A9WhVUEUk.&quot;'><id>tag:youtube.com,2008:user:22zQ9nBEk6KOjUWqR5XXZg</id><published>2005-10-11T00:42:58.000Z</published><updated>2012-05-16T05:04:31.000Z</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#userProfile'/><title>The Honda Channel</title><summary>Honda on YouTube</summary><link rel='alternate' type='text/html' href='http://www.youtube.com/channel/UC22zQ9nBEk6KOjUWqR5XXZg'/><link rel='related' type='text/html' href='http://www.honda.com'/><link rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/22zQ9nBEk6KOjUWqR5XXZg?client=youtube_it'/><author><name>Honda</name><uri>http://gdata.youtube.com/feeds/api/users/Honda</uri><yt:userId>22zQ9nBEk6KOjUWqR5XXZg</yt:userId></author><batch:id>honda</batch:id><batch:operation type='query'/><batch:status code='200' reason='Success'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.liveevent' href='http://gdata.youtube.com/feeds/api/users/honda/live/events?client=youtube_it' countHint='0'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.favorites' href='http://gdata.youtube.com/feeds/api/users/honda/favorites?client=youtube_it' countHint='57'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.contacts' href='http://gdata.youtube.com/feeds/api/users/honda/contacts?client=youtube_it' countHint='3'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.inbox' href='http://gdata.youtube.com/feeds/api/users/honda/inbox?client=youtube_it'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.playlists' href='http://gdata.youtube.com/feeds/api/users/honda/playlists?client=youtube_it'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.subscriptions' href='http://gdata.youtube.com/feeds/api/users/honda/subscriptions?client=youtube_it' countHint='17'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.uploads' href='http://gdata.youtube.com/feeds/api/users/honda/uploads?client=youtube_it' countHint='340'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.newsubscriptionvideos' href='http://gdata.youtube.com/feeds/api/users/honda/newsubscriptionvideos?client=youtube_it'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.recentactivity' href='http://gdata.youtube.com/feeds/api/users/honda/events?client=youtube_it'/><yt:firstName>American Honda Motor Co., Inc.</yt:firstName><yt:location>Torrance, US</yt:location><yt:maxUploadDuration seconds='43200'/><yt:statistics lastWebAccess='2012-03-29T21:37:22.000Z' subscriberCount='57278' videoWatchCount='0' viewCount='6236832' totalUploadViews='38590811'/><media:thumbnail url='http://i3.ytimg.com/i/22zQ9nBEk6KOjUWqR5XXZg/1.jpg?v=4f26a301'/><yt:userId>22zQ9nBEk6KOjUWqR5XXZg</yt:userId><yt:username display='Honda'>honda</yt:username></entry><entry xmlns:batch='http://schemas.google.com/gdata/batch'><id>/feeds/api/users/some_non-existing_username?v=2</id><updated>2012-05-16T13:44:53.787Z</updated><title>Error</title><content>Invalid value for parameter: username</content><batch:id>some_non-existing_username</batch:id><batch:status code='400' reason='Invalid value for parameter: username'/></entry></feed>"
+    http_version: 
+  recorded_at: Wed, 16 May 2012 13:44:53 GMT
