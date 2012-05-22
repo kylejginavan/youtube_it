@@ -493,7 +493,7 @@ class YouTubeIt
 
         if where = entry.elements["georss:where"]
           position = where.elements["gml:Point"].elements["gml:pos"].text
-          latitude, longitude = position.split(" ")
+          latitude, longitude = position.split.map &:to_f
         end
 
         control = entry.elements["app:control"]

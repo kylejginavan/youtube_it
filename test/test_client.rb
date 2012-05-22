@@ -208,6 +208,7 @@ class TestClient < Test::Unit::TestCase
   def test_should_upload_and_update_a_video
     video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
     assert_valid_video video
+    assert video.listed?
     updated_video  = @client.video_update(video.unique_id, OPTIONS.merge(:title => "title changed"))
     assert_equal "title changed", updated_video.title
     assert @client.video_delete(video.unique_id)
@@ -232,6 +233,12 @@ class TestClient < Test::Unit::TestCase
   def test_should_denied_embed
     video  = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:embed => "denied"))
     assert video.noembed
+    @client.video_delete(video.unique_id)
+  end
+
+  def test_should_denied_listing
+    video = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:list => "denied"))
+    assert !video.listed?
     @client.video_delete(video.unique_id)
   end
 

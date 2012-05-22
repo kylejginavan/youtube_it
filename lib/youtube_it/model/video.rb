@@ -180,6 +180,14 @@ class YouTubeIt
         not @noembed
       end
 
+      # Allows you to check whether the video is listed and searchable on youtube.
+      #
+      # === Returns
+      #   Boolean
+      def listed?
+        access_control['list'] == 'allowed'
+      end
+
       # Allows you to check whether the video is widescreen (16:9) or not.
       #
       # === Returns
