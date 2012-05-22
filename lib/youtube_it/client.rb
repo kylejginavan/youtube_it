@@ -418,7 +418,7 @@ class YouTubeIt
       response_code = profile.code.to_i
 
       if response_code/10 == 20 # success
-        REXML::Document.new(profile.body).elements["entry"].elements['author'].elements['name'].text
+        Nokogiri::XML(profile.body).at("entry/author/name").text
       elsif response_code == 403 || response_code == 401 # auth failure
         raise YouTubeIt::Upload::AuthenticationError.new(profile.inspect, response_code)
       else
@@ -472,7 +472,7 @@ class YouTubeIt
       response_code = profile.status
 
       if response_code/10 == 20 # success
-        REXML::Document.new(profile.body).elements["entry"].elements['author'].elements['name'].text
+        Nokogiri::XML(profile.body).at("entry/author/name").text
       elsif response_code == 403 || response_code == 401 # auth failure
         raise YouTubeIt::Upload::AuthenticationError.new(profile.inspect, response_code)
       else
