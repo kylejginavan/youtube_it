@@ -107,39 +107,39 @@ class YouTubeIt
                   :description => '',
                   :category => 'People',
                   :keywords => [] }.merge(options)
-        
+
         update_body = video_xml
         update_url  = "/feeds/api/users/default/uploads/%s" % video_id
         response    = yt_session.put(update_url, update_body)
-        
+
         return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse
       end
-      
+
       # Fetches the currently authenticated user's contacts (i.e. friends).
       # When the authentication credentials are incorrect, an AuthenticationError will be raised.
       def get_my_contacts(opts)
         contacts_url = "/feeds/api/users/default/contacts?v=2"
         contacts_url << opts.collect { |k,p| [k,p].join '=' }.join('&')
         response = yt_session.get(contacts_url)
-        
+
         return YouTubeIt::Parser::ContactsParser.new(response).parse
       end
-      
+
       def send_message(opts)
         message_body = message_xml_for(opts)
         message_url  = "/feeds/api/users/%s/inbox" % opts[:recipient_id]
         response     = yt_session.post(message_url, message_body)
-        
+
         return {:code => response.status, :body => response.body}
       end
-      
+
       # Fetches the currently authenticated user's messages (i.e. inbox).
       # When the authentication credentials are incorrect, an AuthenticationError will be raised.
       def get_my_messages(opts)
         messages_url = "/feeds/api/users/default/inbox"
         messages_url << opts.collect { |k,p| [k,p].join '=' }.join('&')
         response = yt_session.get(messages_url)
-        
+
         return YouTubeIt::Parser::MessagesParser.new(response).parse
       end
 
@@ -148,11 +148,11 @@ class YouTubeIt
       def get_my_video(video_id)
         get_url  = "/feeds/api/users/default/uploads/%s" % video_id
         response = yt_session.get(get_url)
-        
+
         return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse
       end
 
-      # Fetches the data of the videos of the current user, which may be private. 
+      # Fetches the data of the videos of the current user, which may be private.
       # When the authentication credentials are incorrect, an AuthenticationError will be raised.
       def get_my_videos(opts)
         max_results = opts[:per_page] || 50
@@ -170,7 +170,7 @@ class YouTubeIt
 
         return true
       end
-      
+
       # Delete a video message
       def delete_message(message_id)
         delete_url = "/feeds/api/users/default/inbox/%s" % message_id
@@ -184,7 +184,7 @@ class YouTubeIt
         token_body = video_xml
         token_url  = "/action/GetUploadToken"
         response   = yt_session.post(token_url, token_body)
-        
+
         return {:url    => "#{response.body[/<url>(.+)<\/url>/, 1]}?nexturl=#{nexturl}",
                 :token  => response.body[/<token>(.+)<\/token>/, 1]}
       end
@@ -225,7 +225,7 @@ class YouTubeIt
       def delete_favorite(video_id)
         favorite_url = "/feeds/api/users/default/favorites/%s" % video_id
         response     = yt_session.delete(favorite_url)
-        
+
         return true
       end
 
@@ -237,7 +237,7 @@ class YouTubeIt
 
       def profiles(usernames_to_fetch)
         usernames_to_fetch.each_slice(50).map do |usernames|
-          post = REXML::Document.new <<-BATCH
+          post = Nokogiri::XML <<-BATCH
               <?xml version="1.0" encoding="UTF-8"?>
               <feed xmlns='http://www.w3.org/2005/Atom'
                     xmlns:media='http://search.yahoo.com/mrss/'
@@ -247,17 +247,16 @@ class YouTubeIt
               </feed>
             BATCH
           usernames.each do |username|
-            entry_doc = REXML::Document.new <<-ENTRY
+            post.at('feed').add_child <<-ENTRY
               <entry xmlns:batch='http://schemas.google.com/gdata/batch'>
                 <id>#{profile_url(username)}</id>
                 <batch:id>#{username}</batch:id>
               </entry>
             ENTRY
-            post.elements['feed'].add_element entry_doc.root
           end
 
           post_body = ''
-          post.write( post_body, 2 )
+          post.write_to( post_body, :indent => 2 )
           post_body_io = StringIO.new(post_body)
 
           response = yt_session.post('feeds/api/users/batch', post_body_io )
@@ -268,28 +267,28 @@ class YouTubeIt
       def profile_url(user=nil)
         "/feeds/api/users/%s?v=2" % (user || "default")
       end
-      
+
       # Return's a user's activity feed.
       def get_activity(user, opts)
         activity_url = "/feeds/api/events?author=%s&v=2&" % (user ? user : "default")
         activity_url << opts.collect { |k,p| [k,p].join '=' }.join('&')
         response = yt_session.get(activity_url)
-        
+
         return YouTubeIt::Parser::ActivityParser.new(response).parse
       end
 
       def watchlater(user)
         watchlater_url = "/feeds/api/users/%s/watch_later?v=2" % (user ? user : "default")
         response = yt_session.get(watchlater_url)
-        
+
         return YouTubeIt::Parser::PlaylistFeedParser.new(response).parse
       end
-      
+
       def add_video_to_watchlater(video_id)
         playlist_body = video_xml_for(:playlist => video_id)
         playlist_url  = "/feeds/api/users/default/watch_later"
         response      = yt_session.post(playlist_url, playlist_body)
-        
+
         return {:code => response.status, :body => response.body, :watchlater_entry_id => get_entry_id(response.body)}
       end
 
@@ -298,27 +297,27 @@ class YouTubeIt
         response     = yt_session.delete(playlist_url)
 
         return true
-      end      
+      end
 
       def playlist(playlist_id, order_by = :position)
         playlist_url = "/feeds/api/playlists/%s?v=2&orderby=%s" % [playlist_id, order_by]
         response     = yt_session.get(playlist_url)
-        
+
         return YouTubeIt::Parser::PlaylistFeedParser.new(response).parse
       end
 
       def playlists(user)
         playlist_url = "/feeds/api/users/%s/playlists?v=2" % (user ? user : "default")
         response     = yt_session.get(playlist_url)
-        
+
         return YouTubeIt::Parser::PlaylistsFeedParser.new(response).parse
       end
-      
+
       def add_playlist(options)
         playlist_body = video_xml_for_playlist(options)
         playlist_url  = "/feeds/api/users/default/playlists"
         response      = yt_session.post(playlist_url, playlist_body)
-        
+
         return YouTubeIt::Parser::PlaylistFeedParser.new(response).parse
       end
 
@@ -326,7 +325,7 @@ class YouTubeIt
         playlist_body = video_xml_for(:playlist => video_id)
         playlist_url  = "/feeds/api/playlists/%s" % playlist_id
         response      = yt_session.post(playlist_url, playlist_body)
-        
+
         return {:code => response.status, :body => response.body, :playlist_entry_id => get_entry_id(response.body)}
       end
 
@@ -334,21 +333,21 @@ class YouTubeIt
         playlist_body = video_xml_for_playlist(options)
         playlist_url  = "/feeds/api/users/default/playlists/%s" % playlist_id
         response      = yt_session.put(playlist_url, playlist_body)
-        
+
         return YouTubeIt::Parser::PlaylistFeedParser.new(response).parse
       end
 
       def delete_video_from_playlist(playlist_id, playlist_entry_id)
         playlist_url = "/feeds/api/playlists/%s/%s" % [playlist_id, playlist_entry_id]
         response     = yt_session.delete(playlist_url)
-        
+
         return true
       end
 
       def delete_playlist(playlist_id)
         playlist_url = "/feeds/api/users/default/playlists/%s" % playlist_id
         response     = yt_session.delete(playlist_url)
-        
+
         return true
       end
 
@@ -356,32 +355,32 @@ class YouTubeIt
         rating_body = video_xml_for(:rating => rating)
         rating_url  = "/feeds/api/videos/#{video_id}/ratings"
         response    = yt_session.post(rating_url, rating_body)
-        
+
         return {:code => response.status, :body => response.body}
       end
-      
+
       def subscriptions(user)
         subscription_url = "/feeds/api/users/%s/subscriptions?v=2" % (user ? user : "default")
         response         = yt_session.get(subscription_url)
-        
+
         return YouTubeIt::Parser::SubscriptionFeedParser.new(response).parse
       end
-            
+
       def subscribe_channel(channel_name)
         subscribe_body = video_xml_for(:subscribe => channel_name)
         subscribe_url  = "/feeds/api/users/default/subscriptions"
         response       = yt_session.post(subscribe_url, subscribe_body)
-         
+
         return {:code => response.status, :body => response.body}
       end
-      
+
       def unsubscribe_channel(subscription_id)
         unsubscribe_url = "/feeds/api/users/default/subscriptions/%s" % subscription_id
         response        = yt_session.delete(unsubscribe_url)
 
         return {:code => response.status, :body => response.body}
       end
-      
+
       def favorites(user, opts = {})
         favorite_url = "/feeds/api/users/%s/favorites#{opts.empty? ? '' : '?#{opts.to_param}'}" % (user ? user : "default")
         response     = yt_session.get(favorite_url)
@@ -393,35 +392,35 @@ class YouTubeIt
         current_user_url = "/feeds/api/users/default"
         response         = yt_session.get(current_user_url)
 
-        return REXML::Document.new(response.body).elements["entry"].elements['author'].elements['name'].text
+        return Nokogiri::XML(response.body).at("entry/author/name").text
       end
-      
+
       def add_response(original_video_id, response_video_id)
         response_body   = video_xml_for(:response => response_video_id)
         response_url    = "/feeds/api/videos/%s/responses" % original_video_id
         response        = yt_session.post(response_url, response_body)
-         
+
         return {:code => response.status, :body => response.body}
       end
 
       def delete_response(original_video_id, response_video_id)
         response_url    = "/feeds/api/videos/%s/responses/%s" % [original_video_id, response_video_id]
         response        = yt_session.delete(response_url)
-         
+
         return {:code => response.status, :body => response.body}
       end
-      
+
       def get_watch_history
         watch_history_url = "/feeds/api/users/default/watch_history?v=2"
         response = yt_session.get(watch_history_url)
-        
+
         return YouTubeIt::Parser::VideosFeedParser.new(response.body).parse
       end
 
       def new_subscription_videos(user)
         subscription_url = "/feeds/api/users/%s/newsubscriptionvideos?v=2" % (user ? user : "default")
         response         = yt_session.get(subscription_url)
-        
+
         return YouTubeIt::Parser::VideosFeedParser.new(response.body).parse
       end
 
@@ -452,15 +451,15 @@ class YouTubeIt
 
       def parse_upload_error_from(string)
         begin
-          REXML::Document.new(string).elements["//errors"].inject('') do | all_faults, error|
-            if error.elements["internalReason"]
-              msg_error = error.elements["internalReason"].text
-            elsif error.elements["location"]
-              msg_error = error.elements["location"].text[/media:group\/media:(.*)\/text\(\)/,1]
+          Nokogiri::XML(string).xpath("//errors").inject('') do | all_faults, error|
+            if error.at("internalReason")
+              msg_error = error.at("internalReason").text
+            elsif error.at("location")
+              msg_error = error.at("location").text[/media:group\/media:(.*)\/text\(\)/,1]
             else
               msg_error = "Unspecified error"
             end
-            code = error.elements["code"].text if error.elements["code"]
+            code = error.at("code").text if error.at("code")
             all_faults + sprintf("%s: %s\n", msg_error, code)
           end
         rescue
@@ -481,14 +480,13 @@ class YouTubeIt
       end
 
       def uploaded_video_id_from(string)
-        xml = REXML::Document.new(string)
-        xml.elements["//id"].text[/videos\/(.+)/, 1]
+        xml = Nokogiri::XML(string)
+        xml.at("id").text[/videos\/(.+)/, 1]
       end
 
       def playlist_id_from(string)
-        xml = REXML::Document.new(string)
-        entry = xml.elements["entry"]
-        entry.elements["id"].text[/playlist([^<]+)/, 1].sub(':','')
+        xml = Nokogiri::XML(string)
+        xml.at("entry/id").text[/playlist([^<]+)/, 1].sub(':','')
       end
 
       # If data can be read, use the first 1024 bytes as filename. If data
@@ -600,9 +598,9 @@ class YouTubeIt
       end
 
       def get_entry_id(string)
-        entry_xml = REXML::Document.new(string)
-        entry_xml.elements.each("/entry") do |item|
-          return item.elements["id"].text[/^.*:([^:]+)$/,1]
+        entry_xml = Nokogiri::XML(string)
+        entry_xml.css("entry").each do |item|
+          return item.at("id").text[/^.*:([^:]+)$/,1]
         end
       end
 
@@ -616,9 +614,9 @@ class YouTubeIt
             end
           end
           builder.use Faraday::Request::AuthHeader, authorization_headers
-          builder.use Faraday::Response::YouTubeIt 
+          builder.use Faraday::Response::YouTubeIt
           builder.adapter YouTubeIt.adapter
-          
+
         end
       end
     end

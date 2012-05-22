@@ -359,12 +359,13 @@ class TestClient < Test::Unit::TestCase
     assert_equal profile.username, "tubeit20101"
     assert_not_nil profile.insight_uri, 'user insight_uri nil'
 
-    assert_not_nil profile.username_display
-    assert_not_nil profile.max_upload_duration
-    assert_not_nil profile.user_id
+    assert_equal 'tubeit20101', profile.username
+    assert_equal 'tubeit20101', profile.username_display
+    assert_instance_of Fixnum, profile.max_upload_duration
+    assert_instance_of String, profile.user_id
     assert_nothing_raised{ profile.last_name }
     assert_nothing_raised{ profile.first_name }
-    assert_not_nil profile.upload_count
+    assert_instance_of Fixnum, profile.upload_count
   end
 
   def test_should_get_another_profile
