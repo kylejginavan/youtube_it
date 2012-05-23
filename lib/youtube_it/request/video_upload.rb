@@ -517,7 +517,11 @@ class YouTubeIt
       def video_xml
         b = Builder::XmlMarkup.new
         b.instruct!
-        b.entry(:xmlns => "http://www.w3.org/2005/Atom", 'xmlns:media' => "http://search.yahoo.com/mrss/", 'xmlns:yt' => "http://gdata.youtube.com/schemas/2007") do | m |
+        b.entry(:xmlns => "http://www.w3.org/2005/Atom",
+          'xmlns:media' => "http://search.yahoo.com/mrss/",
+          'xmlns:yt' => "http://gdata.youtube.com/schemas/2007",
+          'xmlns:gml' => 'http://www.opengis.net/gml',
+          'xmlns:georss' => 'http://www.georss.org/georss') do | m |
           m.tag!("media:group") do | mg |
             mg.tag!("media:title", @opts[:title], :type => "plain")
             mg.tag!("media:description", @opts[:description], :type => "plain")
@@ -533,6 +537,13 @@ class YouTubeIt
           m.tag!("yt:accessControl", :action => "list", :permission => @opts[:list]) if @opts[:list]
           m.tag!("yt:accessControl", :action => "embed", :permission => @opts[:embed]) if @opts[:embed]
           m.tag!("yt:accessControl", :action => "syndicate", :permission => @opts[:syndicate]) if @opts[:syndicate]
+          if @opts[:latitude] and @opts[:longitude]
+            m.tag!("georss:where") do |geo|
+              geo.tag!("gml:Point") do |point|
+                point.tag!("gml:pos", @opts.values_at(:latitude, :longitude).join(' '))
+              end
+            end
+          end
         end.to_s
       end
 

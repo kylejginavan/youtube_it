@@ -209,8 +209,11 @@ class TestClient < Test::Unit::TestCase
     video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
     assert_valid_video video
     assert video.listed?
-    updated_video  = @client.video_update(video.unique_id, OPTIONS.merge(:title => "title changed"))
+    updated_video = @client.video_update(video.unique_id, OPTIONS.merge(:title => "title changed", :private => true, :latitude => 0.5, :longitude => 1.2))
     assert_equal "title changed", updated_video.title
+    assert_equal 0.5, updated_video.latitude
+    assert_equal 1.2, updated_video.longitude
+    assert updated_video.perm_private
     assert @client.video_delete(video.unique_id)
   end
 
@@ -232,13 +235,23 @@ class TestClient < Test::Unit::TestCase
 
   def test_should_denied_embed
     video  = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:embed => "denied"))
+    assert_valid_video video
     assert video.noembed
     @client.video_delete(video.unique_id)
   end
 
   def test_should_denied_listing
     video = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:list => "denied"))
+    assert_valid_video video
     assert !video.listed?
+    @client.video_delete(video.unique_id)
+  end
+
+  def test_should_upload_private_video
+    video  = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge!(:private => true))
+    assert_valid_video video
+    assert_equal video.perm_private, true
+    assert_equal video.access_control, {"comment"=>"allowed", "commentVote"=>"allowed", "videoRespond"=>"moderated", "rate"=>"allowed", "embed"=>"allowed", "list"=>"allowed", "autoPlay"=>"allowed", "syndicate"=>"allowed"}
     @client.video_delete(video.unique_id)
   end
 
@@ -444,14 +457,6 @@ class TestClient < Test::Unit::TestCase
     @client.delete_video_from_watchlater(video[:watchlater_entry_id])
     wait_for_api
     assert @client.watchlater.videos.empty?
-  end
-
-  def test_should_upload_private_video
-    video  = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge!(:private => "true"))
-    assert_valid_video video
-    assert_equal video.perm_private, true
-    assert_equal video.access_control, {"comment"=>"allowed", "commentVote"=>"allowed", "videoRespond"=>"moderated", "rate"=>"allowed", "embed"=>"allowed", "list"=>"allowed", "autoPlay"=>"allowed", "syndicate"=>"allowed"}
-    @client.video_delete(video.unique_id)
   end
 
   private
