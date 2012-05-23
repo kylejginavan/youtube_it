@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<entry xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:gd="http://schemas.google.com/g/2005" xmlns:yt="http://gdata.youtube.com/schemas/2007" gd:etag="W/&quot;A0UBR347eCp7ImA9Wx9bFEs.&quot;">
+<entry xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:gd="http://schemas.google.com/g/2005" xmlns:gml='http://www.opengis.net/gml' xmlns:georss='http://www.georss.org/georss' xmlns:yt="http://gdata.youtube.com/schemas/2007" gd:etag="W/&quot;A0UBR347eCp7ImA9Wx9bFEs.&quot;">
 	<id>tag:youtube.com,2008:video:AbC123DeFgH</id>
 	<published>2010-12-29T13:57:49.000Z</published>
 	<updated>2011-02-23T13:54:16.000Z</updated>
@@ -48,6 +48,11 @@
 		<yt:videoid>AbC123DeFgH</yt:videoid>
 	</media:group>
 	<gd:rating average="4.305027" max="5" min="1" numRaters="2049" rel="http://schemas.google.com/g/2005#overall"/>
+	<georss:where>
+		<gml:Point>
+			<gml:pos>21.37124437061831 -157.87353515625</gml:pos>
+		</gml:Point>
+  </georss:where>
 	<yt:statistics favoriteCount="200" viewCount="240000"/>
 	<yt:rating numDislikes="350" numLikes="1700"/>
 </entry>

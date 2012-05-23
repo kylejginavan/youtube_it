@@ -200,21 +200,21 @@ class TestVideoFeedParser < Test::Unit::TestCase
   def test_should_parse_position_geodata_correctly
     with_video_response do |parser|
       video = parser.parse
-      assert_equal nil, video.position
+      assert_equal "21.37124437061831 -157.87353515625", video.position
     end
   end
 
   def test_should_parse_latitude_geodata_correctly
     with_video_response do |parser|
       video = parser.parse
-      assert_equal nil, video.latitude
+      assert_equal 21.37124437061831, video.latitude
     end
   end
 
   def test_should_parse_longitude_geodata_correctly
     with_video_response do |parser|
       video = parser.parse
-      assert_equal nil, video.longitude
+      assert_equal -157.87353515625, video.longitude
     end
   end
 
