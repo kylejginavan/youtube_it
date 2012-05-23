@@ -373,12 +373,9 @@ class YouTubeIt
       protected
       def parse_entry(entry)
         video_id = entry.at("id").text
-        published_at  = if entry.at("published")
-          Time.parse(entry.at("published").text)
-        elsif entry.at_xpath("media:group/yt:uploaded")
-          Time.parse(entry.at_xpath("media:group/yt:uploaded").text)
-        end
-        updated_at    = entry.at("updated") ? Time.parse(entry.at("updated").text) : nil
+        published_at = entry.at("published") ? Time.parse(entry.at("published").text) : nil
+        uploaded_at = entry.at_xpath("media:group/yt:uploaded") ? Time.parse(entry.at_xpath("media:group/yt:uploaded").text) : nil
+        updated_at = entry.at("updated") ? Time.parse(entry.at("updated").text) : nil
 
         # parse the category and keyword lists
         categories = []
@@ -517,6 +514,7 @@ class YouTubeIt
           :video_id       => video_id,
           :published_at   => published_at,
           :updated_at     => updated_at,
+          :uploaded_at    => uploaded_at,
           :categories     => categories,
           :keywords       => keywords,
           :title          => title,

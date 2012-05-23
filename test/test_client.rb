@@ -487,6 +487,8 @@ class TestClient < Test::Unit::TestCase
       # http://www.youtube.com/watch?v=IHVaXG1thXM
       assert_valid_url video.player_url
       assert_instance_of Time, video.published_at
+      assert_instance_of Time, video.updated_at
+      assert_instance_of Time, video.uploaded_at
 
       # validate optionally-present rating
       if video.rating
