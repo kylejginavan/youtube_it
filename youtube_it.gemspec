@@ -72,12 +72,14 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<nokogiri>, ["~> 1.5.2"])
       s.add_runtime_dependency(%q<oauth>, ["~> 0.4.4"])
       s.add_runtime_dependency(%q<oauth2>, ["~> 0.6"])
       s.add_runtime_dependency(%q<simple_oauth>, ["~> 0.1.5"])
       s.add_runtime_dependency(%q<faraday>, ["~> 0.8"])
       s.add_runtime_dependency(%q<builder>, [">= 0"])
     else
+      s.add_dependency(%q<nokogiri>, ["~> 1.5.2"])
       s.add_dependency(%q<oauth>, ["~> 0.4.4"])
       s.add_dependency(%q<oauth2>, ["~> 0.6"])
       s.add_dependency(%q<simple_oauth>, ["~> 0.1.5"])
@@ -85,6 +87,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<builder>, [">= 0"])
     end
   else
+    s.add_dependency(%q<nokogiri>, ["~> 1.5.2"])
     s.add_dependency(%q<oauth>, ["~> 0.4.4"])
     s.add_dependency(%q<oauth2>, ["~> 0.6"])
     s.add_dependency(%q<simple_oauth>, ["~> 0.1.5"])

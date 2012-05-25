@@ -72,7 +72,8 @@ class TestVideoFeedParser < Test::Unit::TestCase
   def test_should_parse_uploaded_as_published_at_correctly
     with_video_response("/files/youtube_video_response_without_published.xml") do |parser|
       video = parser.parse
-      assert_equal Time.parse("Wed Dec 29 13:57:49 UTC 2010"), video.published_at
+      assert_equal nil, video.published_at
+      assert_equal Time.parse("Wed Dec 29 13:57:49 UTC 2010"), video.uploaded_at
     end
   end
 

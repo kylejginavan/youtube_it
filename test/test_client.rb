@@ -209,8 +209,11 @@ class TestClient < Test::Unit::TestCase
     video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
     assert_valid_video video
     assert video.listed?
-    updated_video  = @client.video_update(video.unique_id, OPTIONS.merge(:title => "title changed"))
+    updated_video = @client.video_update(video.unique_id, OPTIONS.merge(:title => "title changed", :private => true, :latitude => 0.5, :longitude => 1.2))
     assert_equal "title changed", updated_video.title
+    assert_equal 0.5, updated_video.latitude
+    assert_equal 1.2, updated_video.longitude
+    assert updated_video.perm_private
     assert @client.video_delete(video.unique_id)
   end
 
@@ -232,13 +235,23 @@ class TestClient < Test::Unit::TestCase
 
   def test_should_denied_embed
     video  = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:embed => "denied"))
+    assert_valid_video video
     assert video.noembed
     @client.video_delete(video.unique_id)
   end
 
   def test_should_denied_listing
     video = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:list => "denied"))
+    assert_valid_video video
     assert !video.listed?
+    @client.video_delete(video.unique_id)
+  end
+
+  def test_should_upload_private_video
+    video  = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge!(:private => true))
+    assert_valid_video video
+    assert_equal video.perm_private, true
+    assert_equal video.access_control, {"comment"=>"allowed", "commentVote"=>"allowed", "videoRespond"=>"moderated", "rate"=>"allowed", "embed"=>"allowed", "list"=>"allowed", "autoPlay"=>"allowed", "syndicate"=>"allowed"}
     @client.video_delete(video.unique_id)
   end
 
@@ -359,12 +372,13 @@ class TestClient < Test::Unit::TestCase
     assert_equal profile.username, "tubeit20101"
     assert_not_nil profile.insight_uri, 'user insight_uri nil'
 
-    assert_not_nil profile.username_display
-    assert_not_nil profile.max_upload_duration
-    assert_not_nil profile.user_id
+    assert_equal 'tubeit20101', profile.username
+    assert_equal 'tubeit20101', profile.username_display
+    assert_instance_of Fixnum, profile.max_upload_duration
+    assert_instance_of String, profile.user_id
     assert_nothing_raised{ profile.last_name }
     assert_nothing_raised{ profile.first_name }
-    assert_not_nil profile.upload_count
+    assert_instance_of Fixnum, profile.upload_count
   end
 
   def test_should_get_another_profile
@@ -445,14 +459,6 @@ class TestClient < Test::Unit::TestCase
     assert @client.watchlater.videos.empty?
   end
 
-  def test_should_upload_private_video
-    video  = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge!(:private => "true"))
-    assert_valid_video video
-    assert_equal video.perm_private, true
-    assert_equal video.access_control, {"comment"=>"allowed", "commentVote"=>"allowed", "videoRespond"=>"moderated", "rate"=>"allowed", "embed"=>"allowed", "list"=>"allowed", "autoPlay"=>"allowed", "syndicate"=>"allowed"}
-    @client.video_delete(video.unique_id)
-  end
-
   private
 
     def assert_valid_video (video)
@@ -481,6 +487,8 @@ class TestClient < Test::Unit::TestCase
       # http://www.youtube.com/watch?v=IHVaXG1thXM
       assert_valid_url video.player_url
       assert_instance_of Time, video.published_at
+      assert_instance_of Time, video.updated_at
+      assert_instance_of Time, video.uploaded_at
 
       # validate optionally-present rating
       if video.rating

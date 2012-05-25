@@ -79,6 +79,9 @@ class YouTubeIt
       # *Time*:: When the video's data was last updated.
       attr_reader :updated_at
 
+      # *Time*:: When the video's was uploaded.
+      attr_reader :uploaded_at
+
       # *Array*:: A array of YouTubeIt::Model::Category objects that describe the videos categories.
       attr_reader :categories
 
