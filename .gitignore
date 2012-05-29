@@ -2,3 +2,4 @@
 .idea
 *.tmproj
 pkg/
+Gemfile.lock
