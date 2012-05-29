@@ -17,6 +17,11 @@ class YouTubeIt
         parse_content @content
       end
 
+      def parse_single_entry
+        doc = Nokogiri::XML(@content)
+        parse_entry(doc.at("entry") || doc)
+      end
+
       def parse_videos
         doc = Nokogiri::XML(@content)
         videos = []
