@@ -195,8 +195,8 @@ class YouTubeIt
         comment_body = comment_xml_for(:comment => comment, :reply_to => reply_to_url(video_id, reply_to))
         comment_url  = "/feeds/api/videos/%s/comments" % video_id
         response     = yt_session.post(comment_url, comment_body)
-
-        return {:code => response.status, :body => response.body}
+        comment = YouTubeIt::Parser::CommentsFeedParser.new(response.body).parse_single_entry
+        return {:code => response.status, :body => response.body, :comment => comment}
       end
 
       def delete_comment(video_id, comment_id)
