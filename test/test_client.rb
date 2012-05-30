@@ -258,15 +258,19 @@ class TestClient < Test::Unit::TestCase
   def test_should_add_comment_and_reply
     video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
     # Add comment
-    @client.add_comment(video.unique_id, "test comment")
+    res = @client.add_comment(video.unique_id, "test comment")
+    assert_equal 201, res[:code]
     wait_for_api
     comment1 = @client.comments(video.unique_id).first
+    assert_same_comment comment1, res[:comment]
     assert_equal "test comment", comment1.content
     assert_nil comment1.reply_to
     # Add reply
-    @client.add_comment(video.unique_id, "reply comment", :reply_to => comment1)
+    res = @client.add_comment(video.unique_id, "reply comment", :reply_to => comment1)
+    assert_equal 201, res[:code]
     wait_for_api
     comment2 = @client.comments(video.unique_id).find {|c| c.content =~ /reply/}
+    assert_same_comment comment2, res[:comment]
     assert_equal "reply comment", comment2.content
     assert_equal comment1.unique_id, comment2.reply_to
     # Delete comment
@@ -533,6 +537,17 @@ class TestClient < Test::Unit::TestCase
       assert_instance_of Hash, video.access_control
       assert_operator video.access_control, :has_key?, 'comment'
       assert_operator ['allowed','moderated','denied'], :include?, video.access_control['comment']
+    end
+
+    def assert_same_comment c1, c2
+      assert_equal c1.unique_id, c2.unique_id
+      assert_equal c1.content, c2.content
+      assert_equal c1.published, c2.published
+      assert_equal c1.reply_to, c2.reply_to
+      assert_equal c1.title, c2.title
+      assert_equal c1.updated, c2.updated
+      assert_equal c1.url, c2.url
+      assert_equal c1.author.name, c2.author.name
     end
 
     def assert_valid_url (url)
