@@ -36,7 +36,7 @@ class TestClient < Test::Unit::TestCase
     response.videos.each { |v| assert_valid_video v }
   end
 
-    def test_should_respond_to_a_basic_query_with_offset_and_max_results
+  def test_should_respond_to_a_basic_query_with_offset_and_max_results
     response = @client.videos_by(:query => "penguin", :offset => 15, :max_results => 30)
 
     assert_equal "tag:youtube.com,2008:videos", response.feed_id
