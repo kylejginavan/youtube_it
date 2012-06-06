@@ -451,7 +451,7 @@ class YouTubeIt
 
       def parse_upload_error_from(string)
         begin
-          Nokogiri::XML(string).xpath("//errors").inject('') do | all_faults, error|
+          Nokogiri::XML(string).css("error").inject('') do |all_faults, error|
             if error.at("internalReason")
               msg_error = error.at("internalReason").text
             elsif error.at("location")
