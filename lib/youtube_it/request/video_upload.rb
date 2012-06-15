@@ -466,7 +466,7 @@ class YouTubeIt
         else
           string[/<TITLE>(.+)<\/TITLE>/, 1] || string
         end
-    end
+      end
 
       def raise_on_faulty_response(response)
         response_code = response.code.to_i
