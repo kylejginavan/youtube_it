@@ -6,18 +6,18 @@ class YouTubeIt
     def initialize *params
       if params.first.is_a?(Hash)
         hash_options = params.first
-        @user                  = hash_options[:username]
-        @pass                  = hash_options[:password]
-        @dev_key               = hash_options[:dev_key]
-        @client_id             = hash_options[:client_id] || "youtube_it"
-        @legacy_debug_flag     = hash_options[:debug]
+        @user = hash_options[:username]
+        @pass = hash_options[:password]
+        @dev_key = hash_options[:dev_key]
+        @client_id = hash_options[:client_id] || "youtube_it"
+        @legacy_debug_flag = hash_options[:debug]
       elsif params.first
         puts "* warning: the method YouTubeIt::Client.new(user, passwd, dev_key) is deprecated, use YouTubeIt::Client.new(:username => 'user', :password => 'passwd', :dev_key => 'dev_key')"
-        @user               = params.shift
-        @pass               = params.shift
-        @dev_key            = params.shift
-        @client_id          = params.shift || "youtube_it"
-        @legacy_debug_flag  = params.shift
+        @user = params.shift
+        @pass = params.shift
+        @dev_key = params.shift
+        @client_id = params.shift || "youtube_it"
+        @legacy_debug_flag = params.shift
       end
     end
 
@@ -59,7 +59,7 @@ class YouTubeIt
       end
 
       unless request_params[:offset]
-        request_params[:offset] = calculate_offset(request_params[:page], request_params[:max_results] )
+        request_params[:offset] = calculate_offset(request_params[:page], request_params[:max_results])
       end
 
       if params.respond_to?(:to_hash) and not params[:user]
@@ -110,10 +110,14 @@ class YouTubeIt
       client.update(video_id, opts)
     end
 
+    def captions_update(video_id, data, opts = {})
+      client.captions_update(video_id, data, opts)
+    end
+
     def video_delete(video_id)
       client.delete(video_id)
     end
-    
+
     def message_delete(message_id)
       client.delete_message(message_id)
     end
@@ -156,7 +160,7 @@ class YouTubeIt
     def profiles(*users)
       client.profiles(*users)
     end
-    
+
     # Fetches a user's activity feed.
     def activity(user = nil, opts = {})
       client.get_activity(user, opts)
@@ -165,7 +169,7 @@ class YouTubeIt
     def watchlater(user = nil)
       client.watchlater(user)
     end
-    
+
     def add_video_to_watchlater(video_id)
       client.add_video_to_watchlater(video_id)
     end
@@ -209,7 +213,7 @@ class YouTubeIt
     def dislike_video(video_id)
       client.rate_video(video_id, 'dislike')
     end
-    
+
     def subscribe_channel(channel_name)
       client.subscribe_channel(channel_name)
     end
@@ -217,7 +221,7 @@ class YouTubeIt
     def unsubscribe_channel(subscription_id)
       client.unsubscribe_channel(subscription_id)
     end
-    
+
     def subscriptions(user_id = nil)
       client.subscriptions(user_id)
     end
@@ -225,7 +229,7 @@ class YouTubeIt
     def enable_http_debugging
       client.enable_http_debugging
     end
-    
+
     def add_response(original_video_id, response_video_id)
       client.add_response(original_video_id, response_video_id)
     end
@@ -237,7 +241,7 @@ class YouTubeIt
     def current_user
       client.get_current_user
     end
-    
+
     # Gets the authenticated users video with the given ID. It may be private.
     def my_video(video_id)
       client.get_my_video(video_id)
@@ -247,27 +251,27 @@ class YouTubeIt
     def my_videos(opts = {})
       client.get_my_videos(opts)
     end
-    
+
     # Gets all of the user's contacts/friends. 
     def my_contacts(opts = {})
       client.get_my_contacts(opts)
     end
-    
+
     # Send video message
     def send_message(opts = {})
       client.send_message(opts)
     end
-    
+
     # Gets all of the user's messages/inbox. 
     def my_messages(opts = {})
       client.get_my_messages(opts)
     end
-    
+
     # Gets the user's watch history
     def watch_history
       client.get_watch_history
     end
-    
+
     # Gets new subscription videos
     def new_subscription_videos(user_id = nil)
       client.new_subscription_videos(user_id)
@@ -293,16 +297,16 @@ class YouTubeIt
     def initialize *params
       if params.first.is_a?(Hash)
         hash_options = params.first
-        @authsub_token                 = hash_options[:token]
-        @dev_key                       = hash_options[:dev_key]
-        @client_id                     = hash_options[:client_id] || "youtube_it"
-        @legacy_debug_flag             = hash_options[:debug]
+        @authsub_token = hash_options[:token]
+        @dev_key = hash_options[:dev_key]
+        @client_id = hash_options[:client_id] || "youtube_it"
+        @legacy_debug_flag = hash_options[:debug]
       else
         puts "* warning: the method YouTubeIt::AuthSubClient.new(token, dev_key) is depricated, use YouTubeIt::AuthSubClient.new(:token => 'token', :dev_key => 'dev_key')"
-        @authsub_token              = params.shift
-        @dev_key                    = params.shift
-        @client_id                  = params.shift || "youtube_it"
-        @legacy_debug_flag          = params.shift
+        @authsub_token = params.shift
+        @dev_key = params.shift
+        @client_id = params.shift || "youtube_it"
+        @legacy_debug_flag = params.shift
       end
     end
 
@@ -311,9 +315,9 @@ class YouTubeIt
       session_token_url = "/accounts/AuthSubSessionToken"
 
       http_connection do |session|
-        response = session.get2('https://%s' % session_token_url,session_token_header).body
+        response = session.get2('https://%s' % session_token_url, session_token_header).body
       end
-      @authsub_token = response.sub('Token=','')
+      @authsub_token = response.sub('Token=', '')
     end
 
     def revoke_session_token
@@ -321,7 +325,7 @@ class YouTubeIt
       session_token_url = "/accounts/AuthSubRevokeToken"
 
       http_connection do |session|
-        response = session.get2('https://%s' % session_token_url,session_token_header).code
+        response = session.get2('https://%s' % session_token_url, session_token_header).code
       end
       response.to_s == '200' ? true : false
     end
@@ -331,63 +335,63 @@ class YouTubeIt
       session_token_url = "/accounts/AuthSubTokenInfo"
 
       http_connection do |session|
-        response = session.get2('https://%s' % session_token_url,session_token_header)
+        response = session.get2('https://%s' % session_token_url, session_token_header)
       end
-      {:code => response.code, :body => response.body }
+      {:code => response.code, :body => response.body}
     end
 
     private
-      def client
-        @client ||= YouTubeIt::Upload::VideoUpload.new(:dev_key => @dev_key, :authsub_token => @authsub_token)
-      end
+    def client
+      @client ||= YouTubeIt::Upload::VideoUpload.new(:dev_key => @dev_key, :authsub_token => @authsub_token)
+    end
 
-      def session_token_header
-        {
-          "Content-Type"   => "application/x-www-form-urlencoded",
-          "Authorization"  => "AuthSub token=#{@authsub_token}"
-        }
-      end
+    def session_token_header
+      {
+          "Content-Type" => "application/x-www-form-urlencoded",
+          "Authorization" => "AuthSub token=#{@authsub_token}"
+      }
+    end
 
-      def http_connection
-        http = Net::HTTP.new("www.google.com")
-        http.set_debug_output(logger) if @http_debugging
-        http.start do |session|
-          yield(session)
-        end
+    def http_connection
+      http = Net::HTTP.new("www.google.com")
+      http.set_debug_output(logger) if @http_debugging
+      http.start do |session|
+        yield(session)
       end
+    end
   end
 
   class OAuthClient < Client
     def initialize *params
       if params.first.is_a?(Hash)
         hash_options = params.first
-        @consumer_key                  = hash_options[:consumer_key]
-        @consumer_secret               = hash_options[:consumer_secret]
-        @user                          = hash_options[:username]
-        @dev_key                       = hash_options[:dev_key]
-        @client_id                     = hash_options[:client_id] || "youtube_it"
-        @legacy_debug_flag             = hash_options[:debug]
+        @consumer_key = hash_options[:consumer_key]
+        @consumer_secret = hash_options[:consumer_secret]
+        @user = hash_options[:username]
+        @dev_key = hash_options[:dev_key]
+        @client_id = hash_options[:client_id] || "youtube_it"
+        @legacy_debug_flag = hash_options[:debug]
       else
         puts "* warning: the method YouTubeIt::OAuthClient.new(consumer_key, consumer_secrect, dev_key) is depricated, use YouTubeIt::OAuthClient.new(:consumer_key => 'consumer key', :consumer_secret => 'consumer secret', :dev_key => 'dev_key')"
-        @consumer_key                  = params.shift
-        @consumer_secret               = params.shift
-        @dev_key                       = params.shift
-        @user                          = params.shift
-        @client_id                     = params.shift || "youtube_it"
-        @legacy_debug_flag             = params.shift
+        @consumer_key = params.shift
+        @consumer_secret = params.shift
+        @dev_key = params.shift
+        @user = params.shift
+        @client_id = params.shift || "youtube_it"
+        @legacy_debug_flag = params.shift
       end
     end
 
     def consumer
-      @consumer ||= ::OAuth::Consumer.new(@consumer_key,@consumer_secret,{
-        :site=>"https://www.google.com",
-        :request_token_path=>"/accounts/OAuthGetRequestToken",
-        :authorize_path=>"/accounts/OAuthAuthorizeToken",
-        :access_token_path=>"/accounts/OAuthGetAccessToken"})
+      @consumer ||= ::OAuth::Consumer.new(@consumer_key, @consumer_secret, {
+          :site => "https://www.google.com",
+          :request_token_path => "/accounts/OAuthGetRequestToken",
+          :authorize_path => "/accounts/OAuthAuthorizeToken",
+          :access_token_path => "/accounts/OAuthGetAccessToken"})
     end
 
     def request_token(callback)
-      @request_token = consumer.get_request_token({:oauth_callback => callback},{:scope => "http://gdata.youtube.com"})
+      @request_token = consumer.get_request_token({:oauth_callback => callback}, {:scope => "http://gdata.youtube.com"})
     end
 
     def access_token
@@ -396,21 +400,21 @@ class YouTubeIt
 
     def config_token
       {
-        :consumer_key => @consumer_key,
-        :consumer_secret => @consumer_secret,
-        :token => @atoken,
-        :token_secret => @asecret
-       }
+          :consumer_key => @consumer_key,
+          :consumer_secret => @consumer_secret,
+          :token => @atoken,
+          :token_secret => @asecret
+      }
     end
 
-    def authorize_from_request(rtoken,rsecret,verifier)
-      request_token = ::OAuth::RequestToken.new(consumer,rtoken,rsecret)
+    def authorize_from_request(rtoken, rsecret, verifier)
+      request_token = ::OAuth::RequestToken.new(consumer, rtoken, rsecret)
       access_token = request_token.get_access_token({:oauth_verifier => verifier})
-      @atoken,@asecret = access_token.token, access_token.secret
+      @atoken, @asecret = access_token.token, access_token.secret
     end
 
-    def authorize_from_access(atoken,asecret)
-      @atoken,@asecret = atoken, asecret
+    def authorize_from_access(atoken, asecret)
+      @atoken, @asecret = atoken, asecret
     end
 
     def current_user
@@ -437,13 +441,13 @@ class YouTubeIt
 
   class OAuth2Client < YouTubeIt::Client
     def initialize(options)
-      @client_id               = options[:client_id]
-      @client_secret           = options[:client_secret]
-      @client_access_token     = options[:client_access_token]
-      @client_refresh_token    = options[:client_refresh_token]
+      @client_id = options[:client_id]
+      @client_secret = options[:client_secret]
+      @client_access_token = options[:client_access_token]
+      @client_refresh_token = options[:client_refresh_token]
       @client_token_expires_at = options[:client_token_expires_at]
-      @dev_key                 = options[:dev_key]
-      @legacy_debug_flag       = options[:debug]
+      @dev_key = options[:dev_key]
+      @legacy_debug_flag = options[:debug]
     end
 
     def oauth_client
@@ -452,7 +456,7 @@ class YouTubeIt
                                              :authorize_url => '/o/oauth2/auth',
                                              :token_url => '/o/oauth2/token')
     end
-    
+
     def access_token
       @access_token ||= ::OAuth2::AccessToken.new(oauth_client, @client_access_token, :refresh_token => @client_refresh_token, :expires_at => @client_token_expires_at)
     end
@@ -479,7 +483,7 @@ class YouTubeIt
         raise YouTubeIt::Upload::UploadError.new(profile.inspect, response_code)
       end
     end
-    
+
     private
 
     def client

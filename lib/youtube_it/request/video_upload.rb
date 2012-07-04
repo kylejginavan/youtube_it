@@ -115,6 +115,24 @@ class YouTubeIt
         return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse
       end
 
+
+      def captions_update(video_id, data, options)
+        @opts = {
+            :language => 'en-US',
+            :slug => ''
+        }.merge(options)
+
+        upload_header = {
+            "Slug" => "#{URI.escape(@opts[:slug])}",
+            "Content-Language"=>@opts[:language],
+            "Content-Type" => "application/vnd.youtube.timedtext; charset=UTF-8",
+            "Content-Length" => "#{data.length}",
+        }
+        upload_url = "/feeds/api/videos/#{video_id}/captions"
+        response = yt_session(base_url).post(upload_url, data, upload_header)
+        return YouTubeIt::Parser::CaptionFeedParser.new(response.body).parse
+      end
+
       # Fetches the currently authenticated user's contacts (i.e. friends).
       # When the authentication credentials are incorrect, an AuthenticationError will be raised.
       def get_my_contacts(opts)
