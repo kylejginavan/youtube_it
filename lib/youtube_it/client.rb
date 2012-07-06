@@ -310,9 +310,11 @@ class YouTubeIt
       response = nil
       session_token_url = "/accounts/AuthSubSessionToken"
 
-      http_connection do |session|
-        response = session.get2('https://%s' % session_token_url,session_token_header).body
-      end
+      response = http_connection.get do |req|
+        req.url session_token_url
+        req.headers = session_token_header
+      end.body
+
       @authsub_token = response.sub('Token=','')
     end
 
@@ -320,9 +322,11 @@ class YouTubeIt
       response = nil
       session_token_url = "/accounts/AuthSubRevokeToken"
 
-      http_connection do |session|
-        response = session.get2('https://%s' % session_token_url,session_token_header).code
-      end
+      response = http_connection.get do |req|
+        req.url session_token_url
+        req.headers = session_token_header
+      end.status
+      
       response.to_s == '200' ? true : false
     end
 
@@ -330,10 +334,12 @@ class YouTubeIt
       response = nil
       session_token_url = "/accounts/AuthSubTokenInfo"
 
-      http_connection do |session|
-        response = session.get2('https://%s' % session_token_url,session_token_header)
+      response = http_connection.get do |req|
+        req.url session_token_url
+        req.headers = session_token_header
       end
-      {:code => response.code, :body => response.body }
+      
+      {:code => response.status, :body => response.body }
     end
 
     private
@@ -349,12 +355,13 @@ class YouTubeIt
       end
 
       def http_connection
-        http = Net::HTTP.new("www.google.com")
-        http.set_debug_output(logger) if @http_debugging
-        http.start do |session|
-          yield(session)
+        Faraday.new(:url => 'https://www.google.com', :ssl => {:verify => false}) do |builder|
+          builder.request  :url_encoded
+          builder.response :logger if @legacy_debug_flag
+          builder.adapter  Faraday.default_adapter
         end
       end
+      
   end
 
   class OAuthClient < Client
