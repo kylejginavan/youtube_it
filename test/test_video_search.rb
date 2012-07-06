@@ -174,4 +174,8 @@ class TestVideoSearch < Test::Unit::TestCase
     request = YouTubeIt::Request::VideoSearch.new(:query => "penguin", :region => "AR")
     assert_equal "http://gdata.youtube.com/feeds/api/videos?q=penguin&region=AR&v=2", request.url
   end
+  def test_should_build_basic_query_url_for_return_videos_by_location
+    request = YouTubeIt::Request::VideoSearch.new(:query => "penguin", :location => "37.42307,-122.08427")
+    assert_equal "http://gdata.youtube.com/feeds/api/videos?location=37.42307%2C-122.08427&q=penguin&v=2", request.url
+  end
 end
