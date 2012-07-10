@@ -82,6 +82,9 @@ class YouTubeIt
       # *Time*:: When the video's was uploaded.
       attr_reader :uploaded_at
 
+      # *Time*:: When the video's was recorded.
+      attr_reader :recorded_at
+
       # *Array*:: A array of YouTubeIt::Model::Category objects that describe the videos categories.
       attr_reader :categories
 
