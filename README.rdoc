@@ -208,7 +208,7 @@ Add Video To Playlist:
   $ client.add_video_to_playlist(playlist_id, video_id)
 
 Remove Video From Playlist:
-  $ client.remove_video_from_playlist(playlist_id, playlist_entry_id)
+  $ client.delete_video_from_playlist(playlist_id, playlist_entry_id)
 
 Select All Videos From your Watch Later Playlist:
   $ watcher_later = client.watcherlater(user) #default: current user
@@ -218,7 +218,7 @@ Add Video To Watcher Later Playlist:
   $ client.add_video_to_watchlater(video_id)
 
 Remove Video From Watch Later Playlist:
-  $ client.remove_video_from_watchlater(watchlater_entry_id)
+  $ client.delete_video_from_watchlater(watchlater_entry_id)
 
 
 List Related Videos
