@@ -451,13 +451,15 @@ class YouTubeIt
       @client_token_expires_at = options[:client_token_expires_at]
       @dev_key                 = options[:dev_key]
       @legacy_debug_flag       = options[:debug]
+      @connection_opts         = options[:connection_opts]   
     end
 
     def oauth_client
       @oauth_client ||= ::OAuth2::Client.new(@client_id, @client_secret,
                                              :site => "https://accounts.google.com",
                                              :authorize_url => '/o/oauth2/auth',
-                                             :token_url => '/o/oauth2/token')
+                                             :token_url => '/o/oauth2/token',
+                                             :connection_opts => @connection_opts)
     end
     
     def access_token

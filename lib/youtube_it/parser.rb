@@ -77,7 +77,7 @@ class YouTubeIt
 
       def parse_content(content)
         xml = Nokogiri::XML(content.body)
-        entry = xml.at("entry") || xml.at("feed")
+        entry = xml.at("feed") || xml.at("entry")
         YouTubeIt::Model::Playlist.new(
           :title         => entry.at("title") && entry.at("title").text,
           :summary       => ((entry.at("summary") || entry.at_xpath("media:group").at_xpath("media:description")).text rescue nil),
