@@ -455,11 +455,12 @@ class YouTubeIt
     end
 
     def oauth_client
-      @oauth_client ||= ::OAuth2::Client.new(@client_id, @client_secret,
-                                             :site => "https://accounts.google.com",
-                                             :authorize_url => '/o/oauth2/auth',
-                                             :token_url => '/o/oauth2/token',
-                                             :connection_opts => @connection_opts)
+      options = {:site => "https://accounts.google.com",
+        :authorize_url => '/o/oauth2/auth',
+        :token_url => '/o/oauth2/token'
+       }
+      options.merge(:connection_opts => @connection_opts) if @connection_opts
+      @oauth_client ||= ::OAuth2::Client.new(@client_id, @client_secret, options)
     end
     
     def access_token
