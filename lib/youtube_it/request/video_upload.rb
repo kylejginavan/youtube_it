@@ -238,26 +238,26 @@ class YouTubeIt
       def profiles(usernames_to_fetch)
         usernames_to_fetch.each_slice(50).map do |usernames|
           post = Nokogiri::XML <<-BATCH
-              <?xml version="1.0" encoding="UTF-8"?>
-              <feed xmlns='http://www.w3.org/2005/Atom'
-                    xmlns:media='http://search.yahoo.com/mrss/'
-                    xmlns:batch='http://schemas.google.com/gdata/batch'
-                    xmlns:yt='http://gdata.youtube.com/schemas/2007'>
-                <batch:operation type="query" />
+              <feed 
+                xmlns='http://www.w3.org/2005/Atom'
+                xmlns:media='http://search.yahoo.com/mrss/'
+                xmlns:batch='http://schemas.google.com/gdata/batch'
+                xmlns:yt='http://gdata.youtube.com/schemas/2007'>
               </feed>
             BATCH
           usernames.each do |username|
             post.at('feed').add_child <<-ENTRY
-              <entry xmlns:batch='http://schemas.google.com/gdata/batch'>
+              <entry>
+                <batch:operation type="query" />
                 <id>#{profile_url(username)}</id>
                 <batch:id>#{username}</batch:id>
               </entry>
             ENTRY
           end
 
-          post_body = ''
+          post_body = StringIO.new('')
           post.write_to( post_body, :indent => 2 )
-          post_body_io = StringIO.new(post_body)
+          post_body_io = StringIO.new(post_body.string)
 
           response = yt_session.post('feeds/api/users/batch', post_body_io )
           YouTubeIt::Parser::BatchProfileFeedParser.new(response).parse
