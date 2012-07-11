@@ -62,6 +62,8 @@ If your access token is still valid (be careful, access tokens may only be valid
 
   $ client.refresh_access_token!
 
+* You can see more about oauth 2 in the wiki: https://github.com/kylejginavan/youtube_it/wiki/How-To:-Use-OAuth-2
+
 == PROFILES
   you can use multiple profiles in the same account like that
 
