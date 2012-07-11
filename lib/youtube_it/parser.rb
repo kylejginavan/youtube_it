@@ -485,7 +485,6 @@ class YouTubeIt
 
         comment_feed = entry.at_xpath('gd:comments/gd:feedLink[@rel="http://gdata.youtube.com/schemas/2007#comments"]')
         comment_count = comment_feed ? comment_feed['countHint'].to_i : 0
-        #puts comment_count.inspect
 
         access_control = entry.xpath('yt:accessControl').map do |e|
           { e['action'] => e['permission'] }
