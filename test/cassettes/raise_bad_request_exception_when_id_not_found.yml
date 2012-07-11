@@ -1,45 +1,40 @@
----
-http_interactions:
-- request:
+--- 
+recorded_with: VCR 2.1.1
+http_interactions: 
+- request: 
     method: get
     uri: http://gdata.youtube.com/feeds/api/videos/abc?v=2
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
+    body: 
+      string: ""
+    headers: 
+      Accept: 
+      - "*/*"
+  response: 
+    status: 
       code: 400
       message: Bad Request
-    headers:
-      X-Gdata-User-Country:
-      - AR
-      Content-Type:
-      - application/vnd.google.gdata.error+xml
-      Transfer-Encoding:
-      - chunked
-      Date:
-      - Wed, 11 Jul 2012 19:15:00 GMT
-      Expires:
-      - Wed, 11 Jul 2012 19:15:00 GMT
-      Cache-Control:
-      - private, max-age=0
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
+    headers: 
+      X-Frame-Options: 
       - SAMEORIGIN
-      X-Xss-Protection:
+      Transfer-Encoding: 
+      - chunked
+      Content-Type: 
+      - application/vnd.google.gdata.error+xml
+      Date: 
+      - Wed, 11 Jul 2012 19:48:22 GMT
+      X-Xss-Protection: 
       - 1; mode=block
-      Server:
+      X-Gdata-User-Country: 
+      - AR
+      Server: 
       - GSE
-    body:
-      encoding: US-ASCII
-      string: <errors xmlns='http://schemas.google.com/g/2005'><error><domain>GData</domain><code>InvalidRequestUriException</code><internalReason>Invalid
-        id</internalReason></error></errors>
-    http_version: !!null 
-  recorded_at: Wed, 11 Jul 2012 19:15:00 GMT
-recorded_with: VCR 2.1.1
+      X-Content-Type-Options: 
+      - nosniff
+      Expires: 
+      - Wed, 11 Jul 2012 19:48:22 GMT
+      Cache-Control: 
+      - private, max-age=0
+    body: 
+      string: <errors xmlns='http://schemas.google.com/g/2005'><error><domain>GData</domain><code>InvalidRequestUriException</code><internalReason>Invalid id</internalReason></error></errors>
+    http_version: 
+  recorded_at: Wed, 11 Jul 2012 19:48:22 GMT
