@@ -36,6 +36,8 @@ You can see to youtube_it in action here: http://youtube-it.heroku.com
 
 == ESTABLISHING A CLIENT
 
+Important: The Account Authentication API for OAuth 1.0, AuthSub and Client Login has been officially deprecated as of April 20, 2012. It will continue to work as per our deprecation policy(https://developers.google.com/accounts/terms), but we encourage you to migrate to OAuth 2.0 authentication as soon as possible. If you are building a new application, you should use OAuth 2.0 authentication.
+
 Creating a client:
   $ require 'youtube_it'
   $ client = YouTubeIt::Client.new
