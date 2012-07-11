@@ -12,7 +12,7 @@ class TestClient < Test::Unit::TestCase
 
   def setup
     VCR.use_cassette("login with oauth2") do
-      @client = YouTubeIt::OAuth2Client.new(client_access_token: "ya29.AHES6ZSRC7Fa5cyUa5G5-TJtt849dQ7OdSiB_kjBQg7S", client_id: "68330730158.apps.googleusercontent.com", client_secret: "Npj4rmtme7q6INPPQjpQFuCZ", dev_key: "AI39si7WuZZxAkYebKSyrlJR7hIFktt6OoPycEOeOT_yHkZgr6QsGbZgmhKvbS4bsSAv0utgrfhNfXQBITu1wX_z3VsZE02giQ", client_refresh_token: "1/ErxjeSs0RNMMGtaI-87grQf_o1iQKlx0JLwec1KIDH8")
+      @client = YouTubeIt::OAuth2Client.new(:client_access_token => "ya29.AHES6ZSRC7Fa5cyUa5G5-TJtt849dQ7OdSiB_kjBQg7S", :client_id => "68330730158.apps.googleusercontent.com", :client_secret => "Npj4rmtme7q6INPPQjpQFuCZ", :dev_key => "AI39si7WuZZxAkYebKSyrlJR7hIFktt6OoPycEOeOT_yHkZgr6QsGbZgmhKvbS4bsSAv0utgrfhNfXQBITu1wX_z3VsZE02giQ", :client_refresh_token => "1/ErxjeSs0RNMMGtaI-87grQf_o1iQKlx0JLwec1KIDH8")
       @client.refresh_access_token!
     end
     use_vcr
