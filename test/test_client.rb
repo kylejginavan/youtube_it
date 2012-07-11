@@ -8,7 +8,6 @@ class TestClient < Test::Unit::TestCase
              :description => "test description",
              :category => 'People',
              :keywords => %w[test]}
-  ACCOUNT = {:user => "tubeit20101", :passwd => "youtube_it", :dev_key => "AI39si411VBmO4Im9l0rfRsORXDI6F5AX5NlTIA4uHSWqa-Cgf-jUQG-6osUBB3PTLawLHlkKXPLr3B0pNcGU9wkNd11gIgdPg" }
   RAILS_ENV = "test"
 
   def setup
