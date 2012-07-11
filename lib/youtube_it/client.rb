@@ -291,6 +291,7 @@ class YouTubeIt
 
   class AuthSubClient < Client
     def initialize *params
+      puts "* AuthSubClient will be deprecated. Use OAuth2 Client."
       if params.first.is_a?(Hash)
         hash_options = params.first
         @authsub_token                 = hash_options[:token]
@@ -366,6 +367,7 @@ class YouTubeIt
 
   class OAuthClient < Client
     def initialize *params
+      puts "* OAuth 1.0 Client will be deprecated. Use OAuth2 Client."
       if params.first.is_a?(Hash)
         hash_options = params.first
         @consumer_key                  = hash_options[:consumer_key]
