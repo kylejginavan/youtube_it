@@ -478,6 +478,11 @@ class YouTubeIt
       end
       @access_token
     end
+        
+    def session_token_info
+      response = Faraday.get("https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=#{@client_access_token}").body
+      {:code => response.status, :body => response.body }
+    end
 
     def current_user
       profile = access_token.get("http://gdata.youtube.com/feeds/api/users/default")
