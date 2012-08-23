@@ -20,7 +20,7 @@ module Faraday
     end
 
     def on_complete(env) #this method is called after finish request
-      msg = parse_upload_error_from(env[:body].gsub(/\n/, ''))
+      msg = parse_upload_error_from((env[:body] || '').gsub(/\n/, ''))
       if env[:status] == 403 || env[:status] == 401
         raise ::AuthenticationError.new(msg, env[:status])
       elsif env[:status] / 10 != 20
