@@ -21,20 +21,20 @@ http_interactions:
       Content-Type: 
       - application/vnd.google.gdata.error+xml
       Date: 
-      - Wed, 16 May 2012 14:05:57 GMT
+      - Wed, 11 Jul 2012 19:48:22 GMT
       X-Xss-Protection: 
       - 1; mode=block
       X-Gdata-User-Country: 
-      - FR
+      - AR
       Server: 
       - GSE
       X-Content-Type-Options: 
       - nosniff
       Expires: 
-      - Wed, 16 May 2012 14:05:57 GMT
+      - Wed, 11 Jul 2012 19:48:22 GMT
       Cache-Control: 
       - private, max-age=0
     body: 
       string: <errors xmlns='http://schemas.google.com/g/2005'><error><domain>GData</domain><code>InvalidRequestUriException</code><internalReason>Invalid id</internalReason></error></errors>
     http_version: 
-  recorded_at: Wed, 16 May 2012 14:05:57 GMT
+  recorded_at: Wed, 11 Jul 2012 19:48:22 GMT

@@ -36,6 +36,8 @@ You can see to youtube_it in action here: http://youtube-it.heroku.com
 
 == ESTABLISHING A CLIENT
 
+Important: The Account Authentication API for OAuth 1.0, AuthSub and Client Login has been officially deprecated as of April 20, 2012. It will continue to work as per our deprecation policy(https://developers.google.com/accounts/terms), but we encourage you to migrate to OAuth 2.0 authentication as soon as possible. If you are building a new application, you should use OAuth 2.0 authentication.
+
 Creating a client:
   $ require 'youtube_it'
   $ client = YouTubeIt::Client.new
@@ -59,6 +61,8 @@ Client with OAuth2:
 If your access token is still valid (be careful, access tokens may only be valid for about 1 hour), you can use the client directly. If you want to refresh the access token using the refresh token just do:
 
   $ client.refresh_access_token!
+
+* You can see more about oauth 2 in the wiki: https://github.com/kylejginavan/youtube_it/wiki/How-To:-Use-OAuth-2
 
 == PROFILES
   you can use multiple profiles in the same account like that
@@ -208,7 +212,7 @@ Add Video To Playlist:
   $ client.add_video_to_playlist(playlist_id, video_id)
 
 Remove Video From Playlist:
-  $ client.remove_video_from_playlist(playlist_id, playlist_entry_id)
+  $ client.delete_video_from_playlist(playlist_id, playlist_entry_id)
 
 Select All Videos From your Watch Later Playlist:
   $ watcher_later = client.watcherlater(user) #default: current user
@@ -218,7 +222,7 @@ Add Video To Watcher Later Playlist:
   $ client.add_video_to_watchlater(video_id)
 
 Remove Video From Watch Later Playlist:
-  $ client.remove_video_from_watchlater(watchlater_entry_id)
+  $ client.delete_video_from_watchlater(watchlater_entry_id)
 
 
 List Related Videos

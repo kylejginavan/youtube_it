@@ -77,7 +77,7 @@ class YouTubeIt
 
       def parse_content(content)
         xml = Nokogiri::XML(content.body)
-        entry = xml.at("entry") || xml.at("feed")
+        entry = xml.at("feed") || xml.at("entry")
         YouTubeIt::Model::Playlist.new(
           :title         => entry.at("title") && entry.at("title").text,
           :summary       => ((entry.at("summary") || entry.at_xpath("media:group").at_xpath("media:description")).text rescue nil),
@@ -381,6 +381,7 @@ class YouTubeIt
         published_at = entry.at("published") ? Time.parse(entry.at("published").text) : nil
         uploaded_at = entry.at_xpath("media:group/yt:uploaded") ? Time.parse(entry.at_xpath("media:group/yt:uploaded").text) : nil
         updated_at = entry.at("updated") ? Time.parse(entry.at("updated").text) : nil
+        recorded_at = entry.at_xpath("yt:recorded") ? Time.parse(entry.at_xpath("yt:recorded").text) : nil
 
         # parse the category and keyword lists
         categories = []
@@ -484,7 +485,6 @@ class YouTubeIt
 
         comment_feed = entry.at_xpath('gd:comments/gd:feedLink[@rel="http://gdata.youtube.com/schemas/2007#comments"]')
         comment_count = comment_feed ? comment_feed['countHint'].to_i : 0
-        #puts comment_count.inspect
 
         access_control = entry.xpath('yt:accessControl').map do |e|
           { e['action'] => e['permission'] }
@@ -520,6 +520,7 @@ class YouTubeIt
           :published_at   => published_at,
           :updated_at     => updated_at,
           :uploaded_at    => uploaded_at,
+          :recorded_at    => recorded_at,
           :categories     => categories,
           :keywords       => keywords,
           :title          => title,

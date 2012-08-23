@@ -1,0 +1,47 @@
+--- 
+recorded_with: VCR 2.1.1
+http_interactions: 
+- request: 
+    method: post
+    uri: https://accounts.google.com/o/oauth2/token
+    body: 
+      string: client_id=68330730158.apps.googleusercontent.com&refresh_token=1%2FErxjeSs0RNMMGtaI-87grQf_o1iQKlx0JLwec1KIDH8&client_secret=Npj4rmtme7q6INPPQjpQFuCZ&grant_type=refresh_token
+    headers: 
+      Content-Type: 
+      - application/x-www-form-urlencoded
+      Accept: 
+      - "*/*"
+  response: 
+    status: 
+      code: 200
+      message: OK
+    headers: 
+      X-Frame-Options: 
+      - SAMEORIGIN
+      Transfer-Encoding: 
+      - chunked
+      Content-Type: 
+      - application/json
+      Date: 
+      - Wed, 11 Jul 2012 19:39:37 GMT
+      X-Xss-Protection: 
+      - 1; mode=block
+      Pragma: 
+      - no-cache
+      Server: 
+      - GSE
+      X-Content-Type-Options: 
+      - nosniff
+      Expires: 
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Cache-Control: 
+      - no-cache, no-store, max-age=0, must-revalidate
+    body: 
+      string: |-
+        {
+          "access_token" : "ya29.AHES6ZRUgeIE8Wl5Ma8BJzzg8XTcg2_oQ4m2ddeIh7fI",
+          "token_type" : "Bearer",
+          "expires_in" : 3600
+        }
+    http_version: 
+  recorded_at: Wed, 11 Jul 2012 19:39:37 GMT

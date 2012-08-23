@@ -1,5 +1,6 @@
 .DS_Store
 .idea
 *.tmproj
+*.pkg
 pkg/
 Gemfile.lock

@@ -291,6 +291,7 @@ class YouTubeIt
 
   class AuthSubClient < Client
     def initialize *params
+      puts "* AuthSubClient will be deprecated. Use OAuth2 Client."
       if params.first.is_a?(Hash)
         hash_options = params.first
         @authsub_token                 = hash_options[:token]
@@ -310,9 +311,11 @@ class YouTubeIt
       response = nil
       session_token_url = "/accounts/AuthSubSessionToken"
 
-      http_connection do |session|
-        response = session.get2('https://%s' % session_token_url,session_token_header).body
-      end
+      response = http_connection.get do |req|
+        req.url session_token_url
+        req.headers = session_token_header
+      end.body
+
       @authsub_token = response.sub('Token=','')
     end
 
@@ -320,9 +323,11 @@ class YouTubeIt
       response = nil
       session_token_url = "/accounts/AuthSubRevokeToken"
 
-      http_connection do |session|
-        response = session.get2('https://%s' % session_token_url,session_token_header).code
-      end
+      response = http_connection.get do |req|
+        req.url session_token_url
+        req.headers = session_token_header
+      end.status
+      
       response.to_s == '200' ? true : false
     end
 
@@ -330,10 +335,12 @@ class YouTubeIt
       response = nil
       session_token_url = "/accounts/AuthSubTokenInfo"
 
-      http_connection do |session|
-        response = session.get2('https://%s' % session_token_url,session_token_header)
+      response = http_connection.get do |req|
+        req.url session_token_url
+        req.headers = session_token_header
       end
-      {:code => response.code, :body => response.body }
+      
+      {:code => response.status, :body => response.body }
     end
 
     private
@@ -349,16 +356,18 @@ class YouTubeIt
       end
 
       def http_connection
-        http = Net::HTTP.new("www.google.com")
-        http.set_debug_output(logger) if @http_debugging
-        http.start do |session|
-          yield(session)
+        Faraday.new(:url => 'https://www.google.com', :ssl => {:verify => false}) do |builder|
+          builder.request  :url_encoded
+          builder.response :logger if @legacy_debug_flag
+          builder.adapter  Faraday.default_adapter
         end
       end
+      
   end
 
   class OAuthClient < Client
     def initialize *params
+      puts "* OAuth 1.0 Client will be deprecated. Use OAuth2 Client."
       if params.first.is_a?(Hash)
         hash_options = params.first
         @consumer_key                  = hash_options[:consumer_key]
@@ -444,13 +453,16 @@ class YouTubeIt
       @client_token_expires_at = options[:client_token_expires_at]
       @dev_key                 = options[:dev_key]
       @legacy_debug_flag       = options[:debug]
+      @connection_opts         = options[:connection_opts]   
     end
 
     def oauth_client
-      @oauth_client ||= ::OAuth2::Client.new(@client_id, @client_secret,
-                                             :site => "https://accounts.google.com",
-                                             :authorize_url => '/o/oauth2/auth',
-                                             :token_url => '/o/oauth2/token')
+      options = {:site => "https://accounts.google.com",
+        :authorize_url => '/o/oauth2/auth',
+        :token_url => '/o/oauth2/token'
+       }
+      options.merge(:connection_opts => @connection_opts) if @connection_opts
+      @oauth_client ||= ::OAuth2::Client.new(@client_id, @client_secret, options)
     end
     
     def access_token
@@ -465,6 +477,11 @@ class YouTubeIt
         @client = nil
       end
       @access_token
+    end
+        
+    def session_token_info
+      response = Faraday.get("https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=#{@client_access_token}").body
+      {:code => response.status, :body => response.body }
     end
 
     def current_user

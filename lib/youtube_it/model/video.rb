@@ -82,6 +82,9 @@ class YouTubeIt
       # *Time*:: When the video's was uploaded.
       attr_reader :uploaded_at
 
+      # *Time*:: When the video's was recorded.
+      attr_reader :recorded_at
+
       # *Array*:: A array of YouTubeIt::Model::Category objects that describe the videos categories.
       attr_reader :categories
 
@@ -152,6 +155,22 @@ class YouTubeIt
       def responses
         YouTubeIt::Parser::VideosFeedParser.new("http://gdata.youtube.com/feeds/api/videos/#{unique_id}/responses?v=2").parse
       end
+
+
+      # ID of video in playlist listing
+      # Useful if you have to delete this video from a playlist
+      #
+      # === Example
+      #   >> video.in_playlist_id 
+      #   => "PLk3UVPlPEkey09s2W02R48WMDKjvSb6Hq" 
+      #
+      # === Returns
+      #   String the video id
+      #
+      def in_playlist_id
+        @video_id.split(':').last
+      end
+
       # The ID of the video, useful for searching for the video again without having to store it anywhere.
       # A regular query search, with this id will return the same video.
       #
