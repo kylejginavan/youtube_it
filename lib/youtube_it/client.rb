@@ -178,8 +178,24 @@ class YouTubeIt
       client.playlist(playlist_id, order_by)
     end
 
-    def playlists(user = nil)
-      client.playlists(user)
+    def playlists(user = nil, opts = nil)
+      client.playlists(user, opts)
+    end
+
+    # Fetches all playlists for a given user by repeatedly making requests for
+    # as many pages of playlists as the user has. Note that this can take a
+    # long time if the user has many playlists.
+    def all_playlists(user = nil)
+      newest_playlists, all_playlists_for_user = [], []
+      start_index, page_size = 1, 25
+
+      begin
+        newest_playlists = playlists(user, {'start-index' => start_index, 'max-results' => page_size})
+        all_playlists_for_user += newest_playlists
+        start_index += page_size
+      end while newest_playlists && newest_playlists.size == page_size
+
+      all_playlists_for_user
     end
 
     def add_playlist(options)
