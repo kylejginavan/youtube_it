@@ -29,7 +29,7 @@ class YouTubeIt
           @client_id                     = hash_options[:client_id] || "youtube_it"
           @config_token                  = hash_options[:config_token]
         else
-          puts "* warning: the method YouTubeIt::Upload::VideoUpload.new(username, password, dev_key) is depricated, use YouTubeIt::Upload::VideoUpload.new(:username => 'user', :password => 'passwd', :dev_key => 'dev_key')"
+          puts "* warning: the method YouTubeIt::Upload::VideoUpload.new(username, password, dev_key) is deprecated, use YouTubeIt::Upload::VideoUpload.new(:username => 'user', :password => 'passwd', :dev_key => 'dev_key')"
           @user                          = params.shift
           @password                      = params.shift
           @dev_key                       = params.shift
