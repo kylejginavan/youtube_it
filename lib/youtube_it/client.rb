@@ -299,7 +299,7 @@ class YouTubeIt
         @client_id                     = hash_options[:client_id] || "youtube_it"
         @legacy_debug_flag             = hash_options[:debug]
       else
-        puts "* warning: the method YouTubeIt::AuthSubClient.new(token, dev_key) is depricated, use YouTubeIt::AuthSubClient.new(:token => 'token', :dev_key => 'dev_key')"
+        puts "* warning: the method YouTubeIt::AuthSubClient.new(token, dev_key) is deprecated, use YouTubeIt::AuthSubClient.new(:token => 'token', :dev_key => 'dev_key')"
         @authsub_token              = params.shift
         @dev_key                    = params.shift
         @client_id                  = params.shift || "youtube_it"
@@ -377,7 +377,7 @@ class YouTubeIt
         @client_id                     = hash_options[:client_id] || "youtube_it"
         @legacy_debug_flag             = hash_options[:debug]
       else
-        puts "* warning: the method YouTubeIt::OAuthClient.new(consumer_key, consumer_secrect, dev_key) is depricated, use YouTubeIt::OAuthClient.new(:consumer_key => 'consumer key', :consumer_secret => 'consumer secret', :dev_key => 'dev_key')"
+        puts "* warning: the method YouTubeIt::OAuthClient.new(consumer_key, consumer_secrect, dev_key) is deprecated, use YouTubeIt::OAuthClient.new(:consumer_key => 'consumer key', :consumer_secret => 'consumer secret', :dev_key => 'dev_key')"
         @consumer_key                  = params.shift
         @consumer_secret               = params.shift
         @dev_key                       = params.shift
