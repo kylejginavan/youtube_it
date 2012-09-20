@@ -365,6 +365,25 @@ class YouTubeIt
       end
     end
 
+    class CaptionFeedParser < FeedParser #:nodoc:
+
+      def parse_content(content)
+        doc = (content.is_a?(Nokogiri::XML::Document)) ? content : Nokogiri::XML(content)
+
+        entry = doc.at "entry"
+        parse_entry(entry)
+      end
+
+      protected
+
+      def parse_entry(entry)
+        YouTubeIt::Model::Caption.new(
+            :title        => entry.at("title").text,
+            :id           => entry.at("id").text[/captions([^<]+)/, 1].sub(':',''),
+            :published    => entry.at("published") ? entry.at("published").text : nil
+        )
+      end
+    end
 
     class VideoFeedParser < FeedParser #:nodoc:
 
