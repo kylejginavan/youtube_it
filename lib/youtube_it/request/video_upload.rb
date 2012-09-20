@@ -306,9 +306,20 @@ class YouTubeIt
         return YouTubeIt::Parser::PlaylistFeedParser.new(response).parse
       end
 
-      def playlists(user)
-        playlist_url = "/feeds/api/users/%s/playlists?v=2" % (user ? user : "default")
-        response     = yt_session.get(playlist_url)
+      # Fetches playlists for the given user. An optional hash of parameters can be given and will
+      # be appended to the request. Paging parameters will need to be used to access playlists
+      # beyond the most recent 25 (page size default for YouTube API at the time of this writing)
+      # if a user has more than 25 playlists.
+      #
+      # Paging parameters include the following
+      # start-index - 1-based index of which playlist to start from (default is 1)
+      # max-results - maximum number of playlists to fetch, up to 25 (default is 25)
+      def playlists(user, opts={})
+        playlist_url = "/feeds/api/users/%s/playlists" % (user ? user : "default")
+        params = {'v' => 2}
+        params.merge!(opts) if opts
+        playlist_url << "?#{params.collect { |k,v| [k,v].join '=' }.join('&')}"
+        response = yt_session.get(playlist_url)
 
         return YouTubeIt::Parser::PlaylistsFeedParser.new(response).parse
       end
