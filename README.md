@@ -17,6 +17,7 @@ youtube\_it is the most complete Ruby client for the YouTube GData API. It provi
   * Create a developer key here http://code.google.com/apis/youtube/dashboard.
   * sudo gem install youtube\_it
 
+
 Note: youtube\_it supports ClientLogin(YouTube account), OAuth, or AuthSub authentication methods.
 
 ## Example Rails 3 App
