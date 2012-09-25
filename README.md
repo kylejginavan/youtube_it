@@ -153,6 +153,12 @@ client.videos_by(:fields => {:published  => ((Date.today - 30)..(Date.today))})
 client.videos_by(:fields => {:recorded   => ((Date.today - 30)..(Date.today))})  
 ```
 
+Note: These queries do not find private videos! Use these methods instead:
+```ruby
+client.get_my_video("FQK1URcxmb4")
+client.get_my_videos(:query => "penguin")
+```
+
 ##Video Management
 
 Note: YouTube account, OAuth, or AuthSub enables video management.
