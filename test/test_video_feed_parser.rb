@@ -128,6 +128,7 @@ class TestVideoFeedParser < Test::Unit::TestCase
       assert_equal "00:02:58", thumbnail.time
       assert_equal "http://i.ytimg.com/vi/AbC123DeFgH/default.jpg", thumbnail.url
       assert_equal 120, thumbnail.width
+      assert_equal 'default', thumbnail.name
     end
   end
 
