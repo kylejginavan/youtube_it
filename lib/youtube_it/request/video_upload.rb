@@ -497,18 +497,6 @@ class YouTubeIt
         end
       end
 
-      def raise_on_faulty_response(response)
-        response_code = response.code.to_i
-        msg = parse_upload_error_from(response.body.gsub(/\n/, ''))
-
-        if response_code == 403 || response_code == 401
-        #if response_code / 10 == 40
-          raise AuthenticationError.new(msg, response_code)
-        elsif response_code / 10 != 20 # Response in 20x means success
-          raise UploadError.new(msg, response_code)
-        end
-      end
-
       def uploaded_video_id_from(string)
         xml = Nokogiri::XML(string)
         xml.at("id").text[/videos\/(.+)/, 1]
