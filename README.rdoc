@@ -1,4 +1,4 @@
-== YOUTUBE_IT {<img src="https://secure.travis-ci.org/dimelo/youtube_it.png"/>}[http://travis-ci.org/dimelo/youtube_it]
+== YOUTUBE_IT {<img src="https://secure.travis-ci.org/kylejginavan/youtube_it.png"/>}[http://travis-ci.org/kylejginavan/youtube_it]
 
 == DONATION
 
@@ -320,6 +320,7 @@ YouTubeIt passes all logs through the logger variable on the class itself. In Ra
 * Marko Seppa  - https://github.com/mseppae
 * Walter Korman - https://github.com/shaper
 * Shane Vitarana - https://github.com/shanev
+* Adrien Jarthon - https://github.com/jarthod
 
 == LICENSE:
 
