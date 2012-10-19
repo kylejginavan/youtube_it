@@ -446,6 +446,22 @@ class TestClient < Test::Unit::TestCase
     assert @client.delete_playlist(playlist.playlist_id)
   end
 
+  def test_playlists_with_paging_parameters
+    playlists_first_page = @client.playlists('sbnation', {'start-index' => 1, 'max-results' => 25})
+    assert_equal 25, playlists_first_page.size
+
+    playlists_second_page = @client.playlists('sbnation', {'start-index' => 26, 'max-results' => 25})
+    assert_equal 21, playlists_second_page.size
+
+    all_playlists = playlists_first_page + playlists_second_page
+    assert_equal all_playlists.size, all_playlists.uniq.size
+  end
+
+  def test_all_playlists
+    all_playlists = @client.all_playlists('sbnation')
+    assert_equal 46, all_playlists.size
+  end
+
   def test_should_add_and_delete_video_from_watchlater
     # Clear list
     @client.watchlater.videos.each {|v| @client.delete_video_from_watchlater(v.watch_later_id)}

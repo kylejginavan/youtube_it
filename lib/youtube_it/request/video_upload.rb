@@ -29,7 +29,7 @@ class YouTubeIt
           @client_id                     = hash_options[:client_id] || "youtube_it"
           @config_token                  = hash_options[:config_token]
         else
-          puts "* warning: the method YouTubeIt::Upload::VideoUpload.new(username, password, dev_key) is depricated, use YouTubeIt::Upload::VideoUpload.new(:username => 'user', :password => 'passwd', :dev_key => 'dev_key')"
+          puts "* warning: the method YouTubeIt::Upload::VideoUpload.new(username, password, dev_key) is deprecated, use YouTubeIt::Upload::VideoUpload.new(:username => 'user', :password => 'passwd', :dev_key => 'dev_key')"
           @user                          = params.shift
           @password                      = params.shift
           @dev_key                       = params.shift
@@ -113,6 +113,24 @@ class YouTubeIt
         response    = yt_session.put(update_url, update_body)
 
         return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse
+      end
+
+
+      def captions_update(video_id, data, options)
+        @opts = {
+            :language => 'en-US',
+            :slug => ''
+        }.merge(options)
+
+        upload_header = {
+            "Slug" => "#{URI.escape(@opts[:slug])}",
+            "Content-Language"=>@opts[:language],
+            "Content-Type" => "application/vnd.youtube.timedtext; charset=UTF-8",
+            "Content-Length" => "#{data.length}",
+        }
+        upload_url = "/feeds/api/videos/#{video_id}/captions"
+        response = yt_session(base_url).post(upload_url, data, upload_header)
+        return YouTubeIt::Parser::CaptionFeedParser.new(response.body).parse
       end
 
       # Fetches the currently authenticated user's contacts (i.e. friends).
@@ -306,9 +324,20 @@ class YouTubeIt
         return YouTubeIt::Parser::PlaylistFeedParser.new(response).parse
       end
 
-      def playlists(user)
-        playlist_url = "/feeds/api/users/%s/playlists?v=2" % (user ? user : "default")
-        response     = yt_session.get(playlist_url)
+      # Fetches playlists for the given user. An optional hash of parameters can be given and will
+      # be appended to the request. Paging parameters will need to be used to access playlists
+      # beyond the most recent 25 (page size default for YouTube API at the time of this writing)
+      # if a user has more than 25 playlists.
+      #
+      # Paging parameters include the following
+      # start-index - 1-based index of which playlist to start from (default is 1)
+      # max-results - maximum number of playlists to fetch, up to 25 (default is 25)
+      def playlists(user, opts={})
+        playlist_url = "/feeds/api/users/%s/playlists" % (user ? user : "default")
+        params = {'v' => 2}
+        params.merge!(opts) if opts
+        playlist_url << "?#{params.collect { |k,v| [k,v].join '=' }.join('&')}"
+        response = yt_session.get(playlist_url)
 
         return YouTubeIt::Parser::PlaylistsFeedParser.new(response).parse
       end
