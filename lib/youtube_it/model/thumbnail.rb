@@ -12,6 +12,9 @@ class YouTubeIt
       
       # *String*:: Specifies the time offset at which the frame shown in the thumbnail image appears in the video.
       attr_reader :time
+
+      # *String*:: Specified type of the thumbnail, attribute yt:name in feed
+      attr_reader :name
     end
   end
 end

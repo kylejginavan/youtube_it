@@ -473,7 +473,8 @@ class YouTubeIt
                           :url    => thumb_element["url"],
                           :height => thumb_element["height"].to_i,
                           :width  => thumb_element["width"].to_i,
-                          :time   => thumb_element["time"])
+                          :time   => thumb_element["time"],
+                          :name   => thumb_element["name"])
         end
 
         rating_element = entry.at_xpath("gd:rating")
