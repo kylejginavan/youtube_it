@@ -23,7 +23,7 @@ module Faraday
       msg = env[:body] ? parse_upload_error_from(env[:body].gsub(/\n/, '')) : ''
       if env[:status] == 403 || env[:status] == 401
         raise ::AuthenticationError.new(msg, env[:status])
-      elsif env[:status] / 10 != 20
+      elsif (env[:status] / 10).to_i != 20
         raise ::UploadError.new(msg, env[:status])
       end
     end
