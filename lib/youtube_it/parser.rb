@@ -82,7 +82,7 @@ class YouTubeIt
           :title         => entry.at("title") && entry.at("title").text,
           :summary       => ((entry.at("summary") || entry.at_xpath("media:group").at_xpath("media:description")).text rescue nil),
           :description   => ((entry.at("summary") || entry.at_xpath("media:group").at_xpath("media:description")).text rescue nil),
-          :playlist_id   => (entry.at("id").text[/playlist:(\w+)/, 1] rescue nil),
+          :playlist_id   => (entry.at("id").text[/playlist:([\w\-]+)/, 1] rescue nil),
           :published     => entry.at("published") ? entry.at("published").text : nil,
           :response_code => content.status,
           :xml           => content.body)
