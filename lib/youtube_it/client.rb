@@ -440,7 +440,7 @@ class YouTubeIt
       response_code = profile.code.to_i
 
       if (response_code / 10).to_i == 20 # success
-        Nokogiri::XML(profile.body).at("entry/author/name").text
+        Nokogiri::XML(profile.body).at("//yt:username").text
       elsif response_code == 403 || response_code == 401 # auth failure
         raise YouTubeIt::Upload::AuthenticationError.new(profile.inspect, response_code)
       else
@@ -501,7 +501,7 @@ class YouTubeIt
       response_code = profile.status
 
       if (response_code / 10).to_i == 20 # success
-        Nokogiri::XML(profile.body).at("entry/author/name").text
+        Nokogiri::XML(profile.body).at("//yt:username").text
       elsif response_code == 403 || response_code == 401 # auth failure
         raise YouTubeIt::Upload::AuthenticationError.new(profile.inspect, response_code)
       else
