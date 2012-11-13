@@ -1,5 +1,5 @@
-module Faraday
-  class Request::AuthHeader < Faraday::Middleware
+module FaradayMiddleware
+  class YoutubeAuthHeader < Faraday::Middleware
 
     def call(env)
       req_headers = env[:request_headers]
