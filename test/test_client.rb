@@ -12,7 +12,7 @@ class TestClient < Test::Unit::TestCase
 
   def setup
     VCR.use_cassette("login with oauth2") do
-      @client = YouTubeIt::OAuth2Client.new(:client_access_token => "ya29.AHES6ZSRC7Fa5cyUa5G5-TJtt849dQ7OdSiB_kjBQg7S", :client_id => "68330730158.apps.googleusercontent.com", :client_secret => "Npj4rmtme7q6INPPQjpQFuCZ", :dev_key => "AI39si7WuZZxAkYebKSyrlJR7hIFktt6OoPycEOeOT_yHkZgr6QsGbZgmhKvbS4bsSAv0utgrfhNfXQBITu1wX_z3VsZE02giQ", :client_refresh_token => "1/ErxjeSs0RNMMGtaI-87grQf_o1iQKlx0JLwec1KIDH8")
+      @client = YouTubeIt::OAuth2Client.new(:client_access_token => "ya29.AHES6ZRPYrHe86MBw-dALHWV2XFAWadFaRvzemNKt3tA85M", :client_id => "945753295508-1oke4ok88185su0cu73pb05ctga7jaea.apps.googleusercontent.com", :client_secret => "LZ-dK8C3-Hfeav_AocG1hRrR", :dev_key => "AI39si7RTOeLuL-210N-qa68taSVoJ2ZNc2UlY52VkTjf29AEonZ_MgKZirQmQOtHOh1hRWePy61bcZkZOEIu2vlsYKW8HlxrQ", :client_refresh_token => "1/VWO1EbE5mN1s0zGaBD6G3T30u-u9IWZJYErGXdma64s")
       @client.refresh_access_token!
     end
     use_vcr
@@ -147,8 +147,8 @@ class TestClient < Test::Unit::TestCase
 
 
   def test_should_get_favorite_videos_by_user
-    response = @client.videos_by(:favorites, :user => 'drnicwilliams')
-    assert_equal "tag:youtube.com,2008:user:drnicwilliams:favorites", response.feed_id
+    response = @client.videos_by(:favorites, :user => 'NetworkA')
+    assert_equal "tag:youtube.com,2008:user:NetworkA:favorites", response.feed_id
     assert_valid_video response.videos.first
   end
 
@@ -329,7 +329,7 @@ class TestClient < Test::Unit::TestCase
   end
 
   def test_should_get_current_user
-    assert_equal 'tubeit20101', @client.current_user
+    assert_equal 'tubeit2012pivotal', @client.current_user
   end
 
   def test_should_get_my_videos
@@ -359,11 +359,11 @@ class TestClient < Test::Unit::TestCase
   def test_should_subscribe_list_and_unsubscribe_to_channel
     @client.subscriptions.each {|s| @client.unsubscribe_channel(s.id) }
     wait_for_api
-    subscribe = @client.subscribe_channel("TheWoWArthas")
+    subscribe = @client.subscribe_channel("NetworkA")
     assert_equal subscribe[:code], 201
     wait_for_api
     subs = @client.subscriptions
-    assert_equal subs.first.title, "Videos published by: TheWoWArthas"
+    assert_equal subs.first.title, "Videos published by: NetworkA"
     assert_not_nil subs.first.id
     unsubscribe = @client.unsubscribe_channel(subs.first.id)
     assert_equal unsubscribe[:code], 200
@@ -371,11 +371,11 @@ class TestClient < Test::Unit::TestCase
 
   def test_should_get_profile
     profile = @client.profile
-    assert_equal profile.username, "tubeit20101"
+    assert_equal profile.username, "tubeit2012pivotal"
     assert_not_nil profile.insight_uri, 'user insight_uri nil'
 
-    assert_equal 'tubeit20101', profile.username
-    assert_equal 'tubeit20101', profile.username_display
+    assert_equal 'tubeit2012pivotal', profile.username
+    assert_equal 'tubeit2012pivotal', profile.username_display
     assert_instance_of Fixnum, profile.max_upload_duration
     assert_instance_of String, profile.user_id
     assert_nothing_raised{ profile.last_name }
@@ -390,10 +390,10 @@ class TestClient < Test::Unit::TestCase
   end
 
   def test_should_get_multi_profiles
-    profiles = @client.profiles ['tubeit20101', 'honda','some_non-existing_username']
-    assert_operator profiles, :has_key?, 'tubeit20101'
-    assert_equal profiles['tubeit20101'].username, "tubeit20101"
-    assert_not_nil profiles['tubeit20101'].insight_uri, 'user insight_uri nil for authed user'
+    profiles = @client.profiles ['tubeit2012pivotal', 'honda','some_non-existing_username']
+    assert_operator profiles, :has_key?, 'tubeit2012pivotal'
+    assert_equal profiles['tubeit2012pivotal'].username, "tubeit2012pivotal"
+    assert_not_nil profiles['tubeit2012pivotal'].insight_uri, 'user insight_uri nil for authed user'
 
     assert_operator profiles, :has_key?, 'honda'
     assert_equal profiles['honda'].username, "honda"
@@ -417,8 +417,8 @@ class TestClient < Test::Unit::TestCase
   end
 
   def test_unicode_query
-    videos = @client.videos_by(:query => 'спят усталые игрушки').videos
-    assert videos.map(&:unique_id).include?("w-7BT2CFYNU")
+    videos = @client.videos_by(:query => 'alana blanchard surfing 2012').videos
+    assert videos.map(&:unique_id).include?("7RYzCWWZpBA")
   end
 
   def test_return_video_by_url
@@ -451,7 +451,7 @@ class TestClient < Test::Unit::TestCase
     assert_equal 25, playlists_first_page.size
 
     playlists_second_page = @client.playlists('sbnation', {'start-index' => 26, 'max-results' => 25})
-    assert_equal 21, playlists_second_page.size
+    assert_equal 25, playlists_second_page.size
 
     all_playlists = playlists_first_page + playlists_second_page
     assert_equal all_playlists.size, all_playlists.uniq.size
@@ -459,7 +459,7 @@ class TestClient < Test::Unit::TestCase
 
   def test_all_playlists
     all_playlists = @client.all_playlists('sbnation')
-    assert_equal 46, all_playlists.size
+    assert_equal 53, all_playlists.size
   end
 
   def test_should_add_and_delete_video_from_watchlater

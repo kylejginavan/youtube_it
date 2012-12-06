@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/helper')
 class TestVideoUpload < Test::Unit::TestCase
 
   def setup
-    @vu = YouTubeIt::Upload::VideoUpload.new :usename => 'tubeit20101'
+    @vu = YouTubeIt::Upload::VideoUpload.new :usename => 'tubeit2012pivotal'
   end
 
   def test_should_extract_error_description_from_xml

@@ -1,48 +1,170 @@
---- 
-recorded_with: VCR 2.1.1
-http_interactions: 
-- request: 
+---
+http_interactions:
+- request:
     method: get
-    uri: http://gdata.youtube.com/feeds/api/videos/EkF4JD2rO3Q?key=AI39si7WuZZxAkYebKSyrlJR7hIFktt6OoPycEOeOT_yHkZgr6QsGbZgmhKvbS4bsSAv0utgrfhNfXQBITu1wX_z3VsZE02giQ&v=2
-    body: 
-      string: ""
-    headers: 
-      Accept: 
-      - "*/*"
-  response: 
-    status: 
+    uri: http://gdata.youtube.com/feeds/api/videos/EkF4JD2rO3Q?key=AI39si7RTOeLuL-210N-qa68taSVoJ2ZNc2UlY52VkTjf29AEonZ_MgKZirQmQOtHOh1hRWePy61bcZkZOEIu2vlsYKW8HlxrQ&v=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
       code: 200
       message: OK
-    headers: 
-      Vary: 
-      - "*"
-      X-Frame-Options: 
-      - SAMEORIGIN
-      Last-Modified: 
-      - Wed, 11 Jul 2012 19:09:01 GMT
-      Etag: 
-      - W/"CUAAQH47eCp7I2A9WhJREE4."
-      Transfer-Encoding: 
-      - chunked
-      Content-Type: 
-      - application/atom+xml; charset=UTF-8; type=entry
-      Date: 
-      - Wed, 11 Jul 2012 19:46:16 GMT
-      X-Xss-Protection: 
-      - 1; mode=block
-      X-Gdata-User-Country: 
-      - AR
-      Server: 
-      - GSE
-      X-Content-Type-Options: 
-      - nosniff
-      Expires: 
-      - Wed, 11 Jul 2012 19:46:16 GMT
-      Cache-Control: 
+    headers:
+      X-Gdata-User-Country:
+      - US
+      Content-Type:
+      - application/atom+xml;charset=UTF-8;type=entry
+      Expires:
+      - Thu, 06 Dec 2012 20:42:23 GMT
+      Date:
+      - Thu, 06 Dec 2012 20:42:23 GMT
+      Cache-Control:
       - private, max-age=300, no-transform
-      Gdata-Version: 
-      - "2.1"
-    body: 
-      string: "<?xml version='1.0' encoding='UTF-8'?><entry xmlns='http://www.w3.org/2005/Atom' xmlns:media='http://search.yahoo.com/mrss/' xmlns:gd='http://schemas.google.com/g/2005' xmlns:yt='http://gdata.youtube.com/schemas/2007' gd:etag='W/&quot;CUAAQH47eCp7I2A9WhJREE4.&quot;'><id>tag:youtube.com,2008:video:EkF4JD2rO3Q</id><published>2007-05-10T13:25:53.000Z</published><updated>2012-07-11T19:09:01.000Z</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#video'/><category scheme='http://gdata.youtube.com/schemas/2007/categories.cat' term='Music' label='Music'/><category scheme='http://gdata.youtube.com/schemas/2007/keywords.cat' term='dream theater'/><category scheme='http://gdata.youtube.com/schemas/2007/keywords.cat' term='the dark eternal night'/><category scheme='http://gdata.youtube.com/schemas/2007/keywords.cat' term='in studio'/><category scheme='http://gdata.youtube.com/schemas/2007/keywords.cat' term='systematic chaos'/><category scheme='http://gdata.youtube.com/schemas/2007/keywords.cat' term='mike portnoy'/><category scheme='http://gdata.youtube.com/schemas/2007/keywords.cat' term='instrumental'/><category scheme='http://gdata.youtube.com/schemas/2007/keywords.cat' term='heavy metal'/><title>Dream Theater - The Dark Eternal Night In-Studio</title><content type='application/x-shockwave-flash' src='http://www.youtube.com/v/EkF4JD2rO3Q?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata'/><link rel='alternate' type='text/html' href='http://www.youtube.com/watch?v=EkF4JD2rO3Q&amp;feature=youtube_gdata'/><link rel='http://gdata.youtube.com/schemas/2007#video.responses' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/EkF4JD2rO3Q/responses?v=2'/><link rel='http://gdata.youtube.com/schemas/2007#video.ratings' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/EkF4JD2rO3Q/ratings?v=2'/><link rel='http://gdata.youtube.com/schemas/2007#video.complaints' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/EkF4JD2rO3Q/complaints?v=2'/><link rel='http://gdata.youtube.com/schemas/2007#video.related' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/EkF4JD2rO3Q/related?v=2'/><link rel='http://gdata.youtube.com/schemas/2007#mobile' type='text/html' href='http://m.youtube.com/details?v=EkF4JD2rO3Q'/><link rel='http://gdata.youtube.com/schemas/2007#uploader' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/RRxSTgPUY0q_YToaczc2BQ?v=2'/><link rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/EkF4JD2rO3Q?v=2'/><author><name>RoadrunnerRecords</name><uri>http://gdata.youtube.com/feeds/api/users/RoadrunnerRecords</uri><yt:userId>RRxSTgPUY0q_YToaczc2BQ</yt:userId></author><yt:accessControl action='comment' permission='denied'/><yt:accessControl action='commentVote' permission='allowed'/><yt:accessControl action='videoRespond' permission='moderated'/><yt:accessControl action='rate' permission='allowed'/><yt:accessControl action='embed' permission='allowed'/><yt:accessControl action='list' permission='allowed'/><yt:accessControl action='autoPlay' permission='allowed'/><yt:accessControl action='syndicate' permission='allowed'/><media:group><media:category label='Music' scheme='http://gdata.youtube.com/schemas/2007/categories.cat'>Music</media:category><media:content url='http://www.youtube.com/v/EkF4JD2rO3Q?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata' type='application/x-shockwave-flash' medium='video' isDefault='true' expression='full' duration='541' yt:format='5'/><media:content url='rtsp://v6.cache6.c.youtube.com/CkULENy73wIaPAl0O6s9JHhBEhMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp' type='video/3gpp' medium='video' expression='full' duration='541' yt:format='1'/><media:content url='rtsp://v7.cache2.c.youtube.com/CkULENy73wIaPAl0O6s9JHhBEhMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp' type='video/3gpp' medium='video' expression='full' duration='541' yt:format='6'/><media:credit role='uploader' scheme='urn:youtube' yt:display='RoadrunnerRecords'>roadrunnerrecords</media:credit><media:description type='plain'>\xC2\xA9 2007 WMG Purchase Systematic Chaos from iTunes: http://bit.ly/946h2R</media:description><media:keywords>dream theater, the dark eternal night, in studio, systematic chaos, mike portnoy, instrumental, heavy metal</media:keywords><media:license type='text/html' href='http://www.youtube.com/t/terms'>youtube</media:license><media:player url='http://www.youtube.com/watch?v=EkF4JD2rO3Q&amp;feature=youtube_gdata_player'/><media:thumbnail url='http://i.ytimg.com/vi/EkF4JD2rO3Q/default.jpg' height='90' width='120' time='00:04:30.500' yt:name='default'/><media:thumbnail url='http://i.ytimg.com/vi/EkF4JD2rO3Q/mqdefault.jpg' height='180' width='320' yt:name='mqdefault'/><media:thumbnail url='http://i.ytimg.com/vi/EkF4JD2rO3Q/hqdefault.jpg' height='360' width='480' yt:name='hqdefault'/><media:thumbnail url='http://i.ytimg.com/vi/EkF4JD2rO3Q/1.jpg' height='90' width='120' time='00:02:15.250' yt:name='start'/><media:thumbnail url='http://i.ytimg.com/vi/EkF4JD2rO3Q/2.jpg' height='90' width='120' time='00:04:30.500' yt:name='middle'/><media:thumbnail url='http://i.ytimg.com/vi/EkF4JD2rO3Q/3.jpg' height='90' width='120' time='00:06:45.750' yt:name='end'/><media:title type='plain'>Dream Theater - The Dark Eternal Night In-Studio</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration seconds='541'/><yt:uploaded>2007-05-10T13:25:53.000Z</yt:uploaded><yt:uploaderId>RRxSTgPUY0q_YToaczc2BQ</yt:uploaderId><yt:videoid>EkF4JD2rO3Q</yt:videoid></media:group><gd:rating average='4.8739247' max='5' min='1' numRaters='36391' rel='http://schemas.google.com/g/2005#overall'/><yt:statistics favoriteCount='33293' viewCount='10245293'/><yt:rating numDislikes='1147' numLikes='35244'/></entry>"
+      Vary:
+      - ! '*'
+      Gdata-Version:
+      - '2.1'
+      Etag:
+      - W/"DEYEQn47eCp7I2A9WhNXGE8."
+      Last-Modified:
+      - Thu, 06 Dec 2012 20:35:03 GMT
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '5282'
+      Server:
+      - GSE
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz48ZW50cnkg
+        eG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDUvQXRvbScgeG1sbnM6bWVk
+        aWE9J2h0dHA6Ly9zZWFyY2gueWFob28uY29tL21yc3MvJyB4bWxuczpnZD0n
+        aHR0cDovL3NjaGVtYXMuZ29vZ2xlLmNvbS9nLzIwMDUnIHhtbG5zOnl0PSdo
+        dHRwOi8vZ2RhdGEueW91dHViZS5jb20vc2NoZW1hcy8yMDA3JyBnZDpldGFn
+        PSdXLyZxdW90O0RFWUVRbjQ3ZUNwN0kyQTlXaE5YR0U4LiZxdW90Oyc+PGlk
+        PnRhZzp5b3V0dWJlLmNvbSwyMDA4OnZpZGVvOkVrRjRKRDJyTzNRPC9pZD48
+        cHVibGlzaGVkPjIwMDctMDUtMTBUMTM6MjU6NTMuMDAwWjwvcHVibGlzaGVk
+        Pjx1cGRhdGVkPjIwMTItMTItMDZUMjA6MzU6MDMuMDAwWjwvdXBkYXRlZD48
+        Y2F0ZWdvcnkgc2NoZW1lPSdodHRwOi8vc2NoZW1hcy5nb29nbGUuY29tL2cv
+        MjAwNSNraW5kJyB0ZXJtPSdodHRwOi8vZ2RhdGEueW91dHViZS5jb20vc2No
+        ZW1hcy8yMDA3I3ZpZGVvJy8+PGNhdGVnb3J5IHNjaGVtZT0naHR0cDovL2dk
+        YXRhLnlvdXR1YmUuY29tL3NjaGVtYXMvMjAwNy9jYXRlZ29yaWVzLmNhdCcg
+        dGVybT0nTXVzaWMnIGxhYmVsPSdNdXNpYycvPjx0aXRsZT5EcmVhbSBUaGVh
+        dGVyIC0gVGhlIERhcmsgRXRlcm5hbCBOaWdodCBJbi1TdHVkaW88L3RpdGxl
+        Pjxjb250ZW50IHR5cGU9J2FwcGxpY2F0aW9uL3gtc2hvY2t3YXZlLWZsYXNo
+        JyBzcmM9J2h0dHA6Ly93d3cueW91dHViZS5jb20vdi9Fa0Y0SkQyck8zUT92
+        ZXJzaW9uPTMmYW1wO2Y9dmlkZW9zJmFtcDtkPUFVREF0LThoY3RaOG5tQlpS
+        SUNMNUdFTzg4SHNRanBFMWE4ZDFHeFFuR0RtJmFtcDthcHA9eW91dHViZV9n
+        ZGF0YScvPjxsaW5rIHJlbD0nYWx0ZXJuYXRlJyB0eXBlPSd0ZXh0L2h0bWwn
+        IGhyZWY9J2h0dHA6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1Fa0Y0SkQy
+        ck8zUSZhbXA7ZmVhdHVyZT15b3V0dWJlX2dkYXRhJy8+PGxpbmsgcmVsPSdo
+        dHRwOi8vZ2RhdGEueW91dHViZS5jb20vc2NoZW1hcy8yMDA3I3ZpZGVvLnJl
+        c3BvbnNlcycgdHlwZT0nYXBwbGljYXRpb24vYXRvbSt4bWwnIGhyZWY9J2h0
+        dHA6Ly9nZGF0YS55b3V0dWJlLmNvbS9mZWVkcy9hcGkvdmlkZW9zL0VrRjRK
+        RDJyTzNRL3Jlc3BvbnNlcz92PTInLz48bGluayByZWw9J2h0dHA6Ly9nZGF0
+        YS55b3V0dWJlLmNvbS9zY2hlbWFzLzIwMDcjdmlkZW8ucmF0aW5ncycgdHlw
+        ZT0nYXBwbGljYXRpb24vYXRvbSt4bWwnIGhyZWY9J2h0dHA6Ly9nZGF0YS55
+        b3V0dWJlLmNvbS9mZWVkcy9hcGkvdmlkZW9zL0VrRjRKRDJyTzNRL3JhdGlu
+        Z3M/dj0yJy8+PGxpbmsgcmVsPSdodHRwOi8vZ2RhdGEueW91dHViZS5jb20v
+        c2NoZW1hcy8yMDA3I3ZpZGVvLmNvbXBsYWludHMnIHR5cGU9J2FwcGxpY2F0
+        aW9uL2F0b20reG1sJyBocmVmPSdodHRwOi8vZ2RhdGEueW91dHViZS5jb20v
+        ZmVlZHMvYXBpL3ZpZGVvcy9Fa0Y0SkQyck8zUS9jb21wbGFpbnRzP3Y9Micv
+        PjxsaW5rIHJlbD0naHR0cDovL2dkYXRhLnlvdXR1YmUuY29tL3NjaGVtYXMv
+        MjAwNyN2aWRlby5yZWxhdGVkJyB0eXBlPSdhcHBsaWNhdGlvbi9hdG9tK3ht
+        bCcgaHJlZj0naHR0cDovL2dkYXRhLnlvdXR1YmUuY29tL2ZlZWRzL2FwaS92
+        aWRlb3MvRWtGNEpEMnJPM1EvcmVsYXRlZD92PTInLz48bGluayByZWw9J2h0
+        dHA6Ly9nZGF0YS55b3V0dWJlLmNvbS9zY2hlbWFzLzIwMDcjbW9iaWxlJyB0
+        eXBlPSd0ZXh0L2h0bWwnIGhyZWY9J2h0dHA6Ly9tLnlvdXR1YmUuY29tL2Rl
+        dGFpbHM/dj1Fa0Y0SkQyck8zUScvPjxsaW5rIHJlbD0naHR0cDovL2dkYXRh
+        LnlvdXR1YmUuY29tL3NjaGVtYXMvMjAwNyN1cGxvYWRlcicgdHlwZT0nYXBw
+        bGljYXRpb24vYXRvbSt4bWwnIGhyZWY9J2h0dHA6Ly9nZGF0YS55b3V0dWJl
+        LmNvbS9mZWVkcy9hcGkvdXNlcnMvUlJ4U1RnUFVZMHFfWVRvYWN6YzJCUT92
+        PTInLz48bGluayByZWw9J3NlbGYnIHR5cGU9J2FwcGxpY2F0aW9uL2F0b20r
+        eG1sJyBocmVmPSdodHRwOi8vZ2RhdGEueW91dHViZS5jb20vZmVlZHMvYXBp
+        L3ZpZGVvcy9Fa0Y0SkQyck8zUT92PTInLz48YXV0aG9yPjxuYW1lPlJvYWRy
+        dW5uZXJSZWNvcmRzPC9uYW1lPjx1cmk+aHR0cDovL2dkYXRhLnlvdXR1YmUu
+        Y29tL2ZlZWRzL2FwaS91c2Vycy9Sb2FkcnVubmVyUmVjb3JkczwvdXJpPjx5
+        dDp1c2VySWQ+UlJ4U1RnUFVZMHFfWVRvYWN6YzJCUTwveXQ6dXNlcklkPjwv
+        YXV0aG9yPjx5dDphY2Nlc3NDb250cm9sIGFjdGlvbj0nY29tbWVudCcgcGVy
+        bWlzc2lvbj0nZGVuaWVkJy8+PHl0OmFjY2Vzc0NvbnRyb2wgYWN0aW9uPSdj
+        b21tZW50Vm90ZScgcGVybWlzc2lvbj0nYWxsb3dlZCcvPjx5dDphY2Nlc3ND
+        b250cm9sIGFjdGlvbj0ndmlkZW9SZXNwb25kJyBwZXJtaXNzaW9uPSdtb2Rl
+        cmF0ZWQnLz48eXQ6YWNjZXNzQ29udHJvbCBhY3Rpb249J3JhdGUnIHBlcm1p
+        c3Npb249J2FsbG93ZWQnLz48eXQ6YWNjZXNzQ29udHJvbCBhY3Rpb249J2Vt
+        YmVkJyBwZXJtaXNzaW9uPSdhbGxvd2VkJy8+PHl0OmFjY2Vzc0NvbnRyb2wg
+        YWN0aW9uPSdsaXN0JyBwZXJtaXNzaW9uPSdhbGxvd2VkJy8+PHl0OmFjY2Vz
+        c0NvbnRyb2wgYWN0aW9uPSdhdXRvUGxheScgcGVybWlzc2lvbj0nYWxsb3dl
+        ZCcvPjx5dDphY2Nlc3NDb250cm9sIGFjdGlvbj0nc3luZGljYXRlJyBwZXJt
+        aXNzaW9uPSdhbGxvd2VkJy8+PG1lZGlhOmdyb3VwPjxtZWRpYTpjYXRlZ29y
+        eSBsYWJlbD0nTXVzaWMnIHNjaGVtZT0naHR0cDovL2dkYXRhLnlvdXR1YmUu
+        Y29tL3NjaGVtYXMvMjAwNy9jYXRlZ29yaWVzLmNhdCc+TXVzaWM8L21lZGlh
+        OmNhdGVnb3J5PjxtZWRpYTpjb250ZW50IHVybD0naHR0cDovL3d3dy55b3V0
+        dWJlLmNvbS92L0VrRjRKRDJyTzNRP3ZlcnNpb249MyZhbXA7Zj12aWRlb3Mm
+        YW1wO2Q9QVVEQXQtOGhjdFo4bm1CWlJJQ0w1R0VPODhIc1FqcEUxYThkMUd4
+        UW5HRG0mYW1wO2FwcD15b3V0dWJlX2dkYXRhJyB0eXBlPSdhcHBsaWNhdGlv
+        bi94LXNob2Nrd2F2ZS1mbGFzaCcgbWVkaXVtPSd2aWRlbycgaXNEZWZhdWx0
+        PSd0cnVlJyBleHByZXNzaW9uPSdmdWxsJyBkdXJhdGlvbj0nNTQxJyB5dDpm
+        b3JtYXQ9JzUnLz48bWVkaWE6Y29udGVudCB1cmw9J3J0c3A6Ly92Ni5jYWNo
+        ZTYuYy55b3V0dWJlLmNvbS9Da1VMRU55NzN3SWFQQWwwTzZzOUpIaEJFaE1Z
+        RFNBTkZFZ0dVZ1oyYVdSbGIzTnlJUUZBd0xmdklYTFdmSjVnV1VTQWktUmhE
+        dlBCN0VJNlJOV3ZIZFJzVUp4ZzVndz0vMC8wLzAvdmlkZW8uM2dwJyB0eXBl
+        PSd2aWRlby8zZ3BwJyBtZWRpdW09J3ZpZGVvJyBleHByZXNzaW9uPSdmdWxs
+        JyBkdXJhdGlvbj0nNTQxJyB5dDpmb3JtYXQ9JzEnLz48bWVkaWE6Y29udGVu
+        dCB1cmw9J3J0c3A6Ly92Ny5jYWNoZTIuYy55b3V0dWJlLmNvbS9Da1VMRU55
+        NzN3SWFQQWwwTzZzOUpIaEJFaE1ZRVNBUkZFZ0dVZ1oyYVdSbGIzTnlJUUZB
+        d0xmdklYTFdmSjVnV1VTQWktUmhEdlBCN0VJNlJOV3ZIZFJzVUp4ZzVndz0v
+        MC8wLzAvdmlkZW8uM2dwJyB0eXBlPSd2aWRlby8zZ3BwJyBtZWRpdW09J3Zp
+        ZGVvJyBleHByZXNzaW9uPSdmdWxsJyBkdXJhdGlvbj0nNTQxJyB5dDpmb3Jt
+        YXQ9JzYnLz48bWVkaWE6Y3JlZGl0IHJvbGU9J3VwbG9hZGVyJyBzY2hlbWU9
+        J3Vybjp5b3V0dWJlJyB5dDpkaXNwbGF5PSdSb2FkcnVubmVyUmVjb3Jkcyc+
+        cm9hZHJ1bm5lcnJlY29yZHM8L21lZGlhOmNyZWRpdD48bWVkaWE6ZGVzY3Jp
+        cHRpb24gdHlwZT0ncGxhaW4nPsKpIDIwMDcgV01HIFB1cmNoYXNlIFN5c3Rl
+        bWF0aWMgQ2hhb3MgZnJvbSBpVHVuZXM6IGh0dHA6Ly9iaXQubHkvOTQ2aDJS
+        PC9tZWRpYTpkZXNjcmlwdGlvbj48bWVkaWE6a2V5d29yZHMvPjxtZWRpYTps
+        aWNlbnNlIHR5cGU9J3RleHQvaHRtbCcgaHJlZj0naHR0cDovL3d3dy55b3V0
+        dWJlLmNvbS90L3Rlcm1zJz55b3V0dWJlPC9tZWRpYTpsaWNlbnNlPjxtZWRp
+        YTpwbGF5ZXIgdXJsPSdodHRwOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9
+        RWtGNEpEMnJPM1EmYW1wO2ZlYXR1cmU9eW91dHViZV9nZGF0YV9wbGF5ZXIn
+        Lz48bWVkaWE6dGh1bWJuYWlsIHVybD0naHR0cDovL2kueXRpbWcuY29tL3Zp
+        L0VrRjRKRDJyTzNRL2RlZmF1bHQuanBnJyBoZWlnaHQ9JzkwJyB3aWR0aD0n
+        MTIwJyB0aW1lPScwMDowNDozMC41MDAnIHl0Om5hbWU9J2RlZmF1bHQnLz48
+        bWVkaWE6dGh1bWJuYWlsIHVybD0naHR0cDovL2kueXRpbWcuY29tL3ZpL0Vr
+        RjRKRDJyTzNRL21xZGVmYXVsdC5qcGcnIGhlaWdodD0nMTgwJyB3aWR0aD0n
+        MzIwJyB5dDpuYW1lPSdtcWRlZmF1bHQnLz48bWVkaWE6dGh1bWJuYWlsIHVy
+        bD0naHR0cDovL2kueXRpbWcuY29tL3ZpL0VrRjRKRDJyTzNRL2hxZGVmYXVs
+        dC5qcGcnIGhlaWdodD0nMzYwJyB3aWR0aD0nNDgwJyB5dDpuYW1lPSdocWRl
+        ZmF1bHQnLz48bWVkaWE6dGh1bWJuYWlsIHVybD0naHR0cDovL2kueXRpbWcu
+        Y29tL3ZpL0VrRjRKRDJyTzNRLzEuanBnJyBoZWlnaHQ9JzkwJyB3aWR0aD0n
+        MTIwJyB0aW1lPScwMDowMjoxNS4yNTAnIHl0Om5hbWU9J3N0YXJ0Jy8+PG1l
+        ZGlhOnRodW1ibmFpbCB1cmw9J2h0dHA6Ly9pLnl0aW1nLmNvbS92aS9Fa0Y0
+        SkQyck8zUS8yLmpwZycgaGVpZ2h0PSc5MCcgd2lkdGg9JzEyMCcgdGltZT0n
+        MDA6MDQ6MzAuNTAwJyB5dDpuYW1lPSdtaWRkbGUnLz48bWVkaWE6dGh1bWJu
+        YWlsIHVybD0naHR0cDovL2kueXRpbWcuY29tL3ZpL0VrRjRKRDJyTzNRLzMu
+        anBnJyBoZWlnaHQ9JzkwJyB3aWR0aD0nMTIwJyB0aW1lPScwMDowNjo0NS43
+        NTAnIHl0Om5hbWU9J2VuZCcvPjxtZWRpYTp0aXRsZSB0eXBlPSdwbGFpbic+
+        RHJlYW0gVGhlYXRlciAtIFRoZSBEYXJrIEV0ZXJuYWwgTmlnaHQgSW4tU3R1
+        ZGlvPC9tZWRpYTp0aXRsZT48eXQ6YXNwZWN0UmF0aW8+d2lkZXNjcmVlbjwv
+        eXQ6YXNwZWN0UmF0aW8+PHl0OmR1cmF0aW9uIHNlY29uZHM9JzU0MScvPjx5
+        dDp1cGxvYWRlZD4yMDA3LTA1LTEwVDEzOjI1OjUzLjAwMFo8L3l0OnVwbG9h
+        ZGVkPjx5dDp1cGxvYWRlcklkPlVDUlJ4U1RnUFVZMHFfWVRvYWN6YzJCUTwv
+        eXQ6dXBsb2FkZXJJZD48eXQ6dmlkZW9pZD5Fa0Y0SkQyck8zUTwveXQ6dmlk
+        ZW9pZD48L21lZGlhOmdyb3VwPjxnZDpyYXRpbmcgYXZlcmFnZT0nNC44NzU5
+        NzcnIG1heD0nNScgbWluPScxJyBudW1SYXRlcnM9JzM5NTQxJyByZWw9J2h0
+        dHA6Ly9zY2hlbWFzLmdvb2dsZS5jb20vZy8yMDA1I292ZXJhbGwnLz48eXQ6
+        c3RhdGlzdGljcyBmYXZvcml0ZUNvdW50PScwJyB2aWV3Q291bnQ9JzEwODA2
+        MTcyJy8+PHl0OnJhdGluZyBudW1EaXNsaWtlcz0nMTIyNicgbnVtTGlrZXM9
+        JzM4MzE1Jy8+PC9lbnRyeT4=
     http_version: 
-  recorded_at: Wed, 11 Jul 2012 19:46:17 GMT
+  recorded_at: Thu, 06 Dec 2012 20:45:34 GMT
+recorded_with: VCR 2.1.1
