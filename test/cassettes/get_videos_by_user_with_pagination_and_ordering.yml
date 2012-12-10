@@ -21,9 +21,9 @@ http_interactions:
       Content-Type:
       - application/atom+xml; charset=UTF-8; type=feed
       Expires:
-      - Thu, 06 Dec 2012 20:45:32 GMT
+      - Mon, 10 Dec 2012 20:36:36 GMT
       Date:
-      - Thu, 06 Dec 2012 20:45:32 GMT
+      - Mon, 10 Dec 2012 20:36:36 GMT
       Cache-Control:
       - private, max-age=300, no-transform
       Vary:
@@ -31,9 +31,9 @@ http_interactions:
       Gdata-Version:
       - '2.1'
       Etag:
-      - W/"DEAHQ304fCp7I2A9WhNXGE8."
+      - W/"C0ANR3c9fSp7I2A9WhNWEUo."
       Last-Modified:
-      - Thu, 06 Dec 2012 20:45:32 GMT
+      - Mon, 10 Dec 2012 20:36:36 GMT
       Transfer-Encoding:
       - chunked
       X-Content-Type-Options:
@@ -48,7 +48,7 @@ http_interactions:
       encoding: US-ASCII
       string: <?xml version='1.0' encoding='UTF-8'?><feed xmlns='http://www.w3.org/2005/Atom'
         xmlns:openSearch='http://a9.com/-/spec/opensearch/1.1/' xmlns:gd='http://schemas.google.com/g/2005'
-        gd:etag='W/&quot;DEAHQ304fCp7I2A9WhNXGE8.&quot;'><id>tag:youtube.com,2008:user:liz:uploads</id><updated>2012-12-06T20:45:32.334Z</updated><category
+        gd:etag='W/&quot;C0ANR3c9fSp7I2A9WhNWEUo.&quot;'><id>tag:youtube.com,2008:user:liz:uploads</id><updated>2012-12-10T20:36:36.965Z</updated><category
         scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#video'/><title>Uploads
         by liz</title><logo>http://www.youtube.com/img/pic_youtubelogo_123x63.gif</logo><link
         rel='related' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/liz?v=2'/><link
@@ -61,5 +61,5 @@ http_interactions:
         rel='previous' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/liz/uploads?start-index=1&amp;max-results=2&amp;orderby=published&amp;v=2'/><author><name>liz</name><uri>http://gdata.youtube.com/feeds/api/users/liz</uri></author><generator
         version='2.1' uri='http://gdata.youtube.com'>YouTube data API</generator><openSearch:totalResults>0</openSearch:totalResults><openSearch:startIndex>3</openSearch:startIndex><openSearch:itemsPerPage>2</openSearch:itemsPerPage></feed>
     http_version: 
-  recorded_at: Thu, 06 Dec 2012 20:45:32 GMT
+  recorded_at: Mon, 10 Dec 2012 20:36:36 GMT
 recorded_with: VCR 2.1.1

@@ -467,7 +467,7 @@ class TestClient < Test::Unit::TestCase
 
   def test_all_playlists
     all_playlists = @client.all_playlists('sbnation')
-    assert_equal 53, all_playlists.size
+    assert_equal 54, all_playlists.size
   end
 
   def test_should_add_and_delete_video_from_watchlater

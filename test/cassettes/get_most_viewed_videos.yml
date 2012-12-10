@@ -21,9 +21,9 @@ http_interactions:
       Content-Type:
       - application/atom+xml; charset=UTF-8; type=feed
       Expires:
-      - Thu, 06 Dec 2012 20:45:21 GMT
+      - Mon, 10 Dec 2012 20:36:24 GMT
       Date:
-      - Thu, 06 Dec 2012 20:45:21 GMT
+      - Mon, 10 Dec 2012 20:36:24 GMT
       Cache-Control:
       - private, max-age=300, no-transform
       Vary:
@@ -31,9 +31,9 @@ http_interactions:
       Gdata-Version:
       - '2.1'
       Etag:
-      - W/"DEAGQH0yfyp7I2A9WhNXGE8."
+      - W/"C0AMRXY4fCp7I2A9WhNWEUo."
       Last-Modified:
-      - Thu, 06 Dec 2012 20:45:21 GMT
+      - Mon, 10 Dec 2012 20:36:24 GMT
       Transfer-Encoding:
       - chunked
       X-Content-Type-Options:
@@ -54,10 +54,10 @@ http_interactions:
         J2h0dHA6Ly9hOS5jb20vLS9zcGVjL29wZW5zZWFyY2gvMS4xLycgeG1sbnM6
         Z2Q9J2h0dHA6Ly9zY2hlbWFzLmdvb2dsZS5jb20vZy8yMDA1JyB4bWxuczp5
         dD0naHR0cDovL2dkYXRhLnlvdXR1YmUuY29tL3NjaGVtYXMvMjAwNycgZ2Q6
-        ZXRhZz0nVy8mcXVvdDtERUFHUUgweWZ5cDdJMkE5V2hOWEdFOC4mcXVvdDsn
+        ZXRhZz0nVy8mcXVvdDtDMEFNUlhZNGZDcDdJMkE5V2hOV0VVby4mcXVvdDsn
         PjxpZD50YWc6eW91dHViZS5jb20sMjAwODpzdGFuZGFyZGZlZWQ6Z2xvYmFs
-        Om1vc3Rfdmlld2VkPC9pZD48dXBkYXRlZD4yMDEyLTEyLTA2VDIwOjQ1OjIx
-        LjM5N1o8L3VwZGF0ZWQ+PGNhdGVnb3J5IHNjaGVtZT0naHR0cDovL3NjaGVt
+        Om1vc3Rfdmlld2VkPC9pZD48dXBkYXRlZD4yMDEyLTEyLTEwVDIwOjM2OjI0
+        LjgzNFo8L3VwZGF0ZWQ+PGNhdGVnb3J5IHNjaGVtZT0naHR0cDovL3NjaGVt
         YXMuZ29vZ2xlLmNvbS9nLzIwMDUja2luZCcgdGVybT0naHR0cDovL2dkYXRh
         LnlvdXR1YmUuY29tL3NjaGVtYXMvMjAwNyN2aWRlbycvPjx0aXRsZT5Nb3N0
         IFBvcHVsYXI8L3RpdGxlPjxsb2dvPmh0dHA6Ly93d3cueW91dHViZS5jb20v
@@ -3091,5 +3091,5 @@ http_interactions:
         aWV3Q291bnQ9JzIyNzQ3NTc3MycvPjx5dDpyYXRpbmcgbnVtRGlzbGlrZXM9
         JzQ1Mzc2JyBudW1MaWtlcz0nMjEzMzg4Jy8+PC9lbnRyeT48L2ZlZWQ+
     http_version: 
-  recorded_at: Thu, 06 Dec 2012 20:45:21 GMT
+  recorded_at: Mon, 10 Dec 2012 20:36:24 GMT
 recorded_with: VCR 2.1.1

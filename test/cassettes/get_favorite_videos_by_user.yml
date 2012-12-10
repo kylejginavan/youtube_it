@@ -21,9 +21,9 @@ http_interactions:
       Content-Type:
       - application/atom+xml; charset=UTF-8; type=feed
       Expires:
-      - Thu, 06 Dec 2012 20:45:16 GMT
+      - Mon, 10 Dec 2012 20:36:24 GMT
       Date:
-      - Thu, 06 Dec 2012 20:45:16 GMT
+      - Mon, 10 Dec 2012 20:36:24 GMT
       Cache-Control:
       - private, max-age=300, no-transform
       Vary:
@@ -31,9 +31,9 @@ http_interactions:
       Gdata-Version:
       - '2.1'
       Etag:
-      - W/"DEAFR3s5fip7I2A9WhNXGE8."
+      - W/"C0AMRXg8fip7I2A9WhNWEUo."
       Last-Modified:
-      - Thu, 06 Dec 2012 20:45:16 GMT
+      - Mon, 10 Dec 2012 20:36:24 GMT
       Transfer-Encoding:
       - chunked
       X-Content-Type-Options:
@@ -49,7 +49,7 @@ http_interactions:
       string: ! '<?xml version=''1.0'' encoding=''UTF-8''?><feed xmlns=''http://www.w3.org/2005/Atom''
         xmlns:media=''http://search.yahoo.com/mrss/'' xmlns:openSearch=''http://a9.com/-/spec/opensearch/1.1/''
         xmlns:gd=''http://schemas.google.com/g/2005'' xmlns:yt=''http://gdata.youtube.com/schemas/2007''
-        gd:etag=''W/&quot;DEAFR3s5fip7I2A9WhNXGE8.&quot;''><id>tag:youtube.com,2008:user:NetworkA:favorites</id><updated>2012-12-06T20:45:16.526Z</updated><category
+        gd:etag=''W/&quot;C0AMRXg8fip7I2A9WhNWEUo.&quot;''><id>tag:youtube.com,2008:user:NetworkA:favorites</id><updated>2012-12-10T20:36:24.676Z</updated><category
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#favorite''/><title>Favorite
         of NetworkA</title><logo>http://www.youtube.com/img/pic_youtubelogo_123x63.gif</logo><link
         rel=''alternate'' type=''text/html'' href=''http://www.youtube.com''/><link
@@ -134,8 +134,8 @@ http_interactions:
         height=''90'' width=''120'' time=''00:04:14.250'' yt:name=''end''/><media:title
         type=''plain''>Behind the Brand [FOURSTAR CLOTHING]</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
         seconds=''339''/><yt:uploaded>2012-11-08T17:00:34.000Z</yt:uploaded><yt:uploaderId>UCefsZkQ7X8JuxWm6Q4MOGIw</yt:uploaderId><yt:videoid>qfGIO31iDYo</yt:videoid></media:group><gd:rating
-        average=''5.0'' max=''5'' min=''1'' numRaters=''149'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''15190''/><yt:rating numDislikes=''0'' numLikes=''149''/><yt:favoriteId>FLl2xz5sXDiSfCTUaQlfVpy5IZNtJ3q67B</yt:favoriteId></entry></feed>'
+        average=''5.0'' max=''5'' min=''1'' numRaters=''151'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''15414''/><yt:rating numDislikes=''0'' numLikes=''151''/><yt:favoriteId>FLl2xz5sXDiSfCTUaQlfVpy5IZNtJ3q67B</yt:favoriteId></entry></feed>'
     http_version: 
-  recorded_at: Thu, 06 Dec 2012 20:45:16 GMT
+  recorded_at: Mon, 10 Dec 2012 20:36:24 GMT
 recorded_with: VCR 2.1.1

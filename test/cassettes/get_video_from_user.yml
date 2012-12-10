@@ -21,9 +21,9 @@ http_interactions:
       Content-Type:
       - application/atom+xml; charset=UTF-8; type=entry
       Expires:
-      - Thu, 06 Dec 2012 20:45:32 GMT
+      - Mon, 10 Dec 2012 20:36:36 GMT
       Date:
-      - Thu, 06 Dec 2012 20:45:32 GMT
+      - Mon, 10 Dec 2012 20:36:36 GMT
       Cache-Control:
       - private, max-age=300, no-transform
       Vary:
@@ -94,7 +94,7 @@ http_interactions:
         yt:name='middle'/><media:thumbnail url='http://i.ytimg.com/vi/FQK1URcxmb4/3.jpg'
         height='90' width='120' time='00:00:12.750' yt:name='end'/><media:title type='plain'>Pachamama
         bendice al Proyecto Tuquito</media:title><yt:duration seconds='17'/><yt:uploaded>2009-11-24T13:33:36.000Z</yt:uploaded><yt:uploaderId>UC9m4qThg_zsMLscTUP9FeSQ</yt:uploaderId><yt:videoid>FQK1URcxmb4</yt:videoid></media:group><yt:statistics
-        favoriteCount='0' viewCount='318'/></entry>
+        favoriteCount='0' viewCount='319'/></entry>
     http_version: 
-  recorded_at: Thu, 06 Dec 2012 20:45:32 GMT
+  recorded_at: Mon, 10 Dec 2012 20:36:36 GMT
 recorded_with: VCR 2.1.1

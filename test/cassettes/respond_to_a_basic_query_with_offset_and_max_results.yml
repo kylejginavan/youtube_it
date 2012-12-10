@@ -21,9 +21,9 @@ http_interactions:
       Content-Type:
       - application/atom+xml; charset=UTF-8; type=feed
       Expires:
-      - Thu, 06 Dec 2012 20:45:36 GMT
+      - Mon, 10 Dec 2012 20:36:41 GMT
       Date:
-      - Thu, 06 Dec 2012 20:45:36 GMT
+      - Mon, 10 Dec 2012 20:36:41 GMT
       Cache-Control:
       - private, max-age=300, no-transform
       Vary:
@@ -31,9 +31,9 @@ http_interactions:
       Gdata-Version:
       - '2.1'
       Etag:
-      - W/"DEAHR348fyp7I2A9WhNXGE8."
+      - W/"C08EQH44cSp7I2A9WhNWEUo."
       Last-Modified:
-      - Thu, 06 Dec 2012 20:45:36 GMT
+      - Mon, 10 Dec 2012 20:36:41 GMT
       Transfer-Encoding:
       - chunked
       X-Content-Type-Options:
@@ -50,7 +50,7 @@ http_interactions:
         xmlns:app=''http://www.w3.org/2007/app'' xmlns:media=''http://search.yahoo.com/mrss/''
         xmlns:openSearch=''http://a9.com/-/spec/opensearch/1.1/'' xmlns:gd=''http://schemas.google.com/g/2005''
         xmlns:gml=''http://www.opengis.net/gml'' xmlns:yt=''http://gdata.youtube.com/schemas/2007''
-        xmlns:georss=''http://www.georss.org/georss'' gd:etag=''W/&quot;DEAHR348fyp7I2A9WhNXGE8.&quot;''><id>tag:youtube.com,2008:videos</id><updated>2012-12-06T20:45:36.077Z</updated><category
+        xmlns:georss=''http://www.georss.org/georss'' gd:etag=''W/&quot;C08EQH44cSp7I2A9WhNWEUo.&quot;''><id>tag:youtube.com,2008:videos</id><updated>2012-12-10T20:36:41.039Z</updated><category
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><title>Videos
         matching: penguin</title><logo>http://www.youtube.com/img/pic_youtubelogo_123x63.gif</logo><link
         rel=''alternate'' type=''text/html'' href=''http://www.youtube.com''/><link
@@ -61,8 +61,8 @@ http_interactions:
         rel=''service'' type=''application/atomsvc+xml'' href=''http://gdata.youtube.com/feeds/api/videos?alt=atom-service&amp;v=2''/><link
         rel=''previous'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos?q=penguin&amp;start-index=1&amp;max-results=30&amp;v=2''/><link
         rel=''next'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos?q=penguin&amp;start-index=45&amp;max-results=30&amp;v=2''/><author><name>YouTube</name><uri>http://www.youtube.com/</uri></author><generator
-        version=''2.1'' uri=''http://gdata.youtube.com''>YouTube data API</generator><openSearch:totalResults>980934</openSearch:totalResults><openSearch:startIndex>15</openSearch:startIndex><openSearch:itemsPerPage>30</openSearch:itemsPerPage><entry
-        gd:etag=''W/&quot;DEcASX47eCp7I2A9WhNXF04.&quot;''><id>tag:youtube.com,2008:video:YSxCT1Faw6k</id><published>2008-05-22T21:47:58.000Z</published><updated>2012-12-05T19:34:08.000Z</updated><category
+        version=''2.1'' uri=''http://gdata.youtube.com''>YouTube data API</generator><openSearch:totalResults>997301</openSearch:totalResults><openSearch:startIndex>15</openSearch:startIndex><openSearch:itemsPerPage>30</openSearch:itemsPerPage><entry
+        gd:etag=''W/&quot;CEMHSX47eCp7I2A9WhNWEU4.&quot;''><id>tag:youtube.com,2008:video:YSxCT1Faw6k</id><published>2008-05-22T22:13:38.000Z</published><updated>2012-12-10T09:40:38.000Z</updated><category
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Film''
         label=''Film &amp; Animation''/><title>Batman Returns: The Penguin''s Plan</title><content
@@ -87,7 +87,7 @@ http_interactions:
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
         href=''http://gdata.youtube.com/feeds/api/videos/YSxCT1Faw6k/comments?v=2''
-        countHint=''608''/></gd:comments><media:group><media:category label=''Film
+        countHint=''614''/></gd:comments><media:group><media:category label=''Film
         &amp; Animation'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Film</media:category><media:content
         url=''rtsp://v4.cache3.c.youtube.com/CkULENy73wIaPAmpw1pRT0IsYRMYDSANFEgGUgZ2aWRlb3NyIQFAwLfvIXLWfJ5gWUSAi-RhDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
         type=''video/3gpp'' medium=''video'' isDefault=''true'' expression=''full''
@@ -106,10 +106,10 @@ http_interactions:
         time=''00:00:49'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/YSxCT1Faw6k/3.jpg''
         height=''90'' width=''120'' time=''00:01:13.500'' yt:name=''end''/><media:title
         type=''plain''>Batman Returns: The Penguin''s Plan</media:title><yt:duration
-        seconds=''98''/><yt:uploaded>2008-05-22T21:47:58.000Z</yt:uploaded><yt:uploaderId>UCbZghXWRBnMo2Wt-WKV_QAw</yt:uploaderId><yt:videoid>YSxCT1Faw6k</yt:videoid></media:group><yt:noembed/><gd:rating
-        average=''4.7814207'' max=''5'' min=''1'' numRaters=''366'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''371219''/><yt:rating numDislikes=''20'' numLikes=''346''/></entry><entry
-        gd:etag=''W/&quot;CU8DR347eCp7I2A9WhNXFEU.&quot;''><id>tag:youtube.com,2008:video:CalUp9laldE</id><published>2011-07-23T15:01:51.000Z</published><updated>2012-12-02T21:31:16.000Z</updated><category
+        seconds=''98''/><yt:uploaded>2008-05-22T22:13:38.000Z</yt:uploaded><yt:uploaderId>UCbZghXWRBnMo2Wt-WKV_QAw</yt:uploaderId><yt:videoid>YSxCT1Faw6k</yt:videoid></media:group><yt:noembed/><gd:rating
+        average=''4.755968'' max=''5'' min=''1'' numRaters=''377'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''376947''/><yt:rating numDislikes=''23'' numLikes=''354''/></entry><entry
+        gd:etag=''W/&quot;CUcDRn47eCp7I2A9WhNWEEU.&quot;''><id>tag:youtube.com,2008:video:CalUp9laldE</id><published>2011-07-23T15:17:37.000Z</published><updated>2012-12-09T19:57:57.000Z</updated><category
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Games''
         label=''Gaming''/><title>Penguin - Batman: Arkham City</title><content type=''application/x-shockwave-flash''
@@ -134,7 +134,7 @@ http_interactions:
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
         href=''http://gdata.youtube.com/feeds/api/videos/CalUp9laldE/comments?v=2''
-        countHint=''1343''/></gd:comments><yt:hd/><media:group><media:category label=''Gaming''
+        countHint=''1344''/></gd:comments><yt:hd/><media:group><media:category label=''Gaming''
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Games</media:category><media:content
         url=''http://www.youtube.com/v/CalUp9laldE?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
         type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
@@ -163,10 +163,10 @@ http_interactions:
         time=''00:01:06'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/CalUp9laldE/3.jpg''
         height=''90'' width=''120'' time=''00:01:39'' yt:name=''end''/><media:title
         type=''plain''>Penguin - Batman: Arkham City</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
-        seconds=''132''/><yt:uploaded>2011-07-23T15:01:51.000Z</yt:uploaded><yt:uploaderId>UCzi3f1gdbL-rDLUHFxq1GpA</yt:uploaderId><yt:videoid>CalUp9laldE</yt:videoid></media:group><gd:rating
-        average=''4.9427686'' max=''5'' min=''1'' numRaters=''1293'' rel=''http://schemas.google.com/g/2005#overall''/><yt:recorded>2011-07-23</yt:recorded><yt:statistics
-        favoriteCount=''0'' viewCount=''639152''/><yt:rating numDislikes=''18'' numLikes=''1275''/></entry><entry
-        gd:etag=''W/&quot;CUYESX47eCp7I2A9WhNXF0g.&quot;''><id>tag:youtube.com,2008:video:srOpByiMfA8</id><published>2011-09-13T13:34:21.000Z</published><updated>2012-12-06T00:18:28.000Z</updated><category
+        seconds=''132''/><yt:uploaded>2011-07-23T15:17:37.000Z</yt:uploaded><yt:uploaderId>UCzi3f1gdbL-rDLUHFxq1GpA</yt:uploaderId><yt:videoid>CalUp9laldE</yt:videoid></media:group><gd:rating
+        average=''4.9397216'' max=''5'' min=''1'' numRaters=''1294'' rel=''http://schemas.google.com/g/2005#overall''/><yt:recorded>2011-07-23</yt:recorded><yt:statistics
+        favoriteCount=''0'' viewCount=''639296''/><yt:rating numDislikes=''20'' numLikes=''1274''/></entry><entry
+        gd:etag=''W/&quot;D08DRH47eCp7I2A9WhNWEU8.&quot;''><id>tag:youtube.com,2008:video:srOpByiMfA8</id><published>2011-09-13T13:47:19.000Z</published><updated>2012-12-10T07:51:15.000Z</updated><category
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Education''
         label=''Education''/><title>Baby penguin first steps</title><content type=''application/x-shockwave-flash''
@@ -191,7 +191,7 @@ http_interactions:
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
         href=''http://gdata.youtube.com/feeds/api/videos/srOpByiMfA8/comments?v=2''
-        countHint=''172''/></gd:comments><media:group><media:category label=''Education''
+        countHint=''175''/></gd:comments><media:group><media:category label=''Education''
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Education</media:category><media:content
         url=''http://www.youtube.com/v/srOpByiMfA8?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
         type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
@@ -214,58 +214,9 @@ http_interactions:
         url=''http://i.ytimg.com/vi/srOpByiMfA8/2.jpg'' height=''90'' width=''120''
         time=''00:00:58'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/srOpByiMfA8/3.jpg''
         height=''90'' width=''120'' time=''00:01:27'' yt:name=''end''/><media:title
-        type=''plain''>Baby penguin first steps</media:title><yt:duration seconds=''116''/><yt:uploaded>2011-09-13T13:34:21.000Z</yt:uploaded><yt:uploaderId>UCePEpVRN4nQ-_l_wP2V6jKw</yt:uploaderId><yt:videoid>srOpByiMfA8</yt:videoid></media:group><gd:rating
-        average=''4.9269037'' max=''5'' min=''1'' numRaters=''985'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''152256''/><yt:rating numDislikes=''18'' numLikes=''967''/></entry><entry
-        gd:etag=''W/&quot;A0EBRX47eCp7I2A9WhNXEUQ.&quot;''><id>tag:youtube.com,2008:video:x7kdDeGXUjI</id><published>2008-11-04T00:05:06.000Z</published><updated>2012-11-29T14:34:14.000Z</updated><category
-        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
-        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Travel''
-        label=''Travel &amp; Events''/><title>Deranged Penguin - Encounters at the
-        end of the world</title><content type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/x7kdDeGXUjI?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
-        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=x7kdDeGXUjI&amp;feature=youtube_gdata''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
-        href=''http://gdata.youtube.com/feeds/api/videos/x7kdDeGXUjI/responses?v=2''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
-        href=''http://gdata.youtube.com/feeds/api/videos/x7kdDeGXUjI/ratings?v=2''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
-        href=''http://gdata.youtube.com/feeds/api/videos/x7kdDeGXUjI/complaints?v=2''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
-        href=''http://gdata.youtube.com/feeds/api/videos/x7kdDeGXUjI/related?v=2''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=x7kdDeGXUjI''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
-        href=''http://gdata.youtube.com/feeds/api/users/wRsR50TiBNPSIEfrsUeUmA?v=2''/><link
-        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/x7kdDeGXUjI?v=2''/><author><name>krisandmaxi</name><uri>http://gdata.youtube.com/feeds/api/users/krisandmaxi</uri><yt:userId>wRsR50TiBNPSIEfrsUeUmA</yt:userId></author><yt:accessControl
-        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
-        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
-        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
-        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
-        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
-        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
-        href=''http://gdata.youtube.com/feeds/api/videos/x7kdDeGXUjI/comments?v=2''
-        countHint=''415''/></gd:comments><media:group><media:category label=''Travel
-        &amp; Events'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Travel</media:category><media:content
-        url=''http://www.youtube.com/v/x7kdDeGXUjI?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
-        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
-        expression=''full'' duration=''149'' yt:format=''5''/><media:content url=''rtsp://v6.cache2.c.youtube.com/CkULENy73wIaPAkyUpfhDR25xxMYDSANFEgGUgZ2aWRlb3NyIQFAwLfvIXLWfJ5gWUSAi-RhDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
-        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''149''
-        yt:format=''1''/><media:content url=''rtsp://v6.cache6.c.youtube.com/CkULENy73wIaPAkyUpfhDR25xxMYESARFEgGUgZ2aWRlb3NyIQFAwLfvIXLWfJ5gWUSAi-RhDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
-        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''149''
-        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''krisandmaxi''>krisandmaxi</media:credit><media:description
-        type=''plain''>from Werner Herzog''s ''Encounters at the end of the world''</media:description><media:keywords/><media:license
-        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
-        url=''http://www.youtube.com/watch?v=x7kdDeGXUjI&amp;feature=youtube_gdata_player''/><media:thumbnail
-        url=''http://i.ytimg.com/vi/x7kdDeGXUjI/default.jpg'' height=''90'' width=''120''
-        time=''00:01:14.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/x7kdDeGXUjI/mqdefault.jpg''
-        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/x7kdDeGXUjI/hqdefault.jpg''
-        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/x7kdDeGXUjI/1.jpg''
-        height=''90'' width=''120'' time=''00:00:37.250'' yt:name=''start''/><media:thumbnail
-        url=''http://i.ytimg.com/vi/x7kdDeGXUjI/2.jpg'' height=''90'' width=''120''
-        time=''00:01:14.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/x7kdDeGXUjI/3.jpg''
-        height=''90'' width=''120'' time=''00:01:51.750'' yt:name=''end''/><media:title
-        type=''plain''>Deranged Penguin - Encounters at the end of the world</media:title><yt:duration
-        seconds=''149''/><yt:uploaded>2008-11-04T00:05:06.000Z</yt:uploaded><yt:uploaderId>UCwRsR50TiBNPSIEfrsUeUmA</yt:uploaderId><yt:videoid>x7kdDeGXUjI</yt:videoid></media:group><gd:rating
-        average=''4.955128'' max=''5'' min=''1'' numRaters=''780'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''222330''/><yt:rating numDislikes=''9'' numLikes=''771''/></entry><entry
+        type=''plain''>Baby penguin first steps</media:title><yt:duration seconds=''116''/><yt:uploaded>2011-09-13T13:47:19.000Z</yt:uploaded><yt:uploaderId>UCePEpVRN4nQ-_l_wP2V6jKw</yt:uploaderId><yt:videoid>srOpByiMfA8</yt:videoid></media:group><gd:rating
+        average=''4.9295497'' max=''5'' min=''1'' numRaters=''1022'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''157792''/><yt:rating numDislikes=''18'' numLikes=''1004''/></entry><entry
         gd:etag=''W/&quot;CUYHQX47eCp7I2A9WhNQF0Q.&quot;''><id>tag:youtube.com,2008:video:cAqPQs0UfCQ</id><published>2007-06-21T16:57:40.000Z</published><updated>2012-11-24T21:38:50.000Z</updated><category
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Animals''
@@ -315,8 +266,57 @@ http_interactions:
         height=''90'' width=''120'' time=''00:01:13.500'' yt:name=''end''/><media:title
         type=''plain''>Penguin vs. Pelican</media:title><yt:duration seconds=''98''/><yt:uploaded>2007-06-21T16:57:40.000Z</yt:uploaded><yt:uploaderId>UCpVm7bg6pXKo1Pr6k5kxG9A</yt:uploaderId><yt:videoid>cAqPQs0UfCQ</yt:videoid></media:group><gd:rating
         average=''4.4775085'' max=''5'' min=''1'' numRaters=''289'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''274546''/><yt:rating numDislikes=''38'' numLikes=''251''/></entry><entry
-        gd:etag=''W/&quot;DE4MRX47eCp7I2A9WhNXFkQ.&quot;''><id>tag:youtube.com,2008:video:SJaMtBKnN-I</id><published>2008-06-15T00:15:20.000Z</published><updated>2012-12-05T08:43:04.000Z</updated><category
+        favoriteCount=''0'' viewCount=''274821''/><yt:rating numDislikes=''38'' numLikes=''251''/></entry><entry
+        gd:etag=''W/&quot;DEICQ347eCp7I2A9WhNWEE4.&quot;''><id>tag:youtube.com,2008:video:x7kdDeGXUjI</id><published>2008-11-04T00:11:10.000Z</published><updated>2012-12-09T07:02:42.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Travel''
+        label=''Travel &amp; Events''/><title>Deranged Penguin - Encounters at the
+        end of the world</title><content type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/x7kdDeGXUjI?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=x7kdDeGXUjI&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/x7kdDeGXUjI/responses?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/x7kdDeGXUjI/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/x7kdDeGXUjI/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/x7kdDeGXUjI/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=x7kdDeGXUjI''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/wRsR50TiBNPSIEfrsUeUmA?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/x7kdDeGXUjI?v=2''/><author><name>krisandmaxi</name><uri>http://gdata.youtube.com/feeds/api/users/krisandmaxi</uri><yt:userId>wRsR50TiBNPSIEfrsUeUmA</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/x7kdDeGXUjI/comments?v=2''
+        countHint=''417''/></gd:comments><media:group><media:category label=''Travel
+        &amp; Events'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Travel</media:category><media:content
+        url=''http://www.youtube.com/v/x7kdDeGXUjI?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''149'' yt:format=''5''/><media:content url=''rtsp://v6.cache2.c.youtube.com/CkULENy73wIaPAkyUpfhDR25xxMYDSANFEgGUgZ2aWRlb3NyIQFAwLfvIXLWfJ5gWUSAi-RhDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''149''
+        yt:format=''1''/><media:content url=''rtsp://v6.cache6.c.youtube.com/CkULENy73wIaPAkyUpfhDR25xxMYESARFEgGUgZ2aWRlb3NyIQFAwLfvIXLWfJ5gWUSAi-RhDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''149''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''krisandmaxi''>krisandmaxi</media:credit><media:description
+        type=''plain''>from Werner Herzog''s ''Encounters at the end of the world''</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=x7kdDeGXUjI&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/x7kdDeGXUjI/default.jpg'' height=''90'' width=''120''
+        time=''00:01:14.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/x7kdDeGXUjI/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/x7kdDeGXUjI/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/x7kdDeGXUjI/1.jpg''
+        height=''90'' width=''120'' time=''00:00:37.250'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/x7kdDeGXUjI/2.jpg'' height=''90'' width=''120''
+        time=''00:01:14.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/x7kdDeGXUjI/3.jpg''
+        height=''90'' width=''120'' time=''00:01:51.750'' yt:name=''end''/><media:title
+        type=''plain''>Deranged Penguin - Encounters at the end of the world</media:title><yt:duration
+        seconds=''149''/><yt:uploaded>2008-11-04T00:11:10.000Z</yt:uploaded><yt:uploaderId>UCwRsR50TiBNPSIEfrsUeUmA</yt:uploaderId><yt:videoid>x7kdDeGXUjI</yt:videoid></media:group><gd:rating
+        average=''4.9553003'' max=''5'' min=''1'' numRaters=''783'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''222972''/><yt:rating numDislikes=''9'' numLikes=''774''/></entry><entry
+        gd:etag=''W/&quot;CU8ERX47eCp7I2A9WhNWEU0.&quot;''><id>tag:youtube.com,2008:video:SJaMtBKnN-I</id><published>2008-06-15T00:23:12.000Z</published><updated>2012-12-10T01:43:24.000Z</updated><category
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Animals''
         label=''Pets &amp; Animals''/><title>Very happy Gentoo penguin</title><content
@@ -341,7 +341,7 @@ http_interactions:
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
         href=''http://gdata.youtube.com/feeds/api/videos/SJaMtBKnN-I/comments?v=2''
-        countHint=''406''/></gd:comments><georss:where><gml:Point><gml:pos>-64.76183319091797
+        countHint=''407''/></gd:comments><georss:where><gml:Point><gml:pos>-64.76183319091797
         -64.05303955078125</gml:pos></gml:Point></georss:where><media:group><media:category
         label=''Pets &amp; Animals'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Animals</media:category><media:content
         url=''http://www.youtube.com/v/SJaMtBKnN-I?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
@@ -369,10 +369,10 @@ http_interactions:
         url=''http://i.ytimg.com/vi/SJaMtBKnN-I/2.jpg'' height=''90'' width=''120''
         time=''00:02:30.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/SJaMtBKnN-I/3.jpg''
         height=''90'' width=''120'' time=''00:03:45.750'' yt:name=''end''/><media:title
-        type=''plain''>Very happy Gentoo penguin</media:title><yt:duration seconds=''301''/><yt:uploaded>2008-06-15T00:15:20.000Z</yt:uploaded><yt:uploaderId>UCsMwvvASL0EI505kTlzv2-w</yt:uploaderId><yt:videoid>SJaMtBKnN-I</yt:videoid></media:group><gd:rating
-        average=''4.933082'' max=''5'' min=''1'' numRaters=''1061'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''422604''/><yt:rating numDislikes=''18'' numLikes=''1043''/></entry><entry
-        gd:etag=''W/&quot;Ck4BRX47eCp7I2A9WhNQGU4.&quot;''><id>tag:youtube.com,2008:video:B71T_GpA2AM</id><published>2007-02-09T13:48:27.000Z</published><updated>2012-11-26T11:55:54.000Z</updated><category
+        type=''plain''>Very happy Gentoo penguin</media:title><yt:duration seconds=''301''/><yt:uploaded>2008-06-15T00:23:12.000Z</yt:uploaded><yt:uploaderId>UCsMwvvASL0EI505kTlzv2-w</yt:uploaderId><yt:videoid>SJaMtBKnN-I</yt:videoid></media:group><gd:rating
+        average=''4.9334583'' max=''5'' min=''1'' numRaters=''1067'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''423421''/><yt:rating numDislikes=''18'' numLikes=''1049''/></entry><entry
+        gd:etag=''W/&quot;A0UCQH47eCp7I2A9WhNXGU0.&quot;''><id>tag:youtube.com,2008:video:B71T_GpA2AM</id><published>2007-02-09T13:49:27.000Z</published><updated>2012-12-07T19:41:01.000Z</updated><category
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Animals''
         label=''Pets &amp; Animals''/><title>King penguins and their young - David
@@ -420,10 +420,10 @@ http_interactions:
         time=''00:02:02'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/B71T_GpA2AM/3.jpg''
         height=''90'' width=''120'' time=''00:03:03'' yt:name=''end''/><media:title
         type=''plain''>King penguins and their young - David Attenborough - BBC wildlife</media:title><yt:duration
-        seconds=''244''/><yt:uploaded>2007-02-09T13:48:27.000Z</yt:uploaded><yt:uploaderId>UC2ccm1GajfSujz7T18d7cKA</yt:uploaderId><yt:videoid>B71T_GpA2AM</yt:videoid></media:group><gd:rating
-        average=''4.8222566'' max=''5'' min=''1'' numRaters=''647'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''437359''/><yt:rating numDislikes=''29'' numLikes=''618''/></entry><entry
-        gd:etag=''W/&quot;CkAMQn47eCp7I2A9WhNXF0k.&quot;''><id>tag:youtube.com,2008:video:1k1ccguXiws</id><published>2007-07-21T02:27:12.000Z</published><updated>2012-12-05T20:53:03.000Z</updated><category
+        seconds=''244''/><yt:uploaded>2007-02-09T13:49:27.000Z</yt:uploaded><yt:uploaderId>UC2ccm1GajfSujz7T18d7cKA</yt:uploaderId><yt:videoid>B71T_GpA2AM</yt:videoid></media:group><gd:rating
+        average=''4.8225307'' max=''5'' min=''1'' numRaters=''648'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''437580''/><yt:rating numDislikes=''29'' numLikes=''619''/></entry><entry
+        gd:etag=''W/&quot;D0QFQH47eCp7I2A9WhNWEU8.&quot;''><id>tag:youtube.com,2008:video:1k1ccguXiws</id><published>2007-07-21T02:33:18.000Z</published><updated>2012-12-10T07:41:51.000Z</updated><category
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Comedy''
         label=''Comedy''/><title>Monty Python - Exploding Penguin</title><content
@@ -448,7 +448,7 @@ http_interactions:
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
         href=''http://gdata.youtube.com/feeds/api/videos/1k1ccguXiws/comments?v=2''
-        countHint=''967''/></gd:comments><media:group><media:category label=''Comedy''
+        countHint=''969''/></gd:comments><media:group><media:category label=''Comedy''
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Comedy</media:category><media:content
         url=''http://www.youtube.com/v/1k1ccguXiws?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
         type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
@@ -469,10 +469,10 @@ http_interactions:
         time=''00:02:37'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/1k1ccguXiws/3.jpg''
         height=''90'' width=''120'' time=''00:03:55.500'' yt:name=''end''/><media:title
         type=''plain''>Monty Python - Exploding Penguin</media:title><yt:duration
-        seconds=''314''/><yt:uploaded>2007-07-21T02:27:12.000Z</yt:uploaded><yt:uploaderId>UCFhZ1khOSgkT4t0MV_uKiwg</yt:uploaderId><yt:videoid>1k1ccguXiws</yt:videoid></media:group><gd:rating
-        average=''4.9371266'' max=''5'' min=''1'' numRaters=''2847'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''528538''/><yt:rating numDislikes=''45'' numLikes=''2802''/></entry><entry
-        gd:etag=''W/&quot;D0EDQn47eCp7I2A9WhNXFU0.&quot;''><id>tag:youtube.com,2008:video:EnlCz1P95WM</id><published>2006-10-26T22:16:21.000Z</published><updated>2012-12-03T03:34:33.000Z</updated><category
+        seconds=''314''/><yt:uploaded>2007-07-21T02:33:18.000Z</yt:uploaded><yt:uploaderId>UCFhZ1khOSgkT4t0MV_uKiwg</yt:uploaderId><yt:videoid>1k1ccguXiws</yt:videoid></media:group><gd:rating
+        average=''4.935902'' max=''5'' min=''1'' numRaters=''2855'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''529012''/><yt:rating numDislikes=''46'' numLikes=''2809''/></entry><entry
+        gd:etag=''W/&quot;CEEHQH47eCp7I2A9WhNXGU0.&quot;''><id>tag:youtube.com,2008:video:EnlCz1P95WM</id><published>2006-10-26T22:19:26.000Z</published><updated>2012-12-07T17:50:31.000Z</updated><category
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Comedy''
         label=''Comedy''/><title>Do penguins fly?</title><content type=''application/x-shockwave-flash''
@@ -519,10 +519,10 @@ http_interactions:
         time=''00:01:07'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/EnlCz1P95WM/3.jpg''
         height=''90'' width=''120'' time=''00:01:40.500'' yt:name=''end''/><media:title
         type=''plain''>Do penguins fly?</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
-        seconds=''134''/><yt:uploaded>2006-10-26T22:16:21.000Z</yt:uploaded><yt:uploaderId>UChw3MNg4qhyVkvFmGCE2SFQ</yt:uploaderId><yt:videoid>EnlCz1P95WM</yt:videoid></media:group><gd:rating
-        average=''4.72623'' max=''5'' min=''1'' numRaters=''6279'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''2459208''/><yt:rating numDislikes=''430''
-        numLikes=''5849''/></entry><entry gd:etag=''W/&quot;Dk4BSX47eCp7I2A9WhNQE00.&quot;''><id>tag:youtube.com,2008:video:qF9bMcRRI0g</id><published>2009-06-25T10:16:15.000Z</published><updated>2012-11-19T06:02:38.000Z</updated><category
+        seconds=''134''/><yt:uploaded>2006-10-26T22:19:26.000Z</yt:uploaded><yt:uploaderId>UChw3MNg4qhyVkvFmGCE2SFQ</yt:uploaderId><yt:videoid>EnlCz1P95WM</yt:videoid></media:group><gd:rating
+        average=''4.725681'' max=''5'' min=''1'' numRaters=''6281'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''2459589''/><yt:rating numDislikes=''431''
+        numLikes=''5850''/></entry><entry gd:etag=''W/&quot;Dk4BSX47eCp7I2A9WhNQE00.&quot;''><id>tag:youtube.com,2008:video:qF9bMcRRI0g</id><published>2009-06-25T10:16:15.000Z</published><updated>2012-11-19T06:02:38.000Z</updated><category
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Animals''
         label=''Pets &amp; Animals''/><title>Penguin Island</title><content type=''application/x-shockwave-flash''
@@ -572,7 +572,7 @@ http_interactions:
         height=''90'' width=''120'' time=''00:03:15.750'' yt:name=''end''/><media:title
         type=''plain''>Penguin Island</media:title><yt:duration seconds=''261''/><yt:uploaded>2009-06-25T10:16:15.000Z</yt:uploaded><yt:uploaderId>UCbgLOl8SOoP2o6pAJaQq0ew</yt:uploaderId><yt:videoid>qF9bMcRRI0g</yt:videoid></media:group><gd:rating
         average=''4.9298244'' max=''5'' min=''1'' numRaters=''57'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''12538''/><yt:rating numDislikes=''1'' numLikes=''56''/></entry><entry
+        favoriteCount=''0'' viewCount=''12620''/><yt:rating numDislikes=''1'' numLikes=''56''/></entry><entry
         gd:etag=''W/&quot;AkMMQX47eCp7I2A9WhNXFEg.&quot;''><id>tag:youtube.com,2008:video:YMSIzoKUbhM</id><published>2008-02-10T21:27:20.000Z</published><updated>2012-12-02T14:28:00.000Z</updated><category
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Film''
@@ -620,8 +620,8 @@ http_interactions:
         height=''90'' width=''120'' time=''00:06:15'' yt:name=''end''/><media:title
         type=''plain''>Pablo Penguin</media:title><yt:duration seconds=''500''/><yt:uploaded>2008-02-10T21:27:20.000Z</yt:uploaded><yt:uploaderId>UCFbGrNrVeb4Jkeg3hO_2i-w</yt:uploaderId><yt:videoid>YMSIzoKUbhM</yt:videoid></media:group><yt:noembed/><gd:rating
         average=''4.597484'' max=''5'' min=''1'' numRaters=''159'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''189753''/><yt:rating numDislikes=''16'' numLikes=''143''/></entry><entry
-        gd:etag=''W/&quot;D0MNSX47eCp7I2A9WhNXGE8.&quot;''><id>tag:youtube.com,2008:video:jtdEKIsnEkM</id><published>2011-10-14T02:42:46.000Z</published><updated>2012-12-06T20:24:58.000Z</updated><app:control><yt:state
+        favoriteCount=''0'' viewCount=''191009''/><yt:rating numDislikes=''16'' numLikes=''143''/></entry><entry
+        gd:etag=''W/&quot;CEIGQn47eCp7I2A9WhNWEUs.&quot;''><id>tag:youtube.com,2008:video:jtdEKIsnEkM</id><published>2011-10-14T02:42:46.000Z</published><updated>2012-12-10T18:02:03.000Z</updated><app:control><yt:state
         name=''restricted'' reasonCode=''limitedSyndication''>Syndication of this
         video was restricted.</yt:state></app:control><category scheme=''http://schemas.google.com/g/2005#kind''
         term=''http://gdata.youtube.com/schemas/2007#video''/><category scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''
@@ -646,7 +646,7 @@ http_interactions:
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''denied''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
         href=''http://gdata.youtube.com/feeds/api/videos/jtdEKIsnEkM/comments?v=2''
-        countHint=''1311''/></gd:comments><yt:hd/><media:group><media:category label=''Film
+        countHint=''1331''/></gd:comments><yt:hd/><media:group><media:category label=''Film
         &amp; Animation'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Film</media:category><media:content
         url=''http://www.youtube.com/v/jtdEKIsnEkM?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
         type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
@@ -670,9 +670,9 @@ http_interactions:
         height=''90'' width=''120'' time=''00:05:32.250'' yt:name=''end''/><media:title
         type=''plain''>Zombie in a Penguin Suit</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
         seconds=''443''/><yt:uploaded>2011-10-14T02:42:46.000Z</yt:uploaded><yt:uploaderId>UCSjRuARP4M6oa1aR8HfRuOg</yt:uploaderId><yt:videoid>jtdEKIsnEkM</yt:videoid></media:group><gd:rating
-        average=''4.92521'' max=''5'' min=''1'' numRaters=''9052'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''935676''/><yt:rating numDislikes=''169'' numLikes=''8883''/></entry><entry
-        gd:etag=''W/&quot;DU4FRn47eCp7I2A9WhNXGE0.&quot;''><id>tag:youtube.com,2008:video:DQbhtZzHsbE</id><published>2011-04-19T01:44:53.000Z</published><updated>2012-12-06T15:31:57.000Z</updated><category
+        average=''4.9239'' max=''5'' min=''1'' numRaters=''9159'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''960114''/><yt:rating numDislikes=''174'' numLikes=''8985''/></entry><entry
+        gd:etag=''W/&quot;DEEFRn47eCp7I2A9WhNWEUs.&quot;''><id>tag:youtube.com,2008:video:DQbhtZzHsbE</id><published>2011-04-19T01:44:53.000Z</published><updated>2012-12-10T19:10:17.000Z</updated><category
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Animals''
         label=''Pets &amp; Animals''/><title>Penguin Being Tickled</title><content
@@ -697,7 +697,7 @@ http_interactions:
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
         href=''http://gdata.youtube.com/feeds/api/videos/DQbhtZzHsbE/comments?v=2''
-        countHint=''5707''/></gd:comments><media:group><media:category label=''Pets
+        countHint=''5865''/></gd:comments><media:group><media:category label=''Pets
         &amp; Animals'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Animals</media:category><media:content
         url=''http://www.youtube.com/v/DQbhtZzHsbE?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
         type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
@@ -718,9 +718,9 @@ http_interactions:
         height=''90'' width=''120'' time=''00:00:16.500'' yt:name=''end''/><media:title
         type=''plain''>Penguin Being Tickled</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
         seconds=''22''/><yt:uploaded>2011-04-19T01:44:53.000Z</yt:uploaded><yt:uploaderId>UCZQsLsHdyeKoBt_CBHUpc2A</yt:uploaderId><yt:videoid>DQbhtZzHsbE</yt:videoid></media:group><gd:rating
-        average=''4.9782615'' max=''5'' min=''1'' numRaters=''29717'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''3675008''/><yt:rating numDislikes=''161''
-        numLikes=''29556''/></entry><entry gd:etag=''W/&quot;DUcHQn47eCp7I2A9WhNXF04.&quot;''><id>tag:youtube.com,2008:video:0V8wesYyCCg</id><published>2007-06-10T08:46:58.000Z</published><updated>2012-12-05T19:50:33.000Z</updated><category
+        average=''4.9782844'' max=''5'' min=''1'' numRaters=''30485'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''3780278''/><yt:rating numDislikes=''165''
+        numLikes=''30320''/></entry><entry gd:etag=''W/&quot;AkYGR347eCp7I2A9WhNWEEo.&quot;''><id>tag:youtube.com,2008:video:0V8wesYyCCg</id><published>2007-06-10T12:24:34.000Z</published><updated>2012-12-09T18:35:26.000Z</updated><category
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Comedy''
         label=''Comedy''/><title>300 Penguins</title><content type=''application/x-shockwave-flash''
@@ -745,7 +745,7 @@ http_interactions:
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
         href=''http://gdata.youtube.com/feeds/api/videos/0V8wesYyCCg/comments?v=2''
-        countHint=''2109''/></gd:comments><media:group><media:category label=''Comedy''
+        countHint=''2110''/></gd:comments><media:group><media:category label=''Comedy''
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Comedy</media:category><media:content
         url=''http://www.youtube.com/v/0V8wesYyCCg?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
         type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
@@ -767,10 +767,10 @@ http_interactions:
         url=''http://i.ytimg.com/vi/0V8wesYyCCg/2.jpg'' height=''90'' width=''120''
         time=''00:01:17'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/0V8wesYyCCg/3.jpg''
         height=''90'' width=''120'' time=''00:01:55.500'' yt:name=''end''/><media:title
-        type=''plain''>300 Penguins</media:title><yt:duration seconds=''154''/><yt:uploaded>2007-06-10T08:46:58.000Z</yt:uploaded><yt:uploaderId>UCLH_LJRKbi4zmhkXYrwfzgA</yt:uploaderId><yt:videoid>0V8wesYyCCg</yt:videoid></media:group><gd:rating
+        type=''plain''>300 Penguins</media:title><yt:duration seconds=''154''/><yt:uploaded>2007-06-10T12:24:34.000Z</yt:uploaded><yt:uploaderId>UCLH_LJRKbi4zmhkXYrwfzgA</yt:uploaderId><yt:videoid>0V8wesYyCCg</yt:videoid></media:group><gd:rating
         average=''4.896199'' max=''5'' min=''1'' numRaters=''4894'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''610031''/><yt:rating numDislikes=''127'' numLikes=''4767''/></entry><entry
-        gd:etag=''W/&quot;DEQFRX47eCp7I2A9WhNXF04.&quot;''><id>tag:youtube.com,2008:video:Q9c8FJ19yVE</id><published>2011-01-07T02:26:44.000Z</published><updated>2012-12-05T19:38:34.000Z</updated><category
+        favoriteCount=''0'' viewCount=''610131''/><yt:rating numDislikes=''127'' numLikes=''4767''/></entry><entry
+        gd:etag=''W/&quot;DkcHSH47eCp7I2A9WhNWEEQ.&quot;''><id>tag:youtube.com,2008:video:Q9c8FJ19yVE</id><published>2011-01-07T02:29:16.000Z</published><updated>2012-12-09T23:00:39.000Z</updated><category
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Comedy''
         label=''Comedy''/><title>The Penguin Dilemma - Translation</title><content
@@ -822,9 +822,9 @@ http_interactions:
         time=''00:00:41.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/Q9c8FJ19yVE/3.jpg''
         height=''90'' width=''120'' time=''00:01:02.250'' yt:name=''end''/><media:title
         type=''plain''>The Penguin Dilemma - Translation</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
-        seconds=''83''/><yt:uploaded>2011-01-07T02:26:44.000Z</yt:uploaded><yt:uploaderId>UC837rCOTkIyuWWas2C1S9UQ</yt:uploaderId><yt:videoid>Q9c8FJ19yVE</yt:videoid></media:group><gd:rating
-        average=''4.960048'' max=''5'' min=''1'' numRaters=''4981'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''1161505''/><yt:rating numDislikes=''50'' numLikes=''4931''/></entry><entry
+        seconds=''83''/><yt:uploaded>2011-01-07T02:29:16.000Z</yt:uploaded><yt:uploaderId>UC837rCOTkIyuWWas2C1S9UQ</yt:uploaderId><yt:videoid>Q9c8FJ19yVE</yt:videoid></media:group><gd:rating
+        average=''4.9593267'' max=''5'' min=''1'' numRaters=''4991'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''1165514''/><yt:rating numDislikes=''51'' numLikes=''4940''/></entry><entry
         gd:etag=''W/&quot;DkEGRn47eCp7I2A9WhNQGUQ.&quot;''><id>tag:youtube.com,2008:video:l63SRpGXBHE</id><published>2007-02-25T11:24:09.000Z</published><updated>2012-11-27T05:37:07.000Z</updated><category
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Comedy''
@@ -873,8 +873,8 @@ http_interactions:
         type=''plain''>Batman vs. The Penguin: The Debate</media:title><yt:duration
         seconds=''168''/><yt:uploaded>2007-02-25T11:24:09.000Z</yt:uploaded><yt:uploaderId>UCWEln636GIoFdEAgRT4tdZw</yt:uploaderId><yt:videoid>l63SRpGXBHE</yt:videoid></media:group><gd:rating
         average=''4.803653'' max=''5'' min=''1'' numRaters=''1314'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''674412''/><yt:rating numDislikes=''65'' numLikes=''1249''/></entry><entry
-        gd:etag=''W/&quot;CEYARn47eCp7I2A9WhNXFUo.&quot;''><id>tag:youtube.com,2008:video:2GqVK_dvS80</id><published>2012-03-04T01:26:06.000Z</published><updated>2012-12-03T22:02:27.000Z</updated><category
+        favoriteCount=''0'' viewCount=''674583''/><yt:rating numDislikes=''65'' numLikes=''1249''/></entry><entry
+        gd:etag=''W/&quot;Ak8GQH47eCp7I2A9WhNWEEQ.&quot;''><id>tag:youtube.com,2008:video:2GqVK_dvS80</id><published>2012-03-04T01:26:06.000Z</published><updated>2012-12-10T00:20:21.000Z</updated><category
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Animals''
         label=''Pets &amp; Animals''/><title>Penguin Fun in Antarctica</title><content
@@ -924,9 +924,212 @@ http_interactions:
         height=''90'' width=''120'' time=''00:00:53.250'' yt:name=''end''/><media:title
         type=''plain''>Penguin Fun in Antarctica</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
         seconds=''71''/><yt:uploaded>2012-03-04T01:26:06.000Z</yt:uploaded><yt:uploaderId>UCnORvGWmCuud3rQGM8RYT3w</yt:uploaderId><yt:videoid>2GqVK_dvS80</yt:videoid></media:group><gd:rating
-        average=''4.951667'' max=''5'' min=''1'' numRaters=''600'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''306337''/><yt:rating numDislikes=''7'' numLikes=''593''/></entry><entry
-        gd:etag=''W/&quot;Ak8FSX47eCp7I2A9WhNXF0s.&quot;''><id>tag:youtube.com,2008:video:jeHmeYfXQlI</id><published>2007-12-02T20:56:53.000Z</published><updated>2012-12-06T04:40:18.000Z</updated><category
+        average=''4.9452734'' max=''5'' min=''1'' numRaters=''603'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''306916''/><yt:rating numDislikes=''8'' numLikes=''595''/></entry><entry
+        gd:etag=''W/&quot;AkUNQ347eCp7I2A9WhNWEEU.&quot;''><id>tag:youtube.com,2008:video:7HibuUBZiXI</id><published>2009-05-13T06:14:24.000Z</published><updated>2012-12-09T21:24:52.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Entertainment''
+        label=''Entertainment''/><title>Pepsi: Penguin</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/7HibuUBZiXI?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=7HibuUBZiXI&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/7HibuUBZiXI/responses?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/7HibuUBZiXI/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/7HibuUBZiXI/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/7HibuUBZiXI/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=7HibuUBZiXI''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/Ivjtew3nazsXpRr3FbF8rA?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/7HibuUBZiXI?v=2''/><author><name>vkuteev</name><uri>http://gdata.youtube.com/feeds/api/users/vkuteev</uri><yt:userId>Ivjtew3nazsXpRr3FbF8rA</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/7HibuUBZiXI/comments?v=2''
+        countHint=''108''/></gd:comments><media:group><media:category label=''Entertainment''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Entertainment</media:category><media:content
+        url=''http://www.youtube.com/v/7HibuUBZiXI?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''62'' yt:format=''5''/><media:content url=''rtsp://v6.cache6.c.youtube.com/CkULENy73wIaPAlyiVlAuZt47BMYDSANFEgGUgZ2aWRlb3NyIQFAwLfvIXLWfJ5gWUSAi-RhDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''62'' yt:format=''1''/><media:content
+        url=''rtsp://v3.cache4.c.youtube.com/CkULENy73wIaPAlyiVlAuZt47BMYESARFEgGUgZ2aWRlb3NyIQFAwLfvIXLWfJ5gWUSAi-RhDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''62'' yt:format=''6''/><media:credit
+        role=''uploader'' scheme=''urn:youtube'' yt:display=''vkuteev''>vkuteev</media:credit><media:description
+        type=''plain''>Agency: BBDO New York Agency Producer: Regina Ebel Creative
+        Director: Brian Donovan Creative: Michael Boulia; Brian Donovan Director:
+        Traktor Production: Partizan Post Production: Framestore NY Editor: John Murray</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=7HibuUBZiXI&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/7HibuUBZiXI/default.jpg'' height=''90'' width=''120''
+        time=''00:00:31'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/7HibuUBZiXI/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/7HibuUBZiXI/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/7HibuUBZiXI/1.jpg''
+        height=''90'' width=''120'' time=''00:00:15.500'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/7HibuUBZiXI/2.jpg'' height=''90'' width=''120''
+        time=''00:00:31'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/7HibuUBZiXI/3.jpg''
+        height=''90'' width=''120'' time=''00:00:46.500'' yt:name=''end''/><media:title
+        type=''plain''>Pepsi: Penguin</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''62''/><yt:uploaded>2009-05-13T06:14:24.000Z</yt:uploaded><yt:uploaderId>UCIvjtew3nazsXpRr3FbF8rA</yt:uploaderId><yt:videoid>7HibuUBZiXI</yt:videoid></media:group><gd:rating
+        average=''4.879479'' max=''5'' min=''1'' numRaters=''307'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''170731''/><yt:rating numDislikes=''9'' numLikes=''298''/></entry><entry
+        gd:etag=''W/&quot;CkIAQX47eCp7I2A9WhNWEEU.&quot;''><id>tag:youtube.com,2008:video:hxtvrdP8an0</id><published>2008-04-06T20:07:15.000Z</published><updated>2012-12-09T19:15:40.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Entertainment''
+        label=''Entertainment''/><title>Pet Penguin in Japan goes shopping for fish</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/hxtvrdP8an0?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=hxtvrdP8an0&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/hxtvrdP8an0/responses?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/hxtvrdP8an0/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/hxtvrdP8an0/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/hxtvrdP8an0/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=hxtvrdP8an0''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/v_oZz4EwFOzEs01yiTg9sA?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/hxtvrdP8an0?v=2''/><author><name>nassirk</name><uri>http://gdata.youtube.com/feeds/api/users/nassirk</uri><yt:userId>v_oZz4EwFOzEs01yiTg9sA</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''allowed''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/hxtvrdP8an0/comments?v=2''
+        countHint=''20''/></gd:comments><media:group><media:category label=''Entertainment''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Entertainment</media:category><media:content
+        url=''http://www.youtube.com/v/hxtvrdP8an0?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''126'' yt:format=''5''/><media:content url=''rtsp://v3.cache4.c.youtube.com/CkULENy73wIaPAl9avzTrW8bhxMYDSANFEgGUgZ2aWRlb3NyIQFAwLfvIXLWfJ5gWUSAi-RhDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''126''
+        yt:format=''1''/><media:content url=''rtsp://v2.cache1.c.youtube.com/CkULENy73wIaPAl9avzTrW8bhxMYESARFEgGUgZ2aWRlb3NyIQFAwLfvIXLWfJ5gWUSAi-RhDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''126''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''nassirk''
+        yt:type=''partner''>nassirk</media:credit><media:description type=''plain''>cute
+        penguin who does people shopping.</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=hxtvrdP8an0&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/hxtvrdP8an0/default.jpg'' height=''90'' width=''120''
+        time=''00:01:03'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/hxtvrdP8an0/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/hxtvrdP8an0/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/hxtvrdP8an0/1.jpg''
+        height=''90'' width=''120'' time=''00:00:31.500'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/hxtvrdP8an0/2.jpg'' height=''90'' width=''120''
+        time=''00:01:03'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/hxtvrdP8an0/3.jpg''
+        height=''90'' width=''120'' time=''00:01:34.500'' yt:name=''end''/><media:title
+        type=''plain''>Pet Penguin in Japan goes shopping for fish</media:title><yt:duration
+        seconds=''126''/><yt:uploaded>2008-04-06T20:07:15.000Z</yt:uploaded><yt:uploaderId>UCv_oZz4EwFOzEs01yiTg9sA</yt:uploaderId><yt:videoid>hxtvrdP8an0</yt:videoid></media:group><gd:rating
+        average=''4.93617'' max=''5'' min=''1'' numRaters=''94'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''19351''/><yt:rating numDislikes=''1'' numLikes=''93''/></entry><entry
+        gd:etag=''W/&quot;D0MAQ347eCp7I2A9WhNXFko.&quot;''><id>tag:youtube.com,2008:video:Tr5wwI2gvRI</id><published>2011-05-16T23:58:51.000Z</published><updated>2012-12-05T02:44:02.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Animals''
+        label=''Pets &amp; Animals''/><title>"Lucky" the Penguin at the Santa Barbara
+        Zoo</title><content type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/Tr5wwI2gvRI?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=Tr5wwI2gvRI&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Tr5wwI2gvRI/responses?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Tr5wwI2gvRI/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Tr5wwI2gvRI/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Tr5wwI2gvRI/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=Tr5wwI2gvRI''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/jfw_0fgdoEkRIhuRtMfhrg?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/Tr5wwI2gvRI?v=2''/><author><name>TevaVideos</name><uri>http://gdata.youtube.com/feeds/api/users/TevaVideos</uri><yt:userId>jfw_0fgdoEkRIhuRtMfhrg</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/Tr5wwI2gvRI/comments?v=2''
+        countHint=''38''/></gd:comments><media:group><media:category label=''Pets
+        &amp; Animals'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Animals</media:category><media:content
+        url=''http://www.youtube.com/v/Tr5wwI2gvRI?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''227'' yt:format=''5''/><media:content url=''rtsp://v7.cache7.c.youtube.com/CkULENy73wIaPAkSvaCNwHC-ThMYDSANFEgGUgZ2aWRlb3NyIQFAwLfvIXLWfJ5gWUSAi-RhDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''227''
+        yt:format=''1''/><media:content url=''rtsp://v3.cache5.c.youtube.com/CkULENy73wIaPAkSvaCNwHC-ThMYESARFEgGUgZ2aWRlb3NyIQFAwLfvIXLWfJ5gWUSAi-RhDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''227''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''TevaVideos''>tevavideos</media:credit><media:description
+        type=''plain''>www.teva.com - Teva has come to the rescue of Lucky, a young
+        Humboldt penguin with an impaired foot at the Santa Barbara Zoo. By wearing
+        a shoe custom made by Teva, Lucky is now able to walk, hop and swim like any
+        other penguin</media:description><media:keywords/><media:license type=''text/html''
+        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=Tr5wwI2gvRI&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/Tr5wwI2gvRI/default.jpg'' height=''90'' width=''120''
+        time=''00:01:53.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/Tr5wwI2gvRI/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/Tr5wwI2gvRI/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/Tr5wwI2gvRI/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/Tr5wwI2gvRI/1.jpg''
+        height=''90'' width=''120'' time=''00:00:56.750'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/Tr5wwI2gvRI/2.jpg'' height=''90'' width=''120''
+        time=''00:01:53.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/Tr5wwI2gvRI/3.jpg''
+        height=''90'' width=''120'' time=''00:02:50.250'' yt:name=''end''/><media:title
+        type=''plain''>"Lucky" the Penguin at the Santa Barbara Zoo</media:title><yt:duration
+        seconds=''227''/><yt:uploaded>2011-05-16T23:58:51.000Z</yt:uploaded><yt:uploaderId>UCjfw_0fgdoEkRIhuRtMfhrg</yt:uploaderId><yt:videoid>Tr5wwI2gvRI</yt:videoid></media:group><gd:rating
+        average=''4.9349594'' max=''5'' min=''1'' numRaters=''246'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''55430''/><yt:rating numDislikes=''4'' numLikes=''242''/></entry><entry
+        gd:etag=''W/&quot;A0cFQX47eCp7I2A9WhNWEUw.&quot;''><id>tag:youtube.com,2008:video:5LMPXah4dG4</id><published>2011-04-20T18:10:01.000Z</published><updated>2012-12-10T05:56:50.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Animals''
+        label=''Pets &amp; Animals''/><title>Dachshund Vs. Penguin</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/5LMPXah4dG4?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=5LMPXah4dG4&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/5LMPXah4dG4/responses?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/5LMPXah4dG4/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/5LMPXah4dG4/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/5LMPXah4dG4/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=5LMPXah4dG4''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/tjqT7xTqn4lMxoLJT2qpKA?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/5LMPXah4dG4?v=2''/><author><name>dachlovers</name><uri>http://gdata.youtube.com/feeds/api/users/dachlovers</uri><yt:userId>tjqT7xTqn4lMxoLJT2qpKA</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/5LMPXah4dG4/comments?v=2''
+        countHint=''1608''/></gd:comments><media:group><media:category label=''Pets
+        &amp; Animals'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Animals</media:category><media:content
+        url=''http://www.youtube.com/v/5LMPXah4dG4?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''27'' yt:format=''5''/><media:content url=''rtsp://v7.cache6.c.youtube.com/CkULENy73wIaPAludHioXQ-z5BMYDSANFEgGUgZ2aWRlb3NyIQFAwLfvIXLWfJ5gWUSAi-RhDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''27'' yt:format=''1''/><media:content
+        url=''rtsp://v8.cache8.c.youtube.com/CkULENy73wIaPAludHioXQ-z5BMYESARFEgGUgZ2aWRlb3NyIQFAwLfvIXLWfJ5gWUSAi-RhDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''27'' yt:format=''6''/><media:credit
+        role=''uploader'' scheme=''urn:youtube'' yt:display=''dachlovers'' yt:type=''partner''>dachlovers</media:credit><media:description
+        type=''plain''>Our Dachshund Rocky, confused by a mechanical penguin, funny
+        :p *original video*</media:description><media:keywords/><media:license type=''text/html''
+        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=5LMPXah4dG4&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/5LMPXah4dG4/default.jpg'' height=''90'' width=''120''
+        time=''00:00:13.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/5LMPXah4dG4/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/5LMPXah4dG4/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/5LMPXah4dG4/1.jpg''
+        height=''90'' width=''120'' time=''00:00:06.750'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/5LMPXah4dG4/2.jpg'' height=''90'' width=''120''
+        time=''00:00:13.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/5LMPXah4dG4/3.jpg''
+        height=''90'' width=''120'' time=''00:00:20.250'' yt:name=''end''/><media:title
+        type=''plain''>Dachshund Vs. Penguin</media:title><yt:duration seconds=''27''/><yt:uploaded>2011-04-20T18:10:01.000Z</yt:uploaded><yt:uploaderId>UCtjqT7xTqn4lMxoLJT2qpKA</yt:uploaderId><yt:videoid>5LMPXah4dG4</yt:videoid></media:group><gd:rating
+        average=''4.9003677'' max=''5'' min=''1'' numRaters=''10057'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''3187037''/><yt:rating numDislikes=''250''
+        numLikes=''9807''/></entry><entry gd:etag=''W/&quot;DUYBSH47eCp7I2A9WhNXGE8.&quot;''><id>tag:youtube.com,2008:video:jeHmeYfXQlI</id><published>2007-12-02T21:15:44.000Z</published><updated>2012-12-06T20:52:39.000Z</updated><category
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Music''
         label=''Music''/><title>Frank Bell - "The Penguin"</title><content type=''application/x-shockwave-flash''
@@ -980,213 +1183,10 @@ http_interactions:
         url=''http://i.ytimg.com/vi/jeHmeYfXQlI/2.jpg'' height=''90'' width=''120''
         time=''00:01:50.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/jeHmeYfXQlI/3.jpg''
         height=''90'' width=''120'' time=''00:02:45.750'' yt:name=''end''/><media:title
-        type=''plain''>Frank Bell - "The Penguin"</media:title><yt:duration seconds=''221''/><yt:uploaded>2007-12-02T20:56:53.000Z</yt:uploaded><yt:uploaderId>UCr_DFscuSVCYUUZUwvoD9sw</yt:uploaderId><yt:videoid>jeHmeYfXQlI</yt:videoid></media:group><gd:rating
-        average=''4.759922'' max=''5'' min=''1'' numRaters=''7181'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''833053''/><yt:rating numDislikes=''431'' numLikes=''6750''/></entry><entry
-        gd:etag=''W/&quot;DU4HRH47eCp7I2A9WhNRGUQ.&quot;''><id>tag:youtube.com,2008:video:7HibuUBZiXI</id><published>2009-05-13T06:11:11.000Z</published><updated>2012-11-15T16:45:35.000Z</updated><category
-        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
-        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Entertainment''
-        label=''Entertainment''/><title>Pepsi: Penguin</title><content type=''application/x-shockwave-flash''
-        src=''http://www.youtube.com/v/7HibuUBZiXI?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
-        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=7HibuUBZiXI&amp;feature=youtube_gdata''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
-        href=''http://gdata.youtube.com/feeds/api/videos/7HibuUBZiXI/responses?v=2''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
-        href=''http://gdata.youtube.com/feeds/api/videos/7HibuUBZiXI/ratings?v=2''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
-        href=''http://gdata.youtube.com/feeds/api/videos/7HibuUBZiXI/complaints?v=2''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
-        href=''http://gdata.youtube.com/feeds/api/videos/7HibuUBZiXI/related?v=2''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=7HibuUBZiXI''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
-        href=''http://gdata.youtube.com/feeds/api/users/Ivjtew3nazsXpRr3FbF8rA?v=2''/><link
-        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/7HibuUBZiXI?v=2''/><author><name>vkuteev</name><uri>http://gdata.youtube.com/feeds/api/users/vkuteev</uri><yt:userId>Ivjtew3nazsXpRr3FbF8rA</yt:userId></author><yt:accessControl
-        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
-        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
-        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
-        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
-        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
-        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
-        href=''http://gdata.youtube.com/feeds/api/videos/7HibuUBZiXI/comments?v=2''
-        countHint=''108''/></gd:comments><media:group><media:category label=''Entertainment''
-        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Entertainment</media:category><media:content
-        url=''http://www.youtube.com/v/7HibuUBZiXI?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
-        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
-        expression=''full'' duration=''62'' yt:format=''5''/><media:content url=''rtsp://v6.cache6.c.youtube.com/CkULENy73wIaPAlyiVlAuZt47BMYDSANFEgGUgZ2aWRlb3NyIQFAwLfvIXLWfJ5gWUSAi-RhDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
-        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''62'' yt:format=''1''/><media:content
-        url=''rtsp://v3.cache4.c.youtube.com/CkULENy73wIaPAlyiVlAuZt47BMYESARFEgGUgZ2aWRlb3NyIQFAwLfvIXLWfJ5gWUSAi-RhDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
-        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''62'' yt:format=''6''/><media:credit
-        role=''uploader'' scheme=''urn:youtube'' yt:display=''vkuteev''>vkuteev</media:credit><media:description
-        type=''plain''>Agency: BBDO New York Agency Producer: Regina Ebel Creative
-        Director: Brian Donovan Creative: Michael Boulia; Brian Donovan Director:
-        Traktor Production: Partizan Post Production: Framestore NY Editor: John Murray</media:description><media:keywords/><media:license
-        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
-        url=''http://www.youtube.com/watch?v=7HibuUBZiXI&amp;feature=youtube_gdata_player''/><media:thumbnail
-        url=''http://i.ytimg.com/vi/7HibuUBZiXI/default.jpg'' height=''90'' width=''120''
-        time=''00:00:31'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/7HibuUBZiXI/mqdefault.jpg''
-        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/7HibuUBZiXI/hqdefault.jpg''
-        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/7HibuUBZiXI/1.jpg''
-        height=''90'' width=''120'' time=''00:00:15.500'' yt:name=''start''/><media:thumbnail
-        url=''http://i.ytimg.com/vi/7HibuUBZiXI/2.jpg'' height=''90'' width=''120''
-        time=''00:00:31'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/7HibuUBZiXI/3.jpg''
-        height=''90'' width=''120'' time=''00:00:46.500'' yt:name=''end''/><media:title
-        type=''plain''>Pepsi: Penguin</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
-        seconds=''62''/><yt:uploaded>2009-05-13T06:11:11.000Z</yt:uploaded><yt:uploaderId>UCIvjtew3nazsXpRr3FbF8rA</yt:uploaderId><yt:videoid>7HibuUBZiXI</yt:videoid></media:group><gd:rating
-        average=''4.879479'' max=''5'' min=''1'' numRaters=''307'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''170647''/><yt:rating numDislikes=''9'' numLikes=''298''/></entry><entry
-        gd:etag=''W/&quot;C0EHRH47eCp7I2A9WhNXEko.&quot;''><id>tag:youtube.com,2008:video:hxtvrdP8an0</id><published>2008-04-06T20:01:25.000Z</published><updated>2012-11-30T10:33:55.000Z</updated><category
-        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
-        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Entertainment''
-        label=''Entertainment''/><title>Pet Penguin in Japan goes shopping for fish</title><content
-        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/hxtvrdP8an0?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
-        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=hxtvrdP8an0&amp;feature=youtube_gdata''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
-        href=''http://gdata.youtube.com/feeds/api/videos/hxtvrdP8an0/responses?v=2''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
-        href=''http://gdata.youtube.com/feeds/api/videos/hxtvrdP8an0/ratings?v=2''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
-        href=''http://gdata.youtube.com/feeds/api/videos/hxtvrdP8an0/complaints?v=2''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
-        href=''http://gdata.youtube.com/feeds/api/videos/hxtvrdP8an0/related?v=2''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=hxtvrdP8an0''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
-        href=''http://gdata.youtube.com/feeds/api/users/v_oZz4EwFOzEs01yiTg9sA?v=2''/><link
-        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/hxtvrdP8an0?v=2''/><author><name>nassirk</name><uri>http://gdata.youtube.com/feeds/api/users/nassirk</uri><yt:userId>v_oZz4EwFOzEs01yiTg9sA</yt:userId></author><yt:accessControl
-        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
-        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''allowed''/><yt:accessControl
-        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
-        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
-        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
-        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
-        href=''http://gdata.youtube.com/feeds/api/videos/hxtvrdP8an0/comments?v=2''
-        countHint=''19''/></gd:comments><media:group><media:category label=''Entertainment''
-        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Entertainment</media:category><media:content
-        url=''http://www.youtube.com/v/hxtvrdP8an0?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
-        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
-        expression=''full'' duration=''126'' yt:format=''5''/><media:content url=''rtsp://v3.cache4.c.youtube.com/CkULENy73wIaPAl9avzTrW8bhxMYDSANFEgGUgZ2aWRlb3NyIQFAwLfvIXLWfJ5gWUSAi-RhDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
-        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''126''
-        yt:format=''1''/><media:content url=''rtsp://v2.cache1.c.youtube.com/CkULENy73wIaPAl9avzTrW8bhxMYESARFEgGUgZ2aWRlb3NyIQFAwLfvIXLWfJ5gWUSAi-RhDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
-        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''126''
-        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''nassirk''
-        yt:type=''partner''>nassirk</media:credit><media:description type=''plain''>cute
-        penguin who does people shopping.</media:description><media:keywords/><media:license
-        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
-        url=''http://www.youtube.com/watch?v=hxtvrdP8an0&amp;feature=youtube_gdata_player''/><media:thumbnail
-        url=''http://i.ytimg.com/vi/hxtvrdP8an0/default.jpg'' height=''90'' width=''120''
-        time=''00:01:03'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/hxtvrdP8an0/mqdefault.jpg''
-        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/hxtvrdP8an0/hqdefault.jpg''
-        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/hxtvrdP8an0/1.jpg''
-        height=''90'' width=''120'' time=''00:00:31.500'' yt:name=''start''/><media:thumbnail
-        url=''http://i.ytimg.com/vi/hxtvrdP8an0/2.jpg'' height=''90'' width=''120''
-        time=''00:01:03'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/hxtvrdP8an0/3.jpg''
-        height=''90'' width=''120'' time=''00:01:34.500'' yt:name=''end''/><media:title
-        type=''plain''>Pet Penguin in Japan goes shopping for fish</media:title><yt:duration
-        seconds=''126''/><yt:uploaded>2008-04-06T20:01:25.000Z</yt:uploaded><yt:uploaderId>UCv_oZz4EwFOzEs01yiTg9sA</yt:uploaderId><yt:videoid>hxtvrdP8an0</yt:videoid></media:group><gd:rating
-        average=''4.935484'' max=''5'' min=''1'' numRaters=''93'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''19027''/><yt:rating numDislikes=''1'' numLikes=''92''/></entry><entry
-        gd:etag=''W/&quot;D0MAQ347eCp7I2A9WhNXFko.&quot;''><id>tag:youtube.com,2008:video:Tr5wwI2gvRI</id><published>2011-05-16T23:58:51.000Z</published><updated>2012-12-05T02:44:02.000Z</updated><category
-        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
-        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Animals''
-        label=''Pets &amp; Animals''/><title>"Lucky" the Penguin at the Santa Barbara
-        Zoo</title><content type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/Tr5wwI2gvRI?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
-        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=Tr5wwI2gvRI&amp;feature=youtube_gdata''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
-        href=''http://gdata.youtube.com/feeds/api/videos/Tr5wwI2gvRI/responses?v=2''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
-        href=''http://gdata.youtube.com/feeds/api/videos/Tr5wwI2gvRI/ratings?v=2''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
-        href=''http://gdata.youtube.com/feeds/api/videos/Tr5wwI2gvRI/complaints?v=2''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
-        href=''http://gdata.youtube.com/feeds/api/videos/Tr5wwI2gvRI/related?v=2''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=Tr5wwI2gvRI''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
-        href=''http://gdata.youtube.com/feeds/api/users/jfw_0fgdoEkRIhuRtMfhrg?v=2''/><link
-        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/Tr5wwI2gvRI?v=2''/><author><name>TevaVideos</name><uri>http://gdata.youtube.com/feeds/api/users/TevaVideos</uri><yt:userId>jfw_0fgdoEkRIhuRtMfhrg</yt:userId></author><yt:accessControl
-        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
-        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
-        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
-        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
-        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
-        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
-        href=''http://gdata.youtube.com/feeds/api/videos/Tr5wwI2gvRI/comments?v=2''
-        countHint=''38''/></gd:comments><media:group><media:category label=''Pets
-        &amp; Animals'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Animals</media:category><media:content
-        url=''http://www.youtube.com/v/Tr5wwI2gvRI?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
-        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
-        expression=''full'' duration=''227'' yt:format=''5''/><media:content url=''rtsp://v7.cache7.c.youtube.com/CkULENy73wIaPAkSvaCNwHC-ThMYDSANFEgGUgZ2aWRlb3NyIQFAwLfvIXLWfJ5gWUSAi-RhDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
-        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''227''
-        yt:format=''1''/><media:content url=''rtsp://v3.cache5.c.youtube.com/CkULENy73wIaPAkSvaCNwHC-ThMYESARFEgGUgZ2aWRlb3NyIQFAwLfvIXLWfJ5gWUSAi-RhDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
-        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''227''
-        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''TevaVideos''>tevavideos</media:credit><media:description
-        type=''plain''>www.teva.com - Teva has come to the rescue of Lucky, a young
-        Humboldt penguin with an impaired foot at the Santa Barbara Zoo. By wearing
-        a shoe custom made by Teva, Lucky is now able to walk, hop and swim like any
-        other penguin</media:description><media:keywords/><media:license type=''text/html''
-        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
-        url=''http://www.youtube.com/watch?v=Tr5wwI2gvRI&amp;feature=youtube_gdata_player''/><media:thumbnail
-        url=''http://i.ytimg.com/vi/Tr5wwI2gvRI/default.jpg'' height=''90'' width=''120''
-        time=''00:01:53.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/Tr5wwI2gvRI/mqdefault.jpg''
-        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/Tr5wwI2gvRI/hqdefault.jpg''
-        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/Tr5wwI2gvRI/sddefault.jpg''
-        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/Tr5wwI2gvRI/1.jpg''
-        height=''90'' width=''120'' time=''00:00:56.750'' yt:name=''start''/><media:thumbnail
-        url=''http://i.ytimg.com/vi/Tr5wwI2gvRI/2.jpg'' height=''90'' width=''120''
-        time=''00:01:53.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/Tr5wwI2gvRI/3.jpg''
-        height=''90'' width=''120'' time=''00:02:50.250'' yt:name=''end''/><media:title
-        type=''plain''>"Lucky" the Penguin at the Santa Barbara Zoo</media:title><yt:duration
-        seconds=''227''/><yt:uploaded>2011-05-16T23:58:51.000Z</yt:uploaded><yt:uploaderId>UCjfw_0fgdoEkRIhuRtMfhrg</yt:uploaderId><yt:videoid>Tr5wwI2gvRI</yt:videoid></media:group><gd:rating
-        average=''4.9349594'' max=''5'' min=''1'' numRaters=''246'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''55367''/><yt:rating numDislikes=''4'' numLikes=''242''/></entry><entry
-        gd:etag=''W/&quot;CkIGSH47eCp7I2A9WhNXGE0.&quot;''><id>tag:youtube.com,2008:video:5LMPXah4dG4</id><published>2011-04-20T18:02:21.000Z</published><updated>2012-12-06T13:28:49.000Z</updated><category
-        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
-        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Animals''
-        label=''Pets &amp; Animals''/><title>Dachshund Vs. Penguin</title><content
-        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/5LMPXah4dG4?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
-        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=5LMPXah4dG4&amp;feature=youtube_gdata''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
-        href=''http://gdata.youtube.com/feeds/api/videos/5LMPXah4dG4/responses?v=2''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
-        href=''http://gdata.youtube.com/feeds/api/videos/5LMPXah4dG4/ratings?v=2''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
-        href=''http://gdata.youtube.com/feeds/api/videos/5LMPXah4dG4/complaints?v=2''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
-        href=''http://gdata.youtube.com/feeds/api/videos/5LMPXah4dG4/related?v=2''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=5LMPXah4dG4''/><link
-        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
-        href=''http://gdata.youtube.com/feeds/api/users/tjqT7xTqn4lMxoLJT2qpKA?v=2''/><link
-        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/5LMPXah4dG4?v=2''/><author><name>dachlovers</name><uri>http://gdata.youtube.com/feeds/api/users/dachlovers</uri><yt:userId>tjqT7xTqn4lMxoLJT2qpKA</yt:userId></author><yt:accessControl
-        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
-        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
-        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
-        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
-        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
-        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
-        href=''http://gdata.youtube.com/feeds/api/videos/5LMPXah4dG4/comments?v=2''
-        countHint=''1596''/></gd:comments><media:group><media:category label=''Pets
-        &amp; Animals'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Animals</media:category><media:content
-        url=''http://www.youtube.com/v/5LMPXah4dG4?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
-        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
-        expression=''full'' duration=''27'' yt:format=''5''/><media:content url=''rtsp://v7.cache6.c.youtube.com/CkULENy73wIaPAludHioXQ-z5BMYDSANFEgGUgZ2aWRlb3NyIQFAwLfvIXLWfJ5gWUSAi-RhDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
-        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''27'' yt:format=''1''/><media:content
-        url=''rtsp://v8.cache8.c.youtube.com/CkULENy73wIaPAludHioXQ-z5BMYESARFEgGUgZ2aWRlb3NyIQFAwLfvIXLWfJ5gWUSAi-RhDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
-        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''27'' yt:format=''6''/><media:credit
-        role=''uploader'' scheme=''urn:youtube'' yt:display=''dachlovers'' yt:type=''partner''>dachlovers</media:credit><media:description
-        type=''plain''>Our Dachshund Rocky, confused by a mechanical penguin, funny
-        :p *original video*</media:description><media:keywords/><media:license type=''text/html''
-        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
-        url=''http://www.youtube.com/watch?v=5LMPXah4dG4&amp;feature=youtube_gdata_player''/><media:thumbnail
-        url=''http://i.ytimg.com/vi/5LMPXah4dG4/default.jpg'' height=''90'' width=''120''
-        time=''00:00:13.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/5LMPXah4dG4/mqdefault.jpg''
-        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/5LMPXah4dG4/hqdefault.jpg''
-        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/5LMPXah4dG4/1.jpg''
-        height=''90'' width=''120'' time=''00:00:06.750'' yt:name=''start''/><media:thumbnail
-        url=''http://i.ytimg.com/vi/5LMPXah4dG4/2.jpg'' height=''90'' width=''120''
-        time=''00:00:13.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/5LMPXah4dG4/3.jpg''
-        height=''90'' width=''120'' time=''00:00:20.250'' yt:name=''end''/><media:title
-        type=''plain''>Dachshund Vs. Penguin</media:title><yt:duration seconds=''27''/><yt:uploaded>2011-04-20T18:02:21.000Z</yt:uploaded><yt:uploaderId>UCtjqT7xTqn4lMxoLJT2qpKA</yt:uploaderId><yt:videoid>5LMPXah4dG4</yt:videoid></media:group><gd:rating
-        average=''4.9021597'' max=''5'' min=''1'' numRaters=''9955'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''3145790''/><yt:rating numDislikes=''243''
-        numLikes=''9712''/></entry><entry gd:etag=''W/&quot;DEcARX47eCp7I2A9WhNXF0k.&quot;''><id>tag:youtube.com,2008:video:oee7DnWJSw0</id><published>2010-12-14T22:04:24.000Z</published><updated>2012-12-05T22:20:44.000Z</updated><category
+        type=''plain''>Frank Bell - "The Penguin"</media:title><yt:duration seconds=''221''/><yt:uploaded>2007-12-02T21:15:44.000Z</yt:uploaded><yt:uploaderId>UCr_DFscuSVCYUUZUwvoD9sw</yt:uploaderId><yt:videoid>jeHmeYfXQlI</yt:videoid></media:group><gd:rating
+        average=''4.7599554'' max=''5'' min=''1'' numRaters=''7182'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''833109''/><yt:rating numDislikes=''431'' numLikes=''6751''/></entry><entry
+        gd:etag=''W/&quot;AkUBQ347eCp7I2A9WhNWEEw.&quot;''><id>tag:youtube.com,2008:video:oee7DnWJSw0</id><published>2010-12-14T22:32:33.000Z</published><updated>2012-12-09T01:57:32.000Z</updated><category
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Animals''
         label=''Pets &amp; Animals''/><title>King penguins fighting</title><content
@@ -1237,9 +1237,9 @@ http_interactions:
         time=''00:00:14'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/oee7DnWJSw0/3.jpg''
         height=''90'' width=''120'' time=''00:00:21'' yt:name=''end''/><media:title
         type=''plain''>King penguins fighting</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
-        seconds=''28''/><yt:uploaded>2010-12-14T22:04:24.000Z</yt:uploaded><yt:uploaderId>UCc8Gr9wmB_7L6W3v5ssXDOw</yt:uploaderId><yt:videoid>oee7DnWJSw0</yt:videoid></media:group><gd:rating
-        average=''4.9342103'' max=''5'' min=''1'' numRaters=''304'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''647646''/><yt:rating numDislikes=''5'' numLikes=''299''/></entry><entry
+        seconds=''28''/><yt:uploaded>2010-12-14T22:32:33.000Z</yt:uploaded><yt:uploaderId>UCc8Gr9wmB_7L6W3v5ssXDOw</yt:uploaderId><yt:videoid>oee7DnWJSw0</yt:videoid></media:group><gd:rating
+        average=''4.9344263'' max=''5'' min=''1'' numRaters=''305'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''647952''/><yt:rating numDislikes=''5'' numLikes=''300''/></entry><entry
         gd:etag=''W/&quot;DkMCQn47eCp7I2A9WhNXFk4.&quot;''><id>tag:youtube.com,2008:video:-Lh619MEWo8</id><published>2012-02-05T10:49:25.000Z</published><updated>2012-12-04T15:21:03.000Z</updated><category
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Animals''
@@ -1289,7 +1289,7 @@ http_interactions:
         height=''90'' width=''120'' time=''00:00:18'' yt:name=''end''/><media:title
         type=''plain''>Dog Wants To Play With Penguin</media:title><yt:duration seconds=''24''/><yt:uploaded>2012-02-05T10:49:25.000Z</yt:uploaded><yt:uploaderId>UCMQDYprAVF6w-637IJUnoPA</yt:uploaderId><yt:videoid>-Lh619MEWo8</yt:videoid></media:group><gd:rating
         average=''4.9577837'' max=''5'' min=''1'' numRaters=''379'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''268493''/><yt:rating numDislikes=''4'' numLikes=''375''/></entry><entry
+        favoriteCount=''0'' viewCount=''268713''/><yt:rating numDislikes=''4'' numLikes=''375''/></entry><entry
         gd:etag=''W/&quot;DkMMSH47eCp7I2A9WhNXF0w.&quot;''><id>tag:youtube.com,2008:video:GBVTtaJbMUI</id><published>2011-03-30T15:23:25.000Z</published><updated>2012-12-05T13:34:49.000Z</updated><category
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Film''
@@ -1347,8 +1347,8 @@ http_interactions:
         type=''plain''>Mr. Popper''s Penguins Movie Trailer Official (HD)</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
         seconds=''89''/><yt:uploaded>2011-03-30T15:23:25.000Z</yt:uploaded><yt:uploaderId>UCQMbqH7xJu5aTAPQ9y_U7WQ</yt:uploaderId><yt:videoid>GBVTtaJbMUI</yt:videoid></media:group><gd:rating
         average=''4.597847'' max=''5'' min=''1'' numRaters=''3623'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''2996418''/><yt:rating numDislikes=''364''
-        numLikes=''3259''/></entry><entry gd:etag=''W/&quot;Ak8MRn47eCp7I2A9WhNXF0g.&quot;''><id>tag:youtube.com,2008:video:YDfXgDPDmk8</id><published>2010-12-12T20:55:53.000Z</published><updated>2012-12-06T01:54:47.000Z</updated><category
+        favoriteCount=''0'' viewCount=''2998905''/><yt:rating numDislikes=''364''
+        numLikes=''3259''/></entry><entry gd:etag=''W/&quot;A0EFSH47eCp7I2A9WhNWEEo.&quot;''><id>tag:youtube.com,2008:video:YDfXgDPDmk8</id><published>2010-12-12T21:02:55.000Z</published><updated>2012-12-09T19:00:19.000Z</updated><category
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Entertainment''
         label=''Entertainment''/><title>Funny Penguin Video</title><content type=''application/x-shockwave-flash''
@@ -1373,7 +1373,7 @@ http_interactions:
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
         href=''http://gdata.youtube.com/feeds/api/videos/YDfXgDPDmk8/comments?v=2''
-        countHint=''89''/></gd:comments><media:group><media:category label=''Entertainment''
+        countHint=''96''/></gd:comments><media:group><media:category label=''Entertainment''
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Entertainment</media:category><media:content
         url=''http://www.youtube.com/v/YDfXgDPDmk8?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
         type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
@@ -1395,9 +1395,9 @@ http_interactions:
         url=''http://i.ytimg.com/vi/YDfXgDPDmk8/2.jpg'' height=''90'' width=''120''
         time=''00:00:54'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/YDfXgDPDmk8/3.jpg''
         height=''90'' width=''120'' time=''00:01:21'' yt:name=''end''/><media:title
-        type=''plain''>Funny Penguin Video</media:title><yt:duration seconds=''108''/><yt:uploaded>2010-12-12T20:55:53.000Z</yt:uploaded><yt:uploaderId>UCIc7xWoUtSM26kXEn-4Oy-w</yt:uploaderId><yt:videoid>YDfXgDPDmk8</yt:videoid></media:group><gd:rating
-        average=''4.552239'' max=''5'' min=''1'' numRaters=''402'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''216346''/><yt:rating numDislikes=''45'' numLikes=''357''/></entry><entry
+        type=''plain''>Funny Penguin Video</media:title><yt:duration seconds=''108''/><yt:uploaded>2010-12-12T21:02:55.000Z</yt:uploaded><yt:uploaderId>UCIc7xWoUtSM26kXEn-4Oy-w</yt:uploaderId><yt:videoid>YDfXgDPDmk8</yt:videoid></media:group><gd:rating
+        average=''4.54902'' max=''5'' min=''1'' numRaters=''408'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''220250''/><yt:rating numDislikes=''46'' numLikes=''362''/></entry><entry
         gd:etag=''W/&quot;CEQHRH47eCp7I2A9WhNXFkg.&quot;''><id>tag:youtube.com,2008:video:ivk9Ka7e4Y8</id><published>2006-04-24T18:15:32.000Z</published><updated>2012-12-04T20:18:55.000Z</updated><category
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Comedy''
@@ -1448,8 +1448,8 @@ http_interactions:
         height=''90'' width=''120'' time=''00:01:32.250'' yt:name=''end''/><media:title
         type=''plain''>The Pet Penguin</media:title><yt:duration seconds=''123''/><yt:uploaded>2006-04-24T18:15:32.000Z</yt:uploaded><yt:uploaderId>UC8HEAfz7cmfV-UitjCF5qNg</yt:uploaderId><yt:videoid>ivk9Ka7e4Y8</yt:videoid></media:group><gd:rating
         average=''4.8125796'' max=''5'' min=''1'' numRaters=''1574'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''599993''/><yt:rating numDislikes=''74'' numLikes=''1500''/></entry><entry
-        gd:etag=''W/&quot;DEANSX47eCp7I2A9WhNXFk8.&quot;''><id>tag:youtube.com,2008:video:4XZZyjLOB1M</id><published>2011-09-13T16:56:29.000Z</published><updated>2012-12-04T13:13:18.000Z</updated><category
+        favoriteCount=''0'' viewCount=''600291''/><yt:rating numDislikes=''74'' numLikes=''1500''/></entry><entry
+        gd:etag=''W/&quot;D0EMRX47eCp7I2A9WhNWEEQ.&quot;''><id>tag:youtube.com,2008:video:4XZZyjLOB1M</id><published>2011-09-13T17:57:18.000Z</published><updated>2012-12-09T23:28:04.000Z</updated><category
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Howto''
         label=''Howto &amp; Style''/><title>How to make penguin cake pops</title><content
@@ -1503,10 +1503,10 @@ http_interactions:
         time=''00:03:01.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/4XZZyjLOB1M/3.jpg''
         height=''90'' width=''120'' time=''00:04:32.250'' yt:name=''end''/><media:title
         type=''plain''>How to make penguin cake pops</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
-        seconds=''363''/><yt:uploaded>2011-09-13T16:56:29.000Z</yt:uploaded><yt:uploaderId>UCDdbpJV0tq3N8AyzDFMoocQ</yt:uploaderId><yt:videoid>4XZZyjLOB1M</yt:videoid></media:group><gd:rating
-        average=''4.934066'' max=''5'' min=''1'' numRaters=''364'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''89050''/><yt:rating numDislikes=''6'' numLikes=''358''/></entry><entry
-        gd:etag=''W/&quot;DUUER347eCp7I2A9WhNXEkk.&quot;''><id>tag:youtube.com,2008:video:tAgAim926s0</id><published>2010-08-31T11:40:25.000Z</published><updated>2012-11-30T03:46:46.000Z</updated><category
+        seconds=''363''/><yt:uploaded>2011-09-13T17:57:18.000Z</yt:uploaded><yt:uploaderId>UCDdbpJV0tq3N8AyzDFMoocQ</yt:uploaderId><yt:videoid>4XZZyjLOB1M</yt:videoid></media:group><gd:rating
+        average=''4.9347825'' max=''5'' min=''1'' numRaters=''368'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''89680''/><yt:rating numDislikes=''6'' numLikes=''362''/></entry><entry
+        gd:etag=''W/&quot;DEYERH47eCp7I2A9WhNXGU0.&quot;''><id>tag:youtube.com,2008:video:tAgAim926s0</id><published>2010-08-31T11:42:16.000Z</published><updated>2012-12-07T18:48:25.000Z</updated><category
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Animals''
         label=''Pets &amp; Animals''/><title>Penguin prostitution - Deep into the
@@ -1557,10 +1557,10 @@ http_interactions:
         time=''00:00:31.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/tAgAim926s0/3.jpg''
         height=''90'' width=''120'' time=''00:00:47.250'' yt:name=''end''/><media:title
         type=''plain''>Penguin prostitution - Deep into the Wild - BBC</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
-        seconds=''63''/><yt:uploaded>2010-08-31T11:40:25.000Z</yt:uploaded><yt:uploaderId>UCwmZiChSryoWQCZMIQezgTg</yt:uploaderId><yt:videoid>tAgAim926s0</yt:videoid></media:group><gd:rating
-        average=''4.8545456'' max=''5'' min=''1'' numRaters=''165'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''40403''/><yt:rating numDislikes=''6'' numLikes=''159''/></entry><entry
-        gd:etag=''W/&quot;D0QFR347eCp7I2A9WhNXFEU.&quot;''><id>tag:youtube.com,2008:video:zr4VLMAEZ-E</id><published>2008-08-15T15:45:36.000Z</published><updated>2012-12-02T21:55:16.000Z</updated><category
+        seconds=''63''/><yt:uploaded>2010-08-31T11:42:16.000Z</yt:uploaded><yt:uploaderId>UCwmZiChSryoWQCZMIQezgTg</yt:uploaderId><yt:videoid>tAgAim926s0</yt:videoid></media:group><gd:rating
+        average=''4.8536587'' max=''5'' min=''1'' numRaters=''164'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''40535''/><yt:rating numDislikes=''6'' numLikes=''158''/></entry><entry
+        gd:etag=''W/&quot;AkQMQX47eCp7I2A9WhNXGUU.&quot;''><id>tag:youtube.com,2008:video:zr4VLMAEZ-E</id><published>2008-08-15T15:52:49.000Z</published><updated>2012-12-08T17:39:40.000Z</updated><category
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''News''
         label=''News &amp; Politics''/><title>Penguin given knighthood by King of
@@ -1585,7 +1585,7 @@ http_interactions:
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
         href=''http://gdata.youtube.com/feeds/api/videos/zr4VLMAEZ-E/comments?v=2''
-        countHint=''315''/></gd:comments><media:group><media:category label=''News
+        countHint=''317''/></gd:comments><media:group><media:category label=''News
         &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
         url=''http://www.youtube.com/v/zr4VLMAEZ-E?version=3&amp;f=videos&amp;d=AUDAt-8hctZ8nmBZRICL5GEO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
         type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
@@ -1608,9 +1608,9 @@ http_interactions:
         time=''00:01:04.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/zr4VLMAEZ-E/3.jpg''
         height=''90'' width=''120'' time=''00:01:36.750'' yt:name=''end''/><media:title
         type=''plain''>Penguin given knighthood by King of Norway</media:title><yt:duration
-        seconds=''129''/><yt:uploaded>2008-08-15T15:45:36.000Z</yt:uploaded><yt:uploaderId>UCUsOHrRYisemRAeIVF2l1oQ</yt:uploaderId><yt:videoid>zr4VLMAEZ-E</yt:videoid></media:group><gd:rating
-        average=''4.8865094'' max=''5'' min=''1'' numRaters=''467'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''142635''/><yt:rating numDislikes=''13'' numLikes=''454''/></entry></feed>'
+        seconds=''129''/><yt:uploaded>2008-08-15T15:52:49.000Z</yt:uploaded><yt:uploaderId>UCUsOHrRYisemRAeIVF2l1oQ</yt:uploaderId><yt:videoid>zr4VLMAEZ-E</yt:videoid></media:group><gd:rating
+        average=''4.886752'' max=''5'' min=''1'' numRaters=''468'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''142821''/><yt:rating numDislikes=''13'' numLikes=''455''/></entry></feed>'
     http_version: 
-  recorded_at: Thu, 06 Dec 2012 20:45:36 GMT
+  recorded_at: Mon, 10 Dec 2012 20:36:41 GMT
 recorded_with: VCR 2.1.1
