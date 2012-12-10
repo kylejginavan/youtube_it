@@ -92,7 +92,8 @@ class YouTubeIt
         vid = video
       end
       video_id ="http://gdata.youtube.com/feeds/api/videos/#{vid}?v=2#{@dev_key ? '&key='+@dev_key : ''}"
-      parser = YouTubeIt::Parser::VideoFeedParser.new(video_id, authenticated_request: true, access_token: @access_token)
+      options = @access_token ? {} : { authenticated_request: true, access_token: @access_token }
+      parser = YouTubeIt::Parser::VideoFeedParser.new(video_id, options)
       parser.parse
     end
 
