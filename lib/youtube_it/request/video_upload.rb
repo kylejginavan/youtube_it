@@ -256,7 +256,7 @@ class YouTubeIt
       def profiles(usernames_to_fetch)
         usernames_to_fetch.each_slice(50).map do |usernames|
           post = Nokogiri::XML <<-BATCH
-              <feed 
+              <feed
                 xmlns='http://www.w3.org/2005/Atom'
                 xmlns:media='http://search.yahoo.com/mrss/'
                 xmlns:batch='http://schemas.google.com/gdata/batch'

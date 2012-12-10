@@ -194,6 +194,14 @@ class TestClient < Test::Unit::TestCase
     assert_valid_video video
   end
 
+  def test_should_retrieve_keywords_for_a_video_i_own
+    keywords = %w[nick mik abraham lincoln]
+    video = @client.video_upload(File.open("test/test.mov"), :title => "test",:description => 'some description', :category => 'People',:keywords => keywords )
+    video_from_server = @client.video_by(video.unique_id)
+    assert_equal keywords, video_from_server.keywords
+    assert @client.video_delete(video.unique_id)
+  end
+
   def test_should_return_upload_info_for_upload_from_browser
     response = @client.upload_token(OPTIONS)
     assert response.kind_of?(Hash)
