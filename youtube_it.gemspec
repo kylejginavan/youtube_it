@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency("nokogiri", "~> 1.5.2")
   s.add_runtime_dependency("oauth", "~> 0.4.4")
   s.add_runtime_dependency("oauth2", "~> 0.6")
-  s.add_runtime_dependency("simple_oauth", "~> 0.1.5")
+  s.add_runtime_dependency("simple_oauth", ">= 0.1.5")
   s.add_runtime_dependency("faraday", "~> 0.8")
   s.add_runtime_dependency("builder", ">= 0")
 
