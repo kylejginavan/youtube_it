@@ -14,9 +14,11 @@ class YouTubeIt
       def initialize(type, options={})
         @dev_key = options[:dev_key] if options[:dev_key]
         if TYPES.include?(type)
+          
           @max_results, @order_by, @offset, @time, @region = nil
           set_instance_variables(options)
-          @url = base_url + "#{@region}/" + type.to_s << build_query_params(to_youtube_params)
+          puts @region.nil?
+          @url = base_url + to_region_param + type.to_s << build_query_params(to_youtube_params)
         else
           raise "Invalid type, must be one of: #{ TYPES.map { |t| t.to_s }.join(", ") }"
         end
@@ -37,6 +39,15 @@ class YouTubeIt
           'v' => 2
         }
       end
+
+      def to_region_param
+        if @region.nil?
+          ""
+        else
+          "#{@region}/"
+        end
+      end
+
     end
 
   end
