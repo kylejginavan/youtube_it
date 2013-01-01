@@ -17,7 +17,6 @@ class YouTubeIt
           
           @max_results, @order_by, @offset, @time, @region = nil
           set_instance_variables(options)
-          puts @region.nil?
           @url = base_url + to_region_param + type.to_s << build_query_params(to_youtube_params)
         else
           raise "Invalid type, must be one of: #{ TYPES.map { |t| t.to_s }.join(", ") }"
