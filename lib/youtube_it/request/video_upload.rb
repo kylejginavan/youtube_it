@@ -165,8 +165,8 @@ class YouTubeIt
       # When the authentication credentials are incorrect, an AuthenticationError will be raised.
       def get_my_video(video_id)
         get_url  = "/feeds/api/users/default/uploads/%s" % video_id
-        response = yt_session.get(get_url)
 				begin
+					response = yt_session.get(get_url)
 					return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse
 				rescue ResourceNotFoundException
 					nil
