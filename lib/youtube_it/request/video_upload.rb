@@ -166,8 +166,11 @@ class YouTubeIt
       def get_my_video(video_id)
         get_url  = "/feeds/api/users/default/uploads/%s" % video_id
         response = yt_session.get(get_url)
-
-        return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse
+				begin
+					return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse
+				rescue ResourceNotFoundException
+					nil
+				end
       end
 
       # Fetches the data of the videos of the current user, which may be private.
