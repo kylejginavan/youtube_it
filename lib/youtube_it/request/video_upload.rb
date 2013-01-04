@@ -168,7 +168,7 @@ class YouTubeIt
 				begin
 					response = yt_session.get(get_url)
 					return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse
-				rescue ResourceNotFoundException
+				rescue
 					nil
 				end
       end
