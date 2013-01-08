@@ -32,7 +32,7 @@ class YouTubeIt
       end
 
       def remove_bom str
-        str.gsub /\xEF\xBB\xBF|ï»¿/, ''
+        str.gsub /\xEF\xBB\xBF|ï»¿/, '' if str
       end
     end
 

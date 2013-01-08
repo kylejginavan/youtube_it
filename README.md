@@ -493,6 +493,7 @@ RAILS_DEFAULT_LOGGER.level = Logger::DEBUG
 * Marko Seppa  - https://github.com/mseppae
 * Walter Korman - https://github.com/shaper
 * Shane Vitarana - https://github.com/shanev
+* Adrien Jarthon - https://github.com/jarthod
 
 ## License
 
