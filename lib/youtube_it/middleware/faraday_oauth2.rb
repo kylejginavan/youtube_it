@@ -1,5 +1,5 @@
-module Faraday
-  class Request::OAuth2 < Faraday::Middleware
+module FaradayMiddleware
+  class YoutubeOAuth2 < Faraday::Middleware
     def call(env)
       env[:request_headers]['Authorization'] = "Bearer #{@access_token.token}"
 

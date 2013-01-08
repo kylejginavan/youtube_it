@@ -1,5 +1,5 @@
-module Faraday
-  class Request::OAuth < Faraday::Middleware
+module FaradayMiddleware
+  class YoutubeOAuth < Faraday::Middleware
     dependency 'simple_oauth'
 
     def call(env)
