@@ -5,7 +5,7 @@ module FaradayMiddleware
       req_headers = env[:request_headers]
       req_headers.merge!(@headers)
       unless req_headers.include?("GData-Version")
-        req_headers.merge!("GData-Version" => "2")
+        req_headers.merge!("GData-Version" => "2.1")
       end
       unless req_headers.include?("Content-Type")
         req_headers.merge!("Content-Type"  => "application/atom+xml; charset=UTF-8")

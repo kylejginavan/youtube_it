@@ -1,47 +1,48 @@
---- 
-recorded_with: VCR 2.1.1
-http_interactions: 
-- request: 
+---
+http_interactions:
+- request:
     method: post
     uri: https://accounts.google.com/o/oauth2/token
-    body: 
-      string: client_id=68330730158.apps.googleusercontent.com&refresh_token=1%2FErxjeSs0RNMMGtaI-87grQf_o1iQKlx0JLwec1KIDH8&client_secret=Npj4rmtme7q6INPPQjpQFuCZ&grant_type=refresh_token
-    headers: 
-      Content-Type: 
+    body:
+      encoding: US-ASCII
+      string: client_id=945753295508-1oke4ok88185su0cu73pb05ctga7jaea.apps.googleusercontent.com&client_secret=LZ-dK8C3-Hfeav_AocG1hRrR&grant_type=refresh_token&refresh_token=1%2FVWO1EbE5mN1s0zGaBD6G3T30u-u9IWZJYErGXdma64s
+    headers:
+      Content-Type:
       - application/x-www-form-urlencoded
-      Accept: 
-      - "*/*"
-  response: 
-    status: 
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
       code: 200
       message: OK
-    headers: 
-      X-Frame-Options: 
-      - SAMEORIGIN
-      Transfer-Encoding: 
-      - chunked
-      Content-Type: 
-      - application/json
-      Date: 
-      - Wed, 11 Jul 2012 19:39:37 GMT
-      X-Xss-Protection: 
-      - 1; mode=block
-      Pragma: 
-      - no-cache
-      Server: 
-      - GSE
-      X-Content-Type-Options: 
-      - nosniff
-      Expires: 
-      - Fri, 01 Jan 1990 00:00:00 GMT
-      Cache-Control: 
+    headers:
+      Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
-    body: 
-      string: |-
-        {
-          "access_token" : "ya29.AHES6ZRUgeIE8Wl5Ma8BJzzg8XTcg2_oQ4m2ddeIh7fI",
-          "token_type" : "Bearer",
-          "expires_in" : 3600
-        }
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Date:
+      - Mon, 10 Dec 2012 20:33:18 GMT
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{\n  \"access_token\" : \"ya29.AHES6ZT5P0YwKOZABwtcA0XkisPaWft9j-8PNP2yQttPDBM-\",\n
+        \ \"token_type\" : \"Bearer\",\n  \"expires_in\" : 3600,\n  \"id_token\" :
+        \"eyJhbGciOiJSUzI1NiIsImtpZCI6ImUwNTZjMzQ0NjUyYWIwZmIyZTFlYmFlZmVhM2M0MzZmNzZlOTczMWEifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwidG9rZW5faGFzaCI6Ijh0TmVrMmlPdFJnUDhWZEJpSnhidmciLCJhdWQiOiI5NDU3NTMyOTU1MDgtMW9rZTRvazg4MTg1c3UwY3U3M3BiMDVjdGdhN2phZWEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJpZCI6IjEwNjc4NzY5NjUwODM5MzM3MDg4MiIsInZlcmlmaWVkX2VtYWlsIjoidHJ1ZSIsImVtYWlsIjoidHViZWl0MjAxMnBpdm90YWxAZ21haWwuY29tIiwiY2lkIjoiOTQ1NzUzMjk1NTA4LTFva2U0b2s4ODE4NXN1MGN1NzNwYjA1Y3RnYTdqYWVhLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiaWF0IjoxMzU1MTcxMjk4LCJleHAiOjEzNTUxNzUxOTh9.XsRC4L4zdFrdDh4WoekxclknJdK6nd_rj8lr4Bnjghff614GraynlAgg7eqBkyPMeIaNYM4laYvV7z3YJ7NTbgiIIdF_g3bbqIs0n0foWwjSpaI7jfqhem-fMYkT-QiwJXUvWe6gj2_JQF3B34skG5e-w04kgQoCiXwQEhBTk9I\"\n}"
     http_version: 
-  recorded_at: Wed, 11 Jul 2012 19:39:37 GMT
+  recorded_at: Mon, 10 Dec 2012 20:33:18 GMT
+recorded_with: VCR 2.3.0
