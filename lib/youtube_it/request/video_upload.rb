@@ -91,7 +91,7 @@ class YouTubeIt
         upload_url = "/feeds/api/users/default/uploads"
         response = yt_session(uploads_url).post(upload_url, post_body_io, upload_header)
 
-        return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse
+        return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse rescue nil
       end
 
       # Updates a video in YouTube.  Requires:
@@ -112,7 +112,7 @@ class YouTubeIt
         update_url  = "/feeds/api/users/default/uploads/%s" % video_id
         response    = yt_session.put(update_url, update_body)
 
-        return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse
+        return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse rescue nil
       end
 
 
@@ -167,7 +167,7 @@ class YouTubeIt
         get_url  = "/feeds/api/users/default/uploads/%s" % video_id
         response = yt_session.get(get_url)
 
-        return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse
+        return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse rescue nil
       end
 
       # Fetches the data of the videos of the current user, which may be private.
