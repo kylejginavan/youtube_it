@@ -8,8 +8,8 @@ require File.dirname(__FILE__) + "/lib/youtube_it/version"
 Gem::Specification.new do |s|
   s.name        = "youtube_it"
   s.version     = YouTubeIt::VERSION
-  s.authors     = %w(kylejginavan chebyte mseppae)
-  s.email       = %w(kylejginavan@gmail.com)
+  s.authors     = %w(kylejginavan chebyte)
+  s.email       = %w(kylejginavan@gmail.com maurotorres@gmail.com)
   s.description = "Upload, delete, update, comment on youtube videos all from one gem."
   s.summary     = "The most complete Ruby wrapper for youtube api's"
   s.homepage    = "http://github.com/kylejginavan/youtube_it"
