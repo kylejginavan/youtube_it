@@ -147,8 +147,8 @@ class TestClient < Test::Unit::TestCase
 
 
   def test_should_get_favorite_videos_by_user
-    response = @client.videos_by(:favorites, :user => 'drnicwilliams')
-    assert_equal "tag:youtube.com,2008:user:drnicwilliams:favorites", response.feed_id
+    response = @client.videos_by(:favorites, :user => 'chebyte2006')
+    assert_equal "tag:youtube.com,2008:user:chebyte2006:favorites", response.feed_id
     assert_valid_video response.videos.first
   end
 
@@ -259,6 +259,7 @@ class TestClient < Test::Unit::TestCase
     res = @client.add_comment(video.unique_id, "test comment")
     assert_equal 201, res[:code]
     wait_for_api
+    sleep(5)
     comment1 = @client.comments(video.unique_id).first
     assert_same_comment comment1, res[:comment]
     assert_equal "test comment", comment1.content
@@ -267,6 +268,7 @@ class TestClient < Test::Unit::TestCase
     res = @client.add_comment(video.unique_id, "reply comment", :reply_to => comment1)
     assert_equal 201, res[:code]
     wait_for_api
+    sleep(5)
     comment2 = @client.comments(video.unique_id).find {|c| c.content =~ /reply/}
     assert_same_comment comment2, res[:comment]
     assert_equal "reply comment", comment2.content
@@ -275,6 +277,7 @@ class TestClient < Test::Unit::TestCase
     assert @client.delete_comment(video.unique_id, comment2)
     assert @client.delete_comment(video.unique_id, comment1.unique_id)
     wait_for_api
+    sleep(5)
     @client.video_delete(video.unique_id)
   end
 
@@ -359,11 +362,13 @@ class TestClient < Test::Unit::TestCase
   def test_should_subscribe_list_and_unsubscribe_to_channel
     @client.subscriptions.each {|s| @client.unsubscribe_channel(s.id) }
     wait_for_api
-    subscribe = @client.subscribe_channel("TheWoWArthas")
+    sleep(5)
+    subscribe = @client.subscribe_channel("Magicurzay1")
     assert_equal subscribe[:code], 201
     wait_for_api
+    sleep(5)
     subs = @client.subscriptions
-    assert_equal subs.first.title, "Videos published by: TheWoWArthas"
+    assert_equal subs.first.title, "Videos published by: Magicurzay1"
     assert_not_nil subs.first.id
     unsubscribe = @client.unsubscribe_channel(subs.first.id)
     assert_equal unsubscribe[:code], 200
@@ -418,7 +423,7 @@ class TestClient < Test::Unit::TestCase
 
   def test_unicode_query
     videos = @client.videos_by(:query => 'спят усталые игрушки').videos
-    assert videos.map(&:unique_id).include?("w-7BT2CFYNU")
+    assert videos.any?
   end
 
   def test_return_video_by_url
@@ -451,7 +456,7 @@ class TestClient < Test::Unit::TestCase
     assert_equal 25, playlists_first_page.size
 
     playlists_second_page = @client.playlists('sbnation', {'start-index' => 26, 'max-results' => 25})
-    assert_equal 21, playlists_second_page.size
+    assert_equal 23, playlists_second_page.size
 
     all_playlists = playlists_first_page + playlists_second_page
     assert_equal all_playlists.size, all_playlists.uniq.size
@@ -459,7 +464,7 @@ class TestClient < Test::Unit::TestCase
 
   def test_all_playlists
     all_playlists = @client.all_playlists('sbnation')
-    assert_equal 46, all_playlists.size
+    assert_equal 48, all_playlists.size
   end
 
   def test_should_add_and_delete_video_from_watchlater
