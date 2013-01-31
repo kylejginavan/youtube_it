@@ -91,7 +91,7 @@ class YouTubeIt
         upload_url = "/feeds/api/users/default/uploads"
         response = yt_session(uploads_url).post(upload_url, post_body_io, upload_header)
 
-        return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse
+        return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse rescue nil
       end
 
       # Updates a video in YouTube.  Requires:
@@ -112,7 +112,7 @@ class YouTubeIt
         update_url  = "/feeds/api/users/default/uploads/%s" % video_id
         response    = yt_session.put(update_url, update_body)
 
-        return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse
+        return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse rescue nil
       end
 
 
@@ -167,7 +167,7 @@ class YouTubeIt
         get_url  = "/feeds/api/users/default/uploads/%s" % video_id
         response = yt_session.get(get_url)
 
-        return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse
+        return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse rescue nil
       end
 
       # Fetches the data of the videos of the current user, which may be private.
@@ -497,18 +497,6 @@ class YouTubeIt
         end
       end
 
-      def raise_on_faulty_response(response)
-        response_code = response.code.to_i
-        msg = parse_upload_error_from(response.body.gsub(/\n/, ''))
-
-        if response_code == 403 || response_code == 401
-        #if response_code / 10 == 40
-          raise AuthenticationError.new(msg, response_code)
-        elsif response_code / 10 != 20 # Response in 20x means success
-          raise UploadError.new(msg, response_code)
-        end
-      end
-
       def uploaded_video_id_from(string)
         xml = Nokogiri::XML(string)
         xml.at("id").text[/videos\/(.+)/, 1]
@@ -649,12 +637,12 @@ class YouTubeIt
         Faraday.new(:url => (url ? url : base_url), :ssl => {:verify => false}) do |builder|
           if @access_token
             if @config_token
-              builder.use Faraday::Request::OAuth, @config_token
+              builder.use FaradayMiddleware::YoutubeOAuth, @config_token
             else
-              builder.use Faraday::Request::OAuth2, @access_token
+              builder.use FaradayMiddleware::YoutubeOAuth2, @access_token
             end
           end
-          builder.use Faraday::Request::AuthHeader, authorization_headers
+          builder.use FaradayMiddleware::YoutubeAuthHeader, authorization_headers
           builder.use Faraday::Response::YouTubeIt
           builder.adapter YouTubeIt.adapter
 

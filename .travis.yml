@@ -1,5 +1,5 @@
 rvm:
   - 1.9.3
-  - ree
+  - 1.9.2
 
-script: rake test
+script: bundle exec rake test

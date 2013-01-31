@@ -272,7 +272,7 @@ List Response Videos
 
 When uploading a video from your browser you need make a form upload with the followings params:
   $ upload_token(params, nexturl)
-params  => params like :title => "title", :description => "description", :category => "People", :tags => ["test"]
+params  => params like :title => "title", :description => "description", :category => "People", :keywords => ["test"]
 nexturl => redirect to this url after upload
 
 
@@ -313,10 +313,13 @@ YouTubeIt passes all logs through the logger variable on the class itself. In Ra
   $ YouTubeIt.logger = RAILS_DEFAULT_LOGGER
   $ RAILS_DEFAULT_LOGGER.level = Logger::DEBUG
 
-== CONTRIBUTORS:
+== AUTHORS:
 
 * Kyle J. Ginavan.
 * Mauro Torres - http://github.com/chebyte
+
+== CONTRIBUTORS:
+
 * Marko Seppa  - https://github.com/mseppae
 * Walter Korman - https://github.com/shaper
 * Shane Vitarana - https://github.com/shanev

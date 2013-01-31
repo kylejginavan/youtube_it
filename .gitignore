@@ -2,5 +2,6 @@
 .idea
 *.tmproj
 *.pkg
+*.gem
 pkg/
 Gemfile.lock
