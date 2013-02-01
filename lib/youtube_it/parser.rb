@@ -477,8 +477,8 @@ class YouTubeIt
                           :name   => thumb_element["name"])
         end
 
-        rating_element = entry.at_xpath("gd:rating")
-        extended_rating_element = entry.at_xpath("yt:rating")
+        rating_element = entry.at_xpath("gd:rating") rescue nil
+        extended_rating_element = entry.at_xpath("yt:rating") rescue nil
 
         rating = nil
         if rating_element
@@ -503,7 +503,7 @@ class YouTubeIt
           view_count, favorite_count = 0,0
         end
 
-        comment_feed = entry.at_xpath('gd:comments/gd:feedLink[@rel="http://gdata.youtube.com/schemas/2007#comments"]')
+        comment_feed = entry.at_xpath('gd:comments/gd:feedLink[@rel="http://gdata.youtube.com/schemas/2007#comments"]') rescue nil
         comment_count = comment_feed ? comment_feed['countHint'].to_i : 0
 
         access_control = entry.xpath('yt:accessControl').map do |e|
