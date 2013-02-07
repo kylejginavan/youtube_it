@@ -445,7 +445,21 @@ class TestClient < Test::Unit::TestCase
     video_one = @client.add_video_to_playlist(playlist.playlist_id,"fFAnoEYFUQw")
     video_two = @client.add_video_to_playlist(playlist.playlist_id,"QsbmrCtiEUU")
     wait_for_api
-    assert_equal ["fFAnoEYFUQw", "QsbmrCtiEUU"], @client.playlist(playlist.playlist_id, 'title').videos.map(&:unique_id)
+    assert_equal ["fFAnoEYFUQw", "QsbmrCtiEUU"], @client.playlist(playlist.playlist_id, { 'orderby' => 'title' }).videos.map(&:unique_id)
+    assert @client.delete_video_from_playlist(playlist.playlist_id, video_one[:playlist_entry_id])
+    assert @client.delete_video_from_playlist(playlist.playlist_id, video_two[:playlist_entry_id])
+    assert @client.delete_playlist(playlist.playlist_id)
+  end
+
+  def test_playlist_with_paging_parameters
+    @client.playlists.each{|p| @client.delete_playlist(p.playlist_id)}
+    playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
+
+    video_one = @client.add_video_to_playlist(playlist.playlist_id,"fFAnoEYFUQw")
+    video_two = @client.add_video_to_playlist(playlist.playlist_id,"QsbmrCtiEUU")
+    wait_for_api
+    assert_equal ["fFAnoEYFUQw"], @client.playlist(playlist.playlist_id, { 'orderby' => 'title', 'start-index' => 1, 'max-results' => 1 }).videos.map(&:unique_id)
+    assert_equal ["QsbmrCtiEUU"], @client.playlist(playlist.playlist_id, { 'orderby' => 'title', 'start-index' => 2, 'max-results' => 1 }).videos.map(&:unique_id)
     assert @client.delete_video_from_playlist(playlist.playlist_id, video_one[:playlist_entry_id])
     assert @client.delete_video_from_playlist(playlist.playlist_id, video_two[:playlist_entry_id])
     assert @client.delete_playlist(playlist.playlist_id)
