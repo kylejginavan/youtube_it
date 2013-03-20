@@ -43,4 +43,15 @@ class TestVideoUpload < Test::Unit::TestCase
 
     assert_equal "NoLinkedYouTubeAccount", @vu.send(:parse_upload_error_from, body)
   end
+
+  def test_partial_video_xml_title
+    xml = @vu.send(:partial_video_xml, { :title => 'new_title' })
+    assert_equal '<?xml version="1.0" encoding="UTF-8"?><entry xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:gd="http://schemas.google.com/g/2005" xmlns:yt="http://gdata.youtube.com/schemas/2007" xmlns:gml="http://www.opengis.net/gml" xmlns:georss="http://www.georss.org/georss"><media:group><media:title type="plain">new_title</media:title></media:group></entry>', xml
+  end
+
+  def test_partial_video_xml_list_access_control
+    xml = @vu.send(:partial_video_xml, { :list => 'allowed' })
+    assert_equal '<?xml version="1.0" encoding="UTF-8"?><entry xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:gd="http://schemas.google.com/g/2005" xmlns:yt="http://gdata.youtube.com/schemas/2007" xmlns:gml="http://www.opengis.net/gml" xmlns:georss="http://www.georss.org/georss" gd:fields="yt:accessControl[@action=\'list\']"><media:group></media:group><yt:accessControl action="list" permission="allowed"/></entry>', xml
+  end
+
 end

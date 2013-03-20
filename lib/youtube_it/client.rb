@@ -110,6 +110,10 @@ class YouTubeIt
       client.update(video_id, opts)
     end
 
+    def video_partial_update(video_id, opts = {})
+      client.partial_update(video_id, opts)
+    end
+
     def captions_update(video_id, data, opts = {})
       client.captions_update(video_id, data, opts)
     end
@@ -263,12 +267,12 @@ class YouTubeIt
       client.get_my_video(video_id)
     end
 
-    # Gets all videos 
+    # Gets all videos
     def my_videos(opts = {})
       client.get_my_videos(opts)
     end
 
-    # Gets all of the user's contacts/friends. 
+    # Gets all of the user's contacts/friends.
     def my_contacts(opts = {})
       client.get_my_contacts(opts)
     end
@@ -278,7 +282,7 @@ class YouTubeIt
       client.send_message(opts)
     end
 
-    # Gets all of the user's messages/inbox. 
+    # Gets all of the user's messages/inbox.
     def my_messages(opts = {})
       client.get_my_messages(opts)
     end
@@ -490,7 +494,7 @@ class YouTubeIt
       end
       @access_token
     end
-        
+
     def session_token_info
       response = Faraday.get("https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=#{@client_access_token}")
       {:code => response.status, :body => response.body }

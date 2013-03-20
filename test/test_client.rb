@@ -215,6 +215,18 @@ class TestClient < Test::Unit::TestCase
     assert @client.video_delete(video.unique_id)
   end
 
+  # Not sure how to deal with authentication in new tests
+  #
+  # def test_should_upload_and_partial_update_a_video
+  #   video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
+  #   assert_valid_video video
+  #   assert video.listed?
+  #   updated_video = @client.video_partial_update(video.unique_id, :list => 'denied', :embed => 'allowed')
+  #   assert updated_video.embeddable?
+  #   assert !updated_video.listed?
+  #   assert @client.video_delete(video.unique_id)
+  # end
+
   def test_should_denied_comments
     video     = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:comment => "denied"))
     assert_valid_video video

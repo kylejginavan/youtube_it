@@ -115,6 +115,15 @@ class YouTubeIt
         return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse rescue nil
       end
 
+      # Partial updates to a video.
+      def partial_update(video_id, options)
+        update_body = partial_video_xml(options)
+        update_url  = "/feeds/api/users/default/uploads/%s" % video_id
+        update_header = { "Content-Type" => "application/xml" }
+        response    = yt_session.patch(update_url, update_body, update_header)
+
+        return YouTubeIt::Parser::VideoFeedParser.new(response.body).parse rescue nil
+      end
 
       def captions_update(video_id, data, options)
         @opts = {
@@ -256,7 +265,7 @@ class YouTubeIt
       def profiles(usernames_to_fetch)
         usernames_to_fetch.each_slice(50).map do |usernames|
           post = Nokogiri::XML <<-BATCH
-              <feed 
+              <feed
                 xmlns='http://www.w3.org/2005/Atom'
                 xmlns:media='http://search.yahoo.com/mrss/'
                 xmlns:batch='http://schemas.google.com/gdata/batch'
@@ -562,6 +571,53 @@ class YouTubeIt
             m.tag!("georss:where") do |geo|
               geo.tag!("gml:Point") do |point|
                 point.tag!("gml:pos", @opts.values_at(:latitude, :longitude).join(' '))
+              end
+            end
+          end
+        end.to_s
+      end
+
+      def partial_video_xml(opts)
+        perms = [ :rate, :comment, :commentVote, :videoRespond, :list, :embed, :syndicate ]
+
+        delete_attrs = []
+        perms.each do |perm|
+          delete_attrs << "yt:accessControl[@action='#{perm}']" if opts[perm]
+        end
+
+        entry_attrs = {
+          :xmlns => "http://www.w3.org/2005/Atom",
+          'xmlns:media' => "http://search.yahoo.com/mrss/",
+          'xmlns:gd' => "http://schemas.google.com/g/2005",
+          'xmlns:yt' => "http://gdata.youtube.com/schemas/2007",
+          'xmlns:gml' => 'http://www.opengis.net/gml',
+          'xmlns:georss' => 'http://www.georss.org/georss' }
+
+        if !delete_attrs.empty?
+          entry_attrs['gd:fields'] = delete_attrs.join(',')
+        end
+
+        b = Builder::XmlMarkup.new
+        b.instruct!
+        b.entry(entry_attrs) do | m |
+
+          m.tag!("media:group") do | mg |
+            mg.tag!("media:title",        opts[:title], :type => "plain") if opts[:title]
+            mg.tag!("media:description",  opts[:description], :type => "plain") if opts[:description]
+            mg.tag!("media:keywords",     opts[:keywords].join(",")) if opts[:keywords]
+            mg.tag!('media:category',     opts[:category], :scheme => "http://gdata.youtube.com/schemas/2007/categories.cat") if opts[:category]
+            mg.tag!('yt:private') if opts[:private]
+            mg.tag!('media:category',     opts[:dev_tag], :scheme => "http://gdata.youtube.com/schemas/2007/developertags.cat") if opts[:dev_tag]
+          end
+
+          perms.each do |perm|
+            m.tag!("yt:accessControl", :action => perm.to_s, :permission => opts[perm]) if opts[perm]
+          end
+
+          if opts[:latitude] and opts[:longitude]
+            m.tag!("georss:where") do |geo|
+              geo.tag!("gml:Point") do |point|
+                point.tag!("gml:pos", opts.values_at(:latitude, :longitude).join(' '))
               end
             end
           end
