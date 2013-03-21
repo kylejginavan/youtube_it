@@ -317,9 +317,12 @@ class YouTubeIt
         return true
       end
 
-      def playlist(playlist_id, order_by = :position)
-        playlist_url = "/feeds/api/playlists/%s?v=2&orderby=%s" % [playlist_id, order_by]
-        response     = yt_session.get(playlist_url)
+      def playlist(playlist_id, opts = {})
+        playlist_url = "/feeds/api/playlists/%s" % playlist_id
+        params = {'v' => 2, 'orderby' => 'position'}
+        params.merge!(opts) if opts
+        playlist_url << "?#{params.collect { |k,v| [k,v].join '=' }.join('&')}"
+        response = yt_session.get(playlist_url)
 
         return YouTubeIt::Parser::PlaylistFeedParser.new(response).parse
       end
