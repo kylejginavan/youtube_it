@@ -528,7 +528,7 @@ class YouTubeIt
         @auth_token ||= begin
           http  = Faraday.new("https://www.google.com", :ssl => {:verify => false})
           body = "Email=#{YouTubeIt.esc @user}&Passwd=#{YouTubeIt.esc @password}&service=youtube&source=#{YouTubeIt.esc @client_id}"
-          response = http.post("/youtube/accounts/ClientLogin", body, "Content-Type" => "application/x-www-form-urlencoded")
+          response = http.post("/accounts/ClientLogin", body, "Content-Type" => "application/x-www-form-urlencoded")
           raise ::AuthenticationError.new(response.body[/Error=(.+)/,1], response.status.to_i) if response.status.to_i != 200
           @auth_token = response.body[/Auth=(.+)/, 1]
         end
