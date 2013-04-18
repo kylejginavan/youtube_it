@@ -160,6 +160,10 @@ class YouTubeIt
     def profiles(*users)
       client.profiles(*users)
     end
+    
+    def videos(*idxes)
+      client.videos(*idxes)
+    end
 
     # Fetches a user's activity feed.
     def activity(user = nil, opts = {})

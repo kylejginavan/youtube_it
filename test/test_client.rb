@@ -12,8 +12,7 @@ class TestClient < Test::Unit::TestCase
 
   def setup
     VCR.use_cassette("login with oauth2") do
-      @client = YouTubeIt::OAuth2Client.new(:client_access_token => "ya29.AHES6ZSRC7Fa5cyUa5G5-TJtt849dQ7OdSiB_kjBQg7S", :client_id => "68330730158.apps.googleusercontent.com", :client_secret => "Npj4rmtme7q6INPPQjpQFuCZ", :dev_key => "AI39si7WuZZxAkYebKSyrlJR7hIFktt6OoPycEOeOT_yHkZgr6QsGbZgmhKvbS4bsSAv0utgrfhNfXQBITu1wX_z3VsZE02giQ", :client_refresh_token => "1/ErxjeSs0RNMMGtaI-87grQf_o1iQKlx0JLwec1KIDH8")
-      @client.refresh_access_token!
+      @client = YouTubeIt::Client.new(:dev_key => "you_dev_key111111")
     end
     use_vcr
   end
@@ -408,6 +407,12 @@ class TestClient < Test::Unit::TestCase
     assert_nil profiles['some_non-existing_username']
   end
 
+  def test_should_get_multi_videos
+    videos = @client.videos ['82Wg7DYG9Jc', 'AByfaYcOm4A']
+    assert_operator videos, :has_key?, 'AByfaYcOm4A'
+    assert_equal videos['82Wg7DYG9Jc'].title, 'Billboard Hot 100 - Top 50 Singles (4/20/2013)'
+  end
+  
   def test_should_add_and_delete_video_to_favorite
     video_id ="fFAnoEYFUQw"
     begin

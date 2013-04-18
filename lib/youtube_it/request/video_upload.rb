@@ -267,7 +267,7 @@ class YouTubeIt
             post.at('feed').add_child <<-ENTRY
               <entry>
                 <batch:operation type="query" />
-                <id>tag:youtube,2008:video:#{idx}</id>
+                <id>/feeds/api/videos/#{idx}?v=2</id>
                 <batch:id>#{idx}</batch:id>
               </entry>
             ENTRY
@@ -278,7 +278,7 @@ class YouTubeIt
           post_body_io = StringIO.new(post_body.string)
 
           response = yt_session.post('feeds/api/videos/batch', post_body_io )
-          YouTubeIt::Parser::BatchProfileFeedParser.new(response).parse
+          YouTubeIt::Parser::BatchVideoFeedParser.new(response).parse
         end.reduce({},:merge)
       end
       
