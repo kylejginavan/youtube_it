@@ -56,6 +56,64 @@ http_interactions:
         rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/-/%7Bhttp%3A%2F%2Fgdata.youtube.com%2Fschemas%2F2007%2Fcategories.cat%7DNews/%7Bhttp%3A%2F%2Fgdata.youtube.com%2Fschemas%2F2007%2Fcategories.cat%7DSports?start-index=1&amp;max-results=25&amp;v=2'/><link
         rel='service' type='application/atomsvc+xml' href='http://gdata.youtube.com/feeds/api/videos?alt=atom-service&amp;v=2'/><author><name>YouTube</name><uri>http://www.youtube.com/</uri></author><generator
         version='2.1' uri='http://gdata.youtube.com'>YouTube data API</generator><openSearch:totalResults>0</openSearch:totalResults><openSearch:startIndex>1</openSearch:startIndex><openSearch:itemsPerPage>25</openSearch:itemsPerPage></feed>
-    http_version: !!null
+    http_version: 
   recorded_at: Thu, 10 Jan 2013 16:24:14 GMT
+- request:
+    method: get
+    uri: http://gdata.youtube.com/feeds/api/videos/-/News/Sports/?key=you_dev_key111111&max-results=25&start-index=1&v=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Gdata-User-Country:
+      - US
+      Content-Type:
+      - application/atom+xml; charset=UTF-8; type=feed
+      Expires:
+      - Thu, 18 Apr 2013 12:29:48 GMT
+      Date:
+      - Thu, 18 Apr 2013 12:29:48 GMT
+      Cache-Control:
+      - private, max-age=300, no-transform
+      Vary:
+      - ! '*'
+      Gdata-Version:
+      - '2.1'
+      Etag:
+      - W/"AkYMSXs-cSp7I2A9WhBVEkU."
+      Last-Modified:
+      - Thu, 18 Apr 2013 12:29:48 GMT
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+    body:
+      encoding: US-ASCII
+      string: <?xml version='1.0' encoding='UTF-8'?><feed xmlns='http://www.w3.org/2005/Atom'
+        xmlns:openSearch='http://a9.com/-/spec/opensearch/1.1/' xmlns:gd='http://schemas.google.com/g/2005'
+        gd:etag='W/&quot;AkYMSXs-cSp7I2A9WhBVEkU.&quot;'><id>tag:youtube.com,2008:videos</id><updated>2013-04-18T12:29:48.559Z</updated><category
+        scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#video'/><title>Videos</title><logo>http://www.youtube.com/img/pic_youtubelogo_123x63.gif</logo><link
+        rel='alternate' type='text/html' href='http://www.youtube.com'/><link rel='http://schemas.google.com/g/2005#feed'
+        type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos?v=2'/><link
+        rel='http://schemas.google.com/g/2005#batch' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/batch?v=2'/><link
+        rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/-/%7Bhttp%3A%2F%2Fgdata.youtube.com%2Fschemas%2F2007%2Fcategories.cat%7DNews/%7Bhttp%3A%2F%2Fgdata.youtube.com%2Fschemas%2F2007%2Fcategories.cat%7DSports?start-index=1&amp;max-results=25&amp;v=2'/><link
+        rel='service' type='application/atomsvc+xml' href='http://gdata.youtube.com/feeds/api/videos?alt=atom-service&amp;v=2'/><author><name>YouTube</name><uri>http://www.youtube.com/</uri></author><generator
+        version='2.1' uri='http://gdata.youtube.com'>YouTube data API</generator><openSearch:totalResults>0</openSearch:totalResults><openSearch:startIndex>1</openSearch:startIndex><openSearch:itemsPerPage>25</openSearch:itemsPerPage></feed>
+    http_version: 
+  recorded_at: Thu, 18 Apr 2013 12:29:49 GMT
 recorded_with: VCR 2.1.1
