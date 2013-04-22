@@ -189,6 +189,12 @@ client.video_upload(File.open("test.mov"), :title => "test",:description => 'som
 client.video_update("FQK1URcxmb4", :title => "new test",:description => 'new description', :category => 'People',:keywords => %w[cool blah test])
 ```
 
+####Update Video (partially)
+
+```ruby
+client.video_partial_update("FQK1URcxmb4", :description => 'new description', :list => 'allowed')
+```
+
 ####Delete Video
 
 ```ruby
