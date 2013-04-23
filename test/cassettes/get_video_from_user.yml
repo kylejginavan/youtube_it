@@ -21,9 +21,9 @@ http_interactions:
       Content-Type:
       - application/atom+xml; charset=UTF-8; type=entry
       Expires:
-      - Thu, 10 Jan 2013 16:24:06 GMT
+      - Tue, 23 Apr 2013 18:48:24 GMT
       Date:
-      - Thu, 10 Jan 2013 16:24:06 GMT
+      - Tue, 23 Apr 2013 18:48:24 GMT
       Cache-Control:
       - private, max-age=300, no-transform
       Vary:
@@ -65,7 +65,8 @@ http_interactions:
         rel='http://gdata.youtube.com/schemas/2007#mobile' type='text/html' href='http://m.youtube.com/details?v=FQK1URcxmb4'/><link
         rel='http://gdata.youtube.com/schemas/2007#uploader' type='application/atom+xml'
         href='http://gdata.youtube.com/feeds/api/users/9m4qThg_zsMLscTUP9FeSQ?v=2'/><link
-        rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/chebyte/uploads/FQK1URcxmb4?v=2'/><author><name>chebyte</name><uri>http://gdata.youtube.com/feeds/api/users/chebyte</uri><yt:userId>9m4qThg_zsMLscTUP9FeSQ</yt:userId></author><yt:accessControl
+        rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/chebyte/uploads/FQK1URcxmb4?v=2'/><author><name>Mauro
+        Torres</name><uri>http://gdata.youtube.com/feeds/api/users/chebyte</uri><yt:userId>9m4qThg_zsMLscTUP9FeSQ</yt:userId></author><yt:accessControl
         action='comment' permission='allowed'/><yt:accessControl action='commentVote'
         permission='allowed'/><yt:accessControl action='videoRespond' permission='moderated'/><yt:accessControl
         action='rate' permission='allowed'/><yt:accessControl action='embed' permission='allowed'/><yt:accessControl
@@ -76,11 +77,11 @@ http_interactions:
         Blogs' scheme='http://gdata.youtube.com/schemas/2007/categories.cat'>People</media:category><media:content
         url='http://www.youtube.com/v/FQK1URcxmb4?version=3&amp;f=user_uploads&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata'
         type='application/x-shockwave-flash' medium='video' isDefault='true' expression='full'
-        duration='17' yt:format='5'/><media:content url='rtsp://v7.cache7.c.youtube.com/CksLENy73wIaQgm-mTEXUbUCFRMYDSANFEgGUgx1c2VyX3VwbG9hZHNyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp'
+        duration='17' yt:format='5'/><media:content url='rtsp://r7---sn-4g57kuek.c.youtube.com/CksLENy73wIaQgm-mTEXUbUCFRMYDSANFEgGUgx1c2VyX3VwbG9hZHNyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp'
         type='video/3gpp' medium='video' expression='full' duration='17' yt:format='1'/><media:content
-        url='rtsp://v7.cache7.c.youtube.com/CksLENy73wIaQgm-mTEXUbUCFRMYESARFEgGUgx1c2VyX3VwbG9hZHNyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp'
+        url='rtsp://r7---sn-4g57kuek.c.youtube.com/CksLENy73wIaQgm-mTEXUbUCFRMYESARFEgGUgx1c2VyX3VwbG9hZHNyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp'
         type='video/3gpp' medium='video' expression='full' duration='17' yt:format='6'/><media:credit
-        role='uploader' scheme='urn:youtube' yt:display='chebyte'>chebyte</media:credit><media:description
+        role='uploader' scheme='urn:youtube' yt:display='Mauro Torres'>chebyte</media:credit><media:description
         type='plain'>La santa madre pachamana de amaicha del valle bendice a la gente
         de Tuquito para que siga trabajando con la misma fuerza de siempe</media:description><media:keywords/><media:license
         type='text/html' href='http://www.youtube.com/t/terms'>youtube</media:license><media:player
@@ -94,6 +95,7 @@ http_interactions:
         yt:name='middle'/><media:thumbnail url='http://i.ytimg.com/vi/FQK1URcxmb4/3.jpg'
         height='90' width='120' time='00:00:12.750' yt:name='end'/><media:title type='plain'>Pachamama
         bendice al Proyecto Tuquito</media:title><yt:duration seconds='17'/><yt:uploaded>2009-11-24T13:33:36.000Z</yt:uploaded><yt:uploaderId>UC9m4qThg_zsMLscTUP9FeSQ</yt:uploaderId><yt:videoid>FQK1URcxmb4</yt:videoid></media:group><yt:statistics
+<<<<<<< HEAD
         favoriteCount='0' viewCount='322'/></entry>
     http_version: 
   recorded_at: Thu, 10 Jan 2013 16:24:07 GMT
@@ -195,4 +197,9 @@ http_interactions:
         favoriteCount='0' viewCount='349'/></entry>
     http_version: 
   recorded_at: Thu, 18 Apr 2013 12:29:35 GMT
+=======
+        favoriteCount='0' viewCount='349'/></entry>
+    http_version:
+  recorded_at: Tue, 23 Apr 2013 18:48:24 GMT
+>>>>>>> fixing partial update
 recorded_with: VCR 2.1.1

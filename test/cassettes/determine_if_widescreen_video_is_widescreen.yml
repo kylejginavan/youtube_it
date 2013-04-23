@@ -21,9 +21,9 @@ http_interactions:
       Content-Type:
       - application/atom+xml; charset=UTF-8; type=entry
       Expires:
-      - Thu, 10 Jan 2013 16:30:56 GMT
+      - Tue, 23 Apr 2013 18:47:41 GMT
       Date:
-      - Thu, 10 Jan 2013 16:30:56 GMT
+      - Tue, 23 Apr 2013 18:47:41 GMT
       Cache-Control:
       - private, max-age=300, no-transform
       Vary:
@@ -31,9 +31,9 @@ http_interactions:
       Gdata-Version:
       - '2.1'
       Etag:
-      - W/"DUEBQn47eCp7I2A9WhNUF0U."
+      - W/"D0QFQn47eCp7I2A9WhBVFUU."
       Last-Modified:
-      - Thu, 10 Jan 2013 03:14:13 GMT
+      - Sun, 21 Apr 2013 23:01:53 GMT
       Transfer-Encoding:
       - chunked
       X-Content-Type-Options:
@@ -48,7 +48,7 @@ http_interactions:
       encoding: US-ASCII
       string: <?xml version='1.0' encoding='UTF-8'?><entry xmlns='http://www.w3.org/2005/Atom'
         xmlns:media='http://search.yahoo.com/mrss/' xmlns:gd='http://schemas.google.com/g/2005'
-        xmlns:yt='http://gdata.youtube.com/schemas/2007' gd:etag='W/&quot;DUEBQn47eCp7I2A9WhNUF0U.&quot;'><id>tag:youtube.com,2008:video:QqQVll-MP3I</id><published>2009-02-11T13:39:04.000Z</published><updated>2013-01-10T03:14:13.000Z</updated><category
+        xmlns:yt='http://gdata.youtube.com/schemas/2007' gd:etag='W/&quot;D0QFQn47eCp7I2A9WhBVFUU.&quot;'><id>tag:youtube.com,2008:video:QqQVll-MP3I</id><published>2009-02-11T13:39:04.000Z</published><updated>2013-04-21T23:01:53.000Z</updated><category
         scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#video'/><category
         scheme='http://gdata.youtube.com/schemas/2007/categories.cat' term='Nonprofit'
         label='Nonprofits &amp; Activism'/><title>Food, Inc</title><content type='application/x-shockwave-flash'
@@ -72,7 +72,7 @@ http_interactions:
         action='list' permission='allowed'/><yt:accessControl action='autoPlay' permission='allowed'/><yt:accessControl
         action='syndicate' permission='allowed'/><gd:comments><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#comments'
         href='http://gdata.youtube.com/feeds/api/videos/QqQVll-MP3I/comments?v=2'
-        countHint='2308'/></gd:comments><media:group><media:category label='Nonprofits
+        countHint='2334'/></gd:comments><media:group><media:category label='Nonprofits
         &amp; Activism' scheme='http://gdata.youtube.com/schemas/2007/categories.cat'>Nonprofit</media:category><media:content
         url='http://www.youtube.com/v/QqQVll-MP3I?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata'
         type='application/x-shockwave-flash' medium='video' isDefault='true' expression='full'
@@ -93,6 +93,7 @@ http_interactions:
         yt:name='middle'/><media:thumbnail url='http://i.ytimg.com/vi/QqQVll-MP3I/3.jpg'
         height='90' width='120' time='00:02:38.250' yt:name='end'/><media:title type='plain'>Food,
         Inc</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration seconds='211'/><yt:uploaded>2009-02-11T13:39:04.000Z</yt:uploaded><yt:uploaderId>UC_AGwt7UN4Lu-qPq4ig_R4Q</yt:uploaderId><yt:videoid>QqQVll-MP3I</yt:videoid></media:group><gd:rating
+<<<<<<< HEAD
         average='4.85279' max='5' min='1' numRaters='2527' rel='http://schemas.google.com/g/2005#overall'/><yt:statistics
         favoriteCount='0' viewCount='1412201'/><yt:rating numDislikes='93' numLikes='2434'/></entry>
     http_version: 
@@ -194,4 +195,10 @@ http_interactions:
         favoriteCount='0' viewCount='1465683'/><yt:rating numDislikes='96' numLikes='2543'/></entry>
     http_version: 
   recorded_at: Thu, 18 Apr 2013 12:29:24 GMT
+=======
+        average='4.8547654' max='5' min='1' numRaters='2644' rel='http://schemas.google.com/g/2005#overall'/><yt:statistics
+        favoriteCount='0' viewCount='1467720'/><yt:rating numDislikes='96' numLikes='2548'/></entry>
+    http_version:
+  recorded_at: Tue, 23 Apr 2013 18:47:41 GMT
+>>>>>>> fixing partial update
 recorded_with: VCR 2.1.1

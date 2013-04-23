@@ -19,11 +19,11 @@ http_interactions:
       X-Gdata-User-Country:
       - AR
       Content-Type:
-      - application/atom+xml;charset=UTF-8;type=entry
+      - application/atom+xml; charset=UTF-8; type=entry
       Expires:
-      - Thu, 10 Jan 2013 16:24:22 GMT
+      - Tue, 23 Apr 2013 18:48:53 GMT
       Date:
-      - Thu, 10 Jan 2013 16:24:22 GMT
+      - Tue, 23 Apr 2013 18:48:53 GMT
       Cache-Control:
       - private, max-age=300, no-transform
       Vary:
@@ -31,17 +31,17 @@ http_interactions:
       Gdata-Version:
       - '2.1'
       Etag:
-      - W/"DkUCRn47eCp7I2A9WhNUGE4."
+      - W/"CEUMQ347eCp7I2A9WhBVF0k."
       Last-Modified:
-      - Thu, 10 Jan 2013 16:11:07 GMT
+      - Tue, 23 Apr 2013 18:38:02 GMT
+      Transfer-Encoding:
+      - chunked
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
-      Content-Length:
-      - '5283'
       Server:
       - GSE
     body:
@@ -52,10 +52,17 @@ http_interactions:
         aWE9J2h0dHA6Ly9zZWFyY2gueWFob28uY29tL21yc3MvJyB4bWxuczpnZD0n
         aHR0cDovL3NjaGVtYXMuZ29vZ2xlLmNvbS9nLzIwMDUnIHhtbG5zOnl0PSdo
         dHRwOi8vZ2RhdGEueW91dHViZS5jb20vc2NoZW1hcy8yMDA3JyBnZDpldGFn
+<<<<<<< HEAD
         PSdXLyZxdW90O0RrVUNSbjQ3ZUNwN0kyQTlXaE5VR0U0LiZxdW90Oyc+PGlk
         PnRhZzp5b3V0dWJlLmNvbSwyMDA4OnZpZGVvOkVrRjRKRDJyTzNRPC9pZD48
         cHVibGlzaGVkPjIwMDctMDUtMTBUMTM6MjU6NTMuMDAwWjwvcHVibGlzaGVk
         Pjx1cGRhdGVkPjIwMTMtMDEtMTBUMTY6MTE6MDcuMDAwWjwvdXBkYXRlZD48
+=======
+        PSdXLyZxdW90O0NFVU1RMzQ3ZUNwN0kyQTlXaEJWRjBrLiZxdW90Oyc+PGlk
+        PnRhZzp5b3V0dWJlLmNvbSwyMDA4OnZpZGVvOkVrRjRKRDJyTzNRPC9pZD48
+        cHVibGlzaGVkPjIwMDctMDUtMTBUMTM6MjU6NTMuMDAwWjwvcHVibGlzaGVk
+        Pjx1cGRhdGVkPjIwMTMtMDQtMjNUMTg6Mzg6MDIuMDAwWjwvdXBkYXRlZD48
+>>>>>>> fixing partial update
         Y2F0ZWdvcnkgc2NoZW1lPSdodHRwOi8vc2NoZW1hcy5nb29nbGUuY29tL2cv
         MjAwNSNraW5kJyB0ZXJtPSdodHRwOi8vZ2RhdGEueW91dHViZS5jb20vc2No
         ZW1hcy8yMDA3I3ZpZGVvJy8+PGNhdGVnb3J5IHNjaGVtZT0naHR0cDovL2dk
@@ -159,6 +166,7 @@ http_interactions:
         dDp1cGxvYWRlZD4yMDA3LTA1LTEwVDEzOjI1OjUzLjAwMFo8L3l0OnVwbG9h
         ZGVkPjx5dDp1cGxvYWRlcklkPlVDUlJ4U1RnUFVZMHFfWVRvYWN6YzJCUTwv
         eXQ6dXBsb2FkZXJJZD48eXQ6dmlkZW9pZD5Fa0Y0SkQyck8zUTwveXQ6dmlk
+<<<<<<< HEAD
         ZW9pZD48L21lZGlhOmdyb3VwPjxnZDpyYXRpbmcgYXZlcmFnZT0nNC44NzUw
         NDk2JyBtYXg9JzUnIG1pbj0nMScgbnVtUmF0ZXJzPSc0MDE0NCcgcmVsPSdo
         dHRwOi8vc2NoZW1hcy5nb29nbGUuY29tL2cvMjAwNSNvdmVyYWxsJy8+PHl0
@@ -167,6 +175,16 @@ http_interactions:
         PSczODg5MCcvPjwvZW50cnk+
     http_version: 
   recorded_at: Thu, 10 Jan 2013 16:24:32 GMT
+=======
+        ZW9pZD48L21lZGlhOmdyb3VwPjxnZDpyYXRpbmcgYXZlcmFnZT0nNC44NzY3
+        ODg2JyBtYXg9JzUnIG1pbj0nMScgbnVtUmF0ZXJzPSc0MTcxNycgcmVsPSdo
+        dHRwOi8vc2NoZW1hcy5nb29nbGUuY29tL2cvMjAwNSNvdmVyYWxsJy8+PHl0
+        OnN0YXRpc3RpY3MgZmF2b3JpdGVDb3VudD0nMCcgdmlld0NvdW50PScxMTE4
+        ODMwNScvPjx5dDpyYXRpbmcgbnVtRGlzbGlrZXM9JzEyODUnIG51bUxpa2Vz
+        PSc0MDQzMicvPjwvZW50cnk+
+    http_version:
+  recorded_at: Tue, 23 Apr 2013 18:48:53 GMT
+>>>>>>> fixing partial update
 - request:
     method: get
     uri: http://gdata.youtube.com/feeds/api/videos/EkF4JD2rO3Q?key=AI39si7WuZZxAkYebKSyrlJR7hIFktt6OoPycEOeOT_yHkZgr6QsGbZgmhKvbS4bsSAv0utgrfhNfXQBITu1wX_z3VsZE02giQ&v=2
@@ -186,11 +204,11 @@ http_interactions:
       X-Gdata-User-Country:
       - AR
       Content-Type:
-      - application/atom+xml;charset=UTF-8;type=entry
+      - application/atom+xml; charset=UTF-8; type=entry
       Expires:
-      - Thu, 10 Jan 2013 16:24:22 GMT
+      - Tue, 23 Apr 2013 18:48:54 GMT
       Date:
-      - Thu, 10 Jan 2013 16:24:22 GMT
+      - Tue, 23 Apr 2013 18:48:54 GMT
       Cache-Control:
       - private, max-age=300, no-transform
       Vary:
@@ -198,17 +216,17 @@ http_interactions:
       Gdata-Version:
       - '2.1'
       Etag:
-      - W/"DkUCRn47eCp7I2A9WhNUGE4."
+      - W/"CEUMQ347eCp7I2A9WhBVF0k."
       Last-Modified:
-      - Thu, 10 Jan 2013 16:11:07 GMT
+      - Tue, 23 Apr 2013 18:38:02 GMT
+      Transfer-Encoding:
+      - chunked
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
-      Content-Length:
-      - '5283'
       Server:
       - GSE
     body:
@@ -219,10 +237,17 @@ http_interactions:
         aWE9J2h0dHA6Ly9zZWFyY2gueWFob28uY29tL21yc3MvJyB4bWxuczpnZD0n
         aHR0cDovL3NjaGVtYXMuZ29vZ2xlLmNvbS9nLzIwMDUnIHhtbG5zOnl0PSdo
         dHRwOi8vZ2RhdGEueW91dHViZS5jb20vc2NoZW1hcy8yMDA3JyBnZDpldGFn
+<<<<<<< HEAD
         PSdXLyZxdW90O0RrVUNSbjQ3ZUNwN0kyQTlXaE5VR0U0LiZxdW90Oyc+PGlk
         PnRhZzp5b3V0dWJlLmNvbSwyMDA4OnZpZGVvOkVrRjRKRDJyTzNRPC9pZD48
         cHVibGlzaGVkPjIwMDctMDUtMTBUMTM6MjU6NTMuMDAwWjwvcHVibGlzaGVk
         Pjx1cGRhdGVkPjIwMTMtMDEtMTBUMTY6MTE6MDcuMDAwWjwvdXBkYXRlZD48
+=======
+        PSdXLyZxdW90O0NFVU1RMzQ3ZUNwN0kyQTlXaEJWRjBrLiZxdW90Oyc+PGlk
+        PnRhZzp5b3V0dWJlLmNvbSwyMDA4OnZpZGVvOkVrRjRKRDJyTzNRPC9pZD48
+        cHVibGlzaGVkPjIwMDctMDUtMTBUMTM6MjU6NTMuMDAwWjwvcHVibGlzaGVk
+        Pjx1cGRhdGVkPjIwMTMtMDQtMjNUMTg6Mzg6MDIuMDAwWjwvdXBkYXRlZD48
+>>>>>>> fixing partial update
         Y2F0ZWdvcnkgc2NoZW1lPSdodHRwOi8vc2NoZW1hcy5nb29nbGUuY29tL2cv
         MjAwNSNraW5kJyB0ZXJtPSdodHRwOi8vZ2RhdGEueW91dHViZS5jb20vc2No
         ZW1hcy8yMDA3I3ZpZGVvJy8+PGNhdGVnb3J5IHNjaGVtZT0naHR0cDovL2dk
@@ -326,6 +351,7 @@ http_interactions:
         dDp1cGxvYWRlZD4yMDA3LTA1LTEwVDEzOjI1OjUzLjAwMFo8L3l0OnVwbG9h
         ZGVkPjx5dDp1cGxvYWRlcklkPlVDUlJ4U1RnUFVZMHFfWVRvYWN6YzJCUTwv
         eXQ6dXBsb2FkZXJJZD48eXQ6dmlkZW9pZD5Fa0Y0SkQyck8zUTwveXQ6dmlk
+<<<<<<< HEAD
         ZW9pZD48L21lZGlhOmdyb3VwPjxnZDpyYXRpbmcgYXZlcmFnZT0nNC44NzUw
         NDk2JyBtYXg9JzUnIG1pbj0nMScgbnVtUmF0ZXJzPSc0MDE0NCcgcmVsPSdo
         dHRwOi8vc2NoZW1hcy5nb29nbGUuY29tL2cvMjAwNSNvdmVyYWxsJy8+PHl0
@@ -668,4 +694,14 @@ http_interactions:
         PSc0MDM3NScvPjwvZW50cnk+
     http_version: 
   recorded_at: Thu, 18 Apr 2013 12:30:35 GMT
+=======
+        ZW9pZD48L21lZGlhOmdyb3VwPjxnZDpyYXRpbmcgYXZlcmFnZT0nNC44NzY3
+        ODg2JyBtYXg9JzUnIG1pbj0nMScgbnVtUmF0ZXJzPSc0MTcxNycgcmVsPSdo
+        dHRwOi8vc2NoZW1hcy5nb29nbGUuY29tL2cvMjAwNSNvdmVyYWxsJy8+PHl0
+        OnN0YXRpc3RpY3MgZmF2b3JpdGVDb3VudD0nMCcgdmlld0NvdW50PScxMTE4
+        ODMwNScvPjx5dDpyYXRpbmcgbnVtRGlzbGlrZXM9JzEyODUnIG51bUxpa2Vz
+        PSc0MDQzMicvPjwvZW50cnk+
+    http_version:
+  recorded_at: Tue, 23 Apr 2013 18:48:54 GMT
+>>>>>>> fixing partial update
 recorded_with: VCR 2.1.1

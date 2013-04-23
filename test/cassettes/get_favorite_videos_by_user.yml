@@ -19,11 +19,11 @@ http_interactions:
       X-Gdata-User-Country:
       - AR
       Content-Type:
-      - application/atom+xml; charset=UTF-8; type=feed
+      - application/atom+xml;charset=UTF-8;type=feed
       Expires:
-      - Thu, 10 Jan 2013 16:24:02 GMT
+      - Tue, 23 Apr 2013 18:43:00 GMT
       Date:
-      - Thu, 10 Jan 2013 16:24:02 GMT
+      - Tue, 23 Apr 2013 18:43:00 GMT
       Cache-Control:
       - private, max-age=300, no-transform
       Vary:
@@ -31,17 +31,17 @@ http_interactions:
       Gdata-Version:
       - '2.1'
       Etag:
-      - W/"D0cAQ304eip7I2A9WhNUGE4."
+      - W/"CEIMQXg-cCp7I2A9WhBVF0k."
       Last-Modified:
-      - Thu, 10 Jan 2013 16:24:02 GMT
-      Transfer-Encoding:
-      - chunked
+      - Tue, 23 Apr 2013 18:43:00 GMT
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
+      Content-Length:
+      - '7076'
       Server:
       - GSE
     body:
@@ -49,7 +49,7 @@ http_interactions:
       string: <?xml version='1.0' encoding='UTF-8'?><feed xmlns='http://www.w3.org/2005/Atom'
         xmlns:media='http://search.yahoo.com/mrss/' xmlns:openSearch='http://a9.com/-/spec/opensearch/1.1/'
         xmlns:gd='http://schemas.google.com/g/2005' xmlns:yt='http://gdata.youtube.com/schemas/2007'
-        gd:etag='W/&quot;D0cAQ304eip7I2A9WhNUGE4.&quot;'><id>tag:youtube.com,2008:user:chebyte2006:favorites</id><updated>2013-01-10T16:24:02.332Z</updated><category
+        gd:etag='W/&quot;CEIMQXg-cCp7I2A9WhBVF0k.&quot;'><id>tag:youtube.com,2008:user:chebyte2006:favorites</id><updated>2013-04-23T18:43:00.658Z</updated><category
         scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#favorite'/><title>Favorites
         of Mauro Torres</title><logo>http://www.youtube.com/img/pic_youtubelogo_123x63.gif</logo><link
         rel='alternate' type='text/html' href='http://www.youtube.com'/><link rel='hub'
@@ -109,6 +109,7 @@ http_interactions:
         height='90' width='120' time='00:00:47.250' yt:name='end'/><media:title type='plain'>Boris
         The Bad Dog</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
         seconds='63'/><yt:uploaded>2012-03-21T20:27:55.000Z</yt:uploaded><yt:uploaderId>UC_EPuqJjzjgM7o0rZns01mg</yt:uploaderId><yt:videoid>fFAnoEYFUQw</yt:videoid></media:group><yt:statistics
+<<<<<<< HEAD
         favoriteCount='0' viewCount='89'/><yt:favoriteId>FLZtxP_Fv0-vJB46VLn3ojZUHP0PlOOBxX</yt:favoriteId></entry></feed>
     http_version: 
   recorded_at: Thu, 10 Jan 2013 16:24:02 GMT
@@ -224,4 +225,9 @@ http_interactions:
         favoriteCount='0' viewCount='94'/><yt:favoriteId>FLZtxP_Fv0-vJB46VLn3ojZUHP0PlOOBxX</yt:favoriteId></entry></feed>
     http_version: 
   recorded_at: Thu, 18 Apr 2013 12:29:26 GMT
+=======
+        favoriteCount='0' viewCount='94'/><yt:favoriteId>FLZtxP_Fv0-vJB46VLn3ojZUHP0PlOOBxX</yt:favoriteId></entry></feed>
+    http_version:
+  recorded_at: Tue, 23 Apr 2013 18:47:47 GMT
+>>>>>>> fixing partial update
 recorded_with: VCR 2.1.1

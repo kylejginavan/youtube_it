@@ -70,7 +70,6 @@ class TestClient < Test::Unit::TestCase
     assert_equal 25, response.max_result_count
     assert_equal 25, response.videos.length
     assert_equal 1, response.offset
-    assert(response.total_result_count > 100)
     assert_instance_of Time, response.updated_at
 
     response.videos.each { |v| assert_valid_video v }
@@ -214,17 +213,15 @@ class TestClient < Test::Unit::TestCase
     assert @client.video_delete(video.unique_id)
   end
 
-  # Not sure how to deal with authentication in new tests
-  #
-  # def test_should_upload_and_partial_update_a_video
-  #   video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
-  #   assert_valid_video video
-  #   assert video.listed?
-  #   updated_video = @client.video_partial_update(video.unique_id, :list => 'denied', :embed => 'allowed')
-  #   assert updated_video.embeddable?
-  #   assert !updated_video.listed?
-  #   assert @client.video_delete(video.unique_id)
-  # end
+  def test_should_upload_and_partial_update_a_video
+    video  = @client.video_upload(File.open("test/test.mov"), OPTIONS)
+    assert_valid_video video
+    assert video.listed?
+    updated_video = @client.video_partial_update(video.unique_id, :list => 'denied', :embed => 'allowed')
+    assert updated_video.embeddable?
+    assert !updated_video.listed?
+    assert @client.video_delete(video.unique_id)
+  end
 
   def test_should_denied_comments
     video     = @client.video_upload(File.open("test/test.mov"), OPTIONS.merge(:comment => "denied"))
@@ -487,7 +484,7 @@ class TestClient < Test::Unit::TestCase
     assert_equal 25, playlists_first_page.size
 
     playlists_second_page = @client.playlists('sbnation', {'start-index' => 26, 'max-results' => 25})
-    assert_equal 13, playlists_second_page.size
+    assert_equal 14, playlists_second_page.size
 
     all_playlists = playlists_first_page + playlists_second_page
     assert_equal all_playlists.size, all_playlists.uniq.size
@@ -495,7 +492,7 @@ class TestClient < Test::Unit::TestCase
 
   def test_all_playlists
     all_playlists = @client.all_playlists('sbnation')
-    assert_equal 38, all_playlists.size
+    assert_equal 39, all_playlists.size
   end
 
   def test_should_add_and_delete_video_from_watchlater

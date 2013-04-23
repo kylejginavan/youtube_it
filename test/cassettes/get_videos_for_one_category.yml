@@ -21,9 +21,9 @@ http_interactions:
       Content-Type:
       - application/atom+xml; charset=UTF-8; type=feed
       Expires:
-      - Thu, 10 Jan 2013 16:24:18 GMT
+      - Tue, 23 Apr 2013 18:48:33 GMT
       Date:
-      - Thu, 10 Jan 2013 16:24:18 GMT
+      - Tue, 23 Apr 2013 18:48:33 GMT
       Cache-Control:
       - private, max-age=300, no-transform
       Vary:
@@ -31,9 +31,9 @@ http_interactions:
       Gdata-Version:
       - '2.1'
       Etag:
-      - W/"D0cBSXo_fSp7I2A9WhNUGE4."
+      - W/"CE4FQn8-eSp7I2A9WhBVF0k."
       Last-Modified:
-      - Thu, 10 Jan 2013 16:24:18 GMT
+      - Tue, 23 Apr 2013 18:48:33 GMT
       Transfer-Encoding:
       - chunked
       X-Content-Type-Options:
@@ -45,6 +45,7 @@ http_interactions:
       Server:
       - GSE
     body:
+<<<<<<< HEAD
       encoding: ASCII-8BIT
       string: !binary |-
         PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz48ZmVlZCB4
@@ -3351,12 +3352,18 @@ http_interactions:
       Server:
       - GSE
     body:
+=======
+>>>>>>> fixing partial update
       encoding: US-ASCII
       string: ! '<?xml version=''1.0'' encoding=''UTF-8''?><feed xmlns=''http://www.w3.org/2005/Atom''
         xmlns:app=''http://www.w3.org/2007/app'' xmlns:media=''http://search.yahoo.com/mrss/''
         xmlns:openSearch=''http://a9.com/-/spec/opensearch/1.1/'' xmlns:gd=''http://schemas.google.com/g/2005''
         xmlns:gml=''http://www.opengis.net/gml'' xmlns:yt=''http://gdata.youtube.com/schemas/2007''
+<<<<<<< HEAD
         xmlns:georss=''http://www.georss.org/georss'' gd:etag=''W/&quot;AkUEQX4-eip7I2A9WhBVEkU.&quot;''><id>tag:youtube.com,2008:videos</id><updated>2013-04-18T12:30:00.052Z</updated><category
+=======
+        xmlns:georss=''http://www.georss.org/georss'' gd:etag=''W/&quot;CE4FQn8-eSp7I2A9WhBVF0k.&quot;''><id>tag:youtube.com,2008:videos</id><updated>2013-04-23T18:48:33.151Z</updated><category
+>>>>>>> fixing partial update
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><title>Videos</title><logo>http://www.youtube.com/img/pic_youtubelogo_123x63.gif</logo><link
         rel=''alternate'' type=''text/html'' href=''http://www.youtube.com''/><link
         rel=''http://schemas.google.com/g/2005#feed'' type=''application/atom+xml''
@@ -3366,6 +3373,7 @@ http_interactions:
         rel=''service'' type=''application/atomsvc+xml'' href=''http://gdata.youtube.com/feeds/api/videos?alt=atom-service&amp;v=2''/><link
         rel=''next'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/-/%7Bhttp%3A%2F%2Fgdata.youtube.com%2Fschemas%2F2007%2Fcategories.cat%7DNews?start-index=26&amp;max-results=25&amp;v=2''/><author><name>YouTube</name><uri>http://www.youtube.com/</uri></author><generator
         version=''2.1'' uri=''http://gdata.youtube.com''>YouTube data API</generator><openSearch:totalResults>1000000</openSearch:totalResults><openSearch:startIndex>1</openSearch:startIndex><openSearch:itemsPerPage>25</openSearch:itemsPerPage><entry
+<<<<<<< HEAD
         gd:etag=''W/&quot;CEEER347eCp7I2A9WhBVEUQ.&quot;''><id>tag:youtube.com,2008:video:034fNYyY9HU</id><published>2013-01-21T18:07:00.000Z</published><updated>2013-04-17T09:56:46.000Z</updated><app:control><yt:state
         name=''restricted'' reasonCode=''limitedSyndication''>Syndication of this
         video was restricted.</yt:state></app:control><category scheme=''http://schemas.google.com/g/2005#kind''
@@ -3385,12 +3393,81 @@ http_interactions:
         rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
         href=''http://gdata.youtube.com/feeds/api/users/Bi2mrWuNuyYy4gbM6fU18Q?v=2''/><link
         rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/034fNYyY9HU?v=2''/><author><name>ABCNews</name><uri>http://gdata.youtube.com/feeds/api/users/ABCNews</uri><yt:userId>Bi2mrWuNuyYy4gbM6fU18Q</yt:userId></author><yt:accessControl
+=======
+        gd:etag=''W/&quot;CkYHSX47eCp7I2A9WhBVF0k.&quot;''><id>tag:youtube.com,2008:video:CLKZb1wLmAY</id><published>2013-02-25T16:38:25.000Z</published><updated>2013-04-23T18:02:18.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''News''
+        label=''News &amp; Politics''/><title>Raw: Jennifer Lawrence backstage after
+        2013 Oscar win</title><content type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/CLKZb1wLmAY?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=CLKZb1wLmAY&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/CLKZb1wLmAY/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/CLKZb1wLmAY/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/CLKZb1wLmAY/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=CLKZb1wLmAY''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/upvZG-5ko_eiXAupbDfxWw?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/CLKZb1wLmAY?v=2''/><author><name>CNN</name><uri>http://gdata.youtube.com/feeds/api/users/CNN</uri><yt:userId>upvZG-5ko_eiXAupbDfxWw</yt:userId></author><yt:accessControl
         action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
-        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''denied''/><yt:accessControl
         action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
         permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/CLKZb1wLmAY/comments?v=2''
+        countHint=''1579''/></gd:comments><yt:hd/><media:group><media:category label=''News
+        &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
+        url=''http://www.youtube.com/v/CLKZb1wLmAY?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''289'' yt:format=''5''/><media:content url=''rtsp://v1.cache6.c.youtube.com/CkULENy73wIaPAkGmAtcb5myCBMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''289''
+        yt:format=''1''/><media:content url=''rtsp://v1.cache6.c.youtube.com/CkULENy73wIaPAkGmAtcb5myCBMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''289''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''CNN''
+        yt:type=''partner''>cnn</media:credit><media:description type=''plain''>2013
+        Best Actress winner Jennifer Lawrence talks to the press about winning her
+        first Oscar. For more CNN videos, visit our site at http://www.cnn.com/video/</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=CLKZb1wLmAY&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/CLKZb1wLmAY/default.jpg'' height=''90'' width=''120''
+        time=''00:02:24.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/CLKZb1wLmAY/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/CLKZb1wLmAY/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/CLKZb1wLmAY/1.jpg''
+        height=''90'' width=''120'' time=''00:01:12.250'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/CLKZb1wLmAY/2.jpg'' height=''90'' width=''120''
+        time=''00:02:24.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/CLKZb1wLmAY/3.jpg''
+        height=''90'' width=''120'' time=''00:03:36.750'' yt:name=''end''/><media:title
+        type=''plain''>Raw: Jennifer Lawrence backstage after 2013 Oscar win</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''289''/><yt:uploaded>2013-02-25T16:38:25.000Z</yt:uploaded><yt:uploaderId>UCupvZG-5ko_eiXAupbDfxWw</yt:uploaderId><yt:videoid>CLKZb1wLmAY</yt:videoid></media:group><gd:rating
+        average=''4.935942'' max=''5'' min=''1'' numRaters=''9991'' rel=''http://schemas.google.com/g/2005#overall''/><yt:recorded>2013-02-25</yt:recorded><yt:statistics
+        favoriteCount=''0'' viewCount=''1285876''/><yt:rating numDislikes=''160''
+        numLikes=''9831''/></entry><entry gd:etag=''W/&quot;CkINRn47eCp7I2A9WhBVF0k.&quot;''><id>tag:youtube.com,2008:video:WJmhsJ5T5L0</id><published>2013-02-25T14:23:46.000Z</published><updated>2013-04-23T18:09:57.000Z</updated><app:control><yt:state
+        name=''restricted'' reasonCode=''limitedSyndication''>Syndication of this
+        video was restricted.</yt:state></app:control><category scheme=''http://schemas.google.com/g/2005#kind''
+        term=''http://gdata.youtube.com/schemas/2007#video''/><category scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''
+        term=''News'' label=''News &amp; Politics''/><title>Jennifer Lawrence, Jack
+        Nicholson Interruption Makes Waves After Oscars; Anne Hathaway on Big Win</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/WJmhsJ5T5L0?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=WJmhsJ5T5L0&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/WJmhsJ5T5L0/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/WJmhsJ5T5L0/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/WJmhsJ5T5L0/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/Bi2mrWuNuyYy4gbM6fU18Q?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/WJmhsJ5T5L0?v=2''/><author><name>ABCNews</name><uri>http://gdata.youtube.com/feeds/api/users/ABCNews</uri><yt:userId>Bi2mrWuNuyYy4gbM6fU18Q</yt:userId></author><yt:accessControl
+>>>>>>> fixing partial update
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''denied''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+<<<<<<< HEAD
         href=''http://gdata.youtube.com/feeds/api/videos/034fNYyY9HU/comments?v=2''
         countHint=''2694''/></gd:comments><media:group><media:category label=''News
         &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
@@ -3434,10 +3511,58 @@ http_interactions:
         rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/CLKZb1wLmAY?v=2''/><author><name>CNN</name><uri>http://gdata.youtube.com/feeds/api/users/CNN</uri><yt:userId>upvZG-5ko_eiXAupbDfxWw</yt:userId></author><yt:accessControl
         action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
         permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''denied''/><yt:accessControl
+=======
+        href=''http://gdata.youtube.com/feeds/api/videos/WJmhsJ5T5L0/comments?v=2''
+        countHint=''4026''/></gd:comments><georss:where><gml:Point><gml:pos>40.773040771484375
+        -73.9796371459961</gml:pos></gml:Point></georss:where><yt:hd/><media:group><media:category
+        label=''News &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
+        url=''http://www.youtube.com/v/WJmhsJ5T5L0?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''204'' yt:format=''5''/><media:credit role=''uploader''
+        scheme=''urn:youtube'' yt:display=''ABCNews'' yt:type=''partner''>abcnews</media:credit><media:description
+        type=''plain''>George Stephanopoulos talks to the Best Actress and Supporting
+        Actress winners. For more, click here: http://abcn.ws/2013_Oscars.</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=WJmhsJ5T5L0&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/WJmhsJ5T5L0/default.jpg'' height=''90'' width=''120''
+        time=''00:01:42'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/WJmhsJ5T5L0/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/WJmhsJ5T5L0/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/WJmhsJ5T5L0/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/WJmhsJ5T5L0/1.jpg''
+        height=''90'' width=''120'' time=''00:00:51'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/WJmhsJ5T5L0/2.jpg'' height=''90'' width=''120''
+        time=''00:01:42'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/WJmhsJ5T5L0/3.jpg''
+        height=''90'' width=''120'' time=''00:02:33'' yt:name=''end''/><media:title
+        type=''plain''>Jennifer Lawrence, Jack Nicholson Interruption Makes Waves
+        After Oscars; Anne Hathaway on Big Win</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''204''/><yt:uploaded>2013-02-25T14:23:46.000Z</yt:uploaded><yt:uploaderId>UCBi2mrWuNuyYy4gbM6fU18Q</yt:uploaderId><yt:videoid>WJmhsJ5T5L0</yt:videoid></media:group><gd:rating
+        average=''4.8516197'' max=''5'' min=''1'' numRaters=''18520'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''5834128''/><yt:rating numDislikes=''687''
+        numLikes=''17833''/></entry><entry gd:etag=''W/&quot;CUUCRH47eCp7I2A9WhBVFk0.&quot;''><id>tag:youtube.com,2008:video:Cm91hh9SqXs</id><published>2009-07-30T12:51:04.000Z</published><updated>2013-04-22T04:01:05.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''News''
+        label=''News &amp; Politics''/><title>Monkey man - No comment</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/Cm91hh9SqXs?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=Cm91hh9SqXs&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Cm91hh9SqXs/responses?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Cm91hh9SqXs/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Cm91hh9SqXs/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Cm91hh9SqXs/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/X4py0rkBIdjUqNJCH_JQDw?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/Cm91hh9SqXs?v=2''/><author><name>nocommenttv</name><uri>http://gdata.youtube.com/feeds/api/users/nocommenttv</uri><yt:userId>X4py0rkBIdjUqNJCH_JQDw</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''allowed''/><yt:accessControl
+>>>>>>> fixing partial update
         action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
         permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+<<<<<<< HEAD
         href=''http://gdata.youtube.com/feeds/api/videos/CLKZb1wLmAY/comments?v=2''
         countHint=''1507''/></gd:comments><yt:hd/><media:group><media:category label=''News
         &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
@@ -3466,11 +3591,44 @@ http_interactions:
         average=''4.934731'' max=''5'' min=''1'' numRaters=''9683'' rel=''http://schemas.google.com/g/2005#overall''/><yt:recorded>2013-02-25</yt:recorded><yt:statistics
         favoriteCount=''0'' viewCount=''1254855''/><yt:rating numDislikes=''158''
         numLikes=''9525''/></entry><entry gd:etag=''W/&quot;D0IHQX47eCp7I2A9WhBVEkU.&quot;''><id>tag:youtube.com,2008:video:6rPFvLUWkzs</id><published>2011-01-06T12:47:34.000Z</published><updated>2013-04-18T11:45:30.000Z</updated><category
+=======
+        href=''http://gdata.youtube.com/feeds/api/videos/Cm91hh9SqXs/comments?v=2''
+        countHint=''2931''/></gd:comments><media:group><media:category label=''News
+        &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
+        url=''http://www.youtube.com/v/Cm91hh9SqXs?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''121'' yt:format=''5''/><media:content url=''rtsp://v7.cache5.c.youtube.com/CkULENy73wIaPAl7qVIfhnVvChMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''121''
+        yt:format=''1''/><media:content url=''rtsp://v7.cache5.c.youtube.com/CkULENy73wIaPAl7qVIfhnVvChMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''121''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''nocommenttv''
+        yt:type=''partner''>nocommenttv</media:credit><media:description type=''plain''>http://www.euronews.com/nocomment/
+        Jumping from one rock to the other, scaling walls or any man-made height without
+        any aid, Jyoti Raju truly lives up to his...</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=Cm91hh9SqXs&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/Cm91hh9SqXs/default.jpg'' height=''90'' width=''120''
+        time=''00:01:00.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/Cm91hh9SqXs/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/Cm91hh9SqXs/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/Cm91hh9SqXs/1.jpg''
+        height=''90'' width=''120'' time=''00:00:30.250'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/Cm91hh9SqXs/2.jpg'' height=''90'' width=''120''
+        time=''00:01:00.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/Cm91hh9SqXs/3.jpg''
+        height=''90'' width=''120'' time=''00:01:30.750'' yt:name=''end''/><media:title
+        type=''plain''>Monkey man - No comment</media:title><yt:duration seconds=''121''/><yt:uploaded>2009-07-30T12:51:04.000Z</yt:uploaded><yt:uploaderId>UCX4py0rkBIdjUqNJCH_JQDw</yt:uploaderId><yt:videoid>Cm91hh9SqXs</yt:videoid></media:group><gd:rating
+        average=''4.9143167'' max=''5'' min=''1'' numRaters=''6454'' rel=''http://schemas.google.com/g/2005#overall''/><yt:recorded>2009-07-30</yt:recorded><yt:statistics
+        favoriteCount=''0'' viewCount=''2145701''/><yt:rating numDislikes=''138''
+        numLikes=''6316''/></entry><entry gd:etag=''W/&quot;A0QBQX47eCp7I2A9WhBVF04.&quot;''><id>tag:youtube.com,2008:video:6rPFvLUWkzs</id><published>2011-01-06T12:47:34.000Z</published><updated>2013-04-23T17:49:10.000Z</updated><category
+>>>>>>> fixing partial update
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''News''
         label=''News &amp; Politics''/><title>''Golden Voice'' homeless man finds
         job, home after viral video success</title><content type=''application/x-shockwave-flash''
+<<<<<<< HEAD
         src=''http://www.youtube.com/v/6rPFvLUWkzs?version=3&amp;f=videos&amp;d=ARG2gZlAYb7aFMK75J5jr9gO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+=======
+        src=''http://www.youtube.com/v/6rPFvLUWkzs?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+>>>>>>> fixing partial update
         rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=6rPFvLUWkzs&amp;feature=youtube_gdata''/><link
         rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
         href=''http://gdata.youtube.com/feeds/api/videos/6rPFvLUWkzs/responses?v=2''/><link
@@ -3491,6 +3649,7 @@ http_interactions:
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
         href=''http://gdata.youtube.com/feeds/api/videos/6rPFvLUWkzs/comments?v=2''
+<<<<<<< HEAD
         countHint=''32418''/></gd:comments><media:group><media:category label=''News
         &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
         url=''http://www.youtube.com/v/6rPFvLUWkzs?version=3&amp;f=videos&amp;d=ARG2gZlAYb7aFMK75J5jr9gO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
@@ -3498,6 +3657,15 @@ http_interactions:
         expression=''full'' duration=''88'' yt:format=''5''/><media:content url=''rtsp://v1.cache8.c.youtube.com/CkULENy73wIaPAk7kxa1vMWz6hMYDSANFEgGUgZ2aWRlb3NyIQERtoGZQGG-2hTCu-SeY6_YDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
         type=''video/3gpp'' medium=''video'' expression=''full'' duration=''88'' yt:format=''1''/><media:content
         url=''rtsp://v1.cache8.c.youtube.com/CkULENy73wIaPAk7kxa1vMWz6hMYESARFEgGUgZ2aWRlb3NyIQERtoGZQGG-2hTCu-SeY6_YDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+=======
+        countHint=''32507''/></gd:comments><media:group><media:category label=''News
+        &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
+        url=''http://www.youtube.com/v/6rPFvLUWkzs?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''88'' yt:format=''5''/><media:content url=''rtsp://v1.cache8.c.youtube.com/CkULENy73wIaPAk7kxa1vMWz6hMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''88'' yt:format=''1''/><media:content
+        url=''rtsp://v1.cache8.c.youtube.com/CkULENy73wIaPAk7kxa1vMWz6hMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+>>>>>>> fixing partial update
         type=''video/3gpp'' medium=''video'' expression=''full'' duration=''88'' yt:format=''6''/><media:credit
         role=''uploader'' scheme=''urn:youtube'' yt:display=''RussiaToday'' yt:type=''partner''>russiatoday</media:credit><media:description
         type=''plain''/><media:keywords/><media:license type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
@@ -3512,6 +3680,7 @@ http_interactions:
         height=''90'' width=''120'' time=''00:01:06'' yt:name=''end''/><media:title
         type=''plain''>''Golden Voice'' homeless man finds job, home after viral video
         success</media:title><yt:duration seconds=''88''/><yt:uploaded>2011-01-06T12:47:34.000Z</yt:uploaded><yt:uploaderId>UCpwvZwUam-URkxB7g4USKpg</yt:uploaderId><yt:videoid>6rPFvLUWkzs</yt:videoid></media:group><gd:rating
+<<<<<<< HEAD
         average=''4.89814'' max=''5'' min=''1'' numRaters=''65747'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
         favoriteCount=''0'' viewCount=''25725440''/><yt:rating numDislikes=''1674''
         numLikes=''64073''/></entry><entry gd:etag=''W/&quot;CkEHSX47eCp7I2A9WhBVEkk.&quot;''><id>tag:youtube.com,2008:video:nU4E6SSy5Yg</id><published>2012-04-02T12:00:08.000Z</published><updated>2013-04-17T23:17:18.000Z</updated><category
@@ -3532,11 +3701,35 @@ http_interactions:
         rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
         href=''http://gdata.youtube.com/feeds/api/users/2C_jShtL725hvbm1arSV9w?v=2''/><link
         rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/nU4E6SSy5Yg?v=2''/><author><name>CGPGrey</name><uri>http://gdata.youtube.com/feeds/api/users/CGPGrey</uri><yt:userId>2C_jShtL725hvbm1arSV9w</yt:userId></author><yt:accessControl
+=======
+        average=''4.8978977'' max=''5'' min=''1'' numRaters=''65983'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''25780460''/><yt:rating numDislikes=''1684''
+        numLikes=''64299''/></entry><entry gd:etag=''W/&quot;A0UERX47eCp7I2A9WhBVFE8.&quot;''><id>tag:youtube.com,2008:video:R2ySHSTEzjQ</id><published>2012-07-18T22:42:11.000Z</published><updated>2013-04-20T03:40:04.000Z</updated><app:control><yt:state
+        name=''restricted'' reasonCode=''limitedSyndication''>Syndication of this
+        video was restricted.</yt:state></app:control><category scheme=''http://schemas.google.com/g/2005#kind''
+        term=''http://gdata.youtube.com/schemas/2007#video''/><category scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''
+        term=''News'' label=''News &amp; Politics''/><title>''Call Me Maybe'' Spoofed
+        by U.S. Marines: Carly Rae Jepsen''s Hit Song Parodied Again</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/R2ySHSTEzjQ?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=R2ySHSTEzjQ&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/R2ySHSTEzjQ/responses?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/R2ySHSTEzjQ/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/R2ySHSTEzjQ/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/R2ySHSTEzjQ/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/Bi2mrWuNuyYy4gbM6fU18Q?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/R2ySHSTEzjQ?v=2''/><author><name>ABCNews</name><uri>http://gdata.youtube.com/feeds/api/users/ABCNews</uri><yt:userId>Bi2mrWuNuyYy4gbM6fU18Q</yt:userId></author><yt:accessControl
+>>>>>>> fixing partial update
         action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
         permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
         action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
         permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+<<<<<<< HEAD
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
         href=''http://gdata.youtube.com/feeds/api/videos/nU4E6SSy5Yg/comments?v=2''
         countHint=''3487''/></gd:comments><yt:hd/><media:group><media:category label=''News
@@ -3584,12 +3777,59 @@ http_interactions:
         rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
         href=''http://gdata.youtube.com/feeds/api/users/52X5wxOL_s5yw0dQk7NtgA?v=2''/><link
         rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/JorEw_75Yg0?v=2''/><author><name>AssociatedPress</name><uri>http://gdata.youtube.com/feeds/api/users/AssociatedPress</uri><yt:userId>52X5wxOL_s5yw0dQk7NtgA</yt:userId></author><yt:accessControl
+=======
+        permission=''denied''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/R2ySHSTEzjQ/comments?v=2''
+        countHint=''8001''/></gd:comments><media:group><media:category label=''News
+        &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
+        url=''http://www.youtube.com/v/R2ySHSTEzjQ?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''191'' yt:format=''5''/><media:credit role=''uploader''
+        scheme=''urn:youtube'' yt:display=''ABCNews'' yt:type=''partner''>abcnews</media:credit><media:description
+        type=''plain''>U.S. Marines stationed in Afghanistan dance, lip-sync to Carly
+        Rae Jepsen''s hit song. For more, click here: http://www.ericraum.com/home/2012/7/5/call-me-may...</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=R2ySHSTEzjQ&amp;feature=youtube_gdata_player''/><media:restriction
+        type=''country'' relationship=''deny''>DE</media:restriction><media:thumbnail
+        url=''http://i.ytimg.com/vi/R2ySHSTEzjQ/default.jpg'' height=''90'' width=''120''
+        time=''00:01:35.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/R2ySHSTEzjQ/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/R2ySHSTEzjQ/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/R2ySHSTEzjQ/1.jpg''
+        height=''90'' width=''120'' time=''00:00:47.750'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/R2ySHSTEzjQ/2.jpg'' height=''90'' width=''120''
+        time=''00:01:35.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/R2ySHSTEzjQ/3.jpg''
+        height=''90'' width=''120'' time=''00:02:23.250'' yt:name=''end''/><media:title
+        type=''plain''>''Call Me Maybe'' Spoofed by U.S. Marines: Carly Rae Jepsen''s
+        Hit Song Parodied Again</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''191''/><yt:uploaded>2012-07-18T22:42:11.000Z</yt:uploaded><yt:uploaderId>UCBi2mrWuNuyYy4gbM6fU18Q</yt:uploaderId><yt:videoid>R2ySHSTEzjQ</yt:videoid></media:group><gd:rating
+        average=''4.88978'' max=''5'' min=''1'' numRaters=''26937'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''2607214''/><yt:rating numDislikes=''742''
+        numLikes=''26195''/></entry><entry gd:etag=''W/&quot;DUYMSX47eCp7I2A9WhBVF04.&quot;''><id>tag:youtube.com,2008:video:24R8JObNNQ4</id><published>2011-12-19T19:56:30.000Z</published><updated>2013-04-23T17:13:08.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''News''
+        label=''News &amp; Politics''/><title>Inside North Korea (Part 1/3)</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/24R8JObNNQ4?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=24R8JObNNQ4&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/24R8JObNNQ4/responses?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/24R8JObNNQ4/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/24R8JObNNQ4/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/24R8JObNNQ4/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=24R8JObNNQ4''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/n8zNIfYAQNdrFRrr8oibKw?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/24R8JObNNQ4?v=2''/><author><name>vice</name><uri>http://gdata.youtube.com/feeds/api/users/vice</uri><yt:userId>n8zNIfYAQNdrFRrr8oibKw</yt:userId></author><yt:accessControl
+>>>>>>> fixing partial update
         action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
         permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''allowed''/><yt:accessControl
         action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
         permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+<<<<<<< HEAD
         href=''http://gdata.youtube.com/feeds/api/videos/JorEw_75Yg0/comments?v=2''
         countHint=''6047''/></gd:comments><georss:where><gml:Point><gml:pos>40.714351654052734
         -74.00596618652344</gml:pos></gml:Point></georss:where><media:group><media:category
@@ -3638,12 +3878,63 @@ http_interactions:
         rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
         href=''http://gdata.youtube.com/feeds/api/users/n8zNIfYAQNdrFRrr8oibKw?v=2''/><link
         rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/24R8JObNNQ4?v=2''/><author><name>vice</name><uri>http://gdata.youtube.com/feeds/api/users/vice</uri><yt:userId>n8zNIfYAQNdrFRrr8oibKw</yt:userId></author><yt:accessControl
+=======
+        href=''http://gdata.youtube.com/feeds/api/videos/24R8JObNNQ4/comments?v=2''
+        countHint=''10134''/></gd:comments><georss:where><gml:Point><gml:pos>39.01064682006836
+        125.7275390625</gml:pos></gml:Point></georss:where><media:group><media:category
+        label=''News &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
+        url=''http://www.youtube.com/v/24R8JObNNQ4?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''1252'' yt:format=''5''/><media:content url=''rtsp://v1.cache6.c.youtube.com/CkULENy73wIaPAkONc3mJHyE2xMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''1252''
+        yt:format=''1''/><media:content url=''rtsp://v1.cache6.c.youtube.com/CkULENy73wIaPAkONc3mJHyE2xMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''1252''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''vice''
+        yt:type=''partner''>vice</media:credit><media:description type=''plain''>Vice
+        founder Shane Smith managed to get into North Korea after a year and half
+        of trying and is witness to the craziness of this hermit nation. Crazy is
+        actu...</media:description><media:keywords/><media:license type=''text/html''
+        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=24R8JObNNQ4&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/24R8JObNNQ4/default.jpg'' height=''90'' width=''120''
+        time=''00:10:26'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/24R8JObNNQ4/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/24R8JObNNQ4/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/24R8JObNNQ4/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/24R8JObNNQ4/1.jpg''
+        height=''90'' width=''120'' time=''00:05:13'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/24R8JObNNQ4/2.jpg'' height=''90'' width=''120''
+        time=''00:10:26'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/24R8JObNNQ4/3.jpg''
+        height=''90'' width=''120'' time=''00:15:39'' yt:name=''end''/><media:title
+        type=''plain''>Inside North Korea (Part 1/3)</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''1252''/><yt:uploaded>2011-12-19T19:56:30.000Z</yt:uploaded><yt:uploaderId>UCn8zNIfYAQNdrFRrr8oibKw</yt:uploaderId><yt:videoid>24R8JObNNQ4</yt:videoid></media:group><gd:rating
+        average=''4.8757052'' max=''5'' min=''1'' numRaters=''12052'' rel=''http://schemas.google.com/g/2005#overall''/><yt:recorded>2011-12-19</yt:recorded><yt:statistics
+        favoriteCount=''0'' viewCount=''1800278''/><yt:rating numDislikes=''374''
+        numLikes=''11678''/></entry><entry gd:etag=''W/&quot;C0cBRH47eCp7I2A9WhBVF0k.&quot;''><id>tag:youtube.com,2008:video:xw46Ll-Zy4s</id><published>2011-12-19T19:31:53.000Z</published><updated>2013-04-23T18:17:35.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''News''
+        label=''News &amp; Politics''/><title>Inside North Korea (Part 2/3)</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/xw46Ll-Zy4s?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=xw46Ll-Zy4s&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/xw46Ll-Zy4s/responses?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/xw46Ll-Zy4s/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/xw46Ll-Zy4s/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/xw46Ll-Zy4s/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=xw46Ll-Zy4s''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/n8zNIfYAQNdrFRrr8oibKw?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/xw46Ll-Zy4s?v=2''/><author><name>vice</name><uri>http://gdata.youtube.com/feeds/api/users/vice</uri><yt:userId>n8zNIfYAQNdrFRrr8oibKw</yt:userId></author><yt:accessControl
+>>>>>>> fixing partial update
         action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
         permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
         action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
         permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+<<<<<<< HEAD
         href=''http://gdata.youtube.com/feeds/api/videos/24R8JObNNQ4/comments?v=2''
         countHint=''9879''/></gd:comments><georss:where><gml:Point><gml:pos>39.01064682006836
         125.7275390625</gml:pos></gml:Point></georss:where><media:group><media:category
@@ -3692,12 +3983,60 @@ http_interactions:
         rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
         href=''http://gdata.youtube.com/feeds/api/users/n8zNIfYAQNdrFRrr8oibKw?v=2''/><link
         rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/awQDLoOnkdI?v=2''/><author><name>vice</name><uri>http://gdata.youtube.com/feeds/api/users/vice</uri><yt:userId>n8zNIfYAQNdrFRrr8oibKw</yt:userId></author><yt:accessControl
+=======
+        href=''http://gdata.youtube.com/feeds/api/videos/xw46Ll-Zy4s/comments?v=2''
+        countHint=''5604''/></gd:comments><yt:location>pyongyang north korea</yt:location><media:group><media:category
+        label=''News &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
+        url=''http://www.youtube.com/v/xw46Ll-Zy4s?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''1066'' yt:format=''5''/><media:content url=''rtsp://v3.cache6.c.youtube.com/CkULENy73wIaPAmLy5lfLjoOxxMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''1066''
+        yt:format=''1''/><media:content url=''rtsp://v3.cache6.c.youtube.com/CkULENy73wIaPAmLy5lfLjoOxxMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''1066''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''vice''
+        yt:type=''partner''>vice</media:credit><media:description type=''plain''>Shane
+        visits the North Korean side of the De-militarized Zone (DMZ) and surprisingly
+        finds that it''s more relaxed than the South however the propaganda and i...</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=xw46Ll-Zy4s&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/xw46Ll-Zy4s/default.jpg'' height=''90'' width=''120''
+        time=''00:08:53'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/xw46Ll-Zy4s/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/xw46Ll-Zy4s/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/xw46Ll-Zy4s/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/xw46Ll-Zy4s/1.jpg''
+        height=''90'' width=''120'' time=''00:04:26.500'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/xw46Ll-Zy4s/2.jpg'' height=''90'' width=''120''
+        time=''00:08:53'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/xw46Ll-Zy4s/3.jpg''
+        height=''90'' width=''120'' time=''00:13:19.500'' yt:name=''end''/><media:title
+        type=''plain''>Inside North Korea (Part 2/3)</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''1066''/><yt:uploaded>2011-12-19T19:31:53.000Z</yt:uploaded><yt:uploaderId>UCn8zNIfYAQNdrFRrr8oibKw</yt:uploaderId><yt:videoid>xw46Ll-Zy4s</yt:videoid></media:group><gd:rating
+        average=''4.889968'' max=''5'' min=''1'' numRaters=''6589'' rel=''http://schemas.google.com/g/2005#overall''/><yt:recorded>2011-12-19</yt:recorded><yt:statistics
+        favoriteCount=''0'' viewCount=''1029574''/><yt:rating numDislikes=''181''
+        numLikes=''6408''/></entry><entry gd:etag=''W/&quot;CUANSX47eCp7I2A9WhBVFkg.&quot;''><id>tag:youtube.com,2008:video:Reimvk8D2Ho</id><published>2012-02-07T23:01:42.000Z</published><updated>2013-04-22T18:03:18.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''News''
+        label=''News &amp; Politics''/><title>Raw Video: Marshmallow Launch at the
+        White House Science Fair</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/Reimvk8D2Ho?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=Reimvk8D2Ho&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Reimvk8D2Ho/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Reimvk8D2Ho/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Reimvk8D2Ho/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=Reimvk8D2Ho''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/YxRlFDqcWM4y7FfpiAN3KQ?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/Reimvk8D2Ho?v=2''/><author><name>whitehouse</name><uri>http://gdata.youtube.com/feeds/api/users/whitehouse</uri><yt:userId>YxRlFDqcWM4y7FfpiAN3KQ</yt:userId></author><yt:accessControl
+>>>>>>> fixing partial update
         action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
-        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''denied''/><yt:accessControl
         action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
         permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+<<<<<<< HEAD
         href=''http://gdata.youtube.com/feeds/api/videos/awQDLoOnkdI/comments?v=2''
         countHint=''1371''/></gd:comments><yt:hd/><media:group><media:category label=''News
         &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
@@ -3745,12 +4084,62 @@ http_interactions:
         rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
         href=''http://gdata.youtube.com/feeds/api/users/n8zNIfYAQNdrFRrr8oibKw?v=2''/><link
         rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/xw46Ll-Zy4s?v=2''/><author><name>vice</name><uri>http://gdata.youtube.com/feeds/api/users/vice</uri><yt:userId>n8zNIfYAQNdrFRrr8oibKw</yt:userId></author><yt:accessControl
+=======
+        href=''http://gdata.youtube.com/feeds/api/videos/Reimvk8D2Ho/comments?v=2''
+        countHint=''3225''/></gd:comments><yt:hd/><media:group><media:category label=''News
+        &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
+        url=''http://www.youtube.com/v/Reimvk8D2Ho?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''182'' yt:format=''5''/><media:content url=''rtsp://v6.cache8.c.youtube.com/CkULENy73wIaPAl62ANPvqboRRMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''182''
+        yt:format=''1''/><media:content url=''rtsp://v6.cache8.c.youtube.com/CkULENy73wIaPAl62ANPvqboRRMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''182''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''whitehouse''>whitehouse</media:credit><media:description
+        type=''plain''>The President meets an 8th grader named Joey from Phoenix,
+        AZ at the White House Science Fair and the two launch a marshmallow across
+        the State Dining Room o...</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=Reimvk8D2Ho&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/Reimvk8D2Ho/default.jpg'' height=''90'' width=''120''
+        time=''00:01:31'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/Reimvk8D2Ho/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/Reimvk8D2Ho/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/Reimvk8D2Ho/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/Reimvk8D2Ho/1.jpg''
+        height=''90'' width=''120'' time=''00:00:45.500'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/Reimvk8D2Ho/2.jpg'' height=''90'' width=''120''
+        time=''00:01:31'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/Reimvk8D2Ho/3.jpg''
+        height=''90'' width=''120'' time=''00:02:16.500'' yt:name=''end''/><media:title
+        type=''plain''>Raw Video: Marshmallow Launch at the White House Science Fair</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''182''/><yt:uploaded>2012-02-07T23:01:42.000Z</yt:uploaded><yt:uploaderId>UCYxRlFDqcWM4y7FfpiAN3KQ</yt:uploaderId><yt:videoid>Reimvk8D2Ho</yt:videoid></media:group><gd:rating
+        average=''4.7883763'' max=''5'' min=''1'' numRaters=''5420'' rel=''http://schemas.google.com/g/2005#overall''/><yt:recorded>2012-02-07</yt:recorded><yt:statistics
+        favoriteCount=''0'' viewCount=''1232456''/><yt:rating numDislikes=''287''
+        numLikes=''5133''/></entry><entry gd:etag=''W/&quot;CkYFQ347eCp7I2A9WhBVF0k.&quot;''><id>tag:youtube.com,2008:video:90Omh7_I8vI</id><published>2013-02-15T05:27:46.000Z</published><updated>2013-04-23T18:01:52.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''News''
+        label=''News &amp; Politics''/><title>Meteorite crash in Russia: Video of
+        meteor explosion that stirred panic in Urals region</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/90Omh7_I8vI?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=90Omh7_I8vI&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/90Omh7_I8vI/responses?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/90Omh7_I8vI/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/90Omh7_I8vI/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/90Omh7_I8vI/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=90Omh7_I8vI''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/pwvZwUam-URkxB7g4USKpg?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/90Omh7_I8vI?v=2''/><author><name>RussiaToday</name><uri>http://gdata.youtube.com/feeds/api/users/RussiaToday</uri><yt:userId>pwvZwUam-URkxB7g4USKpg</yt:userId></author><yt:accessControl
+>>>>>>> fixing partial update
         action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
         permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
         action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
         permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+<<<<<<< HEAD
         href=''http://gdata.youtube.com/feeds/api/videos/xw46Ll-Zy4s/comments?v=2''
         countHint=''5490''/></gd:comments><yt:location>pyongyang north korea</yt:location><media:group><media:category
         label=''News &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
@@ -3797,12 +4186,63 @@ http_interactions:
         rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
         href=''http://gdata.youtube.com/feeds/api/users/n8zNIfYAQNdrFRrr8oibKw?v=2''/><link
         rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/QL_3Qg-SADY?v=2''/><author><name>vice</name><uri>http://gdata.youtube.com/feeds/api/users/vice</uri><yt:userId>n8zNIfYAQNdrFRrr8oibKw</yt:userId></author><yt:accessControl
+=======
+        href=''http://gdata.youtube.com/feeds/api/videos/90Omh7_I8vI/comments?v=2''
+        countHint=''38912''/></gd:comments><yt:hd/><media:group><media:category label=''News
+        &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
+        url=''http://www.youtube.com/v/90Omh7_I8vI?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''84'' yt:format=''5''/><media:content url=''rtsp://v5.cache8.c.youtube.com/CkULENy73wIaPAny8si_h6ZD9xMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''84'' yt:format=''1''/><media:content
+        url=''rtsp://v5.cache8.c.youtube.com/CkULENy73wIaPAny8si_h6ZD9xMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''84'' yt:format=''6''/><media:credit
+        role=''uploader'' scheme=''urn:youtube'' yt:display=''RussiaToday'' yt:type=''partner''>russiatoday</media:credit><media:description
+        type=''plain''>Courtesy: Fedor Potapov (0:00) Courtesy: SuperOlololololo (0:16)
+        Courtesy: Andrey Korolev (0:36) Courtesy: mitslancer9 (1:02) Courtesy: Alexander
+        Bulanov (1:...</media:description><media:keywords/><media:license type=''text/html''
+        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=90Omh7_I8vI&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/90Omh7_I8vI/default.jpg'' height=''90'' width=''120''
+        time=''00:00:42'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/90Omh7_I8vI/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/90Omh7_I8vI/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/90Omh7_I8vI/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/90Omh7_I8vI/1.jpg''
+        height=''90'' width=''120'' time=''00:00:21'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/90Omh7_I8vI/2.jpg'' height=''90'' width=''120''
+        time=''00:00:42'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/90Omh7_I8vI/3.jpg''
+        height=''90'' width=''120'' time=''00:01:03'' yt:name=''end''/><media:title
+        type=''plain''>Meteorite crash in Russia: Video of meteor explosion that stirred
+        panic in Urals region</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''84''/><yt:uploaded>2013-02-15T05:27:46.000Z</yt:uploaded><yt:uploaderId>UCpwvZwUam-URkxB7g4USKpg</yt:uploaderId><yt:videoid>90Omh7_I8vI</yt:videoid></media:group><gd:rating
+        average=''4.6496854'' max=''5'' min=''1'' numRaters=''60380'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''37657702''/><yt:rating numDislikes=''5288''
+        numLikes=''55092''/></entry><entry gd:etag=''W/&quot;CUEMQ347eCp7I2A9WhBWFE4.&quot;''><id>tag:youtube.com,2008:video:mwbqD3btLiY</id><published>2013-01-21T17:36:59.000Z</published><updated>2013-04-08T15:08:02.000Z</updated><app:control><yt:state
+        name=''restricted'' reasonCode=''limitedSyndication''>Syndication of this
+        video was restricted.</yt:state></app:control><category scheme=''http://schemas.google.com/g/2005#kind''
+        term=''http://gdata.youtube.com/schemas/2007#video''/><category scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''
+        term=''News'' label=''News &amp; Politics''/><title>Inauguration Day 2013:
+        James Taylor Performs ''America the Beautiful''</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/mwbqD3btLiY?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=mwbqD3btLiY&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/mwbqD3btLiY/responses?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/mwbqD3btLiY/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/mwbqD3btLiY/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/mwbqD3btLiY/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/Bi2mrWuNuyYy4gbM6fU18Q?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/mwbqD3btLiY?v=2''/><author><name>ABCNews</name><uri>http://gdata.youtube.com/feeds/api/users/ABCNews</uri><yt:userId>Bi2mrWuNuyYy4gbM6fU18Q</yt:userId></author><yt:accessControl
+>>>>>>> fixing partial update
         action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
         permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
         action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
         permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+<<<<<<< HEAD
         href=''http://gdata.youtube.com/feeds/api/videos/QL_3Qg-SADY/comments?v=2''
         countHint=''3958''/></gd:comments><yt:hd/><media:group><media:category label=''News
         &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
@@ -3851,12 +4291,58 @@ http_interactions:
         rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
         href=''http://gdata.youtube.com/feeds/api/users/pwvZwUam-URkxB7g4USKpg?v=2''/><link
         rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/90Omh7_I8vI?v=2''/><author><name>RussiaToday</name><uri>http://gdata.youtube.com/feeds/api/users/RussiaToday</uri><yt:userId>pwvZwUam-URkxB7g4USKpg</yt:userId></author><yt:accessControl
+=======
+        href=''http://gdata.youtube.com/feeds/api/videos/mwbqD3btLiY/comments?v=2''
+        countHint=''162''/></gd:comments><media:group><media:category label=''News
+        &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
+        url=''http://www.youtube.com/v/mwbqD3btLiY?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''91'' yt:format=''5''/><media:credit role=''uploader''
+        scheme=''urn:youtube'' yt:display=''ABCNews'' yt:type=''partner''>abcnews</media:credit><media:description
+        type=''plain''>Inauguration Day 2013: Musician James Taylor performs during
+        President Obama''s inaugural.</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=mwbqD3btLiY&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/mwbqD3btLiY/default.jpg'' height=''90'' width=''120''
+        time=''00:00:45.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/mwbqD3btLiY/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/mwbqD3btLiY/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/mwbqD3btLiY/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/mwbqD3btLiY/1.jpg''
+        height=''90'' width=''120'' time=''00:00:22.750'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/mwbqD3btLiY/2.jpg'' height=''90'' width=''120''
+        time=''00:00:45.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/mwbqD3btLiY/3.jpg''
+        height=''90'' width=''120'' time=''00:01:08.250'' yt:name=''end''/><media:title
+        type=''plain''>Inauguration Day 2013: James Taylor Performs ''America the
+        Beautiful''</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''91''/><yt:uploaded>2013-01-21T17:36:59.000Z</yt:uploaded><yt:uploaderId>UCBi2mrWuNuyYy4gbM6fU18Q</yt:uploaderId><yt:videoid>mwbqD3btLiY</yt:videoid></media:group><gd:rating
+        average=''4.8756475'' max=''5'' min=''1'' numRaters=''386'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''78838''/><yt:rating numDislikes=''12'' numLikes=''374''/></entry><entry
+        gd:etag=''W/&quot;DEQER347eCp7I2A9WhBVFkQ.&quot;''><id>tag:youtube.com,2008:video:3HJj85K_7MQ</id><published>2011-12-19T20:14:27.000Z</published><updated>2013-04-23T05:51:46.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''News''
+        label=''News &amp; Politics''/><title>Inside North Korea (Part 3/3)</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/3HJj85K_7MQ?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=3HJj85K_7MQ&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/3HJj85K_7MQ/responses?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/3HJj85K_7MQ/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/3HJj85K_7MQ/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/3HJj85K_7MQ/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=3HJj85K_7MQ''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/n8zNIfYAQNdrFRrr8oibKw?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/3HJj85K_7MQ?v=2''/><author><name>vice</name><uri>http://gdata.youtube.com/feeds/api/users/vice</uri><yt:userId>n8zNIfYAQNdrFRrr8oibKw</yt:userId></author><yt:accessControl
+>>>>>>> fixing partial update
         action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
         permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
         action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
         permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+<<<<<<< HEAD
         href=''http://gdata.youtube.com/feeds/api/videos/90Omh7_I8vI/comments?v=2''
         countHint=''38847''/></gd:comments><yt:hd/><media:group><media:category label=''News
         &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
@@ -3905,12 +4391,62 @@ http_interactions:
         rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
         href=''http://gdata.youtube.com/feeds/api/users/pwvZwUam-URkxB7g4USKpg?v=2''/><link
         rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/JMf_KwQ2Xlk?v=2''/><author><name>RussiaToday</name><uri>http://gdata.youtube.com/feeds/api/users/RussiaToday</uri><yt:userId>pwvZwUam-URkxB7g4USKpg</yt:userId></author><yt:accessControl
+=======
+        href=''http://gdata.youtube.com/feeds/api/videos/3HJj85K_7MQ/comments?v=2''
+        countHint=''8335''/></gd:comments><media:group><media:category label=''News
+        &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
+        url=''http://www.youtube.com/v/3HJj85K_7MQ?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''1189'' yt:format=''5''/><media:content url=''rtsp://v4.cache8.c.youtube.com/CkULENy73wIaPAnE7L-S82Ny3BMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''1189''
+        yt:format=''1''/><media:content url=''rtsp://v4.cache8.c.youtube.com/CkULENy73wIaPAnE7L-S82Ny3BMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''1189''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''vice''
+        yt:type=''partner''>vice</media:credit><media:description type=''plain''>The
+        next stop on VICE''s tour of North Korean propaganda was The People''s Library,
+        this place is weird and creepy - just like everywhere else in North Korea.
+        ...</media:description><media:keywords/><media:license type=''text/html''
+        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=3HJj85K_7MQ&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/3HJj85K_7MQ/default.jpg'' height=''90'' width=''120''
+        time=''00:09:54.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/3HJj85K_7MQ/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/3HJj85K_7MQ/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/3HJj85K_7MQ/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/3HJj85K_7MQ/1.jpg''
+        height=''90'' width=''120'' time=''00:04:57.250'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/3HJj85K_7MQ/2.jpg'' height=''90'' width=''120''
+        time=''00:09:54.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/3HJj85K_7MQ/3.jpg''
+        height=''90'' width=''120'' time=''00:14:51.750'' yt:name=''end''/><media:title
+        type=''plain''>Inside North Korea (Part 3/3)</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''1189''/><yt:uploaded>2011-12-19T20:14:27.000Z</yt:uploaded><yt:uploaderId>UCn8zNIfYAQNdrFRrr8oibKw</yt:uploaderId><yt:videoid>3HJj85K_7MQ</yt:videoid></media:group><gd:rating
+        average=''4.916306'' max=''5'' min=''1'' numRaters=''8555'' rel=''http://schemas.google.com/g/2005#overall''/><yt:recorded>2011-12-19</yt:recorded><yt:statistics
+        favoriteCount=''0'' viewCount=''895982''/><yt:rating numDislikes=''179'' numLikes=''8376''/></entry><entry
+        gd:etag=''W/&quot;AkUNQn47eCp7I2A9WhBVF04.&quot;''><id>tag:youtube.com,2008:video:NrzXLYA_e6E</id><published>2008-10-01T20:28:48.000Z</published><updated>2013-04-23T17:31:33.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''News''
+        label=''News &amp; Politics''/><title>Sarah Mania! Sarah Palin''s Greatest
+        Hits</title><content type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/NrzXLYA_e6E?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=NrzXLYA_e6E&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/NrzXLYA_e6E/responses?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/NrzXLYA_e6E/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/NrzXLYA_e6E/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/NrzXLYA_e6E/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=NrzXLYA_e6E''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/TcCX_XY4l-W2ba5IxIRhsg?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/NrzXLYA_e6E?v=2''/><author><name>tpmtv</name><uri>http://gdata.youtube.com/feeds/api/users/tpmtv</uri><yt:userId>TcCX_XY4l-W2ba5IxIRhsg</yt:userId></author><yt:accessControl
+>>>>>>> fixing partial update
         action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
-        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''allowed''/><yt:accessControl
         action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
         permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+<<<<<<< HEAD
         href=''http://gdata.youtube.com/feeds/api/videos/JMf_KwQ2Xlk/comments?v=2''
         countHint=''1275''/></gd:comments><yt:hd/><media:group><media:category label=''News
         &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
@@ -3955,12 +4491,61 @@ http_interactions:
         rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
         href=''http://gdata.youtube.com/feeds/api/users/n8zNIfYAQNdrFRrr8oibKw?v=2''/><link
         rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/3HJj85K_7MQ?v=2''/><author><name>vice</name><uri>http://gdata.youtube.com/feeds/api/users/vice</uri><yt:userId>n8zNIfYAQNdrFRrr8oibKw</yt:userId></author><yt:accessControl
+=======
+        href=''http://gdata.youtube.com/feeds/api/videos/NrzXLYA_e6E/comments?v=2''
+        countHint=''238283''/></gd:comments><media:group><media:category label=''News
+        &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
+        url=''http://www.youtube.com/v/NrzXLYA_e6E?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''346'' yt:format=''5''/><media:content url=''rtsp://v5.cache4.c.youtube.com/CkULENy73wIaPAmhez-ALde8NhMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''346''
+        yt:format=''1''/><media:content url=''rtsp://v5.cache4.c.youtube.com/CkULENy73wIaPAmhez-ALde8NhMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''346''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''tpmtv''
+        yt:type=''partner''>tpmtv</media:credit><media:description type=''plain''>All
+        the best moments of Sarah Palin interviews, starring Sarah Palin, Charlies
+        Gibson, Katie Couric, Sean Hannity, and special guest appearance from John
+        McC...</media:description><media:keywords/><media:license type=''text/html''
+        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=NrzXLYA_e6E&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/NrzXLYA_e6E/default.jpg'' height=''90'' width=''120''
+        time=''00:02:53'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/NrzXLYA_e6E/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/NrzXLYA_e6E/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/NrzXLYA_e6E/1.jpg''
+        height=''90'' width=''120'' time=''00:01:26.500'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/NrzXLYA_e6E/2.jpg'' height=''90'' width=''120''
+        time=''00:02:53'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/NrzXLYA_e6E/3.jpg''
+        height=''90'' width=''120'' time=''00:04:19.500'' yt:name=''end''/><media:title
+        type=''plain''>Sarah Mania! Sarah Palin''s Greatest Hits</media:title><yt:duration
+        seconds=''346''/><yt:uploaded>2008-10-01T20:28:48.000Z</yt:uploaded><yt:uploaderId>UCTcCX_XY4l-W2ba5IxIRhsg</yt:uploaderId><yt:videoid>NrzXLYA_e6E</yt:videoid></media:group><gd:rating
+        average=''4.7133007'' max=''5'' min=''1'' numRaters=''22773'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''5847224''/><yt:rating numDislikes=''1632''
+        numLikes=''21141''/></entry><entry gd:etag=''W/&quot;DU8FQ347eCp7I2A9WhBVFks.&quot;''><id>tag:youtube.com,2008:video:kYqrflGpTRE</id><published>2012-05-22T17:07:55.000Z</published><updated>2013-04-22T21:56:52.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''News''
+        label=''News &amp; Politics''/><title>Conflict Minerals, Rebels and Child
+        Soldiers in Congo</title><content type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/kYqrflGpTRE?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=kYqrflGpTRE&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/kYqrflGpTRE/responses?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/kYqrflGpTRE/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/kYqrflGpTRE/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/kYqrflGpTRE/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=kYqrflGpTRE''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/n8zNIfYAQNdrFRrr8oibKw?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/kYqrflGpTRE?v=2''/><author><name>vice</name><uri>http://gdata.youtube.com/feeds/api/users/vice</uri><yt:userId>n8zNIfYAQNdrFRrr8oibKw</yt:userId></author><yt:accessControl
+>>>>>>> fixing partial update
         action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
         permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
         action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
         permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+<<<<<<< HEAD
         href=''http://gdata.youtube.com/feeds/api/videos/3HJj85K_7MQ/comments?v=2''
         countHint=''8173''/></gd:comments><media:group><media:category label=''News
         &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
@@ -4009,12 +4594,61 @@ http_interactions:
         rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
         href=''http://gdata.youtube.com/feeds/api/users/n8zNIfYAQNdrFRrr8oibKw?v=2''/><link
         rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/ZRuSS0iiFyo?v=2''/><author><name>vice</name><uri>http://gdata.youtube.com/feeds/api/users/vice</uri><yt:userId>n8zNIfYAQNdrFRrr8oibKw</yt:userId></author><yt:accessControl
+=======
+        href=''http://gdata.youtube.com/feeds/api/videos/kYqrflGpTRE/comments?v=2''
+        countHint=''2569''/></gd:comments><yt:hd/><media:group><media:category label=''News
+        &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
+        url=''http://www.youtube.com/v/kYqrflGpTRE?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''2282'' yt:format=''5''/><media:content url=''rtsp://v1.cache1.c.youtube.com/CkULENy73wIaPAkRTalRfquKkRMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''2282''
+        yt:format=''1''/><media:content url=''rtsp://v1.cache1.c.youtube.com/CkULENy73wIaPAkRTalRfquKkRMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''2282''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''vice''
+        yt:type=''partner''>vice</media:credit><media:description type=''plain''>Warlords,
+        soldiers, and child laborers all toil over a mineral you''ve never even heard
+        of. Coltan is a conflict mineral in nearly every cell phone, laptop, a...</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=kYqrflGpTRE&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/kYqrflGpTRE/default.jpg'' height=''90'' width=''120''
+        time=''00:19:01'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/kYqrflGpTRE/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/kYqrflGpTRE/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/kYqrflGpTRE/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/kYqrflGpTRE/1.jpg''
+        height=''90'' width=''120'' time=''00:09:30.500'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/kYqrflGpTRE/2.jpg'' height=''90'' width=''120''
+        time=''00:19:01'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/kYqrflGpTRE/3.jpg''
+        height=''90'' width=''120'' time=''00:28:31.500'' yt:name=''end''/><media:title
+        type=''plain''>Conflict Minerals, Rebels and Child Soldiers in Congo</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''2282''/><yt:uploaded>2012-05-22T17:07:55.000Z</yt:uploaded><yt:uploaderId>UCn8zNIfYAQNdrFRrr8oibKw</yt:uploaderId><yt:videoid>kYqrflGpTRE</yt:videoid></media:group><gd:rating
+        average=''4.914169'' max=''5'' min=''1'' numRaters=''5138'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''517516''/><yt:rating numDislikes=''110'' numLikes=''5028''/></entry><entry
+        gd:etag=''W/&quot;DEAHSH47eCp7I2A9WhBVFkU.&quot;''><id>tag:youtube.com,2008:video:c6V_zUGVlTk</id><published>2013-03-28T15:36:18.000Z</published><updated>2013-04-23T03:12:19.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''News''
+        label=''News &amp; Politics''/><title>Key and Peele: Can You Be Too Nice at
+        the Office?</title><content type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/c6V_zUGVlTk?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=c6V_zUGVlTk&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/c6V_zUGVlTk/responses?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/c6V_zUGVlTk/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/c6V_zUGVlTk/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/c6V_zUGVlTk/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=c6V_zUGVlTk''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/qnbDFdCpuN8CMEg0VuEBqA?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/c6V_zUGVlTk?v=2''/><author><name>TheNewYorkTimes</name><uri>http://gdata.youtube.com/feeds/api/users/TheNewYorkTimes</uri><yt:userId>qnbDFdCpuN8CMEg0VuEBqA</yt:userId></author><yt:accessControl
+>>>>>>> fixing partial update
         action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
         permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
         action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
         permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+<<<<<<< HEAD
         href=''http://gdata.youtube.com/feeds/api/videos/ZRuSS0iiFyo/comments?v=2''
         countHint=''17270''/></gd:comments><yt:hd/><media:group><media:category label=''News
         &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
@@ -4061,12 +4695,61 @@ http_interactions:
         rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
         href=''http://gdata.youtube.com/feeds/api/users/vhsiQGy_zcNCiSbeXEjhLg?v=2''/><link
         rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/zDZFcDGpL4U?v=2''/><author><name>theRSAorg</name><uri>http://gdata.youtube.com/feeds/api/users/theRSAorg</uri><yt:userId>vhsiQGy_zcNCiSbeXEjhLg</yt:userId></author><yt:accessControl
+=======
+        href=''http://gdata.youtube.com/feeds/api/videos/c6V_zUGVlTk/comments?v=2''
+        countHint=''105''/></gd:comments><yt:hd/><media:group><media:category label=''News
+        &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
+        url=''http://www.youtube.com/v/c6V_zUGVlTk?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''171'' yt:format=''5''/><media:content url=''rtsp://v6.cache2.c.youtube.com/CkULENy73wIaPAk5lZVBzX-lcxMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''171''
+        yt:format=''1''/><media:content url=''rtsp://v6.cache2.c.youtube.com/CkULENy73wIaPAk5lZVBzX-lcxMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''171''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''TheNewYorkTimes''
+        yt:type=''partner''>thenewyorktimes</media:credit><media:description type=''plain''>To
+        illustrate the work of Adam Grant and his theories on the benefits of helping
+        others, we asked the comedy duo Keegan-Michael Key and Jordan Peele to demon...</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=c6V_zUGVlTk&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/c6V_zUGVlTk/default.jpg'' height=''90'' width=''120''
+        time=''00:01:25.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/c6V_zUGVlTk/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/c6V_zUGVlTk/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/c6V_zUGVlTk/1.jpg''
+        height=''90'' width=''120'' time=''00:00:42.750'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/c6V_zUGVlTk/2.jpg'' height=''90'' width=''120''
+        time=''00:01:25.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/c6V_zUGVlTk/3.jpg''
+        height=''90'' width=''120'' time=''00:02:08.250'' yt:name=''end''/><media:title
+        type=''plain''>Key and Peele: Can You Be Too Nice at the Office?</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''171''/><yt:uploaded>2013-03-28T15:36:18.000Z</yt:uploaded><yt:uploaderId>UCqnbDFdCpuN8CMEg0VuEBqA</yt:uploaderId><yt:videoid>c6V_zUGVlTk</yt:videoid></media:group><gd:rating
+        average=''4.8761063'' max=''5'' min=''1'' numRaters=''1130'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''164510''/><yt:rating numDislikes=''35'' numLikes=''1095''/></entry><entry
+        gd:etag=''W/&quot;A04FRn47eCp7I2A9WhBVF04.&quot;''><id>tag:youtube.com,2008:video:ZRuSS0iiFyo</id><published>2012-06-13T17:30:46.000Z</published><updated>2013-04-23T17:58:37.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''News''
+        label=''News &amp; Politics''/><title>The Cannibal Warlords of Liberia (Full
+        Length Documentary)</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/ZRuSS0iiFyo?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=ZRuSS0iiFyo&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/ZRuSS0iiFyo/responses?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/ZRuSS0iiFyo/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/ZRuSS0iiFyo/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/ZRuSS0iiFyo/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=ZRuSS0iiFyo''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/n8zNIfYAQNdrFRrr8oibKw?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/ZRuSS0iiFyo?v=2''/><author><name>vice</name><uri>http://gdata.youtube.com/feeds/api/users/vice</uri><yt:userId>n8zNIfYAQNdrFRrr8oibKw</yt:userId></author><yt:accessControl
+>>>>>>> fixing partial update
         action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
         permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
         action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
         permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+<<<<<<< HEAD
         href=''http://gdata.youtube.com/feeds/api/videos/zDZFcDGpL4U/comments?v=2''
         countHint=''7834''/></gd:comments><yt:hd/><media:group><media:category label=''News
         &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
@@ -4114,12 +4797,62 @@ http_interactions:
         rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
         href=''http://gdata.youtube.com/feeds/api/users/vhsiQGy_zcNCiSbeXEjhLg?v=2''/><link
         rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/A3oIiH7BLmg?v=2''/><author><name>theRSAorg</name><uri>http://gdata.youtube.com/feeds/api/users/theRSAorg</uri><yt:userId>vhsiQGy_zcNCiSbeXEjhLg</yt:userId></author><yt:accessControl
+=======
+        href=''http://gdata.youtube.com/feeds/api/videos/ZRuSS0iiFyo/comments?v=2''
+        countHint=''17568''/></gd:comments><yt:hd/><media:group><media:category label=''News
+        &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
+        url=''http://www.youtube.com/v/ZRuSS0iiFyo?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''3211'' yt:format=''5''/><media:content url=''rtsp://v4.cache4.c.youtube.com/CkULENy73wIaPAkqF6JIS5IbZRMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''3211''
+        yt:format=''1''/><media:content url=''rtsp://v4.cache4.c.youtube.com/CkULENy73wIaPAkqF6JIS5IbZRMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''3211''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''vice''
+        yt:type=''partner''>vice</media:credit><media:description type=''plain''>VICE
+        travels to West Africa to rummage through the messy remains of a country ravaged
+        by 14 years of civil war. Despite the United Nation''s eventual interven...</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=ZRuSS0iiFyo&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/ZRuSS0iiFyo/default.jpg'' height=''90'' width=''120''
+        time=''00:26:45.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/ZRuSS0iiFyo/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/ZRuSS0iiFyo/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/ZRuSS0iiFyo/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/ZRuSS0iiFyo/1.jpg''
+        height=''90'' width=''120'' time=''00:13:22.750'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/ZRuSS0iiFyo/2.jpg'' height=''90'' width=''120''
+        time=''00:26:45.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/ZRuSS0iiFyo/3.jpg''
+        height=''90'' width=''120'' time=''00:40:08.250'' yt:name=''end''/><media:title
+        type=''plain''>The Cannibal Warlords of Liberia (Full Length Documentary)</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''3211''/><yt:uploaded>2012-06-13T17:30:46.000Z</yt:uploaded><yt:uploaderId>UCn8zNIfYAQNdrFRrr8oibKw</yt:uploaderId><yt:videoid>ZRuSS0iiFyo</yt:videoid></media:group><gd:rating
+        average=''4.887131'' max=''5'' min=''1'' numRaters=''25915'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''2698972''/><yt:rating numDislikes=''731''
+        numLikes=''25184''/></entry><entry gd:etag=''W/&quot;AkINQn47eCp7I2A9WhBVFkQ.&quot;''><id>tag:youtube.com,2008:video:LpIyaIHsJbc</id><published>2012-09-26T15:58:14.000Z</published><updated>2013-04-23T06:29:53.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''News''
+        label=''News &amp; Politics''/><title>The Mexican Mormon War (Drug Cartels
+        vs. Mormons Full Length)</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/LpIyaIHsJbc?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=LpIyaIHsJbc&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/LpIyaIHsJbc/responses?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/LpIyaIHsJbc/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/LpIyaIHsJbc/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/LpIyaIHsJbc/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=LpIyaIHsJbc''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/n8zNIfYAQNdrFRrr8oibKw?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/LpIyaIHsJbc?v=2''/><author><name>vice</name><uri>http://gdata.youtube.com/feeds/api/users/vice</uri><yt:userId>n8zNIfYAQNdrFRrr8oibKw</yt:userId></author><yt:accessControl
+>>>>>>> fixing partial update
         action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
         permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
         action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
         permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+<<<<<<< HEAD
         href=''http://gdata.youtube.com/feeds/api/videos/A3oIiH7BLmg/comments?v=2''
         countHint=''2838''/></gd:comments><media:group><media:category label=''News
         &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
@@ -4166,12 +4899,62 @@ http_interactions:
         rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
         href=''http://gdata.youtube.com/feeds/api/users/qnbDFdCpuN8CMEg0VuEBqA?v=2''/><link
         rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/c6V_zUGVlTk?v=2''/><author><name>TheNewYorkTimes</name><uri>http://gdata.youtube.com/feeds/api/users/TheNewYorkTimes</uri><yt:userId>qnbDFdCpuN8CMEg0VuEBqA</yt:userId></author><yt:accessControl
+=======
+        href=''http://gdata.youtube.com/feeds/api/videos/LpIyaIHsJbc/comments?v=2''
+        countHint=''6924''/></gd:comments><yt:hd/><media:group><media:category label=''News
+        &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
+        url=''http://www.youtube.com/v/LpIyaIHsJbc?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''2467'' yt:format=''5''/><media:content url=''rtsp://v4.cache3.c.youtube.com/CkULENy73wIaPAm3JeyBaDKSLhMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''2467''
+        yt:format=''1''/><media:content url=''rtsp://v4.cache3.c.youtube.com/CkULENy73wIaPAm3JeyBaDKSLhMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''2467''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''vice''
+        yt:type=''partner''>vice</media:credit><media:description type=''plain''>The
+        cartels of Juarez, Mexico, are at war with a group of Mormons, some of whom
+        are related to Mitt Romney. We went there to document the conflict, meet Romn...</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=LpIyaIHsJbc&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/LpIyaIHsJbc/default.jpg'' height=''90'' width=''120''
+        time=''00:20:33.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/LpIyaIHsJbc/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/LpIyaIHsJbc/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/LpIyaIHsJbc/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/LpIyaIHsJbc/1.jpg''
+        height=''90'' width=''120'' time=''00:10:16.750'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/LpIyaIHsJbc/2.jpg'' height=''90'' width=''120''
+        time=''00:20:33.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/LpIyaIHsJbc/3.jpg''
+        height=''90'' width=''120'' time=''00:30:50.250'' yt:name=''end''/><media:title
+        type=''plain''>The Mexican Mormon War (Drug Cartels vs. Mormons Full Length)</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''2467''/><yt:uploaded>2012-09-26T15:58:14.000Z</yt:uploaded><yt:uploaderId>UCn8zNIfYAQNdrFRrr8oibKw</yt:uploaderId><yt:videoid>LpIyaIHsJbc</yt:videoid></media:group><gd:rating
+        average=''4.8199415'' max=''5'' min=''1'' numRaters=''9558'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''854319''/><yt:rating numDislikes=''430'' numLikes=''9128''/></entry><entry
+        gd:etag=''W/&quot;D04BSH47eCp7I2A9WhBVE0Q.&quot;''><id>tag:youtube.com,2008:video:w5rb833WnOQ</id><published>2013-01-21T18:39:29.000Z</published><updated>2013-04-19T18:25:59.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''News''
+        label=''News &amp; Politics''/><title>Brooklyn Tabernacle Choir Sings at the
+        2013 Presidential Inauguration</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/w5rb833WnOQ?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=w5rb833WnOQ&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/w5rb833WnOQ/responses?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/w5rb833WnOQ/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/w5rb833WnOQ/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/w5rb833WnOQ/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=w5rb833WnOQ''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/qnbDFdCpuN8CMEg0VuEBqA?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/w5rb833WnOQ?v=2''/><author><name>TheNewYorkTimes</name><uri>http://gdata.youtube.com/feeds/api/users/TheNewYorkTimes</uri><yt:userId>qnbDFdCpuN8CMEg0VuEBqA</yt:userId></author><yt:accessControl
+>>>>>>> fixing partial update
         action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
         permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
         action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
         permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+<<<<<<< HEAD
         href=''http://gdata.youtube.com/feeds/api/videos/c6V_zUGVlTk/comments?v=2''
         countHint=''99''/></gd:comments><yt:hd/><media:group><media:category label=''News
         &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
@@ -4217,12 +5000,63 @@ http_interactions:
         rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
         href=''http://gdata.youtube.com/feeds/api/users/NYrK4tc5i1-eL8TXesH2pg?v=2''/><link
         rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/DcJFdCmN98s?v=2''/><author><name>schmoyoho</name><uri>http://gdata.youtube.com/feeds/api/users/schmoyoho</uri><yt:userId>NYrK4tc5i1-eL8TXesH2pg</yt:userId></author><yt:accessControl
+=======
+        href=''http://gdata.youtube.com/feeds/api/videos/w5rb833WnOQ/comments?v=2''
+        countHint=''243''/></gd:comments><yt:hd/><media:group><media:category label=''News
+        &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
+        url=''http://www.youtube.com/v/w5rb833WnOQ?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''301'' yt:format=''5''/><media:content url=''rtsp://v8.cache8.c.youtube.com/CkULENy73wIaPAnknNZ989uawxMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''301''
+        yt:format=''1''/><media:content url=''rtsp://v8.cache8.c.youtube.com/CkULENy73wIaPAnknNZ989uawxMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''301''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''TheNewYorkTimes''
+        yt:type=''partner''>thenewyorktimes</media:credit><media:description type=''plain''>The
+        Brooklyn Tabernacle Choir performs "Battle Hymn of the Republic" at President
+        Obama''s 2013 inauguration. Watch more videos at http://nytimes.com/video
+        Fo...</media:description><media:keywords/><media:license type=''text/html''
+        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=w5rb833WnOQ&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/w5rb833WnOQ/default.jpg'' height=''90'' width=''120''
+        time=''00:02:30.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/w5rb833WnOQ/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/w5rb833WnOQ/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/w5rb833WnOQ/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/w5rb833WnOQ/1.jpg''
+        height=''90'' width=''120'' time=''00:01:15.250'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/w5rb833WnOQ/2.jpg'' height=''90'' width=''120''
+        time=''00:02:30.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/w5rb833WnOQ/3.jpg''
+        height=''90'' width=''120'' time=''00:03:45.750'' yt:name=''end''/><media:title
+        type=''plain''>Brooklyn Tabernacle Choir Sings at the 2013 Presidential Inauguration</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''301''/><yt:uploaded>2013-01-21T18:39:29.000Z</yt:uploaded><yt:uploaderId>UCqnbDFdCpuN8CMEg0VuEBqA</yt:uploaderId><yt:videoid>w5rb833WnOQ</yt:videoid></media:group><gd:rating
+        average=''4.899736'' max=''5'' min=''1'' numRaters=''758'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''92380''/><yt:rating numDislikes=''19'' numLikes=''739''/></entry><entry
+        gd:etag=''W/&quot;CE4MRX47eCp7I2A9WhBVFks.&quot;''><id>tag:youtube.com,2008:video:5hQLrbfxeiQ</id><published>2013-04-02T15:20:09.000Z</published><updated>2013-04-22T20:36:24.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''News''
+        label=''News &amp; Politics''/><title>Ground Zero: Mali - Insurgents vs. The
+        Malian Army (Part 1)</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/5hQLrbfxeiQ?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=5hQLrbfxeiQ&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/5hQLrbfxeiQ/responses?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/5hQLrbfxeiQ/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/5hQLrbfxeiQ/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/5hQLrbfxeiQ/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=5hQLrbfxeiQ''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/n8zNIfYAQNdrFRrr8oibKw?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/5hQLrbfxeiQ?v=2''/><author><name>vice</name><uri>http://gdata.youtube.com/feeds/api/users/vice</uri><yt:userId>n8zNIfYAQNdrFRrr8oibKw</yt:userId></author><yt:accessControl
+>>>>>>> fixing partial update
         action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
         permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
         action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
         permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+<<<<<<< HEAD
         href=''http://gdata.youtube.com/feeds/api/videos/DcJFdCmN98s/comments?v=2''
         countHint=''32947''/></gd:comments><yt:hd/><media:group><media:category label=''News
         &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
@@ -4270,12 +5104,62 @@ http_interactions:
         rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
         href=''http://gdata.youtube.com/feeds/api/users/n8zNIfYAQNdrFRrr8oibKw?v=2''/><link
         rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/kYqrflGpTRE?v=2''/><author><name>vice</name><uri>http://gdata.youtube.com/feeds/api/users/vice</uri><yt:userId>n8zNIfYAQNdrFRrr8oibKw</yt:userId></author><yt:accessControl
+=======
+        href=''http://gdata.youtube.com/feeds/api/videos/5hQLrbfxeiQ/comments?v=2''
+        countHint=''1918''/></gd:comments><yt:hd/><media:group><media:category label=''News
+        &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
+        url=''http://www.youtube.com/v/5hQLrbfxeiQ?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''588'' yt:format=''5''/><media:content url=''rtsp://v5.cache1.c.youtube.com/CkULENy73wIaPAkkevG3rQsU5hMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''588''
+        yt:format=''1''/><media:content url=''rtsp://v5.cache1.c.youtube.com/CkULENy73wIaPAkkevG3rQsU5hMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''588''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''vice''
+        yt:type=''partner''>vice</media:credit><media:description type=''plain''>Ground
+        Zero: Mali was shot in Gao, Mali, on February 21, 2013. It''s basically the
+        first legitimate combat footage to come out of the war there. Normally the
+        ...</media:description><media:keywords/><media:license type=''text/html''
+        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=5hQLrbfxeiQ&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/5hQLrbfxeiQ/default.jpg'' height=''90'' width=''120''
+        time=''00:04:54'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/5hQLrbfxeiQ/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/5hQLrbfxeiQ/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/5hQLrbfxeiQ/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/5hQLrbfxeiQ/1.jpg''
+        height=''90'' width=''120'' time=''00:02:27'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/5hQLrbfxeiQ/2.jpg'' height=''90'' width=''120''
+        time=''00:04:54'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/5hQLrbfxeiQ/3.jpg''
+        height=''90'' width=''120'' time=''00:07:21'' yt:name=''end''/><media:title
+        type=''plain''>Ground Zero: Mali - Insurgents vs. The Malian Army (Part 1)</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''588''/><yt:uploaded>2013-04-02T15:20:09.000Z</yt:uploaded><yt:uploaderId>UCn8zNIfYAQNdrFRrr8oibKw</yt:uploaderId><yt:videoid>5hQLrbfxeiQ</yt:videoid></media:group><gd:rating
+        average=''4.9522862'' max=''5'' min=''1'' numRaters=''2012'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''120726''/><yt:rating numDislikes=''24'' numLikes=''1988''/></entry><entry
+        gd:etag=''W/&quot;CkQFRX47eCp7I2A9WhBVF0k.&quot;''><id>tag:youtube.com,2008:video:zDZFcDGpL4U</id><published>2010-10-14T10:56:32.000Z</published><updated>2013-04-23T18:05:14.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''News''
+        label=''News &amp; Politics''/><title>RSA Animate - Changing Education Paradigms</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/zDZFcDGpL4U?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=zDZFcDGpL4U&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/zDZFcDGpL4U/responses?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/zDZFcDGpL4U/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/zDZFcDGpL4U/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/zDZFcDGpL4U/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=zDZFcDGpL4U''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/vhsiQGy_zcNCiSbeXEjhLg?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/zDZFcDGpL4U?v=2''/><author><name>theRSAorg</name><uri>http://gdata.youtube.com/feeds/api/users/theRSAorg</uri><yt:userId>vhsiQGy_zcNCiSbeXEjhLg</yt:userId></author><yt:accessControl
+>>>>>>> fixing partial update
         action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
         permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
         action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
         permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+<<<<<<< HEAD
         href=''http://gdata.youtube.com/feeds/api/videos/kYqrflGpTRE/comments?v=2''
         countHint=''2525''/></gd:comments><yt:hd/><media:group><media:category label=''News
         &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
@@ -4322,12 +5206,62 @@ http_interactions:
         rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
         href=''http://gdata.youtube.com/feeds/api/users/AuUUnT6oDeKwE6v1NGQxug?v=2''/><link
         rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/PdxPCeWw75k?v=2''/><author><name>TEDtalksDirector</name><uri>http://gdata.youtube.com/feeds/api/users/TEDtalksDirector</uri><yt:userId>AuUUnT6oDeKwE6v1NGQxug</yt:userId></author><yt:accessControl
+=======
+        href=''http://gdata.youtube.com/feeds/api/videos/zDZFcDGpL4U/comments?v=2''
+        countHint=''7866''/></gd:comments><yt:hd/><media:group><media:category label=''News
+        &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
+        url=''http://www.youtube.com/v/zDZFcDGpL4U?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''701'' yt:format=''5''/><media:content url=''rtsp://v8.cache7.c.youtube.com/CkULENy73wIaPAmFL6kxcEU2zBMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''701''
+        yt:format=''1''/><media:content url=''rtsp://v8.cache7.c.youtube.com/CkULENy73wIaPAmFL6kxcEU2zBMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''701''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''theRSAorg''
+        yt:type=''partner''>thersaorg</media:credit><media:description type=''plain''>This
+        RSA Animate was adapted from a talk given at the RSA by Sir Ken Robinson,
+        world-renowned education and creativity expert and recipient of the RSA''s
+        Benj...</media:description><media:keywords/><media:license type=''text/html''
+        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=zDZFcDGpL4U&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/zDZFcDGpL4U/default.jpg'' height=''90'' width=''120''
+        time=''00:05:50.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/zDZFcDGpL4U/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/zDZFcDGpL4U/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/zDZFcDGpL4U/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/zDZFcDGpL4U/1.jpg''
+        height=''90'' width=''120'' time=''00:02:55.250'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/zDZFcDGpL4U/2.jpg'' height=''90'' width=''120''
+        time=''00:05:50.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/zDZFcDGpL4U/3.jpg''
+        height=''90'' width=''120'' time=''00:08:45.750'' yt:name=''end''/><media:title
+        type=''plain''>RSA Animate - Changing Education Paradigms</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''701''/><yt:uploaded>2010-10-14T10:56:32.000Z</yt:uploaded><yt:uploaderId>UCvhsiQGy_zcNCiSbeXEjhLg</yt:uploaderId><yt:videoid>zDZFcDGpL4U</yt:videoid></media:group><gd:rating
+        average=''4.9645996'' max=''5'' min=''1'' numRaters=''74519'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''9970487''/><yt:rating numDislikes=''659''
+        numLikes=''73860''/></entry><entry gd:etag=''W/&quot;CkcCQH47eCp7I2A9WhBVFE4.&quot;''><id>tag:youtube.com,2008:video:A3oIiH7BLmg</id><published>2010-05-24T10:44:37.000Z</published><updated>2013-04-20T03:54:21.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''News''
+        label=''News &amp; Politics''/><title>RSA Animate - The Secret Powers of Time</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/A3oIiH7BLmg?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=A3oIiH7BLmg&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/A3oIiH7BLmg/responses?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/A3oIiH7BLmg/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/A3oIiH7BLmg/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/A3oIiH7BLmg/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=A3oIiH7BLmg''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/vhsiQGy_zcNCiSbeXEjhLg?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/A3oIiH7BLmg?v=2''/><author><name>theRSAorg</name><uri>http://gdata.youtube.com/feeds/api/users/theRSAorg</uri><yt:userId>vhsiQGy_zcNCiSbeXEjhLg</yt:userId></author><yt:accessControl
+>>>>>>> fixing partial update
         action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
         permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
         action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
         permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+<<<<<<< HEAD
         href=''http://gdata.youtube.com/feeds/api/videos/PdxPCeWw75k/comments?v=2''
         countHint=''2381''/></gd:comments><yt:hd/><media:group><media:category label=''News
         &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
@@ -4376,11 +5310,62 @@ http_interactions:
         href=''http://gdata.youtube.com/feeds/api/users/dn86UYrf54lXfVli9CB6Aw?v=2''/><link
         rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/pBK2rfZt32g?v=2''/><author><name>BarackObamadotcom</name><uri>http://gdata.youtube.com/feeds/api/users/BarackObamadotcom</uri><yt:userId>dn86UYrf54lXfVli9CB6Aw</yt:userId></author><yt:accessControl
         action=''comment'' permission=''moderated''/><yt:accessControl action=''commentVote''
+=======
+        href=''http://gdata.youtube.com/feeds/api/videos/A3oIiH7BLmg/comments?v=2''
+        countHint=''2843''/></gd:comments><media:group><media:category label=''News
+        &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
+        url=''http://www.youtube.com/v/A3oIiH7BLmg?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''609'' yt:format=''5''/><media:content url=''rtsp://v5.cache4.c.youtube.com/CkULENy73wIaPAloLsF-iAh6AxMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''609''
+        yt:format=''1''/><media:content url=''rtsp://v5.cache4.c.youtube.com/CkULENy73wIaPAloLsF-iAh6AxMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''609''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''theRSAorg''
+        yt:type=''partner''>thersaorg</media:credit><media:description type=''plain''>Renowned
+        psychologist Professor Philip Zimbardo explains how our individual perspectives
+        of time affect our work, health and well-being. Watch the full lectu...</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=A3oIiH7BLmg&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/A3oIiH7BLmg/default.jpg'' height=''90'' width=''120''
+        time=''00:05:04.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/A3oIiH7BLmg/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/A3oIiH7BLmg/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/A3oIiH7BLmg/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/A3oIiH7BLmg/1.jpg''
+        height=''90'' width=''120'' time=''00:02:32.250'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/A3oIiH7BLmg/2.jpg'' height=''90'' width=''120''
+        time=''00:05:04.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/A3oIiH7BLmg/3.jpg''
+        height=''90'' width=''120'' time=''00:07:36.750'' yt:name=''end''/><media:title
+        type=''plain''>RSA Animate - The Secret Powers of Time</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''609''/><yt:uploaded>2010-05-24T10:44:37.000Z</yt:uploaded><yt:uploaderId>UCvhsiQGy_zcNCiSbeXEjhLg</yt:uploaderId><yt:videoid>A3oIiH7BLmg</yt:videoid></media:group><gd:rating
+        average=''4.944271'' max=''5'' min=''1'' numRaters=''24386'' rel=''http://schemas.google.com/g/2005#overall''/><yt:recorded>2010-05-24</yt:recorded><yt:statistics
+        favoriteCount=''0'' viewCount=''3136475''/><yt:rating numDislikes=''340''
+        numLikes=''24046''/></entry><entry gd:etag=''W/&quot;CkcHRX47eCp7I2A9WhBVF0k.&quot;''><id>tag:youtube.com,2008:video:vJR1525RLf8</id><published>2013-04-12T22:36:25.000Z</published><updated>2013-04-23T18:00:34.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''News''
+        label=''News &amp; Politics''/><title>Jenna Marbles Answers Questions From
+        The New York Times</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/vJR1525RLf8?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=vJR1525RLf8&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/vJR1525RLf8/responses?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/vJR1525RLf8/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/vJR1525RLf8/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/vJR1525RLf8/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=vJR1525RLf8''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/qnbDFdCpuN8CMEg0VuEBqA?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/vJR1525RLf8?v=2''/><author><name>TheNewYorkTimes</name><uri>http://gdata.youtube.com/feeds/api/users/TheNewYorkTimes</uri><yt:userId>qnbDFdCpuN8CMEg0VuEBqA</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+>>>>>>> fixing partial update
         permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
         action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
         permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+<<<<<<< HEAD
         href=''http://gdata.youtube.com/feeds/api/videos/pBK2rfZt32g/comments?v=2''
         countHint=''0''/></gd:comments><yt:hd/><media:group><media:category label=''News
         &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
@@ -4426,12 +5411,61 @@ http_interactions:
         rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
         href=''http://gdata.youtube.com/feeds/api/users/n8zNIfYAQNdrFRrr8oibKw?v=2''/><link
         rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/zQBo79O4Uhg?v=2''/><author><name>vice</name><uri>http://gdata.youtube.com/feeds/api/users/vice</uri><yt:userId>n8zNIfYAQNdrFRrr8oibKw</yt:userId></author><yt:accessControl
+=======
+        href=''http://gdata.youtube.com/feeds/api/videos/vJR1525RLf8/comments?v=2''
+        countHint=''301''/></gd:comments><yt:hd/><media:group><media:category label=''News
+        &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
+        url=''http://www.youtube.com/v/vJR1525RLf8?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''165'' yt:format=''5''/><media:content url=''rtsp://v6.cache7.c.youtube.com/CkULENy73wIaPAn_LVFu53WUvBMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''165''
+        yt:format=''1''/><media:content url=''rtsp://v6.cache7.c.youtube.com/CkULENy73wIaPAn_LVFu53WUvBMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''165''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''TheNewYorkTimes''
+        yt:type=''partner''>thenewyorktimes</media:credit><media:description type=''plain''>After
+        The New York Times sat down with Jenna Marbles, she made a video answering
+        some questions from the newspaper about her work, her puppies, and her "magi...</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=vJR1525RLf8&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/vJR1525RLf8/default.jpg'' height=''90'' width=''120''
+        time=''00:01:22.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/vJR1525RLf8/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/vJR1525RLf8/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/vJR1525RLf8/1.jpg''
+        height=''90'' width=''120'' time=''00:00:41.250'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/vJR1525RLf8/2.jpg'' height=''90'' width=''120''
+        time=''00:01:22.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/vJR1525RLf8/3.jpg''
+        height=''90'' width=''120'' time=''00:02:03.750'' yt:name=''end''/><media:title
+        type=''plain''>Jenna Marbles Answers Questions From The New York Times</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''165''/><yt:uploaded>2013-04-12T22:36:25.000Z</yt:uploaded><yt:uploaderId>UCqnbDFdCpuN8CMEg0VuEBqA</yt:uploaderId><yt:videoid>vJR1525RLf8</yt:videoid></media:group><gd:rating
+        average=''4.803279'' max=''5'' min=''1'' numRaters=''1220'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''179671''/><yt:rating numDislikes=''60'' numLikes=''1160''/></entry><entry
+        gd:etag=''W/&quot;CE8ARH47eCp7I2A9WhBWEE0.&quot;''><id>tag:youtube.com,2008:video:Xj0WvEI_x1I</id><published>2013-01-13T14:53:13.000Z</published><updated>2013-04-03T15:27:25.000Z</updated><app:control><yt:state
+        name=''restricted'' reasonCode=''limitedSyndication''>Syndication of this
+        video was restricted.</yt:state></app:control><category scheme=''http://schemas.google.com/g/2005#kind''
+        term=''http://gdata.youtube.com/schemas/2007#video''/><category scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''
+        term=''News'' label=''News &amp; Politics''/><title>Cat Lost on Vacation Travels
+        Nearly 200 Miles Back Home</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/Xj0WvEI_x1I?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=Xj0WvEI_x1I&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Xj0WvEI_x1I/responses?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Xj0WvEI_x1I/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Xj0WvEI_x1I/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Xj0WvEI_x1I/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/Bi2mrWuNuyYy4gbM6fU18Q?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/Xj0WvEI_x1I?v=2''/><author><name>ABCNews</name><uri>http://gdata.youtube.com/feeds/api/users/ABCNews</uri><yt:userId>Bi2mrWuNuyYy4gbM6fU18Q</yt:userId></author><yt:accessControl
+>>>>>>> fixing partial update
         action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
         permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
         action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
         permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+<<<<<<< HEAD
         href=''http://gdata.youtube.com/feeds/api/videos/zQBo79O4Uhg/comments?v=2''
         countHint=''2967''/></gd:comments><yt:hd/><media:group><media:category label=''News
         &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
@@ -4482,10 +5516,57 @@ http_interactions:
         rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/LpIyaIHsJbc?v=2''/><author><name>vice</name><uri>http://gdata.youtube.com/feeds/api/users/vice</uri><yt:userId>n8zNIfYAQNdrFRrr8oibKw</yt:userId></author><yt:accessControl
         action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
         permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+=======
+        href=''http://gdata.youtube.com/feeds/api/videos/Xj0WvEI_x1I/comments?v=2''
+        countHint=''45''/></gd:comments><yt:hd/><media:group><media:category label=''News
+        &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
+        url=''http://www.youtube.com/v/Xj0WvEI_x1I?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''97'' yt:format=''5''/><media:credit role=''uploader''
+        scheme=''urn:youtube'' yt:display=''ABCNews'' yt:type=''partner''>abcnews</media:credit><media:description
+        type=''plain''>Clayton Sandell tells the story of one animals extraordinary
+        journey.</media:description><media:keywords/><media:license type=''text/html''
+        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=Xj0WvEI_x1I&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/Xj0WvEI_x1I/default.jpg'' height=''90'' width=''120''
+        time=''00:00:48.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/Xj0WvEI_x1I/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/Xj0WvEI_x1I/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/Xj0WvEI_x1I/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/Xj0WvEI_x1I/1.jpg''
+        height=''90'' width=''120'' time=''00:00:24.250'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/Xj0WvEI_x1I/2.jpg'' height=''90'' width=''120''
+        time=''00:00:48.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/Xj0WvEI_x1I/3.jpg''
+        height=''90'' width=''120'' time=''00:01:12.750'' yt:name=''end''/><media:title
+        type=''plain''>Cat Lost on Vacation Travels Nearly 200 Miles Back Home</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''97''/><yt:uploaded>2013-01-13T14:53:13.000Z</yt:uploaded><yt:uploaderId>UCBi2mrWuNuyYy4gbM6fU18Q</yt:uploaderId><yt:videoid>Xj0WvEI_x1I</yt:videoid></media:group><gd:rating
+        average=''4.863248'' max=''5'' min=''1'' numRaters=''117'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''80387''/><yt:rating numDislikes=''4'' numLikes=''113''/></entry><entry
+        gd:etag=''W/&quot;C0ICQX47eCp7I2A9WhBVFE4.&quot;''><id>tag:youtube.com,2008:video:zeMypXCUWMw</id><published>2008-09-28T23:12:10.000Z</published><updated>2013-04-20T04:19:20.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''News''
+        label=''News &amp; Politics''/><title>CNN Laughs It Up Over Sarah Palin Interview</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/zeMypXCUWMw?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=zeMypXCUWMw&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/zeMypXCUWMw/responses?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/zeMypXCUWMw/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/zeMypXCUWMw/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/zeMypXCUWMw/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=zeMypXCUWMw''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/TcCX_XY4l-W2ba5IxIRhsg?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/zeMypXCUWMw?v=2''/><author><name>tpmtv</name><uri>http://gdata.youtube.com/feeds/api/users/tpmtv</uri><yt:userId>TcCX_XY4l-W2ba5IxIRhsg</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''allowed''/><yt:accessControl
+>>>>>>> fixing partial update
         action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
         permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+<<<<<<< HEAD
         href=''http://gdata.youtube.com/feeds/api/videos/LpIyaIHsJbc/comments?v=2''
         countHint=''6820''/></gd:comments><yt:hd/><media:group><media:category label=''News
         &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
@@ -4530,12 +5611,58 @@ http_interactions:
         rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
         href=''http://gdata.youtube.com/feeds/api/users/upvZG-5ko_eiXAupbDfxWw?v=2''/><link
         rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/mGMzGxeO1wQ?v=2''/><author><name>CNN</name><uri>http://gdata.youtube.com/feeds/api/users/CNN</uri><yt:userId>upvZG-5ko_eiXAupbDfxWw</yt:userId></author><yt:accessControl
+=======
+        href=''http://gdata.youtube.com/feeds/api/videos/zeMypXCUWMw/comments?v=2''
+        countHint=''38908''/></gd:comments><media:group><media:category label=''News
+        &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
+        url=''http://www.youtube.com/v/zeMypXCUWMw?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''77'' yt:format=''5''/><media:content url=''rtsp://v2.cache4.c.youtube.com/CkULENy73wIaPAnMWJRwpTLjzRMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''77'' yt:format=''1''/><media:content
+        url=''rtsp://v2.cache4.c.youtube.com/CkULENy73wIaPAnMWJRwpTLjzRMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''77'' yt:format=''6''/><media:credit
+        role=''uploader'' scheme=''urn:youtube'' yt:display=''tpmtv'' yt:type=''partner''>tpmtv</media:credit><media:description
+        type=''plain''>Segment from CNN''s Late Edition, September 28, 2008.</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=zeMypXCUWMw&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/zeMypXCUWMw/default.jpg'' height=''90'' width=''120''
+        time=''00:00:38.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/zeMypXCUWMw/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/zeMypXCUWMw/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/zeMypXCUWMw/1.jpg''
+        height=''90'' width=''120'' time=''00:00:19.250'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/zeMypXCUWMw/2.jpg'' height=''90'' width=''120''
+        time=''00:00:38.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/zeMypXCUWMw/3.jpg''
+        height=''90'' width=''120'' time=''00:00:57.750'' yt:name=''end''/><media:title
+        type=''plain''>CNN Laughs It Up Over Sarah Palin Interview</media:title><yt:duration
+        seconds=''77''/><yt:uploaded>2008-09-28T23:12:10.000Z</yt:uploaded><yt:uploaderId>UCTcCX_XY4l-W2ba5IxIRhsg</yt:uploaderId><yt:videoid>zeMypXCUWMw</yt:videoid></media:group><gd:rating
+        average=''4.7170606'' max=''5'' min=''1'' numRaters=''14261'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''5947720''/><yt:rating numDislikes=''1009''
+        numLikes=''13252''/></entry><entry gd:etag=''W/&quot;CkcDQn47eCp7I2A9WhBVF0k.&quot;''><id>tag:youtube.com,2008:video:DcJFdCmN98s</id><published>2012-08-15T22:04:48.000Z</published><updated>2013-04-23T18:01:13.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''News''
+        label=''News &amp; Politics''/><title>OH MY DAYUM - NOW ON iTUNES !!!</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/DcJFdCmN98s?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=DcJFdCmN98s&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/DcJFdCmN98s/responses?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/DcJFdCmN98s/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/DcJFdCmN98s/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/DcJFdCmN98s/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=DcJFdCmN98s''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/NYrK4tc5i1-eL8TXesH2pg?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/DcJFdCmN98s?v=2''/><author><name>schmoyoho</name><uri>http://gdata.youtube.com/feeds/api/users/schmoyoho</uri><yt:userId>NYrK4tc5i1-eL8TXesH2pg</yt:userId></author><yt:accessControl
+>>>>>>> fixing partial update
         action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
         permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''denied''/><yt:accessControl
         action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
         permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+<<<<<<< HEAD
         href=''http://gdata.youtube.com/feeds/api/videos/mGMzGxeO1wQ/comments?v=2''
         countHint=''1931''/></gd:comments><media:group><media:category label=''News
         &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
@@ -4583,12 +5710,63 @@ http_interactions:
         rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
         href=''http://gdata.youtube.com/feeds/api/users/pwvZwUam-URkxB7g4USKpg?v=2''/><link
         rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/TuET0kpHoyM?v=2''/><author><name>RussiaToday</name><uri>http://gdata.youtube.com/feeds/api/users/RussiaToday</uri><yt:userId>pwvZwUam-URkxB7g4USKpg</yt:userId></author><yt:accessControl
+=======
+        href=''http://gdata.youtube.com/feeds/api/videos/DcJFdCmN98s/comments?v=2''
+        countHint=''33270''/></gd:comments><yt:hd/><media:group><media:category label=''News
+        &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
+        url=''http://www.youtube.com/v/DcJFdCmN98s?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''141'' yt:format=''5''/><media:content url=''rtsp://v3.cache5.c.youtube.com/CkULENy73wIaPAnL940pdEXCDRMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''141''
+        yt:format=''1''/><media:content url=''rtsp://v3.cache5.c.youtube.com/CkULENy73wIaPAnL940pdEXCDRMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''141''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''schmoyoho''
+        yt:type=''partner''>schmoyoho</media:credit><media:description type=''plain''>NOW
+        ON iTUNES! http://bit.ly/PAxuBG Songify yourself with the Songify app for
+        iPhones &amp; Androids: http://itunes.apple.com/us/app/songify/id438735719?mt=8
+        ......</media:description><media:keywords/><media:license type=''text/html''
+        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=DcJFdCmN98s&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/DcJFdCmN98s/default.jpg'' height=''90'' width=''120''
+        time=''00:01:10.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/DcJFdCmN98s/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/DcJFdCmN98s/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/DcJFdCmN98s/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/DcJFdCmN98s/1.jpg''
+        height=''90'' width=''120'' time=''00:00:35.250'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/DcJFdCmN98s/2.jpg'' height=''90'' width=''120''
+        time=''00:01:10.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/DcJFdCmN98s/3.jpg''
+        height=''90'' width=''120'' time=''00:01:45.750'' yt:name=''end''/><media:title
+        type=''plain''>OH MY DAYUM - NOW ON iTUNES !!!</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''141''/><yt:uploaded>2012-08-15T22:04:48.000Z</yt:uploaded><yt:uploaderId>UCNYrK4tc5i1-eL8TXesH2pg</yt:uploaderId><yt:videoid>DcJFdCmN98s</yt:videoid></media:group><gd:rating
+        average=''4.944879'' max=''5'' min=''1'' numRaters=''162334'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''12707902''/><yt:rating numDislikes=''2237''
+        numLikes=''160097''/></entry><entry gd:etag=''W/&quot;D0UBRX47eCp7I2A9WhBVFE4.&quot;''><id>tag:youtube.com,2008:video:1mDrk8AC4G4</id><published>2013-01-21T18:01:46.000Z</published><updated>2013-04-20T05:20:54.000Z</updated><app:control><yt:state
+        name=''restricted'' reasonCode=''limitedSyndication''>Syndication of this
+        video was restricted.</yt:state></app:control><category scheme=''http://schemas.google.com/g/2005#kind''
+        term=''http://gdata.youtube.com/schemas/2007#video''/><category scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''
+        term=''News'' label=''News &amp; Politics''/><title>Inauguration 2013: Richard
+        Blanco''s Poetry Pays Homage to American Experience</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/1mDrk8AC4G4?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=1mDrk8AC4G4&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/1mDrk8AC4G4/responses?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/1mDrk8AC4G4/ratings?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/1mDrk8AC4G4/complaints?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/1mDrk8AC4G4/related?v=2''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/Bi2mrWuNuyYy4gbM6fU18Q?v=2''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/1mDrk8AC4G4?v=2''/><author><name>ABCNews</name><uri>http://gdata.youtube.com/feeds/api/users/ABCNews</uri><yt:userId>Bi2mrWuNuyYy4gbM6fU18Q</yt:userId></author><yt:accessControl
+>>>>>>> fixing partial update
         action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
         permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
         action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
         permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
         action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
         permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+<<<<<<< HEAD
         href=''http://gdata.youtube.com/feeds/api/videos/TuET0kpHoyM/comments?v=2''
         countHint=''6478''/></gd:comments><media:group><media:category label=''News
         &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
@@ -4648,6 +5826,13 @@ http_interactions:
         &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
         url=''http://www.youtube.com/v/1mDrk8AC4G4?version=3&amp;f=videos&amp;d=ARG2gZlAYb7aFMK75J5jr9gO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
         type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+=======
+        href=''http://gdata.youtube.com/feeds/api/videos/1mDrk8AC4G4/comments?v=2''
+        countHint=''252''/></gd:comments><media:group><media:category label=''News
+        &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
+        url=''http://www.youtube.com/v/1mDrk8AC4G4?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+>>>>>>> fixing partial update
         expression=''full'' duration=''388'' yt:format=''5''/><media:credit role=''uploader''
         scheme=''urn:youtube'' yt:display=''ABCNews'' yt:type=''partner''>abcnews</media:credit><media:description
         type=''plain''>American poet is the youngest in history to read at inaugural
@@ -4666,8 +5851,15 @@ http_interactions:
         type=''plain''>Inauguration 2013: Richard Blanco''s Poetry Pays Homage to
         American Experience</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
         seconds=''388''/><yt:uploaded>2013-01-21T18:01:46.000Z</yt:uploaded><yt:uploaderId>UCBi2mrWuNuyYy4gbM6fU18Q</yt:uploaderId><yt:videoid>1mDrk8AC4G4</yt:videoid></media:group><gd:rating
+<<<<<<< HEAD
         average=''4.766917'' max=''5'' min=''1'' numRaters=''532'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
         favoriteCount=''0'' viewCount=''70435''/><yt:rating numDislikes=''31'' numLikes=''501''/></entry></feed>'
     http_version: 
   recorded_at: Thu, 18 Apr 2013 12:30:04 GMT
+=======
+        average=''4.7677903'' max=''5'' min=''1'' numRaters=''534'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''70549''/><yt:rating numDislikes=''31'' numLikes=''503''/></entry></feed>'
+    http_version:
+  recorded_at: Tue, 23 Apr 2013 18:48:34 GMT
+>>>>>>> fixing partial update
 recorded_with: VCR 2.1.1

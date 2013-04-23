@@ -608,10 +608,9 @@ class YouTubeIt
 
       def partial_video_xml(opts)
         perms = [ :rate, :comment, :commentVote, :videoRespond, :list, :embed, :syndicate ]
-
         delete_attrs = []
         perms.each do |perm|
-          delete_attrs << "yt:accessControl[@action='#{perm}']" if opts[perm]
+          delete_attrs << "@action='#{perm}'" if opts[perm]
         end
 
         entry_attrs = {
@@ -623,7 +622,7 @@ class YouTubeIt
           'xmlns:georss' => 'http://www.georss.org/georss' }
 
         if !delete_attrs.empty?
-          entry_attrs['gd:fields'] = delete_attrs.join(',')
+          entry_attrs['gd:fields'] = "yt:accessControl[#{delete_attrs.join(' or ')}]"
         end
 
         b = Builder::XmlMarkup.new

@@ -263,6 +263,11 @@ List Response Videos
 
   client.video_upload(File.open("test.mov"), :title => "test",:description => 'some description', :category => 'People',:keywords => %w[cool blah test], :comment => "denied")
 
+== Partial Updates
+  You can send a single PATCH request to add, replace and/or delete specific fields for a particular resource.
+
+  client.video_partial_update(video.unique_id, :list => 'denied', :embed => 'allowed')
+
 == User Activity
  You can get user activity with the followings params:
  

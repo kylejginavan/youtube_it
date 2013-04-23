@@ -21,9 +21,9 @@ http_interactions:
       Content-Type:
       - application/atom+xml; charset=UTF-8; type=feed
       Expires:
-      - Thu, 10 Jan 2013 16:24:14 GMT
+      - Tue, 23 Apr 2013 18:48:30 GMT
       Date:
-      - Thu, 10 Jan 2013 16:24:14 GMT
+      - Tue, 23 Apr 2013 18:48:30 GMT
       Cache-Control:
       - private, max-age=300, no-transform
       Vary:
@@ -31,9 +31,9 @@ http_interactions:
       Gdata-Version:
       - '2.1'
       Etag:
-      - W/"D0cBRX4yfSp7I2A9WhNUGE4."
+      - W/"CE4FQX09eyp7I2A9WhBVF0k."
       Last-Modified:
-      - Thu, 10 Jan 2013 16:24:14 GMT
+      - Tue, 23 Apr 2013 18:48:30 GMT
       Transfer-Encoding:
       - chunked
       X-Content-Type-Options:
@@ -48,7 +48,7 @@ http_interactions:
       encoding: US-ASCII
       string: <?xml version='1.0' encoding='UTF-8'?><feed xmlns='http://www.w3.org/2005/Atom'
         xmlns:openSearch='http://a9.com/-/spec/opensearch/1.1/' xmlns:gd='http://schemas.google.com/g/2005'
-        gd:etag='W/&quot;D0cBRX4yfSp7I2A9WhNUGE4.&quot;'><id>tag:youtube.com,2008:videos</id><updated>2013-01-10T16:24:14.095Z</updated><category
+        gd:etag='W/&quot;CE4FQX09eyp7I2A9WhBVF0k.&quot;'><id>tag:youtube.com,2008:videos</id><updated>2013-04-23T18:48:30.363Z</updated><category
         scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#video'/><title>Videos</title><logo>http://www.youtube.com/img/pic_youtubelogo_123x63.gif</logo><link
         rel='alternate' type='text/html' href='http://www.youtube.com'/><link rel='http://schemas.google.com/g/2005#feed'
         type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos?v=2'/><link
@@ -56,6 +56,7 @@ http_interactions:
         rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/-/%7Bhttp%3A%2F%2Fgdata.youtube.com%2Fschemas%2F2007%2Fcategories.cat%7DNews/%7Bhttp%3A%2F%2Fgdata.youtube.com%2Fschemas%2F2007%2Fcategories.cat%7DSports?start-index=1&amp;max-results=25&amp;v=2'/><link
         rel='service' type='application/atomsvc+xml' href='http://gdata.youtube.com/feeds/api/videos?alt=atom-service&amp;v=2'/><author><name>YouTube</name><uri>http://www.youtube.com/</uri></author><generator
         version='2.1' uri='http://gdata.youtube.com'>YouTube data API</generator><openSearch:totalResults>0</openSearch:totalResults><openSearch:startIndex>1</openSearch:startIndex><openSearch:itemsPerPage>25</openSearch:itemsPerPage></feed>
+<<<<<<< HEAD
     http_version: 
   recorded_at: Thu, 10 Jan 2013 16:24:14 GMT
 - request:
@@ -116,4 +117,8 @@ http_interactions:
         version='2.1' uri='http://gdata.youtube.com'>YouTube data API</generator><openSearch:totalResults>0</openSearch:totalResults><openSearch:startIndex>1</openSearch:startIndex><openSearch:itemsPerPage>25</openSearch:itemsPerPage></feed>
     http_version: 
   recorded_at: Thu, 18 Apr 2013 12:29:49 GMT
+=======
+    http_version:
+  recorded_at: Tue, 23 Apr 2013 18:48:30 GMT
+>>>>>>> fixing partial update
 recorded_with: VCR 2.1.1
