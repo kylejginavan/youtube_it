@@ -487,7 +487,7 @@ class TestClient < Test::Unit::TestCase
     assert_equal 25, playlists_first_page.size
 
     playlists_second_page = @client.playlists('sbnation', {'start-index' => 26, 'max-results' => 25})
-    assert_equal 23, playlists_second_page.size
+    assert_equal 13, playlists_second_page.size
 
     all_playlists = playlists_first_page + playlists_second_page
     assert_equal all_playlists.size, all_playlists.uniq.size
@@ -495,7 +495,7 @@ class TestClient < Test::Unit::TestCase
 
   def test_all_playlists
     all_playlists = @client.all_playlists('sbnation')
-    assert_equal 48, all_playlists.size
+    assert_equal 38, all_playlists.size
   end
 
   def test_should_add_and_delete_video_from_watchlater
