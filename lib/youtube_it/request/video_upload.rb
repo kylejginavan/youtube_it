@@ -262,6 +262,35 @@ class YouTubeIt
         return YouTubeIt::Parser::ProfileFeedParser.new(response).parse
       end
 
+      def videos(idxes_to_fetch)
+        idxes_to_fetch.each_slice(50).map do |idxes|
+          post = Nokogiri::XML <<-BATCH
+              <feed 
+                xmlns='http://www.w3.org/2005/Atom'
+                xmlns:media='http://search.yahoo.com/mrss/'
+                xmlns:batch='http://schemas.google.com/gdata/batch'
+                xmlns:yt='http://gdata.youtube.com/schemas/2007'>
+              </feed>
+            BATCH
+          idxes.each do |idx|
+            post.at('feed').add_child <<-ENTRY
+              <entry>
+                <batch:operation type="query" />
+                <id>/feeds/api/videos/#{idx}?v=2</id>
+                <batch:id>#{idx}</batch:id>
+              </entry>
+            ENTRY
+          end
+
+          post_body = StringIO.new('')
+          post.write_to( post_body, :indent => 2 )
+          post_body_io = StringIO.new(post_body.string)
+
+          response = yt_session.post('feeds/api/videos/batch', post_body_io )
+          YouTubeIt::Parser::BatchVideoFeedParser.new(response).parse
+        end.reduce({},:merge)
+      end
+      
       def profiles(usernames_to_fetch)
         usernames_to_fetch.each_slice(50).map do |usernames|
           post = Nokogiri::XML <<-BATCH

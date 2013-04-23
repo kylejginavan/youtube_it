@@ -340,7 +340,7 @@ class YouTubeIt
         end.reduce({},:merge)
       end
     end
-
+    
     class SubscriptionFeedParser < FeedParser #:nodoc:
 
       def parse_content(content)
@@ -585,6 +585,22 @@ class YouTubeIt
       end
     end
 
+    class BatchVideoFeedParser < VideoFeedParser
+      def parse_content(content)
+        Nokogiri::XML(content.body).xpath("//xmlns:entry").map do |entry|
+          entry.namespaces.each {|name, url| entry.document.root.add_namespace name, url }
+          username = entry.at_xpath('batch:id', entry.namespaces).text
+          result = catch(:result) do
+            case entry.at_xpath('batch:status', entry.namespaces)['code'].to_i
+            when 200...300 then parse_entry(entry)
+            else nil
+            end
+          end
+          { username => result }
+        end.reduce({},:merge)
+      end
+    end
+    
     class VideosFeedParser < VideoFeedParser #:nodoc:
 
     private
