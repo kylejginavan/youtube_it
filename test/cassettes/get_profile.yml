@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       Authorization:
-      - Bearer ya29.AHES6ZT0jl5w4-aauLlhnG4cPWAj7rz8Na413ro9YwBzMHo
+      - Bearer ya29.AHES6ZTJ9igqj12O7-UEq-YV-Iywg3QG6oiL_mc1X178nbM
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,9 +25,9 @@ http_interactions:
       Content-Type:
       - application/atom+xml; charset=UTF-8
       Expires:
-      - Tue, 23 Apr 2013 18:48:19 GMT
+      - Wed, 24 Apr 2013 14:03:28 GMT
       Date:
-      - Tue, 23 Apr 2013 18:48:19 GMT
+      - Wed, 24 Apr 2013 14:03:28 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Vary:
@@ -35,7 +35,7 @@ http_interactions:
       Gdata-Version:
       - '1.0'
       Last-Modified:
-      - Tue, 23 Apr 2013 18:46:08 GMT
+      - Wed, 24 Apr 2013 13:57:43 GMT
       Transfer-Encoding:
       - chunked
       X-Content-Type-Options:
@@ -50,15 +50,15 @@ http_interactions:
       encoding: US-ASCII
       string: <?xml version='1.0' encoding='UTF-8'?><entry xmlns='http://www.w3.org/2005/Atom'
         xmlns:media='http://search.yahoo.com/mrss/' xmlns:gd='http://schemas.google.com/g/2005'
-        xmlns:yt='http://gdata.youtube.com/schemas/2007'><id>http://gdata.youtube.com/feeds/api/users/WWmLvppy3j64IGmA2dpCyw</id><published>2010-07-06T14:59:05.000Z</published><updated>2013-04-23T18:46:08.000Z</updated><category
+        xmlns:yt='http://gdata.youtube.com/schemas/2007'><id>http://gdata.youtube.com/feeds/api/users/WWmLvppy3j64IGmA2dpCyw</id><published>2010-07-06T14:59:05.000Z</published><updated>2013-04-24T13:57:43.000Z</updated><category
         scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#userProfile'/><title
         type='text'>tubeit20101</title><content type='text'/><link rel='alternate'
         type='text/html' href='http://www.youtube.com/channel/UCWWmLvppy3j64IGmA2dpCyw'/><link
         rel='http://gdata.youtube.com/schemas/2007#insight.views' type='text/html'
-        href='http://insight.youtube.com/video-analytics/csvreports?query=WWmLvppy3j64IGmA2dpCyw&amp;type=u&amp;starttime=1235865600000&amp;endtime=1366588800000&amp;user_starttime=1365984000000&amp;user_endtime=1366588800000&amp;region=world&amp;token=ahdBNn1iE3NjUXh05l5i99Vwxu98MTM2Njc0NDY5OUAxMzY2NzQyODk5&amp;hl=en_US'/><link
+        href='http://insight.youtube.com/video-analytics/csvreports?query=WWmLvppy3j64IGmA2dpCyw&amp;type=u&amp;starttime=1235865600000&amp;endtime=1366675200000&amp;user_starttime=1366070400000&amp;user_endtime=1366675200000&amp;region=world&amp;token=u33vZQfEnclh91Gw5IMaj_R-b4B8MTM2NjgxNDAwOEAxMzY2ODEyMjA4&amp;hl=en_US'/><link
         rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/WWmLvppy3j64IGmA2dpCyw'/><author><name>tubeit20101</name><uri>http://gdata.youtube.com/feeds/api/users/tubeit20101</uri></author><yt:age>31</yt:age><gd:feedLink
         rel='http://gdata.youtube.com/schemas/2007#user.subscriptions' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/subscriptions'
-        countHint='1'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.contacts'
+        countHint='0'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.contacts'
         href='http://gdata.youtube.com/feeds/api/users/tubeit20101/contacts' countHint='0'/><gd:feedLink
         rel='http://gdata.youtube.com/schemas/2007#user.inbox' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/inbox'
         countHint='0'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.playlists'
@@ -69,8 +69,8 @@ http_interactions:
         seconds='930'/><yt:statistics lastWebAccess='1970-01-01T00:00:00.000Z' subscriberCount='0'
         videoWatchCount='0' viewCount='100' totalUploadViews='0'/><media:thumbnail
         url='http://s.ytimg.com/yts/img/silhouette250-vflEqxKg9.png'/><yt:username>tubeit20101</yt:username></entry>
-    http_version:
-  recorded_at: Tue, 23 Apr 2013 18:48:20 GMT
+    http_version: 
+  recorded_at: Wed, 24 Apr 2013 14:03:28 GMT
 - request:
     method: get
     uri: http://gdata.youtube.com/feeds/api/users/default?v=2
@@ -79,7 +79,7 @@ http_interactions:
       string: ''
     headers:
       Authorization:
-      - Bearer ya29.AHES6ZT0jl5w4-aauLlhnG4cPWAj7rz8Na413ro9YwBzMHo
+      - Bearer ya29.AHES6ZTJ9igqj12O7-UEq-YV-Iywg3QG6oiL_mc1X178nbM
       X-Gdata-Client:
       - youtube_it
       X-Gdata-Key:
@@ -106,9 +106,9 @@ http_interactions:
       Content-Type:
       - application/atom+xml; charset=UTF-8; type=entry
       Expires:
-      - Tue, 23 Apr 2013 18:48:21 GMT
+      - Wed, 24 Apr 2013 14:03:28 GMT
       Date:
-      - Tue, 23 Apr 2013 18:48:21 GMT
+      - Wed, 24 Apr 2013 14:03:28 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Vary:
@@ -116,9 +116,9 @@ http_interactions:
       Gdata-Version:
       - '2.1'
       Etag:
-      - W/"CEACSX47eCp7I2A9WhBVF0k."
+      - W/"C08CQn47eCp7I2A9WhBVGEw."
       Last-Modified:
-      - Tue, 23 Apr 2013 18:46:08 GMT
+      - Wed, 24 Apr 2013 13:57:43 GMT
       Transfer-Encoding:
       - chunked
       X-Content-Type-Options:
@@ -134,22 +134,22 @@ http_interactions:
       string: <?xml version='1.0' encoding='UTF-8'?><entry xmlns='http://www.w3.org/2005/Atom'
         xmlns:app='http://www.w3.org/2007/app' xmlns:media='http://search.yahoo.com/mrss/'
         xmlns:gd='http://schemas.google.com/g/2005' xmlns:yt='http://gdata.youtube.com/schemas/2007'
-        gd:etag='W/&quot;CEACSX47eCp7I2A9WhBVF0k.&quot;'><id>tag:youtube.com,2008:user:WWmLvppy3j64IGmA2dpCyw</id><published>2010-07-06T14:59:05.000Z</published><updated>2013-04-23T18:46:08.000Z</updated><app:edited>2013-04-23T18:46:08.000Z</app:edited><category
+        gd:etag='W/&quot;C08CQn47eCp7I2A9WhBVGEw.&quot;'><id>tag:youtube.com,2008:user:WWmLvppy3j64IGmA2dpCyw</id><published>2010-07-06T14:59:05.000Z</published><updated>2013-04-24T13:57:43.000Z</updated><app:edited>2013-04-24T13:57:43.000Z</app:edited><category
         scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#userProfile'/><title>tubeit20101</title><summary/><link
         rel='alternate' type='text/html' href='http://www.youtube.com/channel/UCWWmLvppy3j64IGmA2dpCyw'/><link
         rel='http://gdata.youtube.com/schemas/2007#insight.views' type='text/html'
-        href='http://insight.youtube.com/video-analytics/csvreports?query=WWmLvppy3j64IGmA2dpCyw&amp;type=u&amp;starttime=1235865600000&amp;endtime=1366588800000&amp;user_starttime=1365984000000&amp;user_endtime=1366588800000&amp;region=world&amp;token=wssB2ALRcVVsk-pkGkEdvSo9V1V8MTM2Njc0NDcwMUAxMzY2NzQyOTAx&amp;hl=en_US&amp;devKey=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm'/><link
+        href='http://insight.youtube.com/video-analytics/csvreports?query=WWmLvppy3j64IGmA2dpCyw&amp;type=u&amp;starttime=1235865600000&amp;endtime=1366675200000&amp;user_starttime=1366070400000&amp;user_endtime=1366675200000&amp;region=world&amp;token=u33vZQfEnclh91Gw5IMaj_R-b4B8MTM2NjgxNDAwOEAxMzY2ODEyMjA4&amp;hl=en_US&amp;devKey=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm'/><link
         rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/WWmLvppy3j64IGmA2dpCyw?client=youtube_it'/><link
         rel='edit' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/WWmLvppy3j64IGmA2dpCyw?client=youtube_it'/><author><name>tubeit20101</name><uri>http://gdata.youtube.com/feeds/api/users/tubeit20101</uri><yt:userId>WWmLvppy3j64IGmA2dpCyw</yt:userId></author><yt:age>31</yt:age><yt:channelId>UCWWmLvppy3j64IGmA2dpCyw</yt:channelId><gd:feedLink
         rel='http://gdata.youtube.com/schemas/2007#user.watchhistory' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/watch_history?client=youtube_it'/><gd:feedLink
         rel='http://gdata.youtube.com/schemas/2007#user.watchlater' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/watch_later?client=youtube_it'
         countHint='0'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.subscriptions'
         href='http://gdata.youtube.com/feeds/api/users/tubeit20101/subscriptions?client=youtube_it'
-        countHint='1'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.liveevent'
+        countHint='0'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.liveevent'
         href='http://gdata.youtube.com/feeds/api/users/tubeit20101/live/events?client=youtube_it'
         countHint='0'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.favorites'
         href='http://gdata.youtube.com/feeds/api/users/tubeit20101/favorites?client=youtube_it'
-        countHint='3'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.contacts'
+        countHint='2'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.contacts'
         href='http://gdata.youtube.com/feeds/api/users/tubeit20101/contacts?client=youtube_it'
         countHint='0'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.inbox'
         href='http://gdata.youtube.com/feeds/api/users/tubeit20101/inbox?client=youtube_it'
@@ -163,6 +163,6 @@ http_interactions:
         videoWatchCount='0' viewCount='100' totalUploadViews='0'/><media:thumbnail
         url='http://s.ytimg.com/yts/img/silhouette250-vflEqxKg9.png'/><yt:userId>WWmLvppy3j64IGmA2dpCyw</yt:userId><yt:username
         display='tubeit20101'>tubeit20101</yt:username></entry>
-    http_version:
-  recorded_at: Tue, 23 Apr 2013 18:48:21 GMT
+    http_version: 
+  recorded_at: Wed, 24 Apr 2013 14:03:28 GMT
 recorded_with: VCR 2.1.1

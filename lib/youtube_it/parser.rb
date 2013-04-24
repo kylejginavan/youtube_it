@@ -479,6 +479,9 @@ class YouTubeIt
 
         rating_element = entry.at_xpath("gd:rating") rescue nil
         extended_rating_element = entry.at_xpath("yt:rating") rescue nil
+        unless entry.at_xpath("yt:position").nil?
+          video_position = entry.at_xpath("yt:position").text
+        end
 
         rating = nil
         if rating_element
@@ -560,6 +563,7 @@ class YouTubeIt
           :noembed        => noembed,
           :safe_search    => safe_search,
           :position       => position,
+          :video_position => video_position,
           :latitude       => latitude,
           :longitude      => longitude,
           :state          => state,

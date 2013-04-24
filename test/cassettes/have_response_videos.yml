@@ -21,9 +21,9 @@ http_interactions:
       Content-Type:
       - application/atom+xml; charset=UTF-8; type=feed
       Expires:
-      - Tue, 23 Apr 2013 18:50:30 GMT
+      - Wed, 24 Apr 2013 15:23:02 GMT
       Date:
-      - Tue, 23 Apr 2013 18:50:30 GMT
+      - Wed, 24 Apr 2013 15:23:02 GMT
       Cache-Control:
       - private, max-age=300, no-transform
       Vary:
@@ -31,9 +31,9 @@ http_interactions:
       Gdata-Version:
       - '2.1'
       Etag:
-      - W/"CUcHQX8yfSp7I2A9WhBVF0k."
+      - W/"DE4MQ34zfip7I2A9WhBVGEw."
       Last-Modified:
-      - Tue, 23 Apr 2013 18:50:30 GMT
+      - Wed, 24 Apr 2013 15:23:02 GMT
       Transfer-Encoding:
       - chunked
       X-Content-Type-Options:
@@ -55,9 +55,9 @@ http_interactions:
         bWxuczpnbWw9J2h0dHA6Ly93d3cub3Blbmdpcy5uZXQvZ21sJyB4bWxuczp5
         dD0naHR0cDovL2dkYXRhLnlvdXR1YmUuY29tL3NjaGVtYXMvMjAwNycgeG1s
         bnM6Z2VvcnNzPSdodHRwOi8vd3d3Lmdlb3Jzcy5vcmcvZ2VvcnNzJyBnZDpl
-        dGFnPSdXLyZxdW90O0NVY0hRWDh5ZlNwN0kyQTlXaEJWRjBrLiZxdW90Oyc+
+        dGFnPSdXLyZxdW90O0RFNE1RMzR6ZmlwN0kyQTlXaEJWR0V3LiZxdW90Oyc+
         PGlkPnRhZzp5b3V0dWJlLmNvbSwyMDA4OnZpZGVvOkJEcXMtT1pXdzlvOnJl
-        c3BvbnNlczwvaWQ+PHVwZGF0ZWQ+MjAxMy0wNC0yM1QxODo1MDozMC4xOTVa
+        c3BvbnNlczwvaWQ+PHVwZGF0ZWQ+MjAxMy0wNC0yNFQxNToyMzowMi4wODZa
         PC91cGRhdGVkPjxjYXRlZ29yeSBzY2hlbWU9J2h0dHA6Ly9zY2hlbWFzLmdv
         b2dsZS5jb20vZy8yMDA1I2tpbmQnIHRlcm09J2h0dHA6Ly9nZGF0YS55b3V0
         dWJlLmNvbS9zY2hlbWFzLzIwMDcjdmlkZW8nLz48dGl0bGU+VmlkZW8gcmVz
@@ -2856,6 +2856,6 @@ http_interactions:
         Jy8+PHl0OnN0YXRpc3RpY3MgZmF2b3JpdGVDb3VudD0nMCcgdmlld0NvdW50
         PSc2MDgnLz48eXQ6cmF0aW5nIG51bURpc2xpa2VzPScxJyBudW1MaWtlcz0n
         NCcvPjwvZW50cnk+PC9mZWVkPg==
-    http_version:
-  recorded_at: Tue, 23 Apr 2013 18:50:31 GMT
+    http_version: 
+  recorded_at: Wed, 24 Apr 2013 15:23:03 GMT
 recorded_with: VCR 2.1.1

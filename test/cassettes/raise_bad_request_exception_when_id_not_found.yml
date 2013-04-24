@@ -23,9 +23,9 @@ http_interactions:
       Transfer-Encoding:
       - chunked
       Date:
-      - Tue, 23 Apr 2013 18:50:32 GMT
+      - Wed, 24 Apr 2013 15:23:04 GMT
       Expires:
-      - Tue, 23 Apr 2013 18:50:32 GMT
+      - Wed, 24 Apr 2013 15:23:04 GMT
       Cache-Control:
       - private, max-age=0
       X-Content-Type-Options:
@@ -40,6 +40,6 @@ http_interactions:
       encoding: US-ASCII
       string: <errors xmlns='http://schemas.google.com/g/2005'><error><domain>GData</domain><code>InvalidRequestUriException</code><internalReason>Invalid
         id</internalReason></error></errors>
-    http_version:
-  recorded_at: Tue, 23 Apr 2013 18:50:32 GMT
+    http_version: 
+  recorded_at: Wed, 24 Apr 2013 15:23:04 GMT
 recorded_with: VCR 2.1.1

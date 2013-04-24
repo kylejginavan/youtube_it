@@ -141,6 +141,9 @@ class YouTubeIt
       attr_reader :latitude
       attr_reader :longitude
 
+      # Playlist position
+      attr_reader :video_position
+
       # Videos related to the current video.
       #
       # === Returns

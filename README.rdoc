@@ -213,10 +213,13 @@ Delete Playlist:
   $ client.delete_playlist(playlist_id)
 
 Add Video To Playlist:
-  $ client.add_video_to_playlist(playlist_id, video_id)
+  $ client.add_video_to_playlist(playlist_id, video_id, position)
 
 Remove Video From Playlist:
   $ client.delete_video_from_playlist(playlist_id, playlist_entry_id)
+
+Update Position Video From Playlist:
+  $ client.update_position_video_from_playlist(playlist_id, playlist_entry_id, position)
 
 Select All Videos From your Watch Later Playlist:
   $ watcher_later = client.watcherlater(user) #default: current user
@@ -244,6 +247,12 @@ List Response Videos
   $ video.responses.videos
 
   
+== BATCH VIDEOS
+you can list many videos at the same time
+
+  $ client.videos(['video_id_1', 'video_id_2',...])
+
+
 == ACCESS CONTROL LIST
 
   You can give permissions in your videos, for example denied comments, rate, etc...

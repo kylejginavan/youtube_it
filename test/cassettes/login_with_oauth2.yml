@@ -25,7 +25,7 @@ http_interactions:
       Expires:
       - Fri, 01 Jan 1990 00:00:00 GMT
       Date:
-      - Tue, 23 Apr 2013 18:44:02 GMT
+      - Wed, 24 Apr 2013 16:01:12 GMT
       Content-Type:
       - application/json
       X-Content-Type-Options:
@@ -40,8 +40,8 @@ http_interactions:
       - chunked
     body:
       encoding: US-ASCII
-      string: ! "{\n  \"access_token\" : \"ya29.AHES6ZT0jl5w4-aauLlhnG4cPWAj7rz8Na413ro9YwBzMHo\",\n
+      string: ! "{\n  \"access_token\" : \"ya29.AHES6ZQijVbNXo981yfza96DjApop_hgMAxVgYdoExa8_z8\",\n
         \ \"token_type\" : \"Bearer\",\n  \"expires_in\" : 3600\n}"
-    http_version:
-  recorded_at: Tue, 23 Apr 2013 18:44:03 GMT
+    http_version: 
+  recorded_at: Wed, 24 Apr 2013 16:01:12 GMT
 recorded_with: VCR 2.1.1

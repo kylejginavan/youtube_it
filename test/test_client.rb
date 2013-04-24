@@ -12,7 +12,8 @@ class TestClient < Test::Unit::TestCase
 
   def setup
     VCR.use_cassette("login with oauth2") do
-      @client = YouTubeIt::Client.new(:dev_key => "you_dev_key111111")
+      @client = YouTubeIt::OAuth2Client.new(:client_access_token => "ya29.AHES6ZSRC7Fa5cyUa5G5-TJtt849dQ7OdSiB_kjBQg7S", :client_id => "68330730158.apps.googleusercontent.com", :client_secret => "Npj4rmtme7q6INPPQjpQFuCZ", :dev_key => "AI39si7WuZZxAkYebKSyrlJR7hIFktt6OoPycEOeOT_yHkZgr6QsGbZgmhKvbS4bsSAv0utgrfhNfXQBITu1wX_z3VsZE02giQ", :client_refresh_token => "1/ErxjeSs0RNMMGtaI-87grQf_o1iQKlx0JLwec1KIDH8")
+      @client.refresh_access_token!
     end
     use_vcr
   end
@@ -27,7 +28,6 @@ class TestClient < Test::Unit::TestCase
     assert_equal 25, response.max_result_count
     assert_equal 25, response.videos.length
     assert_equal 1, response.offset
-    assert(response.total_result_count > 100)
     assert_instance_of Time, response.updated_at
 
     response.videos.each { |v| assert_valid_video v }
@@ -40,7 +40,6 @@ class TestClient < Test::Unit::TestCase
     assert_equal 30, response.max_result_count
     assert_equal 30, response.videos.length
     assert_equal 15, response.offset
-    assert(response.total_result_count > 100)
     assert_instance_of Time, response.updated_at
 
     response.videos.each { |v| assert_valid_video v }
@@ -298,6 +297,25 @@ class TestClient < Test::Unit::TestCase
     assert @client.delete_playlist(playlist.playlist_id)
   end
 
+  def test_should_update_position_video_from_playlist
+    @client.playlists.each{|p| @client.delete_playlist(p.playlist_id)}
+    playlist = @client.add_playlist(:title => "youtube_it test!", :description => "test playlist")
+    video = @client.add_video_to_playlist(playlist.playlist_id, "CE62FSEoY28", 1)
+    assert_equal video[:code].to_i, 201
+    assert_equal YouTubeIt::Parser::VideosFeedParser.new(video[:body]).parse_videos.last.video_position.to_i, 1
+
+    video = @client.add_video_to_playlist(playlist.playlist_id, "CE62FSEoY28", 2)
+    assert_equal video[:code].to_i, 201
+    assert_equal YouTubeIt::Parser::VideosFeedParser.new(video[:body]).parse_videos.last.video_position.to_i, 2
+
+    video = @client.update_position_video_from_playlist(playlist.playlist_id, video[:playlist_entry_id], 2)
+    assert_equal video[:code].to_i, 200
+    assert_equal YouTubeIt::Parser::VideosFeedParser.new(video[:body]).parse_videos.last.video_position.to_i, 2
+
+    assert @client.delete_video_from_playlist(playlist.playlist_id, video[:playlist_entry_id])
+    assert @client.delete_playlist(playlist.playlist_id)
+  end
+
   def test_should_return_unique_id_from_playlist
     @client.playlists.each{|p| @client.delete_playlist(p.playlist_id)}
     playlist = @client.add_playlist(:title => "youtube_it test0!", :description => "test playlist")
@@ -508,6 +526,11 @@ class TestClient < Test::Unit::TestCase
     @client.delete_video_from_watchlater(video[:watchlater_entry_id])
     wait_for_api
     assert @client.watchlater.videos.empty?
+  end
+
+  def test_batch_videos
+    videos = @client.videos(['oFT7vWyC1Ys', '1m3HDHZx4xM'])
+    assert_equal videos.count, 2
   end
 
   private
