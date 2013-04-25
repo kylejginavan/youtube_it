@@ -1,4 +1,4 @@
 class YouTubeIt
-  VERSION = '2.1.13'
+  VERSION = '2.2.0'
 end
 
