@@ -37,7 +37,7 @@ class YouTubeIt
           'max-results' => @max_results,
           'orderby' => @order_by,
           'start-index' => @offset,
-          'v' => 2
+          'v' => YouTubeIt::API_VERSION
         }
       end
     end

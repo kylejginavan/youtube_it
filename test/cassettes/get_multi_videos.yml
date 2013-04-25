@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       Authorization:
-      - Bearer ya29.AHES6ZSf-fKituz_YYxDrH2KuYs_1UeQ8_SffoCZc9tcYwM
+      - Bearer ya29.AHES6ZR3q9xKzKWNFTrv6EnWJFQW7vzmJbu88UbeInP1x-s
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,9 +25,9 @@ http_interactions:
       Content-Type:
       - application/atom+xml; charset=UTF-8
       Expires:
-      - Wed, 24 Apr 2013 14:03:05 GMT
+      - Wed, 24 Apr 2013 19:23:44 GMT
       Date:
-      - Wed, 24 Apr 2013 14:03:05 GMT
+      - Wed, 24 Apr 2013 19:23:44 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Vary:
@@ -35,7 +35,7 @@ http_interactions:
       Gdata-Version:
       - '1.0'
       Last-Modified:
-      - Wed, 24 Apr 2013 13:57:43 GMT
+      - Wed, 24 Apr 2013 19:15:15 GMT
       Transfer-Encoding:
       - chunked
       X-Content-Type-Options:
@@ -50,12 +50,12 @@ http_interactions:
       encoding: US-ASCII
       string: <?xml version='1.0' encoding='UTF-8'?><entry xmlns='http://www.w3.org/2005/Atom'
         xmlns:media='http://search.yahoo.com/mrss/' xmlns:gd='http://schemas.google.com/g/2005'
-        xmlns:yt='http://gdata.youtube.com/schemas/2007'><id>http://gdata.youtube.com/feeds/api/users/WWmLvppy3j64IGmA2dpCyw</id><published>2010-07-06T14:59:05.000Z</published><updated>2013-04-24T13:57:43.000Z</updated><category
+        xmlns:yt='http://gdata.youtube.com/schemas/2007'><id>http://gdata.youtube.com/feeds/api/users/WWmLvppy3j64IGmA2dpCyw</id><published>2010-07-06T14:59:05.000Z</published><updated>2013-04-24T19:15:15.000Z</updated><category
         scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#userProfile'/><title
         type='text'>tubeit20101</title><content type='text'/><link rel='alternate'
         type='text/html' href='http://www.youtube.com/channel/UCWWmLvppy3j64IGmA2dpCyw'/><link
         rel='http://gdata.youtube.com/schemas/2007#insight.views' type='text/html'
-        href='http://insight.youtube.com/video-analytics/csvreports?query=WWmLvppy3j64IGmA2dpCyw&amp;type=u&amp;starttime=1235865600000&amp;endtime=1366675200000&amp;user_starttime=1366070400000&amp;user_endtime=1366675200000&amp;region=world&amp;token=IUJg_6iZf42EEFgmgWWiI8LyOp98MTM2NjgxMzk4NUAxMzY2ODEyMTg1&amp;hl=en_US'/><link
+        href='http://insight.youtube.com/video-analytics/csvreports?query=WWmLvppy3j64IGmA2dpCyw&amp;type=u&amp;starttime=1235865600000&amp;endtime=1366675200000&amp;user_starttime=1366070400000&amp;user_endtime=1366675200000&amp;region=world&amp;token=vS9Od6YvVpXT-Ir2fpyYet0yOXN8MTM2NjgzMzIyNEAxMzY2ODMxNDI0&amp;hl=en_US'/><link
         rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/WWmLvppy3j64IGmA2dpCyw'/><author><name>tubeit20101</name><uri>http://gdata.youtube.com/feeds/api/users/tubeit20101</uri></author><yt:age>31</yt:age><gd:feedLink
         rel='http://gdata.youtube.com/schemas/2007#user.subscriptions' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/subscriptions'
         countHint='0'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.contacts'
@@ -64,13 +64,13 @@ http_interactions:
         countHint='0'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.playlists'
         href='http://gdata.youtube.com/feeds/api/users/tubeit20101/playlists'/><gd:feedLink
         rel='http://gdata.youtube.com/schemas/2007#user.uploads' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/uploads'
-        countHint='0'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.newsubscriptionvideos'
+        countHint='2'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.newsubscriptionvideos'
         href='http://gdata.youtube.com/feeds/api/users/tubeit20101/newsubscriptionvideos'/><yt:location>AR</yt:location><yt:maxUploadDuration
         seconds='930'/><yt:statistics lastWebAccess='1970-01-01T00:00:00.000Z' subscriberCount='0'
         videoWatchCount='0' viewCount='100' totalUploadViews='0'/><media:thumbnail
         url='http://s.ytimg.com/yts/img/silhouette250-vflEqxKg9.png'/><yt:username>tubeit20101</yt:username></entry>
     http_version: 
-  recorded_at: Wed, 24 Apr 2013 14:03:05 GMT
+  recorded_at: Wed, 24 Apr 2013 19:23:44 GMT
 - request:
     method: post
     uri: http://gdata.youtube.com/feeds/api/videos/batch
@@ -79,24 +79,24 @@ http_interactions:
       string: ! "<?xml version=\"1.0\"?>\n<feed xmlns=\"http://www.w3.org/2005/Atom\"
         xmlns:media=\"http://search.yahoo.com/mrss/\" xmlns:batch=\"http://schemas.google.com/gdata/batch\"
         xmlns:yt=\"http://gdata.youtube.com/schemas/2007\">\n                            <entry>\n
-        \               <batch:operation type=\"query\"/>\n                <id>/feeds/api/videos/82Wg7DYG9Jc?v=2</id>\n
+        \               <batch:operation type=\"query\"/>\n                <id>/feeds/api/videos/82Wg7DYG9Jc?v=2.1</id>\n
         \               <batch:id>82Wg7DYG9Jc</batch:id>\n              </entry>\n
         \             <entry>\n                <batch:operation type=\"query\"/>\n
-        \               <id>/feeds/api/videos/AByfaYcOm4A?v=2</id>\n                <batch:id>AByfaYcOm4A</batch:id>\n
+        \               <id>/feeds/api/videos/AByfaYcOm4A?v=2.1</id>\n                <batch:id>AByfaYcOm4A</batch:id>\n
         \             </entry>\n</feed>\n"
     headers:
       Authorization:
-      - Bearer ya29.AHES6ZSf-fKituz_YYxDrH2KuYs_1UeQ8_SffoCZc9tcYwM
+      - Bearer ya29.AHES6ZR3q9xKzKWNFTrv6EnWJFQW7vzmJbu88UbeInP1x-s
       X-Gdata-Client:
       - youtube_it
       X-Gdata-Key:
       - key=AI39si7WuZZxAkYebKSyrlJR7hIFktt6OoPycEOeOT_yHkZgr6QsGbZgmhKvbS4bsSAv0utgrfhNfXQBITu1wX_z3VsZE02giQ
       Gdata-Version:
-      - '2'
+      - '2.1'
       Content-Type:
       - application/atom+xml; charset=UTF-8
       Content-Length:
-      - '634'
+      - '638'
       Accept:
       - ! '*/*'
       User-Agent:
@@ -113,9 +113,9 @@ http_interactions:
       Gdata-Version:
       - '2.1'
       Date:
-      - Wed, 24 Apr 2013 14:03:05 GMT
+      - Wed, 24 Apr 2013 19:23:45 GMT
       Expires:
-      - Wed, 24 Apr 2013 14:03:05 GMT
+      - Wed, 24 Apr 2013 19:23:45 GMT
       Cache-Control:
       - private, max-age=0
       X-Content-Type-Options:
@@ -130,11 +130,11 @@ http_interactions:
       - GSE
     body:
       encoding: US-ASCII
-      string: ! '<?xml version=''1.0'' encoding=''UTF-8''?><feed xmlns=''http://www.w3.org/2005/Atom''><id>http://gdata.youtube.com/feeds/api/videos/batch/1366812185876</id><updated>2013-04-24T14:03:05.929Z</updated><category
+      string: ! '<?xml version=''1.0'' encoding=''UTF-8''?><feed xmlns=''http://www.w3.org/2005/Atom''><id>http://gdata.youtube.com/feeds/api/videos/batch/1366831425154</id><updated>2013-04-24T19:23:45.200Z</updated><category
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><title>Batch
         Feed</title><entry xmlns:batch=''http://schemas.google.com/gdata/batch'' xmlns:media=''http://search.yahoo.com/mrss/''
         xmlns:gd=''http://schemas.google.com/g/2005'' xmlns:yt=''http://gdata.youtube.com/schemas/2007''
-        gd:etag=''W/&quot;CEYFRn47eCp7I2A9WhBVGEw.&quot;''><id>tag:youtube.com,2008:video:82Wg7DYG9Jc</id><published>2013-04-15T04:35:19.000Z</published><updated>2013-04-24T14:01:57.000Z</updated><category
+        gd:etag=''W/&quot;CkQGRn47eCp7I2A9WhBVGE4.&quot;''><id>tag:youtube.com,2008:video:82Wg7DYG9Jc</id><published>2013-04-15T04:35:19.000Z</published><updated>2013-04-24T19:05:27.000Z</updated><category
         scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Music''
         label=''Music''/><title>Billboard Hot 100 - Top 50 Singles (4/20/2013)</title><content
@@ -160,7 +160,7 @@ http_interactions:
         permission=''allowed''/><batch:id>82Wg7DYG9Jc</batch:id><batch:operation type=''query''/><batch:status
         code=''200'' reason=''Success''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
         href=''http://gdata.youtube.com/feeds/api/videos/82Wg7DYG9Jc/comments?client=youtube_it''
-        countHint=''523''/></gd:comments><yt:hd/><media:group><media:category label=''Music''
+        countHint=''529''/></gd:comments><yt:hd/><media:group><media:category label=''Music''
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Music</media:category><media:content
         url=''http://www.youtube.com/v/82Wg7DYG9Jc?version=3&amp;f=videos&amp;c=youtube_it&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
         type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
@@ -183,11 +183,11 @@ http_interactions:
         height=''90'' width=''120'' time=''00:10:01.500'' yt:name=''end''/><media:title
         type=''plain''>Billboard Hot 100 - Top 50 Singles (4/20/2013)</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
         seconds=''802''/><yt:uploaded>2013-04-15T04:35:19.000Z</yt:uploaded><yt:uploaderId>UCFB1w45uBp2c-gDkOjWvRuQ</yt:uploaderId><yt:videoid>82Wg7DYG9Jc</yt:videoid></media:group><gd:rating
-        average=''4.812844'' max=''5'' min=''1'' numRaters=''1090'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''123441''/><yt:rating numDislikes=''51'' numLikes=''1039''/></entry><entry
+        average=''4.8150496'' max=''5'' min=''1'' numRaters=''1103'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''126402''/><yt:rating numDislikes=''51'' numLikes=''1052''/></entry><entry
         xmlns:batch=''http://schemas.google.com/gdata/batch'' xmlns:app=''http://www.w3.org/2007/app''
         xmlns:media=''http://search.yahoo.com/mrss/'' xmlns:gd=''http://schemas.google.com/g/2005''
-        xmlns:yt=''http://gdata.youtube.com/schemas/2007'' gd:etag=''W/&quot;CEYCRn47eCp7I2A9WhBVGEw.&quot;''><id>tag:youtube.com,2008:video:AByfaYcOm4A</id><published>2013-04-09T23:00:07.000Z</published><updated>2013-04-24T14:02:47.000Z</updated><app:control><yt:state
+        xmlns:yt=''http://gdata.youtube.com/schemas/2007'' gd:etag=''W/&quot;C0MEQn47eCp7I2A9WhBVGE4.&quot;''><id>tag:youtube.com,2008:video:AByfaYcOm4A</id><published>2013-04-09T23:00:07.000Z</published><updated>2013-04-24T19:23:23.000Z</updated><app:control><yt:state
         name=''restricted'' reasonCode=''limitedSyndication''>Syndication of this
         video was restricted.</yt:state></app:control><category scheme=''http://schemas.google.com/g/2005#kind''
         term=''http://gdata.youtube.com/schemas/2007#video''/><category scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''
@@ -213,7 +213,7 @@ http_interactions:
         permission=''allowed''/><batch:id>AByfaYcOm4A</batch:id><batch:operation type=''query''/><batch:status
         code=''200'' reason=''Success''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
         href=''http://gdata.youtube.com/feeds/api/videos/AByfaYcOm4A/comments?client=youtube_it''
-        countHint=''119988''/></gd:comments><yt:hd/><media:group><media:category label=''Music''
+        countHint=''120508''/></gd:comments><yt:hd/><media:group><media:category label=''Music''
         scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Music</media:category><media:content
         url=''http://www.youtube.com/v/AByfaYcOm4A?version=3&amp;f=videos&amp;c=youtube_it&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
         type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
@@ -248,9 +248,9 @@ http_interactions:
         height=''90'' width=''120'' time=''00:02:42'' yt:name=''end''/><media:title
         type=''plain''>Demi Lovato - Heart Attack (Official Video)</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
         seconds=''216''/><yt:uploaded>2013-04-09T23:00:07.000Z</yt:uploaded><yt:uploaderId>UCnyB9MYKRkSFK3IIB32CoVw</yt:uploaderId><yt:videoid>AByfaYcOm4A</yt:videoid></media:group><gd:rating
-        average=''4.854461'' max=''5'' min=''1'' numRaters=''378840'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
-        favoriteCount=''0'' viewCount=''24048766''/><yt:rating numDislikes=''13784''
-        numLikes=''365056''/></entry></feed>'
+        average=''4.85443'' max=''5'' min=''1'' numRaters=''380354'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''24166387''/><yt:rating numDislikes=''13842''
+        numLikes=''366512''/></entry></feed>'
     http_version: 
-  recorded_at: Wed, 24 Apr 2013 14:03:06 GMT
+  recorded_at: Wed, 24 Apr 2013 19:23:45 GMT
 recorded_with: VCR 2.1.1

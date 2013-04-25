@@ -42,7 +42,7 @@ class YouTubeIt
         @dev_key = params[:dev_key] if params[:dev_key]
 
         # Return a single video (base_url + /T7YazwP8GtY)
-        return @url << "/" << params[:video_id] << "?v=2" if params[:video_id]
+        return @url << "/" << params[:video_id] << "?v=#{YouTubeIt::API_VERSION}" if params[:video_id]
 
         @url << "/-/" if (params[:categories] || params[:tags])
         @url << categories_to_params(params.delete(:categories)) if params[:categories]
@@ -69,7 +69,7 @@ class YouTubeIt
           'max-results' => @max_results,
           'orderby' => @order_by,
           'start-index' => @offset,
-          'v' => 2,
+          'v' => YouTubeIt::API_VERSION,
           'q' => @query,
           'alt' => @response_format,
           'format' => @video_format,

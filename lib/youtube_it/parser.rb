@@ -547,7 +547,6 @@ class YouTubeIt
           :categories     => categories,
           :keywords       => keywords,
           :title          => title,
-          :html_content   => html_content,
           :author         => author,
           :description    => description,
           :duration       => duration,
@@ -569,6 +568,7 @@ class YouTubeIt
           :state          => state,
           :insight_uri    => insight_uri,
           :unique_id      => ytid,
+          :raw_content    => entry,
           :perm_private   => perm_private)
       end
 

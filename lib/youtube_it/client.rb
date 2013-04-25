@@ -91,13 +91,13 @@ class YouTubeIt
       else
         vid = video
       end
-      video_id ="http://gdata.youtube.com/feeds/api/videos/#{vid}?v=2#{@dev_key ? '&key='+@dev_key : ''}"
+      video_id ="http://gdata.youtube.com/feeds/api/videos/#{vid}?v=#{YouTubeIt::API_VERSION}#{@dev_key ? '&key='+@dev_key : ''}"
       parser = YouTubeIt::Parser::VideoFeedParser.new(video_id)
       parser.parse
     end
 
     def video_by_user(user, vid)
-      video_id = "http://gdata.youtube.com/feeds/api/users/#{user}/uploads/#{vid}?v=2#{@dev_key ? '&key='+@dev_key : ''}"
+      video_id = "http://gdata.youtube.com/feeds/api/users/#{user}/uploads/#{vid}?v=#{YouTubeIt::API_VERSION}#{@dev_key ? '&key='+@dev_key : ''}"
       parser = YouTubeIt::Parser::VideoFeedParser.new(video_id)
       parser.parse
     end

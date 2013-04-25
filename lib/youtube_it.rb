@@ -9,6 +9,7 @@ require 'oauth2'
 require 'faraday'
 
 class YouTubeIt
+  API_VERSION = "2.1"
 
   # Base error class for the extension
   class Error < RuntimeError

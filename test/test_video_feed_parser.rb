@@ -10,7 +10,7 @@ class TestVideoFeedParser < Test::Unit::TestCase
   end
 
   def test_should_raise_bad_request_exception_when_id_not_found
-    bad_url = "http://gdata.youtube.com/feeds/api/videos/abc?v=2"
+    bad_url = "http://gdata.youtube.com/feeds/api/videos/abc?v=#{YouTubeIt::API_VERSION}"
 
     assert_raise(OpenURI::HTTPError) do
       parser = YouTubeIt::Parser::VideoFeedParser.new bad_url

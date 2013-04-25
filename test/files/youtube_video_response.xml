@@ -9,10 +9,10 @@
 	<title>YouTube Test Video</title>
 	<content type="application/x-shockwave-flash" src="http://www.youtube.com/v/YTAbC123DeF?f=videos&amp;app=youtube_gdata"/>
 	<link rel="alternate" type="text/html" href="http://www.youtube.com/watch?v=AbC123DeFgH&amp;feature=youtube_gdata"/>
-	<link rel="http://gdata.youtube.com/schemas/2007#video.responses" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/AbC123DeFgH/responses?v=2"/>
-	<link rel="http://gdata.youtube.com/schemas/2007#video.related" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/AbC123DeFgH/related?v=2"/>
+	<link rel="http://gdata.youtube.com/schemas/2007#video.responses" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/AbC123DeFgH/responses?v=2.1"/>
+	<link rel="http://gdata.youtube.com/schemas/2007#video.related" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/AbC123DeFgH/related?v=2.1"/>
 	<link rel="http://gdata.youtube.com/schemas/2007#mobile" type="text/html" href="http://m.youtube.com/details?v=AbC123DeFgH"/>
-	<link rel="self" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/AbC123DeFgH?v=2"/>
+	<link rel="self" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/AbC123DeFgH?v=2.1"/>
 	<author>
 		<name>Test user</name>
 		<uri>http://gdata.youtube.com/feeds/api/users/test_user</uri>
@@ -25,7 +25,7 @@
 	<yt:accessControl action="list" permission="allowed"/>
 	<yt:accessControl action="syndicate" permission="allowed"/>
 	<gd:comments>
-		<gd:feedLink href="http://gdata.youtube.com/feeds/api/videos/AbC123DeFgH/comments?v=2" countHint="1000"/>
+		<gd:feedLink href="http://gdata.youtube.com/feeds/api/videos/AbC123DeFgH/comments?v=2.1" countHint="1000"/>
 	</gd:comments>
 	<media:group>
 		<media:category label="Sports" scheme="http://gdata.youtube.com/schemas/2007/categories.cat">Test</media:category>

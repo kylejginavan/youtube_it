@@ -33,7 +33,7 @@ class YouTubeIt
           'orderby' => @order_by,
           'start-index' => @offset,
           'time' => @time,
-          'v' => 2
+          'v' => YouTubeIt::API_VERSION
         }
       end
     end

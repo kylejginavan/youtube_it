@@ -145,7 +145,7 @@ class YouTubeIt
       # Fetches the currently authenticated user's contacts (i.e. friends).
       # When the authentication credentials are incorrect, an AuthenticationError will be raised.
       def get_my_contacts(opts)
-        contacts_url = "/feeds/api/users/default/contacts?v=2"
+        contacts_url = "/feeds/api/users/default/contacts?v=#{YouTubeIt::API_VERSION}"
         contacts_url << opts.collect { |k,p| [k,p].join '=' }.join('&')
         response = yt_session.get(contacts_url)
 
@@ -276,7 +276,7 @@ class YouTubeIt
             post.at('feed').add_child <<-ENTRY
               <entry>
                 <batch:operation type="query" />
-                <id>/feeds/api/videos/#{idx}?v=2</id>
+                <id>/feeds/api/videos/#{idx}?v=#{YouTubeIt::API_VERSION}</id>
                 <batch:id>#{idx}</batch:id>
               </entry>
             ENTRY
@@ -321,12 +321,12 @@ class YouTubeIt
       end
 
       def profile_url(user=nil)
-        "/feeds/api/users/%s?v=2" % (user || "default")
+        "/feeds/api/users/%s?v=#{YouTubeIt::API_VERSION}" % (user || "default")
       end
 
       # Return's a user's activity feed.
       def get_activity(user, opts)
-        activity_url = "/feeds/api/events?author=%s&v=2&" % (user ? user : "default")
+        activity_url = "/feeds/api/events?author=%s&v=#{YouTubeIt::API_VERSION}&" % (user ? user : "default")
         activity_url << opts.collect { |k,p| [k,p].join '=' }.join('&')
         response = yt_session.get(activity_url)
 
@@ -334,7 +334,7 @@ class YouTubeIt
       end
 
       def watchlater(user)
-        watchlater_url = "/feeds/api/users/%s/watch_later?v=2" % (user ? user : "default")
+        watchlater_url = "/feeds/api/users/%s/watch_later?v=#{YouTubeIt::API_VERSION}" % (user ? user : "default")
         response = yt_session.get(watchlater_url)
 
         return YouTubeIt::Parser::PlaylistFeedParser.new(response).parse
@@ -375,7 +375,7 @@ class YouTubeIt
       # max-results - maximum number of playlists to fetch, up to 25 (default is 25)
       def playlists(user, opts={})
         playlist_url = "/feeds/api/users/%s/playlists" % (user ? user : "default")
-        params = {'v' => 2}
+        params = {'v' => YouTubeIt::API_VERSION}
         params.merge!(opts) if opts
         playlist_url << "?#{params.collect { |k,v| [k,v].join '=' }.join('&')}"
         response = yt_session.get(playlist_url)
@@ -438,7 +438,7 @@ class YouTubeIt
       end
 
       def subscriptions(user)
-        subscription_url = "/feeds/api/users/%s/subscriptions?v=2" % (user ? user : "default")
+        subscription_url = "/feeds/api/users/%s/subscriptions?v=#{YouTubeIt::API_VERSION}" % (user ? user : "default")
         response         = yt_session.get(subscription_url)
 
         return YouTubeIt::Parser::SubscriptionFeedParser.new(response).parse
@@ -489,14 +489,14 @@ class YouTubeIt
       end
 
       def get_watch_history
-        watch_history_url = "/feeds/api/users/default/watch_history?v=2"
+        watch_history_url = "/feeds/api/users/default/watch_history?v=#{YouTubeIt::API_VERSION}"
         response = yt_session.get(watch_history_url)
 
         return YouTubeIt::Parser::VideosFeedParser.new(response.body).parse
       end
 
       def new_subscription_videos(user)
-        subscription_url = "/feeds/api/users/%s/newsubscriptionvideos?v=2" % (user ? user : "default")
+        subscription_url = "/feeds/api/users/%s/newsubscriptionvideos?v=#{YouTubeIt::API_VERSION}" % (user ? user : "default")
         response         = yt_session.get(subscription_url)
 
         return YouTubeIt::Parser::VideosFeedParser.new(response.body).parse
