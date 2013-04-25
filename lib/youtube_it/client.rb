@@ -102,6 +102,17 @@ class YouTubeIt
       parser.parse
     end
 
+    def get_all_videos(opts)
+      page = videos_by(opts.merge({:page => 1}))
+      videos = page.videos
+
+      while page.next_page && (page = videos_by(opts.merge({:page => page.next_page})) || true)
+       videos += page.videos
+      end
+
+      videos
+    end
+
     def video_upload(data, opts = {})
       client.upload(data, opts)
     end
