@@ -187,6 +187,9 @@ class TestClient < Test::Unit::TestCase
   #   video = @client.video_by("http://gdata.youtube.com/feeds/videos/EkF4JD2rO3Q")
   #   assert_valid_video video
 
+  #   video = client.video_by("http://www.youtube.com/watch?v=CBvFZV-jdHY")
+  #   assert_valid_video video
+
   #   video = @client.video_by("EkF4JD2rO3Q")
   #   assert_valid_video video
   # end
@@ -439,7 +442,7 @@ class TestClient < Test::Unit::TestCase
   #   assert_operator videos, :has_key?, 'AByfaYcOm4A'
   #   assert_equal videos['82Wg7DYG9Jc'].title, 'Billboard Hot 100 - Top 50 Singles (4/20/2013)'
   # end
-  
+
   # def test_should_add_and_delete_video_to_favorite
   #   video_id ="fFAnoEYFUQw"
   #   begin
@@ -535,7 +538,7 @@ class TestClient < Test::Unit::TestCase
 
   def test_get_all_videos
     videos = @client.get_all_videos(:user => "enchufetv")
-    assert_equal videos.count, 172
+    assert_equal videos.count, 173
   end
 
   private
