@@ -538,7 +538,7 @@ class TestClient < Test::Unit::TestCase
 
   def test_get_all_videos
     videos = @client.get_all_videos(:user => "enchufetv")
-    assert_equal videos.count, 173
+    assert_equal videos.count, 182
   end
 
   private
