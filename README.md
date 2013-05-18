@@ -5,7 +5,7 @@
 
 youtube\_it is developed by many contributors who are passionate about opensource projects and selflessly donate their time and effort. Following that spirit, your donations to this project will be donated to the Tuquito Libre Foundation(http://fundacion.tuquito.org.ar) for developing technology projects intended to close the digital gap in Latin America.
 
-[![Donate](https://www.pledgie.com/campaigns/16746.png?skin_name=chrome)](http://www.pledgie.com/campaigns/16746)
+[![Donate](http://www.pledgie.com/campaigns/16746.png?skin_name=chrome)](http://www.pledgie.com/campaigns/16746)
 
 ## Description
 
