@@ -1,4 +1,4 @@
-== YOUTUBE_IT {<img src="https://secure.travis-ci.org/kylejginavan/youtube_it.png"/>}[http://travis-ci.org/kylejginavan/youtube_it] {<img src="https://badge.fury.io/rb/youtube_it.png" alt="Gem Version" />}[http://badge.fury.io/rb/youtube_it] {<img src="https://badge.fury.io/rb/youtube_it.png" alt="Gem Version" />}[http://badge.fury.io/rb/youtube_it]
+== YOUTUBE_IT {<img src="https://secure.travis-ci.org/kylejginavan/youtube_it.png"/>}[http://travis-ci.org/kylejginavan/youtube_it] {<img src="https://badge.fury.io/rb/youtube_it.png" alt="Gem Version" />}[http://badge.fury.io/rb/youtube_it]
 
 == DONATION
 
@@ -327,20 +327,12 @@ YouTubeIt passes all logs through the logger variable on the class itself. In Ra
   $ YouTubeIt.logger = RAILS_DEFAULT_LOGGER
   $ RAILS_DEFAULT_LOGGER.level = Logger::DEBUG
 
-== Ruby Interpreter Compatibility
-
-VCR has been tested on the following ruby versions:
-
-  2.0
-  1.9.2
-  1.9.3
-
 == AUTHORS:
 
 * Kyle J. Ginavan.
 * Mauro Torres - http://github.com/chebyte
 
-== THANKS:
+== CONTRIBUTORS:
 
 * Marko Seppa  - https://github.com/mseppae
 * Walter Korman - https://github.com/shaper
