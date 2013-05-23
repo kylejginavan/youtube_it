@@ -8,8 +8,8 @@ require File.dirname(__FILE__) + '/../lib/youtube_it'
 
 VCR.configure do |c|
   c.cassette_library_dir = 'test/cassettes'
-  c.hook_into :webmock
-  c.default_cassette_options = { :record => :all }
+  c.hook_into :excon
+  c.default_cassette_options = { :record => :new_episodes }
 end
 
 module VCRHelpers
@@ -37,4 +37,3 @@ class Test::Unit::TestCase
 end
 
 YouTubeIt.logger.level = Logger::ERROR
-

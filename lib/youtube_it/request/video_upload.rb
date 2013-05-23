@@ -740,8 +740,7 @@ class YouTubeIt
           end
           builder.use FaradayMiddleware::YoutubeAuthHeader, authorization_headers
           builder.use Faraday::Response::YouTubeIt
-          builder.adapter YouTubeIt.adapter
-
+          builder.adapter :excon
         end
       end
     end
