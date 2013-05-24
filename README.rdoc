@@ -1,4 +1,4 @@
-== YOUTUBE_IT {<img src="https://secure.travis-ci.org/kylejginavan/youtube_it.png"/>}[http://travis-ci.org/kylejginavan/youtube_it] {<img src="https://badge.fury.io/rb/youtube_it.png" alt="Gem Version" />}[http://badge.fury.io/rb/youtube_it]
+== YOUTUBE_IT {<img src="https://secure.travis-ci.org/kylejginavan/youtube_it.png"/>}[http://travis-ci.org/kylejginavan/youtube_it] {<img src="https://badge.fury.io/rb/youtube_it.png" alt="Gem Version" />}[http://badge.fury.io/rb/youtube_it] {<img src="https://gemnasium.com/kylejginavan/youtube_it.png" alt="Dependency Status" />}[https://gemnasium.com/kylejginavan/youtube_it]
 
 == DONATION
 
@@ -327,6 +327,12 @@ YouTubeIt passes all logs through the logger variable on the class itself. In Ra
 (don't forget to set the level to debug):
   $ YouTubeIt.logger = RAILS_DEFAULT_LOGGER
   $ RAILS_DEFAULT_LOGGER.level = Logger::DEBUG
+
+== RUBY INTERPRETER COMPABILITY:
+
+  * 2.0
+  * 1.9.3
+  * 1.9.2
 
 == AUTHORS:
 
