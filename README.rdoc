@@ -20,6 +20,7 @@
   comments.
   
 == INSTALLATION & SETUP:
+
   * Create a youtube account.
   * Create a developer key here http://code.google.com/apis/youtube/dashboard.
   * sudo gem install youtube_it
