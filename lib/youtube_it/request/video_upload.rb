@@ -45,6 +45,14 @@ class YouTubeIt
         @http_debugging = true
       end
 
+      def uri?(string)
+        uri = URI.parse(string)
+        %w( http https ).include?(uri.scheme)
+      rescue URI::BadURIError
+        false
+      rescue URI::InvalidURIError
+        false
+      end
       #
       # Upload "data" to youtube, where data is either an IO object or
       # raw file data.
@@ -71,7 +79,14 @@ class YouTubeIt
       # errors, containing the key and its error code.
       #
       # When the authentication credentials are incorrect, an AuthenticationError will be raised.
-      def upload(data, opts = {})
+      def upload(video_data, opts = {})
+
+        if video_data.is_a?(String) && uri?(video_data)
+          data = YouTubeIt::Upload::RemoteFile.new(video_data)
+        else
+          data = video_data
+        end
+
         @opts    = { :mime_type => 'video/mp4',
                      :title => '',
                      :description => '',
@@ -265,7 +280,7 @@ class YouTubeIt
       def videos(idxes_to_fetch)
         idxes_to_fetch.each_slice(50).map do |idxes|
           post = Nokogiri::XML <<-BATCH
-              <feed 
+              <feed
                 xmlns='http://www.w3.org/2005/Atom'
                 xmlns:media='http://search.yahoo.com/mrss/'
                 xmlns:batch='http://schemas.google.com/gdata/batch'
@@ -290,7 +305,7 @@ class YouTubeIt
           YouTubeIt::Parser::BatchVideoFeedParser.new(response).parse
         end.reduce({},:merge)
       end
-      
+
       def profiles(usernames_to_fetch)
         usernames_to_fetch.each_slice(50).map do |usernames|
           post = Nokogiri::XML <<-BATCH
@@ -740,7 +755,7 @@ class YouTubeIt
           end
           builder.use FaradayMiddleware::YoutubeAuthHeader, authorization_headers
           builder.use Faraday::Response::YouTubeIt
-          builder.adapter :excon
+          builder.adapter Faraday.default_adapter
         end
       end
     end
