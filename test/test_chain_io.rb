@@ -57,7 +57,7 @@ class TestChainIO < Test::Unit::TestCase
   
   def test_greedy
     io = YouTubeIt::GreedyChainIO.new("a" * (1024 * 513))
-    chunk = io.read(123)
+    chunk = io.read(524288)
     assert_equal 1024 * 512, chunk.length, "Should have read the first 512 KB chunk at once instead"
   end
 end

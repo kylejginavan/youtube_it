@@ -1,0 +1,101 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://gdata.youtube.com/feeds/api/users/chebyte/uploads/FQK1URcxmb4?key=AI39si7WuZZxAkYebKSyrlJR7hIFktt6OoPycEOeOT_yHkZgr6QsGbZgmhKvbS4bsSAv0utgrfhNfXQBITu1wX_z3VsZE02giQ&v=2.1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Gdata-User-Country:
+      - AR
+      Content-Type:
+      - application/atom+xml; charset=UTF-8; type=entry
+      Expires:
+      - Thu, 27 Jun 2013 23:03:06 GMT
+      Date:
+      - Thu, 27 Jun 2013 23:03:06 GMT
+      Cache-Control:
+      - private, max-age=300, no-transform
+      Vary:
+      - ! '*'
+      Gdata-Version:
+      - '2.1'
+      Etag:
+      - W/"D0cCQ347eCp7I2A9Wx9VEUg."
+      Last-Modified:
+      - Thu, 27 Jan 2011 19:04:22 GMT
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+    body:
+      encoding: US-ASCII
+      string: <?xml version='1.0' encoding='UTF-8'?><entry xmlns='http://www.w3.org/2005/Atom'
+        xmlns:media='http://search.yahoo.com/mrss/' xmlns:gd='http://schemas.google.com/g/2005'
+        xmlns:yt='http://gdata.youtube.com/schemas/2007' gd:etag='W/&quot;D0cCQ347eCp7I2A9Wx9VEUg.&quot;'><id>tag:youtube.com,2008:video:FQK1URcxmb4</id><published>2009-11-24T13:33:36.000Z</published><updated>2011-01-27T19:04:22.000Z</updated><category
+        scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#video'/><category
+        scheme='http://gdata.youtube.com/schemas/2007/categories.cat' term='People'
+        label='People &amp; Blogs'/><title>Pachamama bendice al Proyecto Tuquito</title><content
+        type='application/x-shockwave-flash' src='http://www.youtube.com/v/FQK1URcxmb4?version=3&amp;f=user_uploads&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata'/><link
+        rel='alternate' type='text/html' href='http://www.youtube.com/watch?v=FQK1URcxmb4&amp;feature=youtube_gdata'/><link
+        rel='http://gdata.youtube.com/schemas/2007#video.responses' type='application/atom+xml'
+        href='http://gdata.youtube.com/feeds/api/videos/FQK1URcxmb4/responses?v=2.1'/><link
+        rel='http://gdata.youtube.com/schemas/2007#video.ratings' type='application/atom+xml'
+        href='http://gdata.youtube.com/feeds/api/videos/FQK1URcxmb4/ratings?v=2.1'/><link
+        rel='http://gdata.youtube.com/schemas/2007#video.complaints' type='application/atom+xml'
+        href='http://gdata.youtube.com/feeds/api/videos/FQK1URcxmb4/complaints?v=2.1'/><link
+        rel='http://gdata.youtube.com/schemas/2007#video.related' type='application/atom+xml'
+        href='http://gdata.youtube.com/feeds/api/videos/FQK1URcxmb4/related?v=2.1'/><link
+        rel='http://gdata.youtube.com/schemas/2007#mobile' type='text/html' href='http://m.youtube.com/details?v=FQK1URcxmb4'/><link
+        rel='http://gdata.youtube.com/schemas/2007#uploader' type='application/atom+xml'
+        href='http://gdata.youtube.com/feeds/api/users/9m4qThg_zsMLscTUP9FeSQ?v=2.1'/><link
+        rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/chebyte/uploads/FQK1URcxmb4?v=2.1'/><author><name>Mauro
+        Torres</name><uri>http://gdata.youtube.com/feeds/api/users/chebyte</uri><yt:userId>9m4qThg_zsMLscTUP9FeSQ</yt:userId></author><yt:accessControl
+        action='comment' permission='allowed'/><yt:accessControl action='commentVote'
+        permission='allowed'/><yt:accessControl action='videoRespond' permission='moderated'/><yt:accessControl
+        action='rate' permission='allowed'/><yt:accessControl action='embed' permission='allowed'/><yt:accessControl
+        action='list' permission='allowed'/><yt:accessControl action='autoPlay' permission='allowed'/><yt:accessControl
+        action='syndicate' permission='allowed'/><gd:comments><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#comments'
+        href='http://gdata.youtube.com/feeds/api/videos/FQK1URcxmb4/comments?v=2.1'
+        countHint='0'/></gd:comments><media:group><media:category label='People &amp;
+        Blogs' scheme='http://gdata.youtube.com/schemas/2007/categories.cat'>People</media:category><media:content
+        url='http://www.youtube.com/v/FQK1URcxmb4?version=3&amp;f=user_uploads&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata'
+        type='application/x-shockwave-flash' medium='video' isDefault='true' expression='full'
+        duration='17' yt:format='5'/><media:content url='rtsp://r9---sn-bg07sne7.c.youtube.com/CksLENy73wIaQgm-mTEXUbUCFRMYDSANFEgGUgx1c2VyX3VwbG9hZHNyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp'
+        type='video/3gpp' medium='video' expression='full' duration='17' yt:format='1'/><media:content
+        url='rtsp://r9---sn-bg07sne7.c.youtube.com/CksLENy73wIaQgm-mTEXUbUCFRMYESARFEgGUgx1c2VyX3VwbG9hZHNyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp'
+        type='video/3gpp' medium='video' expression='full' duration='17' yt:format='6'/><media:credit
+        role='uploader' scheme='urn:youtube' yt:display='Mauro Torres'>chebyte</media:credit><media:description
+        type='plain'>La santa madre pachamana de amaicha del valle bendice a la gente
+        de Tuquito para que siga trabajando con la misma fuerza de siempe</media:description><media:keywords/><media:license
+        type='text/html' href='http://www.youtube.com/t/terms'>youtube</media:license><media:player
+        url='http://www.youtube.com/watch?v=FQK1URcxmb4&amp;feature=youtube_gdata_player'/><media:thumbnail
+        url='http://i1.ytimg.com/vi/FQK1URcxmb4/default.jpg' height='90' width='120'
+        time='00:00:08.500' yt:name='default'/><media:thumbnail url='http://i1.ytimg.com/vi/FQK1URcxmb4/mqdefault.jpg'
+        height='180' width='320' yt:name='mqdefault'/><media:thumbnail url='http://i1.ytimg.com/vi/FQK1URcxmb4/hqdefault.jpg'
+        height='360' width='480' yt:name='hqdefault'/><media:thumbnail url='http://i1.ytimg.com/vi/FQK1URcxmb4/1.jpg'
+        height='90' width='120' time='00:00:04.250' yt:name='start'/><media:thumbnail
+        url='http://i1.ytimg.com/vi/FQK1URcxmb4/2.jpg' height='90' width='120' time='00:00:08.500'
+        yt:name='middle'/><media:thumbnail url='http://i1.ytimg.com/vi/FQK1URcxmb4/3.jpg'
+        height='90' width='120' time='00:00:12.750' yt:name='end'/><media:title type='plain'>Pachamama
+        bendice al Proyecto Tuquito</media:title><yt:duration seconds='17'/><yt:uploaded>2009-11-24T13:33:36.000Z</yt:uploaded><yt:uploaderId>UC9m4qThg_zsMLscTUP9FeSQ</yt:uploaderId><yt:videoid>FQK1URcxmb4</yt:videoid></media:group><yt:statistics
+        favoriteCount='0' viewCount='355'/></entry>
+    http_version: 
+  recorded_at: Thu, 27 Jun 2013 23:03:15 GMT
+recorded_with: VCR 2.5.0

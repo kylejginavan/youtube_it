@@ -1,116 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: patch
-    uri: http://gdata.youtube.com/feeds/api/users/default/uploads/x1dhHf0ta04
-    body:
-      encoding: UTF-8
-      string: <?xml version="1.0" encoding="UTF-8"?><entry xmlns="http://www.w3.org/2005/Atom"
-        xmlns:media="http://search.yahoo.com/mrss/" xmlns:gd="http://schemas.google.com/g/2005"
-        xmlns:yt="http://gdata.youtube.com/schemas/2007" xmlns:gml="http://www.opengis.net/gml"
-        xmlns:georss="http://www.georss.org/georss" gd:fields="yt:accessControl[@action='list'
-        or @action='embed']"><media:group></media:group><yt:accessControl action="list"
-        permission="denied"/><yt:accessControl action="embed" permission="allowed"/></entry>
-    headers:
-      User-Agent:
-      - Faraday v0.8.7
-      Content-Type:
-      - application/xml
-      Authorization:
-      - Bearer ya29.AHES6ZQ85Lm9rfv_pEKbjX030tjl-QuDavlPy0d6vQwHvWc
-      X-GData-Client:
-      - youtube_it
-      X-GData-Key:
-      - key=AI39si7WuZZxAkYebKSyrlJR7hIFktt6OoPycEOeOT_yHkZgr6QsGbZgmhKvbS4bsSAv0utgrfhNfXQBITu1wX_z3VsZE02giQ
-      GData-Version:
-      - '2.1'
-      Content-Length:
-      - '508'
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      X-GData-User-Country:
-      - AR
-      Content-Type:
-      - application/atom+xml; charset=UTF-8; type=entry
-      GData-Version:
-      - '2.1'
-      ETag:
-      - W/"D0MBSH47eCp7I2A9WhBaE08."
-      Transfer-Encoding:
-      - chunked
-      Date:
-      - Thu, 23 May 2013 16:10:59 GMT
-      Expires:
-      - Thu, 23 May 2013 16:10:59 GMT
-      Cache-Control:
-      - private, max-age=0
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-XSS-Protection:
-      - 1; mode=block
-      Server:
-      - GSE
-    body:
-      encoding: UTF-8
-      string: <?xml version='1.0' encoding='UTF-8'?><entry xmlns='http://www.w3.org/2005/Atom'
-        xmlns:app='http://www.w3.org/2007/app' xmlns:media='http://search.yahoo.com/mrss/'
-        xmlns:gd='http://schemas.google.com/g/2005' xmlns:yt='http://gdata.youtube.com/schemas/2007'
-        gd:etag='W/&quot;D0MBSH47eCp7I2A9WhBaE08.&quot;'><id>tag:youtube.com,2008:video:x1dhHf0ta04</id><published>2013-05-23T16:10:54.000Z</published><updated>2013-05-23T16:10:59.000Z</updated><app:edited>2013-05-23T16:10:59.000Z</app:edited><app:control><app:draft>yes</app:draft><yt:state
-        name='processing'/></app:control><category scheme='http://schemas.google.com/g/2005#kind'
-        term='http://gdata.youtube.com/schemas/2007#video'/><category scheme='http://gdata.youtube.com/schemas/2007/categories.cat'
-        term='People' label='People &amp; Blogs'/><category scheme='http://gdata.youtube.com/schemas/2007/keywords.cat'
-        term='test'/><title>test title</title><link rel='alternate' type='text/html'
-        href='http://www.youtube.com/watch?v=x1dhHf0ta04&amp;feature=youtube_gdata'/><link
-        rel='http://gdata.youtube.com/schemas/2007#video.responses' type='application/atom+xml'
-        href='http://gdata.youtube.com/feeds/api/videos/x1dhHf0ta04/responses?client=youtube_it'/><link
-        rel='http://gdata.youtube.com/schemas/2007#video.ratings' type='application/atom+xml'
-        href='http://gdata.youtube.com/feeds/api/videos/x1dhHf0ta04/ratings?client=youtube_it'/><link
-        rel='http://gdata.youtube.com/schemas/2007#video.complaints' type='application/atom+xml'
-        href='http://gdata.youtube.com/feeds/api/videos/x1dhHf0ta04/complaints?client=youtube_it'/><link
-        rel='http://gdata.youtube.com/schemas/2007#video.related' type='application/atom+xml'
-        href='http://gdata.youtube.com/feeds/api/videos/x1dhHf0ta04/related?client=youtube_it'/><link
-        rel='http://gdata.youtube.com/schemas/2007#video.captionTracks' type='application/atom+xml'
-        href='http://gdata.youtube.com/feeds/api/videos/x1dhHf0ta04/captions?client=youtube_it'
-        yt:hasEntries='false'/><link rel='http://gdata.youtube.com/schemas/2007#uploader'
-        type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/WWmLvppy3j64IGmA2dpCyw?client=youtube_it'/><link
-        rel='http://gdata.youtube.com/schemas/2007#insight.views' type='text/html'
-        href='http://insight.youtube.com/video-analytics/csvreports?query=x1dhHf0ta04&amp;type=v&amp;starttime=1235865600000&amp;endtime=1369180800000&amp;user_starttime=1368576000000&amp;user_endtime=1369180800000&amp;region=world&amp;token=s-x2RMAL6AnsughyWD6kvtE7JkF8MTM2OTMyNzI1OUAxMzY5MzI1NDU5&amp;hl=en_US&amp;devKey=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm'/><link
-        rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/uploads/x1dhHf0ta04?client=youtube_it'/><link
-        rel='edit' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/uploads/x1dhHf0ta04?client=youtube_it'/><author><name>tubeit20101</name><uri>http://gdata.youtube.com/feeds/api/users/tubeit20101</uri><yt:userId>WWmLvppy3j64IGmA2dpCyw</yt:userId></author><yt:accessControl
-        action='comment' permission='allowed'/><yt:accessControl action='commentVote'
-        permission='allowed'/><yt:accessControl action='videoRespond' permission='moderated'/><yt:accessControl
-        action='rate' permission='allowed'/><yt:accessControl action='embed' permission='allowed'/><yt:accessControl
-        action='list' permission='denied'/><yt:accessControl action='autoPlay' permission='allowed'/><yt:accessControl
-        action='syndicate' permission='allowed'/><gd:comments><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#comments'
-        href='http://gdata.youtube.com/feeds/api/videos/x1dhHf0ta04/comments?client=youtube_it'
-        countHint='0'/></gd:comments><media:group><media:category label='People &amp;
-        Blogs' scheme='http://gdata.youtube.com/schemas/2007/categories.cat'>People</media:category><media:content
-        url='http://www.youtube.com/v/x1dhHf0ta04?version=3&amp;f=user_uploads&amp;c=youtube_it&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata'
-        type='application/x-shockwave-flash' medium='video' isDefault='true' expression='full'
-        duration='0' yt:format='5'/><media:credit role='uploader' scheme='urn:youtube'
-        yt:display='tubeit20101'>tubeit20101</media:credit><media:description type='plain'>test
-        description</media:description><media:keywords>test</media:keywords><media:license
-        type='text/html' href='http://www.youtube.com/t/terms'>youtube</media:license><media:player
-        url='http://www.youtube.com/watch?v=x1dhHf0ta04&amp;feature=youtube_gdata_player'/><media:thumbnail
-        url='http://i.ytimg.com/vi/x1dhHf0ta04/default.jpg' height='90' width='120'
-        time='00:00:00' yt:name='default'/><media:thumbnail url='http://i.ytimg.com/vi/x1dhHf0ta04/mqdefault.jpg'
-        height='180' width='320' yt:name='mqdefault'/><media:thumbnail url='http://i.ytimg.com/vi/x1dhHf0ta04/hqdefault.jpg'
-        height='360' width='480' yt:name='hqdefault'/><media:thumbnail url='http://i.ytimg.com/vi/x1dhHf0ta04/1.jpg'
-        height='90' width='120' time='00:00:00' yt:name='start'/><media:thumbnail
-        url='http://i.ytimg.com/vi/x1dhHf0ta04/2.jpg' height='90' width='120' time='00:00:00'
-        yt:name='middle'/><media:thumbnail url='http://i.ytimg.com/vi/x1dhHf0ta04/3.jpg'
-        height='90' width='120' time='00:00:00' yt:name='end'/><media:title type='plain'>test
-        title</media:title><yt:duration seconds='0'/><yt:uploaded>2013-05-23T16:10:54.000Z</yt:uploaded><yt:uploaderId>UCWWmLvppy3j64IGmA2dpCyw</yt:uploaderId><yt:videoid>x1dhHf0ta04</yt:videoid></media:group></entry>
-    http_version: 
-  recorded_at: Thu, 23 May 2013 16:10:59 GMT
-- request:
-    method: delete
-    uri: http://gdata.youtube.com/feeds/api/users/default/uploads/x1dhHf0ta04
+    method: get
+    uri: http://gdata.youtube.com/feeds/api/users/default
     body:
       encoding: US-ASCII
       string: ''
@@ -118,210 +10,67 @@ http_interactions:
       User-Agent:
       - Faraday v0.8.7
       Authorization:
-      - Bearer ya29.AHES6ZQ85Lm9rfv_pEKbjX030tjl-QuDavlPy0d6vQwHvWc
-      X-GData-Client:
-      - youtube_it
-      X-GData-Key:
-      - key=AI39si7WuZZxAkYebKSyrlJR7hIFktt6OoPycEOeOT_yHkZgr6QsGbZgmhKvbS4bsSAv0utgrfhNfXQBITu1wX_z3VsZE02giQ
-      GData-Version:
-      - '2.1'
+      - Bearer ya29.AHES6ZSQ5njt5VZGfAo6FSDnptJM3Qiq1ixW7GUluiMcJ20
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Gdata-User-Country:
+      - AR
       Content-Type:
       - application/atom+xml; charset=UTF-8
-      Content-Length:
-      - '0'
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      X-GData-User-Country:
-      - AR
-      GData-Version:
-      - '2.1'
-      Date:
-      - Thu, 23 May 2013 16:10:59 GMT
       Expires:
-      - Thu, 23 May 2013 16:10:59 GMT
+      - Thu, 27 Jun 2013 23:04:57 GMT
+      Date:
+      - Thu, 27 Jun 2013 23:04:57 GMT
       Cache-Control:
-      - private, max-age=0
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-XSS-Protection:
-      - 1; mode=block
-      Content-Length:
-      - '0'
-      Server:
-      - GSE
-      Content-Type:
-      - text/html; charset=UTF-8
-    body:
-      encoding: UTF-8
-      string: ''
-    http_version: 
-  recorded_at: Thu, 23 May 2013 16:10:59 GMT
-- request:
-    method: patch
-    uri: http://gdata.youtube.com/feeds/api/users/default/uploads/mCwdRjcAWGs
-    body:
-      encoding: UTF-8
-      string: <?xml version="1.0" encoding="UTF-8"?><entry xmlns="http://www.w3.org/2005/Atom"
-        xmlns:media="http://search.yahoo.com/mrss/" xmlns:gd="http://schemas.google.com/g/2005"
-        xmlns:yt="http://gdata.youtube.com/schemas/2007" xmlns:gml="http://www.opengis.net/gml"
-        xmlns:georss="http://www.georss.org/georss" gd:fields="yt:accessControl[@action='list'
-        or @action='embed']"><media:group></media:group><yt:accessControl action="list"
-        permission="denied"/><yt:accessControl action="embed" permission="allowed"/></entry>
-    headers:
-      User-Agent:
-      - Faraday v0.8.7
-      Content-Type:
-      - application/xml
-      Authorization:
-      - Bearer ya29.AHES6ZRF0zpdKUO7xiJDaISTztWwH8g_CQxONsd0oYttzL4
-      X-GData-Client:
-      - youtube_it
-      X-GData-Key:
-      - key=AI39si7WuZZxAkYebKSyrlJR7hIFktt6OoPycEOeOT_yHkZgr6QsGbZgmhKvbS4bsSAv0utgrfhNfXQBITu1wX_z3VsZE02giQ
-      GData-Version:
-      - '2.1'
-      Content-Length:
-      - '508'
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      X-GData-User-Country:
-      - AR
-      Content-Type:
-      - application/atom+xml; charset=UTF-8; type=entry
-      GData-Version:
-      - '2.1'
-      ETag:
-      - W/"DEUMSH47eCp7I2A9WhBaE08."
+      - private, max-age=0, must-revalidate, no-transform
+      Vary:
+      - Accept, X-GData-Authorization, GData-Version
+      Gdata-Version:
+      - '1.0'
+      Last-Modified:
+      - Thu, 27 Jun 2013 22:54:50 GMT
       Transfer-Encoding:
       - chunked
-      Date:
-      - Thu, 23 May 2013 16:24:49 GMT
-      Expires:
-      - Thu, 23 May 2013 16:24:49 GMT
-      Cache-Control:
-      - private, max-age=0
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       Server:
       - GSE
-    body:
-      encoding: UTF-8
-      string: <?xml version='1.0' encoding='UTF-8'?><entry xmlns='http://www.w3.org/2005/Atom'
-        xmlns:app='http://www.w3.org/2007/app' xmlns:media='http://search.yahoo.com/mrss/'
-        xmlns:gd='http://schemas.google.com/g/2005' xmlns:yt='http://gdata.youtube.com/schemas/2007'
-        gd:etag='W/&quot;DEUMSH47eCp7I2A9WhBaE08.&quot;'><id>tag:youtube.com,2008:video:mCwdRjcAWGs</id><published>2013-05-23T16:24:45.000Z</published><updated>2013-05-23T16:24:49.000Z</updated><app:edited>2013-05-23T16:24:49.000Z</app:edited><app:control><app:draft>yes</app:draft><yt:state
-        name='processing'/></app:control><category scheme='http://schemas.google.com/g/2005#kind'
-        term='http://gdata.youtube.com/schemas/2007#video'/><category scheme='http://gdata.youtube.com/schemas/2007/categories.cat'
-        term='People' label='People &amp; Blogs'/><category scheme='http://gdata.youtube.com/schemas/2007/keywords.cat'
-        term='test'/><title>test title</title><link rel='alternate' type='text/html'
-        href='http://www.youtube.com/watch?v=mCwdRjcAWGs&amp;feature=youtube_gdata'/><link
-        rel='http://gdata.youtube.com/schemas/2007#video.responses' type='application/atom+xml'
-        href='http://gdata.youtube.com/feeds/api/videos/mCwdRjcAWGs/responses?client=youtube_it'/><link
-        rel='http://gdata.youtube.com/schemas/2007#video.ratings' type='application/atom+xml'
-        href='http://gdata.youtube.com/feeds/api/videos/mCwdRjcAWGs/ratings?client=youtube_it'/><link
-        rel='http://gdata.youtube.com/schemas/2007#video.complaints' type='application/atom+xml'
-        href='http://gdata.youtube.com/feeds/api/videos/mCwdRjcAWGs/complaints?client=youtube_it'/><link
-        rel='http://gdata.youtube.com/schemas/2007#video.related' type='application/atom+xml'
-        href='http://gdata.youtube.com/feeds/api/videos/mCwdRjcAWGs/related?client=youtube_it'/><link
-        rel='http://gdata.youtube.com/schemas/2007#video.captionTracks' type='application/atom+xml'
-        href='http://gdata.youtube.com/feeds/api/videos/mCwdRjcAWGs/captions?client=youtube_it'
-        yt:hasEntries='false'/><link rel='http://gdata.youtube.com/schemas/2007#uploader'
-        type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/WWmLvppy3j64IGmA2dpCyw?client=youtube_it'/><link
-        rel='http://gdata.youtube.com/schemas/2007#insight.views' type='text/html'
-        href='http://insight.youtube.com/video-analytics/csvreports?query=mCwdRjcAWGs&amp;type=v&amp;starttime=1235865600000&amp;endtime=1369180800000&amp;user_starttime=1368576000000&amp;user_endtime=1369180800000&amp;region=world&amp;token=XzWxPke1DE6E1c6jdiM6GOTeckJ8MTM2OTMyODA4OUAxMzY5MzI2Mjg5&amp;hl=en_US&amp;devKey=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm'/><link
-        rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/uploads/mCwdRjcAWGs?client=youtube_it'/><link
-        rel='edit' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/uploads/mCwdRjcAWGs?client=youtube_it'/><author><name>tubeit20101</name><uri>http://gdata.youtube.com/feeds/api/users/tubeit20101</uri><yt:userId>WWmLvppy3j64IGmA2dpCyw</yt:userId></author><yt:accessControl
-        action='comment' permission='allowed'/><yt:accessControl action='commentVote'
-        permission='allowed'/><yt:accessControl action='videoRespond' permission='moderated'/><yt:accessControl
-        action='rate' permission='allowed'/><yt:accessControl action='embed' permission='allowed'/><yt:accessControl
-        action='list' permission='denied'/><yt:accessControl action='autoPlay' permission='allowed'/><yt:accessControl
-        action='syndicate' permission='allowed'/><gd:comments><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#comments'
-        href='http://gdata.youtube.com/feeds/api/videos/mCwdRjcAWGs/comments?client=youtube_it'
-        countHint='0'/></gd:comments><media:group><media:category label='People &amp;
-        Blogs' scheme='http://gdata.youtube.com/schemas/2007/categories.cat'>People</media:category><media:content
-        url='http://www.youtube.com/v/mCwdRjcAWGs?version=3&amp;f=user_uploads&amp;c=youtube_it&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata'
-        type='application/x-shockwave-flash' medium='video' isDefault='true' expression='full'
-        duration='0' yt:format='5'/><media:credit role='uploader' scheme='urn:youtube'
-        yt:display='tubeit20101'>tubeit20101</media:credit><media:description type='plain'>test
-        description</media:description><media:keywords>test</media:keywords><media:license
-        type='text/html' href='http://www.youtube.com/t/terms'>youtube</media:license><media:player
-        url='http://www.youtube.com/watch?v=mCwdRjcAWGs&amp;feature=youtube_gdata_player'/><media:thumbnail
-        url='http://i.ytimg.com/vi/mCwdRjcAWGs/default.jpg' height='90' width='120'
-        time='00:00:00' yt:name='default'/><media:thumbnail url='http://i.ytimg.com/vi/mCwdRjcAWGs/mqdefault.jpg'
-        height='180' width='320' yt:name='mqdefault'/><media:thumbnail url='http://i.ytimg.com/vi/mCwdRjcAWGs/hqdefault.jpg'
-        height='360' width='480' yt:name='hqdefault'/><media:thumbnail url='http://i.ytimg.com/vi/mCwdRjcAWGs/1.jpg'
-        height='90' width='120' time='00:00:00' yt:name='start'/><media:thumbnail
-        url='http://i.ytimg.com/vi/mCwdRjcAWGs/2.jpg' height='90' width='120' time='00:00:00'
-        yt:name='middle'/><media:thumbnail url='http://i.ytimg.com/vi/mCwdRjcAWGs/3.jpg'
-        height='90' width='120' time='00:00:00' yt:name='end'/><media:title type='plain'>test
-        title</media:title><yt:duration seconds='0'/><yt:uploaded>2013-05-23T16:24:45.000Z</yt:uploaded><yt:uploaderId>UCWWmLvppy3j64IGmA2dpCyw</yt:uploaderId><yt:videoid>mCwdRjcAWGs</yt:videoid></media:group></entry>
-    http_version: 
-  recorded_at: Thu, 23 May 2013 16:24:49 GMT
-- request:
-    method: delete
-    uri: http://gdata.youtube.com/feeds/api/users/default/uploads/mCwdRjcAWGs
     body:
       encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.8.7
-      Authorization:
-      - Bearer ya29.AHES6ZRF0zpdKUO7xiJDaISTztWwH8g_CQxONsd0oYttzL4
-      X-GData-Client:
-      - youtube_it
-      X-GData-Key:
-      - key=AI39si7WuZZxAkYebKSyrlJR7hIFktt6OoPycEOeOT_yHkZgr6QsGbZgmhKvbS4bsSAv0utgrfhNfXQBITu1wX_z3VsZE02giQ
-      GData-Version:
-      - '2.1'
-      Content-Type:
-      - application/atom+xml; charset=UTF-8
-      Content-Length:
-      - '0'
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      X-GData-User-Country:
-      - AR
-      GData-Version:
-      - '2.1'
-      Date:
-      - Thu, 23 May 2013 16:24:50 GMT
-      Expires:
-      - Thu, 23 May 2013 16:24:50 GMT
-      Cache-Control:
-      - private, max-age=0
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-XSS-Protection:
-      - 1; mode=block
-      Content-Length:
-      - '0'
-      Server:
-      - GSE
-      Content-Type:
-      - text/html; charset=UTF-8
-    body:
-      encoding: UTF-8
-      string: ''
+      string: <?xml version='1.0' encoding='UTF-8'?><entry xmlns='http://www.w3.org/2005/Atom'
+        xmlns:media='http://search.yahoo.com/mrss/' xmlns:gd='http://schemas.google.com/g/2005'
+        xmlns:yt='http://gdata.youtube.com/schemas/2007'><id>http://gdata.youtube.com/feeds/api/users/WWmLvppy3j64IGmA2dpCyw</id><published>2010-07-06T14:59:05.000Z</published><updated>2013-06-27T22:54:50.000Z</updated><category
+        scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#userProfile'/><title
+        type='text'>tubeit20101</title><content type='text'/><link rel='alternate'
+        type='text/html' href='http://www.youtube.com/channel/UCWWmLvppy3j64IGmA2dpCyw'/><link
+        rel='http://gdata.youtube.com/schemas/2007#insight.views' type='text/html'
+        href='https://insight.youtube.com/video-analytics-partner/gwt/csv-zip?token=CiAKAghKEhoIABIWV1dtTHZwcHkzajY0SUdtQTJkcEN5dw&amp;sig=MCwCFCFgTjZ6Z7u53m7jiJDZwz_bKRSLAhQDnxu_w_yVthkojAF965caoP1KaQ&amp;user_starttime=1371600000000&amp;user_endtime=1372204800000&amp;exp=1372377897253'/><link
+        rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/WWmLvppy3j64IGmA2dpCyw'/><author><name>tubeit20101</name><uri>http://gdata.youtube.com/feeds/api/users/tubeit20101</uri></author><yt:age>31</yt:age><gd:feedLink
+        rel='http://gdata.youtube.com/schemas/2007#user.subscriptions' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/subscriptions'
+        countHint='0'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.contacts'
+        href='http://gdata.youtube.com/feeds/api/users/tubeit20101/contacts' countHint='0'/><gd:feedLink
+        rel='http://gdata.youtube.com/schemas/2007#user.inbox' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/inbox'
+        countHint='0'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.playlists'
+        href='http://gdata.youtube.com/feeds/api/users/tubeit20101/playlists'/><gd:feedLink
+        rel='http://gdata.youtube.com/schemas/2007#user.uploads' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/uploads'
+        countHint='36'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.newsubscriptionvideos'
+        href='http://gdata.youtube.com/feeds/api/users/tubeit20101/newsubscriptionvideos'/><yt:location>AR</yt:location><yt:maxUploadDuration
+        seconds='930'/><yt:statistics lastWebAccess='1970-01-01T00:00:00.000Z' subscriberCount='0'
+        videoWatchCount='0' viewCount='104' totalUploadViews='0'/><media:thumbnail
+        url='http://s.ytimg.com/yts/img/silhouette250-vflEqxKg9.png'/><yt:username>tubeit20101</yt:username></entry>
     http_version: 
-  recorded_at: Thu, 23 May 2013 16:24:50 GMT
+  recorded_at: Thu, 27 Jun 2013 23:05:05 GMT
 - request:
     method: post
     uri: http://uploads.gdata.youtube.com/feeds/api/users/default/uploads
@@ -10515,108 +10264,111 @@ http_interactions:
       User-Agent:
       - Faraday v0.8.7
       Slug:
-      - 3e6b2fb8c1f3ccc0d4cb5abaa1cd63ca
+      - !binary |-
+        M2U2YjJmYjhjMWYzY2NjMGQ0Y2I1YWJhYTFjZDYzY2E=
       Content-Type:
       - multipart/related; boundary=An43094fu
       Content-Length:
       - '458204'
       Authorization:
-      - Bearer ya29.AHES6ZSCvjG_7MAY_FmnZS5XbILlOfINAIs6DhXUP5cvVMg
-      X-GData-Client:
+      - Bearer ya29.AHES6ZSQ5njt5VZGfAo6FSDnptJM3Qiq1ixW7GUluiMcJ20
+      X-Gdata-Client:
       - youtube_it
-      X-GData-Key:
+      X-Gdata-Key:
       - key=AI39si7WuZZxAkYebKSyrlJR7hIFktt6OoPycEOeOT_yHkZgr6QsGbZgmhKvbS4bsSAv0utgrfhNfXQBITu1wX_z3VsZE02giQ
-      GData-Version:
+      Gdata-Version:
       - '2.1'
+      Accept:
+      - ! '*/*'
   response:
     status:
       code: 201
-      message: 
+      message: Created
     headers:
-      Server:
-      - HTTP Upload Server Built on May 8 2013 16:51:19 (1368057079)
-      X-GData-User-Country:
+      X-Gdata-User-Country:
       - AR
       Content-Type:
       - application/atom+xml; charset=UTF-8; type=entry
       Expires:
-      - Thu, 23 May 2013 16:36:20 GMT
+      - Thu, 27 Jun 2013 23:05:13 GMT
       Date:
-      - Thu, 23 May 2013 16:36:20 GMT
+      - Thu, 27 Jun 2013 23:05:13 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Vary:
       - Accept, X-GData-Authorization, GData-Version
-      GData-Version:
+      Gdata-Version:
       - '2.1'
-      ETag:
-      - W/"DE4DSH47eCp7I2A9WhBaE08."
+      Etag:
+      - W/"DkQFQn47eCp7I2A9WhFRE0o."
       Location:
-      - http://gdata.youtube.com/feeds/api/users/tubeit20101/uploads/uOinsq08guk?client=youtube_it
+      - http://gdata.youtube.com/feeds/api/users/tubeit20101/uploads/8IL-dGzsIos?client=youtube_it
       Content-Location:
-      - http://gdata.youtube.com/feeds/api/users/tubeit20101/uploads/uOinsq08guk?client=youtube_it
-      X-GUploader-UploadID:
-      - AEnB2UpevtiA7pIrafW0VR5nIlZ3aqtmk0Da1zyLDbvW_vJfpRkG-ZXbieZc3dkIJcq2XMRjidS1Cf2tsIKN9d0yynyLsT9xvQ
+      - http://gdata.youtube.com/feeds/api/users/tubeit20101/uploads/8IL-dGzsIos?client=youtube_it
+      X-Guploader-Uploadid:
+      - AEnB2UoE9lXNtbo-OgFAEjVVoyl9gW7fosqKg8P_4NIcrt2awsxynOnZ1p-lb2xPJ4Y6Tryw_FPRX8rVlRGgXSTFE0zPQgAlmA
       Content-Length:
-      - '5466'
+      - '5431'
+      Server:
+      - HTTP Upload Server Built on Jun 25 2013 11:32:14 (1372185134)
     body:
-      encoding: UTF-8
+      encoding: US-ASCII
       string: <?xml version='1.0' encoding='UTF-8'?><entry xmlns='http://www.w3.org/2005/Atom'
         xmlns:app='http://www.w3.org/2007/app' xmlns:media='http://search.yahoo.com/mrss/'
         xmlns:gd='http://schemas.google.com/g/2005' xmlns:yt='http://gdata.youtube.com/schemas/2007'
-        gd:etag='W/&quot;DE4DSH47eCp7I2A9WhBaE08.&quot;'><id>tag:youtube.com,2008:video:uOinsq08guk</id><published>2013-05-23T16:36:19.000Z</published><updated>2013-05-23T16:36:19.000Z</updated><app:edited>2013-05-23T16:36:19.000Z</app:edited><app:control><app:draft>yes</app:draft><yt:state
+        gd:etag='W/&quot;DkQFQn47eCp7I2A9WhFRE0o.&quot;'><id>tag:youtube.com,2008:video:8IL-dGzsIos</id><published>2013-06-27T23:05:13.000Z</published><updated>2013-06-27T23:05:13.000Z</updated><app:edited>2013-06-27T23:05:13.000Z</app:edited><app:control><app:draft>yes</app:draft><yt:state
         name='processing'/></app:control><category scheme='http://schemas.google.com/g/2005#kind'
         term='http://gdata.youtube.com/schemas/2007#video'/><category scheme='http://gdata.youtube.com/schemas/2007/categories.cat'
         term='People' label='People &amp; Blogs'/><category scheme='http://gdata.youtube.com/schemas/2007/keywords.cat'
         term='test'/><title>test title</title><link rel='alternate' type='text/html'
-        href='http://www.youtube.com/watch?v=uOinsq08guk&amp;feature=youtube_gdata'/><link
+        href='http://www.youtube.com/watch?v=8IL-dGzsIos&amp;feature=youtube_gdata'/><link
         rel='http://gdata.youtube.com/schemas/2007#video.responses' type='application/atom+xml'
-        href='http://gdata.youtube.com/feeds/api/videos/uOinsq08guk/responses?client=youtube_it'/><link
+        href='http://gdata.youtube.com/feeds/api/videos/8IL-dGzsIos/responses?client=youtube_it'/><link
         rel='http://gdata.youtube.com/schemas/2007#video.ratings' type='application/atom+xml'
-        href='http://gdata.youtube.com/feeds/api/videos/uOinsq08guk/ratings?client=youtube_it'/><link
+        href='http://gdata.youtube.com/feeds/api/videos/8IL-dGzsIos/ratings?client=youtube_it'/><link
         rel='http://gdata.youtube.com/schemas/2007#video.complaints' type='application/atom+xml'
-        href='http://gdata.youtube.com/feeds/api/videos/uOinsq08guk/complaints?client=youtube_it'/><link
+        href='http://gdata.youtube.com/feeds/api/videos/8IL-dGzsIos/complaints?client=youtube_it'/><link
         rel='http://gdata.youtube.com/schemas/2007#video.related' type='application/atom+xml'
-        href='http://gdata.youtube.com/feeds/api/videos/uOinsq08guk/related?client=youtube_it'/><link
+        href='http://gdata.youtube.com/feeds/api/videos/8IL-dGzsIos/related?client=youtube_it'/><link
         rel='http://gdata.youtube.com/schemas/2007#video.captionTracks' type='application/atom+xml'
-        href='http://gdata.youtube.com/feeds/api/videos/uOinsq08guk/captions?client=youtube_it'
+        href='http://gdata.youtube.com/feeds/api/videos/8IL-dGzsIos/captions?client=youtube_it'
         yt:hasEntries='false'/><link rel='http://gdata.youtube.com/schemas/2007#uploader'
         type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/WWmLvppy3j64IGmA2dpCyw?client=youtube_it'/><link
         rel='http://gdata.youtube.com/schemas/2007#insight.views' type='text/html'
-        href='http://insight.youtube.com/video-analytics/csvreports?query=uOinsq08guk&amp;type=v&amp;starttime=1235865600000&amp;endtime=1369180800000&amp;user_starttime=1368576000000&amp;user_endtime=1369180800000&amp;region=world&amp;token=gKsGsR6zgUWOoz0BWXE2FOKg6k98MTM2OTMyODc4MEAxMzY5MzI2OTgw&amp;hl=en_US&amp;devKey=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm'/><link
-        rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/uploads/uOinsq08guk?client=youtube_it'/><link
-        rel='edit' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/uploads/uOinsq08guk?client=youtube_it'/><author><name>tubeit20101</name><uri>http://gdata.youtube.com/feeds/api/users/tubeit20101</uri><yt:userId>WWmLvppy3j64IGmA2dpCyw</yt:userId></author><yt:accessControl
+        href='https://insight.youtube.com/video-analytics-partner/gwt/csv-zip?token=ChUKAggEEg8IABILOElMLWRHenNJb3M&amp;sig=MCsCFFXu7f2Vj49oWRjqoklm0hjWuR_DAhMxijYZ7ArBorCdYm9T5_pgndtd&amp;user_starttime=1371600000000&amp;user_endtime=1372204800000&amp;exp=1372377913256&amp;devKey=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm'/><link
+        rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/uploads/8IL-dGzsIos?client=youtube_it'/><link
+        rel='edit' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/uploads/8IL-dGzsIos?client=youtube_it'/><author><name>tubeit20101</name><uri>http://gdata.youtube.com/feeds/api/users/tubeit20101</uri><yt:userId>WWmLvppy3j64IGmA2dpCyw</yt:userId></author><yt:accessControl
         action='comment' permission='allowed'/><yt:accessControl action='commentVote'
         permission='allowed'/><yt:accessControl action='videoRespond' permission='moderated'/><yt:accessControl
         action='rate' permission='allowed'/><yt:accessControl action='embed' permission='allowed'/><yt:accessControl
         action='list' permission='allowed'/><yt:accessControl action='autoPlay' permission='allowed'/><yt:accessControl
         action='syndicate' permission='allowed'/><gd:comments><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#comments'
-        href='http://gdata.youtube.com/feeds/api/videos/uOinsq08guk/comments?client=youtube_it'
+        href='http://gdata.youtube.com/feeds/api/videos/8IL-dGzsIos/comments?client=youtube_it'
         countHint='0'/></gd:comments><media:group><media:category label='People &amp;
         Blogs' scheme='http://gdata.youtube.com/schemas/2007/categories.cat'>People</media:category><media:content
-        url='http://www.youtube.com/v/uOinsq08guk?version=3&amp;f=user_uploads&amp;c=youtube_it&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata'
+        url='http://www.youtube.com/v/8IL-dGzsIos?version=3&amp;f=user_uploads&amp;c=youtube_it&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata'
         type='application/x-shockwave-flash' medium='video' isDefault='true' expression='full'
         duration='0' yt:format='5'/><media:credit role='uploader' scheme='urn:youtube'
         yt:display='tubeit20101'>tubeit20101</media:credit><media:description type='plain'>test
         description</media:description><media:keywords>test</media:keywords><media:license
         type='text/html' href='http://www.youtube.com/t/terms'>youtube</media:license><media:player
-        url='http://www.youtube.com/watch?v=uOinsq08guk&amp;feature=youtube_gdata_player'/><media:thumbnail
-        url='http://i.ytimg.com/vi/uOinsq08guk/default.jpg' height='90' width='120'
-        time='00:00:00' yt:name='default'/><media:thumbnail url='http://i.ytimg.com/vi/uOinsq08guk/mqdefault.jpg'
-        height='180' width='320' yt:name='mqdefault'/><media:thumbnail url='http://i.ytimg.com/vi/uOinsq08guk/hqdefault.jpg'
-        height='360' width='480' yt:name='hqdefault'/><media:thumbnail url='http://i.ytimg.com/vi/uOinsq08guk/1.jpg'
+        url='http://www.youtube.com/watch?v=8IL-dGzsIos&amp;feature=youtube_gdata_player'/><media:thumbnail
+        url='http://i1.ytimg.com/vi/8IL-dGzsIos/default.jpg' height='90' width='120'
+        time='00:00:00' yt:name='default'/><media:thumbnail url='http://i1.ytimg.com/vi/8IL-dGzsIos/mqdefault.jpg'
+        height='180' width='320' yt:name='mqdefault'/><media:thumbnail url='http://i1.ytimg.com/vi/8IL-dGzsIos/hqdefault.jpg'
+        height='360' width='480' yt:name='hqdefault'/><media:thumbnail url='http://i1.ytimg.com/vi/8IL-dGzsIos/1.jpg'
         height='90' width='120' time='00:00:00' yt:name='start'/><media:thumbnail
-        url='http://i.ytimg.com/vi/uOinsq08guk/2.jpg' height='90' width='120' time='00:00:00'
-        yt:name='middle'/><media:thumbnail url='http://i.ytimg.com/vi/uOinsq08guk/3.jpg'
+        url='http://i1.ytimg.com/vi/8IL-dGzsIos/2.jpg' height='90' width='120' time='00:00:00'
+        yt:name='middle'/><media:thumbnail url='http://i1.ytimg.com/vi/8IL-dGzsIos/3.jpg'
         height='90' width='120' time='00:00:00' yt:name='end'/><media:title type='plain'>test
-        title</media:title><yt:duration seconds='0'/><yt:uploaded>2013-05-23T16:36:19.000Z</yt:uploaded><yt:uploaderId>UCWWmLvppy3j64IGmA2dpCyw</yt:uploaderId><yt:videoid>uOinsq08guk</yt:videoid></media:group></entry>
+        title</media:title><yt:duration seconds='0'/><yt:uploaded>2013-06-27T23:05:13.000Z</yt:uploaded><yt:uploaderId>UCWWmLvppy3j64IGmA2dpCyw</yt:uploaderId><yt:videoid>8IL-dGzsIos</yt:videoid></media:group></entry>
     http_version: 
-  recorded_at: Thu, 23 May 2013 16:36:23 GMT
+  recorded_at: Thu, 27 Jun 2013 23:05:24 GMT
 - request:
     method: patch
-    uri: http://gdata.youtube.com/feeds/api/users/default/uploads/uOinsq08guk
+    uri: http://gdata.youtube.com/feeds/api/users/default/uploads/8IL-dGzsIos
     body:
-      encoding: UTF-8
+      encoding: US-ASCII
       string: <?xml version="1.0" encoding="UTF-8"?><entry xmlns="http://www.w3.org/2005/Atom"
         xmlns:media="http://search.yahoo.com/mrss/" xmlns:gd="http://schemas.google.com/g/2005"
         xmlns:yt="http://gdata.youtube.com/schemas/2007" xmlns:gml="http://www.opengis.net/gml"
@@ -10629,100 +10381,102 @@ http_interactions:
       Content-Type:
       - application/xml
       Authorization:
-      - Bearer ya29.AHES6ZSCvjG_7MAY_FmnZS5XbILlOfINAIs6DhXUP5cvVMg
-      X-GData-Client:
+      - Bearer ya29.AHES6ZSQ5njt5VZGfAo6FSDnptJM3Qiq1ixW7GUluiMcJ20
+      X-Gdata-Client:
       - youtube_it
-      X-GData-Key:
+      X-Gdata-Key:
       - key=AI39si7WuZZxAkYebKSyrlJR7hIFktt6OoPycEOeOT_yHkZgr6QsGbZgmhKvbS4bsSAv0utgrfhNfXQBITu1wX_z3VsZE02giQ
-      GData-Version:
+      Gdata-Version:
       - '2.1'
       Content-Length:
       - '508'
+      Accept:
+      - ! '*/*'
   response:
     status:
       code: 200
-      message: 
+      message: OK
     headers:
-      X-GData-User-Country:
+      X-Gdata-User-Country:
       - AR
       Content-Type:
       - application/atom+xml; charset=UTF-8; type=entry
-      GData-Version:
+      Gdata-Version:
       - '2.1'
-      ETag:
-      - W/"DE4MRX47eCp7I2A9WhBaE08."
+      Etag:
+      - W/"DkQFR347eCp7I2A9WhFRE0o."
       Transfer-Encoding:
       - chunked
       Date:
-      - Thu, 23 May 2013 16:36:24 GMT
+      - Thu, 27 Jun 2013 23:05:16 GMT
       Expires:
-      - Thu, 23 May 2013 16:36:24 GMT
+      - Thu, 27 Jun 2013 23:05:16 GMT
       Cache-Control:
       - private, max-age=0
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       Server:
       - GSE
     body:
-      encoding: UTF-8
+      encoding: US-ASCII
       string: <?xml version='1.0' encoding='UTF-8'?><entry xmlns='http://www.w3.org/2005/Atom'
         xmlns:app='http://www.w3.org/2007/app' xmlns:media='http://search.yahoo.com/mrss/'
         xmlns:gd='http://schemas.google.com/g/2005' xmlns:yt='http://gdata.youtube.com/schemas/2007'
-        gd:etag='W/&quot;DE4MRX47eCp7I2A9WhBaE08.&quot;'><id>tag:youtube.com,2008:video:uOinsq08guk</id><published>2013-05-23T16:36:19.000Z</published><updated>2013-05-23T16:36:24.000Z</updated><app:edited>2013-05-23T16:36:24.000Z</app:edited><app:control><app:draft>yes</app:draft><yt:state
+        gd:etag='W/&quot;DkQFR347eCp7I2A9WhFRE0o.&quot;'><id>tag:youtube.com,2008:video:8IL-dGzsIos</id><published>2013-06-27T23:05:13.000Z</published><updated>2013-06-27T23:05:16.000Z</updated><app:edited>2013-06-27T23:05:16.000Z</app:edited><app:control><app:draft>yes</app:draft><yt:state
         name='processing'/></app:control><category scheme='http://schemas.google.com/g/2005#kind'
         term='http://gdata.youtube.com/schemas/2007#video'/><category scheme='http://gdata.youtube.com/schemas/2007/categories.cat'
         term='People' label='People &amp; Blogs'/><category scheme='http://gdata.youtube.com/schemas/2007/keywords.cat'
         term='test'/><title>test title</title><link rel='alternate' type='text/html'
-        href='http://www.youtube.com/watch?v=uOinsq08guk&amp;feature=youtube_gdata'/><link
+        href='http://www.youtube.com/watch?v=8IL-dGzsIos&amp;feature=youtube_gdata'/><link
         rel='http://gdata.youtube.com/schemas/2007#video.responses' type='application/atom+xml'
-        href='http://gdata.youtube.com/feeds/api/videos/uOinsq08guk/responses?client=youtube_it'/><link
+        href='http://gdata.youtube.com/feeds/api/videos/8IL-dGzsIos/responses?client=youtube_it'/><link
         rel='http://gdata.youtube.com/schemas/2007#video.ratings' type='application/atom+xml'
-        href='http://gdata.youtube.com/feeds/api/videos/uOinsq08guk/ratings?client=youtube_it'/><link
+        href='http://gdata.youtube.com/feeds/api/videos/8IL-dGzsIos/ratings?client=youtube_it'/><link
         rel='http://gdata.youtube.com/schemas/2007#video.complaints' type='application/atom+xml'
-        href='http://gdata.youtube.com/feeds/api/videos/uOinsq08guk/complaints?client=youtube_it'/><link
+        href='http://gdata.youtube.com/feeds/api/videos/8IL-dGzsIos/complaints?client=youtube_it'/><link
         rel='http://gdata.youtube.com/schemas/2007#video.related' type='application/atom+xml'
-        href='http://gdata.youtube.com/feeds/api/videos/uOinsq08guk/related?client=youtube_it'/><link
+        href='http://gdata.youtube.com/feeds/api/videos/8IL-dGzsIos/related?client=youtube_it'/><link
         rel='http://gdata.youtube.com/schemas/2007#video.captionTracks' type='application/atom+xml'
-        href='http://gdata.youtube.com/feeds/api/videos/uOinsq08guk/captions?client=youtube_it'
+        href='http://gdata.youtube.com/feeds/api/videos/8IL-dGzsIos/captions?client=youtube_it'
         yt:hasEntries='false'/><link rel='http://gdata.youtube.com/schemas/2007#uploader'
         type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/WWmLvppy3j64IGmA2dpCyw?client=youtube_it'/><link
         rel='http://gdata.youtube.com/schemas/2007#insight.views' type='text/html'
-        href='http://insight.youtube.com/video-analytics/csvreports?query=uOinsq08guk&amp;type=v&amp;starttime=1235865600000&amp;endtime=1369180800000&amp;user_starttime=1368576000000&amp;user_endtime=1369180800000&amp;region=world&amp;token=KtrE7b_wTkM-C-wQFdnbcqiGJbR8MTM2OTMyODc4NEAxMzY5MzI2OTg0&amp;hl=en_US&amp;devKey=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm'/><link
-        rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/uploads/uOinsq08guk?client=youtube_it'/><link
-        rel='edit' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/uploads/uOinsq08guk?client=youtube_it'/><author><name>tubeit20101</name><uri>http://gdata.youtube.com/feeds/api/users/tubeit20101</uri><yt:userId>WWmLvppy3j64IGmA2dpCyw</yt:userId></author><yt:accessControl
+        href='https://insight.youtube.com/video-analytics-partner/gwt/csv-zip?token=ChUKAggEEg8IABILOElMLWRHenNJb3M&amp;sig=MC4CFQCYY1Sh2wQFKDwsYjf3aRQVcWWFqgIVAJNMV8iUi6FJPeRNIR7JpdVtGJY-&amp;user_starttime=1371600000000&amp;user_endtime=1372204800000&amp;exp=1372377916734&amp;devKey=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm'/><link
+        rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/uploads/8IL-dGzsIos?client=youtube_it'/><link
+        rel='edit' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/uploads/8IL-dGzsIos?client=youtube_it'/><author><name>tubeit20101</name><uri>http://gdata.youtube.com/feeds/api/users/tubeit20101</uri><yt:userId>WWmLvppy3j64IGmA2dpCyw</yt:userId></author><yt:accessControl
         action='comment' permission='allowed'/><yt:accessControl action='commentVote'
         permission='allowed'/><yt:accessControl action='videoRespond' permission='moderated'/><yt:accessControl
         action='rate' permission='allowed'/><yt:accessControl action='embed' permission='allowed'/><yt:accessControl
         action='list' permission='denied'/><yt:accessControl action='autoPlay' permission='allowed'/><yt:accessControl
         action='syndicate' permission='allowed'/><gd:comments><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#comments'
-        href='http://gdata.youtube.com/feeds/api/videos/uOinsq08guk/comments?client=youtube_it'
+        href='http://gdata.youtube.com/feeds/api/videos/8IL-dGzsIos/comments?client=youtube_it'
         countHint='0'/></gd:comments><media:group><media:category label='People &amp;
         Blogs' scheme='http://gdata.youtube.com/schemas/2007/categories.cat'>People</media:category><media:content
-        url='http://www.youtube.com/v/uOinsq08guk?version=3&amp;f=user_uploads&amp;c=youtube_it&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata'
+        url='http://www.youtube.com/v/8IL-dGzsIos?version=3&amp;f=user_uploads&amp;c=youtube_it&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata'
         type='application/x-shockwave-flash' medium='video' isDefault='true' expression='full'
         duration='0' yt:format='5'/><media:credit role='uploader' scheme='urn:youtube'
         yt:display='tubeit20101'>tubeit20101</media:credit><media:description type='plain'>test
         description</media:description><media:keywords>test</media:keywords><media:license
         type='text/html' href='http://www.youtube.com/t/terms'>youtube</media:license><media:player
-        url='http://www.youtube.com/watch?v=uOinsq08guk&amp;feature=youtube_gdata_player'/><media:thumbnail
-        url='http://i.ytimg.com/vi/uOinsq08guk/default.jpg' height='90' width='120'
-        time='00:00:00' yt:name='default'/><media:thumbnail url='http://i.ytimg.com/vi/uOinsq08guk/mqdefault.jpg'
-        height='180' width='320' yt:name='mqdefault'/><media:thumbnail url='http://i.ytimg.com/vi/uOinsq08guk/hqdefault.jpg'
-        height='360' width='480' yt:name='hqdefault'/><media:thumbnail url='http://i.ytimg.com/vi/uOinsq08guk/1.jpg'
+        url='http://www.youtube.com/watch?v=8IL-dGzsIos&amp;feature=youtube_gdata_player'/><media:thumbnail
+        url='http://i1.ytimg.com/vi/8IL-dGzsIos/default.jpg' height='90' width='120'
+        time='00:00:00' yt:name='default'/><media:thumbnail url='http://i1.ytimg.com/vi/8IL-dGzsIos/mqdefault.jpg'
+        height='180' width='320' yt:name='mqdefault'/><media:thumbnail url='http://i1.ytimg.com/vi/8IL-dGzsIos/hqdefault.jpg'
+        height='360' width='480' yt:name='hqdefault'/><media:thumbnail url='http://i1.ytimg.com/vi/8IL-dGzsIos/1.jpg'
         height='90' width='120' time='00:00:00' yt:name='start'/><media:thumbnail
-        url='http://i.ytimg.com/vi/uOinsq08guk/2.jpg' height='90' width='120' time='00:00:00'
-        yt:name='middle'/><media:thumbnail url='http://i.ytimg.com/vi/uOinsq08guk/3.jpg'
+        url='http://i1.ytimg.com/vi/8IL-dGzsIos/2.jpg' height='90' width='120' time='00:00:00'
+        yt:name='middle'/><media:thumbnail url='http://i1.ytimg.com/vi/8IL-dGzsIos/3.jpg'
         height='90' width='120' time='00:00:00' yt:name='end'/><media:title type='plain'>test
-        title</media:title><yt:duration seconds='0'/><yt:uploaded>2013-05-23T16:36:19.000Z</yt:uploaded><yt:uploaderId>UCWWmLvppy3j64IGmA2dpCyw</yt:uploaderId><yt:videoid>uOinsq08guk</yt:videoid></media:group></entry>
+        title</media:title><yt:duration seconds='0'/><yt:uploaded>2013-06-27T23:05:13.000Z</yt:uploaded><yt:uploaderId>UCWWmLvppy3j64IGmA2dpCyw</yt:uploaderId><yt:videoid>8IL-dGzsIos</yt:videoid></media:group></entry>
     http_version: 
-  recorded_at: Thu, 23 May 2013 16:36:24 GMT
+  recorded_at: Thu, 27 Jun 2013 23:05:25 GMT
 - request:
     method: delete
-    uri: http://gdata.youtube.com/feeds/api/users/default/uploads/uOinsq08guk
+    uri: http://gdata.youtube.com/feeds/api/users/default/uploads/8IL-dGzsIos
     body:
       encoding: US-ASCII
       string: ''
@@ -10730,37 +10484,39 @@ http_interactions:
       User-Agent:
       - Faraday v0.8.7
       Authorization:
-      - Bearer ya29.AHES6ZSCvjG_7MAY_FmnZS5XbILlOfINAIs6DhXUP5cvVMg
-      X-GData-Client:
+      - Bearer ya29.AHES6ZSQ5njt5VZGfAo6FSDnptJM3Qiq1ixW7GUluiMcJ20
+      X-Gdata-Client:
       - youtube_it
-      X-GData-Key:
+      X-Gdata-Key:
       - key=AI39si7WuZZxAkYebKSyrlJR7hIFktt6OoPycEOeOT_yHkZgr6QsGbZgmhKvbS4bsSAv0utgrfhNfXQBITu1wX_z3VsZE02giQ
-      GData-Version:
+      Gdata-Version:
       - '2.1'
       Content-Type:
       - application/atom+xml; charset=UTF-8
       Content-Length:
       - '0'
+      Accept:
+      - ! '*/*'
   response:
     status:
       code: 200
-      message: 
+      message: OK
     headers:
-      X-GData-User-Country:
+      X-Gdata-User-Country:
       - AR
-      GData-Version:
+      Gdata-Version:
       - '2.1'
       Date:
-      - Thu, 23 May 2013 16:36:25 GMT
+      - Thu, 27 Jun 2013 23:05:17 GMT
       Expires:
-      - Thu, 23 May 2013 16:36:25 GMT
+      - Thu, 27 Jun 2013 23:05:17 GMT
       Cache-Control:
       - private, max-age=0
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       Content-Length:
       - '0'
@@ -10769,8 +10525,8 @@ http_interactions:
       Content-Type:
       - text/html; charset=UTF-8
     body:
-      encoding: UTF-8
+      encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Thu, 23 May 2013 16:36:25 GMT
+  recorded_at: Thu, 27 Jun 2013 23:05:25 GMT
 recorded_with: VCR 2.5.0
