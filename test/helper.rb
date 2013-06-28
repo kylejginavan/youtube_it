@@ -8,7 +8,7 @@ require File.dirname(__FILE__) + '/../lib/youtube_it'
 
 VCR.configure do |c|
   c.cassette_library_dir = 'test/cassettes'
-  c.hook_into :excon
+  c.hook_into :webmock
   c.default_cassette_options = { :record => :new_episodes }
 end
 

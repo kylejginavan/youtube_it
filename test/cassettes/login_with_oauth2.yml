@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://accounts.google.com/o/oauth2/token
+    body:
+      encoding: US-ASCII
+      string: client_id=68330730158.apps.googleusercontent.com&client_secret=Npj4rmtme7q6INPPQjpQFuCZ&grant_type=refresh_token&refresh_token=1%2FErxjeSs0RNMMGtaI-87grQf_o1iQKlx0JLwec1KIDH8
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Date:
+      - Thu, 27 Jun 2013 22:59:14 GMT
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{\n  \"access_token\" : \"ya29.AHES6ZSQ5njt5VZGfAo6FSDnptJM3Qiq1ixW7GUluiMcJ20\",\n
+        \ \"token_type\" : \"Bearer\",\n  \"expires_in\" : 3600\n}"
+    http_version: 
+  recorded_at: Thu, 27 Jun 2013 22:59:22 GMT
+recorded_with: VCR 2.5.0

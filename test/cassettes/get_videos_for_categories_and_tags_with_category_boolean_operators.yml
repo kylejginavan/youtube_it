@@ -1,0 +1,1387 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://gdata.youtube.com/feeds/api/videos/-/News%7CSports/-Comedy/football/-soccer/?key=AI39si7WuZZxAkYebKSyrlJR7hIFktt6OoPycEOeOT_yHkZgr6QsGbZgmhKvbS4bsSAv0utgrfhNfXQBITu1wX_z3VsZE02giQ&max-results=25&start-index=1&v=2.1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Gdata-User-Country:
+      - AR
+      Content-Type:
+      - application/atom+xml; charset=UTF-8; type=feed
+      Expires:
+      - Thu, 27 Jun 2013 23:03:41 GMT
+      Date:
+      - Thu, 27 Jun 2013 23:03:41 GMT
+      Cache-Control:
+      - private, max-age=300, no-transform
+      Vary:
+      - ! '*'
+      Gdata-Version:
+      - '2.1'
+      Etag:
+      - W/"DkUGQHc_cCp7I2A9WhFRE0o."
+      Last-Modified:
+      - Thu, 27 Jun 2013 23:03:41 GMT
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version=''1.0'' encoding=''UTF-8''?><feed xmlns=''http://www.w3.org/2005/Atom''
+        xmlns:media=''http://search.yahoo.com/mrss/'' xmlns:openSearch=''http://a9.com/-/spec/opensearch/1.1/''
+        xmlns:gd=''http://schemas.google.com/g/2005'' xmlns:gml=''http://www.opengis.net/gml''
+        xmlns:yt=''http://gdata.youtube.com/schemas/2007'' xmlns:georss=''http://www.georss.org/georss''
+        gd:etag=''W/&quot;DkUGQHc_cCp7I2A9WhFRE0o.&quot;''><id>tag:youtube.com,2008:videos</id><updated>2013-06-27T23:03:41.948Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><title>Videos</title><logo>http://www.youtube.com/img/pic_youtubelogo_123x63.gif</logo><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com''/><link
+        rel=''http://schemas.google.com/g/2005#feed'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos?v=2.1''/><link rel=''http://schemas.google.com/g/2005#batch''
+        type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/batch?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/-/%7Bhttp%3A%2F%2Fgdata.youtube.com%2Fschemas%2F2007%2Fcategories.cat%7DNews%7C%7Bhttp%3A%2F%2Fgdata.youtube.com%2Fschemas%2F2007%2Fcategories.cat%7DSports/-%7Bhttp%3A%2F%2Fgdata.youtube.com%2Fschemas%2F2007%2Fcategories.cat%7DComedy/%7Bhttp%3A%2F%2Fgdata.youtube.com%2Fschemas%2F2007%2Fkeywords.cat%7Dfootball/-%7Bhttp%3A%2F%2Fgdata.youtube.com%2Fschemas%2F2007%2Fkeywords.cat%7Dsoccer?start-index=1&amp;max-results=25&amp;v=2.1''/><link
+        rel=''service'' type=''application/atomsvc+xml'' href=''http://gdata.youtube.com/feeds/api/videos?alt=atom-service&amp;v=2.1''/><link
+        rel=''next'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/-/%7Bhttp%3A%2F%2Fgdata.youtube.com%2Fschemas%2F2007%2Fcategories.cat%7DNews%7C%7Bhttp%3A%2F%2Fgdata.youtube.com%2Fschemas%2F2007%2Fcategories.cat%7DSports/-%7Bhttp%3A%2F%2Fgdata.youtube.com%2Fschemas%2F2007%2Fcategories.cat%7DComedy/%7Bhttp%3A%2F%2Fgdata.youtube.com%2Fschemas%2F2007%2Fkeywords.cat%7Dfootball/-%7Bhttp%3A%2F%2Fgdata.youtube.com%2Fschemas%2F2007%2Fkeywords.cat%7Dsoccer?start-index=26&amp;max-results=25&amp;v=2.1''/><author><name>YouTube</name><uri>http://www.youtube.com/</uri></author><generator
+        version=''2.1'' uri=''http://gdata.youtube.com''>YouTube data API</generator><openSearch:totalResults>1000000</openSearch:totalResults><openSearch:startIndex>1</openSearch:startIndex><openSearch:itemsPerPage>25</openSearch:itemsPerPage><entry
+        gd:etag=''W/&quot;C08NSX47eCp7I2A9WhFRE08.&quot;''><id>tag:youtube.com,2008:video:Y2A6soA4JEs</id><published>2012-10-03T21:27:23.000Z</published><updated>2013-06-27T08:31:38.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Sports''
+        label=''Sports''/><title>E:60 - Ray Lewis</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/Y2A6soA4JEs?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=Y2A6soA4JEs&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Y2A6soA4JEs/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Y2A6soA4JEs/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Y2A6soA4JEs/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Y2A6soA4JEs/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=Y2A6soA4JEs''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/iWLfSweyRNmLpgEHekhoAg?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/Y2A6soA4JEs?v=2.1''/><author><name>ESPN</name><uri>http://gdata.youtube.com/feeds/api/users/ESPN</uri><yt:userId>iWLfSweyRNmLpgEHekhoAg</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/Y2A6soA4JEs/comments?v=2.1''
+        countHint=''864''/></gd:comments><yt:hd/><media:group><media:category label=''Sports''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Sports</media:category><media:content
+        url=''http://www.youtube.com/v/Y2A6soA4JEs?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''852'' yt:format=''5''/><media:content url=''rtsp://v7.cache6.c.youtube.com/CkULENy73wIaPAlLJDiAsjpgYxMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''852''
+        yt:format=''1''/><media:content url=''rtsp://v7.cache6.c.youtube.com/CkULENy73wIaPAlLJDiAsjpgYxMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''852''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''ESPN''
+        yt:type=''partner''>espn</media:credit><media:description type=''plain''>E:60
+        connects with Ray Lewis and the man who fueled the future Hall of Famer''s
+        legendary intensity. Rachel Nichols takes an exclusive look at a family trying...</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=Y2A6soA4JEs&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/Y2A6soA4JEs/default.jpg'' height=''90'' width=''120''
+        time=''00:07:06'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/Y2A6soA4JEs/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/Y2A6soA4JEs/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/Y2A6soA4JEs/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/Y2A6soA4JEs/1.jpg''
+        height=''90'' width=''120'' time=''00:03:33'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/Y2A6soA4JEs/2.jpg'' height=''90'' width=''120''
+        time=''00:07:06'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/Y2A6soA4JEs/3.jpg''
+        height=''90'' width=''120'' time=''00:10:39'' yt:name=''end''/><media:title
+        type=''plain''>E:60 - Ray Lewis</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''852''/><yt:uploaded>2012-10-03T21:27:23.000Z</yt:uploaded><yt:uploaderId>UCiWLfSweyRNmLpgEHekhoAg</yt:uploaderId><yt:videoid>Y2A6soA4JEs</yt:videoid></media:group><gd:rating
+        average=''4.9343514'' max=''5'' min=''1'' numRaters=''3077'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''416170''/><yt:rating numDislikes=''51'' numLikes=''3026''/></entry><entry
+        gd:etag=''W/&quot;CkEEQH47eCp7I2A9WhFREko.&quot;''><id>tag:youtube.com,2008:video:3As40O227ok</id><published>2012-12-30T13:00:10.000Z</published><updated>2013-06-26T18:16:41.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Sports''
+        label=''Sports''/><title>Cheerleaders featuring the California All Stars Cheer
+        Squad - Official Trailer on AwesomenessTV</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/3As40O227ok?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=3As40O227ok&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/3As40O227ok/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/3As40O227ok/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/3As40O227ok/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/3As40O227ok/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=3As40O227ok''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/WljxewHlJE3M7U_6_zFNyA?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/3As40O227ok?v=2.1''/><author><name>AwesomenessTV</name><uri>http://gdata.youtube.com/feeds/api/users/AwesomenessTV</uri><yt:userId>WljxewHlJE3M7U_6_zFNyA</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''allowed''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/3As40O227ok/comments?v=2.1''
+        countHint=''342''/></gd:comments><yt:hd/><media:group><media:category label=''Sports''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Sports</media:category><media:content
+        url=''http://www.youtube.com/v/3As40O227ok?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''122'' yt:format=''5''/><media:content url=''rtsp://v3.cache2.c.youtube.com/CkULENy73wIaPAmJ7rbt0DgL3BMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''122''
+        yt:format=''1''/><media:content url=''rtsp://v3.cache2.c.youtube.com/CkULENy73wIaPAmJ7rbt0DgL3BMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''122''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''AwesomenessTV''
+        yt:type=''partner''>awesomenesstv</media:credit><media:description type=''plain''>love
+        to cheer? join AwesomenessTV and the California All Stars Cheer Squad as they
+        cheer their way to the top and fight to stay there. join in on all of the
+        ...</media:description><media:keywords/><media:license type=''text/html''
+        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=3As40O227ok&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/3As40O227ok/default.jpg'' height=''90'' width=''120''
+        time=''00:01:01'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/3As40O227ok/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/3As40O227ok/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/3As40O227ok/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/3As40O227ok/1.jpg''
+        height=''90'' width=''120'' time=''00:00:30.500'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/3As40O227ok/2.jpg'' height=''90'' width=''120''
+        time=''00:01:01'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/3As40O227ok/3.jpg''
+        height=''90'' width=''120'' time=''00:01:31.500'' yt:name=''end''/><media:title
+        type=''plain''>Cheerleaders featuring the California All Stars Cheer Squad
+        - Official Trailer on AwesomenessTV</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''122''/><yt:uploaded>2012-12-30T13:00:10.000Z</yt:uploaded><yt:uploaderId>UCWljxewHlJE3M7U_6_zFNyA</yt:uploaderId><yt:videoid>3As40O227ok</yt:videoid></media:group><gd:rating
+        average=''4.852648'' max=''5'' min=''1'' numRaters=''1303'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''1192597''/><yt:rating numDislikes=''48'' numLikes=''1255''/></entry><entry
+        gd:etag=''W/&quot;D0cGQ347eCp7I2A9WhFRE08.&quot;''><id>tag:youtube.com,2008:video:6BCzaR9N2zA</id><published>2013-01-20T13:00:46.000Z</published><updated>2013-06-27T09:23:42.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Sports''
+        label=''Sports''/><title>Cheerleaders Ep. 1 - Meet the SMOED Squad</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/6BCzaR9N2zA?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=6BCzaR9N2zA&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/6BCzaR9N2zA/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/6BCzaR9N2zA/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/6BCzaR9N2zA/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/6BCzaR9N2zA/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=6BCzaR9N2zA''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/WljxewHlJE3M7U_6_zFNyA?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/6BCzaR9N2zA?v=2.1''/><author><name>AwesomenessTV</name><uri>http://gdata.youtube.com/feeds/api/users/AwesomenessTV</uri><yt:userId>WljxewHlJE3M7U_6_zFNyA</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''allowed''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/6BCzaR9N2zA/comments?v=2.1''
+        countHint=''553''/></gd:comments><yt:hd/><media:group><media:category label=''Sports''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Sports</media:category><media:content
+        url=''http://www.youtube.com/v/6BCzaR9N2zA?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''552'' yt:format=''5''/><media:content url=''rtsp://v8.cache7.c.youtube.com/CkULENy73wIaPAkw200fabMQ6BMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''552''
+        yt:format=''1''/><media:content url=''rtsp://v8.cache7.c.youtube.com/CkULENy73wIaPAkw200fabMQ6BMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''552''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''AwesomenessTV''
+        yt:type=''partner''>awesomenesstv</media:credit><media:description type=''plain''>love
+        to cheer? join AwesomenessTV and the California All Stars Cheer Squad as they
+        cheer their way to the top and fight to stay there. join in on all of the
+        ...</media:description><media:keywords/><media:license type=''text/html''
+        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=6BCzaR9N2zA&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/6BCzaR9N2zA/default.jpg'' height=''90'' width=''120''
+        time=''00:04:36'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/6BCzaR9N2zA/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/6BCzaR9N2zA/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/6BCzaR9N2zA/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/6BCzaR9N2zA/1.jpg''
+        height=''90'' width=''120'' time=''00:02:18'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/6BCzaR9N2zA/2.jpg'' height=''90'' width=''120''
+        time=''00:04:36'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/6BCzaR9N2zA/3.jpg''
+        height=''90'' width=''120'' time=''00:06:54'' yt:name=''end''/><media:title
+        type=''plain''>Cheerleaders Ep. 1 - Meet the SMOED Squad</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''552''/><yt:uploaded>2013-01-20T13:00:46.000Z</yt:uploaded><yt:uploaderId>UCWljxewHlJE3M7U_6_zFNyA</yt:uploaderId><yt:videoid>6BCzaR9N2zA</yt:videoid></media:group><gd:rating
+        average=''4.8568897'' max=''5'' min=''1'' numRaters=''2823'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''485459''/><yt:rating numDislikes=''101'' numLikes=''2722''/></entry><entry
+        gd:etag=''W/&quot;AkADRX47eCp7I2A9WhFRE08.&quot;''><id>tag:youtube.com,2008:video:BuwzIBm8X1M</id><published>2013-03-18T17:59:55.000Z</published><updated>2013-06-27T10:26:14.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Sports''
+        label=''Sports''/><title>Fifa 13: KSI vs Frimpong - The Final</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/BuwzIBm8X1M?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=BuwzIBm8X1M&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/BuwzIBm8X1M/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/BuwzIBm8X1M/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/BuwzIBm8X1M/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/BuwzIBm8X1M/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=BuwzIBm8X1M''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/FIdU1RkuRd26YDA7lerfEQ?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/BuwzIBm8X1M?v=2.1''/><author><name>Copa90</name><uri>http://gdata.youtube.com/feeds/api/users/Copa90football</uri><yt:userId>FIdU1RkuRd26YDA7lerfEQ</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/BuwzIBm8X1M/comments?v=2.1''
+        countHint=''5424''/></gd:comments><yt:hd/><media:group><media:category label=''Sports''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Sports</media:category><media:content
+        url=''http://www.youtube.com/v/BuwzIBm8X1M?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''339'' yt:format=''5''/><media:content url=''rtsp://v5.cache7.c.youtube.com/CkULENy73wIaPAlTX7wZIDPsBhMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''339''
+        yt:format=''1''/><media:content url=''rtsp://v5.cache7.c.youtube.com/CkULENy73wIaPAlTX7wZIDPsBhMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''339''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''Copa90''
+        yt:type=''partner''>copa90football</media:credit><media:description type=''plain''>KSI
+        takes on FRIMPONG at Fifa 13! It''s 1-1 in games so far, who will be the winner
+        of the final game? Subscribe to Copa90: http://bit.ly/SPnPcY To watch the
+        ...</media:description><media:keywords/><media:license type=''text/html''
+        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=BuwzIBm8X1M&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/BuwzIBm8X1M/default.jpg'' height=''90'' width=''120''
+        time=''00:02:49.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/BuwzIBm8X1M/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/BuwzIBm8X1M/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/BuwzIBm8X1M/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/BuwzIBm8X1M/1.jpg''
+        height=''90'' width=''120'' time=''00:01:24.750'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/BuwzIBm8X1M/2.jpg'' height=''90'' width=''120''
+        time=''00:02:49.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/BuwzIBm8X1M/3.jpg''
+        height=''90'' width=''120'' time=''00:04:14.250'' yt:name=''end''/><media:title
+        type=''plain''>Fifa 13: KSI vs Frimpong - The Final</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''339''/><yt:uploaded>2013-03-18T17:59:55.000Z</yt:uploaded><yt:uploaderId>UCFIdU1RkuRd26YDA7lerfEQ</yt:uploaderId><yt:videoid>BuwzIBm8X1M</yt:videoid></media:group><gd:rating
+        average=''4.940428'' max=''5'' min=''1'' numRaters=''20815'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''915153''/><yt:rating numDislikes=''310'' numLikes=''20505''/></entry><entry
+        gd:etag=''W/&quot;A0MBRn47eCp7I2A9WhFREko.&quot;''><id>tag:youtube.com,2008:video:h7VlyeWgL8E</id><published>2012-10-02T15:42:52.000Z</published><updated>2013-06-26T20:44:17.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Sports''
+        label=''Sports''/><title>Kobe Bryant Scores 81 | Story Time With Jalen Rose</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/h7VlyeWgL8E?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=h7VlyeWgL8E&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/h7VlyeWgL8E/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/h7VlyeWgL8E/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/h7VlyeWgL8E/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/h7VlyeWgL8E/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=h7VlyeWgL8E''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/wLr_DYKR8aS0k4r8bB5I5Q?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/h7VlyeWgL8E?v=2.1''/><author><name>GrantlandNetwork</name><uri>http://gdata.youtube.com/feeds/api/users/GrantlandNetwork</uri><yt:userId>wLr_DYKR8aS0k4r8bB5I5Q</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/h7VlyeWgL8E/comments?v=2.1''
+        countHint=''383''/></gd:comments><yt:hd/><media:group><media:category label=''Sports''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Sports</media:category><media:content
+        url=''http://www.youtube.com/v/h7VlyeWgL8E?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''219'' yt:format=''5''/><media:content url=''rtsp://v1.cache5.c.youtube.com/CkULENy73wIaPAnBL6DlyWW1hxMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''219''
+        yt:format=''1''/><media:content url=''rtsp://v1.cache5.c.youtube.com/CkULENy73wIaPAnBL6DlyWW1hxMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''219''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''GrantlandNetwork''
+        yt:type=''partner''>grantlandnetwork</media:credit><media:description type=''plain''>Jalen
+        Rose tells the story of the night when Kobe Bryant scored 81 points against
+        his Toronto Raptors. Visit Grantland: http://www.Grantland.com Grantland on...</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=h7VlyeWgL8E&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/h7VlyeWgL8E/default.jpg'' height=''90'' width=''120''
+        time=''00:01:49.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/h7VlyeWgL8E/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/h7VlyeWgL8E/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/h7VlyeWgL8E/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/h7VlyeWgL8E/1.jpg''
+        height=''90'' width=''120'' time=''00:00:54.750'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/h7VlyeWgL8E/2.jpg'' height=''90'' width=''120''
+        time=''00:01:49.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/h7VlyeWgL8E/3.jpg''
+        height=''90'' width=''120'' time=''00:02:44.250'' yt:name=''end''/><media:title
+        type=''plain''>Kobe Bryant Scores 81 | Story Time With Jalen Rose</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''219''/><yt:uploaded>2012-10-02T15:42:52.000Z</yt:uploaded><yt:uploaderId>UCwLr_DYKR8aS0k4r8bB5I5Q</yt:uploaderId><yt:videoid>h7VlyeWgL8E</yt:videoid></media:group><gd:rating
+        average=''4.9291587'' max=''5'' min=''1'' numRaters=''1581'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''349829''/><yt:rating numDislikes=''28'' numLikes=''1553''/></entry><entry
+        gd:etag=''W/&quot;Ak8ER347eCp7I2A9WhFREks.&quot;''><id>tag:youtube.com,2008:video:a1Wpt42KhFc</id><published>2012-10-31T11:00:34.000Z</published><updated>2013-06-26T17:46:46.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Sports''
+        label=''Sports''/><title>Jalen Rose Steals Patrick Ewing''s TV | Story Time
+        With Jalen Rose</title><content type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/a1Wpt42KhFc?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=a1Wpt42KhFc&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/a1Wpt42KhFc/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/a1Wpt42KhFc/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/a1Wpt42KhFc/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/a1Wpt42KhFc/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=a1Wpt42KhFc''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/wLr_DYKR8aS0k4r8bB5I5Q?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/a1Wpt42KhFc?v=2.1''/><author><name>GrantlandNetwork</name><uri>http://gdata.youtube.com/feeds/api/users/GrantlandNetwork</uri><yt:userId>wLr_DYKR8aS0k4r8bB5I5Q</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/a1Wpt42KhFc/comments?v=2.1''
+        countHint=''330''/></gd:comments><yt:hd/><media:group><media:category label=''Sports''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Sports</media:category><media:content
+        url=''http://www.youtube.com/v/a1Wpt42KhFc?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''195'' yt:format=''5''/><media:content url=''rtsp://v4.cache4.c.youtube.com/CkULENy73wIaPAlXhIqNt6lVaxMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''195''
+        yt:format=''1''/><media:content url=''rtsp://v4.cache4.c.youtube.com/CkULENy73wIaPAlXhIqNt6lVaxMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''195''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''GrantlandNetwork''
+        yt:type=''partner''>grantlandnetwork</media:credit><media:description type=''plain''>Jalen
+        Rose and Patrick Ewing never liked each other, so Jalen stole Patrick Ewing''s
+        television. Not just any television either - a television with a VCR atta...</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=a1Wpt42KhFc&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/a1Wpt42KhFc/default.jpg'' height=''90'' width=''120''
+        time=''00:01:37.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/a1Wpt42KhFc/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/a1Wpt42KhFc/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/a1Wpt42KhFc/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/a1Wpt42KhFc/1.jpg''
+        height=''90'' width=''120'' time=''00:00:48.750'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/a1Wpt42KhFc/2.jpg'' height=''90'' width=''120''
+        time=''00:01:37.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/a1Wpt42KhFc/3.jpg''
+        height=''90'' width=''120'' time=''00:02:26.250'' yt:name=''end''/><media:title
+        type=''plain''>Jalen Rose Steals Patrick Ewing''s TV | Story Time With Jalen
+        Rose</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''195''/><yt:uploaded>2012-10-31T11:00:34.000Z</yt:uploaded><yt:uploaderId>UCwLr_DYKR8aS0k4r8bB5I5Q</yt:uploaderId><yt:videoid>a1Wpt42KhFc</yt:videoid></media:group><gd:rating
+        average=''4.9462075'' max=''5'' min=''1'' numRaters=''1859'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''349019''/><yt:rating numDislikes=''25'' numLikes=''1834''/></entry><entry
+        gd:etag=''W/&quot;CUICQH47eCp7I2A9WhFREU4.&quot;''><id>tag:youtube.com,2008:video:VVBEGNUvaGE</id><published>2011-07-23T00:35:47.000Z</published><updated>2013-06-25T04:12:41.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Sports''
+        label=''Sports''/><title>Manchester United''s Patrice Evra &amp; Ji-Sung Park
+        make Chicago-style pizza</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/VVBEGNUvaGE?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=VVBEGNUvaGE&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/VVBEGNUvaGE/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/VVBEGNUvaGE/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/VVBEGNUvaGE/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/VVBEGNUvaGE/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=VVBEGNUvaGE''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/SZbXT5TLLW_i-5W8FZpFsg?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/VVBEGNUvaGE?v=2.1''/><author><name>mls</name><uri>http://gdata.youtube.com/feeds/api/users/mls</uri><yt:userId>SZbXT5TLLW_i-5W8FZpFsg</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/VVBEGNUvaGE/comments?v=2.1''
+        countHint=''342''/></gd:comments><yt:hd/><media:group><media:category label=''Sports''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Sports</media:category><media:content
+        url=''http://www.youtube.com/v/VVBEGNUvaGE?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''170'' yt:format=''5''/><media:content url=''rtsp://v5.cache4.c.youtube.com/CkULENy73wIaPAlhaC_VGERQVRMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''170''
+        yt:format=''1''/><media:content url=''rtsp://v5.cache4.c.youtube.com/CkULENy73wIaPAlhaC_VGERQVRMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''170''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''mls''
+        yt:type=''partner''>mls</media:credit><media:description type=''plain''>Two
+        of Manchester United''s finest tried their hand at making pizza in Chicago
+        on Friday afternoon, as manager Brendon Palluck welcomed the duo to historic
+        Gi...</media:description><media:keywords/><media:license type=''text/html''
+        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=VVBEGNUvaGE&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/VVBEGNUvaGE/default.jpg'' height=''90'' width=''120''
+        time=''00:01:25'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/VVBEGNUvaGE/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/VVBEGNUvaGE/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/VVBEGNUvaGE/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/VVBEGNUvaGE/1.jpg''
+        height=''90'' width=''120'' time=''00:00:42.500'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/VVBEGNUvaGE/2.jpg'' height=''90'' width=''120''
+        time=''00:01:25'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/VVBEGNUvaGE/3.jpg''
+        height=''90'' width=''120'' time=''00:02:07.500'' yt:name=''end''/><media:title
+        type=''plain''>Manchester United''s Patrice Evra &amp; Ji-Sung Park make Chicago-style
+        pizza</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''170''/><yt:uploaded>2011-07-23T00:35:47.000Z</yt:uploaded><yt:uploaderId>UCSZbXT5TLLW_i-5W8FZpFsg</yt:uploaderId><yt:videoid>VVBEGNUvaGE</yt:videoid></media:group><gd:rating
+        average=''4.9305353'' max=''5'' min=''1'' numRaters=''691'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''294958''/><yt:rating numDislikes=''12'' numLikes=''679''/></entry><entry
+        gd:etag=''W/&quot;AkANRH47eCp7I2A9WhFREkU.&quot;''><id>tag:youtube.com,2008:video:qur_eh_xm8s</id><published>2012-09-24T14:24:30.000Z</published><updated>2013-06-26T23:19:55.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Sports''
+        label=''Sports''/><title>The Vince Carter Body Slam | Story Time With Jalen
+        Rose</title><content type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/qur_eh_xm8s?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=qur_eh_xm8s&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/qur_eh_xm8s/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/qur_eh_xm8s/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/qur_eh_xm8s/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/qur_eh_xm8s/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=qur_eh_xm8s''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/wLr_DYKR8aS0k4r8bB5I5Q?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/qur_eh_xm8s?v=2.1''/><author><name>GrantlandNetwork</name><uri>http://gdata.youtube.com/feeds/api/users/GrantlandNetwork</uri><yt:userId>wLr_DYKR8aS0k4r8bB5I5Q</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/qur_eh_xm8s/comments?v=2.1''
+        countHint=''218''/></gd:comments><yt:hd/><media:group><media:category label=''Sports''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Sports</media:category><media:content
+        url=''http://www.youtube.com/v/qur_eh_xm8s?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''154'' yt:format=''5''/><media:content url=''rtsp://v6.cache5.c.youtube.com/CkULENy73wIaPAnLm_Efev_qqhMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''154''
+        yt:format=''1''/><media:content url=''rtsp://v6.cache5.c.youtube.com/CkULENy73wIaPAnLm_Efev_qqhMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''154''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''GrantlandNetwork''
+        yt:type=''partner''>grantlandnetwork</media:credit><media:description type=''plain''>Jalen
+        Rose tells the tale of the evening when some light ribbing in the Toronto
+        Raptors locker room escalated into much more between superstar Vince Carter
+        a...</media:description><media:keywords/><media:license type=''text/html''
+        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=qur_eh_xm8s&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/qur_eh_xm8s/default.jpg'' height=''90'' width=''120''
+        time=''00:01:17'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/qur_eh_xm8s/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/qur_eh_xm8s/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/qur_eh_xm8s/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/qur_eh_xm8s/1.jpg''
+        height=''90'' width=''120'' time=''00:00:38.500'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/qur_eh_xm8s/2.jpg'' height=''90'' width=''120''
+        time=''00:01:17'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/qur_eh_xm8s/3.jpg''
+        height=''90'' width=''120'' time=''00:01:55.500'' yt:name=''end''/><media:title
+        type=''plain''>The Vince Carter Body Slam | Story Time With Jalen Rose</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''154''/><yt:uploaded>2012-09-24T14:24:30.000Z</yt:uploaded><yt:uploaderId>UCwLr_DYKR8aS0k4r8bB5I5Q</yt:uploaderId><yt:videoid>qur_eh_xm8s</yt:videoid></media:group><gd:rating
+        average=''4.905565'' max=''5'' min=''1'' numRaters=''1186'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''347449''/><yt:rating numDislikes=''28'' numLikes=''1158''/></entry><entry
+        gd:etag=''W/&quot;A0AFSH47eCp7I2A9WhFREkU.&quot;''><id>tag:youtube.com,2008:video:yK5SmDsSW9k</id><published>2012-11-30T17:28:02.000Z</published><updated>2013-06-26T23:35:19.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Sports''
+        label=''Sports''/><title>Athletes Living in Affluent Neighborhoods | Grantland
+        Channel</title><content type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/yK5SmDsSW9k?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=yK5SmDsSW9k&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/yK5SmDsSW9k/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/yK5SmDsSW9k/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/yK5SmDsSW9k/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/yK5SmDsSW9k/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=yK5SmDsSW9k''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/wLr_DYKR8aS0k4r8bB5I5Q?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/yK5SmDsSW9k?v=2.1''/><author><name>GrantlandNetwork</name><uri>http://gdata.youtube.com/feeds/api/users/GrantlandNetwork</uri><yt:userId>wLr_DYKR8aS0k4r8bB5I5Q</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/yK5SmDsSW9k/comments?v=2.1''
+        countHint=''137''/></gd:comments><yt:hd/><media:group><media:category label=''Sports''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Sports</media:category><media:content
+        url=''http://www.youtube.com/v/yK5SmDsSW9k?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''332'' yt:format=''5''/><media:content url=''rtsp://v2.cache3.c.youtube.com/CkULENy73wIaPAnZWxI7mFKuyBMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''332''
+        yt:format=''1''/><media:content url=''rtsp://v2.cache3.c.youtube.com/CkULENy73wIaPAnZWxI7mFKuyBMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''332''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''GrantlandNetwork''
+        yt:type=''partner''>grantlandnetwork</media:credit><media:description type=''plain''>Jalen
+        Rose talks about Andrew Bynum''s lawsuit with his former neighbors and the
+        culture clash athletes face when they move into affluent neighborhoods. Visit...</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=yK5SmDsSW9k&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/yK5SmDsSW9k/default.jpg'' height=''90'' width=''120''
+        time=''00:02:46'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/yK5SmDsSW9k/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/yK5SmDsSW9k/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/yK5SmDsSW9k/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/yK5SmDsSW9k/1.jpg''
+        height=''90'' width=''120'' time=''00:01:23'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/yK5SmDsSW9k/2.jpg'' height=''90'' width=''120''
+        time=''00:02:46'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/yK5SmDsSW9k/3.jpg''
+        height=''90'' width=''120'' time=''00:04:09'' yt:name=''end''/><media:title
+        type=''plain''>Athletes Living in Affluent Neighborhoods | Grantland Channel</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''332''/><yt:uploaded>2012-11-30T17:28:02.000Z</yt:uploaded><yt:uploaderId>UCwLr_DYKR8aS0k4r8bB5I5Q</yt:uploaderId><yt:videoid>yK5SmDsSW9k</yt:videoid></media:group><gd:rating
+        average=''4.955357'' max=''5'' min=''1'' numRaters=''1344'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''141070''/><yt:rating numDislikes=''15'' numLikes=''1329''/></entry><entry
+        gd:etag=''W/&quot;CEQFQ347eCp7I2A9WhFREkQ.&quot;''><id>tag:youtube.com,2008:video:3wcr3PR3AQw</id><published>2013-02-11T12:01:42.000Z</published><updated>2013-06-27T00:18:32.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Sports''
+        label=''Sports''/><title>Magic Johnson Says Michael Jordan Is the Greatest
+        to Ever Play | NBA Countdown</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/3wcr3PR3AQw?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=3wcr3PR3AQw&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/3wcr3PR3AQw/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/3wcr3PR3AQw/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/3wcr3PR3AQw/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/3wcr3PR3AQw/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=3wcr3PR3AQw''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/wLr_DYKR8aS0k4r8bB5I5Q?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/3wcr3PR3AQw?v=2.1''/><author><name>GrantlandNetwork</name><uri>http://gdata.youtube.com/feeds/api/users/GrantlandNetwork</uri><yt:userId>wLr_DYKR8aS0k4r8bB5I5Q</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/3wcr3PR3AQw/comments?v=2.1''
+        countHint=''706''/></gd:comments><yt:hd/><media:group><media:category label=''Sports''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Sports</media:category><media:content
+        url=''http://www.youtube.com/v/3wcr3PR3AQw?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''438'' yt:format=''5''/><media:content url=''rtsp://v8.cache7.c.youtube.com/CkULENy73wIaPAkMAXf03CsH3xMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''438''
+        yt:format=''1''/><media:content url=''rtsp://v8.cache7.c.youtube.com/CkULENy73wIaPAkMAXf03CsH3xMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''438''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''GrantlandNetwork''
+        yt:type=''partner''>grantlandnetwork</media:credit><media:description type=''plain''>The
+        ''NBA Countdown'' crew - Magic Johnson, Jalen Rose, Bill Simmons, and Michael
+        Wilbon - reflect on Michael Jordan''s legacy after Jordan''s 50th birthday.
+        Vis...</media:description><media:keywords/><media:license type=''text/html''
+        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=3wcr3PR3AQw&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/3wcr3PR3AQw/default.jpg'' height=''90'' width=''120''
+        time=''00:03:39'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/3wcr3PR3AQw/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/3wcr3PR3AQw/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/3wcr3PR3AQw/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/3wcr3PR3AQw/1.jpg''
+        height=''90'' width=''120'' time=''00:01:49.500'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/3wcr3PR3AQw/2.jpg'' height=''90'' width=''120''
+        time=''00:03:39'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/3wcr3PR3AQw/3.jpg''
+        height=''90'' width=''120'' time=''00:05:28.500'' yt:name=''end''/><media:title
+        type=''plain''>Magic Johnson Says Michael Jordan Is the Greatest to Ever Play
+        | NBA Countdown</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''438''/><yt:uploaded>2013-02-11T12:01:42.000Z</yt:uploaded><yt:uploaderId>UCwLr_DYKR8aS0k4r8bB5I5Q</yt:uploaderId><yt:videoid>3wcr3PR3AQw</yt:videoid></media:group><gd:rating
+        average=''4.8755255'' max=''5'' min=''1'' numRaters=''1189'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''293189''/><yt:rating numDislikes=''37'' numLikes=''1152''/></entry><entry
+        gd:etag=''W/&quot;CUcBQX47eCp7I2A9WhFREk4.&quot;''><id>tag:youtube.com,2008:video:wXOiQbcjSd0</id><published>2013-05-06T12:00:17.000Z</published><updated>2013-06-26T07:50:50.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Sports''
+        label=''Sports''/><title>How Wives and Girlfriends Are Separated at NBA Games
+        | B.S. Report</title><content type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/wXOiQbcjSd0?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=wXOiQbcjSd0&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/wXOiQbcjSd0/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/wXOiQbcjSd0/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/wXOiQbcjSd0/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/wXOiQbcjSd0/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=wXOiQbcjSd0''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/wLr_DYKR8aS0k4r8bB5I5Q?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/wXOiQbcjSd0?v=2.1''/><author><name>GrantlandNetwork</name><uri>http://gdata.youtube.com/feeds/api/users/GrantlandNetwork</uri><yt:userId>wLr_DYKR8aS0k4r8bB5I5Q</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/wXOiQbcjSd0/comments?v=2.1''
+        countHint=''151''/></gd:comments><yt:hd/><media:group><media:category label=''Sports''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Sports</media:category><media:content
+        url=''http://www.youtube.com/v/wXOiQbcjSd0?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''206'' yt:format=''5''/><media:content url=''rtsp://v7.cache2.c.youtube.com/CkULENy73wIaPAndSSO3QaJzwRMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''206''
+        yt:format=''1''/><media:content url=''rtsp://v7.cache2.c.youtube.com/CkULENy73wIaPAndSSO3QaJzwRMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''206''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''GrantlandNetwork''
+        yt:type=''partner''>grantlandnetwork</media:credit><media:description type=''plain''>Jalen
+        Rose describes to Bill Simmons and David Jacoby how NBA players will request
+        that their wives and girlfriends sit on opposite sides of the arena. From
+        ...</media:description><media:keywords/><media:license type=''text/html''
+        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=wXOiQbcjSd0&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/wXOiQbcjSd0/default.jpg'' height=''90'' width=''120''
+        time=''00:01:43'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/wXOiQbcjSd0/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/wXOiQbcjSd0/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/wXOiQbcjSd0/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/wXOiQbcjSd0/1.jpg''
+        height=''90'' width=''120'' time=''00:00:51.500'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/wXOiQbcjSd0/2.jpg'' height=''90'' width=''120''
+        time=''00:01:43'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/wXOiQbcjSd0/3.jpg''
+        height=''90'' width=''120'' time=''00:02:34.500'' yt:name=''end''/><media:title
+        type=''plain''>How Wives and Girlfriends Are Separated at NBA Games | B.S.
+        Report</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''206''/><yt:uploaded>2013-05-06T12:00:17.000Z</yt:uploaded><yt:uploaderId>UCwLr_DYKR8aS0k4r8bB5I5Q</yt:uploaderId><yt:videoid>wXOiQbcjSd0</yt:videoid></media:group><gd:rating
+        average=''4.9069767'' max=''5'' min=''1'' numRaters=''516'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''195093''/><yt:rating numDislikes=''12'' numLikes=''504''/></entry><entry
+        gd:etag=''W/&quot;DE8DR347eCp7I2A9WhFRE08.&quot;''><id>tag:youtube.com,2008:video:s0jB1TI0Plc</id><published>2012-09-23T22:01:26.000Z</published><updated>2013-06-27T09:54:36.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Sports''
+        label=''Sports''/><title>How to Shoot a 3-Pointer with NBA Pro Kevin Love
+        - How To Be Awesome Ep. 14</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/s0jB1TI0Plc?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=s0jB1TI0Plc&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/s0jB1TI0Plc/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/s0jB1TI0Plc/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/s0jB1TI0Plc/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/s0jB1TI0Plc/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=s0jB1TI0Plc''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/WljxewHlJE3M7U_6_zFNyA?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/s0jB1TI0Plc?v=2.1''/><author><name>AwesomenessTV</name><uri>http://gdata.youtube.com/feeds/api/users/AwesomenessTV</uri><yt:userId>WljxewHlJE3M7U_6_zFNyA</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''allowed''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/s0jB1TI0Plc/comments?v=2.1''
+        countHint=''197''/></gd:comments><yt:hd/><media:group><media:category label=''Sports''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Sports</media:category><media:content
+        url=''http://www.youtube.com/v/s0jB1TI0Plc?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''267'' yt:format=''5''/><media:content url=''rtsp://v4.cache7.c.youtube.com/CkULENy73wIaPAlXPjQy1cFIsxMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''267''
+        yt:format=''1''/><media:content url=''rtsp://v4.cache7.c.youtube.com/CkULENy73wIaPAlXPjQy1cFIsxMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''267''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''AwesomenessTV''
+        yt:type=''partner''>awesomenesstv</media:credit><media:description type=''plain''>on
+        this episode of #HowToBeAwesome Doug Brouchu from Shove It &amp; So Random
+        meets up with Kevin Love--NBA pro, 2012 USA Olympic Basketball team star,
+        and winne...</media:description><media:keywords/><media:license type=''text/html''
+        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=s0jB1TI0Plc&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/s0jB1TI0Plc/default.jpg'' height=''90'' width=''120''
+        time=''00:02:13.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/s0jB1TI0Plc/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/s0jB1TI0Plc/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/s0jB1TI0Plc/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/s0jB1TI0Plc/1.jpg''
+        height=''90'' width=''120'' time=''00:01:06.750'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/s0jB1TI0Plc/2.jpg'' height=''90'' width=''120''
+        time=''00:02:13.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/s0jB1TI0Plc/3.jpg''
+        height=''90'' width=''120'' time=''00:03:20.250'' yt:name=''end''/><media:title
+        type=''plain''>How to Shoot a 3-Pointer with NBA Pro Kevin Love - How To Be
+        Awesome Ep. 14</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''267''/><yt:uploaded>2012-09-23T22:01:26.000Z</yt:uploaded><yt:uploaderId>UCWljxewHlJE3M7U_6_zFNyA</yt:uploaderId><yt:videoid>s0jB1TI0Plc</yt:videoid></media:group><gd:rating
+        average=''4.7360177'' max=''5'' min=''1'' numRaters=''894'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''198992''/><yt:rating numDislikes=''59'' numLikes=''835''/></entry><entry
+        gd:etag=''W/&quot;DEcARX47eCp7I2A9WhFSGUg.&quot;''><id>tag:youtube.com,2008:video:UZgTEEWw--8</id><published>2013-04-21T13:28:10.000Z</published><updated>2013-06-23T02:54:04.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Sports''
+        label=''Sports''/><title>FC Barcelona - Entrenament 21/04/2013</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/UZgTEEWw--8?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=UZgTEEWw--8&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/UZgTEEWw--8/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/UZgTEEWw--8/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/UZgTEEWw--8/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/UZgTEEWw--8/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=UZgTEEWw--8''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/14UlmYlSNiQCBe9Eookf_A?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/UZgTEEWw--8?v=2.1''/><author><name>FC
+        Barcelona</name><uri>http://gdata.youtube.com/feeds/api/users/fcbarcelona</uri><yt:userId>14UlmYlSNiQCBe9Eookf_A</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/UZgTEEWw--8/comments?v=2.1''
+        countHint=''118''/></gd:comments><media:group><media:category label=''Sports''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Sports</media:category><media:content
+        url=''http://www.youtube.com/v/UZgTEEWw--8?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''153'' yt:format=''5''/><media:content url=''rtsp://v2.cache2.c.youtube.com/CkULENy73wIaPAnv-7BFEBOYURMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''153''
+        yt:format=''1''/><media:content url=''rtsp://v2.cache2.c.youtube.com/CkULENy73wIaPAnv-7BFEBOYURMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''153''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''FC
+        Barcelona'' yt:type=''partner''>fcbarcelona</media:credit><media:description
+        type=''plain''/><media:keywords/><media:license type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=UZgTEEWw--8&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/UZgTEEWw--8/default.jpg'' height=''90'' width=''120''
+        time=''00:01:16.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/UZgTEEWw--8/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/UZgTEEWw--8/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/UZgTEEWw--8/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/UZgTEEWw--8/1.jpg''
+        height=''90'' width=''120'' time=''00:00:38.250'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/UZgTEEWw--8/2.jpg'' height=''90'' width=''120''
+        time=''00:01:16.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/UZgTEEWw--8/3.jpg''
+        height=''90'' width=''120'' time=''00:01:54.750'' yt:name=''end''/><media:title
+        type=''plain''>FC Barcelona - Entrenament 21/04/2013</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''153''/><yt:uploaded>2013-04-21T13:28:10.000Z</yt:uploaded><yt:uploaderId>UC14UlmYlSNiQCBe9Eookf_A</yt:uploaderId><yt:videoid>UZgTEEWw--8</yt:videoid></media:group><gd:rating
+        average=''4.884058'' max=''5'' min=''1'' numRaters=''552'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''68186''/><yt:rating numDislikes=''16'' numLikes=''536''/></entry><entry
+        gd:etag=''W/&quot;DUMAR347eCp7I2A9WhFREkw.&quot;''><id>tag:youtube.com,2008:video:UU4VGXLHj18</id><published>2013-06-20T00:34:27.000Z</published><updated>2013-06-26T03:30:46.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Sports''
+        label=''Sports''/><title>17 Year Old Phenom Athlete With 68 Inch Hops And
+        4.4 Speed "Chris James"</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/UU4VGXLHj18?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=UU4VGXLHj18&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/UU4VGXLHj18/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/UU4VGXLHj18/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/UU4VGXLHj18/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/UU4VGXLHj18/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=UU4VGXLHj18''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/72RFjjP_e7hZEj4Ut8iONA?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/UU4VGXLHj18?v=2.1''/><author><name>TwiceTheSpeed1</name><uri>http://gdata.youtube.com/feeds/api/users/TwiceTheSpeed1</uri><yt:userId>72RFjjP_e7hZEj4Ut8iONA</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/UU4VGXLHj18/comments?v=2.1''
+        countHint=''318''/></gd:comments><yt:hd/><media:group><media:category label=''Sports''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Sports</media:category><media:content
+        url=''http://www.youtube.com/v/UU4VGXLHj18?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''97'' yt:format=''5''/><media:content url=''rtsp://v5.cache4.c.youtube.com/CkULENy73wIaPAlfj8dyGRVOURMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''97'' yt:format=''1''/><media:content
+        url=''rtsp://v5.cache4.c.youtube.com/CkULENy73wIaPAlfj8dyGRVOURMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''97'' yt:format=''6''/><media:credit
+        role=''uploader'' scheme=''urn:youtube'' yt:display=''TwiceTheSpeed1''>twicethespeed1</media:credit><media:description
+        type=''plain''>http://www.twicethespeed.com ---- Start Your Athletic Journey
+        Chris James is a high school running back at Notre Dame in Niles, Illinois.
+        Chris has been fort...</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=UU4VGXLHj18&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/UU4VGXLHj18/default.jpg'' height=''90'' width=''120''
+        time=''00:00:48.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/UU4VGXLHj18/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/UU4VGXLHj18/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/UU4VGXLHj18/1.jpg''
+        height=''90'' width=''120'' time=''00:00:24.250'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/UU4VGXLHj18/2.jpg'' height=''90'' width=''120''
+        time=''00:00:48.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/UU4VGXLHj18/3.jpg''
+        height=''90'' width=''120'' time=''00:01:12.750'' yt:name=''end''/><media:title
+        type=''plain''>17 Year Old Phenom Athlete With 68 Inch Hops And 4.4 Speed
+        "Chris James"</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''97''/><yt:uploaded>2013-06-20T00:34:27.000Z</yt:uploaded><yt:uploaderId>UC72RFjjP_e7hZEj4Ut8iONA</yt:uploaderId><yt:videoid>UU4VGXLHj18</yt:videoid></media:group><gd:rating
+        average=''4.8230386'' max=''5'' min=''1'' numRaters=''1198'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''1392987''/><yt:rating numDislikes=''53'' numLikes=''1145''/></entry><entry
+        gd:etag=''W/&quot;C0IDRn47eCp7I2A9WhFREks.&quot;''><id>tag:youtube.com,2008:video:TujR_VCNKxo</id><published>2013-04-10T13:00:52.000Z</published><updated>2013-06-26T15:46:17.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Sports''
+        label=''Sports''/><title>Jalen Rose Caught Ditching Cab | Story Time With
+        Jalen Rose</title><content type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/TujR_VCNKxo?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=TujR_VCNKxo&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/TujR_VCNKxo/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/TujR_VCNKxo/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/TujR_VCNKxo/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/TujR_VCNKxo/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=TujR_VCNKxo''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/wLr_DYKR8aS0k4r8bB5I5Q?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/TujR_VCNKxo?v=2.1''/><author><name>GrantlandNetwork</name><uri>http://gdata.youtube.com/feeds/api/users/GrantlandNetwork</uri><yt:userId>wLr_DYKR8aS0k4r8bB5I5Q</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/TujR_VCNKxo/comments?v=2.1''
+        countHint=''175''/></gd:comments><yt:hd/><media:group><media:category label=''Sports''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Sports</media:category><media:content
+        url=''http://www.youtube.com/v/TujR_VCNKxo?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''196'' yt:format=''5''/><media:content url=''rtsp://v5.cache7.c.youtube.com/CkULENy73wIaPAkaK41Q_dHoThMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''196''
+        yt:format=''1''/><media:content url=''rtsp://v5.cache7.c.youtube.com/CkULENy73wIaPAkaK41Q_dHoThMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''196''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''GrantlandNetwork''
+        yt:type=''partner''>grantlandnetwork</media:credit><media:description type=''plain''>The
+        NCAA title game loss to Louisville is going to be hard on the resilient Michigan
+        Wolverines, and we hope they handle it well. In this episode of Story Ti...</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=TujR_VCNKxo&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/TujR_VCNKxo/default.jpg'' height=''90'' width=''120''
+        time=''00:01:38'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/TujR_VCNKxo/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/TujR_VCNKxo/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/TujR_VCNKxo/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/TujR_VCNKxo/1.jpg''
+        height=''90'' width=''120'' time=''00:00:49'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/TujR_VCNKxo/2.jpg'' height=''90'' width=''120''
+        time=''00:01:38'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/TujR_VCNKxo/3.jpg''
+        height=''90'' width=''120'' time=''00:02:27'' yt:name=''end''/><media:title
+        type=''plain''>Jalen Rose Caught Ditching Cab | Story Time With Jalen Rose</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''196''/><yt:uploaded>2013-04-10T13:00:52.000Z</yt:uploaded><yt:uploaderId>UCwLr_DYKR8aS0k4r8bB5I5Q</yt:uploaderId><yt:videoid>TujR_VCNKxo</yt:videoid></media:group><gd:rating
+        average=''4.9347115'' max=''5'' min=''1'' numRaters=''919'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''102842''/><yt:rating numDislikes=''15'' numLikes=''904''/></entry><entry
+        gd:etag=''W/&quot;D0IAR347eCp7I2A9WhFREkk.&quot;''><id>tag:youtube.com,2008:video:7wzIC0Md-GY</id><published>2012-12-11T11:30:08.000Z</published><updated>2013-06-26T11:19:06.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Sports''
+        label=''Sports''/><title>Getting Paid in the NBA | Grantland Channel</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/7wzIC0Md-GY?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=7wzIC0Md-GY&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/7wzIC0Md-GY/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/7wzIC0Md-GY/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/7wzIC0Md-GY/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/7wzIC0Md-GY/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=7wzIC0Md-GY''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/wLr_DYKR8aS0k4r8bB5I5Q?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/7wzIC0Md-GY?v=2.1''/><author><name>GrantlandNetwork</name><uri>http://gdata.youtube.com/feeds/api/users/GrantlandNetwork</uri><yt:userId>wLr_DYKR8aS0k4r8bB5I5Q</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/7wzIC0Md-GY/comments?v=2.1''
+        countHint=''90''/></gd:comments><yt:hd/><media:group><media:category label=''Sports''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Sports</media:category><media:content
+        url=''http://www.youtube.com/v/7wzIC0Md-GY?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''248'' yt:format=''5''/><media:content url=''rtsp://v3.cache8.c.youtube.com/CkULENy73wIaPAlm-B1DC8gM7xMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''248''
+        yt:format=''1''/><media:content url=''rtsp://v3.cache8.c.youtube.com/CkULENy73wIaPAlm-B1DC8gM7xMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''248''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''GrantlandNetwork''
+        yt:type=''partner''>grantlandnetwork</media:credit><media:description type=''plain''>Jalen
+        Rose details how NBA athletes get paid, manage their money, and avoid those
+        who want to get in their pockets. Visit Grantland: http://www.Grantland.com...</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=7wzIC0Md-GY&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/7wzIC0Md-GY/default.jpg'' height=''90'' width=''120''
+        time=''00:02:04'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/7wzIC0Md-GY/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/7wzIC0Md-GY/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/7wzIC0Md-GY/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/7wzIC0Md-GY/1.jpg''
+        height=''90'' width=''120'' time=''00:01:02'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/7wzIC0Md-GY/2.jpg'' height=''90'' width=''120''
+        time=''00:02:04'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/7wzIC0Md-GY/3.jpg''
+        height=''90'' width=''120'' time=''00:03:06'' yt:name=''end''/><media:title
+        type=''plain''>Getting Paid in the NBA | Grantland Channel</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''248''/><yt:uploaded>2012-12-11T11:30:08.000Z</yt:uploaded><yt:uploaderId>UCwLr_DYKR8aS0k4r8bB5I5Q</yt:uploaderId><yt:videoid>7wzIC0Md-GY</yt:videoid></media:group><gd:rating
+        average=''4.945885'' max=''5'' min=''1'' numRaters=''887'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''135980''/><yt:rating numDislikes=''12'' numLikes=''875''/></entry><entry
+        gd:etag=''W/&quot;A0IAQn47eCp7I2A9WhFSFU8.&quot;''><id>tag:youtube.com,2008:video:dgz-ObKXaNg</id><published>2012-10-30T13:50:46.000Z</published><updated>2013-06-18T04:25:43.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Sports''
+        label=''Sports''/><title>Michigan commit offers TD tribute</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/dgz-ObKXaNg?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=dgz-ObKXaNg&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/dgz-ObKXaNg/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/dgz-ObKXaNg/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/dgz-ObKXaNg/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/dgz-ObKXaNg/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=dgz-ObKXaNg''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/iWLfSweyRNmLpgEHekhoAg?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/dgz-ObKXaNg?v=2.1''/><author><name>ESPN</name><uri>http://gdata.youtube.com/feeds/api/users/ESPN</uri><yt:userId>iWLfSweyRNmLpgEHekhoAg</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/dgz-ObKXaNg/comments?v=2.1''
+        countHint=''250''/></gd:comments><yt:hd/><media:group><media:category label=''Sports''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Sports</media:category><media:content
+        url=''http://www.youtube.com/v/dgz-ObKXaNg?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''69'' yt:format=''5''/><media:content url=''rtsp://v5.cache7.c.youtube.com/CkULENy73wIaPAnYaJeyOf4MdhMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''69'' yt:format=''1''/><media:content
+        url=''rtsp://v5.cache7.c.youtube.com/CkULENy73wIaPAnYaJeyOf4MdhMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''69'' yt:format=''6''/><media:credit
+        role=''uploader'' scheme=''urn:youtube'' yt:display=''ESPN'' yt:type=''partner''>espn</media:credit><media:description
+        type=''plain''>Leading comfortably against a rival, St. Clairsville (Ohio)
+        running back Michael Ferns broke free and was on his way to a certain touchdown,
+        but he stepped o...</media:description><media:keywords/><media:license type=''text/html''
+        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=dgz-ObKXaNg&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/dgz-ObKXaNg/default.jpg'' height=''90'' width=''120''
+        time=''00:00:34.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/dgz-ObKXaNg/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/dgz-ObKXaNg/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/dgz-ObKXaNg/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/dgz-ObKXaNg/1.jpg''
+        height=''90'' width=''120'' time=''00:00:17.250'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/dgz-ObKXaNg/2.jpg'' height=''90'' width=''120''
+        time=''00:00:34.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/dgz-ObKXaNg/3.jpg''
+        height=''90'' width=''120'' time=''00:00:51.750'' yt:name=''end''/><media:title
+        type=''plain''>Michigan commit offers TD tribute</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''69''/><yt:uploaded>2012-10-30T13:50:46.000Z</yt:uploaded><yt:uploaderId>UCiWLfSweyRNmLpgEHekhoAg</yt:uploaderId><yt:videoid>dgz-ObKXaNg</yt:videoid></media:group><gd:rating
+        average=''4.8365264'' max=''5'' min=''1'' numRaters=''1566'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''353152''/><yt:rating numDislikes=''64'' numLikes=''1502''/></entry><entry
+        gd:etag=''W/&quot;DkMGSH47eCp7I2A9WhFSFkg.&quot;''><id>tag:youtube.com,2008:video:mzoeZ-HAZy0</id><published>2013-03-05T12:09:29.000Z</published><updated>2013-06-19T15:07:09.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Sports''
+        label=''Sports''/><title>Joe House vs. Cousin Sal | House Eats 3</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/mzoeZ-HAZy0?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=mzoeZ-HAZy0&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/mzoeZ-HAZy0/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/mzoeZ-HAZy0/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/mzoeZ-HAZy0/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/mzoeZ-HAZy0/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=mzoeZ-HAZy0''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/wLr_DYKR8aS0k4r8bB5I5Q?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/mzoeZ-HAZy0?v=2.1''/><author><name>GrantlandNetwork</name><uri>http://gdata.youtube.com/feeds/api/users/GrantlandNetwork</uri><yt:userId>wLr_DYKR8aS0k4r8bB5I5Q</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/mzoeZ-HAZy0/comments?v=2.1''
+        countHint=''205''/></gd:comments><yt:hd/><media:group><media:category label=''Sports''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Sports</media:category><media:content
+        url=''http://www.youtube.com/v/mzoeZ-HAZy0?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''592'' yt:format=''5''/><media:content url=''rtsp://v7.cache6.c.youtube.com/CkULENy73wIaPAktZ8DhZx46mxMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''592''
+        yt:format=''1''/><media:content url=''rtsp://v7.cache6.c.youtube.com/CkULENy73wIaPAktZ8DhZx46mxMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''592''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''GrantlandNetwork''
+        yt:type=''partner''>grantlandnetwork</media:credit><media:description type=''plain''>Jimmy
+        Kimmel Live''s Cousin Sal faces off against B.S. Report stalwart Joe House
+        in an eating competition at New Orleans'' ACME Oyster House. It''s gross.
+        For r...</media:description><media:keywords/><media:license type=''text/html''
+        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=mzoeZ-HAZy0&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/mzoeZ-HAZy0/default.jpg'' height=''90'' width=''120''
+        time=''00:04:56'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/mzoeZ-HAZy0/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/mzoeZ-HAZy0/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/mzoeZ-HAZy0/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/mzoeZ-HAZy0/1.jpg''
+        height=''90'' width=''120'' time=''00:02:28'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/mzoeZ-HAZy0/2.jpg'' height=''90'' width=''120''
+        time=''00:04:56'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/mzoeZ-HAZy0/3.jpg''
+        height=''90'' width=''120'' time=''00:07:24'' yt:name=''end''/><media:title
+        type=''plain''>Joe House vs. Cousin Sal | House Eats 3</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''592''/><yt:uploaded>2013-03-05T12:09:29.000Z</yt:uploaded><yt:uploaderId>UCwLr_DYKR8aS0k4r8bB5I5Q</yt:uploaderId><yt:videoid>mzoeZ-HAZy0</yt:videoid></media:group><gd:rating
+        average=''4.9335346'' max=''5'' min=''1'' numRaters=''662'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''83316''/><yt:rating numDislikes=''11'' numLikes=''651''/></entry><entry
+        gd:etag=''W/&quot;DUIFRn47eCp7I2A9WhFREko.&quot;''><id>tag:youtube.com,2008:video:Fi_ly7HTSzk</id><published>2013-02-02T20:12:35.000Z</published><updated>2013-06-26T20:11:57.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Sports''
+        label=''Sports''/><title>NFL STAR RICHARD SHERMAN ''PUNKS'' FANS ON BOURBON
+        STREET</title><content type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/Fi_ly7HTSzk?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=Fi_ly7HTSzk&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Fi_ly7HTSzk/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Fi_ly7HTSzk/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Fi_ly7HTSzk/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Fi_ly7HTSzk/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=Fi_ly7HTSzk''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/9-OpMMVoNP5o10_Iyq7Ndw?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/Fi_ly7HTSzk?v=2.1''/><author><name>BleacherReport</name><uri>http://gdata.youtube.com/feeds/api/users/BleacherReport</uri><yt:userId>9-OpMMVoNP5o10_Iyq7Ndw</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/Fi_ly7HTSzk/comments?v=2.1''
+        countHint=''522''/></gd:comments><yt:hd/><media:group><media:category label=''Sports''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Sports</media:category><media:content
+        url=''http://www.youtube.com/v/Fi_ly7HTSzk?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''202'' yt:format=''5''/><media:content url=''rtsp://v6.cache7.c.youtube.com/CkULENy73wIaPAk5S9Oxy-UvFhMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''202''
+        yt:format=''1''/><media:content url=''rtsp://v6.cache7.c.youtube.com/CkULENy73wIaPAk5S9Oxy-UvFhMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''202''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''BleacherReport''
+        yt:type=''partner''>bleacherreport</media:credit><media:description type=''plain''>Who
+        is the best lock-down cornerback in the NFL. Richard Sherman of the Seattle
+        Seahawks hits Bourbon Street in New Orleans at the Super Bowl to find out.</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=Fi_ly7HTSzk&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/Fi_ly7HTSzk/default.jpg'' height=''90'' width=''120''
+        time=''00:01:41'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/Fi_ly7HTSzk/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/Fi_ly7HTSzk/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/Fi_ly7HTSzk/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/Fi_ly7HTSzk/1.jpg''
+        height=''90'' width=''120'' time=''00:00:50.500'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/Fi_ly7HTSzk/2.jpg'' height=''90'' width=''120''
+        time=''00:01:41'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/Fi_ly7HTSzk/3.jpg''
+        height=''90'' width=''120'' time=''00:02:31.500'' yt:name=''end''/><media:title
+        type=''plain''>NFL STAR RICHARD SHERMAN ''PUNKS'' FANS ON BOURBON STREET</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''202''/><yt:uploaded>2013-02-02T20:12:35.000Z</yt:uploaded><yt:uploaderId>UC9-OpMMVoNP5o10_Iyq7Ndw</yt:uploaderId><yt:videoid>Fi_ly7HTSzk</yt:videoid></media:group><gd:rating
+        average=''4.9231443'' max=''5'' min=''1'' numRaters=''1145'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''201027''/><yt:rating numDislikes=''22'' numLikes=''1123''/></entry><entry
+        gd:etag=''W/&quot;CkMGQX47eCp7I2A9WhFREUw.&quot;''><id>tag:youtube.com,2008:video:Rsc5FLXqSc4</id><published>2013-04-02T15:40:23.000Z</published><updated>2013-06-24T21:47:00.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''News''
+        label=''News &amp; Politics''/><title>Highlights of the 2013 White House Easter
+        Egg Roll</title><content type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/Rsc5FLXqSc4?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=Rsc5FLXqSc4&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Rsc5FLXqSc4/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Rsc5FLXqSc4/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Rsc5FLXqSc4/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=Rsc5FLXqSc4''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/YxRlFDqcWM4y7FfpiAN3KQ?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/Rsc5FLXqSc4?v=2.1''/><author><name>whitehouse</name><uri>http://gdata.youtube.com/feeds/api/users/whitehouse</uri><yt:userId>YxRlFDqcWM4y7FfpiAN3KQ</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''denied''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/Rsc5FLXqSc4/comments?v=2.1''
+        countHint=''162''/></gd:comments><georss:where><gml:Point><gml:pos>38.89767837524414
+        -77.0364990234375</gml:pos></gml:Point></georss:where><yt:hd/><media:group><media:category
+        label=''News &amp; Politics'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>News</media:category><media:content
+        url=''http://www.youtube.com/v/Rsc5FLXqSc4?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''152'' yt:format=''5''/><media:content url=''rtsp://v7.cache5.c.youtube.com/CkULENy73wIaPAnOSeq1FDnHRhMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''152''
+        yt:format=''1''/><media:content url=''rtsp://v7.cache5.c.youtube.com/CkULENy73wIaPAnOSeq1FDnHRhMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''152''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''whitehouse''>whitehouse</media:credit><media:description
+        type=''plain''>Check out the best of the 2013 White House Easter Egg Roll
+        including interviews with NASCAR''s Danica Patrick, the NFL''s Anquan Boldin
+        and Performing Artist A...</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=Rsc5FLXqSc4&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/Rsc5FLXqSc4/default.jpg'' height=''90'' width=''120''
+        time=''00:01:16'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/Rsc5FLXqSc4/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/Rsc5FLXqSc4/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/Rsc5FLXqSc4/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/Rsc5FLXqSc4/1.jpg''
+        height=''90'' width=''120'' time=''00:00:38'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/Rsc5FLXqSc4/2.jpg'' height=''90'' width=''120''
+        time=''00:01:16'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/Rsc5FLXqSc4/3.jpg''
+        height=''90'' width=''120'' time=''00:01:54'' yt:name=''end''/><media:title
+        type=''plain''>Highlights of the 2013 White House Easter Egg Roll</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''152''/><yt:uploaded>2013-04-02T15:40:23.000Z</yt:uploaded><yt:uploaderId>UCYxRlFDqcWM4y7FfpiAN3KQ</yt:uploaderId><yt:videoid>Rsc5FLXqSc4</yt:videoid></media:group><gd:rating
+        average=''4.855309'' max=''5'' min=''1'' numRaters=''857'' rel=''http://schemas.google.com/g/2005#overall''/><yt:recorded>2013-04-01</yt:recorded><yt:statistics
+        favoriteCount=''0'' viewCount=''50794''/><yt:rating numDislikes=''31'' numLikes=''826''/></entry><entry
+        gd:etag=''W/&quot;DUADRH47eCp7I2A9WhFRE0w.&quot;''><id>tag:youtube.com,2008:video:dPifae15xyM</id><published>2012-10-22T17:25:56.000Z</published><updated>2013-06-27T07:22:55.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Sports''
+        label=''Sports''/><title>Jalen and Bill on Shaq''s Potential</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/dPifae15xyM?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=dPifae15xyM&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/dPifae15xyM/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/dPifae15xyM/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/dPifae15xyM/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/dPifae15xyM/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=dPifae15xyM''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/wLr_DYKR8aS0k4r8bB5I5Q?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/dPifae15xyM?v=2.1''/><author><name>GrantlandNetwork</name><uri>http://gdata.youtube.com/feeds/api/users/GrantlandNetwork</uri><yt:userId>wLr_DYKR8aS0k4r8bB5I5Q</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/dPifae15xyM/comments?v=2.1''
+        countHint=''177''/></gd:comments><yt:hd/><media:group><media:category label=''Sports''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Sports</media:category><media:content
+        url=''http://www.youtube.com/v/dPifae15xyM?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''182'' yt:format=''5''/><media:content url=''rtsp://v4.cache5.c.youtube.com/CkULENy73wIaPAkjx3ntaZ_4dBMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''182''
+        yt:format=''1''/><media:content url=''rtsp://v4.cache5.c.youtube.com/CkULENy73wIaPAkjx3ntaZ_4dBMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''182''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''GrantlandNetwork''
+        yt:type=''partner''>grantlandnetwork</media:credit><media:description type=''plain''>Jalen
+        Rose and Bill Simmons discuss facing Shaquille O''Neal in the NBA Finals and
+        how Shaq never reached his full potential as a player. Visit Grantland: htt...</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=dPifae15xyM&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/dPifae15xyM/default.jpg'' height=''90'' width=''120''
+        time=''00:01:31'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/dPifae15xyM/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/dPifae15xyM/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/dPifae15xyM/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/dPifae15xyM/1.jpg''
+        height=''90'' width=''120'' time=''00:00:45.500'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/dPifae15xyM/2.jpg'' height=''90'' width=''120''
+        time=''00:01:31'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/dPifae15xyM/3.jpg''
+        height=''90'' width=''120'' time=''00:02:16.500'' yt:name=''end''/><media:title
+        type=''plain''>Jalen and Bill on Shaq''s Potential</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''182''/><yt:uploaded>2012-10-22T17:25:56.000Z</yt:uploaded><yt:uploaderId>UCwLr_DYKR8aS0k4r8bB5I5Q</yt:uploaderId><yt:videoid>dPifae15xyM</yt:videoid></media:group><gd:rating
+        average=''4.9636364'' max=''5'' min=''1'' numRaters=''440'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''137157''/><yt:rating numDislikes=''4'' numLikes=''436''/></entry><entry
+        gd:etag=''W/&quot;DUMFR347eCp7I2A9WhFREkU.&quot;''><id>tag:youtube.com,2008:video:8U65T2x2oxo</id><published>2012-11-27T20:31:12.000Z</published><updated>2013-06-26T22:56:56.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Sports''
+        label=''Sports''/><title>PTImeline: LeBron James | Grantland Channel</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/8U65T2x2oxo?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=8U65T2x2oxo&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/8U65T2x2oxo/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/8U65T2x2oxo/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/8U65T2x2oxo/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/8U65T2x2oxo/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=8U65T2x2oxo''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/wLr_DYKR8aS0k4r8bB5I5Q?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/8U65T2x2oxo?v=2.1''/><author><name>GrantlandNetwork</name><uri>http://gdata.youtube.com/feeds/api/users/GrantlandNetwork</uri><yt:userId>wLr_DYKR8aS0k4r8bB5I5Q</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/8U65T2x2oxo/comments?v=2.1''
+        countHint=''536''/></gd:comments><yt:hd/><media:group><media:category label=''Sports''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Sports</media:category><media:content
+        url=''http://www.youtube.com/v/8U65T2x2oxo?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''918'' yt:format=''5''/><media:content url=''rtsp://v6.cache3.c.youtube.com/CkULENy73wIaPAkao3ZsT7lO8RMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''918''
+        yt:format=''1''/><media:content url=''rtsp://v6.cache3.c.youtube.com/CkULENy73wIaPAkao3ZsT7lO8RMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''918''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''GrantlandNetwork''
+        yt:type=''partner''>grantlandnetwork</media:credit><media:description type=''plain''>A
+        supercut of Tony Kornheiser and Michael Wilbon discussing LeBron James on
+        ''Pardon The Interruption'' over the last decade. This video is an excellent
+        demons...</media:description><media:keywords/><media:license type=''text/html''
+        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=8U65T2x2oxo&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/8U65T2x2oxo/default.jpg'' height=''90'' width=''120''
+        time=''00:07:39'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/8U65T2x2oxo/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/8U65T2x2oxo/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/8U65T2x2oxo/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/8U65T2x2oxo/1.jpg''
+        height=''90'' width=''120'' time=''00:03:49.500'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/8U65T2x2oxo/2.jpg'' height=''90'' width=''120''
+        time=''00:07:39'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/8U65T2x2oxo/3.jpg''
+        height=''90'' width=''120'' time=''00:11:28.500'' yt:name=''end''/><media:title
+        type=''plain''>PTImeline: LeBron James | Grantland Channel</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''918''/><yt:uploaded>2012-11-27T20:31:12.000Z</yt:uploaded><yt:uploaderId>UCwLr_DYKR8aS0k4r8bB5I5Q</yt:uploaderId><yt:videoid>8U65T2x2oxo</yt:videoid></media:group><gd:rating
+        average=''4.895349'' max=''5'' min=''1'' numRaters=''1376'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''328193''/><yt:rating numDislikes=''36'' numLikes=''1340''/></entry><entry
+        gd:etag=''W/&quot;CUcER347eCp7I2A9WhFREkk.&quot;''><id>tag:youtube.com,2008:video:nGq0se0pzCA</id><published>2012-10-29T14:24:44.000Z</published><updated>2013-06-26T10:36:46.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Sports''
+        label=''Sports''/><title>Kevin Garnett Stories With Brian Scalabrine | Best
+        B.S.</title><content type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/nGq0se0pzCA?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=nGq0se0pzCA&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/nGq0se0pzCA/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/nGq0se0pzCA/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/nGq0se0pzCA/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/nGq0se0pzCA/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=nGq0se0pzCA''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/wLr_DYKR8aS0k4r8bB5I5Q?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/nGq0se0pzCA?v=2.1''/><author><name>GrantlandNetwork</name><uri>http://gdata.youtube.com/feeds/api/users/GrantlandNetwork</uri><yt:userId>wLr_DYKR8aS0k4r8bB5I5Q</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/nGq0se0pzCA/comments?v=2.1''
+        countHint=''168''/></gd:comments><yt:hd/><media:group><media:category label=''Sports''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Sports</media:category><media:content
+        url=''http://www.youtube.com/v/nGq0se0pzCA?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''194'' yt:format=''5''/><media:content url=''rtsp://v2.cache1.c.youtube.com/CkULENy73wIaPAkgzCntsbRqnBMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''194''
+        yt:format=''1''/><media:content url=''rtsp://v2.cache1.c.youtube.com/CkULENy73wIaPAkgzCntsbRqnBMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''194''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''GrantlandNetwork''
+        yt:type=''partner''>grantlandnetwork</media:credit><media:description type=''plain''>Brian
+        Scalabrine explains to Bill Simmons why Kevin Garnett is the most hated opponent
+        in the NBA but one of the most beloved teammates, and why all basketba...</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=nGq0se0pzCA&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/nGq0se0pzCA/default.jpg'' height=''90'' width=''120''
+        time=''00:01:37'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/nGq0se0pzCA/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/nGq0se0pzCA/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/nGq0se0pzCA/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/nGq0se0pzCA/1.jpg''
+        height=''90'' width=''120'' time=''00:00:48.500'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/nGq0se0pzCA/2.jpg'' height=''90'' width=''120''
+        time=''00:01:37'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/nGq0se0pzCA/3.jpg''
+        height=''90'' width=''120'' time=''00:02:25.500'' yt:name=''end''/><media:title
+        type=''plain''>Kevin Garnett Stories With Brian Scalabrine | Best B.S.</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''194''/><yt:uploaded>2012-10-29T14:24:44.000Z</yt:uploaded><yt:uploaderId>UCwLr_DYKR8aS0k4r8bB5I5Q</yt:uploaderId><yt:videoid>nGq0se0pzCA</yt:videoid></media:group><gd:rating
+        average=''4.8996863'' max=''5'' min=''1'' numRaters=''638'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''187327''/><yt:rating numDislikes=''16'' numLikes=''622''/></entry><entry
+        gd:etag=''W/&quot;Dk4NRn47eCp7I2A9WhFREk4.&quot;''><id>tag:youtube.com,2008:video:IxMLBg9tQl0</id><published>2013-01-29T12:00:46.000Z</published><updated>2013-06-26T08:23:17.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Sports''
+        label=''Sports''/><title>Jalen Rose Responds to Shaq Dissing Him on Twitter</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/IxMLBg9tQl0?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=IxMLBg9tQl0&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/IxMLBg9tQl0/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/IxMLBg9tQl0/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/IxMLBg9tQl0/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/IxMLBg9tQl0/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=IxMLBg9tQl0''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/wLr_DYKR8aS0k4r8bB5I5Q?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/IxMLBg9tQl0?v=2.1''/><author><name>GrantlandNetwork</name><uri>http://gdata.youtube.com/feeds/api/users/GrantlandNetwork</uri><yt:userId>wLr_DYKR8aS0k4r8bB5I5Q</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/IxMLBg9tQl0/comments?v=2.1''
+        countHint=''228''/></gd:comments><yt:hd/><media:group><media:category label=''Sports''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Sports</media:category><media:content
+        url=''http://www.youtube.com/v/IxMLBg9tQl0?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''239'' yt:format=''5''/><media:content url=''rtsp://v8.cache2.c.youtube.com/CkULENy73wIaPAldQm0PBgsTIxMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''239''
+        yt:format=''1''/><media:content url=''rtsp://v8.cache2.c.youtube.com/CkULENy73wIaPAldQm0PBgsTIxMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''239''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''GrantlandNetwork''
+        yt:type=''partner''>grantlandnetwork</media:credit><media:description type=''plain''>Jalen
+        Rose explains how Shaquille O''Neal dissing him on Twitter was really a way
+        for him to extend an olive branch to Kobe Bryant and details the tweet that
+        ...</media:description><media:keywords/><media:license type=''text/html''
+        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=IxMLBg9tQl0&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/IxMLBg9tQl0/default.jpg'' height=''90'' width=''120''
+        time=''00:01:59.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/IxMLBg9tQl0/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/IxMLBg9tQl0/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/IxMLBg9tQl0/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/IxMLBg9tQl0/1.jpg''
+        height=''90'' width=''120'' time=''00:00:59.750'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/IxMLBg9tQl0/2.jpg'' height=''90'' width=''120''
+        time=''00:01:59.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/IxMLBg9tQl0/3.jpg''
+        height=''90'' width=''120'' time=''00:02:59.250'' yt:name=''end''/><media:title
+        type=''plain''>Jalen Rose Responds to Shaq Dissing Him on Twitter</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''239''/><yt:uploaded>2013-01-29T12:00:46.000Z</yt:uploaded><yt:uploaderId>UCwLr_DYKR8aS0k4r8bB5I5Q</yt:uploaderId><yt:videoid>IxMLBg9tQl0</yt:videoid></media:group><gd:rating
+        average=''4.874126'' max=''5'' min=''1'' numRaters=''572'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''195173''/><yt:rating numDislikes=''18'' numLikes=''554''/></entry><entry
+        gd:etag=''W/&quot;DEcESH47eCp7I2A9WhFREUk.&quot;''><id>tag:youtube.com,2008:video:wadUaPuohfE</id><published>2012-10-19T15:23:43.000Z</published><updated>2013-06-25T07:40:09.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Sports''
+        label=''Sports''/><title>Jalen Rose Discusses His Complicated Relationship
+        With Chris Webber</title><content type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/wadUaPuohfE?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=wadUaPuohfE&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/wadUaPuohfE/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/wadUaPuohfE/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/wadUaPuohfE/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/wadUaPuohfE/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=wadUaPuohfE''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/wLr_DYKR8aS0k4r8bB5I5Q?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/wadUaPuohfE?v=2.1''/><author><name>GrantlandNetwork</name><uri>http://gdata.youtube.com/feeds/api/users/GrantlandNetwork</uri><yt:userId>wLr_DYKR8aS0k4r8bB5I5Q</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/wadUaPuohfE/comments?v=2.1''
+        countHint=''132''/></gd:comments><yt:hd/><media:group><media:category label=''Sports''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Sports</media:category><media:content
+        url=''http://www.youtube.com/v/wadUaPuohfE?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''186'' yt:format=''5''/><media:content url=''rtsp://v5.cache2.c.youtube.com/CkULENy73wIaPAnxhaj7aFSnwRMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''186''
+        yt:format=''1''/><media:content url=''rtsp://v5.cache2.c.youtube.com/CkULENy73wIaPAnxhaj7aFSnwRMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''186''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''GrantlandNetwork''
+        yt:type=''partner''>grantlandnetwork</media:credit><media:description type=''plain''>Jalen
+        Rose and Bill Simmons discuss the formation of the Fab Five, when Jalen met
+        Chris Webber as a 12-year-old, and how their relationship became strained
+        o...</media:description><media:keywords/><media:license type=''text/html''
+        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=wadUaPuohfE&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/wadUaPuohfE/default.jpg'' height=''90'' width=''120''
+        time=''00:01:33'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/wadUaPuohfE/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/wadUaPuohfE/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/wadUaPuohfE/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/wadUaPuohfE/1.jpg''
+        height=''90'' width=''120'' time=''00:00:46.500'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/wadUaPuohfE/2.jpg'' height=''90'' width=''120''
+        time=''00:01:33'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/wadUaPuohfE/3.jpg''
+        height=''90'' width=''120'' time=''00:02:19.500'' yt:name=''end''/><media:title
+        type=''plain''>Jalen Rose Discusses His Complicated Relationship With Chris
+        Webber</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''186''/><yt:uploaded>2012-10-19T15:23:43.000Z</yt:uploaded><yt:uploaderId>UCwLr_DYKR8aS0k4r8bB5I5Q</yt:uploaderId><yt:videoid>wadUaPuohfE</yt:videoid></media:group><gd:rating
+        average=''4.866197'' max=''5'' min=''1'' numRaters=''568'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''203479''/><yt:rating numDislikes=''19'' numLikes=''549''/></entry></feed>'
+    http_version: 
+  recorded_at: Thu, 27 Jun 2013 23:03:51 GMT
+recorded_with: VCR 2.5.0

@@ -1,0 +1,1300 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://gdata.youtube.com/feeds/api/videos?key=AI39si7WuZZxAkYebKSyrlJR7hIFktt6OoPycEOeOT_yHkZgr6QsGbZgmhKvbS4bsSAv0utgrfhNfXQBITu1wX_z3VsZE02giQ&max-results=25&q=strongbad&start-index=1&v=2.1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Gdata-User-Country:
+      - AR
+      Content-Type:
+      - application/atom+xml; charset=UTF-8; type=feed
+      Expires:
+      - Thu, 27 Jun 2013 23:03:00 GMT
+      Date:
+      - Thu, 27 Jun 2013 23:03:00 GMT
+      Cache-Control:
+      - private, max-age=300, no-transform
+      Vary:
+      - ! '*'
+      Gdata-Version:
+      - '2.1'
+      Etag:
+      - W/"DkYMQXc9eSp7I2A9WhFRE0o."
+      Last-Modified:
+      - Thu, 27 Jun 2013 23:03:00 GMT
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version=''1.0'' encoding=''UTF-8''?><feed xmlns=''http://www.w3.org/2005/Atom''
+        xmlns:media=''http://search.yahoo.com/mrss/'' xmlns:openSearch=''http://a9.com/-/spec/opensearch/1.1/''
+        xmlns:gd=''http://schemas.google.com/g/2005'' xmlns:yt=''http://gdata.youtube.com/schemas/2007''
+        gd:etag=''W/&quot;DkYMQXc9eSp7I2A9WhFRE0o.&quot;''><id>tag:youtube.com,2008:videos</id><updated>2013-06-27T23:03:00.961Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><title>Videos
+        matching: strongbad</title><logo>http://www.youtube.com/img/pic_youtubelogo_123x63.gif</logo><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com''/><link
+        rel=''http://schemas.google.com/g/2006#spellcorrection'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos?q=strong+bad&amp;start-index=1&amp;max-results=25&amp;oi=spell&amp;spell=1&amp;v=2.1''
+        title=''strong bad''/><link rel=''http://schemas.google.com/g/2005#feed''
+        type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos?v=2.1''/><link
+        rel=''http://schemas.google.com/g/2005#batch'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/batch?v=2.1''/><link rel=''self''
+        type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos?q=strongbad&amp;start-index=1&amp;max-results=25&amp;v=2.1''/><link
+        rel=''service'' type=''application/atomsvc+xml'' href=''http://gdata.youtube.com/feeds/api/videos?alt=atom-service&amp;v=2.1''/><link
+        rel=''next'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos?q=strongbad&amp;start-index=26&amp;max-results=25&amp;v=2.1''/><author><name>YouTube</name><uri>http://www.youtube.com/</uri></author><generator
+        version=''2.1'' uri=''http://gdata.youtube.com''>YouTube data API</generator><openSearch:totalResults>65827</openSearch:totalResults><openSearch:startIndex>1</openSearch:startIndex><openSearch:itemsPerPage>25</openSearch:itemsPerPage><entry
+        gd:etag=''W/&quot;CUcGR347eCp7I2A9WhFREkU.&quot;''><id>tag:youtube.com,2008:video:90X5NJleYJQ</id><published>2009-03-31T21:02:18.000Z</published><updated>2013-06-26T21:43:46.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Comedy''
+        label=''Comedy''/><title>Dragon</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/90X5NJleYJQ?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=90X5NJleYJQ&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/90X5NJleYJQ/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/90X5NJleYJQ/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/90X5NJleYJQ/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/90X5NJleYJQ/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=90X5NJleYJQ''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/Mkbjxvwur30YrFWw8kpSaw?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/90X5NJleYJQ?v=2.1''/><author><name>homestarrunnerdotcom</name><uri>http://gdata.youtube.com/feeds/api/users/homestarrunnerdotcom</uri><yt:userId>Mkbjxvwur30YrFWw8kpSaw</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/90X5NJleYJQ/comments?v=2.1''
+        countHint=''1546''/></gd:comments><yt:hd/><media:group><media:category label=''Comedy''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Comedy</media:category><media:content
+        url=''http://www.youtube.com/v/90X5NJleYJQ?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''210'' yt:format=''5''/><media:content url=''rtsp://v4.cache1.c.youtube.com/CkULENy73wIaPAmUYF6ZNPlF9xMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''210''
+        yt:format=''1''/><media:content url=''rtsp://v4.cache1.c.youtube.com/CkULENy73wIaPAmUYF6ZNPlF9xMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''210''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''homestarrunnerdotcom''
+        yt:type=''partner''>homestarrunnerdotcom</media:credit><media:description
+        type=''plain''>Strong Bad teaches the world how to draw a dragon.</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=90X5NJleYJQ&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/90X5NJleYJQ/default.jpg'' height=''90'' width=''120''
+        time=''00:01:45'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/90X5NJleYJQ/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/90X5NJleYJQ/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/90X5NJleYJQ/1.jpg''
+        height=''90'' width=''120'' time=''00:00:52.500'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/90X5NJleYJQ/2.jpg'' height=''90'' width=''120''
+        time=''00:01:45'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/90X5NJleYJQ/3.jpg''
+        height=''90'' width=''120'' time=''00:02:37.500'' yt:name=''end''/><media:title
+        type=''plain''>Dragon</media:title><yt:duration seconds=''210''/><yt:uploaded>2009-03-31T21:02:18.000Z</yt:uploaded><yt:uploaderId>UCMkbjxvwur30YrFWw8kpSaw</yt:uploaderId><yt:videoid>90X5NJleYJQ</yt:videoid></media:group><gd:rating
+        average=''4.9181004'' max=''5'' min=''1'' numRaters=''6801'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''966176''/><yt:rating numDislikes=''139'' numLikes=''6662''/></entry><entry
+        gd:etag=''W/&quot;Dk4BR347eCp7I2A9WhFREkw.&quot;''><id>tag:youtube.com,2008:video:V72NKRyX1NA</id><published>2009-04-01T23:36:14.000Z</published><updated>2013-06-26T02:49:16.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Comedy''
+        label=''Comedy''/><title>Death Metal</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/V72NKRyX1NA?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=V72NKRyX1NA&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/V72NKRyX1NA/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/V72NKRyX1NA/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/V72NKRyX1NA/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/V72NKRyX1NA/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=V72NKRyX1NA''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/Mkbjxvwur30YrFWw8kpSaw?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/V72NKRyX1NA?v=2.1''/><author><name>homestarrunnerdotcom</name><uri>http://gdata.youtube.com/feeds/api/users/homestarrunnerdotcom</uri><yt:userId>Mkbjxvwur30YrFWw8kpSaw</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/V72NKRyX1NA/comments?v=2.1''
+        countHint=''317''/></gd:comments><yt:hd/><media:group><media:category label=''Comedy''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Comedy</media:category><media:content
+        url=''http://www.youtube.com/v/V72NKRyX1NA?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''236'' yt:format=''5''/><media:content url=''rtsp://v7.cache2.c.youtube.com/CkULENy73wIaPAnQ1JccKY29VxMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''236''
+        yt:format=''1''/><media:content url=''rtsp://v7.cache2.c.youtube.com/CkULENy73wIaPAnQ1JccKY29VxMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''236''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''homestarrunnerdotcom''
+        yt:type=''partner''>homestarrunnerdotcom</media:credit><media:description
+        type=''plain''>Strong Bad gives lessons in making a death metal song.</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=V72NKRyX1NA&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/V72NKRyX1NA/default.jpg'' height=''90'' width=''120''
+        time=''00:01:58'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/V72NKRyX1NA/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/V72NKRyX1NA/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/V72NKRyX1NA/1.jpg''
+        height=''90'' width=''120'' time=''00:00:59'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/V72NKRyX1NA/2.jpg'' height=''90'' width=''120''
+        time=''00:01:58'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/V72NKRyX1NA/3.jpg''
+        height=''90'' width=''120'' time=''00:02:57'' yt:name=''end''/><media:title
+        type=''plain''>Death Metal</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''236''/><yt:uploaded>2009-04-01T23:36:14.000Z</yt:uploaded><yt:uploaderId>UCMkbjxvwur30YrFWw8kpSaw</yt:uploaderId><yt:videoid>V72NKRyX1NA</yt:videoid></media:group><gd:rating
+        average=''4.918203'' max=''5'' min=''1'' numRaters=''868'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''168205''/><yt:rating numDislikes=''18'' numLikes=''850''/></entry><entry
+        gd:etag=''W/&quot;DE8ARH47eCp7I2A9WhFREks.&quot;''><id>tag:youtube.com,2008:video:X4IEGNwysd4</id><published>2006-02-26T19:29:21.000Z</published><updated>2013-06-26T17:14:05.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Entertainment''
+        label=''Entertainment''/><title>Strong Bad Email: Caffeine</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/X4IEGNwysd4?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=X4IEGNwysd4&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/X4IEGNwysd4/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/X4IEGNwysd4/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/X4IEGNwysd4/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/X4IEGNwysd4/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/xgHNIwPUx_tqu8S5wqfNbA?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/X4IEGNwysd4?v=2.1''/><author><name>trogdoor17</name><uri>http://gdata.youtube.com/feeds/api/users/trogdoor17</uri><yt:userId>xgHNIwPUx_tqu8S5wqfNbA</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/X4IEGNwysd4/comments?v=2.1''
+        countHint=''555''/></gd:comments><media:group><media:category label=''Entertainment''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Entertainment</media:category><media:content
+        url=''http://www.youtube.com/v/X4IEGNwysd4?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''181'' yt:format=''5''/><media:content url=''rtsp://v8.cache2.c.youtube.com/CkULENy73wIaPAnesTLcGASCXxMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''181''
+        yt:format=''1''/><media:content url=''rtsp://v8.cache2.c.youtube.com/CkULENy73wIaPAnesTLcGASCXxMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''181''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''trogdoor17''>trogdoor17</media:credit><media:description
+        type=''plain''>Strong Bad Email.</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=X4IEGNwysd4&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/X4IEGNwysd4/default.jpg'' height=''90'' width=''120''
+        time=''00:01:30.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/X4IEGNwysd4/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/X4IEGNwysd4/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/X4IEGNwysd4/1.jpg''
+        height=''90'' width=''120'' time=''00:00:45.250'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/X4IEGNwysd4/2.jpg'' height=''90'' width=''120''
+        time=''00:01:30.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/X4IEGNwysd4/3.jpg''
+        height=''90'' width=''120'' time=''00:02:15.750'' yt:name=''end''/><media:title
+        type=''plain''>Strong Bad Email: Caffeine</media:title><yt:duration seconds=''181''/><yt:uploaded>2006-02-26T19:29:21.000Z</yt:uploaded><yt:uploaderId>UCxgHNIwPUx_tqu8S5wqfNbA</yt:uploaderId><yt:videoid>X4IEGNwysd4</yt:videoid></media:group><gd:rating
+        average=''4.942164'' max=''5'' min=''1'' numRaters=''1072'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''276138''/><yt:rating numDislikes=''16'' numLikes=''1056''/></entry><entry
+        gd:etag=''W/&quot;DUQARn47eCp7I2A9WhFREkk.&quot;''><id>tag:youtube.com,2008:video:Zx1eDmuYQg8</id><published>2006-02-26T05:38:38.000Z</published><updated>2013-06-26T11:49:07.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Entertainment''
+        label=''Entertainment''/><title>Strong Bad Email: Techno</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/Zx1eDmuYQg8?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=Zx1eDmuYQg8&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Zx1eDmuYQg8/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Zx1eDmuYQg8/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Zx1eDmuYQg8/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Zx1eDmuYQg8/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/xgHNIwPUx_tqu8S5wqfNbA?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/Zx1eDmuYQg8?v=2.1''/><author><name>trogdoor17</name><uri>http://gdata.youtube.com/feeds/api/users/trogdoor17</uri><yt:userId>xgHNIwPUx_tqu8S5wqfNbA</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/Zx1eDmuYQg8/comments?v=2.1''
+        countHint=''746''/></gd:comments><media:group><media:category label=''Entertainment''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Entertainment</media:category><media:content
+        url=''http://www.youtube.com/v/Zx1eDmuYQg8?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''91'' yt:format=''5''/><media:content url=''rtsp://v3.cache2.c.youtube.com/CkULENy73wIaPAkPQphrDl4dZxMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''91'' yt:format=''1''/><media:content
+        url=''rtsp://v3.cache2.c.youtube.com/CkULENy73wIaPAkPQphrDl4dZxMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''91'' yt:format=''6''/><media:credit
+        role=''uploader'' scheme=''urn:youtube'' yt:display=''trogdoor17''>trogdoor17</media:credit><media:description
+        type=''plain''>Strong Bad Email.</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=Zx1eDmuYQg8&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/Zx1eDmuYQg8/default.jpg'' height=''90'' width=''120''
+        time=''00:00:45.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/Zx1eDmuYQg8/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/Zx1eDmuYQg8/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/Zx1eDmuYQg8/1.jpg''
+        height=''90'' width=''120'' time=''00:00:22.750'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/Zx1eDmuYQg8/2.jpg'' height=''90'' width=''120''
+        time=''00:00:45.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/Zx1eDmuYQg8/3.jpg''
+        height=''90'' width=''120'' time=''00:01:08.250'' yt:name=''end''/><media:title
+        type=''plain''>Strong Bad Email: Techno</media:title><yt:duration seconds=''91''/><yt:uploaded>2006-02-26T05:38:38.000Z</yt:uploaded><yt:uploaderId>UCxgHNIwPUx_tqu8S5wqfNbA</yt:uploaderId><yt:videoid>Zx1eDmuYQg8</yt:videoid></media:group><gd:rating
+        average=''4.8684826'' max=''5'' min=''1'' numRaters=''2570'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''810833''/><yt:rating numDislikes=''84'' numLikes=''2486''/></entry><entry
+        gd:etag=''W/&quot;A0AFRn47eCp7I2A9WhFREkk.&quot;''><id>tag:youtube.com,2008:video:6oiGj2ZiDxQ</id><published>2006-02-26T19:45:09.000Z</published><updated>2013-06-26T12:28:37.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Entertainment''
+        label=''Entertainment''/><title>Strong Bad Email: Virus</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/6oiGj2ZiDxQ?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=6oiGj2ZiDxQ&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/6oiGj2ZiDxQ/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/6oiGj2ZiDxQ/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/6oiGj2ZiDxQ/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/6oiGj2ZiDxQ/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/xgHNIwPUx_tqu8S5wqfNbA?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/6oiGj2ZiDxQ?v=2.1''/><author><name>trogdoor17</name><uri>http://gdata.youtube.com/feeds/api/users/trogdoor17</uri><yt:userId>xgHNIwPUx_tqu8S5wqfNbA</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/6oiGj2ZiDxQ/comments?v=2.1''
+        countHint=''986''/></gd:comments><media:group><media:category label=''Entertainment''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Entertainment</media:category><media:content
+        url=''http://www.youtube.com/v/6oiGj2ZiDxQ?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''263'' yt:format=''5''/><media:content url=''rtsp://v3.cache8.c.youtube.com/CkULENy73wIaPAkUD2Jmj4aI6hMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''263''
+        yt:format=''1''/><media:content url=''rtsp://v3.cache8.c.youtube.com/CkULENy73wIaPAkUD2Jmj4aI6hMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''263''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''trogdoor17''>trogdoor17</media:credit><media:description
+        type=''plain''>Strong Bad Email.</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=6oiGj2ZiDxQ&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/6oiGj2ZiDxQ/default.jpg'' height=''90'' width=''120''
+        time=''00:02:11.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/6oiGj2ZiDxQ/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/6oiGj2ZiDxQ/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/6oiGj2ZiDxQ/1.jpg''
+        height=''90'' width=''120'' time=''00:01:05.750'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/6oiGj2ZiDxQ/2.jpg'' height=''90'' width=''120''
+        time=''00:02:11.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/6oiGj2ZiDxQ/3.jpg''
+        height=''90'' width=''120'' time=''00:03:17.250'' yt:name=''end''/><media:title
+        type=''plain''>Strong Bad Email: Virus</media:title><yt:duration seconds=''263''/><yt:uploaded>2006-02-26T19:45:09.000Z</yt:uploaded><yt:uploaderId>UCxgHNIwPUx_tqu8S5wqfNbA</yt:uploaderId><yt:videoid>6oiGj2ZiDxQ</yt:videoid></media:group><gd:rating
+        average=''4.8983955'' max=''5'' min=''1'' numRaters=''1496'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''319764''/><yt:rating numDislikes=''38'' numLikes=''1458''/></entry><entry
+        gd:etag=''W/&quot;DU4DR347eCp7I2A9WhFSFk0.&quot;''><id>tag:youtube.com,2008:video:hqYUIIatb6w</id><published>2008-03-29T17:21:20.000Z</published><updated>2013-06-19T02:12:56.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Film''
+        label=''Film &amp; Animation''/><title>Strong Bad Email 174 - Mini-Golf</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/hqYUIIatb6w?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=hqYUIIatb6w&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/hqYUIIatb6w/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/hqYUIIatb6w/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/hqYUIIatb6w/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/hqYUIIatb6w/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/nhMTGKgY-jMBaUhvm6DnDQ?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/hqYUIIatb6w?v=2.1''/><author><name>PodstarRunner</name><uri>http://gdata.youtube.com/feeds/api/users/PodstarRunner</uri><yt:userId>nhMTGKgY-jMBaUhvm6DnDQ</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''allowed''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/hqYUIIatb6w/comments?v=2.1''
+        countHint=''208''/></gd:comments><media:group><media:category label=''Film
+        &amp; Animation'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Film</media:category><media:content
+        url=''http://www.youtube.com/v/hqYUIIatb6w?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''282'' yt:format=''5''/><media:content url=''rtsp://v7.cache2.c.youtube.com/CkULENy73wIaPAmsb62GIBSmhhMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''282''
+        yt:format=''1''/><media:content url=''rtsp://v7.cache2.c.youtube.com/CkULENy73wIaPAmsb62GIBSmhhMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''282''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''PodstarRunner''>podstarrunner</media:credit><media:description
+        type=''plain''>A trip to the Sweet Puttin'' Cakes mini-golf course is followed
+        by insanity. New episode each Thursday!</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=hqYUIIatb6w&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/hqYUIIatb6w/default.jpg'' height=''90'' width=''120''
+        time=''00:02:21'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/hqYUIIatb6w/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/hqYUIIatb6w/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/hqYUIIatb6w/1.jpg''
+        height=''90'' width=''120'' time=''00:01:10.500'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/hqYUIIatb6w/2.jpg'' height=''90'' width=''120''
+        time=''00:02:21'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/hqYUIIatb6w/3.jpg''
+        height=''90'' width=''120'' time=''00:03:31.500'' yt:name=''end''/><media:title
+        type=''plain''>Strong Bad Email 174 - Mini-Golf</media:title><yt:duration
+        seconds=''282''/><yt:uploaded>2008-03-29T17:21:20.000Z</yt:uploaded><yt:uploaderId>UCnhMTGKgY-jMBaUhvm6DnDQ</yt:uploaderId><yt:videoid>hqYUIIatb6w</yt:videoid></media:group><gd:rating
+        average=''4.856021'' max=''5'' min=''1'' numRaters=''382'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''121803''/><yt:rating numDislikes=''14'' numLikes=''368''/></entry><entry
+        gd:etag=''W/&quot;DkMCRH47eCp7I2A9WhFTGEo.&quot;''><id>tag:youtube.com,2008:video:nFFBj7LFefE</id><published>2006-02-19T20:23:29.000Z</published><updated>2013-06-10T14:27:45.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Comedy''
+        label=''Comedy''/><title>Strong Bad - Childrens Book</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/nFFBj7LFefE?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=nFFBj7LFefE&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/nFFBj7LFefE/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/nFFBj7LFefE/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/nFFBj7LFefE/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/nFFBj7LFefE/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/db5aUzqHWcDSWw2PranpcA?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/nFFBj7LFefE?v=2.1''/><author><name>ruthumz</name><uri>http://gdata.youtube.com/feeds/api/users/ruthumz</uri><yt:userId>db5aUzqHWcDSWw2PranpcA</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/nFFBj7LFefE/comments?v=2.1''
+        countHint=''182''/></gd:comments><media:group><media:category label=''Comedy''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Comedy</media:category><media:content
+        url=''http://www.youtube.com/v/nFFBj7LFefE?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''140'' yt:format=''5''/><media:content url=''rtsp://v2.cache6.c.youtube.com/CkULENy73wIaPAnxecWyj0FRnBMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''140''
+        yt:format=''1''/><media:content url=''rtsp://v2.cache6.c.youtube.com/CkULENy73wIaPAnxecWyj0FRnBMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''140''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''ruthumz''>ruthumz</media:credit><media:description
+        type=''plain''>Funny as out xD.</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=nFFBj7LFefE&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/nFFBj7LFefE/default.jpg'' height=''90'' width=''120''
+        time=''00:01:10'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/nFFBj7LFefE/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/nFFBj7LFefE/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/nFFBj7LFefE/1.jpg''
+        height=''90'' width=''120'' time=''00:00:35'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/nFFBj7LFefE/2.jpg'' height=''90'' width=''120''
+        time=''00:01:10'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/nFFBj7LFefE/3.jpg''
+        height=''90'' width=''120'' time=''00:01:45'' yt:name=''end''/><media:title
+        type=''plain''>Strong Bad - Childrens Book</media:title><yt:duration seconds=''140''/><yt:uploaded>2006-02-19T20:23:29.000Z</yt:uploaded><yt:uploaderId>UCdb5aUzqHWcDSWw2PranpcA</yt:uploaderId><yt:videoid>nFFBj7LFefE</yt:videoid></media:group><gd:rating
+        average=''4.9510603'' max=''5'' min=''1'' numRaters=''613'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''129742''/><yt:rating numDislikes=''7'' numLikes=''606''/></entry><entry
+        gd:etag=''W/&quot;CkINR347eCp7I2A9WhFREUQ.&quot;''><id>tag:youtube.com,2008:video:hEkZI8vGDxo</id><published>2009-12-10T03:31:47.000Z</published><updated>2013-06-25T20:03:16.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Comedy''
+        label=''Comedy''/><title>Licensed</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/hEkZI8vGDxo?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=hEkZI8vGDxo&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/hEkZI8vGDxo/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/hEkZI8vGDxo/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/hEkZI8vGDxo/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/hEkZI8vGDxo/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=hEkZI8vGDxo''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/Mkbjxvwur30YrFWw8kpSaw?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/hEkZI8vGDxo?v=2.1''/><author><name>homestarrunnerdotcom</name><uri>http://gdata.youtube.com/feeds/api/users/homestarrunnerdotcom</uri><yt:userId>Mkbjxvwur30YrFWw8kpSaw</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''allowed''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/hEkZI8vGDxo/comments?v=2.1''
+        countHint=''140''/></gd:comments><yt:hd/><media:group><media:category label=''Comedy''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Comedy</media:category><media:content
+        url=''http://www.youtube.com/v/hEkZI8vGDxo?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''268'' yt:format=''5''/><media:content url=''rtsp://v1.cache6.c.youtube.com/CkULENy73wIaPAkaD8bLIxlJhBMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''268''
+        yt:format=''1''/><media:content url=''rtsp://v1.cache6.c.youtube.com/CkULENy73wIaPAkaD8bLIxlJhBMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''268''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''homestarrunnerdotcom''
+        yt:type=''partner''>homestarrunnerdotcom</media:credit><media:description
+        type=''plain''>Learn how to become an officially licensed unlicensed seller
+        of Strong Bad and The Cheat knock-offs.</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=hEkZI8vGDxo&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/hEkZI8vGDxo/default.jpg'' height=''90'' width=''120''
+        time=''00:02:14'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/hEkZI8vGDxo/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/hEkZI8vGDxo/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/hEkZI8vGDxo/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/hEkZI8vGDxo/1.jpg''
+        height=''90'' width=''120'' time=''00:01:07'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/hEkZI8vGDxo/2.jpg'' height=''90'' width=''120''
+        time=''00:02:14'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/hEkZI8vGDxo/3.jpg''
+        height=''90'' width=''120'' time=''00:03:21'' yt:name=''end''/><media:title
+        type=''plain''>Licensed</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''268''/><yt:uploaded>2009-12-10T03:31:47.000Z</yt:uploaded><yt:uploaderId>UCMkbjxvwur30YrFWw8kpSaw</yt:uploaderId><yt:videoid>hEkZI8vGDxo</yt:videoid></media:group><gd:rating
+        average=''4.936759'' max=''5'' min=''1'' numRaters=''253'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''41319''/><yt:rating numDislikes=''4'' numLikes=''249''/></entry><entry
+        gd:etag=''W/&quot;D0IDRX47eCp7I2A9WhFREU8.&quot;''><id>tag:youtube.com,2008:video:pkO4I4k6sa8</id><published>2006-12-04T04:46:32.000Z</published><updated>2013-06-25T01:59:34.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Film''
+        label=''Film &amp; Animation''/><title>Strong Bad Email: Radio</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/pkO4I4k6sa8?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=pkO4I4k6sa8&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/pkO4I4k6sa8/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/pkO4I4k6sa8/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/pkO4I4k6sa8/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/pkO4I4k6sa8/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/yVAqQbxbZ5t-byBMTLKVQg?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/pkO4I4k6sa8?v=2.1''/><author><name>PpirtNamttip</name><uri>http://gdata.youtube.com/feeds/api/users/PpirtNamttip</uri><yt:userId>yVAqQbxbZ5t-byBMTLKVQg</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/pkO4I4k6sa8/comments?v=2.1''
+        countHint=''38''/></gd:comments><media:group><media:category label=''Film
+        &amp; Animation'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Film</media:category><media:content
+        url=''http://www.youtube.com/v/pkO4I4k6sa8?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''262'' yt:format=''5''/><media:content url=''rtsp://v4.cache8.c.youtube.com/CkULENy73wIaPAmvsTqJI7hDphMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''262''
+        yt:format=''1''/><media:content url=''rtsp://v4.cache8.c.youtube.com/CkULENy73wIaPAmvsTqJI7hDphMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''262''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''PpirtNamttip''>ppirtnamttip</media:credit><media:description
+        type=''plain''>Strong Bad describes the types of radio shows are on the air.</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=pkO4I4k6sa8&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/pkO4I4k6sa8/default.jpg'' height=''90'' width=''120''
+        time=''00:02:11'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/pkO4I4k6sa8/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/pkO4I4k6sa8/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/pkO4I4k6sa8/1.jpg''
+        height=''90'' width=''120'' time=''00:01:05.500'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/pkO4I4k6sa8/2.jpg'' height=''90'' width=''120''
+        time=''00:02:11'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/pkO4I4k6sa8/3.jpg''
+        height=''90'' width=''120'' time=''00:03:16.500'' yt:name=''end''/><media:title
+        type=''plain''>Strong Bad Email: Radio</media:title><yt:duration seconds=''262''/><yt:uploaded>2006-12-04T04:46:32.000Z</yt:uploaded><yt:uploaderId>UCyVAqQbxbZ5t-byBMTLKVQg</yt:uploaderId><yt:videoid>pkO4I4k6sa8</yt:videoid></media:group><gd:rating
+        average=''4.6422763'' max=''5'' min=''1'' numRaters=''123'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''38220''/><yt:rating numDislikes=''11'' numLikes=''112''/></entry><entry
+        gd:etag=''W/&quot;C0QEQn47eCp7I2A9WhFREUs.&quot;''><id>tag:youtube.com,2008:video:uyrcsZEv_wQ</id><published>2012-04-22T13:09:50.000Z</published><updated>2013-06-25T11:55:03.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Comedy''
+        label=''Comedy''/><title>Strong Bad Email #127: Long Pants</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/uyrcsZEv_wQ?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=uyrcsZEv_wQ&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/uyrcsZEv_wQ/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/uyrcsZEv_wQ/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/uyrcsZEv_wQ/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/uyrcsZEv_wQ/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=uyrcsZEv_wQ''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/ulA9qcl_x292mCo98Zxv7Q?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/uyrcsZEv_wQ?v=2.1''/><author><name>ebyam93</name><uri>http://gdata.youtube.com/feeds/api/users/ebyam93</uri><yt:userId>ulA9qcl_x292mCo98Zxv7Q</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/uyrcsZEv_wQ/comments?v=2.1''
+        countHint=''31''/></gd:comments><media:group><media:category label=''Comedy''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Comedy</media:category><media:content
+        url=''http://www.youtube.com/v/uyrcsZEv_wQ?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''205'' yt:format=''5''/><media:content url=''rtsp://v1.cache4.c.youtube.com/CkULENy73wIaPAkE_y-RsdwquxMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''205''
+        yt:format=''1''/><media:content url=''rtsp://v1.cache4.c.youtube.com/CkULENy73wIaPAkE_y-RsdwquxMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''205''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''ebyam93''>ebyam93</media:credit><media:description
+        type=''plain''>(Re-uploaded in better quality) Strong Bad questions Homestar
+        about his pants...legs...things. I IN NO WAY OWN ANY PART OF THIS EMAIL. For
+        more, go to www.ho...</media:description><media:keywords/><media:license type=''text/html''
+        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=uyrcsZEv_wQ&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/uyrcsZEv_wQ/default.jpg'' height=''90'' width=''120''
+        time=''00:01:42.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/uyrcsZEv_wQ/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/uyrcsZEv_wQ/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/uyrcsZEv_wQ/1.jpg''
+        height=''90'' width=''120'' time=''00:00:51.250'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/uyrcsZEv_wQ/2.jpg'' height=''90'' width=''120''
+        time=''00:01:42.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/uyrcsZEv_wQ/3.jpg''
+        height=''90'' width=''120'' time=''00:02:33.750'' yt:name=''end''/><media:title
+        type=''plain''>Strong Bad Email #127: Long Pants</media:title><yt:duration
+        seconds=''205''/><yt:uploaded>2012-04-22T13:09:50.000Z</yt:uploaded><yt:uploaderId>UCulA9qcl_x292mCo98Zxv7Q</yt:uploaderId><yt:videoid>uyrcsZEv_wQ</yt:videoid></media:group><gd:rating
+        average=''5.0'' max=''5'' min=''1'' numRaters=''58'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''10416''/><yt:rating numDislikes=''0'' numLikes=''58''/></entry><entry
+        gd:etag=''W/&quot;Dk8DQn47eCp7I2A9WhFSEUo.&quot;''><id>tag:youtube.com,2008:video:16ZT0nEKwjo</id><published>2007-04-22T20:33:47.000Z</published><updated>2013-06-14T01:54:33.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Film''
+        label=''Film &amp; Animation''/><title>Strong Bad Emails - Haircut</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/16ZT0nEKwjo?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=16ZT0nEKwjo&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/16ZT0nEKwjo/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/16ZT0nEKwjo/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/16ZT0nEKwjo/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/16ZT0nEKwjo/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=16ZT0nEKwjo''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/G7mY48jlwv4xWU-F5X1Pzg?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/16ZT0nEKwjo?v=2.1''/><author><name>crazierthanpie</name><uri>http://gdata.youtube.com/feeds/api/users/crazierthanpie</uri><yt:userId>G7mY48jlwv4xWU-F5X1Pzg</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/16ZT0nEKwjo/comments?v=2.1''
+        countHint=''152''/></gd:comments><media:group><media:category label=''Film
+        &amp; Animation'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Film</media:category><media:content
+        url=''http://www.youtube.com/v/16ZT0nEKwjo?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''198'' yt:format=''5''/><media:content url=''rtsp://v8.cache5.c.youtube.com/CkULENy73wIaPAk6wgpx0lOm1xMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''198''
+        yt:format=''1''/><media:content url=''rtsp://v8.cache5.c.youtube.com/CkULENy73wIaPAk6wgpx0lOm1xMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''198''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''crazierthanpie''>crazierthanpie</media:credit><media:description
+        type=''plain''>Miles And Miles Of The Strong Bad Style. [Please Note: I Am
+        Not The Creator Or Owner Of StrongBad Emails, The Creator And Owner Is www.homestarrunner.com
+        Thi...</media:description><media:keywords/><media:license type=''text/html''
+        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=16ZT0nEKwjo&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/16ZT0nEKwjo/default.jpg'' height=''90'' width=''120''
+        time=''00:01:39'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/16ZT0nEKwjo/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/16ZT0nEKwjo/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/16ZT0nEKwjo/1.jpg''
+        height=''90'' width=''120'' time=''00:00:49.500'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/16ZT0nEKwjo/2.jpg'' height=''90'' width=''120''
+        time=''00:01:39'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/16ZT0nEKwjo/3.jpg''
+        height=''90'' width=''120'' time=''00:02:28.500'' yt:name=''end''/><media:title
+        type=''plain''>Strong Bad Emails - Haircut</media:title><yt:duration seconds=''198''/><yt:uploaded>2007-04-22T20:33:47.000Z</yt:uploaded><yt:uploaderId>UCG7mY48jlwv4xWU-F5X1Pzg</yt:uploaderId><yt:videoid>16ZT0nEKwjo</yt:videoid></media:group><gd:rating
+        average=''4.9049587'' max=''5'' min=''1'' numRaters=''242'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''88967''/><yt:rating numDislikes=''6'' numLikes=''236''/></entry><entry
+        gd:etag=''W/&quot;DU4DRX47eCp7I2A9WhFREkw.&quot;''><id>tag:youtube.com,2008:video:l1P_hPf-woA</id><published>2009-10-21T22:44:14.000Z</published><updated>2013-06-26T03:39:34.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Comedy''
+        label=''Comedy''/><title>Crying</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/l1P_hPf-woA?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=l1P_hPf-woA&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/l1P_hPf-woA/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/l1P_hPf-woA/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/l1P_hPf-woA/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/l1P_hPf-woA/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=l1P_hPf-woA''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/Mkbjxvwur30YrFWw8kpSaw?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/l1P_hPf-woA?v=2.1''/><author><name>homestarrunnerdotcom</name><uri>http://gdata.youtube.com/feeds/api/users/homestarrunnerdotcom</uri><yt:userId>Mkbjxvwur30YrFWw8kpSaw</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''allowed''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/l1P_hPf-woA/comments?v=2.1''
+        countHint=''250''/></gd:comments><yt:hd/><media:group><media:category label=''Comedy''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Comedy</media:category><media:content
+        url=''http://www.youtube.com/v/l1P_hPf-woA?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''214'' yt:format=''5''/><media:content url=''rtsp://v2.cache3.c.youtube.com/CkULENy73wIaPAmAwv73hP9TlxMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''214''
+        yt:format=''1''/><media:content url=''rtsp://v2.cache3.c.youtube.com/CkULENy73wIaPAmAwv73hP9TlxMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''214''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''homestarrunnerdotcom''
+        yt:type=''partner''>homestarrunnerdotcom</media:credit><media:description
+        type=''plain''>I can make it on my own!</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=l1P_hPf-woA&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/l1P_hPf-woA/default.jpg'' height=''90'' width=''120''
+        time=''00:01:47'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/l1P_hPf-woA/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/l1P_hPf-woA/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/l1P_hPf-woA/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/l1P_hPf-woA/1.jpg''
+        height=''90'' width=''120'' time=''00:00:53.500'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/l1P_hPf-woA/2.jpg'' height=''90'' width=''120''
+        time=''00:01:47'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/l1P_hPf-woA/3.jpg''
+        height=''90'' width=''120'' time=''00:02:40.500'' yt:name=''end''/><media:title
+        type=''plain''>Crying</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''214''/><yt:uploaded>2009-10-21T22:44:14.000Z</yt:uploaded><yt:uploaderId>UCMkbjxvwur30YrFWw8kpSaw</yt:uploaderId><yt:videoid>l1P_hPf-woA</yt:videoid></media:group><gd:rating
+        average=''4.955343'' max=''5'' min=''1'' numRaters=''627'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''92839''/><yt:rating numDislikes=''7'' numLikes=''620''/></entry><entry
+        gd:etag=''W/&quot;AkIDQX47eCp7I2A9WhFREE0.&quot;''><id>tag:youtube.com,2008:video:Lml_AKkhCVY</id><published>2009-07-01T05:09:28.000Z</published><updated>2013-06-23T17:29:30.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Comedy''
+        label=''Comedy''/><title>I Love You</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/Lml_AKkhCVY?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=Lml_AKkhCVY&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Lml_AKkhCVY/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Lml_AKkhCVY/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Lml_AKkhCVY/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/Lml_AKkhCVY/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=Lml_AKkhCVY''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/Mkbjxvwur30YrFWw8kpSaw?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/Lml_AKkhCVY?v=2.1''/><author><name>homestarrunnerdotcom</name><uri>http://gdata.youtube.com/feeds/api/users/homestarrunnerdotcom</uri><yt:userId>Mkbjxvwur30YrFWw8kpSaw</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''allowed''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/Lml_AKkhCVY/comments?v=2.1''
+        countHint=''149''/></gd:comments><yt:hd/><media:group><media:category label=''Comedy''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Comedy</media:category><media:content
+        url=''http://www.youtube.com/v/Lml_AKkhCVY?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''61'' yt:format=''5''/><media:content url=''rtsp://v4.cache5.c.youtube.com/CkULENy73wIaPAlWCSGpAH9pLhMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''61'' yt:format=''1''/><media:content
+        url=''rtsp://v4.cache5.c.youtube.com/CkULENy73wIaPAlWCSGpAH9pLhMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''61'' yt:format=''6''/><media:credit
+        role=''uploader'' scheme=''urn:youtube'' yt:display=''homestarrunnerdotcom''
+        yt:type=''partner''>homestarrunnerdotcom</media:credit><media:description
+        type=''plain''>Strong Bad gets an email from Fhqwhgads.</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=Lml_AKkhCVY&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/Lml_AKkhCVY/default.jpg'' height=''90'' width=''120''
+        time=''00:00:30.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/Lml_AKkhCVY/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/Lml_AKkhCVY/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/Lml_AKkhCVY/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/Lml_AKkhCVY/1.jpg''
+        height=''90'' width=''120'' time=''00:00:15.250'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/Lml_AKkhCVY/2.jpg'' height=''90'' width=''120''
+        time=''00:00:30.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/Lml_AKkhCVY/3.jpg''
+        height=''90'' width=''120'' time=''00:00:45.750'' yt:name=''end''/><media:title
+        type=''plain''>I Love You</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''61''/><yt:uploaded>2009-07-01T05:09:28.000Z</yt:uploaded><yt:uploaderId>UCMkbjxvwur30YrFWw8kpSaw</yt:uploaderId><yt:videoid>Lml_AKkhCVY</yt:videoid></media:group><gd:rating
+        average=''4.942779'' max=''5'' min=''1'' numRaters=''367'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''91224''/><yt:rating numDislikes=''5'' numLikes=''362''/></entry><entry
+        gd:etag=''W/&quot;CEIGSH47eCp7I2A9WhFSF0Q.&quot;''><id>tag:youtube.com,2008:video:i-cPGTi64uY</id><published>2010-11-11T12:27:09.000Z</published><updated>2013-06-21T05:28:49.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Comedy''
+        label=''Comedy''/><title>Strong Bad Email #76: Sibbie</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/i-cPGTi64uY?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=i-cPGTi64uY&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/i-cPGTi64uY/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/i-cPGTi64uY/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/i-cPGTi64uY/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/i-cPGTi64uY/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=i-cPGTi64uY''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/ulA9qcl_x292mCo98Zxv7Q?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/i-cPGTi64uY?v=2.1''/><author><name>ebyam93</name><uri>http://gdata.youtube.com/feeds/api/users/ebyam93</uri><yt:userId>ulA9qcl_x292mCo98Zxv7Q</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/i-cPGTi64uY/comments?v=2.1''
+        countHint=''54''/></gd:comments><media:group><media:category label=''Comedy''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Comedy</media:category><media:content
+        url=''http://www.youtube.com/v/i-cPGTi64uY?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''170'' yt:format=''5''/><media:content url=''rtsp://v2.cache3.c.youtube.com/CkULENy73wIaPAnm4ro4GQ_nixMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''170''
+        yt:format=''1''/><media:content url=''rtsp://v2.cache3.c.youtube.com/CkULENy73wIaPAnm4ro4GQ_nixMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''170''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''ebyam93''>ebyam93</media:credit><media:description
+        type=''plain''>Strong Bad will never ever ever ever ever write a song about
+        the sibbie. I IN NO WAY OWN STRONG BAD EMAIL OR ANY PART OF THIS CARTOON.
+        For more, go to www.ho...</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=i-cPGTi64uY&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/i-cPGTi64uY/default.jpg'' height=''90'' width=''120''
+        time=''00:01:25'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/i-cPGTi64uY/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/i-cPGTi64uY/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/i-cPGTi64uY/1.jpg''
+        height=''90'' width=''120'' time=''00:00:42.500'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/i-cPGTi64uY/2.jpg'' height=''90'' width=''120''
+        time=''00:01:25'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/i-cPGTi64uY/3.jpg''
+        height=''90'' width=''120'' time=''00:02:07.500'' yt:name=''end''/><media:title
+        type=''plain''>Strong Bad Email #76: Sibbie</media:title><yt:duration seconds=''170''/><yt:uploaded>2010-11-11T12:27:09.000Z</yt:uploaded><yt:uploaderId>UCulA9qcl_x292mCo98Zxv7Q</yt:uploaderId><yt:videoid>i-cPGTi64uY</yt:videoid></media:group><gd:rating
+        average=''4.8681316'' max=''5'' min=''1'' numRaters=''91'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''20283''/><yt:rating numDislikes=''3'' numLikes=''88''/></entry><entry
+        gd:etag=''W/&quot;A0MHRX47eCp7I2A9WhFSF0o.&quot;''><id>tag:youtube.com,2008:video:DjJRB6KawMI</id><published>2007-10-24T01:16:55.000Z</published><updated>2013-06-21T01:50:34.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Comedy''
+        label=''Comedy''/><title>Strong Bad Email: Coloring</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/DjJRB6KawMI?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=DjJRB6KawMI&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/DjJRB6KawMI/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/DjJRB6KawMI/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/DjJRB6KawMI/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/DjJRB6KawMI/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/l-Rk9BSX4E4fCqsI4QuMdw?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/DjJRB6KawMI?v=2.1''/><author><name>EarlyMorningOwl</name><uri>http://gdata.youtube.com/feeds/api/users/EarlyMorningOwl</uri><yt:userId>l-Rk9BSX4E4fCqsI4QuMdw</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/DjJRB6KawMI/comments?v=2.1''
+        countHint=''113''/></gd:comments><media:group><media:category label=''Comedy''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Comedy</media:category><media:content
+        url=''http://www.youtube.com/v/DjJRB6KawMI?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''235'' yt:format=''5''/><media:content url=''rtsp://v7.cache8.c.youtube.com/CkULENy73wIaPAnCwJqiB1EyDhMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''235''
+        yt:format=''1''/><media:content url=''rtsp://v7.cache8.c.youtube.com/CkULENy73wIaPAnCwJqiB1EyDhMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''235''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''EarlyMorningOwl''>earlymorningowl</media:credit><media:description
+        type=''plain''>Strong Bad shows you his limozeen coloring book.</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=DjJRB6KawMI&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/DjJRB6KawMI/default.jpg'' height=''90'' width=''120''
+        time=''00:01:57.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/DjJRB6KawMI/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/DjJRB6KawMI/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/DjJRB6KawMI/1.jpg''
+        height=''90'' width=''120'' time=''00:00:58.750'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/DjJRB6KawMI/2.jpg'' height=''90'' width=''120''
+        time=''00:01:57.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/DjJRB6KawMI/3.jpg''
+        height=''90'' width=''120'' time=''00:02:56.250'' yt:name=''end''/><media:title
+        type=''plain''>Strong Bad Email: Coloring</media:title><yt:duration seconds=''235''/><yt:uploaded>2007-10-24T01:16:55.000Z</yt:uploaded><yt:uploaderId>UCl-Rk9BSX4E4fCqsI4QuMdw</yt:uploaderId><yt:videoid>DjJRB6KawMI</yt:videoid></media:group><gd:rating
+        average=''4.766667'' max=''5'' min=''1'' numRaters=''180'' rel=''http://schemas.google.com/g/2005#overall''/><yt:recorded>2007-10-23</yt:recorded><yt:statistics
+        favoriteCount=''0'' viewCount=''62474''/><yt:rating numDislikes=''10'' numLikes=''170''/></entry><entry
+        gd:etag=''W/&quot;CEACRH47eCp7I2A9WhFTE0s.&quot;''><id>tag:youtube.com,2008:video:M1jLUwuyx2Q</id><published>2010-11-09T23:36:53.000Z</published><updated>2013-06-04T16:19:25.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Comedy''
+        label=''Comedy''/><title>Strong Bad Email #50: 50 Emails</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/M1jLUwuyx2Q?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=M1jLUwuyx2Q&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/M1jLUwuyx2Q/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/M1jLUwuyx2Q/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/M1jLUwuyx2Q/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/M1jLUwuyx2Q/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=M1jLUwuyx2Q''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/ulA9qcl_x292mCo98Zxv7Q?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/M1jLUwuyx2Q?v=2.1''/><author><name>ebyam93</name><uri>http://gdata.youtube.com/feeds/api/users/ebyam93</uri><yt:userId>ulA9qcl_x292mCo98Zxv7Q</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/M1jLUwuyx2Q/comments?v=2.1''
+        countHint=''37''/></gd:comments><media:group><media:category label=''Comedy''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Comedy</media:category><media:content
+        url=''http://www.youtube.com/v/M1jLUwuyx2Q?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''217'' yt:format=''5''/><media:content url=''rtsp://v1.cache7.c.youtube.com/CkULENy73wIaPAlkx7ILU8tYMxMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''217''
+        yt:format=''1''/><media:content url=''rtsp://v1.cache7.c.youtube.com/CkULENy73wIaPAlkx7ILU8tYMxMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''217''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''ebyam93''>ebyam93</media:credit><media:description
+        type=''plain''>Strong Bad checks 50 emails...sorta...I IN NO WAY OWN STRONG
+        BAD EMAIL OR ANY PART OF THIS CARTOON. For more, go to www.homestarrunner.com.</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=M1jLUwuyx2Q&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/M1jLUwuyx2Q/default.jpg'' height=''90'' width=''120''
+        time=''00:01:48.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/M1jLUwuyx2Q/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/M1jLUwuyx2Q/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/M1jLUwuyx2Q/1.jpg''
+        height=''90'' width=''120'' time=''00:00:54.250'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/M1jLUwuyx2Q/2.jpg'' height=''90'' width=''120''
+        time=''00:01:48.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/M1jLUwuyx2Q/3.jpg''
+        height=''90'' width=''120'' time=''00:02:42.750'' yt:name=''end''/><media:title
+        type=''plain''>Strong Bad Email #50: 50 Emails</media:title><yt:duration seconds=''217''/><yt:uploaded>2010-11-09T23:36:53.000Z</yt:uploaded><yt:uploaderId>UCulA9qcl_x292mCo98Zxv7Q</yt:uploaderId><yt:videoid>M1jLUwuyx2Q</yt:videoid></media:group><gd:rating
+        average=''5.0'' max=''5'' min=''1'' numRaters=''22'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''6240''/><yt:rating numDislikes=''0'' numLikes=''22''/></entry><entry
+        gd:etag=''W/&quot;D0cASX47eCp7I2A9WhNQF0w.&quot;''><id>tag:youtube.com,2008:video:rBd8zfIuHOc</id><published>2010-08-31T21:56:25.000Z</published><updated>2012-11-23T23:57:28.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Comedy''
+        label=''Comedy''/><title>Strong Bad Emails - Labor Daybor</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/rBd8zfIuHOc?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=rBd8zfIuHOc&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/rBd8zfIuHOc/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/rBd8zfIuHOc/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/rBd8zfIuHOc/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/rBd8zfIuHOc/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=rBd8zfIuHOc''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/obQ5V-pEQ3jL8uTAJwfVfA?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/rBd8zfIuHOc?v=2.1''/><author><name>adster</name><uri>http://gdata.youtube.com/feeds/api/users/adster</uri><yt:userId>obQ5V-pEQ3jL8uTAJwfVfA</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/rBd8zfIuHOc/comments?v=2.1''
+        countHint=''2''/></gd:comments><media:group><media:category label=''Comedy''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Comedy</media:category><media:content
+        url=''http://www.youtube.com/v/rBd8zfIuHOc?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''171'' yt:format=''5''/><media:content url=''rtsp://v3.cache2.c.youtube.com/CkULENy73wIaPAnnHC7yzXwXrBMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''171''
+        yt:format=''1''/><media:content url=''rtsp://v3.cache2.c.youtube.com/CkULENy73wIaPAnnHC7yzXwXrBMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''171''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''adster''>adster</media:credit><media:description
+        type=''plain''>Strong Bad Emails #83.</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=rBd8zfIuHOc&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/rBd8zfIuHOc/default.jpg'' height=''90'' width=''120''
+        time=''00:01:25.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/rBd8zfIuHOc/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/rBd8zfIuHOc/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/rBd8zfIuHOc/1.jpg''
+        height=''90'' width=''120'' time=''00:00:42.750'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/rBd8zfIuHOc/2.jpg'' height=''90'' width=''120''
+        time=''00:01:25.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/rBd8zfIuHOc/3.jpg''
+        height=''90'' width=''120'' time=''00:02:08.250'' yt:name=''end''/><media:title
+        type=''plain''>Strong Bad Emails - Labor Daybor</media:title><yt:duration
+        seconds=''171''/><yt:uploaded>2010-08-31T21:56:25.000Z</yt:uploaded><yt:uploaderId>UCobQ5V-pEQ3jL8uTAJwfVfA</yt:uploaderId><yt:videoid>rBd8zfIuHOc</yt:videoid></media:group><gd:rating
+        average=''5.0'' max=''5'' min=''1'' numRaters=''13'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''4501''/><yt:rating numDislikes=''0'' numLikes=''13''/></entry><entry
+        gd:etag=''W/&quot;D0ENQH47eCp7I2A9WhBbGE8.&quot;''><id>tag:youtube.com,2008:video:sY7aYXY9TQo</id><published>2007-01-05T18:58:54.000Z</published><updated>2013-05-17T21:21:31.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Comedy''
+        label=''Comedy''/><title>Strong Bad: Theme Park</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/sY7aYXY9TQo?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=sY7aYXY9TQo&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/sY7aYXY9TQo/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/sY7aYXY9TQo/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/sY7aYXY9TQo/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/sY7aYXY9TQo/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=sY7aYXY9TQo''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/2wHEwZwF92C7YViNNxwiUQ?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/sY7aYXY9TQo?v=2.1''/><author><name>flvg94</name><uri>http://gdata.youtube.com/feeds/api/users/flvg94</uri><yt:userId>2wHEwZwF92C7YViNNxwiUQ</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/sY7aYXY9TQo/comments?v=2.1''
+        countHint=''236''/></gd:comments><media:group><media:category label=''Comedy''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Comedy</media:category><media:content
+        url=''http://www.youtube.com/v/sY7aYXY9TQo?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''274'' yt:format=''5''/><media:content url=''rtsp://v2.cache4.c.youtube.com/CkULENy73wIaPAkKTT12YdqOsRMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''274''
+        yt:format=''1''/><media:content url=''rtsp://v2.cache4.c.youtube.com/CkULENy73wIaPAkKTT12YdqOsRMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''274''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''flvg94''>flvg94</media:credit><media:description
+        type=''plain''>Strong Bad describes his self-themed fun-filled adventure centre!</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=sY7aYXY9TQo&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/sY7aYXY9TQo/default.jpg'' height=''90'' width=''120''
+        time=''00:02:17'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/sY7aYXY9TQo/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/sY7aYXY9TQo/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/sY7aYXY9TQo/1.jpg''
+        height=''90'' width=''120'' time=''00:01:08.500'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/sY7aYXY9TQo/2.jpg'' height=''90'' width=''120''
+        time=''00:02:17'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/sY7aYXY9TQo/3.jpg''
+        height=''90'' width=''120'' time=''00:03:25.500'' yt:name=''end''/><media:title
+        type=''plain''>Strong Bad: Theme Park</media:title><yt:duration seconds=''274''/><yt:uploaded>2007-01-05T18:58:54.000Z</yt:uploaded><yt:uploaderId>UC2wHEwZwF92C7YViNNxwiUQ</yt:uploaderId><yt:videoid>sY7aYXY9TQo</yt:videoid></media:group><gd:rating
+        average=''4.8578553'' max=''5'' min=''1'' numRaters=''401'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''100843''/><yt:rating numDislikes=''14'' numLikes=''387''/></entry><entry
+        gd:etag=''W/&quot;CEYESH47eCp7I2A9WhBWEUw.&quot;''><id>tag:youtube.com,2008:video:uz-ZOkBi52Y</id><published>2007-01-05T16:39:26.000Z</published><updated>2013-04-04T21:48:29.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Comedy''
+        label=''Comedy''/><title>Strong Bad: Mascot</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/uz-ZOkBi52Y?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=uz-ZOkBi52Y&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/uz-ZOkBi52Y/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/uz-ZOkBi52Y/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/uz-ZOkBi52Y/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/uz-ZOkBi52Y/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/2wHEwZwF92C7YViNNxwiUQ?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/uz-ZOkBi52Y?v=2.1''/><author><name>flvg94</name><uri>http://gdata.youtube.com/feeds/api/users/flvg94</uri><yt:userId>2wHEwZwF92C7YViNNxwiUQ</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/uz-ZOkBi52Y/comments?v=2.1''
+        countHint=''47''/></gd:comments><media:group><media:category label=''Comedy''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Comedy</media:category><media:content
+        url=''http://www.youtube.com/v/uz-ZOkBi52Y?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''137'' yt:format=''5''/><media:content url=''rtsp://v4.cache1.c.youtube.com/CkULENy73wIaPAlm52JAOpk_uxMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''137''
+        yt:format=''1''/><media:content url=''rtsp://v4.cache1.c.youtube.com/CkULENy73wIaPAlm52JAOpk_uxMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''137''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''flvg94''>flvg94</media:credit><media:description
+        type=''plain''>SB introduces us to the Crazy Go Nuts University''s mascot,
+        Dumples.</media:description><media:keywords/><media:license type=''text/html''
+        href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=uz-ZOkBi52Y&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/uz-ZOkBi52Y/default.jpg'' height=''90'' width=''120''
+        time=''00:01:08.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/uz-ZOkBi52Y/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/uz-ZOkBi52Y/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/uz-ZOkBi52Y/1.jpg''
+        height=''90'' width=''120'' time=''00:00:34.250'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/uz-ZOkBi52Y/2.jpg'' height=''90'' width=''120''
+        time=''00:01:08.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/uz-ZOkBi52Y/3.jpg''
+        height=''90'' width=''120'' time=''00:01:42.750'' yt:name=''end''/><media:title
+        type=''plain''>Strong Bad: Mascot</media:title><yt:duration seconds=''137''/><yt:uploaded>2007-01-05T16:39:26.000Z</yt:uploaded><yt:uploaderId>UC2wHEwZwF92C7YViNNxwiUQ</yt:uploaderId><yt:videoid>uz-ZOkBi52Y</yt:videoid></media:group><gd:rating
+        average=''4.7865167'' max=''5'' min=''1'' numRaters=''89'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''28621''/><yt:rating numDislikes=''5'' numLikes=''84''/></entry><entry
+        gd:etag=''W/&quot;DUQDRH47eCp7I2A9WhFRE00.&quot;''><id>tag:youtube.com,2008:video:JwZwkk7q25I</id><published>2009-03-31T18:01:50.000Z</published><updated>2013-06-27T04:29:35.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Comedy''
+        label=''Comedy''/><title>Techno</title><content type=''application/x-shockwave-flash''
+        src=''http://www.youtube.com/v/JwZwkk7q25I?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=JwZwkk7q25I&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/JwZwkk7q25I/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/JwZwkk7q25I/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/JwZwkk7q25I/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/JwZwkk7q25I/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=JwZwkk7q25I''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/Mkbjxvwur30YrFWw8kpSaw?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/JwZwkk7q25I?v=2.1''/><author><name>homestarrunnerdotcom</name><uri>http://gdata.youtube.com/feeds/api/users/homestarrunnerdotcom</uri><yt:userId>Mkbjxvwur30YrFWw8kpSaw</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/JwZwkk7q25I/comments?v=2.1''
+        countHint=''553''/></gd:comments><yt:hd/><media:group><media:category label=''Comedy''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Comedy</media:category><media:content
+        url=''http://www.youtube.com/v/JwZwkk7q25I?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''78'' yt:format=''5''/><media:content url=''rtsp://v5.cache4.c.youtube.com/CkULENy73wIaPAmS2-pOknAGJxMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''78'' yt:format=''1''/><media:content
+        url=''rtsp://v5.cache4.c.youtube.com/CkULENy73wIaPAmS2-pOknAGJxMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''78'' yt:format=''6''/><media:credit
+        role=''uploader'' scheme=''urn:youtube'' yt:display=''homestarrunnerdotcom''
+        yt:type=''partner''>homestarrunnerdotcom</media:credit><media:description
+        type=''plain''>Strong Bad makes a techno song.</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=JwZwkk7q25I&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/JwZwkk7q25I/default.jpg'' height=''90'' width=''120''
+        time=''00:00:39'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/JwZwkk7q25I/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/JwZwkk7q25I/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/JwZwkk7q25I/1.jpg''
+        height=''90'' width=''120'' time=''00:00:19.500'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/JwZwkk7q25I/2.jpg'' height=''90'' width=''120''
+        time=''00:00:39'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/JwZwkk7q25I/3.jpg''
+        height=''90'' width=''120'' time=''00:00:58.500'' yt:name=''end''/><media:title
+        type=''plain''>Techno</media:title><yt:duration seconds=''78''/><yt:uploaded>2009-03-31T18:01:50.000Z</yt:uploaded><yt:uploaderId>UCMkbjxvwur30YrFWw8kpSaw</yt:uploaderId><yt:videoid>JwZwkk7q25I</yt:videoid></media:group><gd:rating
+        average=''4.907003'' max=''5'' min=''1'' numRaters=''2656'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''596222''/><yt:rating numDislikes=''62'' numLikes=''2594''/></entry><entry
+        gd:etag=''W/&quot;DkcHRn47eCp7I2A9WhFSF0o.&quot;''><id>tag:youtube.com,2008:video:TmpRs7xN06Q</id><published>2012-05-20T23:59:28.000Z</published><updated>2013-06-21T00:20:37.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Comedy''
+        label=''Comedy''/><title>Strong Bad Sings Track 02: The System is Down</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/TmpRs7xN06Q?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=TmpRs7xN06Q&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/TmpRs7xN06Q/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/TmpRs7xN06Q/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/TmpRs7xN06Q/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/TmpRs7xN06Q/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=TmpRs7xN06Q''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/ulA9qcl_x292mCo98Zxv7Q?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/TmpRs7xN06Q?v=2.1''/><author><name>ebyam93</name><uri>http://gdata.youtube.com/feeds/api/users/ebyam93</uri><yt:userId>ulA9qcl_x292mCo98Zxv7Q</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/TmpRs7xN06Q/comments?v=2.1''
+        countHint=''7''/></gd:comments><media:group><media:category label=''Comedy''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Comedy</media:category><media:content
+        url=''http://www.youtube.com/v/TmpRs7xN06Q?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''107'' yt:format=''5''/><media:content url=''rtsp://v4.cache1.c.youtube.com/CkULENy73wIaPAmk0028s1FqThMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''107''
+        yt:format=''1''/><media:content url=''rtsp://v4.cache1.c.youtube.com/CkULENy73wIaPAmk0028s1FqThMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''107''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''ebyam93''>ebyam93</media:credit><media:description
+        type=''plain''>Strong Bad Sings &amp; Other Type Hits Track 02: The System
+        is Down Artist: Strong Bad I''m uploading this, and The Cheat is Not Dead
+        because of a request. There''...</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=TmpRs7xN06Q&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/TmpRs7xN06Q/default.jpg'' height=''90'' width=''120''
+        time=''00:00:53.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/TmpRs7xN06Q/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/TmpRs7xN06Q/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/TmpRs7xN06Q/1.jpg''
+        height=''90'' width=''120'' time=''00:00:26.750'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/TmpRs7xN06Q/2.jpg'' height=''90'' width=''120''
+        time=''00:00:53.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/TmpRs7xN06Q/3.jpg''
+        height=''90'' width=''120'' time=''00:01:20.250'' yt:name=''end''/><media:title
+        type=''plain''>Strong Bad Sings Track 02: The System is Down</media:title><yt:duration
+        seconds=''107''/><yt:uploaded>2012-05-20T23:59:28.000Z</yt:uploaded><yt:uploaderId>UCulA9qcl_x292mCo98Zxv7Q</yt:uploaderId><yt:videoid>TmpRs7xN06Q</yt:videoid></media:group><gd:rating
+        average=''5.0'' max=''5'' min=''1'' numRaters=''28'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''2719''/><yt:rating numDislikes=''0'' numLikes=''28''/></entry><entry
+        gd:etag=''W/&quot;DkQFQ347eCp7I2A9WhFSFkg.&quot;''><id>tag:youtube.com,2008:video:cyqt5s_T1GE</id><published>2006-10-10T23:53:30.000Z</published><updated>2013-06-19T15:05:12.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Film''
+        label=''Film &amp; Animation''/><title>Strong Bad Email: Japanese Cartoon</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/cyqt5s_T1GE?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=cyqt5s_T1GE&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/cyqt5s_T1GE/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/cyqt5s_T1GE/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/cyqt5s_T1GE/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/cyqt5s_T1GE/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=cyqt5s_T1GE''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/yVAqQbxbZ5t-byBMTLKVQg?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/cyqt5s_T1GE?v=2.1''/><author><name>PpirtNamttip</name><uri>http://gdata.youtube.com/feeds/api/users/PpirtNamttip</uri><yt:userId>yVAqQbxbZ5t-byBMTLKVQg</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/cyqt5s_T1GE/comments?v=2.1''
+        countHint=''300''/></gd:comments><media:group><media:category label=''Film
+        &amp; Animation'' scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Film</media:category><media:content
+        url=''http://www.youtube.com/v/cyqt5s_T1GE?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''140'' yt:format=''5''/><media:content url=''rtsp://v3.cache8.c.youtube.com/CkULENy73wIaPAlh1NPP5q0qcxMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''140''
+        yt:format=''1''/><media:content url=''rtsp://v3.cache8.c.youtube.com/CkULENy73wIaPAlh1NPP5q0qcxMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''140''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''PpirtNamttip''>ppirtnamttip</media:credit><media:description
+        type=''plain''>Strong Bad is asked about Japanese cartoons.</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=cyqt5s_T1GE&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/cyqt5s_T1GE/default.jpg'' height=''90'' width=''120''
+        time=''00:01:10'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/cyqt5s_T1GE/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/cyqt5s_T1GE/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/cyqt5s_T1GE/1.jpg''
+        height=''90'' width=''120'' time=''00:00:35'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/cyqt5s_T1GE/2.jpg'' height=''90'' width=''120''
+        time=''00:01:10'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/cyqt5s_T1GE/3.jpg''
+        height=''90'' width=''120'' time=''00:01:45'' yt:name=''end''/><media:title
+        type=''plain''>Strong Bad Email: Japanese Cartoon</media:title><yt:duration
+        seconds=''140''/><yt:uploaded>2006-10-10T23:53:30.000Z</yt:uploaded><yt:uploaderId>UCyVAqQbxbZ5t-byBMTLKVQg</yt:uploaderId><yt:videoid>cyqt5s_T1GE</yt:videoid></media:group><gd:rating
+        average=''4.87766'' max=''5'' min=''1'' numRaters=''564'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''150091''/><yt:rating numDislikes=''17'' numLikes=''547''/></entry><entry
+        gd:etag=''W/&quot;CU4ESX47eCp7I2A9WhFTEkk.&quot;''><id>tag:youtube.com,2008:video:16lJJ_j2uPM</id><published>2012-04-22T14:09:45.000Z</published><updated>2013-06-03T07:18:28.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Comedy''
+        label=''Comedy''/><title>Strong Bad Email #100: Flashback</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/16lJJ_j2uPM?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=16lJJ_j2uPM&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/16lJJ_j2uPM/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/16lJJ_j2uPM/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/16lJJ_j2uPM/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/16lJJ_j2uPM/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=16lJJ_j2uPM''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/ulA9qcl_x292mCo98Zxv7Q?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/16lJJ_j2uPM?v=2.1''/><author><name>ebyam93</name><uri>http://gdata.youtube.com/feeds/api/users/ebyam93</uri><yt:userId>ulA9qcl_x292mCo98Zxv7Q</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/16lJJ_j2uPM/comments?v=2.1''
+        countHint=''10''/></gd:comments><media:group><media:category label=''Comedy''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Comedy</media:category><media:content
+        url=''http://www.youtube.com/v/16lJJ_j2uPM?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''407'' yt:format=''5''/><media:content url=''rtsp://v7.cache4.c.youtube.com/CkULENy73wIaPAnzuPb4J0mp1xMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''407''
+        yt:format=''1''/><media:content url=''rtsp://v7.cache4.c.youtube.com/CkULENy73wIaPAnzuPb4J0mp1xMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''407''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''ebyam93''>ebyam93</media:credit><media:description
+        type=''plain''>(Re-uploaded in better quality) Strong Bad tells the story
+        of the first time he met Homestar in WIDESCREEEEEEN. I IN NO WAY OWN ANY PART
+        OF THIS EMAIL. For m...</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=16lJJ_j2uPM&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/16lJJ_j2uPM/default.jpg'' height=''90'' width=''120''
+        time=''00:03:23.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/16lJJ_j2uPM/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/16lJJ_j2uPM/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/16lJJ_j2uPM/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/16lJJ_j2uPM/1.jpg''
+        height=''90'' width=''120'' time=''00:01:41.750'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/16lJJ_j2uPM/2.jpg'' height=''90'' width=''120''
+        time=''00:03:23.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/16lJJ_j2uPM/3.jpg''
+        height=''90'' width=''120'' time=''00:05:05.250'' yt:name=''end''/><media:title
+        type=''plain''>Strong Bad Email #100: Flashback</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''407''/><yt:uploaded>2012-04-22T14:09:45.000Z</yt:uploaded><yt:uploaderId>UCulA9qcl_x292mCo98Zxv7Q</yt:uploaderId><yt:videoid>16lJJ_j2uPM</yt:videoid></media:group><gd:rating
+        average=''5.0'' max=''5'' min=''1'' numRaters=''13'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''3154''/><yt:rating numDislikes=''0'' numLikes=''13''/></entry><entry
+        gd:etag=''W/&quot;CkMHQn47eCp7I2A9WhFTEkU.&quot;''><id>tag:youtube.com,2008:video:NgFA22Zp3nA</id><published>2012-08-28T01:26:20.000Z</published><updated>2013-06-03T17:27:13.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Games''
+        label=''Gaming''/><title>FC - PM Singles Bracket - Strong Bad (DK) Vs. Yakal
+        (Falco)</title><content type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/NgFA22Zp3nA?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=NgFA22Zp3nA&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/NgFA22Zp3nA/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/NgFA22Zp3nA/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/NgFA22Zp3nA/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/NgFA22Zp3nA/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=NgFA22Zp3nA''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/j1J3QuIftjOq9iv_rr7Egw?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/NgFA22Zp3nA?v=2.1''/><author><name>VideoGameBootCamp</name><uri>http://gdata.youtube.com/feeds/api/users/VideoGameBootCamp</uri><yt:userId>j1J3QuIftjOq9iv_rr7Egw</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/NgFA22Zp3nA/comments?v=2.1''
+        countHint=''15''/></gd:comments><media:group><media:category label=''Gaming''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Games</media:category><media:content
+        url=''http://www.youtube.com/v/NgFA22Zp3nA?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''555'' yt:format=''5''/><media:content url=''rtsp://v1.cache8.c.youtube.com/CkULENy73wIaPAlw3mlm20ABNhMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''555''
+        yt:format=''1''/><media:content url=''rtsp://v1.cache8.c.youtube.com/CkULENy73wIaPAlw3mlm20ABNhMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''555''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''VideoGameBootCamp''
+        yt:type=''partner''>videogamebootcamp</media:credit><media:description type=''plain''>MELEE-FC
+        10R; (8/12-14/2012) South Bend, Indiana, Organized by Zettagaming Stream By
+        VGBootCamp: http://www.twitch.tv/vgbootcamp (Please Follow Us!) If you''r...</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=NgFA22Zp3nA&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/NgFA22Zp3nA/default.jpg'' height=''90'' width=''120''
+        time=''00:04:37.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/NgFA22Zp3nA/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/NgFA22Zp3nA/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/NgFA22Zp3nA/sddefault.jpg''
+        height=''480'' width=''640'' yt:name=''sddefault''/><media:thumbnail url=''http://i.ytimg.com/vi/NgFA22Zp3nA/1.jpg''
+        height=''90'' width=''120'' time=''00:02:18.750'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/NgFA22Zp3nA/2.jpg'' height=''90'' width=''120''
+        time=''00:04:37.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/NgFA22Zp3nA/3.jpg''
+        height=''90'' width=''120'' time=''00:06:56.250'' yt:name=''end''/><media:title
+        type=''plain''>FC - PM Singles Bracket - Strong Bad (DK) Vs. Yakal (Falco)</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration
+        seconds=''555''/><yt:uploaded>2012-08-28T01:26:20.000Z</yt:uploaded><yt:uploaderId>UCj1J3QuIftjOq9iv_rr7Egw</yt:uploaderId><yt:videoid>NgFA22Zp3nA</yt:videoid></media:group><gd:rating
+        average=''5.0'' max=''5'' min=''1'' numRaters=''15'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''1724''/><yt:rating numDislikes=''0'' numLikes=''15''/></entry><entry
+        gd:etag=''W/&quot;D0cARn47eCp7I2A9WhFSF0w.&quot;''><id>tag:youtube.com,2008:video:BcGQBDQkwkM</id><published>2010-11-10T00:43:49.000Z</published><updated>2013-06-20T07:57:27.000Z</updated><category
+        scheme=''http://schemas.google.com/g/2005#kind'' term=''http://gdata.youtube.com/schemas/2007#video''/><category
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat'' term=''Comedy''
+        label=''Comedy''/><title>Strong Bad Email #57: Japanese Cartoon</title><content
+        type=''application/x-shockwave-flash'' src=''http://www.youtube.com/v/BcGQBDQkwkM?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''/><link
+        rel=''alternate'' type=''text/html'' href=''http://www.youtube.com/watch?v=BcGQBDQkwkM&amp;feature=youtube_gdata''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.responses'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/BcGQBDQkwkM/responses?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.ratings'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/BcGQBDQkwkM/ratings?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.complaints'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/BcGQBDQkwkM/complaints?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#video.related'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/videos/BcGQBDQkwkM/related?v=2.1''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#mobile'' type=''text/html'' href=''http://m.youtube.com/details?v=BcGQBDQkwkM''/><link
+        rel=''http://gdata.youtube.com/schemas/2007#uploader'' type=''application/atom+xml''
+        href=''http://gdata.youtube.com/feeds/api/users/ulA9qcl_x292mCo98Zxv7Q?v=2.1''/><link
+        rel=''self'' type=''application/atom+xml'' href=''http://gdata.youtube.com/feeds/api/videos/BcGQBDQkwkM?v=2.1''/><author><name>ebyam93</name><uri>http://gdata.youtube.com/feeds/api/users/ebyam93</uri><yt:userId>ulA9qcl_x292mCo98Zxv7Q</yt:userId></author><yt:accessControl
+        action=''comment'' permission=''allowed''/><yt:accessControl action=''commentVote''
+        permission=''allowed''/><yt:accessControl action=''videoRespond'' permission=''moderated''/><yt:accessControl
+        action=''rate'' permission=''allowed''/><yt:accessControl action=''embed''
+        permission=''allowed''/><yt:accessControl action=''list'' permission=''allowed''/><yt:accessControl
+        action=''autoPlay'' permission=''allowed''/><yt:accessControl action=''syndicate''
+        permission=''allowed''/><gd:comments><gd:feedLink rel=''http://gdata.youtube.com/schemas/2007#comments''
+        href=''http://gdata.youtube.com/feeds/api/videos/BcGQBDQkwkM/comments?v=2.1''
+        countHint=''17''/></gd:comments><media:group><media:category label=''Comedy''
+        scheme=''http://gdata.youtube.com/schemas/2007/categories.cat''>Comedy</media:category><media:content
+        url=''http://www.youtube.com/v/BcGQBDQkwkM?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata''
+        type=''application/x-shockwave-flash'' medium=''video'' isDefault=''true''
+        expression=''full'' duration=''147'' yt:format=''5''/><media:content url=''rtsp://v8.cache8.c.youtube.com/CkULENy73wIaPAlDwiQ0BJDBBRMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''147''
+        yt:format=''1''/><media:content url=''rtsp://v8.cache8.c.youtube.com/CkULENy73wIaPAlDwiQ0BJDBBRMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp''
+        type=''video/3gpp'' medium=''video'' expression=''full'' duration=''147''
+        yt:format=''6''/><media:credit role=''uploader'' scheme=''urn:youtube'' yt:display=''ebyam93''>ebyam93</media:credit><media:description
+        type=''plain''>What would Strong Bad look like as a Japanese cartoon? I IN
+        NO WAY OWN STRONG BAD EMAIL OR ANY PART OF THIS CARTOON. For more, go to www.homestarrunner.com.</media:description><media:keywords/><media:license
+        type=''text/html'' href=''http://www.youtube.com/t/terms''>youtube</media:license><media:player
+        url=''http://www.youtube.com/watch?v=BcGQBDQkwkM&amp;feature=youtube_gdata_player''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/BcGQBDQkwkM/default.jpg'' height=''90'' width=''120''
+        time=''00:01:13.500'' yt:name=''default''/><media:thumbnail url=''http://i.ytimg.com/vi/BcGQBDQkwkM/mqdefault.jpg''
+        height=''180'' width=''320'' yt:name=''mqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/BcGQBDQkwkM/hqdefault.jpg''
+        height=''360'' width=''480'' yt:name=''hqdefault''/><media:thumbnail url=''http://i.ytimg.com/vi/BcGQBDQkwkM/1.jpg''
+        height=''90'' width=''120'' time=''00:00:36.750'' yt:name=''start''/><media:thumbnail
+        url=''http://i.ytimg.com/vi/BcGQBDQkwkM/2.jpg'' height=''90'' width=''120''
+        time=''00:01:13.500'' yt:name=''middle''/><media:thumbnail url=''http://i.ytimg.com/vi/BcGQBDQkwkM/3.jpg''
+        height=''90'' width=''120'' time=''00:01:50.250'' yt:name=''end''/><media:title
+        type=''plain''>Strong Bad Email #57: Japanese Cartoon</media:title><yt:duration
+        seconds=''147''/><yt:uploaded>2010-11-10T00:43:49.000Z</yt:uploaded><yt:uploaderId>UCulA9qcl_x292mCo98Zxv7Q</yt:uploaderId><yt:videoid>BcGQBDQkwkM</yt:videoid></media:group><gd:rating
+        average=''4.891892'' max=''5'' min=''1'' numRaters=''37'' rel=''http://schemas.google.com/g/2005#overall''/><yt:statistics
+        favoriteCount=''0'' viewCount=''10036''/><yt:rating numDislikes=''1'' numLikes=''36''/></entry></feed>'
+    http_version: 
+  recorded_at: Thu, 27 Jun 2013 23:03:10 GMT
+recorded_with: VCR 2.5.0

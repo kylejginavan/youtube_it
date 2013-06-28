@@ -133,6 +133,9 @@ Upload Video:
 Upload Video With A Developer Tag (Note the tags are not immediately available):
   $ client.video_upload(File.open("test.mov"), :title => "test",:description => 'some description', :category => 'People',:keywords => %w[cool blah test], :dev_tag => 'tagdev')
 
+Upload Video from url:
+  $ client.video_upload("http://media.railscasts.com/assets/episodes/videos/412-fast-rails-commands.mp4", :title => "test",:description => 'some description', :category => 'People',:keywords => %w[cool blah test])
+
 Upload Private Video:
   $ client.video_upload(File.open("test.mov"), :title => "test",:description => 'some description', :category => 'People',:keywords => %w[cool blah test], :private => true)
 

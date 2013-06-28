@@ -18,7 +18,7 @@ class YouTubeIt::ChainIO
     # Read off the first element in the stack
     current_io = @chain.shift
     return false if !current_io
-    
+
     buf = current_io.read(buffer_size)
     if !buf && @chain.empty? # End of streams
       release_handle(current_io) if @autoclose
@@ -34,8 +34,8 @@ class YouTubeIt::ChainIO
       buf
     end
   end
-  
-  # Predict the length of all embedded IOs. Will automatically send file size.  
+
+  # Predict the length of all embedded IOs. Will automatically send file size.
   def expected_length
     @chain.inject(0) do | len, io |
       if io.respond_to?(:length)
@@ -47,28 +47,38 @@ class YouTubeIt::ChainIO
       end
     end
   end
-    
+
   private
     def release_handle(io)
       io.close if io.respond_to?(:close)
     end
 end
-  
+
 # Net::HTTP only can send chunks of 1024 bytes. This is very inefficient, so we have a spare IO that will send more when asked for 1024.
 # We use delegation because the read call is recursive.
 class YouTubeIt::GreedyChainIO < DelegateClass(YouTubeIt::ChainIO)
   BIG_CHUNK = 512 * 1024 # 500 kb
-  
+
   def initialize(*with_ios)
     __setobj__(YouTubeIt::ChainIO.new(with_ios))
   end
-  
-  def read(any_buffer_size = nil)
-    __getobj__.read(BIG_CHUNK)
+
+  def read(size = BIG_CHUNK, dst_buf = nil)
+    src_buf = __getobj__.read(size)
+    return nil unless src_buf
+    copy_buf(src_buf, dst_buf) if dst_buf
+    src_buf
   end
 
   def length()
     __getobj__.expected_length
+  end
+
+  private
+
+  def copy_buf(src_buf, dst_buf)
+    dst_buf[0..-1] = ''
+    dst_buf << src_buf
   end
 
 end

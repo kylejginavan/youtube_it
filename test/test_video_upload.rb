@@ -54,4 +54,10 @@ class TestVideoUpload < Test::Unit::TestCase
     assert_equal '<?xml version="1.0" encoding="UTF-8"?><entry xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:gd="http://schemas.google.com/g/2005" xmlns:yt="http://gdata.youtube.com/schemas/2007" xmlns:gml="http://www.opengis.net/gml" xmlns:georss="http://www.georss.org/georss" gd:fields="yt:accessControl[@action=\'list\']"><media:group></media:group><yt:accessControl action="list" permission="allowed"/></entry>', xml
   end
 
+  def test_uri?
+    res = @vu.uri?("http://media.railscasts.com/assets/episodes/videos/412-fast-rails-commands.mp4")
+
+    assert_equal true, res
+  end
+
 end

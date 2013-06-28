@@ -2,6 +2,77 @@
 http_interactions:
 - request:
     method: get
+    uri: http://gdata.youtube.com/feeds/api/users/default
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+      Authorization:
+      - Bearer ya29.AHES6ZSQ5njt5VZGfAo6FSDnptJM3Qiq1ixW7GUluiMcJ20
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Gdata-User-Country:
+      - AR
+      Content-Type:
+      - application/atom+xml; charset=UTF-8
+      Expires:
+      - Thu, 27 Jun 2013 23:03:05 GMT
+      Date:
+      - Thu, 27 Jun 2013 23:03:05 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Vary:
+      - Accept, X-GData-Authorization, GData-Version
+      Gdata-Version:
+      - '1.0'
+      Last-Modified:
+      - Thu, 27 Jun 2013 22:54:50 GMT
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+    body:
+      encoding: US-ASCII
+      string: <?xml version='1.0' encoding='UTF-8'?><entry xmlns='http://www.w3.org/2005/Atom'
+        xmlns:media='http://search.yahoo.com/mrss/' xmlns:gd='http://schemas.google.com/g/2005'
+        xmlns:yt='http://gdata.youtube.com/schemas/2007'><id>http://gdata.youtube.com/feeds/api/users/WWmLvppy3j64IGmA2dpCyw</id><published>2010-07-06T14:59:05.000Z</published><updated>2013-06-27T22:54:50.000Z</updated><category
+        scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#userProfile'/><title
+        type='text'>tubeit20101</title><content type='text'/><link rel='alternate'
+        type='text/html' href='http://www.youtube.com/channel/UCWWmLvppy3j64IGmA2dpCyw'/><link
+        rel='http://gdata.youtube.com/schemas/2007#insight.views' type='text/html'
+        href='https://insight.youtube.com/video-analytics-partner/gwt/csv-zip?token=CiAKAghKEhoIABIWV1dtTHZwcHkzajY0SUdtQTJkcEN5dw&amp;sig=MC0CFF0kijRgdaCtafb3NoLMGfqKXQ3NAhUAxW9cXxPlP39deXRNjqBsoCW8V_w&amp;user_starttime=1371600000000&amp;user_endtime=1372204800000&amp;exp=1372377785230'/><link
+        rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/users/WWmLvppy3j64IGmA2dpCyw'/><author><name>tubeit20101</name><uri>http://gdata.youtube.com/feeds/api/users/tubeit20101</uri></author><yt:age>31</yt:age><gd:feedLink
+        rel='http://gdata.youtube.com/schemas/2007#user.subscriptions' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/subscriptions'
+        countHint='0'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.contacts'
+        href='http://gdata.youtube.com/feeds/api/users/tubeit20101/contacts' countHint='0'/><gd:feedLink
+        rel='http://gdata.youtube.com/schemas/2007#user.inbox' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/inbox'
+        countHint='0'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.playlists'
+        href='http://gdata.youtube.com/feeds/api/users/tubeit20101/playlists'/><gd:feedLink
+        rel='http://gdata.youtube.com/schemas/2007#user.uploads' href='http://gdata.youtube.com/feeds/api/users/tubeit20101/uploads'
+        countHint='36'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.newsubscriptionvideos'
+        href='http://gdata.youtube.com/feeds/api/users/tubeit20101/newsubscriptionvideos'/><yt:location>AR</yt:location><yt:maxUploadDuration
+        seconds='930'/><yt:statistics lastWebAccess='1970-01-01T00:00:00.000Z' subscriberCount='0'
+        videoWatchCount='0' viewCount='104' totalUploadViews='0'/><media:thumbnail
+        url='http://s.ytimg.com/yts/img/silhouette250-vflEqxKg9.png'/><yt:username>tubeit20101</yt:username></entry>
+    http_version: 
+  recorded_at: Thu, 27 Jun 2013 23:03:13 GMT
+- request:
+    method: get
     uri: http://gdata.youtube.com/feeds/api/users/honda?v=2.1
     body:
       encoding: US-ASCII
@@ -10,55 +81,59 @@ http_interactions:
       User-Agent:
       - Faraday v0.8.7
       Authorization:
-      - Bearer ya29.AHES6ZQQAQGU3u_qu2LXsv-3M8TZBr_twJ6mUub1TV5xU3I
-      X-GData-Client:
+      - Bearer ya29.AHES6ZSQ5njt5VZGfAo6FSDnptJM3Qiq1ixW7GUluiMcJ20
+      X-Gdata-Client:
       - youtube_it
-      X-GData-Key:
+      X-Gdata-Key:
       - key=AI39si7WuZZxAkYebKSyrlJR7hIFktt6OoPycEOeOT_yHkZgr6QsGbZgmhKvbS4bsSAv0utgrfhNfXQBITu1wX_z3VsZE02giQ
-      GData-Version:
+      Gdata-Version:
       - '2.1'
       Content-Type:
       - application/atom+xml; charset=UTF-8
       Content-Length:
       - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
   response:
     status:
       code: 200
-      message: 
+      message: OK
     headers:
-      X-GData-User-Country:
+      X-Gdata-User-Country:
       - AR
       Content-Type:
       - application/atom+xml; charset=UTF-8; type=entry
       Expires:
-      - Thu, 23 May 2013 16:33:38 GMT
+      - Thu, 27 Jun 2013 23:03:05 GMT
       Date:
-      - Thu, 23 May 2013 16:33:38 GMT
+      - Thu, 27 Jun 2013 23:03:05 GMT
       Cache-Control:
       - private, max-age=300, no-transform
       Vary:
       - Accept, X-GData-Authorization, GData-Version
-      GData-Version:
+      Gdata-Version:
       - '2.1'
-      ETag:
-      - W/"DUMDRX47eCp7I2A9WhBaE0w."
+      Etag:
+      - W/"D0YCR347eCp7I2A9WhFRE0s."
       Last-Modified:
-      - Thu, 23 May 2013 13:57:54 GMT
+      - Thu, 27 Jun 2013 20:32:46 GMT
       Transfer-Encoding:
       - chunked
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       Server:
       - GSE
     body:
-      encoding: UTF-8
+      encoding: US-ASCII
       string: <?xml version='1.0' encoding='UTF-8'?><entry xmlns='http://www.w3.org/2005/Atom'
         xmlns:media='http://search.yahoo.com/mrss/' xmlns:gd='http://schemas.google.com/g/2005'
-        xmlns:yt='http://gdata.youtube.com/schemas/2007' gd:etag='W/&quot;DUMDRX47eCp7I2A9WhBaE0w.&quot;'><id>tag:youtube.com,2008:user:22zQ9nBEk6KOjUWqR5XXZg</id><published>2005-10-11T00:42:58.000Z</published><updated>2013-05-23T13:57:54.000Z</updated><category
+        xmlns:yt='http://gdata.youtube.com/schemas/2007' gd:etag='W/&quot;D0YCR347eCp7I2A9WhFRE0s.&quot;'><id>tag:youtube.com,2008:user:22zQ9nBEk6KOjUWqR5XXZg</id><published>2005-10-11T00:42:58.000Z</published><updated>2013-06-27T20:32:46.000Z</updated><category
         scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#userProfile'/><title>Honda</title><summary>In
         1959, we opened shop in Los Angeles with one product, the 305cc Honda Dream
         motorcycle. Over fifty years later, we have 11 plants that build power equipment,
@@ -80,12 +155,12 @@ http_interactions:
         href='http://gdata.youtube.com/feeds/api/users/honda/inbox?client=youtube_it'/><gd:feedLink
         rel='http://gdata.youtube.com/schemas/2007#user.playlists' href='http://gdata.youtube.com/feeds/api/users/honda/playlists?client=youtube_it'/><gd:feedLink
         rel='http://gdata.youtube.com/schemas/2007#user.uploads' href='http://gdata.youtube.com/feeds/api/users/honda/uploads?client=youtube_it'
-        countHint='382'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.newsubscriptionvideos'
+        countHint='401'/><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#user.newsubscriptionvideos'
         href='http://gdata.youtube.com/feeds/api/users/honda/newsubscriptionvideos?client=youtube_it'/><gd:feedLink
         rel='http://gdata.youtube.com/schemas/2007#user.recentactivity' href='http://gdata.youtube.com/feeds/api/users/honda/events?client=youtube_it'/><yt:googlePlusUserId>110355594819754396833</yt:googlePlusUserId><yt:location>US</yt:location><yt:statistics
-        lastWebAccess='1970-01-01T00:00:00.000Z' subscriberCount='107730' videoWatchCount='0'
-        viewCount='6761397' totalUploadViews='32562538'/><media:thumbnail url='http://lh6.googleusercontent.com/-0-xN3-e2x0o/AAAAAAAAAAI/AAAAAAAAAAA/vizVfXRVT8I/s88-c-k/photo.jpg'/><yt:userId>22zQ9nBEk6KOjUWqR5XXZg</yt:userId><yt:username
+        lastWebAccess='1970-01-01T00:00:00.000Z' subscriberCount='109809' videoWatchCount='0'
+        viewCount='6804273' totalUploadViews='32966813'/><media:thumbnail url='http://lh6.googleusercontent.com/-0-xN3-e2x0o/AAAAAAAAAAI/AAAAAAAAAAA/vizVfXRVT8I/s88-c-k/photo.jpg'/><yt:userId>22zQ9nBEk6KOjUWqR5XXZg</yt:userId><yt:username
         display='Honda'>honda</yt:username></entry>
     http_version: 
-  recorded_at: Thu, 23 May 2013 16:33:39 GMT
+  recorded_at: Thu, 27 Jun 2013 23:03:14 GMT
 recorded_with: VCR 2.5.0

@@ -1,0 +1,100 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://gdata.youtube.com/feeds/api/videos/QqQVll-MP3I?key=AI39si7WuZZxAkYebKSyrlJR7hIFktt6OoPycEOeOT_yHkZgr6QsGbZgmhKvbS4bsSAv0utgrfhNfXQBITu1wX_z3VsZE02giQ&v=2.1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Gdata-User-Country:
+      - AR
+      Content-Type:
+      - application/atom+xml; charset=UTF-8; type=entry
+      Expires:
+      - Thu, 27 Jun 2013 23:03:02 GMT
+      Date:
+      - Thu, 27 Jun 2013 23:03:02 GMT
+      Cache-Control:
+      - private, max-age=300, no-transform
+      Vary:
+      - ! '*'
+      Gdata-Version:
+      - '2.1'
+      Etag:
+      - W/"D0MNSH47eCp7I2A9WhFRE00."
+      Last-Modified:
+      - Thu, 27 Jun 2013 03:58:19 GMT
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+    body:
+      encoding: US-ASCII
+      string: <?xml version='1.0' encoding='UTF-8'?><entry xmlns='http://www.w3.org/2005/Atom'
+        xmlns:media='http://search.yahoo.com/mrss/' xmlns:gd='http://schemas.google.com/g/2005'
+        xmlns:yt='http://gdata.youtube.com/schemas/2007' gd:etag='W/&quot;D0MNSH47eCp7I2A9WhFRE00.&quot;'><id>tag:youtube.com,2008:video:QqQVll-MP3I</id><published>2009-02-11T13:39:04.000Z</published><updated>2013-06-27T03:58:19.000Z</updated><category
+        scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#video'/><category
+        scheme='http://gdata.youtube.com/schemas/2007/categories.cat' term='Nonprofit'
+        label='Nonprofits &amp; Activism'/><title>Food, Inc</title><content type='application/x-shockwave-flash'
+        src='http://www.youtube.com/v/QqQVll-MP3I?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata'/><link
+        rel='alternate' type='text/html' href='http://www.youtube.com/watch?v=QqQVll-MP3I&amp;feature=youtube_gdata'/><link
+        rel='http://gdata.youtube.com/schemas/2007#video.responses' type='application/atom+xml'
+        href='http://gdata.youtube.com/feeds/api/videos/QqQVll-MP3I/responses?v=2.1'/><link
+        rel='http://gdata.youtube.com/schemas/2007#video.ratings' type='application/atom+xml'
+        href='http://gdata.youtube.com/feeds/api/videos/QqQVll-MP3I/ratings?v=2.1'/><link
+        rel='http://gdata.youtube.com/schemas/2007#video.complaints' type='application/atom+xml'
+        href='http://gdata.youtube.com/feeds/api/videos/QqQVll-MP3I/complaints?v=2.1'/><link
+        rel='http://gdata.youtube.com/schemas/2007#video.related' type='application/atom+xml'
+        href='http://gdata.youtube.com/feeds/api/videos/QqQVll-MP3I/related?v=2.1'/><link
+        rel='http://gdata.youtube.com/schemas/2007#mobile' type='text/html' href='http://m.youtube.com/details?v=QqQVll-MP3I'/><link
+        rel='http://gdata.youtube.com/schemas/2007#uploader' type='application/atom+xml'
+        href='http://gdata.youtube.com/feeds/api/users/_AGwt7UN4Lu-qPq4ig_R4Q?v=2.1'/><link
+        rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/QqQVll-MP3I?v=2.1'/><author><name>inlinetv2009</name><uri>http://gdata.youtube.com/feeds/api/users/inlinetv2009</uri><yt:userId>_AGwt7UN4Lu-qPq4ig_R4Q</yt:userId></author><yt:accessControl
+        action='comment' permission='allowed'/><yt:accessControl action='commentVote'
+        permission='allowed'/><yt:accessControl action='videoRespond' permission='moderated'/><yt:accessControl
+        action='rate' permission='allowed'/><yt:accessControl action='embed' permission='allowed'/><yt:accessControl
+        action='list' permission='allowed'/><yt:accessControl action='autoPlay' permission='allowed'/><yt:accessControl
+        action='syndicate' permission='allowed'/><gd:comments><gd:feedLink rel='http://gdata.youtube.com/schemas/2007#comments'
+        href='http://gdata.youtube.com/feeds/api/videos/QqQVll-MP3I/comments?v=2.1'
+        countHint='2354'/></gd:comments><media:group><media:category label='Nonprofits
+        &amp; Activism' scheme='http://gdata.youtube.com/schemas/2007/categories.cat'>Nonprofit</media:category><media:content
+        url='http://www.youtube.com/v/QqQVll-MP3I?version=3&amp;f=videos&amp;d=Af_sMkfuv5bHKDHIEIvKuwwO88HsQjpE1a8d1GxQnGDm&amp;app=youtube_gdata'
+        type='application/x-shockwave-flash' medium='video' isDefault='true' expression='full'
+        duration='211' yt:format='5'/><media:content url='rtsp://v7.cache2.c.youtube.com/CkULENy73wIaPAlyP4xflhWkQhMYDSANFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp'
+        type='video/3gpp' medium='video' expression='full' duration='211' yt:format='1'/><media:content
+        url='rtsp://v7.cache2.c.youtube.com/CkULENy73wIaPAlyP4xflhWkQhMYESARFEgGUgZ2aWRlb3NyIQH_7DJH7r-WxygxyBCLyrsMDvPB7EI6RNWvHdRsUJxg5gw=/0/0/0/video.3gp'
+        type='video/3gpp' medium='video' expression='full' duration='211' yt:format='6'/><media:credit
+        role='uploader' scheme='urn:youtube' yt:display='inlinetv2009'>inlinetv2009</media:credit><media:description
+        type='plain'>ROBERT KENNER FILM</media:description><media:keywords/><media:license
+        type='text/html' href='http://www.youtube.com/t/terms'>youtube</media:license><media:player
+        url='http://www.youtube.com/watch?v=QqQVll-MP3I&amp;feature=youtube_gdata_player'/><media:thumbnail
+        url='http://i1.ytimg.com/vi/QqQVll-MP3I/default.jpg' height='90' width='120'
+        time='00:01:45.500' yt:name='default'/><media:thumbnail url='http://i1.ytimg.com/vi/QqQVll-MP3I/mqdefault.jpg'
+        height='180' width='320' yt:name='mqdefault'/><media:thumbnail url='http://i1.ytimg.com/vi/QqQVll-MP3I/hqdefault.jpg'
+        height='360' width='480' yt:name='hqdefault'/><media:thumbnail url='http://i1.ytimg.com/vi/QqQVll-MP3I/1.jpg'
+        height='90' width='120' time='00:00:52.750' yt:name='start'/><media:thumbnail
+        url='http://i1.ytimg.com/vi/QqQVll-MP3I/2.jpg' height='90' width='120' time='00:01:45.500'
+        yt:name='middle'/><media:thumbnail url='http://i1.ytimg.com/vi/QqQVll-MP3I/3.jpg'
+        height='90' width='120' time='00:02:38.250' yt:name='end'/><media:title type='plain'>Food,
+        Inc</media:title><yt:aspectRatio>widescreen</yt:aspectRatio><yt:duration seconds='211'/><yt:uploaded>2009-02-11T13:39:04.000Z</yt:uploaded><yt:uploaderId>UC_AGwt7UN4Lu-qPq4ig_R4Q</yt:uploaderId><yt:videoid>QqQVll-MP3I</yt:videoid></media:group><gd:rating
+        average='4.8554935' max='5' min='1' numRaters='2685' rel='http://schemas.google.com/g/2005#overall'/><yt:statistics
+        favoriteCount='0' viewCount='1491164'/><yt:rating numDislikes='97' numLikes='2588'/></entry>
+    http_version: 
+  recorded_at: Thu, 27 Jun 2013 23:03:11 GMT
+recorded_with: VCR 2.5.0
