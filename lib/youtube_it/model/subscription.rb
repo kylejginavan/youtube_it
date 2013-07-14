@@ -1,7 +1,7 @@
 class YouTubeIt
   module Model
     class Subscription < YouTubeIt::Record
-      attr_reader :id, :title, :published
+      attr_reader :id, :title, :published, :youtube_user_name
     end
   end
 end
