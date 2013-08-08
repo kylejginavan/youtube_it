@@ -247,24 +247,24 @@ class YouTubeIt
 EDOC
       end
 
-            # Gives you the HTML 5 to embed the video on your website.
-            # Usefull for mobile that not support flash but has html5 browser
-            # === Returns
-            #   String: The HTML for embedding the video on your website.
-            def embed_html5(params = {})
-              opts = {:class  => params[:class]  || "",
-                      :id     => params[:id]     || "",
-                      :width  => params[:width]  || "425",
-                      :height => params[:height] || "350",
-                      :protocol => params[:protocol] || "http",
-                      :frameborder => params[:frameborder] || "0",
-                      :url_params => params[:url_params] || {}
-                      }
-              url_opts = opts[:url_params].empty? ? "" : "?#{Rack::Utils::build_query(opts[:url_params])}"
-              <<EDOC
+      # Gives you the HTML 5 to embed the video on your website.
+      # Usefull for mobile that not support flash but has html5 browser
+      # === Returns
+      #   String: The HTML for embedding the video on your website.
+      def embed_html5(params = {})
+        opts = {:class  => params[:class]  || "",
+                :id     => params[:id]     || "",
+                :width  => params[:width]  || "425",
+                :height => params[:height] || "350",
+                :protocol => params[:protocol] || "http",
+                :frameborder => params[:frameborder] || "0",
+                :url_params => params[:url_params] || {}
+                }
+        url_opts = opts[:url_params].empty? ? "" : "?#{Rack::Utils::build_query(opts[:url_params])}"
+        <<EDOC
 <iframe class="#{opts[:class]}" id="#{opts[:id]}" type="text/html" width="#{opts[:width]}" height="#{opts[:height]}" src="#{opts[:protocol]}://www.youtube.com/embed/#{unique_id}#{url_opts}" frameborder="#{opts[:frameborder]}"></iframe>
 EDOC
-            end
+      end
 
       # Gives you the HTML to embed the video on your website.
       #
