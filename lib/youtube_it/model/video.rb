@@ -258,11 +258,12 @@ EDOC
                 :height => params[:height] || "350",
                 :protocol => params[:protocol] || "http",
                 :frameborder => params[:frameborder] || "0",
-                :url_params => params[:url_params] || {}
+                :url_params => params[:url_params] || {},
+                :sandbox => params[:sandbox] || false
                 }
         url_opts = opts[:url_params].empty? ? "" : "?#{Rack::Utils::build_query(opts[:url_params])}"
         <<EDOC
-<iframe class="#{opts[:class]}" id="#{opts[:id]}" type="text/html" width="#{opts[:width]}" height="#{opts[:height]}" src="#{opts[:protocol]}://www.youtube.com/embed/#{unique_id}#{url_opts}" frameborder="#{opts[:frameborder]}"></iframe>
+<iframe class="#{opts[:class]}" id="#{opts[:id]}" type="text/html" width="#{opts[:width]}" height="#{opts[:height]}" src="#{opts[:protocol]}://www.youtube.com/embed/#{unique_id}#{url_opts}" frameborder="#{opts[:frameborder]}"#{"sandbox=\"#{opts[:sandbox]}\"" if opts[:sandbox]}></iframe>
 EDOC
       end
 
