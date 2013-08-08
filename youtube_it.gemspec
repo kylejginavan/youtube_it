@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency("builder", ">= 0")
   s.add_runtime_dependency("webmock")
   s.add_runtime_dependency("excon")
-  s.add_runtime_dependency("json", "~> 1.8.0")
+  s.add_runtime_dependency("json", "~> 1.7.7")
   s.files = Dir.glob("lib/**/*") + %w(README.rdoc youtube_it.gemspec)
 
   s.extra_rdoc_files = %w(README.rdoc)
