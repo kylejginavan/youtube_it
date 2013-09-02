@@ -377,6 +377,18 @@ class TestClient < Test::Unit::TestCase
     @client.video_delete(video.unique_id)
   end
 
+  def test_should_raise_error_on_video_not_found
+    exception = assert_raise(YouTubeIt::UploadError) { @client.my_video("nonexisting") }
+    assert_equal 404, exception.code
+    assert_equal "Video not found: ResourceNotFoundException\n", exception.message
+  end
+
+  def test_should_raise_error_on_private_video
+    exception = assert_raise(YouTubeIt::AuthenticationError) { @client.my_video("0KI_osldHWg") }
+    assert_equal 403, exception.code
+    assert_equal "Private video: ServiceForbiddenException\n", exception.message
+  end
+
   def test_should_add_like_to_video
     r = @client.like_video("CE62FSEoY28")
     assert_equal r[:code], 201

@@ -11,15 +11,6 @@ require 'faraday'
 class YouTubeIt
   API_VERSION = "2.1"
 
-  # Base error class for the extension
-  class Error < RuntimeError
-    attr_reader :code
-    def initialize(msg, code = 0)
-      super(msg)
-      @code = code
-    end
-  end
-
   def self.esc(s) #:nodoc:
     CGI.escape(s.to_s)
   end

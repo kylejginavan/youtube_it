@@ -1,15 +1,15 @@
-class UploadError < YouTubeIt::Error
-  attr_reader :code
-  def initialize(msg, code = 0)
-    super(msg)
-    @code = code
+class YouTubeIt
+  class Error < RuntimeError
+    attr_reader :code
+    def initialize(msg, code = 0)
+      super(msg)
+      @code = code
+    end
   end
-end
 
-class AuthenticationError < YouTubeIt::Error
-  attr_reader :code
-  def initialize(msg, code = 0)
-    super(msg)
-    @code = code
+  class UploadError < Error
+  end
+
+  class AuthenticationError < Error
   end
 end

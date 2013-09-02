@@ -1,10 +1,5 @@
 class YouTubeIt
   module Upload
-
-    class UploadError < YouTubeIt::Error; end
-
-    class AuthenticationError < YouTubeIt::Error; end
-
     # Implements video uploads/updates/deletions
     #
     #   require 'youtube_it'
@@ -590,7 +585,7 @@ class YouTubeIt
           http  = Faraday.new("https://www.google.com", :ssl => {:verify => false})
           body = "Email=#{YouTubeIt.esc @user}&Passwd=#{YouTubeIt.esc @password}&service=youtube&source=#{YouTubeIt.esc @client_id}"
           response = http.post("/accounts/ClientLogin", body, "Content-Type" => "application/x-www-form-urlencoded")
-          raise ::AuthenticationError.new(response.body[/Error=(.+)/,1], response.status.to_i) if response.status.to_i != 200
+          raise ::YouTubeIt::AuthenticationError.new(response.body[/Error=(.+)/,1], response.status.to_i) if response.status.to_i != 200
           @auth_token = response.body[/Auth=(.+)/, 1]
         end
       end
