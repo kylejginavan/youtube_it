@@ -7,6 +7,12 @@ class YouTubeIt
     end
   end
 
+  class ResourceNotFoundError < Error
+    def initialize(msg)
+      super(msg, 404)
+    end
+  end
+
   class UploadError < Error
   end
 

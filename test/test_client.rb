@@ -378,7 +378,7 @@ class TestClient < Test::Unit::TestCase
   end
 
   def test_should_raise_error_on_video_not_found
-    exception = assert_raise(YouTubeIt::UploadError) { @client.my_video("nonexisting") }
+    exception = assert_raise(YouTubeIt::ResourceNotFoundError) { @client.my_video("nonexisting") }
     assert_equal 404, exception.code
     assert_equal "Video not found: ResourceNotFoundException\n", exception.message
   end

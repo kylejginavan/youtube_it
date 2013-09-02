@@ -1,8 +1,10 @@
 module Faraday
   class Response::YouTubeIt < Response::Middleware
     def on_complete(env) #this method is called after finish request
-      msg = parse_upload_error_from(env[:body])
-      if env[:status] == 403 || env[:status] == 401
+      msg = parse_error_from(env[:body])
+      if env[:status] == 404
+        raise ::YouTubeIt::ResourceNotFoundError.new(msg)
+      elsif env[:status] == 403 || env[:status] == 401
         raise ::YouTubeIt::AuthenticationError.new(msg, env[:status])
       elsif (env[:status] / 10).to_i != 20
         raise ::YouTubeIt::UploadError.new(msg, env[:status])
@@ -10,7 +12,7 @@ module Faraday
     end
 
     private
-    def parse_upload_error_from(string)
+    def parse_error_from(string)
       return "" unless string
 
       string.gsub!("\n", "")
