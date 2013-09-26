@@ -64,6 +64,7 @@ end
   client
   record
   parser
+  instrumentation
   model/author
   model/category
   model/comment
