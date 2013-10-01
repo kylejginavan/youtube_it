@@ -112,8 +112,8 @@ Fields Parameter(experimental features):
   $ client.videos_by(:fields => {:view_count => "1000"})
 
   Filter by date
-  $ client.videos_by(:fields => {:published  => ((Date.today)})
-  $ client.videos_by(:fields => {:recorded   => ((Date.today)})  
+  $ client.videos_by(:fields => {:published  => (Date.today)})
+  $ client.videos_by(:fields => {:recorded   => (Date.today)})  
 
   Filter by date with range
   $ client.videos_by(:fields => {:published  => ((Date.today - 30)..(Date.today))})
