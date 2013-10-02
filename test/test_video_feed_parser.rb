@@ -270,6 +270,14 @@ class TestVideoFeedParser < Test::Unit::TestCase
     end
   end
 
+  def test_should_parse_format_code_of_media_contents_correctly
+    with_video_response do |parser|
+      video = parser.parse
+      content = video.media_content.first
+      assert_equal YouTubeIt::Model::Video::Format.by_code(5), content.format
+    end
+  end
+
   def with_video_response(file = "/files/youtube_video_response.xml", &block)
     File.open(File.dirname(__FILE__) + file) do |xml|
       parser = YouTubeIt::Parser::VideoFeedParser.new xml.read
