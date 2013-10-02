@@ -9,6 +9,8 @@ class YouTubeIt
       # Describes the various file formats in which a Youtube video may be
       # made available and allows looking them up by format code number.
       class Format
+        attr_reader :format_code, :name
+
         @@formats = Hash.new
 
         # Instantiates a new video format object.
