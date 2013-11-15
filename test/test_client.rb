@@ -165,7 +165,7 @@ class TestClient < Test::Unit::TestCase
   def test_should_get_embed_video_for_html5
     video = @client.video_by_user("chebyte","FQK1URcxmb4")
     embed_html5 = video.embed_html5({:class => 'video-player', :id => 'my-video', :width => '425', :height => '350', :frameborder => '1', :url_params => {:option => "value"}})
-    assert_equal "<iframe class=\"video-player\" id=\"my-video\" type=\"text/html\" width=\"425\" height=\"350\" src=\"http://www.youtube.com/embed/FQK1URcxmb4?option=value\" frameborder=\"1\"></iframe>\n", embed_html5
+    assert_equal "<iframe class=\"video-player\" id=\"my-video\" type=\"text/html\" width=\"425\" height=\"350\" src=\"http://www.youtube.com/embed/FQK1URcxmb4?option=value\" frameborder=\"1\"  ></iframe>\n", embed_html5
   end
 
   def test_should_always_return_a_logger
