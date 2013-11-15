@@ -82,7 +82,7 @@ class YouTubeIt
       def upload(video_data, opts = {})
 
         if video_data.is_a?(String) && uri?(video_data)
-          data = YouTubeIt::Upload::RemoteFile.new(video_data)
+          data = YouTubeIt::Upload::RemoteFile.new(video_data, opts)
         else
           data = video_data
         end
