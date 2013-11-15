@@ -130,6 +130,10 @@ Note: YouTube account, OAuth or AuthSub enables video management.
 Upload Video:
   $ client.video_upload(File.open("test.mov"), :title => "test",:description => 'some description', :category => 'People',:keywords => %w[cool blah test])
 
+Upload Remote Video:
+  $ client.video_upload("http://url/myvideo.mp4", :title => "test",:description => 'some description', :category => 'People',:keywords => %w[cool blah test])
+
+
 Upload Video With A Developer Tag (Note the tags are not immediately available):
   $ client.video_upload(File.open("test.mov"), :title => "test",:description => 'some description', :category => 'People',:keywords => %w[cool blah test], :dev_tag => 'tagdev')
 
