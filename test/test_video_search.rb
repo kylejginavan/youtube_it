@@ -78,6 +78,17 @@ class TestVideoSearch < Test::Unit::TestCase
     assert_equal "http://gdata.youtube.com/feeds/api/standardfeeds/top_rated?max-results=10&start-index=5&time=today&v=#{YouTubeIt::API_VERSION}", request.url
   end
 
+  def test_should_build_url_for_most_viewed_region_ru_offset_and_max_results_with_time
+    request = YouTubeIt::Request::StandardSearch.new(:top_rated, :offset => 5, :max_results => 10, :time => :today, :region => "RU")
+    assert_equal "http://gdata.youtube.com/feeds/api/standardfeeds/RU/top_rated?max-results=10&start-index=5&time=today&v=#{YouTubeIt::API_VERSION}", request.url
+  end
+
+  def test_should_build_url_for_most_viewed_region_ru_category_news_offset_and_max_results_with_time
+    request = YouTubeIt::Request::StandardSearch.new(:top_rated, :offset => 5, :max_results => 10, :time => :today, :region => "RU", :category => "News")
+    assert_equal "http://gdata.youtube.com/feeds/api/standardfeeds/RU/top_rated_News?max-results=10&start-index=5&time=today&v=#{YouTubeIt::API_VERSION}", request.url
+  end
+
+
   def test_should_raise_exception_for_invalid_type
     assert_raise RuntimeError do
       request = YouTubeIt::Request::StandardSearch.new(:most_viewed_yo)
