@@ -411,6 +411,7 @@ class TestClient < Test::Unit::TestCase
 
     assert_equal 'tubeit20101', profile.username
     assert_equal 'tubeit20101', profile.username_display
+    assert_equal 'http://www.youtube.com/channel/UCWWmLvppy3j64IGmA2dpCyw', profile.channel_uri
     assert_instance_of Fixnum, profile.max_upload_duration
     assert_instance_of String, profile.user_id
     assert_nothing_raised{ profile.last_name }
