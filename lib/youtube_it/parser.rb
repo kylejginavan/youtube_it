@@ -588,7 +588,7 @@ class YouTubeIt
 
       def parse_media_content (elem)
         content_url = elem["url"]
-        format_code = elem["format"].to_i
+        format_code = elem["yt:format"].to_i
         format = YouTubeIt::Model::Video::Format.by_code(format_code)
         duration = elem["duration"].to_i
         mime_type = elem["type"]
