@@ -50,7 +50,7 @@ class TestVideo < Test::Unit::TestCase
 
   def test_should_have_iframe_close_tag
     video = YouTubeIt::Model::Video.new(:video_id => "tag:youtube.com,2008:video:EkF4JD2rO3Q")
-    assert_equal "<iframe class=\"\" id=\"\" type=\"text/html\" width=\"425\" height=\"350\" src=\"http://www.youtube.com/embed/EkF4JD2rO3Q\" frameborder=\"0\"></iframe>\n", video.embed_html5
+    assert_equal "<iframe class=\"\" id=\"\" type=\"text/html\" width=\"425\" height=\"350\" src=\"http://www.youtube.com/embed/EkF4JD2rO3Q\" frameborder=\"0\"  ></iframe>\n", video.embed_html5
   end
 end
 
