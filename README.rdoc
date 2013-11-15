@@ -93,6 +93,7 @@ Standard Queries:
   $ client.videos_by(:most_linked, :page => 3)
   $ client.videos_by(:top_rated, :time => :today)
   $ client.get_all_videos(:top_rated, :time => :today)
+  $ client.videos_by(:top_rated,  :region => "RU", :category => "News")
 Advanced Queries (with boolean operators OR (either), AND (include), NOT (exclude)):
   $ client.videos_by(:categories => { :either => [:news, :sports], :exclude => [:comedy] }, :tags => { :include => ['football'], :exclude => ['soccer'] })
 
