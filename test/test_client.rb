@@ -640,6 +640,8 @@ class TestClient < Test::Unit::TestCase
       assert_equal c1.updated, c2.updated
       assert_equal c1.url, c2.url
       assert_equal c1.author.name, c2.author.name
+      assert_equal c1.channel_id, c2.channel_id
+      assert_equal c1.gp_user_id, c2.gp_user_id
     end
 
     def assert_valid_url (url)

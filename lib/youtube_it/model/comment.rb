@@ -5,6 +5,8 @@ class YouTubeIt
 
       # YouTubeIt::Model::Author:: Information about the YouTube user who owns a piece of video content.
       attr_reader :author
+      attr_reader :channel_id
+      attr_reader :gp_user_id
 
       # unique ID of the comment.
       def unique_id
