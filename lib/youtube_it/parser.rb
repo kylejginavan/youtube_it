@@ -4,24 +4,12 @@ class YouTubeIt
   module Parser #:nodoc:
     class FeedParser #:nodoc:
       def initialize(content)
-        @content = if content =~ URI::regexp(%w(http https))
-          Instrumentation.measure(content) { |instrument| fetch(content, instrument) }
-        else
-          content
-        end
-      end
-
-      def fetch(url, instrument, &block)
-        open(url).read
+        @content = (content =~ URI::regexp(%w(http https)) ? open(content).read : content)
 
       rescue OpenURI::HTTPError => e
-        message = e.io.status[0]
-        instrument[:error] = message
-        raise OpenURI::HTTPError.new(message, e)
-
-      rescue => e
-        instrument[:error] = e.message
-        url
+        raise OpenURI::HTTPError.new(e.io.status[0],e)
+      rescue
+        @content = content
 
       end
 
