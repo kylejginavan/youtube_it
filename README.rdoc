@@ -337,6 +337,10 @@ YouTubeIt passes all logs through the logger variable on the class itself. In Ra
   $ YouTubeIt.logger = RAILS_DEFAULT_LOGGER
   $ RAILS_DEFAULT_LOGGER.level = Logger::DEBUG
 
+If you want to use ActiveSupport Notifications you have to require this one
+
+  active_support/log_subscriber
+
 == RUBY INTERPRETER COMPABILITY:
 
   * 2.0
