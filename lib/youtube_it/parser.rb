@@ -360,7 +360,8 @@ class YouTubeIt
         YouTubeIt::Model::Subscription.new(
           :title        => entry.at("title").text,
           :id           => entry.at("id").text[/subscription([^<]+)/, 1].sub(':',''),
-          :published    => entry.at("published") ? entry.at("published").text : nil
+          :published    => entry.at("published") ? entry.at("published").text : nil,
+          :youtube_user_name  => entry.to_s.split(/\<|\>/)[-4]
         )
       end
     end
