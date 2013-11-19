@@ -121,8 +121,8 @@ Fields Parameter(experimental features):
   $ client.videos_by(:fields => {:recorded   => ((Date.today - 30)..(Date.today))})  
   
 Note: These queries do not find private videos! Use these methods instead:
-  $ client.get_my_video("FQK1URcxmb4")
-  $ client.get_my_videos(:query => "penguin")
+  $ client.my_video("FQK1URcxmb4")
+  $ client.my_videos(:query => "penguin")
 
 == VIDEO MANAGEMENT
 
