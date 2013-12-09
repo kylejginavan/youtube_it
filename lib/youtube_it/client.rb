@@ -480,7 +480,7 @@ class YouTubeIt
 
   end
 
-  class OAuth2Client < YouTubeIt::Client
+  class OAuth2Client < Client
     def initialize(options)
       @client_id = options[:client_id]
       @client_secret = options[:client_secret]
