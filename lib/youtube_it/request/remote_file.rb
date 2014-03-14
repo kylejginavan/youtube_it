@@ -6,10 +6,12 @@ class YouTubeIt
 
 
     class RemoteFile
-      def initialize( url)
+      def initialize(url, opts)
         @pos = 0
         @url = url
         @uri = URI(@url)
+        
+        @content_length = opts[:content_length]
 
         @fiber = Fiber.new do |first|
 

@@ -29,6 +29,7 @@ class YouTubeIt
       attr_reader :view_count
       attr_reader :avatar
       attr_reader :insight_uri
+      attr_reader :channel_uri
     end
   end
 end

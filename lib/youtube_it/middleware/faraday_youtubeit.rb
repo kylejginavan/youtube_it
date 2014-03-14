@@ -1,6 +1,22 @@
 module Faraday
   class Response::YouTubeIt < Response::Middleware
-    def parse_upload_error_from(string)
+    def on_complete(env) #this method is called after finish request
+      msg = parse_error_from(env[:body])
+      if env[:status] == 404
+        raise ::YouTubeIt::ResourceNotFoundError.new(msg)
+      elsif env[:status] == 403 || env[:status] == 401
+        raise ::YouTubeIt::AuthenticationError.new(msg, env[:status])
+      elsif (env[:status] / 10).to_i != 20
+        raise ::YouTubeIt::UploadError.new(msg, env[:status])
+      end
+    end
+
+    private
+    def parse_error_from(string)
+      return "" unless string
+
+      string.gsub!("\n", "")
+
       xml = Nokogiri::XML(string).at('errors')
       if xml
         xml.css("error").inject('') do |all_faults, error|
@@ -16,15 +32,6 @@ module Faraday
         end
       else
         string[/<TITLE>(.+)<\/TITLE>/, 1] || string
-      end
-    end
-
-    def on_complete(env) #this method is called after finish request
-      msg = env[:body] ? parse_upload_error_from((env[:body] || '').gsub(/\n/, '')) : ''
-      if env[:status] == 403 || env[:status] == 401
-        raise ::AuthenticationError.new(msg, env[:status])
-      elsif (env[:status] / 10).to_i != 20
-        raise ::UploadError.new(msg, env[:status])
       end
     end
   end

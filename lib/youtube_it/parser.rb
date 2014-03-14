@@ -62,7 +62,9 @@ class YouTubeIt
             :title     => remove_bom(entry.at("title").text),
             :updated   => entry.at("updated").text,
             :url       => entry.at("id").text,
-            :reply_to  => parse_reply(entry)
+            :reply_to  => parse_reply(entry),
+            :channel_id => (entry.at("yt|channelId").text rescue nil),
+            :gp_user_id => (entry.at("yt|googlePlusUserId").text rescue nil)
           )
         end
 
@@ -320,7 +322,8 @@ class YouTubeIt
           :videos_watched => entry.at_xpath("yt:statistics")["videoWatchCount"],
           :view_count     => entry.at_xpath("yt:statistics")["viewCount"],
           :upload_views   => entry.at_xpath("yt:statistics")["totalUploadViews"],
-          :insight_uri    => (entry.at_xpath('xmlns:link[@rel="http://gdata.youtube.com/schemas/2007#insight.views"]')['href'] rescue nil)
+          :insight_uri    => (entry.at_xpath('xmlns:link[@rel="http://gdata.youtube.com/schemas/2007#insight.views"]')['href'] rescue nil),
+          :channel_uri    => (entry.at_xpath('xmlns:link[@rel="alternate"]')['href'] rescue nil),
         )
       end
     end
@@ -360,7 +363,8 @@ class YouTubeIt
         YouTubeIt::Model::Subscription.new(
           :title        => entry.at("title").text,
           :id           => entry.at("id").text[/subscription([^<]+)/, 1].sub(':',''),
-          :published    => entry.at("published") ? entry.at("published").text : nil
+          :published    => entry.at("published") ? entry.at("published").text : nil,
+          :youtube_user_name  => entry.to_s.split(/\<|\>/)[-4]
         )
       end
     end

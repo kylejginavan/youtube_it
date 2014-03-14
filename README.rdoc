@@ -93,6 +93,7 @@ Standard Queries:
   $ client.videos_by(:most_linked, :page => 3)
   $ client.videos_by(:top_rated, :time => :today)
   $ client.get_all_videos(:top_rated, :time => :today)
+  $ client.videos_by(:top_rated,  :region => "RU", :category => "News")
 Advanced Queries (with boolean operators OR (either), AND (include), NOT (exclude)):
   $ client.videos_by(:categories => { :either => [:news, :sports], :exclude => [:comedy] }, :tags => { :include => ['football'], :exclude => ['soccer'] })
 
@@ -112,16 +113,16 @@ Fields Parameter(experimental features):
   $ client.videos_by(:fields => {:view_count => "1000"})
 
   Filter by date
-  $ client.videos_by(:fields => {:published  => ((Date.today)})
-  $ client.videos_by(:fields => {:recorded   => ((Date.today)})  
+  $ client.videos_by(:fields => {:published  => (Date.today)})
+  $ client.videos_by(:fields => {:recorded   => (Date.today)})  
 
   Filter by date with range
   $ client.videos_by(:fields => {:published  => ((Date.today - 30)..(Date.today))})
   $ client.videos_by(:fields => {:recorded   => ((Date.today - 30)..(Date.today))})  
   
 Note: These queries do not find private videos! Use these methods instead:
-  $ client.get_my_video("FQK1URcxmb4")
-  $ client.get_my_videos(:query => "penguin")
+  $ client.my_video("FQK1URcxmb4")
+  $ client.my_videos(:query => "penguin")
 
 == VIDEO MANAGEMENT
 
@@ -129,6 +130,10 @@ Note: YouTube account, OAuth or AuthSub enables video management.
 
 Upload Video:
   $ client.video_upload(File.open("test.mov"), :title => "test",:description => 'some description', :category => 'People',:keywords => %w[cool blah test])
+
+Upload Remote Video:
+  $ client.video_upload("http://url/myvideo.mp4", :title => "test",:description => 'some description', :category => 'People',:keywords => %w[cool blah test])
+
 
 Upload Video With A Developer Tag (Note the tags are not immediately available):
   $ client.video_upload(File.open("test.mov"), :title => "test",:description => 'some description', :category => 'People',:keywords => %w[cool blah test], :dev_tag => 'tagdev')
@@ -319,7 +324,8 @@ Note: you can specify width or just use the default of 1280.
 Now you can embed videos without use flash using html5, usefull for mobiles that not support flash but has html5 browser
 
 You can specify these options
-  $ video.embed_html5({:class => 'video-player', :id => 'my-video', :width => '425', :height => '350', :frameborder => '1', :url_params => {:option_one => "value", :option_two => "value"}})
+  $ video.embed_html5({:class => 'video-player', :id => 'my-video', :width => '425', :height => '350', :frameborder => '1', :url_params => {:option_one => "value", :option_two => "value"},
+  fullscreen: true, :sandbox => "value"})
 
 or just use with default options
   $ video.embed_html5 #default: width: 425, height: 350, frameborder: 0

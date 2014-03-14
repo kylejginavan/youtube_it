@@ -165,7 +165,7 @@ class TestClient < Test::Unit::TestCase
   def test_should_get_embed_video_for_html5
     video = @client.video_by_user("chebyte","FQK1URcxmb4")
     embed_html5 = video.embed_html5({:class => 'video-player', :id => 'my-video', :width => '425', :height => '350', :frameborder => '1', :url_params => {:option => "value"}})
-    assert_equal "<iframe class=\"video-player\" id=\"my-video\" type=\"text/html\" width=\"425\" height=\"350\" src=\"http://www.youtube.com/embed/FQK1URcxmb4?option=value\" frameborder=\"1\"></iframe>\n", embed_html5
+    assert_equal "<iframe class=\"video-player\" id=\"my-video\" type=\"text/html\" width=\"425\" height=\"350\" src=\"http://www.youtube.com/embed/FQK1URcxmb4?option=value\" frameborder=\"1\"  ></iframe>\n", embed_html5
   end
 
   def test_should_always_return_a_logger
@@ -377,6 +377,18 @@ class TestClient < Test::Unit::TestCase
     @client.video_delete(video.unique_id)
   end
 
+  def test_should_raise_error_on_video_not_found
+    exception = assert_raise(YouTubeIt::ResourceNotFoundError) { @client.my_video("nonexisting") }
+    assert_equal 404, exception.code
+    assert_equal "Video not found: ResourceNotFoundException\n", exception.message
+  end
+
+  def test_should_raise_error_on_private_video
+    exception = assert_raise(YouTubeIt::AuthenticationError) { @client.my_video("0KI_osldHWg") }
+    assert_equal 403, exception.code
+    assert_equal "Private video: ServiceForbiddenException\n", exception.message
+  end
+
   def test_should_add_like_to_video
     r = @client.like_video("CE62FSEoY28")
     assert_equal r[:code], 201
@@ -411,6 +423,7 @@ class TestClient < Test::Unit::TestCase
 
     assert_equal 'tubeit20101', profile.username
     assert_equal 'tubeit20101', profile.username_display
+    assert_equal 'http://www.youtube.com/channel/UCWWmLvppy3j64IGmA2dpCyw', profile.channel_uri
     assert_instance_of Fixnum, profile.max_upload_duration
     assert_instance_of String, profile.user_id
     assert_nothing_raised{ profile.last_name }
@@ -627,6 +640,8 @@ class TestClient < Test::Unit::TestCase
       assert_equal c1.updated, c2.updated
       assert_equal c1.url, c2.url
       assert_equal c1.author.name, c2.author.name
+      assert_equal c1.channel_id, c2.channel_id
+      assert_equal c1.gp_user_id, c2.gp_user_id
     end
 
     def assert_valid_url (url)

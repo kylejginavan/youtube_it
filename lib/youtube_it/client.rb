@@ -465,9 +465,9 @@ class YouTubeIt
       if (response_code / 10).to_i == 20 # success
         Nokogiri::XML(profile.body).at("//yt:username").text
       elsif response_code == 403 || response_code == 401 # auth failure
-        raise YouTubeIt::Upload::AuthenticationError.new(profile.inspect, response_code)
+        raise AuthenticationError.new(profile.inspect, response_code)
       else
-        raise YouTubeIt::Upload::UploadError.new(profile.inspect, response_code)
+        raise UploadError.new(profile.inspect, response_code)
       end
     end
 
@@ -480,7 +480,7 @@ class YouTubeIt
 
   end
 
-  class OAuth2Client < YouTubeIt::Client
+  class OAuth2Client < Client
     def initialize(options)
       @client_id = options[:client_id]
       @client_secret = options[:client_secret]
@@ -526,9 +526,9 @@ class YouTubeIt
       if (response_code / 10).to_i == 20 # success
         Nokogiri::XML(profile.body).at("//yt:username").text
       elsif response_code == 403 || response_code == 401 # auth failure
-        raise YouTubeIt::Upload::AuthenticationError.new(profile.inspect, response_code)
+        raise AuthenticationError.new(profile.inspect, response_code)
       else
-        raise YouTubeIt::Upload::UploadError.new(profile.inspect, response_code)
+        raise UploadError.new(profile.inspect, response_code)
       end
     end
 

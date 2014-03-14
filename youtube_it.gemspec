@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.summary     = "The most complete Ruby wrapper for youtube api's"
   s.homepage    = "http://github.com/kylejginavan/youtube_it"
 
-  s.add_runtime_dependency("nokogiri", "~> 1.5.2")
+  s.add_runtime_dependency("nokogiri", "~> 1.6.0")
   s.add_runtime_dependency("oauth", "~> 0.4.4")
   s.add_runtime_dependency("oauth2", "~> 0.6")
   s.add_runtime_dependency("simple_oauth", ">= 0.1.5")
@@ -22,9 +22,9 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency("builder", ">= 0")
   s.add_runtime_dependency("webmock")
   s.add_runtime_dependency("excon")
-  s.add_runtime_dependency("json", "~> 1.8.0")
+  s.add_runtime_dependency("json", "~> 1.8")
   s.files = Dir.glob("lib/**/*") + %w(README.rdoc youtube_it.gemspec)
 
-  s.extra_rdoc_files = %w(README.rdoc)
+  s.extra_rdoc_files = %w(README.rdoc CHANGELOG.md)
 end
 
