@@ -231,7 +231,7 @@ class YouTubeIt
         reply_to = reply_to.unique_id if reply_to.is_a? YouTubeIt::Model::Comment
         comment_body = comment_xml_for(:comment => comment, :reply_to => reply_to_url(video_id, reply_to))
         comment_url  = "/feeds/api/videos/%s/comments" % video_id
-        response     = yt_session.post(comment_url, comment_body)
+        response     = yt_session(base_ssl_url).post(comment_url, comment_body)
         comment = YouTubeIt::Parser::CommentsFeedParser.new(response.body).parse_single_entry
         return {:code => response.status, :body => response.body, :comment => comment}
       end
@@ -239,7 +239,7 @@ class YouTubeIt
       def delete_comment(video_id, comment_id)
         comment_id = comment_id.unique_id if comment_id.is_a? YouTubeIt::Model::Comment
         url  = "/feeds/api/videos/%s/comments/%s" % [video_id, comment_id]
-        response     = yt_session.delete(url)
+        response     = yt_session(base_ssl_url).delete(url)
 
         return response.status == 200
       end
@@ -520,6 +520,10 @@ class YouTubeIt
 
       def base_url
         "http://gdata.youtube.com"
+      end
+
+      def base_ssl_url
+        "https://gdata.youtube.com"
       end
 
       def boundary
