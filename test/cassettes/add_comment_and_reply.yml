@@ -69,7 +69,7 @@ http_interactions:
         seconds='930'/><yt:statistics lastWebAccess='1970-01-01T00:00:00.000Z' subscriberCount='0'
         videoWatchCount='0' viewCount='104' totalUploadViews='0'/><media:thumbnail
         url='http://s.ytimg.com/yts/img/silhouette250-vflEqxKg9.png'/><yt:username>tubeit20101</yt:username></entry>
-    http_version: 
+    http_version:
   recorded_at: Thu, 27 Jun 2013 23:00:40 GMT
 - request:
     method: post
@@ -10362,11 +10362,11 @@ http_interactions:
         yt:name='middle'/><media:thumbnail url='http://i1.ytimg.com/vi/eA1ROs7tWfQ/3.jpg'
         height='90' width='120' time='00:00:00' yt:name='end'/><media:title type='plain'>test
         title</media:title><yt:duration seconds='0'/><yt:uploaded>2013-06-27T23:00:42.000Z</yt:uploaded><yt:uploaderId>UCWWmLvppy3j64IGmA2dpCyw</yt:uploaderId><yt:videoid>eA1ROs7tWfQ</yt:videoid></media:group></entry>
-    http_version: 
+    http_version:
   recorded_at: Thu, 27 Jun 2013 23:00:53 GMT
 - request:
     method: post
-    uri: http://gdata.youtube.com/feeds/api/videos/eA1ROs7tWfQ/comments
+    uri: https://gdata.youtube.com/feeds/api/videos/eA1ROs7tWfQ/comments
     body:
       encoding: US-ASCII
       string: <?xml version="1.0" encoding="UTF-8"?><entry xmlns="http://www.w3.org/2005/Atom"
@@ -10434,7 +10434,7 @@ http_interactions:
         rel='alternate' type='text/html' href='http://www.youtube.com/watch?v=eA1ROs7tWfQ'/><link
         rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/eA1ROs7tWfQ/comments/rNFumkPn3QuAiscfBmxfEIr_ka8tmStDWyP5zLwEoIY?client=youtube_it'/><link
         rel='edit' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/eA1ROs7tWfQ/comments/rNFumkPn3QuAiscfBmxfEIr_ka8tmStDWyP5zLwEoIY?client=youtube_it'/><author><name>tubeit20101</name><uri>http://gdata.youtube.com/feeds/api/users/tubeit20101</uri><yt:userId>WWmLvppy3j64IGmA2dpCyw</yt:userId></author><yt:channelId>UCWWmLvppy3j64IGmA2dpCyw</yt:channelId><yt:videoid>eA1ROs7tWfQ</yt:videoid></entry>
-    http_version: 
+    http_version:
   recorded_at: Thu, 27 Jun 2013 23:00:54 GMT
 - request:
     method: get
@@ -10564,11 +10564,11 @@ http_interactions:
         SUdtQTJkcEN5dzwveXQ6dXNlcklkPjwvYXV0aG9yPjx5dDpjaGFubmVsSWQ+
         VUNXV21MdnBweTNqNjRJR21BMmRwQ3l3PC95dDpjaGFubmVsSWQ+PHl0OnZp
         ZGVvaWQ+ZUExUk9zN3RXZlE8L3l0OnZpZGVvaWQ+PC9lbnRyeT48L2ZlZWQ+
-    http_version: 
+    http_version:
   recorded_at: Thu, 27 Jun 2013 23:01:04 GMT
 - request:
     method: post
-    uri: http://gdata.youtube.com/feeds/api/videos/eA1ROs7tWfQ/comments
+    uri: https://gdata.youtube.com/feeds/api/videos/eA1ROs7tWfQ/comments
     body:
       encoding: US-ASCII
       string: <?xml version="1.0" encoding="UTF-8"?><entry xmlns="http://www.w3.org/2005/Atom"
@@ -10640,7 +10640,7 @@ http_interactions:
         href='http://gdata.youtube.com/feeds/api/videos/eA1ROs7tWfQ/comments/rNFumkPn3QuAiscfBmxfEIr_ka8tmStDWyP5zLwEoIY?client=youtube_it'/><link
         rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/eA1ROs7tWfQ/comments/rNFumkPn3QuFqGIj6DEtelGGO9PuLL8ZmMLJEnjba3Q?client=youtube_it'/><link
         rel='edit' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/eA1ROs7tWfQ/comments/rNFumkPn3QuFqGIj6DEtelGGO9PuLL8ZmMLJEnjba3Q?client=youtube_it'/><author><name>tubeit20101</name><uri>http://gdata.youtube.com/feeds/api/users/tubeit20101</uri><yt:userId>WWmLvppy3j64IGmA2dpCyw</yt:userId></author><yt:channelId>UCWWmLvppy3j64IGmA2dpCyw</yt:channelId><yt:videoid>eA1ROs7tWfQ</yt:videoid></entry>
-    http_version: 
+    http_version:
   recorded_at: Thu, 27 Jun 2013 23:01:05 GMT
 - request:
     method: get
@@ -10804,11 +10804,11 @@ http_interactions:
         c2VySWQ+PC9hdXRob3I+PHl0OmNoYW5uZWxJZD5VQ1dXbUx2cHB5M2o2NElH
         bUEyZHBDeXc8L3l0OmNoYW5uZWxJZD48eXQ6dmlkZW9pZD5lQTFST3M3dFdm
         UTwveXQ6dmlkZW9pZD48L2VudHJ5PjwvZmVlZD4=
-    http_version: 
+    http_version:
   recorded_at: Thu, 27 Jun 2013 23:01:14 GMT
 - request:
     method: delete
-    uri: http://gdata.youtube.com/feeds/api/videos/eA1ROs7tWfQ/comments/rNFumkPn3QuFqGIj6DEtelGGO9PuLL8ZmMLJEnjba3Q
+    uri: https://gdata.youtube.com/feeds/api/videos/eA1ROs7tWfQ/comments/rNFumkPn3QuFqGIj6DEtelGGO9PuLL8ZmMLJEnjba3Q
     body:
       encoding: US-ASCII
       string: ''
@@ -10859,11 +10859,11 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Thu, 27 Jun 2013 23:01:15 GMT
 - request:
     method: delete
-    uri: http://gdata.youtube.com/feeds/api/videos/eA1ROs7tWfQ/comments/rNFumkPn3QuAiscfBmxfEIr_ka8tmStDWyP5zLwEoIY
+    uri: https://gdata.youtube.com/feeds/api/videos/eA1ROs7tWfQ/comments/rNFumkPn3QuAiscfBmxfEIr_ka8tmStDWyP5zLwEoIY
     body:
       encoding: US-ASCII
       string: ''
@@ -10914,7 +10914,7 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Thu, 27 Jun 2013 23:01:15 GMT
 - request:
     method: delete
@@ -10969,6 +10969,6 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Thu, 27 Jun 2013 23:01:25 GMT
 recorded_with: VCR 2.5.0

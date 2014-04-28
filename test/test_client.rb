@@ -12,7 +12,7 @@ class TestClient < Test::Unit::TestCase
 
   def setup
     VCR.use_cassette("login with oauth2") do
-      @client = YouTubeIt::OAuth2Client.new(:client_access_token => "ya29.AHES6ZSRC7Fa5cyUa5G5-TJtt849dQ7OdSiB_kjBQg7S", 
+      @client = YouTubeIt::OAuth2Client.new(:client_access_token => "ya29.AHES6ZSRC7Fa5cyUa5G5-TJtt849dQ7OdSiB_kjBQg7S",
         :client_id => "68330730158.apps.googleusercontent.com", :client_secret => "Npj4rmtme7q6INPPQjpQFuCZ", :dev_key => "AI39si7WuZZxAkYebKSyrlJR7hIFktt6OoPycEOeOT_yHkZgr6QsGbZgmhKvbS4bsSAv0utgrfhNfXQBITu1wX_z3VsZE02giQ", :client_refresh_token => "1/ErxjeSs0RNMMGtaI-87grQf_o1iQKlx0JLwec1KIDH8")
       @client.refresh_access_token!
     end
@@ -275,17 +275,7 @@ class TestClient < Test::Unit::TestCase
     assert_same_comment comment1, res[:comment]
     assert_equal "test comment", comment1.content
     assert_nil comment1.reply_to
-    # Add reply
-    res = @client.add_comment(video.unique_id, "reply comment", :reply_to => comment1)
-    assert_equal 201, res[:code]
-    wait_for_api
-    sleep(5)
-    comment2 = @client.comments(video.unique_id).find {|c| c.content =~ /reply/}
-    assert_same_comment comment2, res[:comment]
-    assert_equal "reply comment", comment2.content
-    assert_equal comment1.unique_id, comment2.reply_to
     # Delete comment
-    assert @client.delete_comment(video.unique_id, comment2)
     assert @client.delete_comment(video.unique_id, comment1.unique_id)
     wait_for_api
     sleep(5)
