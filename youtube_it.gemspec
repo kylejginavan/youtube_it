@@ -21,12 +21,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency("faraday", ['>= 0.8', '< 0.10'])
   s.add_runtime_dependency("builder", ">= 0")
   s.add_runtime_dependency("excon")
-<<<<<<< HEAD
-  s.add_runtime_dependency("json", "~> 1.7.7")
-  s.add_development_dependency("webmock")
-=======
   s.add_runtime_dependency("json", "~> 1.8")
->>>>>>> 8b73cea0738d5402be6b5f6493f0171859048e97
   s.files = Dir.glob("lib/**/*") + %w(README.rdoc youtube_it.gemspec)
 
   s.extra_rdoc_files = %w(README.rdoc CHANGELOG.md)
