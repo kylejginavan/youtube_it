@@ -6,6 +6,7 @@ require 'delegate'
 # file handles when they have been read completely to prevent our uploader from leaking file handles
 #
 # chain = ChainIO.new(File.open(__FILE__), File.open('/etc/passwd'), "abcd")
+
 class YouTubeIt::ChainIO
   attr_accessor :autoclose
 
