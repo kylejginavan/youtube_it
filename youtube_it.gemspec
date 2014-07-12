@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
   s.description = "Upload, delete, update, comment on youtube videos all from one gem."
   s.summary     = "The most complete Ruby wrapper for youtube api's"
   s.homepage    = "http://github.com/kylejginavan/youtube_it"
+  s.license     = 'MIT'
 
   s.add_runtime_dependency("nokogiri", "~> 1.6.0")
   s.add_runtime_dependency("oauth", "~> 0.4.4")
