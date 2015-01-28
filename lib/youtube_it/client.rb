@@ -155,6 +155,10 @@ class YouTubeIt
     def comments(video_id, opts = {})
       client.comments(video_id, opts)
     end
+    
+    def comments_with_meta(youtube_id_or_url, opts = {})
+      client.comments_with_meta(youtube_id_or_url, opts)
+    end
 
     def add_favorite(video_id)
       client.add_favorite(video_id)
