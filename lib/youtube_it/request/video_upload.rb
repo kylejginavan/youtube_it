@@ -251,6 +251,23 @@ class YouTubeIt
         return YouTubeIt::Parser::CommentsFeedParser.new(response).parse
       end
 
+      def comments_with_meta(youtube_id_or_url, opts = {})
+        url      = if youtube_id_or_url.start_with?('http')
+                     youtube_id_or_url
+                   else
+                     comment_url = "/feeds/api/videos/%s/comments?" % youtube_id_or_url
+                     comment_url << opts.collect { |k, p| [k, p].join '=' }.join('&')
+                   end
+        response = yt_session.get(url)
+        comments = YouTubeIt::Parser::CommentsFeedParser.new(response).parse
+        xml      = Nokogiri::XML(response.body)
+    
+        next_link = xml.at(:css, 'link[rel=next]')
+    
+        url = next_link.nil? ? nil : next_link['href']
+        { comments: comments, next_link: url }
+      end
+      
       def add_favorite(video_id)
         favorite_body = video_xml_for(:favorite => video_id)
         favorite_url  = "/feeds/api/users/default/favorites"
