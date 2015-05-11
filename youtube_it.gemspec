@@ -14,7 +14,8 @@ Gem::Specification.new do |s|
   s.summary     = "The most complete Ruby wrapper for youtube api's"
   s.homepage    = "http://github.com/kylejginavan/youtube_it"
   s.license     = 'MIT'
-
+  
+  s.required_ruby_version = ">= 1.9.2"
   s.add_runtime_dependency("nokogiri", "~> 1.6.0")
   s.add_runtime_dependency("oauth", "~> 0.4.4")
   s.add_runtime_dependency("oauth2", "~> 1.0.0")
